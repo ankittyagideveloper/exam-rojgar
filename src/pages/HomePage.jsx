@@ -50,10 +50,10 @@ function HomePage() {
             Crack your <span className="text-teal-600">goal</span>
           </h2>
           <h3 className="text-3xl font-bold text-gray-800 mb-4">
-            with <span className="text-teal-600">SNW</span> Test Series
+            with <span className="text-teal-600">AGS</span> Test Series
           </h3>
           <p className="text-gray-600 text-base leading-relaxed">
-            SNW Test Series one of the best online test platform in India for
+            AGS Test Series one of the best online test platform in India for
             railway, ssc departmental exams.
           </p>
         </div>
