@@ -1,0 +1,122 @@
+{
+  "title": "Preliminary Survey",
+  "description": "Project Feasibility Assessment",
+  "timeLimit": 3600,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the primary objective of project cost estimation?",
+      "options": [
+        "To determine the exact final cost",
+        "To provide a reasonable approximation of project expenses",
+        "To minimize project scope",
+        "To maximize profit margins"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Project cost estimation aims to provide a reasonable approximation of expenses to help with planning and budgeting."
+    },
+    {
+      "id": 2,
+      "question": "Which factor is most critical in traffic projection estimation?",
+      "options": [
+        "Historical data analysis",
+        "Random sampling",
+        "Personal opinions",
+        "Competitor analysis only"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Historical data analysis provides the most reliable foundation for accurate traffic projections."
+    },
+    {
+      "id": 3,
+      "question": "Technical feasibility assessment primarily focuses on:",
+      "options": [
+        "Budget constraints",
+        "Available technology and resources",
+        "Market demand",
+        "Legal requirements"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Technical feasibility evaluates whether the project can be completed with available technology and resources."
+    },
+    {
+      "id": 4,
+      "question": "Alignment feasibility refers to:",
+      "options": [
+        "Physical alignment of equipment",
+        "Strategic alignment with business objectives",
+        "Team member alignment",
+        "Financial alignment"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Alignment feasibility ensures the project aligns with overall business strategy and objectives."
+    },
+    {
+      "id": 5,
+      "question": "What is the most important consideration in project scope definition?",
+      "options": [
+        "Minimizing costs",
+        "Clear and measurable deliverables",
+        "Maximizing timeline",
+        "Including all possible features"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Clear and measurable deliverables ensure project success and proper evaluation."
+    },
+    {
+      "id": 6,
+      "question": "Risk assessment in project planning should be:",
+      "options": [
+        "Done once at the beginning",
+        "Continuous throughout the project",
+        "Only when problems arise",
+        "Left to senior management"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Risk assessment should be continuous to identify and mitigate new risks as they emerge."
+    },
+    {
+      "id": 7,
+      "question": "Which methodology is best for uncertain project requirements?",
+      "options": ["Waterfall", "Agile", "Spiral", "V-Model"],
+      "correctAnswer": 1,
+      "explanation": "Agile methodology is designed to handle changing and uncertain requirements effectively."
+    },
+    {
+      "id": 8,
+      "question": "Stakeholder analysis is important because:",
+      "options": [
+        "It's required by law",
+        "It helps identify project supporters and opponents",
+        "It reduces project costs",
+        "It speeds up development"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Understanding stakeholders helps manage expectations and gain necessary support for project success."
+    },
+    {
+      "id": 9,
+      "question": "The critical path in project management represents:",
+      "options": [
+        "The most expensive tasks",
+        "The longest sequence of dependent tasks",
+        "The most important stakeholders",
+        "The riskiest activities"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The critical path is the longest sequence of dependent tasks that determines the minimum project duration."
+    },
+    {
+      "id": 10,
+      "question": "Quality assurance should be:",
+      "options": [
+        "Done at the end of the project",
+        "Integrated throughout the project lifecycle",
+        "Only for large projects",
+        "Optional if budget is tight"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Quality assurance should be integrated throughout the project to prevent defects and ensure standards are met."
+    }
+  ]
+}
