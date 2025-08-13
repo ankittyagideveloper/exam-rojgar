@@ -17,21 +17,21 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "test",
+        path: "test-category",
         element: <TestPage />,
       },
       {
-        path: "purchase",
+        path: "user-my-purchase",
         element: <PurchasePage />,
       },
 
       {
-        path: "pdf",
+        path: "pdf-category",
         element: <PDF_Page />,
       },
 
       {
-        path: "quiz",
+        path: "quiz-category",
         element: <QuizPage />,
       },
     ],

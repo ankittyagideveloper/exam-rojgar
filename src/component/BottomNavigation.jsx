@@ -6,21 +6,21 @@ import {
   FileDown,
   ShoppingBag,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const BottomNavigation = () => {
   const [activeTab, setActiveTab] = useState("home");
   const navigate = useNavigate();
   const navItems = [
     { id: "home", label: "Home", icon: Home, path: "/" },
-    { id: "test", label: "Test", icon: FileText, path: "/test" },
-    { id: "quiz", label: "Quiz", icon: HelpCircle, path: "/quiz" },
-    { id: "pdfs", label: "PDF's", icon: FileDown, path: "/pdf" },
+    { id: "test", label: "Test", icon: FileText, path: "/test-category" },
+    { id: "quiz", label: "Quiz", icon: HelpCircle, path: "/quiz-category" },
+    { id: "pdfs", label: "PDF's", icon: FileDown, path: "/pdf-category" },
     {
       id: "purchase",
       label: "My Purchase",
       icon: ShoppingBag,
-      path: "/purchase",
+      path: "/user-my-purchase",
     },
   ];
   return (
@@ -30,31 +30,32 @@ const BottomNavigation = () => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
           return (
-            <button
-              key={item.id}
-              onClick={() => {
-                setActiveTab(item.id);
-                navigate(item.path);
-              }}
-              className={`cursor-pointer flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                isActive
-                  ? "text-teal-600 bg-teal-50"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              <Icon
-                className={`w-6 h-6 mb-1 ${
-                  isActive ? "text-teal-600" : "text-gray-500"
-                }`}
-              />
-              <span
-                className={`text-xs font-medium ${
-                  isActive ? "text-teal-600" : "text-gray-500"
+            <Link to={item.path}>
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveTab(item.id);
+                }}
+                className={`cursor-pointer flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
+                  isActive
+                    ? "text-teal-600 bg-teal-50"
+                    : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                {item.label}
-              </span>
-            </button>
+                <Icon
+                  className={`w-6 h-6 mb-1 ${
+                    isActive ? "text-teal-600" : "text-gray-500"
+                  }`}
+                />
+                <span
+                  className={`text-xs font-medium ${
+                    isActive ? "text-teal-600" : "text-gray-500"
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </button>
+            </Link>
           );
         })}
       </div>

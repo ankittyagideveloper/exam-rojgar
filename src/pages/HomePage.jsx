@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Home,
-  FileText,
-  HelpCircle,
-  FileDown,
-  ShoppingBag,
-  Menu,
-  ChevronLeft,
-  ChevronRight,
-  Play,
-} from "lucide-react";
+import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);

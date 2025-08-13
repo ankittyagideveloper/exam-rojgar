@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import Header from "./Header";
 import BottomNavigation from "./BottomNavigation";
+import Footer from "./Footer";
 
 const Layout = () => {
   return (
@@ -9,6 +10,8 @@ const Layout = () => {
       <main className="pb-20">
         <Outlet />
       </main>
+
+      <Footer />
       <BottomNavigation />
     </div>
   );
