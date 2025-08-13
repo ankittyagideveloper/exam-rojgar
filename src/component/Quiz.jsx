@@ -9,9 +9,13 @@ import {
 import { Badge } from "../../components/ui/badge";
 import { Progress } from "../../components/ui/progress";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
-import quizData from "./Quiz-question.json";
+import { useParams } from "react-router-dom";
+import questions from "./Quiz-question.json";
 
 export default function QuizComponent() {
+  const { categoryId } = useParams();
+  const quizData = questions[categoryId] || [];
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [timeRemaining, setTimeRemaining] = useState(quizData.timeLimit);
@@ -368,11 +372,11 @@ export default function QuizComponent() {
 
           {/* Question Content */}
           <Card>
-            <CardHeader>
+            {/* <CardHeader>
               <CardTitle className="text-lg">
                 {quizData.title} is done for -
               </CardTitle>
-            </CardHeader>
+            </CardHeader> */}
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <h3 className="font-medium text-lg">

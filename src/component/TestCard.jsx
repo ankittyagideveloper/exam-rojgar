@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-const TestCard = ({ image, alt, title }) => {
+const TestCard = ({ image, alt, title, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
+      onClick={onClick}
       className={`relative rounded-xl overflow-hidden transition-all duration-300 cursor-pointer border ${
         isHovered ? "shadow-lg scale-105 bg-[#2C7873]" : "shadow-sm bg-white"
       }`}

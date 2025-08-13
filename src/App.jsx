@@ -20,18 +20,20 @@ const router = createBrowserRouter([
         path: "test-category",
         element: <TestPage />,
       },
+      {
+        path: "quiz-category",
+        element: <TestPage />,
+      },
       // {
       //   path: "user-my-purchase",
       //   element: <PurchasePage />,
       // },
-
       {
         path: "pdf-category",
         element: <PDF_Page />,
       },
-
       {
-        path: "quiz-category",
+        path: "/all-test/:categoryId",
         element: <QuizPage />,
       },
     ],

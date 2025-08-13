@@ -1,122 +1,2146 @@
 {
-  "title": "Preliminary Survey",
-  "description": "Project Feasibility Assessment",
-  "timeLimit": 3600,
-  "questions": [
-    {
-      "id": 1,
-      "question": "What is the primary objective of project cost estimation?",
-      "options": [
-        "To determine the exact final cost",
-        "To provide a reasonable approximation of project expenses",
-        "To minimize project scope",
-        "To maximize profit margins"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Project cost estimation aims to provide a reasonable approximation of expenses to help with planning and budgeting."
-    },
-    {
-      "id": 2,
-      "question": "Which factor is most critical in traffic projection estimation?",
-      "options": [
-        "Historical data analysis",
-        "Random sampling",
-        "Personal opinions",
-        "Competitor analysis only"
-      ],
-      "correctAnswer": 0,
-      "explanation": "Historical data analysis provides the most reliable foundation for accurate traffic projections."
-    },
-    {
-      "id": 3,
-      "question": "Technical feasibility assessment primarily focuses on:",
-      "options": [
-        "Budget constraints",
-        "Available technology and resources",
-        "Market demand",
-        "Legal requirements"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Technical feasibility evaluates whether the project can be completed with available technology and resources."
-    },
-    {
-      "id": 4,
-      "question": "Alignment feasibility refers to:",
-      "options": [
-        "Physical alignment of equipment",
-        "Strategic alignment with business objectives",
-        "Team member alignment",
-        "Financial alignment"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Alignment feasibility ensures the project aligns with overall business strategy and objectives."
-    },
-    {
-      "id": 5,
-      "question": "What is the most important consideration in project scope definition?",
-      "options": [
-        "Minimizing costs",
-        "Clear and measurable deliverables",
-        "Maximizing timeline",
-        "Including all possible features"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Clear and measurable deliverables ensure project success and proper evaluation."
-    },
-    {
-      "id": 6,
-      "question": "Risk assessment in project planning should be:",
-      "options": [
-        "Done once at the beginning",
-        "Continuous throughout the project",
-        "Only when problems arise",
-        "Left to senior management"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Risk assessment should be continuous to identify and mitigate new risks as they emerge."
-    },
-    {
-      "id": 7,
-      "question": "Which methodology is best for uncertain project requirements?",
-      "options": ["Waterfall", "Agile", "Spiral", "V-Model"],
-      "correctAnswer": 1,
-      "explanation": "Agile methodology is designed to handle changing and uncertain requirements effectively."
-    },
-    {
-      "id": 8,
-      "question": "Stakeholder analysis is important because:",
-      "options": [
-        "It's required by law",
-        "It helps identify project supporters and opponents",
-        "It reduces project costs",
-        "It speeds up development"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Understanding stakeholders helps manage expectations and gain necessary support for project success."
-    },
-    {
-      "id": 9,
-      "question": "The critical path in project management represents:",
-      "options": [
-        "The most expensive tasks",
-        "The longest sequence of dependent tasks",
-        "The most important stakeholders",
-        "The riskiest activities"
-      ],
-      "correctAnswer": 1,
-      "explanation": "The critical path is the longest sequence of dependent tasks that determines the minimum project duration."
-    },
-    {
-      "id": 10,
-      "question": "Quality assurance should be:",
-      "options": [
-        "Done at the end of the project",
-        "Integrated throughout the project lifecycle",
-        "Only for large projects",
-        "Optional if budget is tight"
-      ],
-      "correctAnswer": 1,
-      "explanation": "Quality assurance should be integrated throughout the project to prevent defects and ensure standards are met."
-    }
-  ]
+  "test1": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 1200,
+    "questions": [
+      {
+        "id": 1,
+        "question": "Administrative approval of competent Authority for incurring expenditure is accorded at this stage -",
+        "options": [
+          "Abstract Estimate",
+          "Detailed Estimate",
+          "Revised Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "Sanction to the estimate is considered as ‘Technical sanction’ in case of -",
+        "options": [
+          "Abstract Estimate",
+          "Detailed Estimate",
+          "Revised Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "Without administrative approval, Detailed Estimate can be put up for both administrative approval & sanction in case of -",
+        "options": [
+          "Works within sanctioning powers of PHODs",
+          "Works within sanctioning powers of GM",
+          "Works within sanctioning powers of HODs",
+          "One of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "An item of work, connected with the main work, can be added to the estimate through -",
+        "options": [
+          "Revised Estimate",
+          "Detailed Estimate",
+          "Supplementary Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "What is Line capacity means ?",
+        "options": [
+          "No. of trains per day in a path",
+          "Sleeper density",
+          "Weight of Rails which can bear the formation of the path",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Financial appraisal of projects is worked out using -",
+        "options": [
+          "DCF technique",
+          "PERT",
+          "Depreciation method",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "Applicable ROR for projects under DCF technique is ____ .",
+        "options": ["14 %", "8 %", "10 %", "18 %"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "ROR is not applicable to -",
+        "options": [
+          "New lines",
+          "Passenger amenities and safety works",
+          "Railway Electrification",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "Post project appraisal is done through -",
+        "options": [
+          "Productivity test",
+          "ROR",
+          "Financial Justification",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "Detailed Estimate need not be prepared for works costing less than _____ .",
+        "options": [
+          "Rs. 10 lakhs",
+          "Rs. 5 lakhs",
+          "Rs. 3 lakhs",
+          "Rs. 2 lakhs"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "Special limited tenders can be invited for specialized works from ______ agencies.",
+        "options": [
+          "6 and above",
+          "4 and above",
+          "2 and above",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Minimum notice period for inviting open tenders costing up to Rs. 2 crores -",
+        "options": ["30 days", "45 days", "10 days", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "Minimum notice period for quotations -",
+        "options": ["7 days", "10 days", "12 days", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "Minimum notice period for inviting Limited / Special limited tenders -",
+        "options": ["7 days", "21 days", "14 days", "All of these"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Two packet tendering system is adopted in case of -",
+        "options": [
+          "Single Tender",
+          "Open Tender",
+          "Limited Tender",
+          "All of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "Pre-vetting of Tender schedule is necessary for -",
+        "options": [
+          "Works where Detailed Estimate is not prepared",
+          "Works of urgent nature",
+          "PB items",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "Monetary limit of direct acceptance without Tender committee in open etendering -",
+        "options": [
+          "Up to Rs 20 lakhs",
+          "Up to Rs 50 lakh",
+          "UP to Rs 1 crore",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "PVC is applicable for tenders costing -",
+        "options": ["> 2 crores", "> 10 crores", "> 15 crores", "> 20 crores"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "What is the full form of LAW ?",
+        "options": [
+          "List of Approved Works",
+          "List of Added Works",
+          "List of Arranged Works",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "Lumpsum provision in the Pink Book can be utilized for specific category of works costing up to Rs. 2.5 Crores -",
+        "options": [
+          "Pink Book items",
+          "Umbrella works",
+          "Lumpsum works",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Tenders received after the specified time of opening are called as _____ .",
+        "options": [
+          "Late Tenders",
+          "Delayed Tenders",
+          "Single Tenders",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "Tenders received before the time of opening but after the due date and time are called as _____ .",
+        "options": [
+          "Late Tenders",
+          "Delayed Tenders",
+          "Single Tender",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "In works tenders, offer without EMD should be -",
+        "options": [
+          "Summarily rejected",
+          "EMD can be called for later",
+          "EMD can be deducted from bills",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "Powers of the GM to approve Lumpsum works -",
+        "options": [
+          "Up to Rs. 1 crore each",
+          "Up to Rs. 2.5 crores each",
+          "Up to Rs. 10 crores each",
+          "Up to Rs. 20 crores each"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "Powers of GM to approve M&P items -",
+        "options": [
+          "Up to Rs. 2.5 Crore",
+          "UP to Rs. 1 crore",
+          "UP to Rs. 10 crore",
+          "Up to Rs. 10 lakhs"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      }
+    ]
+  },
+
+  "test2": {
+    "title": "Abbreviations",
+    "description": "select the Abs",
+    "timeLimit": 1200,
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the full form of RRSK ?",
+        "options": [
+          "Rashtriya Rail Safety Kosh",
+          "Rashtriya Rail Sanraksha Kosh",
+          "Railway Rashtriya Sanraksha Kosh",
+          "Rashtriya Rail Special Kosh"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "What is the full form of MACP ?",
+        "options": [
+          "Modified assured career progression scheme",
+          "Modified assured career programs scheme",
+          "Model assured career progression scheme",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "What is the full form of CRIS ?",
+        "options": [
+          "Centre for Railway Information System",
+          "Centre for Railway Institute System",
+          "Centre for Railway Information Technology System",
+          "Centre for Railway Innovation System"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "What is the full form of ZRTI ?",
+        "options": [
+          "Zonal Railway Technical Institute",
+          "Zonal Regional Training Institute",
+          "Zonal Railway Training Institute",
+          "Zonal Regional Technical Institute"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "What is the full form of ZRUCC ?",
+        "options": [
+          "Zonal Railway Users Consultative Committee",
+          "Zonal Railway Uniform Code of Conduct",
+          "Zonal Railway Uniform Cooperation Committee",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "What is the full form of NAIR ?",
+        "options": [
+          "National Academy of Indian Railways",
+          "National Arrangement of Indian Railways",
+          "New Academy of Indian Railways",
+          "National Academy of Innovative Railways"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "What is the full form of TAMS ?",
+        "options": [
+          "Traffic Accounts Management System",
+          "Traffic Audit Management System",
+          "Traffic Audit Maintenance System",
+          "Traffic Accounts Manual System"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "What is the full form of YTSK ?",
+        "options": [
+          "Yatri Terminal System Knowledge",
+          "Yard Terminal System Knowledge",
+          "Yatri Ticket Suvidha Kendra",
+          "Yellow Ticket Suvidha Kendra"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "What is the full form of CCL ?",
+        "options": [
+          "Child Critical Leave",
+          "Child Care Limit",
+          "Child Care Leave",
+          "Complete Care Leave"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "What is the full form of UIdAI with regards to Aadhaar Card ?",
+        "options": [
+          "Unique Identification Authority of India",
+          "Unique Identity Academy of India",
+          "Unique Identification Aadhaar of India",
+          "Unique Identification Approval of India"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "What is the full form of APAR ?",
+        "options": [
+          "Annual Performance Appraisal Record",
+          "Average Performance Appraisal Report",
+          "Annual Parameter Appraisal Record",
+          "Annual Performance Appraisal Report"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "What is the full form of DSC ?",
+        "options": [
+          "Departmental Signature Certificate",
+          "Digital Signature Certificate",
+          "Digital Standard Certificate",
+          "Digital Signature Code"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "What is the full form of NIC ?",
+        "options": [
+          "National Information Committee",
+          "National Informatics Community",
+          "National Informatics Centre",
+          "National Innovative Centre"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "What is the full form of NTKM ?",
+        "options": [
+          "Net Tonne Kilometre",
+          "Net Train Kilometre",
+          "Net Transport Kilometre",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "What is the full form of FOIS ?",
+        "options": [
+          "Freight Operating Information System",
+          "Freight Operations Information System",
+          "Freight Operations Informative System",
+          "Freight Operating Informative System"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "What is the full form of DSR ? (Related to: GCC for Works - Standards)",
+        "options": [
+          "Delhi Schedule of Rates",
+          "Division Schedule of Rates",
+          "Decentralized Schedule of Rates",
+          "Delhi Standards & Rates"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "What is the full form of ARPAN ?",
+        "options": [
+          "Additional Railway Pension Access Network",
+          "Advance Railway Pensioner Access Network",
+          "Advance Railway Pension Access Network",
+          "None of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "What is the full form of HMIS in Indian Railways ?",
+        "options": [
+          "Hospital Management Information System",
+          "Hotel (catering) Management Information System",
+          "Hostel Management Information System",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "What is the full form of TOLIC ?",
+        "options": [
+          "Territory Official Language Implementation Committee",
+          "Town Official Language Implementation Council",
+          "Tentative Official Language Implementation Council",
+          "Town Official Language Implementation Committee"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "What is the full form of AAC ?",
+        "options": [
+          "Anti Annual Consumption",
+          "Average Annual Consumption",
+          "Annual Anticipated Consumption",
+          "Anticipated Average Consumption"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "What is the full form of ACD ?",
+        "options": [
+          "Anti Causes Device",
+          "Anti Collision Device",
+          "Averted Collision Device",
+          "Avoided Collision Device"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "What is the full form of ART in Railways parlance ?",
+        "options": [
+          "Associated Reserve Train",
+          "Accident Reserve Train",
+          "Accident Relief Train",
+          "Automatic Railway Terminal"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "What is the full form of SPART ?",
+        "options": [
+          "Self Propelled Accident Relief Trains",
+          "Self Proficient Accident Relief Trains",
+          "Special Proficient Accident Relief Trains",
+          "Special Purpose Accident Relief Trains"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "What is the full form of TPWS ?",
+        "options": [
+          "Train Protection & Warning System",
+          "Train Protection & Wheel Safety",
+          "Train Preview & Warning System",
+          "Train Prevention & Warning System"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "What is the full form of ATAS ?",
+        "options": [
+          "Arrangement for Train Accommodation Scheme",
+          "Automatic Train Access System",
+          "Alternate Train Accommodation Scheme",
+          "Alternate Train Accommodation System"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      }
+    ]
+  },
+  "test3": {
+    "title": "Question set 3",
+    "description": "select the Abs",
+    "timeLimit": 1200,
+    "questions": [
+      {
+        "id": 1,
+        "question": "As per 7th Pay Commission how much amount is given to the employee as Composite Transfer Grant (CTG) on retirement Account?",
+        "options": [
+          "100 % Last Basic Pay",
+          "50 % of Last Basic Pay",
+          "60 % of Last Basic Pay",
+          "80 % of Last Basic Pay"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "EOL with Medical certificate for treatment of cancer maximum limit is -",
+        "options": ["18 months", "10 months", "20 months", "6 months"],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "In Management Information System (MIS) the top level management uses -",
+        "options": [
+          "Operational Information",
+          "Tactical Information",
+          "Transactional Information",
+          "Strategic Information"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "Debtors Account is a _______.",
+        "options": [
+          "Nominal Account",
+          "Real Account",
+          "Personal Account",
+          "Cash Account"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "Minimum qualifying service for accepting request for voluntary retirement is _____ years.",
+        "options": ["30 years", "15 years", "20 years", "25 years"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Cheques, Cash, Stamps, Cash Vouchers on hand are -",
+        "options": [
+          "Liabilities of Cashier",
+          "Assets of Cashier",
+          "Both (1) & (2)",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "An Abstract Estimate should contain -",
+        "options": [
+          "specifications and scope of various aspects in the work",
+          "a brief report and justification for the work",
+          "the requirement of funds in the current year",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "What is the full form of PRAN ?",
+        "options": [
+          "Permanent Retirement Account Number",
+          "Personal Recurring Account Number",
+          "Provident Retirement Account Number",
+          "Pension Recurring Account Number"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "Proprietary article certificate (PAC) is to be signed by PHOD/CHOD",
+        "options": [
+          "Above Rs 25 lakhs",
+          "Rs 20 lakhs",
+          "Rs 20 lakhs",
+          "Upto Rs 25 lakhs"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "The Estimated cost for works under taken in workshop shall incorporate -",
+        "options": [
+          "Supervision Charges",
+          "Direction & General Charges",
+          "Contingencies",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "All Sanctioned works costing more than Rs. 2.5 Crores sanctioned by Railway Board are compiled under -",
+        "options": ["Orange Book", "Green Book", "Yellow Book", "Pink Book"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Admitted debits are cleared by -",
+        "options": [
+          "Cash and Write off by the competent authority",
+          "Salary recovery",
+          "Transfer to other stations",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "Financial position of individual Railway is known from -",
+        "options": [
+          "Appropriation Accounts",
+          "Capital and Revenue Accounts",
+          "Finance accounts",
+          "Block Accounts"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "Depreciation is a process of -",
+        "options": [
+          "Valuation",
+          "Allocation",
+          "Both Valuation and Allocation",
+          "None of these"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "The Sr. ISAs and ASVs are eligible for holidays under ______ as per the approved list circulated at the commencement of the calendar year.",
+        "options": [
+          "Factories Act",
+          "Negotiable Instruments Act",
+          "Minimum Wages Act",
+          "Workmen's Compensation Act"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "The details of excess and unclaimed goods on hand not brought into the excess and unclaimed register and no action has been taken by station staff is reported by TIA through -",
+        "options": ["T.A.7F", "T.A.4F", "T.A.5F", "T.A.6F"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "Annexure I of MSOP contains -",
+        "options": [
+          "Negative powers of GM",
+          "Powers of DRMS/PHODS",
+          "Items requiring personal sanction of GM",
+          "None of these"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "Variation of IRS conditions of contract can be done only -",
+        "options": [
+          "With mutual consent and by tender accepting authority",
+          "Only with GM's approval of PFA's concurrence",
+          "None of these",
+          "Both (1) & (2)"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "Abstract-K deals with -",
+        "options": [
+          "Miscellaneous Working Expenses",
+          "Operating Expenses Traffic",
+          "Passenger Amenities",
+          "Coaching trains expenses"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "As per 7th Pay Commission, what is the Additional Quantum of pension is granted to a pensioner on reaching 80 years of age?",
+        "options": [
+          "20 % of basic pension",
+          "30 % of basic pension",
+          "40 % of basic pension",
+          "50 % of basic pension"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "The Principal Chief Engineer shall arrange for the preparation and compilation of Annual Budget of a Railway at every stage and shall co-ordinate the compilation of Railway's -",
+        "options": [
+          "Annual Works Programme",
+          "Cash Budget",
+          "Expenditure Budget",
+          "Exchequre Control"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "Abstract - L deals with -",
+        "options": [
+          "Staff Salaries, DA and other Payments",
+          "Travelling Allowances and other allowances",
+          "Provident Fund, Pension and Other Retirement benefits",
+          "Staff Welfare & Amenities"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "Number of times leave can be encashed in During the service is -",
+        "options": ["4 times", "5 times", "6 times", "7 times"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "Administrative audit is check of -",
+        "options": [
+          "Sanctions",
+          "Calculations",
+          "Classification of expenditure",
+          "None of these"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "The returns prepared by the ASVs are posted in the______by themselves and sent to_____for postings in the 'Priced Ledgers' for the period (S.1411).",
+        "options": [
+          "Respectively Depot Ledgers & Depot Stores Office",
+          "Respectively Depot Ledgers & Stores Accounts Office",
+          "Respectively Priced Ledger & Stores Accounts Office",
+          "Respectively Accounts Office Ledger & Stores Accounts Office"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "The issue of classification/reclassification of any commodity is referred to -",
+        "options": [
+          "Convention committee",
+          "Estimates committee",
+          "Proprietary Article Certificate (PAC)",
+          "Railway Rate Tribunal"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "Stores in Stock' in Stores Depots is______",
+        "options": [
+          "Suspense Head",
+          "Final Head",
+          "Revenue Head",
+          "None of these"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "Additional Post Allowance (APA) rate on basic pay -",
+        "options": ["10 %", "15 %", "20 %", "25 %"],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "The cardinal points which differentiate material checking from Stock Verification and to be borne in mind by the Stock verification staff are -",
+        "options": [
+          "Physical Verification of the Stores, Review of Maxima/Minima with reference to the AAC",
+          "Analysis of overstock/surplus stores and review action taken thereon, Analysis of special aspects like storage conditions, proneness to pilferage, deterioration/ obsolescence and other aspects of Inventory management",
+          "Test check to verify the correctness of information fumished in indents/requisitions for revision of imprest schedules to ensure that no over indenting of sstores is resorted to by the custodians",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "which of these is not a part of estimates required to be sent to Railway Board in budget process?",
+        "options": [
+          "Estimate of Earnings",
+          "Estimate for Revenue and Capital segments",
+          "Civil Estimates",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "Contingencies of all items of hire charges for let out of Plant & Machinery in Workshops is levied at -",
+        "options": [
+          "10 % of total hire charges",
+          "8 % of total hire charges",
+          "7 % of total hire charges",
+          "5 % of total hire charges."
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "The Weighment Register, Manuscript Register, Receipt Register maintained at Stores Depot are checked by_______fortnightly and are subject to check by______during the Inspections",
+        "options": [
+          "Respectively Ward keeper & Depot Officer",
+          "Respectively Stores Clerk & Depot Officer",
+          "Respectively Works Manager of user department & WAO",
+          "None of these"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "The Work orders which are issued for a specific purpose for a manufacturing activity or any other activity and are closed on termination of Job are known as -",
+        "options": [
+          "Direct Work orders",
+          "Job Orders",
+          "Indirect Work orders",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "Stores Officers are empowered to go for local purchase of stock and non-stock items upto -",
+        "options": [
+          "Rs 50,000 in each case",
+          "Rs 1 lakh in each case",
+          "Rs 2 lakhs in each case",
+          "Rs 25,000 in each case"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "What is the constitution of TC for an e-tender of Rs 1.90 Crores?",
+        "options": [
+          "3 members Sr. scale",
+          "2 members Sr. scale",
+          "3 members JAG",
+          "2 members JAG"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "Annexure II of MSOP contains -",
+        "options": [
+          "Negative powers of GM",
+          "Powers of DRMS/PHODS",
+          "Items requiring personal sanction of GM",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "What is budget estimate?",
+        "options": [
+          "Budget estimate is also called Revised Estimate that depicts figures for current year",
+          "The budget estimate refers both for the current and the following year",
+          "The budget estimate refers to the following year",
+          "The budget estimate referes to the previous year actuals"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "Which of the following statements is correct?",
+        "options": [
+          "Debtors are current liability",
+          "Patents are tangible asset",
+          "Goodwill is a fictitious asset",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "______ book contains special rules, rates and conditions for the conveyance of explosives and dangerous goods belonging to military department.",
+        "options": [
+          "IRCA Military Tariff Vol.I",
+          "IRCA Military Tariff Vol.II",
+          "IRCA Military Tariff Vol.III",
+          "IRCA Military Tariff Vol.IV"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "Hospital leave can be extended with any other leave to maximum of-",
+        "options": ["28 months", "24 months", "20 months", "12 months"],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "The Annual Budget prepared co-relating the decisions relating to the all aspects of Earnings and Expenditure forming part of Revenue Budget and that relating to the investment decisions taken through Works Machinery and Rolling Stock Programme,is known as -",
+        "options": [
+          "Integrated Budget",
+          "Pink Book Budget",
+          "Railway Budget",
+          "Programmed & Planned Budget"
+        ],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "The schemes in IR costing Rs 20 lakhs each and above should be worked out comprehensively and sent to Railway Board with the details of -",
+        "options": [
+          "technical features",
+          "cost break-up",
+          "benefits expected to accrue and financial implications",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "Who is empwered to accept, reject and modify the tender committee recommendations ?",
+        "options": ["Accepting Authority", "GM", "Finance Member", "PHOD"],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "Work Order value of a zonal contract is -",
+        "options": ["Rs 7.5 lakhs", "Rs 5 lakhs", "Rs 3 lakhs", "Rs 2.5 lakhs"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "TIAs should check 'distance and fare' from the cancelled tickets fallen on the broken period selected at random for -",
+        "options": [
+          "10% Tickets of different combination/destination",
+          "10 Tickets of different combination/destination",
+          "20 Tickets of different combination/destination",
+          "20% Tickets of different combination/destination"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "____ are used for recording the time spent on the work in all shops.",
+        "options": ["Time Sheet", "GA Card", "Job Card", "Route Card"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "Second Class/Sleeper class pass is in which colour?",
+        "options": ["Pink", "Green", "Yellow", "White"],
+        "correctAnswer": 0,
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "Tri party agreement for e payment means ?",
+        "options": [
+          "Railway, Accounts and Bank",
+          "Railway, Party and Bank",
+          "Bank, RBI and Party",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "The Railway Servants (Hours of Employment & Period of Rest) Rules 2005 has come into effect from -",
+        "options": ["26-03-2005", "27-02-2005", "28-02-2005", "29-02-2005"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "It is checked to see that Receipt Order for imported items(S.2522) are calculated taking into account _______ and voucher is passed on for posting the Priced Ledger.",
+        "options": [
+          "Cost of Item and Packing Charges",
+          "Insurance, Freight",
+          "Customs Duty, Countervailing Duty",
+          "All of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      }
+    ]
+  },
+  "test4": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 1200,
+    "questions": [
+      {
+        "id": 1,
+        "question": "IR expenditure on Policy formulation, Direction, Research and Other Miscellaneous organisations is budgeted under which Major head?",
+        "options": ["3001", "3006", "3075", "1001"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "Railway Audit expenditure is budgeted under which Major head?",
+        "options": ["5001", "3075", "3006", "3001"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "Expenditure on Railway Centralised Training Institutes is budgeted under which Major head?",
+        "options": ["5001", "3001", "1002", "3075"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "Indian Railways Revenue expenditure on Commercial lines is budgeted under which Major head?",
+        "options": ["1001", "3001", "3002", "3006"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "Appropriation to Funds from Railway Surplus is budgeted under which Major head?",
+        "options": ["1001", "3001", "3002", "3006"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Railway expenditure of Strategic lines on Capital account is budgeted in Transport segment under which major head?",
+        "options": ["5002", "5003", "3002", "3003"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "How many Demands for Grants are allotted for Ministry of Railways after merger of Railway Budget with general Budget?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "'Annual Financial Statement' referred to in Art 112 (1) of the Constitution of India is otherwise known as –",
+        "options": [
+          "Balance Sheet",
+          "Finance Account",
+          "Annual Budget",
+          "Cash- flow statement"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "Which of the following constitute Inventory Budget of IR under Capital segment?(a) Stores Budget(b) WMS budget(c) Misc. Advance (Capital)(d) Works Budget",
+        "options": ["a", "b", "a,b,c", "a,b,c,d"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "Percentage of Working expenses to Gross earnings is known as -",
+        "options": [
+          "Inventory Turn Over ratio",
+          "Operating Ratio",
+          "Liquidity Ratio",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "Important Ratio worked out to guage the financial health of Zonal Railways and IR as a whole is -",
+        "options": [
+          "Operation Ratio",
+          "Net Revenue to Capital at Charge",
+          "Surplus or Shortfall to Capital Employed",
+          "Inventory Turn Over Ratio"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Gross Receipts are arrived by -",
+        "options": [
+          "Subtracting traffic suspense from Gross Earnings",
+          "Adding traffic suspense to Gross Earnings",
+          "Adding expenditure suspense to Gross Earnings",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "Net Revenue of a Zonal Railway is the difference between -",
+        "options": [
+          "Gross Earnings minus Ordinary Working Expenses",
+          "Miscellaneous receipts minus Miscellaneous expenses",
+          "Total Receipts minus Total Expenditure",
+          "None of these"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "Charged expenditure is -",
+        "options": [
+          "Voted by Parliament",
+          "Sanctioned by FC (Railways)",
+          "Sanctioned by Chairman, Railway Board",
+          "Sanctioned by President"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Single Demand for Grant number assigned for Railways in 2017-18 was -",
+        "options": ["80", "82", "83", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "Demand for Grant number assigned for Railways in 2020-21 is -",
+        "options": ["80", "82", "83", "None of these"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "Ordinary Working Expenses are budgeted in how many Sub Major heads?",
+        "options": ["3", "12", "16", "None of these"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "Appropriation to DRF and Pension Fund are budgeted under which Sub Major head?",
+        "options": [
+          "Sub Major head 9",
+          "Sub Major head 10",
+          "Sub Major head 11",
+          "Sub Major head 12"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "On Zonal railways, payment towards interest component of lease charges is budgeted under which Sub Major head of Major head 3002?",
+        "options": [
+          "Sub Major head 7",
+          "Sub Major head 8",
+          "Sub Major head 9",
+          "Sub Major head 10"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "While Pension Fund is appropriated under Sub Major head 12, Pension and Retirement expenditure is booked under which Sub Major head of Ordinary Working Expenses?",
+        "options": [
+          "Sub Major head 9",
+          "Sub Major head 10",
+          "Sub Major head 11",
+          "Sub Major head 12"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Administrative approval of competent Authority for incurring expenditure is accorded at this stage -",
+        "options": [
+          "Abstract Estimate",
+          "Detailed Estimate",
+          "Revised Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "Sanction to the estimate is considered as ‘Technical sanction’ in case of -",
+        "options": [
+          "Abstract Estimate",
+          "Detailed Estimate",
+          "Revised Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "Without administrative approval, Detailed Estimate can be put up for both administrative approval & sanction in case of -",
+        "options": [
+          "Works within sanctioning powers of PHODs",
+          "Works within sanctioning powers of GM",
+          "Works within sanctioning powers of HODs",
+          "One of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "An item of work, connected with the main work, can be added to the estimate through -",
+        "options": [
+          "Revised Estimate",
+          "Detailed Estimate",
+          "Supplementary Estimate",
+          "Completion Estimate"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "What is Line capacity means ?",
+        "options": [
+          "No. of trains per day in a path",
+          "Sleeper density",
+          "Weight of Rails which can bear the formation of the path",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "Financial appraisal of projects is worked out using -",
+        "options": [
+          "DCF technique",
+          "PERT",
+          "Depreciation method",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "Applicable ROR for projects under DCF technique is ____ .",
+        "options": ["14 %", "8 %", "10 %", "18 %"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "ROR is not applicable to -",
+        "options": [
+          "New lines",
+          "Passenger amenities and safety works",
+          "Railway Electrification",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "Post project appraisal is done through -",
+        "options": [
+          "Productivity test",
+          "ROR",
+          "Financial Justification",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "Detailed Estimate need not be prepared for works costing less than _____ .",
+        "options": [
+          "Rs. 10 lakhs",
+          "Rs. 5 lakhs",
+          "Rs. 3 lakhs",
+          "Rs. 2 lakhs"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "Special limited tenders can be invited for specialized works from ______ agencies.",
+        "options": [
+          "6 and above",
+          "4 and above",
+          "2 and above",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "Minimum notice period for inviting open tenders costing up to Rs. 2 crores -",
+        "options": ["30 days", "45 days", "10 days", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "Minimum notice period for quotations -",
+        "options": ["7 days", "10 days", "12 days", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "Minimum notice period for inviting Limited / Special limited tenders -",
+        "options": ["7 days", "21 days", "14 days", "All of these"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "Two packet tendering system is adopted in case of -",
+        "options": [
+          "Single Tender",
+          "Open Tender",
+          "Limited Tender",
+          "All of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "Pre-vetting of Tender schedule is necessary for -",
+        "options": [
+          "Works where Detailed Estimate is not prepared",
+          "Works of urgent nature",
+          "PB items",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "Monetary limit of direct acceptance without Tender committee in open etendering -",
+        "options": [
+          "Up to Rs 20 lakhs",
+          "Up to Rs 50 lakh",
+          "UP to Rs 1 crore",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "PVC is applicable for tenders costing -",
+        "options": ["> 2 crores", "> 10 crores", "> 15 crores", "> 20 crores"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "What is the full form of LAW ?",
+        "options": [
+          "List of Approved Works",
+          "List of Added Works",
+          "List of Arranged Works",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "Lumpsum provision in the Pink Book can be utilized for specific category of works costing up to Rs. 2.5 Crores -",
+        "options": [
+          "Pink Book items",
+          "Umbrella works",
+          "Lumpsum works",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "If there are numbers of employees, then the employer has to provide a canteen -",
+        "options": ["50", "250", "350", "750"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "Has depreciation is charged on CWIP in AR ?",
+        "options": ["Yes", "No", "Can’t say", "None of these"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "In which class of employee/officer are not entitled for financial up gradation under MACP ?",
+        "options": ["Gr–A", "Gr-B", "Gr-C", "None of these"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "Against mobilization advance payable , Total maximum limit of contract value is -",
+        "options": ["10 %", "15 %", "20 %", "25 %"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "An Imprest is Standing advance of a Fixed Sum of Money placed at the disposal of an Individual (Officer or Supervisor) to meet Day to Day Official and Emergent Expense. Kindly Specify the limit upto which a petty Expense can be made in each case?",
+        "options": ["Rs 15000/-", "Rs 10000/-", "Rs 5000/-", "Rs 1000/-"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "Which of the following is not a fixed asset?",
+        "options": [
+          "Building",
+          "Plant and Machinery",
+          "Balance with bank",
+          "Goodwill"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "NPS is mandatory applicable on central Government Employee except ______ recruited on or after 01.01.2004",
+        "options": [
+          "Railway employees",
+          "Armed forces",
+          "Income Tax Employee",
+          "Postal Employee"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "Example of piece work contract -",
+        "options": [
+          "Zonal contract",
+          "Work order",
+          "Quotation work",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "What is the time period in which all the awards of the arbitration are to be published from the date of its receipt by the appropriate government?",
+        "options": ["30 days", "15 days", "7 days", "1 day"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "RRSK is being implemented w.e.f",
+        "options": ["2017-18", "2018-19", "2020-21", "2019-20"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 51,
+        "question": "The unit of Line haul Cost on pay load refers to -",
+        "options": [
+          "Unit Cost per TKMs",
+          "Unit Cost per Wagon KMs",
+          "Unit Cost per Tonne KMs",
+          "Unit Cost per Wagon Days"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 52,
+        "question": "Certain Non-Stock requisitions need not vetted.",
+        "options": [
+          "If they are part of a sanctioned Detailed Estimate",
+          "If they are below 20 Lakhs",
+          "If they are non PAC items",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 53,
+        "question": "A Government Servant whose date of birth is on 21.04.1963 shall retire from service on superannuation on",
+        "options": [
+          "30.04.2023 afternoon",
+          "01.04.2023 afternoon",
+          "01.04.2023 forenoon",
+          "21.04.2023 afternoon"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 54,
+        "question": "‘A’ category approval list of contractors monetary slab is -",
+        "options": [
+          "Upto Rs 50 Lakhs",
+          "Rs 50 lakhs to Rs 1.5 Cr",
+          "Rs 1.5 Cr to Rs 7.5 Cr",
+          "Above Rs 7.5 Cr"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 55,
+        "question": "HSD oil purchased for traction purpose on Indian Railways is a -",
+        "options": [
+          "Stock Item",
+          "Non Stock item",
+          "PAC Item",
+          "Local purchase item"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 56,
+        "question": "Special limited tenders can be invited for specialized works from agencies -",
+        "options": [
+          "6 and above",
+          "4 and above",
+          "2 and above",
+          "None of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 57,
+        "question": "which one is needed to bring the peace and harmoney in industries.",
+        "options": ["Reward", "Punishment", "Law", "None of these"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 58,
+        "question": "The responsibility to clear Station Outstanding lies with -",
+        "options": ["TIA", "Audit", "Commercial office", "Station Master"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 59,
+        "question": "Development Surcharge is levied on ?",
+        "options": [
+          "Normal traffic",
+          "Goods traffic",
+          "Base Freight Rate",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 60,
+        "question": "Undercharges and Special Debits' in the Balance Sheet, TIA should verify ____",
+        "options": [
+          "Local paid statement of current month",
+          "Foreign paid statement of current month",
+          "Delivery Book summary for To-pay traffic/MPA",
+          "Undercharges statement of current month for Local and Foreign along with Cash Office Disallowance Statement"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 61,
+        "question": "_______ category of employment in which the employee does not get any rest or very little rest in his duty hours.",
+        "options": [
+          "Intensive",
+          "Continuous",
+          "Essentially Intermittent",
+          "Excluded"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 62,
+        "question": "Sr. DCM is the accepting Authority for tenders dealings with parcel leasing for value of contract -",
+        "options": [
+          "Above Rs. 5 crore upto Rs. 50 crores",
+          "Above Rs. 50 crore upto Rs. 100 crores",
+          "Above 100 crores",
+          "Above Rs. 2.5 crore upto Rs. 5 crores"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 63,
+        "question": "Which one is NOT an example of Proforma on-cost ?",
+        "options": [
+          "Wages of Shop Clerk",
+          "Payment against Workmen Compensation Act",
+          "Establishment Charges of Zonal Headquarters",
+          "Educational facilities to staff"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 64,
+        "question": "What is full form of PWP ?",
+        "options": [
+          "Primary works programme",
+          "Preliminary works programme",
+          "Preliminary works project",
+          "(2) and (3) Both"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 65,
+        "question": "For booking on line coaching traffic an organization by Name __________ exists.",
+        "options": [
+          "Indian Railway Commercial and Traffic Corporation",
+          "Indian Railway Catering and Tourism Corporation",
+          "Indian Railway Canteen and Tourism Corporation",
+          "Indian Railway Controlled Tourism Corporation"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 66,
+        "question": "What is the full form of RMC?",
+        "options": [
+          "Railway Manual Clause",
+          "Railway Maintenance Clause",
+          "Railway Material Consignment",
+          "Recoupment memo clause"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 67,
+        "question": "Voucher in credit side of station balance sheet is checked with ______ .",
+        "options": [
+          "return of through luggage ticket",
+          "return of through government passenger baggage",
+          "original voucher as consolidated in the voucher register",
+          "return of local blank paper ticket"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 68,
+        "question": "The private cash carried by the official is recorded in which kind of record -",
+        "options": [
+          "Balance Sheet",
+          "MCR",
+          "Cash Book",
+          "Private Cash Register"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 69,
+        "question": "The Duties of TIAs are of such nature that calls for the -",
+        "options": [
+          "Special initiative",
+          "Vigilance",
+          "Tact & Watchful ness",
+          "All of these"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 70,
+        "question": "Level of tender committee for earning contracts for value above 50 lakh and below 5 crore (other than catering and parcel)",
+        "options": ["Junior Scale", "Senior Scale", "JA Grade", "SA Grade"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 71,
+        "question": "Fixed component as per PVC is -",
+        "options": ["15 %", "20 %", "25 %", "10 %"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 72,
+        "question": "The Daily Summary of Transaction (Cash & Passenger information) D-5 shows -",
+        "options": [
+          "Cash, Vouchers, CST, RTC and Credit Card",
+          "Refunds made under each head for individual operator with passenger details",
+          "Both (1) and (2)",
+          "Only (2)"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 73,
+        "question": "Parcels are charged -",
+        "options": [
+          "Only by weight",
+          "Only by measurement",
+          "Only by Quantity",
+          "Either by weight or by measurement, whichever gives the greater charge"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 74,
+        "question": "Tier-1 account of NPS is a -",
+        "options": [
+          "Pension account of having restricted withdrawals",
+          "Voluntary account which offer liquidity of investments and withdrawals",
+          "Static account which offer liquidity of investments and withdrawals",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 75,
+        "question": "Sale suspense is credited when -",
+        "options": [
+          "Purchasers deposits money",
+          "When scrap material is delivered to purchaser",
+          "When material is scrapped",
+          "Both (1) and (2)"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 76,
+        "question": "As per SOP, Waiver of Demurrage, the maximum amount of Demurrage per wagon which can be considered by HOD(CCM/FM or CCM/FS) is _____ .",
+        "options": ["25000", "50000", "100000", "10000"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 77,
+        "question": "Most of the freight in Goods traffic is collected through ______ .",
+        "options": ["Cash", "E- payment", "Demand draft", "None of these"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 78,
+        "question": "In case of booking of PTO Ticket ________ is charged.",
+        "options": [
+          "1/3rd of the Base Fare + reservation Fees + Superfast Charge Rounded off to next higher multiple of Rupee",
+          "1/3rd of the Base Fare + superfast Charge Rounded off to next higher multiple of Rupee",
+          "1/3rd of the Base Fare Rounded off to next higher Rupee",
+          "1/3rd of the Base Fare rounded off to next higher 5 Rupee"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 79,
+        "question": "The basic concept of EOL (engine on load) is -",
+        "options": [
+          "Railway Engines Leased to Private siding",
+          "Engines procured by sidings used for loading/unloading of rakes",
+          "Engine available to customer for their loading and unloading activities during free time",
+          "Railway Engines provided to released loaded rakes"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 80,
+        "question": "How many types of workers available in workshops?",
+        "options": ["1 types", "4 Types", "2 Types", "3 Types"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 81,
+        "question": "For fixation of Pay in the revised pay structure @7th CPC, existing basic pay as per 6th CPC is to be multiplied by fitment factor equals to -",
+        "options": ["2.57", "2.67", "2.75", "2.76"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 82,
+        "question": "The following Reports are forwarded to Railway Board for every month -",
+        "options": [
+          "Abstract X",
+          "Abstract Y",
+          "None of these",
+          "Both (1) & (2)"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 83,
+        "question": "In Store bills, Advance payments can be made upto -",
+        "options": ["50 %", "75 %", "95 %", "98 %"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 84,
+        "question": "Issue of materials to Workshop manufacturing suspense(WMS) issue transaction value in Stores Budget is -",
+        "options": ["25 %", "35 %", "45 %", "55 %"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 85,
+        "question": "PH 72 contains -",
+        "options": ["Stock Suspense", "WGR", "WMS", "None of these"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 86,
+        "question": "What is the full form of FTR ?",
+        "options": [
+          "Full Tariff Rates",
+          "Full train rates",
+          "Full traffic rate",
+          "Freight for tourist rake"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 87,
+        "question": "Which Form is used to report the re-weighment of parcels?",
+        "options": ["TA.2F", "TA.3F", "TA.4F", "TA.5F"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 88,
+        "question": "Apportionment of earnings is done based on distance by -",
+        "options": ["RITES", "CRIS", "Western Railway", "Railway Board"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 89,
+        "question": "Which if the following is the main aim of the creation of Payment of Wages Act,1936?",
+        "options": [
+          "Working hours of the worker",
+          "To secure prompt and regular payment of wages",
+          "Periodical review of rate of minimum wages",
+          "All of these"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 90,
+        "question": "At exit under NPS, the individual would be mandatorily required to invest ____ percent of pension wealth to purchase an annuity (from an IRDA-regulated life insurance- company)?",
+        "options": ["50 %", "60 %", "40 %", "20 %"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 91,
+        "question": "Sundry earnings in the station balance sheet -",
+        "options": [
+          "Debit entry",
+          "Credit entry",
+          "Neither as it comes from the divisions",
+          "None of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 92,
+        "question": "Finance vetting of AAC of which category items is necessary -",
+        "options": ["A & B only", "A & C only", "A only", "C only"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 93,
+        "question": "The basic object of material management is to keep the investment on Inventories to the barest minimum and ensure availability of material of the ________ and ________",
+        "options": [
+          "Right Quantity and Quality : Right time and at the right place",
+          "Minimum Quantity and Quality : Right time and at the right place",
+          "Right Quantity and Quality : Right time and at the Stores Depot",
+          "Maximum Quantity and Quality : Right time and at the right place"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 94,
+        "question": "With regards to Demurrage charges which of the statements is/are true.",
+        "options": [
+          "Demurrage charge is levied for the detention of Railway’s rolling stock after the expiry of free time if any, allowed for such detention.",
+          "As and when new type of wagons are introduced, free time mentioned shall automatically applied to the wagons depending upon the type of wagons,",
+          "The entire group of Wagons placed for loading/unloading shall be treated as one unit for the purpose of levy of Demurrage charges.",
+          "All are correct"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 95,
+        "question": "For claiming CTG, transferee/retirees needs to submit the ______ documents.",
+        "options": [
+          "Proof of change of residence",
+          "Proof of journey",
+          "Both the above documents specified in (1) & (2)",
+          "Any one of the above documents specified in (1) & (2)"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 96,
+        "question": "Debt Head Report is prepared as a part of -",
+        "options": [
+          "Capital and Revenue accounts",
+          "Finance Accounts",
+          "Monthly Account current",
+          "Final Account current"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 97,
+        "question": "Accounts office Balance sheet closing balance represents -",
+        "options": [
+          "Unrealized Station Outstandings",
+          "Unrealized Carriage Bills",
+          "Unrealized Bills Recoverable",
+          "Unrealized Demands Recoverable"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 98,
+        "question": "For working out EMD, the same shall be rounded off (For Works)  to -",
+        "options": ["Rs.10", "Rs.1000", "Rs.100", "None of these"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 99,
+        "question": "The Demand wise fund provision under issues to Revenue allocated to PU",
+        "options": ["17", "20", "27", "28"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 100,
+        "question": "What is regarded as an instrument of Parliamentary Financial Control -",
+        "options": [
+          "Railway Budget",
+          "Debt Head Report",
+          "Monthly PCDO",
+          "All of these"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      }
+    ]
+  }
 }

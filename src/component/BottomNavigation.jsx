@@ -6,11 +6,13 @@ import {
   FileDown,
   ShoppingBag,
 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const BottomNavigation = () => {
+  const location = useLocation();
+  console.log(location);
   const [activeTab, setActiveTab] = useState("home");
-  const navigate = useNavigate();
+
   const navItems = [
     { id: "home", label: "Home", icon: Home, path: "/" },
     { id: "test", label: "Test", icon: FileText, path: "/test-category" },
