@@ -6,6 +6,7 @@ import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
+import SubCategoryList from "./component/SubCategoryList";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         path: "quiz-category",
         element: <TestPage />,
       },
+      {
+        path:"test-category/:sub",
+        element:<SubCategoryList/>
+      }
       // {
       //   path: "user-my-purchase",
       //   element: <PurchasePage />,
