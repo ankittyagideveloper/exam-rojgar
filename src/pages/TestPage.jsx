@@ -6,7 +6,7 @@ const TestPage = () => {
   const navigate = useNavigate();
   const categories = [
     {
-      id: "test1`",
+      id: "test1",
       image:
         "https://snwallah.com/assets/categories/0956768f1fd62a59c8a4d701e32f1365.png",
       alt: "Accounts Department Test",
