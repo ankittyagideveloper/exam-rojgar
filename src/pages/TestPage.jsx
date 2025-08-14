@@ -6,30 +6,30 @@ const TestPage = () => {
   const navigate = useNavigate();
   const categories = [
     {
-      id: "100",
+      id: "test1`",
       image:
         "https://snwallah.com/assets/categories/0956768f1fd62a59c8a4d701e32f1365.png",
       alt: "Accounts Department Test",
       title: "Rly Accounts Dept.2A, 3A, LDCE",
     },
     {
-      id: "101",
+      id: "test2",
       image:
         "https://snwallah.com/assets/categories/0956768f1fd62a59c8a4d701e32f1365.png",
       alt: "Railway Group B Post Test",
       title: "RAILWAY GROUP B POST",
     },
     {
-      id: "102",
+      id: "test3",
       image:
         "https://snwallah.com/assets/categories/ca9ef0193155e688cce675ac58c54f45.jpg",
       alt: "Railway LDCE GDCE Test",
       title: "RAILWAY LDCE, GDCE",
     },
     {
-      id: "103",
+      id: "test4",
       image:
-        "https://snwallah.com/assets/categories/ca9ef0193155e688cce675ac58c54f45.jpg",
+        "https://snwallah.com/assets/categories/7874d5a8adead5b478cb3b58122fe186.png",
       alt: "Practice Test",
       title: "PRACTICE TEST",
     },
