@@ -8,7 +8,7 @@ const TestPage = () => {
     {
       id: "test1",
       image:
-        "https://snwallah.com/assets/categories/0956768f1fd62a59c8a4d701e32f1365.png",
+        "https://snwallah.com/assets/categories/7bb60bd5d40c5422e282de3c440954ef.png",
       alt: "Accounts Department Test",
       title: "Rly Accounts Dept.2A, 3A, LDCE",
     },
