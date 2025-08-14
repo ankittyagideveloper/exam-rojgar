@@ -1,15 +1,15 @@
 // SubCategoryList.tsx
-import { useSearchParams } from "react-router-dom";
-import { subcategories } from "../data";
+// import { useSearchParams } from "react-router-dom";
+// import { subcategories } from "../data";
 
 export default function SubCategoryList() {
-  const [searchParams] = useSearchParams();
-  const catId = Number(searchParams.get("catid"));
-  const subcats = subcategories[catId] || [];
+  //   const [searchParams] = useSearchParams();
+  //   const catId = Number(searchParams.get("catid"));
+  //   const subcats = subcategories[catId] || [];
 
   return (
     <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-      {subcats.length > 0 ? (
+      {/* {subcats.length > 0 ? (
         subcats.map((sub) => (
           <div
             key={sub.id}
@@ -21,7 +21,7 @@ export default function SubCategoryList() {
         ))
       ) : (
         <p>No tests found for this category.</p>
-      )}
+      )} */}
     </div>
   );
 }
