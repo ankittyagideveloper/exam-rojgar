@@ -26,9 +26,9 @@ const router = createBrowserRouter([
         element: <TestPage />,
       },
       {
-        path:"test-category/:sub",
-        element:<SubCategoryList/>
-      }
+        path: "test-category/:sub",
+        element: <SubCategoryList />,
+      },
       // {
       //   path: "user-my-purchase",
       //   element: <PurchasePage />,
