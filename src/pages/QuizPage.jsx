@@ -5,9 +5,8 @@ const QuizPage = () => {
   useEffect(() => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
-    }
-    if (!document.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen();
+    } else if (!document.webkitEnterFullscreen) {
+      document.documentElement.webkitEnterFullscreen();
     }
 
     return () => {
