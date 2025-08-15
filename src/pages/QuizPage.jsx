@@ -6,6 +6,9 @@ const QuizPage = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
     }
+    if (!document.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen();
+    }
 
     return () => {
       document.exitFullscreen();
