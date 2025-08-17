@@ -2,7 +2,7 @@ import React from "react";
 import TestCard from "../component/TestCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mockData } from "./mockData";
-
+import { motion } from "motion/react";
 const TestPage = () => {
   const location = useLocation();
   const pathSegments = location.pathname
@@ -61,6 +61,7 @@ const TestPage = () => {
   const handleTest = (id) => {
     navigate(`/all-test/${id}`);
   };
+
   return (
     <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
       {/* {categories.map((test, index) => (
