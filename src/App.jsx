@@ -6,7 +6,6 @@ import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
-import SubCategoryList from "./component/SubCategoryList";
 
 const router = createBrowserRouter([
   {
@@ -18,17 +17,14 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "test-category",
+        path: "test-category/*",
         element: <TestPage />,
       },
       {
-        path: "quiz-category",
+        path: "quiz-category/*",
         element: <TestPage />,
       },
-      {
-        path: "test-category/:sub",
-        element: <SubCategoryList />,
-      },
+
       // {
       //   path: "user-my-purchase",
       //   element: <PurchasePage />,
@@ -51,8 +47,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      {/* <HomePage />
-      <div className="my-10"></div> */}
       <RouterProvider router={router} />
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Home,
   FileText,
@@ -10,7 +10,20 @@ import { Link, useLocation } from "react-router-dom";
 
 const BottomNavigation = () => {
   const location = useLocation();
-  console.log(location);
+
+  useEffect(() => {
+    const path = location.pathname;
+
+    if (path === "/") {
+      setActiveTab("home");
+    } else if (path.startsWith("/test-category")) {
+      setActiveTab("test");
+    } else if (path.startsWith("/quiz-category")) {
+      setActiveTab("quiz");
+    } else if (path.startsWith("/pdf-category")) {
+      setActiveTab("pdfs");
+    }
+  }, [location.pathname]);
   const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
