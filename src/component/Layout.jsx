@@ -37,7 +37,7 @@ const Layout = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed  bottom-15 md:bottom-8 right-8 bg-[#008080] hover:bg-[#008080] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300 z-50"
+          className="fixed cursor-pointer  bottom-15 md:bottom-8 right-8 bg-[#008080] hover:bg-[#008080] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300 z-50"
           aria-label="Scroll to top"
         >
           <MoveUp size={24} />
