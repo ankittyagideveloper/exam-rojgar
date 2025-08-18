@@ -7,7 +7,7 @@ export default function TestCard2(props) {
       className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 w-full mx-auto h-full"
       style={{
         background:
-          "linear-gradient(rgba(144, 19, 254, 0.2) 0%, rgba(255, 255, 255, 0) 30%, white 100%)",
+          "linear-gradient(rgba(0, 128, 128, 0.2) 0%, rgba(255, 255, 255, 0) 30%, white 100%)",
         padding: "1rem",
         maxWidth: "280px",
       }}
