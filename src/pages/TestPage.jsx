@@ -66,8 +66,9 @@ const TestPage = () => {
   };
 
   return (
-    <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-      {/* {categories.map((test, index) => (
+    <>
+      <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        {/* {categories.map((test, index) => (
         <TestCard
           onClick={() => handleTest(test.id)}
           key={index}
@@ -76,24 +77,74 @@ const TestPage = () => {
           title={test.title}
         />
       ))} */}
-      {/* Root level → show Engineering, Medical, etc. */}
-      {isRoot &&
-        Object.values(mockData.categories).map((cat, i) => (
-          // <Link
-          //   key={cat.id}
-          //   to={`/test-category/${cat.slug}`}
-          //   style={{
-          //     border: "1px solid #ddd",
-          //     padding: "16px",
-          //     borderRadius: "8px",
-          //     textDecoration: "none",
-          //     width: "200px",
-          //   }}
-          // >
-          //   <h3>{cat.name}</h3>
-          //   <p>{cat.description}</p>
-          // </Link>
-          <>
+        {/* Root level → show Engineering, Medical, etc. */}
+        {isRoot &&
+          Object.values(mockData.categories).map((cat, i) => (
+            // <Link
+            //   key={cat.id}
+            //   to={`/test-category/${cat.slug}`}
+            //   style={{
+            //     border: "1px solid #ddd",
+            //     padding: "16px",
+            //     borderRadius: "8px",
+            //     textDecoration: "none",
+            //     width: "200px",
+            //   }}
+            // >
+            //   <h3>{cat.name}</h3>
+            //   <p>{cat.description}</p>
+            // </Link>
+            <>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 50 }} // start faded & lower
+                animate={{ opacity: 1, y: 0 }} // animate to normal
+                transition={{
+                  duration: 0.8, // slow upward movement
+                  ease: "easeOut",
+                }}
+              >
+                {/* <TestCard
+                onClick={() => navigate(`/test-category/${cat.slug}`)}
+                key={cat.id}
+                image={cat.image}
+                alt={cat.alt}
+                title={cat.title}
+              /> */}
+
+                <TestCard2
+                  key={cat.id}
+                  // icon={card.icon}
+                  studentCount={100}
+                  title={cat.title}
+                  progress={0}
+                  total={1}
+                  percentage={1}
+                  onGoToTest={() => {
+                    navigate(`/test-category/${cat.slug}`);
+                  }}
+                />
+              </motion.div>
+            </>
+          ))}
+        {/* Subcategories */}
+        {!isRoot &&
+          current.subcategories &&
+          Object.values(current.subcategories).map((sub, i) => (
+            // <Link
+            //   key={sub.id}
+            //   to={`/test-category/${[...pathSegments, sub.slug].join("/")}`}
+            //   style={{
+            //     border: "1px solid #ddd",
+            //     padding: "16px",
+            //     borderRadius: "8px",
+            //     textDecoration: "none",
+            //     width: "200px",
+            //   }}
+            // >
+            //   <h3>{sub.name}</h3>
+            //   <p>{sub.description}</p>
+            // </Link>
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 50 }} // start faded & lower
@@ -103,91 +154,43 @@ const TestPage = () => {
                 ease: "easeOut",
               }}
             >
-              {/* <TestCard
-                onClick={() => navigate(`/test-category/${cat.slug}`)}
-                key={cat.id}
-                image={cat.image}
-                alt={cat.alt}
-                title={cat.title}
-              /> */}
-
-              <TestCard2
-                key={cat.id}
-                // icon={card.icon}
-                studentCount={100}
-                title={cat.title}
-                progress={0}
-                total={1}
-                percentage={1}
-                onGoToTest={() => {
-                  navigate(`/test-category/${cat.slug}`);
-                }}
+              <TestCard
+                onClick={() =>
+                  navigate(
+                    `/test-category/${[...pathSegments, sub.slug].join("/")}`
+                  )
+                }
+                key={sub.id}
+                image={sub.image}
+                alt={sub.alt}
+                title={sub.title}
               />
             </motion.div>
-          </>
-        ))}
-      {/* Subcategories */}
-      {!isRoot &&
-        current.subcategories &&
-        Object.values(current.subcategories).map((sub, i) => (
-          // <Link
-          //   key={sub.id}
-          //   to={`/test-category/${[...pathSegments, sub.slug].join("/")}`}
-          //   style={{
-          //     border: "1px solid #ddd",
-          //     padding: "16px",
-          //     borderRadius: "8px",
-          //     textDecoration: "none",
-          //     width: "200px",
-          //   }}
-          // >
-          //   <h3>{sub.name}</h3>
-          //   <p>{sub.description}</p>
-          // </Link>
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 50 }} // start faded & lower
-            animate={{ opacity: 1, y: 0 }} // animate to normal
-            transition={{
-              duration: 0.8, // slow upward movement
-              ease: "easeOut",
-            }}
-          >
-            <TestCard
-              onClick={() =>
-                navigate(
-                  `/test-category/${[...pathSegments, sub.slug].join("/")}`
-                )
-              }
-              key={sub.id}
-              image={sub.image}
-              alt={sub.alt}
-              title={sub.title}
+          ))}
+      </div>
+      <div className="mx-4 flex flex-col gap-4">
+        {/* Tests */}
+        {!isRoot &&
+          current.tests &&
+          current.tests.map((test) => (
+            // <button onClick={() => handleTest(test.id)} key={test.id}>
+            //   {test.title} ({test.difficulty})
+            // </button>
+            <QuizCard
+              title={test.title}
+              date="08 Aug 2025"
+              questions={50}
+              marks={100}
+              duration={60}
+              languages={["English", "Hindi"]}
+              userCount="45.8k"
+              isFree={false}
+              isNewInterface={false}
+              onStartClick={() => handleTest(test.id)}
             />
-          </motion.div>
-        ))}
-
-      {/* Tests */}
-      {!isRoot &&
-        current.tests &&
-        current.tests.map((test) => (
-          // <button onClick={() => handleTest(test.id)} key={test.id}>
-          //   {test.title} ({test.difficulty})
-          // </button>
-          <QuizCard
-            title={test.title}
-            date="08 Aug 2025"
-            questions={50}
-            marks={100}
-            duration={60}
-            languages={["English", "Hindi"]}
-            userCount="45.8k"
-            isFree={false}
-            isNewInterface={false}
-            onStartClick={handleTest(test.id)}
-          />
-        ))}
-    </div>
+          ))}
+      </div>
+    </>
   );
 };
 
