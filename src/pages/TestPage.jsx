@@ -3,6 +3,8 @@ import TestCard from "../component/TestCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mockData } from "./mockData";
 import { motion } from "motion/react";
+import TestCard2 from "../component/TestCard2";
+
 const TestPage = () => {
   const location = useLocation();
   const pathSegments = location.pathname
@@ -100,12 +102,25 @@ const TestPage = () => {
                 ease: "easeOut",
               }}
             >
-              <TestCard
+              {/* <TestCard
                 onClick={() => navigate(`/test-category/${cat.slug}`)}
                 key={cat.id}
                 image={cat.image}
                 alt={cat.alt}
                 title={cat.title}
+              /> */}
+
+              <TestCard2
+                key={cat.id}
+                // icon={card.icon}
+                studentCount={100}
+                title={cat.title}
+                progress={0}
+                total={1}
+                percentage={1}
+                onGoToTest={() => {
+                  navigate(`/test-category/${cat.slug}`);
+                }}
               />
             </motion.div>
           </>
@@ -158,6 +173,20 @@ const TestPage = () => {
           <button onClick={() => handleTest(test.id)} key={test.id}>
             {test.title} ({test.difficulty})
           </button>
+
+          // <QuizCard
+          //   key={index}
+          //   title={test.title}
+          //   questions={100}
+          //   marks={200}
+          //   duration={30}
+          //   languages={["English"]}
+          //   userCount={100}
+          //   rating={4.2}
+          //   isFree={true}
+          //   isNew={true}
+          //   onStartClick={() => handleTest(test.id)}
+          // />
         ))}
     </div>
   );
