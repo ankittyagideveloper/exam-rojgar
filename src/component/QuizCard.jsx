@@ -1,107 +1,132 @@
-import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Clock, FileText, Award, Languages, Star } from "lucide-react";
+"use client";
 
-const QuizCard = ({
+export function QuizCard({
   title,
+  date,
   questions,
   marks,
   duration,
   languages,
   userCount,
-  rating,
   isFree = false,
-  isNew = false,
+  isNewInterface = false,
   onStartClick,
-}) => {
+}) {
+  const formatLanguages = (langs) => {
+    if (langs.length <= 2) {
+      return langs.join(", ");
+    }
+    const displayed = langs.slice(0, 2);
+    const remaining = langs.length - 2;
+    return `${displayed.join(", ")} + ${remaining} More`;
+  };
+
   return (
-    <Card className="p-3 sm:p-4 bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 group">
-      {/* Badges */}
-      <div className="flex gap-2 mb-2 sm:mb-3">
-        {isFree && (
-          <Badge
-            variant="success"
-            className="text-xs font-medium px-2 py-1 rounded"
+    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+      {/* Mobile Layout */}
+      <div className="md:hidden">
+        {/* Badges */}
+        <div className="flex gap-2 mb-3">
+          {isFree && (
+            <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
+              FREE
+            </span>
+          )}
+          {isNewInterface && (
+            <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
+              NEW INTERFACE
+            </span>
+          )}
+        </div>
+
+        {/* Title and Button */}
+        <div className="flex justify-between items-start gap-3 mb-3">
+          <h3 className="text-sm font-medium text-gray-900 leading-tight flex-1">
+            {title}
+          </h3>
+          <button
+            onClick={onStartClick}
+            className="bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap"
           >
-            FREE
-          </Badge>
-        )}
-        {isNew && (
-          <Badge
-            variant="info"
-            className="text-xs font-medium px-2 py-1 rounded"
-          >
-            NEW INTERFACE
-          </Badge>
-        )}
+            Start Now
+          </button>
+        </div>
+
+        {/* Quiz Details */}
+        <div className="text-xs text-gray-500 mb-3">
+          {questions} Qs • {marks} Marks • {duration} Mins
+        </div>
+
+        {/* Languages */}
+        <div className="flex items-center text-xs text-cyan-500">
+          <span className="mr-1">🏳️</span>
+          {formatLanguages(languages)}
+        </div>
       </div>
 
-      {/* Content Layout */}
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
-        {/* Left Content */}
-        <div className="flex-1 space-y-2 sm:space-y-3">
-          {/* Title */}
-          <div>
-            <h3 className="text-sm sm:text-base font-medium text-gray-900 leading-tight line-clamp-2 group-hover:text-primary transition-colors">
-              {title}
-            </h3>
-            {rating && (
-              <div className="flex items-center gap-1 mt-1">
-                <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                <span className="text-xs font-medium text-gray-700">
-                  {rating}
+      {/* Desktop Layout */}
+      <div className="hidden md:block">
+        <div className="flex items-center justify-between">
+          <div className="flex-1">
+            {/* Badges */}
+            <div className="flex gap-2 mb-3">
+              {isFree && (
+                <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  FREE
                 </span>
-                <span className="text-xs text-gray-500">{userCount} Users</span>
-              </div>
-            )}
-          </div>
-
-          {/* Quiz Details - Single Row */}
-          <div className="flex items-center gap-4 text-xs text-gray-500">
-            <div className="flex items-center gap-1">
-              <FileText className="h-3 w-3" />
-              <span>{questions} Qs</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Award className="h-3 w-3" />
-              <span>{marks} Marks</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="h-3 w-3" />
-              <span>{duration} Mins</span>
-            </div>
-          </div>
-
-          {/* Languages */}
-          <div className="flex items-center gap-2">
-            <Languages className="h-3 w-3 text-primary" />
-            <div className="text-xs text-primary font-medium">
-              {languages.slice(0, 2).join(", ")}
-              {languages.length > 2 && (
-                <span className="text-gray-500">
-                  {" "}
-                  + {languages.length - 2} More
+              )}
+              {isNewInterface && (
+                <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                  NEW INTERFACE
                 </span>
               )}
             </div>
+
+            {/* Title and User Count */}
+            <div className="flex items-center gap-3 mb-3">
+              <h3 className="text-lg font-medium text-gray-900">{title}</h3>
+              {userCount && (
+                <div className="flex items-center text-sm text-gray-500">
+                  <span className="text-yellow-400 mr-1">⭐</span>
+                  {userCount} Users
+                </div>
+              )}
+            </div>
+
+            {/* Quiz Details */}
+            <div className="flex items-center gap-6 text-sm text-gray-500 mb-3">
+              <div className="flex items-center gap-1">
+                <span className="text-gray-400">❓</span>
+                {questions} Questions
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-gray-400">📋</span>
+                {marks} Marks
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-gray-400">⏱️</span>
+                {duration} Mins
+              </div>
+            </div>
+
+            {/* Languages */}
+            <div className="flex items-center text-sm text-cyan-500">
+              <span className="mr-2">🏳️</span>
+              {formatLanguages(languages)}
+            </div>
+          </div>
+
+          {/* Start Button */}
+          <div className="ml-6">
+            <button
+              onClick={onStartClick}
+              className="bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-8 py-3 rounded-lg transition-colors"
+            >
+              Start Now
+            </button>
           </div>
         </div>
-
-        {/* Right Action Button */}
-        <div className="flex sm:flex-shrink-0">
-          <Button
-            onClick={onStartClick}
-            size="sm"
-            className="w-full sm:w-auto px-4 py-2 bg-primary hover:bg-primary-hover text-white font-medium text-xs rounded transition-colors"
-          >
-            Start Now
-          </Button>
-        </div>
       </div>
-    </Card>
+    </div>
   );
-};
-
-export default QuizCard;
+}

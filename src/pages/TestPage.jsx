@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { mockData } from "./mockData";
 import { motion } from "motion/react";
 import TestCard2 from "../component/TestCard2";
+import { QuizCard } from "../component/QuizCard";
 
 const TestPage = () => {
   const location = useLocation();
@@ -170,23 +171,21 @@ const TestPage = () => {
       {!isRoot &&
         current.tests &&
         current.tests.map((test) => (
-          <button onClick={() => handleTest(test.id)} key={test.id}>
-            {test.title} ({test.difficulty})
-          </button>
-
-          // <QuizCard
-          //   key={index}
-          //   title={test.title}
-          //   questions={100}
-          //   marks={200}
-          //   duration={30}
-          //   languages={["English"]}
-          //   userCount={100}
-          //   rating={4.2}
-          //   isFree={true}
-          //   isNew={true}
-          //   onStartClick={() => handleTest(test.id)}
-          // />
+          // <button onClick={() => handleTest(test.id)} key={test.id}>
+          //   {test.title} ({test.difficulty})
+          // </button>
+          <QuizCard
+            title={test.title}
+            date="08 Aug 2025"
+            questions={50}
+            marks={100}
+            duration={60}
+            languages={["English", "Hindi"]}
+            userCount="45.8k"
+            isFree={false}
+            isNewInterface={false}
+            onStartClick={handleTest(test.id)}
+          />
         ))}
     </div>
   );
