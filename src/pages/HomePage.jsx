@@ -3,7 +3,6 @@ import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     {
       title: "Appendix 2A",

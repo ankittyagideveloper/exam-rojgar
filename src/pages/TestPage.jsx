@@ -97,10 +97,10 @@ const TestPage = () => {
             <>
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 50 }} // start faded & lower
+                initial={{ opacity: 0, y: 20 }} // start faded & lower
                 animate={{ opacity: 1, y: 0 }} // animate to normal
                 transition={{
-                  duration: 0.8, // slow upward movement
+                  duration: 0.4, // slow upward movement
                   ease: "easeOut",
                 }}
               >
@@ -147,7 +147,7 @@ const TestPage = () => {
             // </Link>
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }} // start faded & lower
+              initial={{ opacity: 0, y: 20 }} // start faded & lower
               animate={{ opacity: 1, y: 0 }} // animate to normal
               transition={{
                 duration: 0.8, // slow upward movement
@@ -184,8 +184,8 @@ const TestPage = () => {
               duration={60}
               languages={["English", "Hindi"]}
               userCount="45.8k"
-              isFree={false}
-              isNewInterface={false}
+              isFree={true}
+              isNewInterface={true}
               onStartClick={() => handleTest(test.id)}
             />
           ))}

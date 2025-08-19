@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bottom-15 left-0 right-0 bg-[#008080] text-white py-8 mt-auto">
+    <footer className="relative bottom-15 lg:bottom-0 left-0 right-0 bg-[#008080] text-white py-8 mt-auto">
       <div className="container mx-auto px-4">
         {/* Logo and Brand */}
         <div className="text-center mb-6">
