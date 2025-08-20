@@ -11,4 +11,14 @@ export default defineConfig({
       "@": path.resolve("./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://examrojgar-v1.onrender.com",
+        changeOrigin: true,
+        secure: false,
+        // rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });
