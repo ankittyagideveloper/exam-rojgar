@@ -1,17 +1,4 @@
 export default function Loader() {
-  //   const [isLoading, setIsLoading] = useState(true);
-
-  //   useEffect(() => {
-  //     // Simulate loading time - you can adjust this or tie it to actual loading events
-  //     const timer = setTimeout(() => {
-  //       setIsLoading(false);
-  //     }, 2500);
-
-  //     return () => clearTimeout(timer);
-  //   }, []);
-
-  //   if (!isLoading) return null;
-
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
