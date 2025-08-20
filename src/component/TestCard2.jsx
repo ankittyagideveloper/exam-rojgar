@@ -14,7 +14,7 @@ export default function TestCard2(props) {
     >
       <div className="flex items-start justify-between mb-3">
         <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-white text-xs font-semibold">
-          {icon}
+          {icon ? <img src={icon} alt={title} /> : icon}
         </div>
         <div className="flex items-center gap-1">
           <span className="text-yellow-500 text-xs">⚡</span>

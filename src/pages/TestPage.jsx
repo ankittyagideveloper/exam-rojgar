@@ -114,7 +114,7 @@ const TestPage = () => {
 
                 <TestCard2
                   key={cat.id}
-                  // icon={card.icon}
+                  icon={cat.image}
                   studentCount={100}
                   title={cat.title}
                   progress={0}

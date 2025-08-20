@@ -38,16 +38,13 @@ const Layout = () => {
   //   .catch((error) => console.error("Error:", error)); // Handle errors
 
   const data = {
-    username: "ankit",
+    username: "ankit1",
     email: "tyagiankit2@gmail.com",
     password: "testpass",
   };
-  const API_URL = "/api";
-  // import.meta.env.MODE === "development"
-  //   ? "/api"
-  //   : "https://examrojgar-v1.onrender.com";
+
   axios
-    .post(API_URL + "/auth/register", data, {
+    .post("https://examrojgar-v1.onrender.com/api/auth/register", data, {
       headers: {
         "Content-Type": "application/json",
       },
