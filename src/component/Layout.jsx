@@ -38,13 +38,16 @@ const Layout = () => {
   //   .catch((error) => console.error("Error:", error)); // Handle errors
 
   const data = {
-    username: "ankit1",
+    username: "ankit",
     email: "tyagiankit2@gmail.com",
     password: "testpass",
   };
-
+  const API_URL =
+    import.meta.env.MODE === "development"
+      ? "/api"
+      : "https://examrojgar-v1.onrender.com";
   axios
-    .post("api/auth/register", data, {
+    .post(API_URL + "/auth/register", data, {
       headers: {
         "Content-Type": "application/json",
       },
