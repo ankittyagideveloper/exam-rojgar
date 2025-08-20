@@ -14,9 +14,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://exam-rojgar.netlify.app",
+        target: "https://examrojgar-v1.onrender.com",
         changeOrigin: true,
-        secure: false,
+        secure: true,
         // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
