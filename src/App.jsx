@@ -6,6 +6,8 @@ import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
+import { useEffect, useState } from "react";
+import Loader from "./component/Loader";
 
 const router = createBrowserRouter([
   {
@@ -45,11 +47,18 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time - you can adjust this or tie it to actual loading events
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return <>{isLoading ? <Loader /> : <RouterProvider router={router} />}</>;
 }
 
 export default App;
