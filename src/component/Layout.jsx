@@ -42,10 +42,10 @@ const Layout = () => {
     email: "tyagiankit2@gmail.com",
     password: "testpass",
   };
-  const API_URL =
-    import.meta.env.MODE === "development"
-      ? "/api"
-      : "https://examrojgar-v1.onrender.com";
+  const API_URL = "/api";
+  // import.meta.env.MODE === "development"
+  //   ? "/api"
+  //   : "https://examrojgar-v1.onrender.com";
   axios
     .post(API_URL + "/auth/register", data, {
       headers: {
