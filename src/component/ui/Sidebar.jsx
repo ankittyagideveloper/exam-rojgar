@@ -82,11 +82,11 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         )}
         {...props}
       >
-        <div className="flex justify-between z-20 w-full">
+        <div className="flex items-center justify-between z-20 w-full h-16 px-5 ">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="px-5 font-medium whitespace-pre text-black dark:text-white"
+            className="font-medium whitespace-pre text-black dark:text-white"
           >
             Exam Rojgar
           </motion.span>

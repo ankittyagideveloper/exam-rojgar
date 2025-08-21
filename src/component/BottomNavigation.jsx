@@ -58,7 +58,7 @@ const BottomNavigation = () => {
                 }`}
               >
                 <Icon
-                  className={`w-6 h-6 mb-1 ${
+                  className={`w-4 h-4 mb-1 ${
                     isActive ? "text-teal-600" : "text-gray-500"
                   }`}
                 />
