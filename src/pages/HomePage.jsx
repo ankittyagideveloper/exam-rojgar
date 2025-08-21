@@ -1,33 +1,34 @@
 import React, { useState } from "react";
 import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import Slider from "../component/Slider";
 
 function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      title: "Appendix 2A",
-      subtitle: "Click here",
-      color: "from-teal-600 to-teal-700",
-    },
-    {
-      title: "Railway Exams",
-      subtitle: "Start Practice",
-      color: "from-blue-600 to-blue-700",
-    },
-    {
-      title: "SSC Preparation",
-      subtitle: "Begin Test",
-      color: "from-purple-600 to-purple-700",
-    },
-  ];
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // const slides = [
+  //   {
+  //     title: "Appendix 2A",
+  //     subtitle: "Click here",
+  //     color: "from-teal-600 to-teal-700",
+  //   },
+  //   {
+  //     title: "Railway Exams",
+  //     subtitle: "Start Practice",
+  //     color: "from-blue-600 to-blue-700",
+  //   },
+  //   {
+  //     title: "SSC Preparation",
+  //     subtitle: "Begin Test",
+  //     color: "from-purple-600 to-purple-700",
+  //   },
+  // ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % slides.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  // };
 
   return (
     <div className="min-h-screen bg-gray-100 pb-20">
@@ -48,66 +49,7 @@ function HomePage() {
         </div>
 
         {/* App Preview Card */}
-        <div className="relative mb-8">
-          <div
-            className={`bg-gradient-to-br ${slides[currentSlide].color} rounded-3xl p-6 text-white relative overflow-hidden`}
-          >
-            {/* Google Play Badge */}
-            <div className="flex items-center gap-2 mb-6">
-              <Play className="w-6 h-6 text-white" />
-              <div className="bg-white text-gray-800 px-3 py-1 rounded-full">
-                <span className="text-sm font-semibold text-red-600">
-                  SNW Test Series
-                </span>
-              </div>
-              <div className="bg-white/20 text-white px-3 py-1 rounded-full ml-auto">
-                <span className="text-sm">Bilingual</span>
-                <div className="text-xs">(Hindi+English)</div>
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="text-center py-8">
-              <div className="bg-white text-gray-800 rounded-full px-8 py-4 mb-6 inline-block">
-                <h4 className="text-2xl font-bold text-red-600">
-                  {slides[currentSlide].title}
-                </h4>
-              </div>
-              <div className="bg-white text-gray-800 rounded-full px-8 py-3 inline-block">
-                <span className="text-xl font-bold text-teal-700">
-                  {slides[currentSlide].subtitle}
-                </span>
-              </div>
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
-
-            {/* Slide Indicators */}
-            <div className="flex justify-center gap-2 mt-4">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentSlide ? "bg-white" : "bg-white/40"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <Slider />
 
         {/* Features Grid */}
         <div className="grid grid-cols-2 gap-4 mb-8">
