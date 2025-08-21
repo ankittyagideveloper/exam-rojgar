@@ -1,3 +1,4 @@
+import { IconUserCircle } from "@tabler/icons-react";
 import { Menu } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -15,9 +16,9 @@ const Header = () => {
             <p className="text-xs text-gray-600">TEST SERIES</p>
           </div>
         </Link>
-        <button className="p-2">
-          <Menu className="w-6 h-6 text-gray-600" />
-        </button>
+        {/* <button className="p-2">
+          <IconUserCircle className="w-6 h-6 text-gray-600" />
+        </button> */}
       </header>
     </>
   );

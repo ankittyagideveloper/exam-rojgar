@@ -2,7 +2,7 @@
 import { cn } from "../utils/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX, IconUserCircle } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
 const SidebarContext = createContext(undefined);
@@ -83,17 +83,20 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         {...props}
       >
         <div className="flex items-center justify-between z-20 w-full h-16 px-5 ">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="font-medium whitespace-pre text-black dark:text-white"
-          >
-            Exam Rojgar
-          </motion.span>
-          <IconMenu2
-            className="text-neutral-800 dark:text-neutral-200"
-            onClick={() => setOpen(!open)}
-          />
+          <div className="flex flex-row gap-2 items-center ">
+            <IconMenu2
+              className="text-neutral-800 dark:text-neutral-200"
+              onClick={() => setOpen(!open)}
+            />
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-xl font-medium whitespace-pre text-black dark:text-white"
+            >
+              Exam Rojgar
+            </motion.span>
+          </div>
+          <IconUserCircle />
         </div>
         <AnimatePresence>
           {open && (
