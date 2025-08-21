@@ -154,7 +154,7 @@ const TestPage = () => {
                 ease: "easeOut",
               }}
             >
-              <TestCard
+              {/* <TestCard
                 onClick={() =>
                   navigate(
                     `/test-category/${[...pathSegments, sub.slug].join("/")}`
@@ -164,6 +164,20 @@ const TestPage = () => {
                 image={sub.image}
                 alt={sub.alt}
                 title={sub.title}
+              /> */}
+              <TestCard2
+                key={sub.id}
+                icon={sub.image}
+                studentCount={100}
+                title={sub.title}
+                progress={0}
+                total={1}
+                percentage={1}
+                onGoToTest={() => {
+                  navigate(
+                    `/test-category/${[...pathSegments, sub.slug].join("/")}`
+                  );
+                }}
               />
             </motion.div>
           ))}
@@ -179,9 +193,9 @@ const TestPage = () => {
             <QuizCard
               title={test.title}
               date="08 Aug 2025"
-              questions={50}
-              marks={100}
-              duration={60}
+              questions={test.questions}
+              marks={test.marks}
+              duration={test.duration}
               languages={["English", "Hindi"]}
               userCount="45.8k"
               isFree={true}

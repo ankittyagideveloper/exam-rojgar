@@ -2142,5 +2142,237 @@
         "explanation": ""
       }
     ]
+  },
+  "5062025-3": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 1200,
+    "questions": [
+      {
+        "id": 1,
+        "question": "A group of numbers and symbols is coded using letter codes as per the codes given below and the conditions that follow. Study the given codes and conditions and answer the question that follows. Note: If none of the conditions apply, then codes for the respective number/symbol are to be followed directly as given in the table.\nNumber/Symbol  3   9   @  &   2   7  5   %    1   8   ∆   4   6\nCode           L  C    Z  M   D   W  A    P   R   T   F   B   K\nConditions:-\n(i) If the first element is a symbol and the last a number, the codes for these two (the first and the last elements) are to be interchanged.\n(ii) If the first element is an odd number and the last an even number, the first and last elements are to be coded as ©.\n(iii) If both second and third elements are perfect squares, the third element is to be coded as the code for the second element.\nWhat will be the code for the following group?\n@ 9 3 8 5",
+        "options": ["Z B C T A", "A C L T Z", "Z C B T A", "A C B T Z"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "In a certain code language,\nA + B means ‘A is the mother of B’,\nA − B means ‘A is the brother of B’,\nA × B means ‘A is the wife of B’ and\nA ÷ B means ‘A is the father of B’.\nHow is M related to Q if ‘M + N × O − P ÷ Q’?",
+        "options": [
+          "Father's brother's wife's sister",
+          "Mother's brother's wife's mother",
+          "Father's brother's wife's mother",
+          "Mother's brother's wife's sister"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "According to the Future of Jobs Report 2025, which of the following is identified as the most transformative trend for businesses by 2030?",
+        "options": [
+          "Health and information processing",
+          "Energy generation and storage",
+          "Broadening digital access",
+          "Robotics and automation"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "What should come in place of the question mark (?) in the given series?\n1001 1000 997 992 985",
+        "options": ["976", "978", "975", "977"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "If '+' means '−', '−' means '×', '×' means '÷' and '÷' means '+', then what will come in place of the question mark (?) in the following equation?\n13 − 780 × 12 ÷ 16 + 32 = ?",
+        "options": ["929", "815", "1232", "829"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "What popular title is used to refer to the Bengali poet Jibanananda Das?",
+        "options": [
+          "Kobiraj of Kolkata",
+          "Jibon Kobi",
+          "Rupashi Banglar Kabi",
+          "Bhasha Shaheed Kabi"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "KF 17 is related to HB 6 in a certain way. In the same way, KH 12 is related to HD 1. To which of the following is LP −6 related following the same logic?",
+        "options": [". IL −17", "MP −13", "PL −19", "HI −18"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "Who among the following received the Padma shri award in 2025 in the category of ‘Others–Spiritualism’ Posthumously?",
+        "options": [
+          "Madugula Nagaphani Sarma",
+          "MD Srinivas",
+          "Libia Lobo Sardesai",
+          "Lama Lobzang"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "Which period in India's demographic history is marked by a sharp decline in mortality and persistently high fertility rates?",
+        "options": [
+          "Phase II (1921–1951)",
+          "Phase IV (1981–2001)",
+          "Phase I (1901–1921)",
+          "Phase III (1951–1981)"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "If the selling price of a bed is 2-times of initial, then the profit is 10-times of initial. Find the initial profit percentage (in %).",
+        "options": ["12.5", "20", "500", "400"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "What is the capital expenditure (CAPEX) allocated for Indian Railways in the financial year 2024-25?",
+        "options": [
+          "₹3.00 lakh crore",
+          "₹2.20 lakh crore",
+          "₹2.62 lakh crore",
+          "₹1.76 lakh crore"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Plan Head 5300 denotes -",
+        "options": [
+          "MTP",
+          "Other specified works",
+          "Customer Amenities",
+          "Bridge work"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "Under the Fifth Schedule, the Governor's regulations in Scheduled Areas can prohibit or restrict which of the following?",
+        "options": [
+          ". Land transfers",
+          "Tax collection",
+          "Freedom of speech",
+          "Water usage"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "What type of memory is used to store data temporarily while a computer is running?",
+        "options": ["Hard Disk", "Cache", "ROM", "RAM"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Which state has the longest coastline in mainland India?",
+        "options": [". Andhra Pradesh", "Maharashtra", "Gujarat", "Tamil Nadu"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "A body of mass 10 kg is moving with a uniform velocity of 5 m/s. What is the net force acting on it?",
+        "options": ["10N", "2N", "3N", "50N"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "How many unique characters can be represented using the standard ASCII code?",
+        "options": ["256", "512", "64", "128"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "In a bag containing red, green, and pink tokens, the ratio of red to green tokens was 7 : 20, while the ratio of pink to red tokens was 15 : 12. What was the ratio of green to pink tokens?",
+        "options": ["16 : 7", "19 : 12", "25 : 7", "11 : 5"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "This question is based on the five, three-digit numbers given below.\n (Left) 662 268 547 409 909 (Right)\n(Example: 697 – First digit = 6, second digit = 9 and third digit = 7)\n(NOTE: All operations to be done from left to right.)\nWhat will be the resultant if the third digit of the highest number is subtracted from the first digit of the lowest number?",
+        "options": ["−7", "-6", "-4", "-8"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "Select the pair that follows the same pattern as that followed by the two sets of pairs given below. Both pairs follow the same pattern.\nPIL : TMP\nNAP : RET",
+        "options": ["SPL : WLH", "SWT : WAX", "BGM : GKQ", "NLI : JPM"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Two pipes, A and B, can fill a tank of 7800 litres in 12 hours and 10 hours, respectively. If they are opened together, how many hours will they take to fill an empty tank of 8800 litres?",
+        "options": ["70/30 Hrs)", "88/13 Hrs)", "89/13 Hrs", "80/13 Hrs"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "Which of the following numbers is divisible by 7?",
+        "options": ["87", "894", "875", "687"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "Given are the ages (in years) of five people: 20, 30, 35, 40 and 45. Calculate the average age in years",
+        "options": ["34", "30", "32.5", "35"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "The Waqf (Amendment) Act, 2025 introduced which significant change to the composition of Waqf Boards?",
+        "options": [
+          "Privatisation of Waqf properties",
+          "Exemption from government audits",
+          "Inclusion of non-Muslim members",
+          "Abolition of State Waqf Boards"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "Which writer authored 'Baluta', recognised as the pioneering Dalit autobiographical work in the Marathi language?",
+        "options": [
+          "Daya Pawar",
+          "Sharankumar Limbale",
+          "Omprakash Valmiki",
+          "Namdeo Dhasal"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      }
+    ]
   }
 }

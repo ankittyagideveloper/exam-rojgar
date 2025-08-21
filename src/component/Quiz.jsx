@@ -379,7 +379,7 @@ export default function QuizComponent() {
             </CardHeader> */}
             <CardContent className="space-y-4">
               <div className="space-y-3">
-                <h3 className="font-medium text-lg">
+                <h3 className="font-medium text-lg whitespace-pre-line">
                   {currentQuestion + 1}. {currentQuestionData.question}
                 </h3>
 
