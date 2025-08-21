@@ -23,7 +23,7 @@ const Slider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="w-full h-full rounded-2xl my-4"
       >
