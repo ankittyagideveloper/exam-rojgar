@@ -2602,7 +2602,7 @@
       {
         "id": 56,
         "question": "If the ratio of two numbers is 5 : 3 and the product of their LCM and their HCF is 135, then the sum of the reciprocals of the LCM and the HCF is:",
-        "options": ["16 73 16 ", "   ", "", "16 45 16 61"],
+        "options": ["16 73 16", "   ", "", "16 45 16 61"],
         "correctAnswer": "3",
         "explanation": ""
       },
@@ -2719,7 +2719,7 @@
           "# = GCH, % = TPU",
           "# = FDH, % = NHU",
           "# = UPS, % = RPV",
-          "# = DCV, % = NHY "
+          "# = DCV, % = NHY"
         ],
         "correctAnswer": "1",
         "explanation": ""
@@ -2765,7 +2765,7 @@
       {
         "id": 75,
         "question": "This question is based on the five, three-digit numbers given below. (Left) 401 418 733 283 902 (Right) (Example: 697 – First digit = 6, second digit = 9 and third digit = 7) (NOTE: All operations to be done from left to right.) What will be the resultant if the second digit of the highest number is added to the third digit of the lowest number?",
-        "options": ["6", "2", "4 ", "3    "],
+        "options": ["6", "2", "4", "3"],
         "correctAnswer": "4",
         "explanation": ""
       },
@@ -2909,7 +2909,7 @@
       {
         "id": 90,
         "question": "Find the surface area of a sphere whose diameter is equal to 98 cm",
-        "options": ["29,256 cm2", "33,284 cm2 ", "   ", "30,184 cm2"],
+        "options": ["29,256 cm2", "33,284 cm2", "   ", "30,184 cm2"],
         "correctAnswer": "4",
         "explanation": ""
       },
@@ -2954,7 +2954,7 @@
       {
         "id": 95,
         "question": "What will come in the place of the question mark (?) in the following equation, if ‘+’ and ‘−‘ are interchanged and ‘×’ and ‘÷’ are interchanged? 38 ÷ 21 + 436 × 4 − 73 = ?",
-        "options": ["762 ", "763    ", "761", "764"],
+        "options": ["762", "763", "761", "764"],
         "correctAnswer": "1",
         "explanation": ""
       },
@@ -2994,7 +2994,7 @@
       {
         "id": 100,
         "question": "If 2 is added to each even digit and 2 is added to each odd digit in the number 5217643, what will be the sum of the first digit from the left and the first digit from the right in the new number thus formed?",
-        "options": ["11 ", "13    ", "10", "12"],
+        "options": ["11", "13", "10", "12"],
         "correctAnswer": "4",
         "explanation": ""
       }
