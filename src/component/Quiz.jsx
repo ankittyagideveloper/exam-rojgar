@@ -83,7 +83,7 @@ export default function QuizComponent() {
         index === questionIndex
           ? {
               ...answer,
-              selectedOption: optionIndex,
+              selectedOption: optionIndex + 1,
               status: "attempted",
               timeSpent: answer.timeSpent + timeSpent,
             }
@@ -253,6 +253,7 @@ export default function QuizComponent() {
               <h3 className="text-xl font-semibold">Detailed Analysis</h3>
               {quizData.questions.map((question, index) => {
                 const userAnswer = userAnswers[index];
+                debugger;
                 const isCorrect =
                   userAnswer.selectedOption ===
                   parseInt(question.correctAnswer);
