@@ -2527,7 +2527,7 @@
       {
         "id": 46,
         "question": "In February 2025, Muthoot Finance has received RBI approval to open how many new branches across India, strengthening its presence in the gold loan market?",
-        "options": ["120", "110", "125  ", "115  "],
+        "options": ["120", "110", "125", "115"],
         "correctAnswer": "4",
         "explanation": ""
       },
@@ -2565,8 +2565,8 @@
         "options": [
           "Odisha to Karnataka",
           "Gujarat to Kerala",
-          "West Bengal to Tamil Nadu ",
-          "Maharashtra to Andhra Pradesh    "
+          "West Bengal to Tamil Nadu",
+          "Maharashtra to Andhra Pradesh"
         ],
         "correctAnswer": "3",
         "explanation": ""
@@ -2995,7 +2995,7 @@
         "id": 100,
         "question": "If 2 is added to each even digit and 2 is added to each odd digit in the number 5217643, what will be the sum of the first digit from the left and the first digit from the right in the new number thus formed?",
         "options": ["11", "13", "10", "12"],
-        "correctAnswer": "4",
+        "correctAnswer": 4,
         "explanation": ""
       }
     ]

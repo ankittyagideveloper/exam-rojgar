@@ -157,7 +157,8 @@ export default function QuizComponent() {
     userAnswers.forEach((answer, index) => {
       if (
         answer.selectedOption !== null &&
-        answer.selectedOption === quizData.questions[index].correctAnswer
+        answer.selectedOption ===
+          parseInt(quizData.questions[index].correctAnswer)
       ) {
         correct++;
       }
@@ -253,7 +254,8 @@ export default function QuizComponent() {
               {quizData.questions.map((question, index) => {
                 const userAnswer = userAnswers[index];
                 const isCorrect =
-                  userAnswer.selectedOption === question.correctAnswer;
+                  userAnswer.selectedOption ===
+                  parseInt(question.correctAnswer);
                 const wasAttempted = userAnswer.selectedOption !== null;
 
                 return (
@@ -294,20 +296,24 @@ export default function QuizComponent() {
                           <div
                             key={optionIndex}
                             className={`p-2 rounded text-sm ${
-                              optionIndex === question.correctAnswer
+                              optionIndex + 1 ===
+                              parseInt(question.correctAnswer)
                                 ? "bg-green-100 text-green-800 border border-green-300"
                                 : optionIndex === userAnswer.selectedOption &&
-                                  optionIndex !== question.correctAnswer
+                                  optionIndex !==
+                                    parseInt(question.correctAnswer)
                                 ? "bg-red-100 text-red-800 border border-red-300"
                                 : "bg-gray-50"
                             }`}
                           >
                             {String.fromCharCode(65 + optionIndex)}. {option}
-                            {optionIndex === question.correctAnswer && (
+                            {optionIndex + 1 ===
+                              parseInt(question.correctAnswer) && (
                               <CheckCircle className="w-4 h-4 text-green-600 inline ml-2" />
                             )}
                             {optionIndex === userAnswer.selectedOption &&
-                              optionIndex !== question.correctAnswer && (
+                              optionIndex + 1 !==
+                                parseInt(question.correctAnswer) && (
                                 <XCircle className="w-4 h-4 text-red-600 inline ml-2" />
                               )}
                           </div>
