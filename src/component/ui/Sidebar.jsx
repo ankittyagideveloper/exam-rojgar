@@ -93,7 +93,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               animate={{ opacity: 1 }}
               className="text-xl font-medium whitespace-pre text-black dark:text-white"
             >
-              Exam Rojgar
+              ExamRojgar
             </motion.span>
           </div>
           <IconUserCircle />

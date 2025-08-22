@@ -89,25 +89,24 @@ export const Logo = () => {
       to="/"
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
-      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+      <div div className="rounded-full  h-8 w-8">
+        <img src="examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+      </div>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="font-medium whitespace-pre text-black dark:text-white"
       >
-        Exam Rojgar
+        ExamRojgar
       </motion.span>
     </Link>
   );
 };
 export const LogoIcon = () => {
   return (
-    <a
-      href="#"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
-    >
-      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
-    </a>
+    <Link to="/" className="rounded-full  h-8 w-8">
+      <img src="examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+    </Link>
   );
 };
 

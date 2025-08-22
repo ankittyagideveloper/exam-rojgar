@@ -35,7 +35,7 @@ export default function Loader() {
 
         <div className="mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            {"Exam Rojgar".split("").map((letter, index) => (
+            {"ExamRojgar".split("").map((letter, index) => (
               <span
                 key={index}
                 className="inline-block animate-bounce"

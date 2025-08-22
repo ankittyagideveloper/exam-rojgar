@@ -18,10 +18,12 @@ const Footer = () => {
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[#008080] font-bold text-lg">AGS</span>
+              <span className="text-[#008080] font-bold text-lg">
+                ExamRojgar
+              </span>
             </div>
             <div>
-              <h2 className="text-2xl font-bold">AGS</h2>
+              <h2 className="text-2xl font-bold">ExamRojgar</h2>
               <p className="text-sm opacity-90">TEST SERIES</p>
             </div>
           </div>
@@ -54,7 +56,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center pt-6 border-t border-white/20">
           <p className="text-sm opacity-90">
-            © 2025 AGS Test Series. All Rights Reserved.
+            © 2025 ExamRojgar Test Series. All Rights Reserved.
           </p>
         </div>
       </div>
