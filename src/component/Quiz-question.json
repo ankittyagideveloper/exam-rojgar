@@ -2143,10 +2143,867 @@
       }
     ]
   },
+  "5062025-1": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 9600,
+    "questions": [
+      {
+        "id": 1,
+        "question": "The marked price of a bed is ₹517, which is 30% above the cost price. If the profit percent is 2%. Find the discount percentage. (rounded off to two decimal places)",
+        "options": ["21.54%", "20.36%", "24.06%", "18.57%"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "Seven people, N, O, P, Q, R, S and T, are sitting in a straight line facing north. T is sitting at one of the ends of the line. Only two people are sitting to the left of R. P is sitting to the immediate right of R and immediate left of S. Q is sitting to the immediate left of O. Q does not sit at an extreme end of the line. How many people are sitting between O and N?",
+        "options": ["Zero", "One", "Two", "Four"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "The term 'Bhukti' in post-Gupta polity referred to:",
+        "options": ["province", "tax", "officer", "king"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "Kiran spends 45% of his income. If he saves ₹66,000, then his income (in ₹) is",
+        "options": ["1,20,000", "1,21,000", "1,19,000", "29,700"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "Based on the English alphabetical order, three of the following four letter-clusters are alike in a certain way and thus form a group. Which letter-cluster DOES NOT belong to that group? (Note: The odd one out is not based on the number of consonants/vowels or their position in the letter-cluster.)   (/rrb-ntpc/test-series)",
+        "options": ["ECG", "SQU", "LJN", "POR"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Varun and Ashish together can paint a hall in 3 days. Varun alone can paint it in 7 days. In how many days can Ashish alone paint 4 such halls?",
+        "options": ["6.25", "21", "5.25", "22"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "What is the primary objective of the Chandra's Surface Thermophysical Experiment (ChaSTE), 2025, payload?",
+        "options": [
+          "To assess the Moon's geological composition",
+          "To measure the vertical temperature profile of the lunar regolith",
+          "To measure the Moon's atmospheric pressure",
+          "To study the Moon's magnetic field"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "Find the duration (in years) in which ₹1,200 will amount to ₹2,280 at a rate of 4% per annum simple interest",
+        "options": ["23.5", "24.5", "21.5", "22.5"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "The larger of two supplementary angles is 28° more than the smaller one. The smaller angle (in degree) is:",
+        "options": ["79°", "84°", "80°", "76°"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "If Ishwar covers 721 km in a boat in 42 hours against the stream and he takes 15 hours with the stream, then find the speed of the stream",
+        "options": ["15.45 km/hr", "7.38Km/hr  ", "22.48 km/hr", "19.25 km/hr"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "The Takht-i-Bahi inscription refers to which Parthian ruler?",
+        "options": ["Azes", "Rudradaman", "Gondophernes", "Menander"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Select the number from among the given options that can replace the question mark (?) in the following series. 105 97 89 81 73 ?",
+        "options": ["60", "58", "65", "70"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "A group of numbers/symbols is coded using letter codes as per the codes given below and the conditions that follow. If none of the conditions apply, then codes for the respective number/symbol to be followed directly as given in the table. Number/Symbol 8 9 @ & 5 7 2 % 1 3 Δ 4 6 Code L C Z M D W A P R T F B K Conditions: (i) If the first element is a symbol and the last a number, the codes for these two (the first and the last elements) are to be interchanged. (ii) If the first element is an odd number and the last an even number, the first and last elements are to be coded as © (iii) If both the second and third elements are perfect squares, the third element is to be coded as the code for the second element. What will be the code for the following group? 7 2 @ 1 3 &",
+        "options": ["M A Z R T W", "W A Z R T M", "W A R Z T M", "M A Z T R W"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "What will come in place of the question mark (?) in the following equation if '+' and '–' are interchanged and '×' and '÷' are interchanged? 1125 × 45 ÷ 39 – 17 + 19 = ?",
+        "options": ["379", "992", "975  ", "973  "],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "A class of 30 students appeared in a test. The average score of 12 students is 60, and that of the rest is 62. What is the average score of the class?",
+        "options": ["62.2", "59.2", "60.2", "61.2"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "Which Article of the Directive Principles of State Policy was added by the 97 Constitutional Amendment Act of the Constitution of India? th",
+        "options": [
+          "Article 48 A",
+          "Article 43 B",
+          "Article 39 A",
+          "Article 43 A"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "67 is related to 74 following a certain logic. Following the same logic, 13 is related to 20. To which of the following is 52 related, following the same logic? (NOTE: Operations should be performed on the whole numbers, without breaking down the numbers into their constituent digits. E.g. 13 – Operations on 13 such as adding/subtracting/multiplying to 13 can be performed. Breaking down 13 into 1 and 3 and then performing mathematical operations on 1 and 3 is not allowed.)",
+        "options": ["61", "59", "63", "57"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "In the Gender Inequality Index (GII) 2022, what rank did India achieve among 193 countries?",
+        "options": ["115", "100", "122", "108"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "A, B, C, D, E and F live on six different floors of the same building. The lowermost floor in the building is numbered 1, the floor above it, number 2 and so on till the topmost floor is numbered 6. A lives on a floor which is a prime number. The product of floors on which A and E live is 3. Only 2 people live above B. F lives immediately below C. How many people live between D and F?",
+        "options": ["Two ", "Three    ", "One", "Four"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "The 24° latitude passes closest to which Indian state’s capital?",
+        "options": ["Patna", "Bhopal", "Raipur", "Dispur"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Which of the following letter-clusters should replace # and % so that the pattern and relationship followed between the letter-cluster pair on the left side of :: is the same as that on the right side of ::? # : JLH :: IKG : %",
+        "options": [
+          "# = FDG, % = MLG",
+          "# = FJH, % = MHU",
+          "# = EGC, % = NPL",
+          "# = DEG, % = NIU"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "A group of numbers/symbols is coded using letter codes as per the codes given below and the conditions that follow. If none of the conditions apply, then codes for the respective number/symbol to be followed directly as given in the table. Number/Symbol 9 2 @ & 3 7 5 % 1 8 Δ 4 6 Code L C Z M D W A P R T F B K Conditions: (i) If the first element is a symbol and the last a number, the codes for these two (the first and the last elements) are to be interchanged. (ii) If the first element is an odd number and the last an even number, the first and last elements are to be coded as ©. (iii) If both the second and third elements are perfect squares, the third element is to be coded as the code for the second element What will be the code for the following group? 5 & 3 @ 7 % 2",
+        "options": [
+          "© M D Z P W ©",
+          "© M D W Z P ©",
+          "© D M Z W P ©",
+          "© M D Z W P ©"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "A group of numbers and symbols is coded using letter codes as per the codes given below and the conditions that follow. Study the given codes and conditions and answer the question that follows. Note: If none of the conditions apply, then codes for the respective number/symbol are to be followed directly as given in the table. Number/symbol 2 @ 9 5 $ & 3 % # 7 + 4 8 6 Code T F A J L E W Q D P R B U S Conditions: (i) If the first element is a symbol and the last a number, the codes for these two (the first and the last elements) are to be interchanged. (ii) If the first element is an odd number and the last an even number, the first and last elements are to be coded as ©.  (/rrb-ntpc/test-series) Tests (iii) If both second and third elements are perfect squares, the third element is to be coded as the code for the second element. RRB NTPC Gradua…   (/TS-rrb-ntpc/tests/6864ccf6f71d67c3a3095c83/analysis?attemptNo=1) What will be the code for the following group? 7 2 4 @ 5",
+        "options": ["PBBFJ", "JBBFP", "PTBFJ", "JTBFP"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "As of April 2025, what percentage of the India-UK Free Trade Agreement (FTA) has been finalised, bringing both the nations closer to concluding the deal?",
+        "options": ["90%", "80%", "70%", "95%"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "Which of the following combinations represents the party and constituency of the Chief Minister of Jharkhand after the 2024 Assembly elections?",
+        "options": [
+          "BJP, Jamshedpur East",
+          "BJP, Dhanwar",
+          "JMM, Khunti",
+          "JMM, Barhait"
+        ],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "Who among the following was known for promoting inter-caste and inter-religious marriages through legislation?",
+        "options": [
+          "Raja Ram Mohan Roy",
+          "Sir Syed Ahmed Khan",
+          "Pandita Ramabai",
+          "Annie Besant"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "Who among the following founded the Vedanta College in Calcutta to promote both Indian and Western learning?",
+        "options": [
+          "Rammohan Roy",
+          "Ishwar Chandra Vidyasagar",
+          "Swami Vivekananda",
+          "Debendranath Tagore"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "In a row of 73 students facing north, Gita is 16th from the left end. If Sunita is 21st to the right of Gita, what is Sunita’s position from the right end of the line?",
+        "options": ["37th", "28th", "22nd", "31st"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "The simplified value of 127 - 7 x (17 + 6) + 93 is:",
+        "options": ["59", "51", "62", "57"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "What is the main focus of the Sangam anthologies, Purananuru and Patirruppattu, from the Ettuttokai collection?",
+        "options": [
+          "Love and emotional experiences",
+          "Descriptions of nature and landscapes",
+          "Heroism and praises of kings and their deeds",
+          "Spiritual and religious themes"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "How many countries were evaluated in the Climate Change Performance Index 2025?",
+        "options": ["83", "63", "73", "93"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "Study the given Venn diagram carefully and answer the question that follows. The numbers in different sections indicate the number of persons. How many chefs are there who are also teachers but not lawyers?",
+        "image": "/5062025-1-32.jpeg",
+        "options": ["9    ", "5", "8", "7"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "Find the value of K if the quadratic equations 2x + Kx + 8 = 0 and 3x + 4x + 12 = 0 have both roots common. 2 2",
+        "options": ["", "", "", "1 2 5 3 7 2 8 3"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "P, Q, R, S, T, U and V are sitting around a circular table facing the centre. Only two people sit between T and S when counted from the right of T. Only three people sit between V and Q when counted from the right of Q. S sits to the immediate right of Q. U sits to the immediate right of R. How many people sit between Q and U when counted from the right of Q?",
+        "options": ["3", "2", "4", "1"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "What was the overall unemployment rate in India as reported in the 6 Annual Employment-Unemployment Survey conducted by the Labour Bureau? th",
+        "options": ["4.9%", "6.1%", "5.4%", "7.3%"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "Seven boxes, A, B, C, D, E, F and G, are kept one over the other but not necessarily in the same order. No box is kept above F. Only three boxes are kept between F and B. Only one box is kept between G and D. D is kept immediately above B. Only four boxes are kept between G and C. A is kept in some place above E. How many boxes are kept below D?",
+        "options": ["3", "4", "1", "2 "],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "The Supreme Court can issue writs under Article 32 only for which specific purpose?   (/TS-rrb-ntpc/tests/6864ccf6f71d67c3a3095c83/analysis?attemptNo=1)",
+        "options": [
+          "To protect Fundamental Rights",
+          "To review decisions of statutory tribunals",
+          "To enforce the Directive Principles of State Policy",
+          "To resolve disputes between states"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "Simplify (2x − 5y) + (5x + 2y) + (2x + 5y)(2x − 5y). 2 2",
+        "options": [
+          "2 34x − 4y 2",
+          "33x + 4y 2 2",
+          "−34x + 4y 2 2",
+          "−33x − 4y 2 2"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "Which of the following Indian states does NOT have a coastline?",
+        "options": ["Rajasthan", "Odisha", "Andhra Pradesh", "Gujarat"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "In a certain code language, A + B means ‘A is the mother of B’ A – B means ‘A is the brother of B’ A × B means ‘A is the wife of B’ and A ÷ B means ‘A is the father of B’. How is M related to Q if ‘M + N × O ÷ P – Q’?",
+        "options": [
+          "Mother's sister",
+          "Father's mother",
+          "Father's sister",
+          "Mother's mother"
+        ],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "What is the purpose of the Slide Master in MS PowerPoint?",
+        "options": [
+          "To export slides as images",
+          "To apply consistent formatting, fonts, and layouts to all slides",
+          "To insert animations and transitions ",
+          "   "
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "What should come in place of the question mark (?) in the given series? 701 700 697 692 685 ?",
+        "options": ["676", "673", "675", "671"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "A man has to cover a distance of 519 km in 7 hours. If he covers two-third of his distance in 5/7 of the time, then what should his speed (in km/hr) be to cover the remaining distance?",
+        "options": ["46.5", "34.5", "66.5", "86.5"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "The median of the observations 76, 83, 30, 11, 81, 52, 18, 34, 84, 35 and 27 is:",
+        "options": ["35", "34", "52", "30"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "Pipe A can fill a tank in 18 minutes, while pipe B can empty the completely filled tank in 20 minutes. Initially, pipe A is opened and after 6 minutes pipe B is also opened. In how much time (in minutes) will the remaining tank be filled completely?",
+        "options": ["137", "127", "120", "107"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "In February 2025, Muthoot Finance has received RBI approval to open how many new branches across India, strengthening its presence in the gold loan market?",
+        "options": ["120", "110", "125  ", "115  "],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "Simplify: 5832√3 √4 10000 × × 78 5 24",
+        "options": ["17", "21", "8", "29.25"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "Which of the following solutions is slightly acidic due to hydrolysis?",
+        "options": ["Na₂CO₃", "NH₄Cl", "NH₄CH₃COO", "CH₃COONa"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "Rahul’s age is three times the age of his daughter. After 8 years from now, his age will be 5 years more than twice the age of his daughter. Find the present age of Rahul",
+        "options": ["39 years", "33 years", "30 years", "36 years"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "A dealer sells two dryers at the rate of ₹63,000 per dryer. On one, he earns a profit of 5% and on the other he loses 30%. What is his loss percentage in the whole transaction?",
+        "options": ["16%", "15%", "17%", "14%"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 51,
+        "question": "From which state to which state do the Eastern Coastal Plains of India extend?",
+        "options": [
+          "Odisha to Karnataka",
+          "Gujarat to Kerala",
+          "West Bengal to Tamil Nadu ",
+          "Maharashtra to Andhra Pradesh    "
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 52,
+        "question": "When x is added to each of 30, 15, 21 and 11, then the numbers so obtained, in this order, are in proportion. Then, if 6x : y :: y : (3x-9), and y > 0, what is the value of y?",
+        "options": ["10", "24", "18", "37"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 53,
+        "question": "This question is based on the five, three-digit numbers given below: 614, 457, 249, 625, 150. (Example: 697 – First digit = 6, second digit = 9, third digit = 7). NOTE: All operations to be done from left to right. What will be the resultant if the second digit of the highest number is subtracted from the second digit of the lowest number?",
+        "options": ["4", "6", "2", "3"],
+        "correctAnswer": "3",
+        "explanation": "The highest number is 625, whose second digit is 2. The lowest number is 150, whose second digit is 5. Subtracting 2 from 5 gives 3."
+      },
+      {
+        "id": 54,
+        "question": "Based on the English alphabetical order, three of the following four letter-cluster pairs are alike in a certain way and thus form a group. Which letter-cluster pair DOES NOT belong to that group? (Note: The odd one out is not based on the number of consonants/vowels or their position in the letter cluster)",
+        "options": ["MU - KH", "HL - JN", "SW - UY", "NR - PT"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 55,
+        "question": "In which year did Bakshi Jagabandhu lead the Paika Rebellion to protest against the British land revenue policy?",
+        "options": ["1817", "1717", "1785", "1806"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 56,
+        "question": "If the ratio of two numbers is 5 : 3 and the product of their LCM and their HCF is 135, then the sum of the reciprocals of the LCM and the HCF is:",
+        "options": ["16 73 16 ", "   ", "", "16 45 16 61"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 57,
+        "question": "A ladder leaning against a wall makes an angle θ with the horizontal ground such that tan θ = 15 8 . If the height of the top of the ladder from the wall is 30 m, find the distance (in m) of the foot of the ladder from the wall",
+        "options": ["16", "14", "20", "18"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 58,
+        "question": "The mode and median of a data set is 28.4 and 88, respectively. What is the mean of the data set? (Use empirical formula.)",
+        "options": ["114.2", "119.2", "117.8", "127.7"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 59,
+        "question": "Which of the following is an example of an operating system commonly used on desktop computers?",
+        "options": [
+          "Microsoft Word",
+          "Google Chrome",
+          "Adobe Photoshop",
+          "Windows 10"
+        ],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 60,
+        "question": "If 260 is the mean proportion between x and 338, what is the value of x?",
+        "options": ["198", "200", "199", "201"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 61,
+        "question": "Salil’s salary was first reduced by 15% and subsequently raised by 10%. What percentage was his final salary lower compared to his initial salary?",
+        "options": ["6.5%", "10%", "1.5%", "15%"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 62,
+        "question": "If ‘+’ means ‘−’, ‘−’ means ‘×’, ‘×’ means ‘÷’ and ‘÷’ means ‘+’, then what will come in place of the question mark (?) in the following equation? 32 ÷ 14 + 16 – 8 × 4 = ?",
+        "options": ["14", "16", "18", "22"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 63,
+        "question": "What should come in place of the question mark (?) in the given series based on the English alphabetical order? XBF UYC RVZ OSW ?",
+        "options": ["LTP", "LPT", "TLP", "TPL"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 64,
+        "question": "How many cities were initially included under the Smart Cities Mission launched by the Government of India?",
+        "options": ["100", "50", "200", "150"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 65,
+        "question": "Which of the following letter-clusters should replace # and % so that the pattern and relationship followed between the letter-cluster pair on the left side of :: is the same as that on the right side of ::? # : VEC :: BNW : %",
+        "options": [
+          "# = DQU, % = XHA",
+          "# = FTS, % = XHA",
+          "# = XHA, % = ZKY",
+          "# = ZKY, % = FTS"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 66,
+        "question": "Which urban local self government body manages small towns with limited municipal functions like street lighting and drainage?  (/rrb-ntpc/test-series) Town Area Committee",
+        "options": [
+          "   ",
+          "Municipal Corporation",
+          "Special Purpose Agencies",
+          "Port Trust"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 67,
+        "question": "In South Indian temple architecture, what is the name of the stepped or pyramidal structure built above the sanctum?",
+        "options": ["Adhisthana", "Vimana", "Jagati", "Mandapa"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 68,
+        "question": "The larger of two supplementary angles is 50° more than the smaller one. The smaller angle (in degree) is:",
+        "options": ["56°", "67°", "65°", "75°"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 69,
+        "question": "FARM is related to CXOJ in a certain way based on the English alphabetical order. In the same way, FRESH is related to COBPE. To which of the given options is RICH related, following the same logic?",
+        "options": ["OFZE", "OEZE", "OFZF", "OEZF"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 70,
+        "question": "Which of the following letter-clusters should replace # and % so that the pattern and relationship followed between the letter-cluster pair on the left side of :: is the same as that on the right side of ::? # : LHM :: OKP : %",
+        "options": [
+          "# = GCH, % = TPU",
+          "# = FDH, % = NHU",
+          "# = UPS, % = RPV",
+          "# = DCV, % = NHY "
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 71,
+        "question": "Fardeen starts from point A and drives 13 km towards west. He then takes a left turn, drives 7 km, turns right and drives 6 km. He then takes a left turn and drives 8 km. He takes a final left turn, drives 19 km and stops at point P. How far (shortest distance) and towards which direction should he drive in order to reach point A again (all turns are 90 degrees turns only unless specified)?   (/TS-rrb-ntpc/tests/6864ccf6f71d67c3a3095c83/analysis?attemptNo=1) RRB NTPC Gradua… Tests",
+        "options": ["10 km north", "15 km south", "15 km north", "12 km south"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 72,
+        "question": "According to the Economic Survey 2024-25, what is the current expenditure on Research and Development (R&D) as a percentage of India’s GDP?",
+        "options": ["0.64%", "1.28%", "0.45%", "1.15%"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 73,
+        "question": "Which of the following is an example of a chemical change?",
+        "options": [
+          "Cutting paper",
+          "Burning wood",
+          "Melting ice",
+          "Boiling water"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 74,
+        "question": "Which of the following components is/are NOT a part of the Central Processing Unit (CPU)?",
+        "options": [
+          "Arithmetic Logic Unit",
+          "Graphic Card",
+          "Control Unit",
+          "Registers"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 75,
+        "question": "This question is based on the five, three-digit numbers given below. (Left) 401 418 733 283 902 (Right) (Example: 697 – First digit = 6, second digit = 9 and third digit = 7) (NOTE: All operations to be done from left to right.) What will be the resultant if the second digit of the highest number is added to the third digit of the lowest number?",
+        "options": ["6", "2", "4 ", "3    "],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 76,
+        "question": "Which of the following statements is/are correct about the Digital Agriculture Mission launched in 2024? (1): It includes the creation of Digital Public Infrastructure such as AgriStack and Comprehensive Soil Fertility Maps. (2): AgriStack is managed solely by the Central Government. (3): The mission seeks to facilitate digital services like credit and insurance to farmers through authenticated data",
+        "options": [
+          "Only 1 and 2",
+          "Only 2 and 3",
+          "1, 2 and 3",
+          "Only 1 and 3"
+        ],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 77,
+        "question": "Who among the following assumed charge of the Comptroller General of India in November 2024?",
+        "options": [
+          "Arunish Chawla",
+          "Manish Singhal",
+          "K Sanjay Murthy",
+          "Tuhin Kant Pandey"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 78,
+        "question": "A vendor bought lemons at 7 for ₹1. How many lemons must he sell for ₹1 to gain 75%?",
+        "options": ["8", "6", "4", "5"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 79,
+        "question": "What is the primary purpose of virtual memory in a computer system?",
+        "options": [
+          "To extend CACHE memory for storage",
+          "To provide backup for data",
+          "To extend RAM capacity by using disk space",
+          "To increase physical storage capacity"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 80,
+        "question": "In November 2024, which day was celebrated to honour India’s contribution to the dairy revolution?",
+        "options": [
+          "Milk Production Day",
+          "White Revolution Day",
+          "National Dairy Day ",
+          "National Milk Day  "
+        ],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 81,
+        "question": "In quadrilateral ABCD, AB = 17 cm, BC = 8 cm, CD = 9 cm, AD = 12 cm, and AC = 15 cm. What is the area (in cm ) of the quadrilateral? 2",
+        "options": ["114", "118", "121", "105"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 82,
+        "question": "Which country became the first in Latin America to exit China's Belt and Road Initiative in 2025?",
+        "options": ["Colombia", "Argentina", "Panama", "Chile"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 83,
+        "question": "Who won the Women's Premiere League WPL 2025 title?",
+        "options": [
+          "Chennai Super Kings",
+          "Delhi Capitals",
+          "Mumbai Indians",
+          "Royal Challengers Bangalore"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 84,
+        "question": "What is the key difference between the Supreme Court’s original jurisdiction in federal disputes versus its writ jurisdiction?",
+        "options": [
+          "Federal dispute jurisdiction is exclusive to SC, while writ jurisdiction is concurrent with High Courts.",
+          "Federal dispute jurisdiction can be exercised suo moto, while writ jurisdiction requires a petition.",
+          "Federal dispute jurisdiction applies to civil matters, while writ jurisdicti"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 85,
+        "question": "Sundar starts from point A and drives 12 km towards the east. He then takes a left turn, drives 9 km, turns left and drives 13 km. He then takes a left turn and drives 11 km. He takes a final left turn, drives 1 km and stops at point P. How far (shortest distance) and towards which direction should he drive in order to reach point A again? (All turns are 90 degree turns only unless specified.)",
+        "options": [
+          "1 km to the north",
+          "2 km to the north",
+          "1 km to the south ",
+          "2 km to the south  "
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 86,
+        "question": "Which structural-functional issue in a plant root would hinder gas exchange but not significantly impact water absorption?",
+        "options": [
+          "Endodermal cells without suberin",
+          "Mutated epiblema cells lacking vacuole",
+          "Disrupted stomatal apparatus on aerial organs",
+          "Absence of root hairs due to epidermal deformation"
+        ],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 87,
+        "question": "Which of the following letter-number clusters will replace the question mark (?) in the given series to make it logically complete? OKI 4, QLG 8, SME 12, UNC 16, ?",
+        "options": ["WOA 24", "WOA 16", "WOA 20", "WOV 24"],
+        "correctAnswer": "3",
+        "explanation": ""
+      },
+      {
+        "id": 88,
+        "question": "The average of first 14 whole numbers is:",
+        "options": ["7", "6.5", "5.5", "7.5"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 89,
+        "question": "The difference between the simple interest and the compound interest, compounded annually, on a certain sum of money for 2 years at 16% per annum is ₹797. Find the sum (rounded off to the nearest integer)",
+        "options": ["₹31,137", "₹31,133", "₹31,113", "₹31,130"],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 90,
+        "question": "Find the surface area of a sphere whose diameter is equal to 98 cm",
+        "options": ["29,256 cm2", "33,284 cm2 ", "   ", "30,184 cm2"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 91,
+        "question": "When navigating through options in a dialog box or menu using the keyboard, what is the primary function of the Tab key?",
+        "options": [
+          "To select the currently highlighted option",
+          "To move the focus to the next available option or control",
+          "To go back to the previous option or control",
+          "To close the current dialog box or menu"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 92,
+        "question": "Which type of subordinate court primarily handles disputes related to property ownership and contractual agreements?",
+        "options": [
+          "Revenue Courts",
+          "Civil Courts",
+          "Criminal Courts",
+          "Family Courts"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 93,
+        "question": "Refer to the following number and symbol series and answer the question that follows. Counting to be done from left to right only. All numbers are single-digit numbers. (Left) # * £ 3 9 € # % £ 1 % £ 8 8 1 4 9 % 5 8 & 7 (Right) How many such numbers are there each of which is immediately preceded by a symbol and also immediately followed by a symbol?",
+        "options": ["1", "4", "2", "3"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 94,
+        "question": "Which of the following countries assumed the Chairmanship of the Bay of Bengal Inter Governmental Organisation (BOBP-IGO) in 2025?",
+        "options": ["Sri Lanka", "Myanmar", "Bangladesh", "India"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 95,
+        "question": "What will come in the place of the question mark (?) in the following equation, if ‘+’ and ‘−‘ are interchanged and ‘×’ and ‘÷’ are interchanged? 38 ÷ 21 + 436 × 4 − 73 = ?",
+        "options": ["762 ", "763    ", "761", "764"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 96,
+        "question": "What is the value of + + + − 2 1 8 5 16 2 8 3 8",
+        "options": ["− 13 16", "− 23 16", "− 21 16", "− 15 16"],
+        "correctAnswer": "4",
+        "explanation": ""
+      },
+      {
+        "id": 97,
+        "question": "The Indian telecom sector was liberalised under which year’s Telecom Policy?",
+        "options": ["1994", "2002", "1997", "1999"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 98,
+        "question": "The Sabarmati river originates from which of the following places?",
+        "options": [
+          "Satpura Range, Gujarat",
+          "Aravalli Hills, Rajasthan",
+          "Western Ghats, Maharashtra",
+          "Vindhya Range, Madhya Pradesh"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 99,
+        "question": "If 7.5 : 19.5 :: 16 : x, find the value of x",
+        "options": ["41.6", "41.1", "45.1", "39.4"],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 100,
+        "question": "If 2 is added to each even digit and 2 is added to each odd digit in the number 5217643, what will be the sum of the first digit from the left and the first digit from the right in the new number thus formed?",
+        "options": ["11 ", "13    ", "10", "12"],
+        "correctAnswer": "4",
+        "explanation": ""
+      }
+    ]
+  },
   "5062025-3": {
     "title": "ABS",
     "description": "select the Abs",
-    "timeLimit": 1200,
+    "timeLimit": 9600,
     "questions": [
       {
         "id": 1,

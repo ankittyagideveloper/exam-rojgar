@@ -117,6 +117,18 @@ export const mockData = {
           description: "Mechanical engineering concepts",
           tests: [
             {
+              id: "5062025-1",
+              image:
+                "https://snwallah.com/assets/categories/7bb60bd5d40c5422e282de3c440954ef.png",
+              alt: "Accounts Department Test",
+              title: "RRB NTPC (UG): Shift-1 (05 June 2025)",
+              name: "5th June 1st Shift",
+              difficulty: "Medium",
+              questions: "100",
+              marks: "100",
+              duration: "90",
+            },
+            {
               id: "5062025-3",
               image:
                 "https://snwallah.com/assets/categories/7bb60bd5d40c5422e282de3c440954ef.png",

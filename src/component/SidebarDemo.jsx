@@ -90,7 +90,7 @@ export const Logo = () => {
       className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
     >
       <div div className="rounded-full  h-8 w-8">
-        <img src="examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+        <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
       </div>
       <motion.span
         initial={{ opacity: 0 }}
@@ -105,7 +105,7 @@ export const Logo = () => {
 export const LogoIcon = () => {
   return (
     <Link to="/" className="rounded-full  h-8 w-8">
-      <img src="examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+      <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
     </Link>
   );
 };

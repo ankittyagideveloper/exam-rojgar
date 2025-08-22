@@ -382,6 +382,14 @@ export default function QuizComponent() {
                 <h3 className="font-medium text-lg whitespace-pre-line">
                   {currentQuestion + 1}. {currentQuestionData.question}
                 </h3>
+                {currentQuestionData?.image ? (
+                  <img
+                    height={300}
+                    width={300}
+                    src={currentQuestionData.image}
+                    alt={currentQuestionData.id + 1}
+                  />
+                ) : null}
 
                 <div className="space-y-2">
                   {currentQuestionData.options.map((option, index) => (
