@@ -1,37 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Slider from "../component/Slider";
 
 function HomePage() {
-  // const [currentSlide, setCurrentSlide] = useState(0);
-  // const slides = [
-  //   {
-  //     title: "Appendix 2A",
-  //     subtitle: "Click here",
-  //     color: "from-teal-600 to-teal-700",
-  //   },
-  //   {
-  //     title: "Railway Exams",
-  //     subtitle: "Start Practice",
-  //     color: "from-blue-600 to-blue-700",
-  //   },
-  //   {
-  //     title: "SSC Preparation",
-  //     subtitle: "Begin Test",
-  //     color: "from-purple-600 to-purple-700",
-  //   },
-  // ];
-
-  // const nextSlide = () => {
-  //   setCurrentSlide((prev) => (prev + 1) % slides.length);
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  // };
-
   return (
     <div className="min-h-screen bg-gray-100 pb-20">
+      {/* <header>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </header> */}
       {/* Main Content */}
       <main className="px-4 py-6">
         <div className="lg:flex lg:items-center xl:flex-row justify-around">

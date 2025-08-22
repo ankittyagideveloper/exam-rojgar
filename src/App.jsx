@@ -8,6 +8,8 @@ import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
 import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
+import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
+import ProtectedRoute from "./component/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,19 @@ const router = createBrowserRouter([
       },
       {
         path: "test-category/*",
-        element: <TestPage />,
+        element: (
+          <ProtectedRoute>
+            <TestPage />,
+          </ProtectedRoute>
+        ),
       },
       {
         path: "quiz-category/*",
-        element: <TestPage />,
+        element: (
+          <ProtectedRoute>
+            <TestPage />,
+          </ProtectedRoute>
+        ),
       },
 
       // {
@@ -46,6 +56,8 @@ const router = createBrowserRouter([
     // element: <NotFound />,
   },
 ]);
+// Import your Publishable Key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -58,7 +70,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{isLoading ? <Loader /> : <RouterProvider router={router} />}</>;
+  return (
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ClerkProvider publishableKey={PUBLISHABLE_KEY} signInUrl="/">
+          <RouterProvider router={router} />
+        </ClerkProvider>
+      )}
+    </>
+  );
 }
 
 export default App;

@@ -9,6 +9,7 @@ import {
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
 import { Link } from "react-router-dom";
+import { SignOutButton } from "@clerk/clerk-react";
 
 export default function SidebarDemo({ children }) {
   const links = [
@@ -37,7 +38,9 @@ export default function SidebarDemo({ children }) {
       label: "Logout",
       href: "/",
       icon: (
-        <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <SignOutButton>
+          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        </SignOutButton>
       ),
     },
   ];

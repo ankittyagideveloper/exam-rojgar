@@ -4,6 +4,15 @@ import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX, IconUserCircle } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import {
+  SignIn,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  useUser,
+  SignOutButton,
+} from "@clerk/react-router";
 
 const SidebarContext = createContext(undefined);
 
@@ -74,6 +83,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
 
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
+  const { isSignedIn } = useUser();
   return (
     <>
       <div
@@ -96,7 +106,15 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               ExamRojgar
             </motion.span>
           </div>
-          <IconUserCircle />
+          {isSignedIn ? (
+            <SignOutButton>
+              <button>Sign Out</button>
+            </SignOutButton>
+          ) : (
+            <SignInButton mode="modal">
+              <button>Custom Sign In</button>
+            </SignInButton>
+          )}
         </div>
         <AnimatePresence>
           {open && (
