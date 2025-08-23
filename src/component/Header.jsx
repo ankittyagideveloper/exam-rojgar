@@ -1,9 +1,11 @@
+import { SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import { Menu } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { isSignedIn } = useUser();
   return (
     <>
       <header className="hidden  bg-white shadow-sm px-4 py-3 lg:flex items-center justify-between w-full">
@@ -19,6 +21,15 @@ const Header = () => {
         {/* <button className="p-2">
           <IconUserCircle className="w-6 h-6 text-gray-600" />
         </button> */}
+        {isSignedIn ? (
+          <SignOutButton className="cursor-pointer">
+            <button>LogOut</button>
+          </SignOutButton>
+        ) : (
+          <SignInButton className="cursor-pointer" mode="modal">
+            <button>LogIn</button>
+          </SignInButton>
+        )}
       </header>
     </>
   );

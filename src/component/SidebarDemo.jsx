@@ -9,7 +9,7 @@ import {
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
 import { Link } from "react-router-dom";
-import { SignOutButton } from "@clerk/clerk-react";
+import { SignedIn, SignOutButton, UserButton } from "@clerk/clerk-react";
 
 export default function SidebarDemo({ children }) {
   const links = [
@@ -63,21 +63,9 @@ export default function SidebarDemo({ children }) {
             </div>
           </div>
           <div>
-            <SidebarLink
-              link={{
-                label: "Ankit Tyagi",
-                href: "#",
-                icon: (
-                  <img
-                    src="https://assets.aceternity.com/manu.png"
-                    className="h-7 w-7 shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="Avatar"
-                  />
-                ),
-              }}
-            />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </SidebarBody>
       </Sidebar>

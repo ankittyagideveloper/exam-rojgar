@@ -13,6 +13,7 @@ import {
   useUser,
   SignOutButton,
 } from "@clerk/react-router";
+import { User } from "lucide-react";
 
 const SidebarContext = createContext(undefined);
 
@@ -107,12 +108,13 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             </motion.span>
           </div>
           {isSignedIn ? (
-            <SignOutButton>
-              <button>Sign Out</button>
-            </SignOutButton>
+            <UserButton />
           ) : (
+            // <SignOutButton>
+            //   <button>LogOut</button>
+            // </SignOutButton>
             <SignInButton mode="modal">
-              <button>Custom Sign In</button>
+              <button>LogIn</button>
             </SignInButton>
           )}
         </div>
