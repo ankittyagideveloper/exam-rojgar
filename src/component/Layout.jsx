@@ -28,14 +28,14 @@ const Layout = () => {
       behavior: "smooth",
     });
   };
-  // const requestOptions = {
-  //   username: "ankit",
-  //   password: "testpass",
-  // };
-  // fetch("https://examrojgar-v1.onrender.com/api/auth/register", requestOptions)
-  //   .then((response) => response.json()) // Parse the JSON response
-  //   .then((data) => console.log(data)) // Handle the data
-  //   .catch((error) => console.error("Error:", error)); // Handle errors
+  const requestOptions = {
+    username: "ankit",
+    password: "testpass",
+  };
+  fetch("https://examrojgar-v1.onrender.com/api/auth/register", requestOptions)
+    .then((response) => response.json()) // Parse the JSON response
+    .then((data) => console.log(data)) // Handle the data
+    .catch((error) => console.error("Error:", error)); // Handle errors
 
   const data = {
     username: "ankit1",
