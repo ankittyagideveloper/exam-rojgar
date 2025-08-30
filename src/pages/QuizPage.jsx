@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import QuizComponent from "../component/Quiz";
+import QuizComponent from "../component/quiz";
 
 const QuizPage = () => {
   // useEffect(() => {

@@ -17,10 +17,8 @@ const Footer = () => {
         {/* Logo and Brand */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-[#008080] font-bold text-lg">
-                ExamRojgar
-              </span>
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
+              <img src="/logo.png" alt="examrojgar-logo" className="relative" />
             </div>
             <div>
               <h2 className="text-2xl font-bold">ExamRojgar</h2>

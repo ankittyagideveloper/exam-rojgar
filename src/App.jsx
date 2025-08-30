@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
 import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
 import ProtectedRoute from "./component/ProtectedRoute";
+import TestLayout from "./component/test-layout/TestLayout";
 
 const router = createBrowserRouter([
   {
@@ -45,15 +46,21 @@ const router = createBrowserRouter([
         path: "pdf-category",
         element: <PDF_Page />,
       },
-      {
-        path: "/all-test/:categoryId",
-        element: <QuizPage />,
-      },
+      // {
+      //   path: "/all-test/:categoryId",
+      //   element: <QuizPage />,
+      // },
     ],
   },
   {
-    path: "*",
-    // element: <NotFound />,
+    path: "/all-test/:categoryId",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <QuizPage />,
+      },
+    ],
   },
 ]);
 // Import your Publishable Key
