@@ -17,12 +17,13 @@ const Slider = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
+        speed={800}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="w-full h-full rounded-2xl my-4"
