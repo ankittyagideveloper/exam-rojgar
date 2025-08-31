@@ -1,6 +1,7 @@
 import React from "react";
 import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Slider from "../component/Slider";
+import FeaturesRibbon from "../component/features-ribbon";
 
 function HomePage() {
   return (
@@ -35,7 +36,7 @@ function HomePage() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        {/* <div className="grid grid-cols-2 gap-4 mb-8">
           {[
             {
               title: "Mock Tests",
@@ -73,7 +74,9 @@ function HomePage() {
               <p className="text-sm text-gray-600">{feature.subtitle}</p>
             </div>
           ))}
-        </div>
+        </div> */}
+
+        <FeaturesRibbon />
 
         {/* Quick Actions */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
