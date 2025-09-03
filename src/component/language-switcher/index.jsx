@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const languages = [
   { code: "en", label: "English", shortLabel: "EN", flag: "🇺🇸" },
@@ -7,10 +8,21 @@ const languages = [
 ];
 
 export default function LanguageSwitcher({ onChange }) {
-  const [selectedLang, setSelectedLang] = useState(languages[0]);
+  const { i18n } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState(
+    languages.find((lang) => lang.code === i18n.language) || languages[0]
+  );
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // Sync selectedLang when i18n.language changes externally
+  useEffect(() => {
+    const currentLang =
+      languages.find((lang) => lang.code === i18n.language) || languages[0];
+    setSelectedLang(currentLang);
+  }, [i18n.language]);
+
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -22,6 +34,12 @@ export default function LanguageSwitcher({ onChange }) {
   }, []);
 
   const handleLanguageChange = (lang) => {
+    if (lang.code === i18n.language) {
+      // ✅ Do nothing if user selects the same language
+      setOpen(false);
+      return;
+    }
+    i18n.changeLanguage(lang.code);
     setSelectedLang(lang);
     setOpen(false);
     if (onChange) onChange(lang.code);
@@ -32,13 +50,11 @@ export default function LanguageSwitcher({ onChange }) {
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-300 bg-white shadow-sm hover:shadow-md transition"
+        className="flex items-center gap-2 px-1 py-1 rounded-lg border border-gray-300 bg-white shadow-sm hover:shadow-md transition"
         aria-label="Select language"
       >
         <Globe size={18} className="text-gray-600" />
-        <span className="hidden sm:inline font-medium">
-          {selectedLang.label}
-        </span>
+        <span className="hidden text-sm sm:inline">{selectedLang.label}</span>
         <span className="sm:hidden font-medium">{selectedLang.shortLabel}</span>
         <ChevronDown
           size={16}
@@ -55,7 +71,7 @@ export default function LanguageSwitcher({ onChange }) {
               onClick={() => handleLanguageChange(lang)}
               className={`flex items-center gap-3 w-full px-3 py-2 text-sm rounded-md transition ${
                 selectedLang.code === lang.code
-                  ? "bg-blue-100 text-blue-700 font-semibold"
+                  ? "bg-blue-100 text-black font-semibold"
                   : "hover:bg-gray-100"
               }`}
             >
