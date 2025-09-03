@@ -7,10 +7,11 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const BottomNavigation = () => {
   const location = useLocation();
-
+  const { t } = useTranslation();
   useEffect(() => {
     const path = location.pathname;
 
@@ -27,10 +28,15 @@ const BottomNavigation = () => {
   const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
-    { id: "home", label: "Home", icon: Home, path: "/" },
-    { id: "test", label: "Test", icon: FileText, path: "/test-category" },
-    { id: "quiz", label: "Quiz", icon: HelpCircle, path: "/quiz-category" },
-    { id: "pdfs", label: "PDF's", icon: FileDown, path: "/pdf-category" },
+    { id: "home", label: t("homeBtn"), icon: Home, path: "/" },
+    { id: "test", label: t("testBtn"), icon: FileText, path: "/test-category" },
+    {
+      id: "quiz",
+      label: t("quizBtn"),
+      icon: HelpCircle,
+      path: "/quiz-category",
+    },
+    { id: "pdfs", label: t(["pdfBtn"]), icon: FileDown, path: "/pdf-category" },
     // {
     //   id: "purchase",
     //   label: "My Purchase",
