@@ -40,8 +40,9 @@ function HomePage() {
                 <span className="text-teal-600">ExamRojgar</span>
               </h2>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                टेस्ट सीरीज़ के साथ अपना
-                <span className="text-teal-600">लक्ष्य</span> हासिल करें
+                टेस्ट सीरीज़ के साथ <br />
+                अपना
+                <span className="text-teal-600"> लक्ष्य</span> हासिल करें
               </h3>
               <p className="text-gray-600 text-base leading-relaxed">
                 {t("tagLine")}
