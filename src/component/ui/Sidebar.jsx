@@ -14,6 +14,8 @@ import {
   SignOutButton,
 } from "@clerk/react-router";
 import { User } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../language-switcher";
 
 const SidebarContext = createContext(undefined);
 
@@ -85,6 +87,16 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
   const { isSignedIn } = useUser();
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const handleLanguageChange = () => {
+    const newLanguage = currentLanguage === "en" ? "hi" : "en";
+    setCurrentLanguage(newLanguage);
+    changeLanguage(newLanguage);
+  };
   return (
     <>
       <div
@@ -107,16 +119,19 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               ExamRojgar
             </motion.span>
           </div>
-          {isSignedIn ? (
-            <UserButton />
-          ) : (
-            // <SignOutButton>
-            //   <button>LogOut</button>
-            // </SignOutButton>
-            <SignInButton mode="modal">
-              <button>LogIn</button>
-            </SignInButton>
-          )}
+          <div className="flex items-center gap-1">
+            <LanguageSwitcher onChange={handleLanguageChange} />
+            {isSignedIn ? (
+              <UserButton />
+            ) : (
+              // <SignOutButton>
+              //   <button>LogOut</button>
+              // </SignOutButton>
+              <SignInButton mode="modal">
+                <button>LogIn</button>
+              </SignInButton>
+            )}
+          </div>
         </div>
         <AnimatePresence>
           {open && (

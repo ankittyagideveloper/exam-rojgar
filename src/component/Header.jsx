@@ -1,11 +1,23 @@
 import { SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import { Menu } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import LanguageSwitcher from "./language-switcher";
 
 const Header = () => {
   const { isSignedIn } = useUser();
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const handleLanguageChange = () => {
+    const newLanguage = currentLanguage === "en" ? "hi" : "en";
+    setCurrentLanguage(newLanguage);
+    changeLanguage(newLanguage);
+  };
   return (
     <>
       <header className="hidden  bg-white shadow-sm px-4 py-3 lg:flex items-center justify-between w-full">
@@ -14,22 +26,25 @@ const Header = () => {
             <img src="/logo.png" alt="examrojgar-logo" />
           </div>
           <div>
-            <h1 className="font-bold text-lg text-gray-800">ExamRojgar</h1>
-            <p className="text-xs text-gray-600">TEST SERIES</p>
+            <h1 className="font-bold text-lg text-gray-800">Exam Rojgar</h1>
+            <p className="text-xs text-gray-600">{t("testSeries")}</p>
           </div>
         </Link>
-        {/* <button className="p-2">
+        <div className="flex gap-2">
+          <LanguageSwitcher onChange={handleLanguageChange} />
+          {/* <button className="p-2">
           <IconUserCircle className="w-6 h-6 text-gray-600" />
         </button> */}
-        {isSignedIn ? (
-          <SignOutButton className="cursor-pointer">
-            <button>LogOut</button>
-          </SignOutButton>
-        ) : (
-          <SignInButton className="cursor-pointer" mode="modal">
-            <button>LogIn</button>
-          </SignInButton>
-        )}
+          {isSignedIn ? (
+            <SignOutButton className="cursor-pointer">
+              <button>{t("logOutBtn")}</button>
+            </SignOutButton>
+          ) : (
+            <SignInButton className="cursor-pointer" mode="modal">
+              <button>LogIn</button>
+            </SignInButton>
+          )}
+        </div>
       </header>
     </>
   );
