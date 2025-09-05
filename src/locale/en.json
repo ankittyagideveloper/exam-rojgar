@@ -7,6 +7,14 @@
     "testBtn": "Test",
     "homeBtn": "Home",
     "quizBtn": "Quiz",
-    "pdfBtn": "PDF"
+    "pdfBtn": "PDF",
+    "liveClasses": "Live Classes",
+    "liveTest": "Live Test",
+    "freeQuizzes": "Free Quizzes",
+    "prevYearPapers": "Prev. Year Papers",
+    "gk_ca": "GK & CA",
+    "tests": "Tests",
+    "new": "NEW",
+    "free": "FREE"
   }
 }

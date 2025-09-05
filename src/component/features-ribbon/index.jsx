@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import LiveIndicator from "../utils/LiveIndecator";
+import { useTranslation } from "react-i18next";
 
 const icons = {
   play: (className = "h-7 w-7") => (
@@ -187,52 +188,52 @@ function FeatureItem({
   );
 }
 
-export default function FeaturesRibbon({
-  items = [
+export default function FeaturesRibbon() {
+  const { t } = useTranslation();
+  const items = [
     {
-      label: "Live Classes",
+      label: t("liveClasses"),
       icon: "play",
-      badge: "FREE",
+      badge: t("free"),
       href: "https://www.youtube.com/@ExamRojgaar",
       target: "_blank",
       isLive: true,
       bgColor: "bg-red-100",
     },
     {
-      label: "Live Test & Quizzes",
+      label: t("liveTest"),
       icon: "clipboard",
       bgColor: "bg-green-100",
-      badge: "FREE",
+      badge: t("free"),
       href: "/test-category",
       isLive: true,
     },
     {
-      label: "Free Quizzes",
+      label: t("freeQuizzes"),
       icon: "quiz",
       bgColor: "bg-purple-100",
-      badge: "NEW",
+      badge: t("new"),
       href: "/quiz-category",
     },
     {
-      label: "RRB NTPC",
+      label: t("prevYearPapers"),
       icon: "doc",
       bgColor: "bg-yellow-100",
       href: "/test-category/rrb/rrb-ntpc",
     },
     {
-      label: "Practice",
+      label: t("tests"),
       icon: "refresh",
       href: "/test-category/rrb/rrb-ntpc",
       bgColor: "bg-pink-100",
     },
     {
-      label: "GK & CA",
+      label: t("gk_ca"),
       icon: "article",
       href: "/test-category/rrb/rrb-ntpc",
       bgColor: "bg-blue-100",
     },
-  ],
-}) {
+  ];
   return (
     <section
       aria-label="Feature menu"

@@ -6,6 +6,14 @@
     "testBtn": "टेस्ट",
     "homeBtn": "होम",
     "quizBtn": "क्विज़",
-    "pdfBtn": "पीडीएफ"
+    "pdfBtn": "पीडीएफ",
+    "liveClasses": "लाइव क्लासेस",
+    "liveTest": "लाइव टेस्ट",
+    "freeQuizzes": "मुफ़्त क्विज़",
+    "prevYearPapers": "प्रिवियस ईयर पेपर",
+    "gk_ca": "GK और CA",
+    "tests": "टेस्ट",
+    "new": "नया",
+    "free": "मुफ़्त"
   }
 }
