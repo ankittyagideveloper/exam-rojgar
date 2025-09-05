@@ -111,13 +111,9 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               className="text-neutral-800 dark:text-neutral-200"
               onClick={() => setOpen(!open)}
             />
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-xl font-medium whitespace-pre text-black dark:text-white"
-            >
-              ExamRojgar
-            </motion.span>
+            <Link to="/" className="rounded-full  h-10 w-10">
+              <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+            </Link>
           </div>
           <div className="flex items-center gap-1">
             <LanguageSwitcher onChange={handleLanguageChange} />

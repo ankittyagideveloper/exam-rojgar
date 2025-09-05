@@ -50,7 +50,7 @@ export default function LanguageSwitcher({ onChange }) {
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-1 py-1 rounded-lg border border-gray-300 bg-white shadow-sm hover:shadow-md transition"
+        className="flex items-center gap-2 px-1 py-1 border-none "
         aria-label="Select language"
       >
         <Globe size={18} className="text-gray-600" />

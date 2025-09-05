@@ -18,11 +18,11 @@ function HomePage() {
         </SignedIn>
       </header> */}
       {/* Main Content */}
-      <main className="px-4 py-6">
+      <main className="px-0 py-0 md:px-4 md:py-6">
         <div className="lg:flex lg:items-center xl:flex-row justify-around">
           {/* Hero Section */}
           {currentLanguage === "en" ? (
-            <div className="mb-8 ">
+            <div className="hidden md:block mb-8 ">
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Crack your <span className="text-teal-600">goal</span>
               </h2>

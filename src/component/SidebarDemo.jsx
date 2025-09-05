@@ -88,7 +88,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-medium whitespace-pre text-black dark:text-white"
       >
-        ExamRojgar
+        ExamRojgar1
       </motion.span>
     </Link>
   );
