@@ -105,7 +105,7 @@ export const LogoIcon = () => {
 const Dashboard = ({ children }) => {
   return (
     <div className="flex flex-1 overflow-scroll overflow-x-hidden bg-white">
-      <div className="flex min-h-screen w-full flex-1 flex-col gap-2 rounded-tl-2xl border border-neutral-200 bg-white p-2  dark:border-neutral-700 dark:bg-neutral-900">
+      <div className="flex min-h-screen w-full flex-1 flex-col gap-2 rounded-tl-2xl border border-neutral-200 bg-white   dark:border-neutral-700 dark:bg-neutral-900">
         {/* <div className="flex gap-2">
           {[...new Array(4)].map((i, idx) => (
             <div
