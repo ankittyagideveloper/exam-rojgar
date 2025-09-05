@@ -1,5 +1,6 @@
 import { MessageCircle, Send, Phone } from "lucide-react";
-
+import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { Link } from "react-router";
 const Footer = () => {
   const footerLinks = [
     "About Us",
@@ -10,6 +11,11 @@ const Footer = () => {
     "Disclaimer",
     "Free Online exam",
   ];
+
+  const channelRoute =
+    "https://www.whatsapp.com/channel/0029VbAqJ1MHLHQV47i0lI3u"; // Your WhatsApp number
+  const email = "crackgovernmentjobs@gmail.com";
+  const phone = "+91 97487 41664";
 
   return (
     <footer className="relative bottom-15 lg:bottom-0 left-0 right-0 bg-[#008080] text-white py-8 mt-auto">
@@ -28,15 +34,27 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex justify-center gap-4 mb-6">
-            <button className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+            <Link
+              to={channelRoute}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+            >
               <Send className="w-5 h-5" />
-            </button>
-            <button className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+            </Link>
+            <Link
+              to={`mailto:${email}`}
+              target="_blank"
+              className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+            >
               <MessageCircle className="w-5 h-5" />
-            </button>
-            <button className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+            </Link>
+            <Link
+              to={`tel:${phone}`}
+              className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+            >
               <Phone className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </div>
 
