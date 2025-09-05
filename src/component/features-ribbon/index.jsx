@@ -162,7 +162,7 @@ function FeatureItem({
         to={href}
         target={target ?? "_self"}
         rel="noopener noreferrer"
-        className="group flex h-full flex-col items-center justify-center gap-3 px-3 py-4 md:px-6 md:py-6 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/40"
+        className="group flex h-full text-center flex-col items-center justify-center gap-3 px-3 py-4 md:px-6 md:py-6 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/40"
       >
         <div className="relative">
           <div
@@ -243,7 +243,7 @@ export default function FeaturesRibbon() {
       <div className="rounded-2xl bg-white shadow-none ring-1 ring-slate-200 ">
         <ul
           role="list"
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 divide-y md:divide-y-0"
+          className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 "
         >
           {items.map((item, idx) => (
             <FeatureItem key={idx} {...item} />
