@@ -1,5 +1,4 @@
 import { MessageCircle, Send, Phone } from "lucide-react";
-import { FaWhatsapp, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router";
 const Footer = () => {
   const footerLinks = [
