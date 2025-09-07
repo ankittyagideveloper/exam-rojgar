@@ -1,25 +1,53 @@
 import "./App.css";
 import Layout from "./component/Layout";
 import HomePage from "./pages/HomePage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
 import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
-import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
+import { ClerkProvider, SignedIn, useUser } from "@clerk/clerk-react";
 import ProtectedRoute from "./component/ProtectedRoute";
 import TestLayout from "./component/test-layout/TestLayout";
+import HomeLayout from "./component/home-layout";
+
+function PublicRoute({ children }) {
+  const { isSignedIn } = useUser();
+  return isSignedIn ? <Navigate to="/home" replace /> : <>{children}</>;
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <HomeLayout />,
+    children: [
+      {
+        index: true,
+        element: (
+          <PublicRoute>
+            <>Hello</>
+          </PublicRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/home",
     element: <Layout />,
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: (
+          <ProtectedRoute>
+            <HomePage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "test-category/*",
@@ -82,7 +110,7 @@ function App() {
       {isLoading ? (
         <Loader />
       ) : (
-        <ClerkProvider publishableKey={PUBLISHABLE_KEY} signInUrl="/">
+        <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
           <RouterProvider router={router} />
         </ClerkProvider>
       )}

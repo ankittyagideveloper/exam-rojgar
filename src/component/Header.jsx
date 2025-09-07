@@ -40,7 +40,11 @@ const Header = () => {
               <button>{t("logOutBtn")}</button>
             </SignOutButton>
           ) : (
-            <SignInButton className="cursor-pointer" mode="modal">
+            <SignInButton
+              className="cursor-pointer"
+              mode="modal"
+              forceRedirectUrl="/home"
+            >
               <button>LogIn</button>
             </SignInButton>
           )}
