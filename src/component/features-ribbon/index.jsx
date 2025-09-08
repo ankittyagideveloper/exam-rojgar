@@ -181,7 +181,9 @@ function FeatureItem({
               <LiveIndicator size="sm" />
             </span>
           ) : null}
-          <span className="text-sm font-medium text-slate-600">{label}</span>
+          <span className="text-sm font-medium text-slate-600 dark:text-white">
+            {label}
+          </span>
         </div>
       </Link>
     </li>
@@ -238,9 +240,9 @@ export default function FeaturesRibbon() {
     <section
       aria-label="Feature menu"
       //   className="mx-auto w-full max-w-6xl px-3 sm:px-4"
-      className="py-4"
+      className="py-4 dark:bg-[#121212]"
     >
-      <div className="md:rounded-2xl bg-white shadow-none ring-1 ring-slate-200 ">
+      <div className="md:rounded-2xl bg-white shadow-none ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
         <ul
           role="list"
           className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 "

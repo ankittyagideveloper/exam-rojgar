@@ -13,9 +13,10 @@ import {
   useUser,
   SignOutButton,
 } from "@clerk/react-router";
-import { User } from "lucide-react";
+import { Moon, Sun, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../language-switcher";
+import { ThemeContext } from "../../context/ThemeContext.jsx";
 
 const SidebarContext = createContext(undefined);
 
@@ -86,6 +87,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
 
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const { isSignedIn } = useUser();
   const {
     t,
@@ -101,7 +103,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     <>
       <div
         className={cn(
-          "h-16  flex flex-row  lg:hidden  items-center justify-between bg-neutral-100 dark:bg-neutral-800 w-full"
+          "h-16  flex flex-row  lg:hidden  items-center justify-between  bg-white dark:bg-[#121212] w-full dark:border-[#363636]"
         )}
         {...props}
       >
@@ -116,6 +118,17 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             </Link>
           </div>
           <div className="flex items-center gap-1">
+            <button
+              onClick={toggleDarkMode}
+              className=" cursor-pointer flex items-center justify-center w-10 h-10  dark:bg-gray-700  transition-all duration-200"
+              aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
+            >
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-slate-700" />
+              )}
+            </button>
             <LanguageSwitcher onChange={handleLanguageChange} />
             {isSignedIn ? (
               <UserButton />

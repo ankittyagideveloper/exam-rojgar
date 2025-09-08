@@ -45,7 +45,7 @@ const BottomNavigation = () => {
     // },
   ];
   return (
-    <nav className="block lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2">
+    <nav className="block lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 dark:bg-[#121212]">
       <div className="flex justify-around items-center">
         {navItems.map((item) => {
           const Icon = item.icon;

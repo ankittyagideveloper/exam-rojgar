@@ -8,9 +8,15 @@ import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
 import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
-import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
+import { ClerkProvider, SignedIn, useUser } from "@clerk/clerk-react";
 import ProtectedRoute from "./component/ProtectedRoute";
 import TestLayout from "./component/test-layout/TestLayout";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+
+function PublicRoute({ children }) {
+  const { isSignedIn } = useUser();
+  return isSignedIn ? <Navigate to="/home" replace /> : <>{children}</>;
+}
 
 const router = createBrowserRouter([
   {
@@ -82,9 +88,11 @@ function App() {
       {isLoading ? (
         <Loader />
       ) : (
-        <ClerkProvider publishableKey={PUBLISHABLE_KEY} signInUrl="/">
-          <RouterProvider router={router} />
-        </ClerkProvider>
+        <ThemeProvider>
+          <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+            <RouterProvider router={router} />
+          </ClerkProvider>
+        </ThemeProvider>
       )}
     </>
   );

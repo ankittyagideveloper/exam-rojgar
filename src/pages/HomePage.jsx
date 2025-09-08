@@ -8,7 +8,7 @@ function HomePage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   return (
-    <div className="min-h-screen bg-gray-100 pb-20">
+    <div className="min-h-screen bg-gray-100 pb-20 dark:bg-[#121212]">
       {/* <header>
         <SignedOut>
           <SignInButton />
@@ -18,7 +18,7 @@ function HomePage() {
         </SignedIn>
       </header> */}
       {/* Main Content */}
-      <main className="px-0 py-0 md:px-4 md:py-6">
+      <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
         <div className="lg:flex lg:items-center xl:flex-row justify-around">
           {/* Hero Section */}
           {currentLanguage === "en" ? (
@@ -98,11 +98,11 @@ function HomePage() {
         <FeaturesRibbon />
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
           <h3 className="font-bold text-lg text-gray-800 mb-4">
             Quick Actions
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-3 dark:bg-[#121212]">
             {[
               {
                 title: "Start Free Test",
