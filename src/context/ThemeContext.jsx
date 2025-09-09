@@ -6,21 +6,25 @@ function ThemeProvider(props) {
   const [darkMode, setDarkMode] = useState(() => {
     // Initialize theme from localStorage or default to 'light'
     if (typeof window !== "undefined") {
-      return localStorage.getItem("darkMode") || false;
+      return JSON.parse(localStorage.getItem("darkMode") || "false") || false;
     }
     return false;
   });
 
   useEffect(() => {
-    // Save theme to localStorage
     if (typeof window !== "undefined") {
       localStorage.setItem("darkMode", darkMode);
+
       document.documentElement.classList.toggle("dark", darkMode);
     }
   }, [darkMode]);
+
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    const currMode = !darkMode;
+    setDarkMode(currMode);
+    localStorage.setItem("darkMode", currMode);
   };
+
   return (
     <div>
       <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
