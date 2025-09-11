@@ -76,10 +76,10 @@ export default function LanguageSwitcher({ onChange }) {
               }`}
             >
               <span>{lang.flag}</span>
-              <span className="flex-1 text-left hidden sm:inline">
+              <span className="flex-1 text-left hidden sm:inline dark:text-black">
                 {lang.label}
               </span>
-              <span className="flex-1 text-left sm:hidden">
+              <span className="flex-1 text-left sm:hidden dark:text-black">
                 {lang.shortLabel}
               </span>
             </button>
