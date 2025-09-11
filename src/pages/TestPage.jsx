@@ -67,7 +67,7 @@ const TestPage = () => {
 
   return (
     <>
-      <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 ">
         {/* {categories.map((test, index) => (
         <TestCard
           onClick={() => handleTest(test.id)}
@@ -111,7 +111,6 @@ const TestPage = () => {
                 alt={cat.alt}
                 title={cat.title}
               /> */}
-
                 <TestCard2
                   key={cat.id}
                   icon={cat.image}

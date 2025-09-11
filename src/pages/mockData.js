@@ -142,6 +142,7 @@ export const mockData = {
             },
           ],
         },
+
         // mechanical: {
         //   id: "mechanical",
         //   name: "Mechanical Engineering",
@@ -162,7 +163,70 @@ export const mockData = {
         // },
       },
     },
+    rrc: {
+      image: "/rrb-ntpc.webp",
+      alt: "Accounts Department Test",
+      title: "RRC",
+      id: "rrc",
+      slug: "rrc",
+      description: "Technical and engineering exams",
+      subcategories: {
+        "rrc-group-d": {
+          id: "tests",
+          image: "/rrb-ntpc.webp",
+          alt: "Accounts Department Test",
+          title: "RRC Group D",
+          name: "Appendix II",
+          slug: "rrc-group-d",
+          description: "Mechanical engineering concepts",
+          tests: [
+            {
+              id: "5062025-1",
+              image:
+                "https://snwallah.com/assets/categories/7bb60bd5d40c5422e282de3c440954ef.png",
+              alt: "Accounts Department Test",
+              title: "RRB NTPC (UG): Shift-1 (05 June 2025)",
+              name: "5th June 1st Shift",
+              difficulty: "Medium",
+              questions: "100",
+              marks: "100",
+              duration: "90",
+            },
+            {
+              id: "5062025-3",
+              image:
+                "https://snwallah.com/assets/categories/7bb60bd5d40c5422e282de3c440954ef.png",
+              alt: "Accounts Department Test",
+              title: "RRB NTPC (UG): Shift-3 (05 June 2025)",
+              name: "5th June 3rd Shift",
+              difficulty: "Medium",
+              questions: "100",
+              marks: "100",
+              duration: "90",
+            },
+          ],
+        },
 
+        // mechanical: {
+        //   id: "mechanical",
+        //   name: "Mechanical Engineering",
+        //   slug: "mechanical",
+        //   description: "Mechanical engineering concepts",
+        //   tests: [
+        //     {
+        //       id: "thermodynamics",
+        //       name: "Thermodynamics",
+        //       difficulty: "Medium",
+        //     },
+        //     {
+        //       id: "fluid-mechanics",
+        //       name: "Fluid Mechanics",
+        //       difficulty: "Hard",
+        //     },
+        //   ],
+        // },
+      },
+    },
     // medical: {
     //   id: "medical",
     //   name: "Medical",
