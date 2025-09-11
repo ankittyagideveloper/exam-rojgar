@@ -29,7 +29,9 @@ const Header = () => {
             <img src="/logo.png" alt="examrojgar-logo" />
           </div>
           <div>
-            <h1 className="font-bold text-lg text-gray-800">Exam Rojgar</h1>
+            <h1 className="font-bold text-lg text-gray-800 dark:text-white">
+              Exam Rojgar
+            </h1>
             <p className="text-xs text-gray-600">{t("testSeries")}</p>
           </div>
         </Link>

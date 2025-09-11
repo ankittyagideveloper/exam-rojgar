@@ -23,10 +23,10 @@ function HomePage() {
           {/* Hero Section */}
           {currentLanguage === "en" ? (
             <div className="hidden md:block mb-8 ">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
                 Crack your <span className="text-teal-600">goal</span>
               </h2>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+              <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                 with <span className="text-teal-600">ExamRojgar</span> Test
                 Series
               </h3>
@@ -36,10 +36,10 @@ function HomePage() {
             </div>
           ) : (
             <div className="hidden md:block mb-8 ">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
                 <span className="text-teal-600">ExamRojgar</span>
               </h2>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+              <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                 टेस्ट सीरीज़ के साथ <br />
                 अपना
                 <span className="text-teal-600"> लक्ष्य</span> हासिल करें
@@ -87,7 +87,7 @@ function HomePage() {
               >
                 <FileText className="w-6 h-6" />
               </div>
-              <h4 className="font-semibold text-gray-800 mb-1">
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-1">
                 {feature.title}
               </h4>
               <p className="text-sm text-gray-600">{feature.subtitle}</p>
@@ -99,7 +99,7 @@ function HomePage() {
 
         {/* Quick Actions */}
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
-          <h3 className="font-bold text-lg text-gray-800 mb-4">
+          <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
             Quick Actions
           </h3>
           <div className="space-y-3 dark:bg-[#121212]">

@@ -56,7 +56,9 @@ const QuizResult = ({ results, userAnswers }) => {
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-lg">
               <XCircle className="w-8 h-8 text-gray-600 mx-auto mb-2" />
-              <div className="font-semibold text-gray-800">Skipped</div>
+              <div className="font-semibold text-gray-800 dark:text-white">
+                Skipped
+              </div>
               <div className="text-2xl font-bold text-gray-600">
                 {results.skipped}
               </div>

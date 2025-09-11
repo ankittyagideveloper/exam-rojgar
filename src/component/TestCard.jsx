@@ -22,7 +22,7 @@ const TestCard = ({ image, alt, title, onClick }) => {
       <div className="p-4 pt-0">
         <h3
           className={`text-lg font-semibold text-center transition-colors duration-300 ${
-            isHovered ? "text-white" : "text-gray-800"
+            isHovered ? "text-white" : "text-gray-800 dark:text-white"
           }`}
         >
           {title}

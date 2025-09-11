@@ -24,7 +24,7 @@ export default function TestCard2(props) {
         </div>
       </div>
 
-      <h3 className="text-gray-800 font-semibold text-base leading-tight mb-4 min-h-10">
+      <h3 className="text-gray-800 dark:text-white font-semibold text-base leading-tight mb-4 min-h-10">
         {title}
       </h3>
 
