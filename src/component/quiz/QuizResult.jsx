@@ -14,7 +14,7 @@ const QuizResult = ({ results, userAnswers }) => {
   const { categoryId } = useParams();
   const quizData = questions[categoryId] || [];
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-6">
+    <div className="max-w-6xl mx-auto md:p-6 space-y-6">
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
