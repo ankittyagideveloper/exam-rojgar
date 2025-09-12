@@ -3231,5 +3231,1009 @@
         "explanation": ""
       }
     ]
+  },
+  "rca-gs-test-1": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 3600,
+    "questions": [
+      {
+        "id": 1,
+        "question": "The formula unit mass of CaCl is:2",
+        "options": ["115u", "114u", "111u", "110u"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "The particles size of a solution is:",
+        "options": [
+          "smaller than 1 nm in diameter",
+          "smaller than 28 nm in diameter",
+          "smaller than 100 nm in diameter",
+          "smaller than 52 nm in diameter"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "A solution contains 40 ml of acid in 120 ml of water . Calculate the concentration in terms of volume by volume percentage of the solution.",
+        "options": ["45%", "25%", "12%", "30%"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "A solution contains 25 g of copper chloride salt in 250 g of water . Calculate the concentration in terms of mass by mass percentage of the solution.",
+        "options": ["9.09%", "36.01%", "18.01%", "27.01%"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "Which of the following solutions is identified by smell?",
+        "options": [
+          "Sugar in water ",
+          "Salt in water",
+          "Potassium permanganate in water",
+          "Dettol in water"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Which of the following formulas is used to calculate the volume by volume percentage of a solution?",
+        "options": [
+          "×100Mass of solute Volume of solution",
+          "×100Mass of solute Mass of solution",
+          "×100Volume of solute Volume of solution",
+          "×100Volume of solution Mass of solute"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "A solution contains 40 g of common salt in 320 g of water . What is the concentration of the solution in terms of mass by mass percentage?",
+        "options": ["11.0%", "11.3%", "1.0%", "11.1%"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "Which of the following is the correct statement about colloidal solutions?",
+        "options": [
+          "The size of particles of the colloid is not too small.",
+          "A colloidal solution is a homogeneous mixture.",
+          "Colloids do not scatter a beam of light passing through them and make its path visible.",
+          "The components of a colloidal solution are the dispersed phase and the dispersion medium."
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "What happens when we increase the temperature of solids?",
+        "options": [
+          "The kinetic energy of the particles will decrease.",
+          "The shape of the solid will remain same.",
+          "The kinetic energy of the particles will increase.",
+          "No ef fect of temperature on solids."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "Which of the following is NOT a characteristic of particles of matter?",
+        "options": [
+          "Particles of matter are static. ",
+          "Particles of matter have space between them.",
+          "Particles of matter are continuously moving.",
+          "Particles of matter attract each other ."
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "All liquids and gases are:",
+        "options": ["fluids", "semiconductors", "solids", "insulators"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "Which of the following options does NOT represent a property of solids?",
+        "options": [
+          "It is not dif ficult to change their shape.",
+          "They have distinct boundaries and fixed volumes.",
+          "They have a definite shape.",
+          "They have a tendency to maintain their shape when subjected to outside force."
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "Which of the following options does NOT represent a property of liquids?",
+        "options": [
+          "Liquids have no fixed shape",
+          "Liquids flow and change shape",
+          "Liquids do not have fixed volume",
+          "Liquids take the shape of the container in which they are kept"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "Which of the following statements is correct about continuous movement of particles of matter?",
+        "options": [
+          "If we decrease the temperature, kinetic energy of particles increases.",
+          "Change in temperature has no ef fect on the kinetic energy of particles.",
+          "If we increase the temperature, kinetic energy of particles decreases.",
+          "If we increase the temperature, kinetic energy of particles increases."
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Which of the following options represents sub-atomic particles found in Thomson’ s model of an atom?",
+        "options": [
+          "Only electrons",
+          "Protons and neutrons both",
+          "Only protons",
+          "Electrons and protons both"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "Which of the following is the symbol of the unit of atomic mass?",
+        "options": ["u", "mg", "g", "ml"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "Which of the following examples shows that particles of matter have enough space between them?",
+        "options": [
+          "Boiling of water",
+          "Potassium permanganate got evenly distributed in water",
+          "Breaking of iron nail",
+          "Lighting incense stick"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "Which of the following statements is INCORRECT about Rutherford’ s model of an atom?",
+        "options": [
+          "Electrons revolve around the nucleus in circular paths.",
+          "There is a positively charged centre in an atom, which is called the nucleus.",
+          "Electrons revolve around the nucleus in elliptical paths.",
+          "The size of the nucleus is very small as compared to that of the atom."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "Which of the following statements regarding an atom is correct?",
+        "options": [
+          "Atoms are not electrically neutral",
+          "An atom does not contain any positive charge",
+          "Atoms as a whole are electrically neutral",
+          "Atoms are partially electrically neutral"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "The atomic radius of a hydrogen atom is:",
+        "options": ["10 ⁻¹⁰ m", "10 ⁻⁷ m", "10 ⁻⁸ m ", "10 ⁻⁹ m"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Particles of matter are continuously moving because of ____________.",
+        "options": [
+          "potential energy",
+          "size of particles",
+          "kinetic energy",
+          "intermixing of particles"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "The oxygen molecule is a ____________.",
+        "options": [
+          "triatomic molecule",
+          "diatomic molecule",
+          "tetratomic molecule",
+          "monoatomic molecule"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "Which of the following is an example of emulsion?",
+        "options": ["Foam", "Face Cream", "Sponge", "Rubber"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "Which of the following options does NOT represent a property of suspensions?",
+        "options": [
+          "The particles of a suspension scatter a beam of light passing through it.",
+          "A suspension is a heterogeneous mixture.",
+          "The particles of a suspension cannot be seen by the naked eyes.",
+          "A suspension is unstable in nature."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "In colloids, which of the following is a correct example of foam?",
+        "options": ["Pumice", "Mist", "Jelly", "Fog "],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "Which of the following statements is correct about suspension?",
+        "options": [
+          "A Suspension is a heterogeneous mixture.",
+          "Solids dispersed in gas are called suspensions.",
+          "Particles of a suspension are invisible to the naked eye.",
+          "A Suspension is a homogeneous mixture."
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "Subatomic particles like electrons, protons and neutrons exhibit:",
+        "options": [
+          "macroparticle nature",
+          "both particle and wave nature",
+          "only particle nature",
+          "only wave nature"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "Oxygen is an essential element for all life forms on Earth. Its atomic number is:",
+        "options": ["10", "8", "12", "6"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "Many gums are used in the food industry as thickening agents or emulsion stabilisers, it mainly contain _______.",
+        "options": ["polysaccharides", "polypeptides", "fats", "sugars"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "What is the primary purpose of pasteurisation in food processing?",
+        "options": [
+          "To kill harmful microorganisms",
+          "To enhance flavour",
+          "To increase nutritional value",
+          "To improve texture "
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "Oxalic acid is naturally present in which of the following kitchen ingredients?",
+        "options": ["Lemon", "Spinach", "Milk", "Vinegar"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "Tartaric acid is naturally contained in which of the following kitchen ingredients?",
+        "options": ["Vinegar", "Tamarind", "Lemon juice", "Baking soda"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "Acetic acid is found in which of the following kitchen ingredients?",
+        "options": ["Baking soda", "Sugar", "Milk", "Vinegar"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "Which of the following matters will form a homogeneous mixture?",
+        "options": [
+          "Benzene and water",
+          "Carbon dioxide and water",
+          "Sand and table salt",
+          "Soil and water"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "According to Le Chatelier's Principle, what happens to a system at equilibrium when it is subjected to a change in concentration, pressure or temperature?",
+        "options": [
+          "The system will undergo a permanent change in state",
+          "The system shifts in the direction that opposes the change to re-establish equilibrium.",
+          "The system will always favour the formation of reactants.",
+          "The system remains at equilibrium without any changes."
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "In ancient India, saltpetre was used for fireworks; it is actually: ",
+        "options": [
+          "Sodium Nitrate",
+          "Lithium Nitrate",
+          "Potassium Nitrate",
+          "Calcium Nitrate"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "Which of the following options correctly represents the chemical name (IUP AC) of baking soda?",
+        "options": [
+          "Sodium Chloride",
+          "Calcium Carbonate",
+          "Sodium Hydrogencarbonate",
+          "Potassium Bicarbonate"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "Which of the following statements about vitamins is correct?",
+        "options": [
+          "Vitamins are inorganic compounds needed in large amounts for normal metabolism.",
+          "Vitamins are a primary source of energy for the body .",
+          "All essential vitamins can be synthesised in large quantities by the human body .",
+          "Vitamins are organic compounds required in small amounts for various bodily functions."
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "Which of the following statements best describes isomerism in chemistry?",
+        "options": [
+          "The occurrence of compounds with the same molecular formula but dif ferent chemical properties",
+          "The formation of compounds with identical chemical properties but dif ferent chemical formulas",
+          "The process by which a compound changes its state of matter",
+          "The phenomenon where dif ferent elements have the same number of protons"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "_____________ is used by doctors to set fractured bones.",
+        "options": [
+          "ZnSO ·7H O 4 2",
+          "CuSO ·5H O 4 2",
+          "ZnSO ·10H O 4 2",
+          "CaSO ·1/2H O 4 2"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "Radioactivity refers to the rate at which a particular nuclide undergoes radioactive decay . Which of the following units is used to measure radioactivity? ",
+        "options": ["Curie", "Roentgen", "Candela", "Weber"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "Which principle states that the partial vapour pressure of each volatile component in a solution is directly proportional to its mole fraction?",
+        "options": [
+          "Henry's Law",
+          "Dalton's Law",
+          "Raoult's Law",
+          "Boyle's Law"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "What is the name of the law which states that in a mixture of gases, the total pressure is equal to the sum of the partial pressures of the individual gases?",
+        "options": [
+          "Charles's Law of Partial Pressures",
+          "Boyle's Law of Partial Pressures",
+          "Dalton's Law of Partial Pressures",
+          "Avogadro's Law of Partial Pressures"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "Which of the following options best describes the Ideal Gas Law?",
+        "options": [
+          "The pressure (P), volume (V) and temperature (T) of a fixed quantity of gas are related by the equation PV/T = Constant.",
+          "The pressure of a gas is directly proportional to its volume at constant volume.",
+          "The total pressure of a mixture of gases is equal to the sum of the partial pressures of the individual gases.",
+          "The volume of a gas is inversely proportional to its temperature at constant pressure"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "Avogadro's Law is correctly represented by which of the following statements?",
+        "options": [
+          "The volume of a gas is directly proportional to its temperature at constant pressure.",
+          "The pressure of a gas is directly proportional to its absolute temperature at constant volume.",
+          "Equal volumes of gases at the same temperature and pressure contain an equal number of molecules.",
+          "The total pressure of a mixture of gases is equal to the sum of the partial pressures of the individual gases."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "The Law of Constant Proportions states that:",
+        "options": [
+          "the total mass of reactants equals the total mass of products in a chemical reaction ",
+          "energy cannot be created or destroyed, only transformed",
+          "the pressure of a gas is directly proportional to its temperature at constant volume",
+          "a given chemical compound always contains its component elements in a fixed ratio by mass"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "Adiabatic compression of an ideal gas results in ____________.",
+        "options": [
+          "increase in temperature",
+          "decrease in heat flow",
+          "fall in temperature",
+          "no work done"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "If the pressure of a gas is increased by two-fold at a constant volume, the work done by the gas will be _____.",
+        "options": ["quadrupled", "zero", "tripled", "doubled"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "The volume of water versus temperature graph reaches the minimum at temperature ___________.",
+        "options": ["0°C", "4°C", "10°C", "100°C"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "The Rutherford nuclear model of atom predicts that atoms are unstable because the accelerated electrons revolving around the nucleus must be ______ in the nucleus.",
+        "options": ["spiral", "elliptical", "circular", "linear "],
+        "correctAnswer": 1,
+        "explanation": ""
+      }
+    ]
+  },
+  "rcc-physics-msc-1": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "timeLimit": 3600,
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following statements is INCORRECT?",
+        "options": [
+          "The strength of the force of attraction between the particles of matter varies from one kind of matter to another .",
+          "The force acting between the particles of matter keeps them together .",
+          "The strength of the force of attraction between the particles of matter is constant, irrespective of the kind of matter .",
+          "The particles of matter have force acting between them."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "The work done by a constant force of 5 Newton acting on a body is 5 joules. The displacement of the body in the direction of the applied force is _____.",
+        "options": ["100 m", "10 m", "1 m", "1000 m"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "If the force of attraction between the earth and an apple separated by distance 'x' is 'F', then the force acting on the same apple kept at a distance '2x' will be ______.",
+        "options": ["F/2", "F/4", "4F", "2F"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "What will happen during the free fall of a massive object under the influence of gravitational force of the earth?",
+        "options": [
+          "Velocity of the massive object increases.",
+          "Velocity of the massive object decreases.",
+          "Mass of the object increases.",
+          "Mass of the object decreases."
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "Which of the following statements is correct?",
+        "options": [
+          "The weight of a given object is 6 times higher on the moon as compared to its weight on the earth. ",
+          "The weight of a given object is the same when we measure it on the earth or moon.",
+          "The weight of a given object is 6 times higher on the earth as compared to its weight on the moon.",
+          "The weight of a given object is 2 times higher on the earth as compared to its weight on the moon."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Which of the following statements is/are correct? Statements: I) Gravitational force between two objects is independent of the distance of separation between two objects. II) Gravitational force between two objects is inversely proportional to the square of the distance of separation between two objects. III) Gravitational force between two objects is directly proportional to the product of their masses.",
+        "options": [
+          "Statements I and II",
+          "Statements I, II and III",
+          "Statements II and III",
+          "Statements I and III"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "Which of the following statements is correct about the gravitational force between the earth and the moon?",
+        "options": [
+          "Gravitational force is repulsive when the moon is far from the earth.",
+          "Gravitational force is repulsive and minimum when the moon is far from the earth.",
+          "Gravitational force is attractive and maximum when the moon is close to the earth.",
+          "Gravitational force is attractive and maximum when the moon is far from the earth."
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "The gravitational force between two objects of masses m and m is directly proportional to ______. 1 2",
+        "options": ["m - m 2 1", "m - m 1 2", "m/ m 1 2", "m * m1 2"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "The force of attraction between two bodies which is directly proportional to the product of masses of the bodies and inversely proportional to the square of the distance of separation is ________.",
+        "options": [
+          "gravitational force",
+          "electromagnetic force",
+          "electrostatic force",
+          "electromotive force "
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "The force exerted by the earth on the moon is: (Consider G = 6 × 10 Nm kg; mass of the earth M = 6 × 10 kg; mass of the moon = 8 × 10 kg, and distance between earth and moon is 4 × 10 m).−11 2−2 24 22 8",
+        "options": [
+          "1.8 x 10¹⁸ N",
+          "1.8 x 10²⁰ N",
+          "1.8 x 10²⁴ N",
+          "1.8 x 10²² N"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "Which of the following does NOT increase the rate of evaporation?",
+        "options": [
+          "Decrease in temperature",
+          "Increase in surface area",
+          "Increase in wind speed",
+          "Decrease in humidity"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "In which of the following phenomena does a solid substance change into a liquid substance?",
+        "options": ["Fusion", "Solidification", "Sublimation", "Deposition"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "When an empty bottle is closed air tight and pushed inside water it bounces back when it is released. This is because ________.",
+        "options": [
+          "water does not exert force on an empty bottle",
+          "gravitational force on a bottle is equal to the buoyant force of the water",
+          "upthrust of water on a bottle is greater than the gravitational force acting on the bottle",
+          "gravitational force acting on the bottle is greater than the upthrust of water"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "Which of the following physical quantities represents the rate of change of velocity?",
+        "options": ["Speed", "Velocity", "Acceleration", "Distance "],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Which of the following statements is/are correct? Statements: I) The mass of an object is the same as its weight. II) The mass of an object is not the same as its weight. III) Mass is scalar quantity , whereas weight is vector quantity .",
+        "options": [
+          "Statements I and III",
+          "Statement III",
+          "Statements I and II",
+          "Statements II and III"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "The relation between thrust (T), pressure (P) and area (A) of an object in a given medium is ______.",
+        "options": ["T=PxA", "TxA=P", "T=P+A", "T=P/(AxA)"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "A cubic wooden block of side 2 m is lying on a tabletop. If the mass of the wooden block is 10 kg, then the pressure exerted by the wooden block on the tabletop is: (consider g = 10 m/s )2",
+        "options": ["25 N m ⁻ ²", "30 N m ⁻ ²", "20 N m ⁻ ²", "15 N m ⁻ ²"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "Which of the following is the SI unit of work done?",
+        "options": ["Erg", "Metre", "Newton", "Joule"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "Which of the following is the unit of acceleration?",
+        "options": ["ms ", "ms2", "m/s2", "m/s"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "We observe geometrical shadow of an opaque object when light is incident on it. This is due to __________.",
+        "options": [
+          "diffraction of the light",
+          "dispersion of the light by an object",
+          "light travelling in a straight line",
+          "reflection of the light"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "Which phenomenon causes bending of the ray of light when it moves in the earth's atmosphere?",
+        "options": [
+          "Atmospheric refraction",
+          "Atmospheric scattering",
+          "Atmospheric reflection",
+          "Atmospheric dispersion"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "If the refractive index of air , water , and crown glass are n ,n and n respectively , then _________. 12 3",
+        "options": ["n1<n2=n3", "n1>n2>n3", "n1=n2<n3", "n1<n2<n3"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "If a light ray is travelling from medium of refractive index 'n ' to the medium of refractive index 'n ' such that angle of incidence is 'i' and angle of refraction 'r' (assuming n /n is equal to ______.1 2 12",
+        "options": ["sini/sinr", "sinr−sini", "sinr/sini", "sini−sinr"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "When a thick glass slab is placed over printed matter , they appear to be ___ and this is due to _____of light. ",
+        "options": [
+          "lowered; reflection",
+          "lowered; refraction",
+          "raised; refraction",
+          "raised; reflection"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "When white light is dispersed by a glass prism into seven colours, out of the following colours which colour will be deviated the least?",
+        "options": ["Indigo", "Yellow", "Blue", "Green"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "When white light falls on a glass prism, it splits into seven colours. The phenomena is known as:",
+        "options": ["Diffraction", "Dispersion", "Deviation", "Refraction"],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "When white light is incident on a glass prism, it undergoes dispersion. This phenomenon is due to ________.",
+        "options": [
+          "refractive index of the glass being dif ferent for dif ferent colours",
+          "interference of the light",
+          "diffraction of the light",
+          "refractive index of the glass being the same for dif ferent colours"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "Which of the following events is a consequence of atmospheric refraction?",
+        "options": [
+          "Shaving mirrors to form large image of face",
+          "Image formation by plain mirrors",
+          "Rainbow formation",
+          "Advance sunrise and delayed sunset"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "Which two fundamental electrical quantities are related by the Ohm's Law?",
+        "options": [
+          "Voltage and current ",
+          "Current and power",
+          "Power and resistance",
+          "Voltage and power"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "A speeding vehicle can skid on the bend of the road because of _____________.",
+        "options": [
+          "Gravitational force",
+          "Centripetal force",
+          "Frictional force",
+          "Centrifugal force"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "To increase the force between two charges from 25 N to 100 N, one should:",
+        "options": [
+          "increase the distance between the charges fourfold",
+          "reduce the distance between the charges by half",
+          "reduce the distance between the charges by one-fourth",
+          "increase the distance between the charges twofold"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "At the highest point of a body thrown vertically upward, the acceleration is ___________.",
+        "options": [
+          "0 m/s acting upward2",
+          "9.81 m/s acting downward 2",
+          "0 m/s acting downward 2",
+          "9.81 m/s acting upward2"
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "Devices like hydraulic brakes and hydraulic lifts operate based on which physical law or principle?",
+        "options": [
+          "Faraday's law",
+          "Archimedes principle",
+          "Newton's law",
+          "Pascal's law"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "Hooke's law establishes the relationship between which two physical quantities in elastic materials?",
+        "options": [
+          "Stress and strain",
+          "Force and velocity ",
+          "Pressure and volume",
+          "Temperature and resistance"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "Which of the following quantities is measured using the unit 'quintal'?",
+        "options": ["Length", "Volume", "Weight", "Temperature"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "Which of the following is the SI unit used for measuring thermodynamic temperature?",
+        "options": ["Rankine", "Celsius", "Fahrenheit", "Kelvin"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "Electricity is integral to modern life in numerous ways. What is the SI unit for measuring electric current?",
+        "options": ["Ampere", "Coulomb", "Tesla", "Volt"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "What is the unit of transmittance?",
+        "options": ["cm sec−1", "sec−1", "It is unitless.", "cm−1"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "If y = 10 and x has the unit of cm, the unit of z will be _____. x, y and z indicate length.x/z",
+        "options": ["cm−1", "cm-2", "cm2 ", "cm"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "The unit 'foot' belongs to which of the following systems of units?",
+        "options": ["FPS system", "CGS system", "MKS system", "SI system"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "A graph of Fahrenheit temperature versus Celsius temperature is a straight line, whose intercept is _____.",
+        "options": ["32°F", "0°F", "100°C", "32°C"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "Using dimensional analysis, determine which of the following pairs of physical quantities have the same dimensions?",
+        "options": [
+          "Linear momentum and angular momentum",
+          "Work and power",
+          "Latent heat and gravitational potential",
+          "Force and torque"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "Snell's law is associated with which phenomenon of light?",
+        "options": ["Reflection", "Diffraction", "Dispersion", "Refraction"],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "A transverse wave consists of _______ that make one cycle.",
+        "options": [
+          "one crest and two troughs",
+          "one crest and one trough",
+          "two crests and one trough",
+          "two crests and two troughs "
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "Which radiation is emitted when a stream of accelerating electrons strikes a metal target?",
+        "options": ["γ-ray", "Cathode ray", "X-ray", "α-ray"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "Which type of wall is present in the closed system?",
+        "options": [
+          "Permeable wall",
+          "Semi-permeable wall",
+          "Adiabatic wall",
+          "Diathermal wall"
+        ],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "In a material, the mass is the ________________.",
+        "options": [
+          "amount of matter it has",
+          "amount of space it occupies",
+          "gravitational force acting on it",
+          "amount of water it replaces"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "If two resistors in series are equal, say R each, what is the total resistance?",
+        "options": ["R2", "R/2", "2R", "R"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "Which of the following is correct with regard to resistances in a series circuit?",
+        "options": [
+          "Total resistance is less than any individual resistance.",
+          "Total resistance is equal to the product of all resistances.",
+          "Total resistance is inversely proportional to each resistance.",
+          "Total resistance is equal to the sum of all individual resistances.  "
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "What is the relationship between current (I), power (P), and voltage (V)?",
+        "options": ["I = PV", "I = P2V", "I = V ÷ P", "I = P ÷ V "],
+        "correctAnswer": 4,
+        "explanation": ""
+      }
+    ]
   }
 }
