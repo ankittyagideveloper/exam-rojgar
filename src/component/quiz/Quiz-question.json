@@ -4235,5 +4235,891 @@
         "explanation": ""
       }
     ]
+  },
+  "rrc-17082022-01": {
+    "title": "ABS",
+    "description": "select the Abs",
+    "questions": [
+      {
+        "id": 1,
+        "question": "If the perimeter of one face of a cube is 24 cm, then its volume is:",
+        "options": ["216 cm3", "154 cm3", "180 cm3", "200 cm3"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 2,
+        "question": "Study the given diagram carefully and answer the question. The numbers in dif ferent sections indicate the number of persons. Which of the following statements is correct on the basis of the above diagram?",
+        "options": [
+          "The number of girls who are also gymnasts is 41.",
+          "The number of gymnasts who are also medal winners is 34.",
+          "The number of medal winners who are also girls is 27.",
+          "The number of girls who are neither gymnasts nor medal winners is 23."
+        ],
+        "correctAnswer": 2,
+        "explanation": ""
+      },
+      {
+        "id": 3,
+        "question": "In this question, a statement is followed by two conclusions. Which of the two conclusions is/are true with respect to the statement? Statement: P ≤ Q < F = R > M ≥ B Conclusions: I. R > P II. F < B",
+        "options": [
+          "Only conclusion I is true",
+          "Both conclusions I and II are true",
+          "Neither conclusion I nor II is true",
+          "Only conclusion II is true"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 4,
+        "question": "As atomic number ______ and nuclear charge ______,the force of attraction between nucleus and valence electrons ______,hence, atomic radii ______ from Li to F.",
+        "options": [
+          "increases, decreases, decreases, increases",
+          "increases, increases, increases, decreases",
+          "decreases, decreases, decreases, increases",
+          "increases, increases, decreases, decreases"
+        ],
+        "correctAnswer": 4,
+        "explanation": ""
+      },
+      {
+        "id": 5,
+        "question": "______ is the nodal agency for releasing data related to national income, consumption expenditure, savings and capital formation, since 1956.",
+        "options": [
+          "Monetary Policy Of fice",
+          "Central Financial Of fice",
+          "Public Asset Management Of fice",
+          "Central Statistics Of fice"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 6,
+        "question": "Srinivas has just got married to a girl who is 4 years younger than him. After 5 years their average age will be 33 years. Find the present age of the girl.",
+        "options": ["31 years", "26 years", "30 years", "35 years"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 7,
+        "question": "The Indian Constitution gives the President the authority to declare three types of emergencies. Which of following is NOT among them?",
+        "options": [
+          "Article 352 - National Emergency",
+          "Article 356 - Emergency in State (President's rule)",
+          "Article 358 - Public health emergency",
+          "Article 360 - Financial Emergency"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 8,
+        "question": "In February 2022, who launched the ICMR DHR Policy on Biomedical Innovation?",
+        "options": [
+          "Mansukh Mandaviya",
+          "Nitin Gadkari",
+          "Amit Shah",
+          "Narendra Modi"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 9,
+        "question": "One year ago, the ratio of the ages of Saketh and Tilak was 5 : 6, respectively . Four years hence, this ratio would become 6 : 7. The present age of Saketh is:",
+        "options": ["26 years", "31 years", "25 years", "30 years"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 10,
+        "question": "Which is a quadratic equation? A. B. (x - 4x + 5) + √3x + 8 = 0 C. (p - q) - q + 2pq - √p = -3 D. (x + 3) = 0b−√3+2b−√32=0 2 2 3 1 2",
+        "options": ["A", "C", "D", "B"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 11,
+        "question": "Convert 36 cm to km.",
+        "options": ["0.0036 km", "0.00063 km", "0.00036 km", "0.000036 km"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 12,
+        "question": "In Newland's law of octaves, the first element is ______ and the last known element is ______.",
+        "options": [
+          "hydrogen, lanthanum",
+          "hydrogen, thorium",
+          "hydrogen, zirconium",
+          "helium, zirconium"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 13,
+        "question": "The average of 1 1 numbers arranged in an order is 41. The average of the first five numbers is 18 and that of the last five numbers is 64. What is the sixth number?",
+        "options": ["41", "45", "55", "64"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 14,
+        "question": "X and Y are two alloys of Gold and Platinum prepared by mixing the metals in the ratio of 5 : 2 and 5 : 7, respectively . If we melt equal quantities of the alloys to form a third alloy Z, then the ratio of the quantity of Gold to the quantity of Platinum in Z will be:",
+        "options": ["84 : 73", "95 : 73", "95 : 84", "73 : 95"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 15,
+        "question": "Study the given letter , number , symbol series and answer the question that follows. T % N 9 * M $ 3 U = L 8 Y @ G & 3 E > W & 4 R F ! K Find out the total number of symbols that are immediately preceded by a number and immediately followed by a letter .",
+        "options": ["4", "2", "1", "3"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 16,
+        "question": "Who among the following was the chairman of Planning Commission when the First Five Year plan was started?",
+        "options": [
+          "Sardar V allabhbhai Patel",
+          "Harendra Coomar Mookerjee",
+          "Jawaharlal Nehru",
+          "Rajendra Prasad"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 17,
+        "question": "Through what process does water expansion downwards in the soil?",
+        "options": ["Incineration", "osmotic", "transpiration", "infiltration"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 18,
+        "question": "In a class of students, Paulo ranked 18 from the top and 45 from bottom. What is the total number of students in the class?th th",
+        "options": ["63", "61", "62", "60"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 19,
+        "question": "A chemical compound X is prepared by heating gypsum. It is white powder and used as a fire proofing material. Compound X is:",
+        "options": [
+          "baking soda",
+          "washing soda",
+          "plaster of Paris",
+          "sodium hydroxide"
+        ],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 20,
+        "question": "In the following decomposition reaction, identify the p q r s: p feSO (s) → q fe o (s) + r SO (g) + s SO (g) 4 23 2 3",
+        "options": ["3,1,1,1", "1,1,1,1", "1,1,2,1", "2,1,1,1"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 21,
+        "question": "20 women can complete a work in 15 days. 16 men can complete the same work in 15 days. Find the ratio between the work ef ficiency of a men to a women.",
+        "options": ["5 : 4", "4 : 3", "5 : 3", "3 : 2"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 22,
+        "question": "In which state is the 'Chalo Loku' festival celebrated?",
+        "options": [
+          "Madhya Pradesh",
+          "Andhra Pradesh",
+          "Uttar Pradesh",
+          "Arunachal Pradesh"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 23,
+        "question": "Select the option that is related to the fifth number in the same way as the second number is related to the first number and the fourth number is related to the third number . 10 : 55 :: 12 : 65 :: 18 : ?",
+        "options": ["92", "90", "85", "95"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 24,
+        "question": "If the sum of two numbers is 430 and their HCF is 43, then which of the following is the correct pair?",
+        "options": ["215, 215", "86, 344", "172, 258", "129, 301"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 25,
+        "question": "A water tank is in the form of a cube of side 2 m. It has an inlet in the shape of a circle with radius 3.5 cm. How long will it take to fill the tank (approximately), if the water is flowing at a speed of 2 m/s?",
+        "options": ["19.2 minutes", "22 minutes", "17.3 minutes", "1 hour"],
+        "correctAnswer": 1,
+        "explanation": ""
+      },
+      {
+        "id": 26,
+        "question": "Which of the following statements is INCORRECT about longitudes and latitudes?",
+        "options": [
+          "180° E and 180° W refer to the same longitudinal line.",
+          "The latitude lines are parallel to each other .",
+          "Longitudes never intersect each other .",
+          "Latitudes never intersect each other ."
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 27,
+        "question": "A fine beam of light becomes visible when it enters a smoke filled room due to:",
+        "options": [
+          "scattering of light",
+          "refraction of light",
+          "dispersion of light",
+          "reflection of light"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 28,
+        "question": "Which of the following terms will replace the question mark (?) in the given series to make it logically complete? S2L, P6N, M18P , J54R, G162T , ?",
+        "options": ["D486V", "D386V", "E486V", "D324V"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 29,
+        "question": "Find x if ABCD is a parallelogram as given in figure below , with two diagonals AC and BD intersecting at O and OA = x + 3, OB = y + 2, OC = 2x + y , OD = 3y",
+        "options": ["1", "4", "3", "2"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 30,
+        "question": "study the diagram of the cross-section of a leaf given below . Which option shows the correct labelling?",
+        "options": [
+          "a - upper epidermis, b - lower epidermis, c - guard cell, d - air spaces, e - chloroplast",
+          "a - upper epidermis, b - waxy cuticle, c - stoma, d - air spaces, e - chloroplast",
+          "a - upper epidermis, b - lower epidermis, c - stoma, d - air spaces, e - nucleus",
+          "a - waxy cuticle, b - upper epidermis, c - stoma, d - air spaces, e - nucleus"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 31,
+        "question": "Which of the following statements is/are correct for a current carrying solenoid? (i) It can be used to magnetise a piece of soft iron. (ii) It acts like a bar magnet (iii) The field lines are concentric circles",
+        "options": [
+          "Both (i) and (iii)",
+          "Only (1)",
+          "Both (i) and (ii)",
+          "Only (ii)"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 32,
+        "question": "In January 2022, V Ananth Nageswaran was appointed as the new Chief Economic Advisor (CEA) of India, thus replacing______.",
+        "options": [
+          "Kaushik Basu",
+          "Arvind Subramanian",
+          "Krishnmurthy Subramanian",
+          "Raghuram Rajan"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 33,
+        "question": "If x + y + z = 1 1 and xy + yz + zx = 42, then the value of x + y + z is:2 2 2",
+        "options": ["41", "37", "39", "43"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 34,
+        "question": "E, F, G, H, I, J and K are sitting in a straight row , facing north. H is second to the right of G. F and K are immediate neighbours. Both F and E are immediate neighbours of I. H and E are immediate neighbours. K is at the extreme right end of the row . J is at the immediate left of H. Who is at the immediate left of J?",
+        "options": ["H", "G", "F", "E"],
+        "correctAnswer": 3,
+        "explanation": ""
+      },
+      {
+        "id": 35,
+        "question": "Raman started from a point and walked a distance of 200 m towards the north, he then turned left and walked 300 m. turned right and walked 400 m, and then turned right again and walked 300 m. How far is Raman from the starting point? (All turns are 90 degree turns only)",
+        "options": ["1400 m", "600 m", "200 m", "700 m"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 36,
+        "question": "Which of the following numbers will replace the question mark (?) in the given series? 55, 104, 140, 165, ?",
+        "options": ["174", "192", "181", "185"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 37,
+        "question": "What important function is performed by SER in the liver cells of vertebrates?",
+        "options": [
+          "Synthesis of proteins",
+          "Synthesis of lipids",
+          "Detoxification of drugs and poisons",
+          "Synthesis of complex sugars"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 38,
+        "question": "How many water and carbon dioxide molecules take part, respectively , in the process of photosynthesis as indicated by the following unbalanced equation? HO(l) + CO (g) → C H0(aq) + O (g) + H O(l) (In the presence of sunlight and chlorophyll). 2 2 6126 2 2",
+        "options": ["3 and 6", "4 and 5", "6 and 6", "6 and 3"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 39,
+        "question": "Express sin θ in terms of cot θ , where θ is an acute angle.",
+        "options": [
+          "1 + cot θ 2",
+          "1 1+ θcot2",
+          "1+ θcot2− − −−−−−−√",
+          "1 1+ θcot2 √"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 40,
+        "question": "Which of the following options is the closest approximate value which will come in place of question mark (?) in the following equation? 25.19 × 3 + 4.41 - 0.9 = ?",
+        "options": ["62", "79", "100", "95"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 41,
+        "question": "Who among the following has been authorised to act as the Chairperson, Lokpal, with ef fect from 28 May 2022?",
+        "options": [
+          "Justice BS Patil",
+          "Justice Pradip Kumar Mohanty",
+          "Justice Chittaranjan Sharma",
+          "Justice P Vishwanath Shetty"
+        ],
+        "correctAnswer": "2",
+        "explanation": ""
+      },
+      {
+        "id": 42,
+        "question": "What will be the approximate angle between the two hands of a clock (hour hand and minute hand) when the time is 8:45 ?",
+        "options": ["10°", "7°", "2°", "17°"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 43,
+        "question": "The ages of two persons dif fer by 30 years. If 5 years ago, the elder one was 3 times as old as the younger one, then the present age of the younger person is:",
+        "options": ["25 years", "30 years", "20 years", "35 years"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 44,
+        "question": "In a certain code language,'MFBTF' is written as 'LEASE' and 'UNISE' is written as 'TMHRD'. How will 'TRICK' be written in that language?",
+        "options": ["USJDL", "USDJL", "SQHBJ", "SSHJB"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 45,
+        "question": "The Rajiv Gandhi Khel Ratna award was renamed by the Government of India as Major Dhyan Chand Khel Ratna Award in the year______.",
+        "options": ["2020", "2021", "2019", "2022"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 46,
+        "question": "If the cost price of an article is Rs. 2,500 and its selling price is Rs. 2,375, then the loss percentage is:",
+        "options": ["5%", "6%", "3%", "4%"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 47,
+        "question": "A statement is given followed by two assumptions numbered I and II. You have to assume everything in the statement to be true and decide which of the given assumptions is/are implicit in the statement. Statement: Please register for the event latest by 21 April to collect free passes. Passes will not be issued without valid address proof. Assumptions: I. Voter ID card is a valid address proof. II. Passes can be purchased at the venue.",
+        "options": [
+          "Both assumptions I and II are implicit",
+          "Neither assumption I nor II is implicit",
+          "Only assumption II is implicit",
+          "Only assumption I is implicit"
+        ],
+        "correctAnswer": "1",
+        "explanation": ""
+      },
+      {
+        "id": 48,
+        "question": "The following chart shows the production of an organization in various years from 2012 to 2016. Study the chart and answer the question. What was the percentage increase in the production from 2015 to 2016?",
+        "options": ["50 %", "25 %", "40 %", "21 %"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 49,
+        "question": "Three products,______,______ and ______ are produced in chlor-alkali process.",
+        "options": [
+          "Chlorine, Hydrogen, Na CO2 3",
+          "Chlorine, Oxygen, Na CO2 3",
+          "Hydrogen, Chlorine, NaOH",
+          "Oxygen, Hydrogen, NaOH"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 50,
+        "question": "Which of the following was a non-violent protest against the British monopoly on salt production in 1930?",
+        "options": [
+          "Kheda Satyagraha",
+          "Civil disobedience",
+          "Dandi March",
+          "Khilafat Movement"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 51,
+        "question": "Three statements are followed by three conclusions numbered I, II and III. You have to consider these statements to be true, even if they seem to be at variance with commonly known facts, and decide which of the given conclusions logically follow/s from the given statements. Statements: All pans are pens. All pens are brushes. All brushes are tables. Conclusions: (I) Some tables are pans. (II) All pens are pans. (III) No pen is a pan",
+        "options": [
+          "Either conclusion I or conclusion III follows",
+          "None of the conclusions follow",
+          "Only conclusion I follows",
+          "Only conclusion II follows"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 52,
+        "question": "P and Q alone can complete a piece of work in 9 days and 12 days, respectively . In how many days will the work be completed if they work on alternate days starting with Q ?",
+        "options": ["115 6", "111 3", "105 6", "101 3"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 53,
+        "question": "The part of an electric motor that reverses the direction of flow of current in it, is:",
+        "options": ["brush", "split ring", "soft iron core", "coil"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 54,
+        "question": "Select the correct option for the full form of AIDS.",
+        "options": [
+          "Acquired Immune Deficiency Syndrome",
+          "Aggravated Immune Deficient Syndrome",
+          "Artificial Immune Deficiency Syndrome",
+          "Added Immune Deficient Syndrome"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 55,
+        "question": "Which of the following statements is/are true about the principal axis of a spherical mirror? (i) It is normal to the mirror (ii) Point of incidence always lies on the principal axis (iii) Principal focus always lies on the principal axis",
+        "options": [
+          "Both (i) and (iii)",
+          "Both (i) and (ii)",
+          "Only (ii)",
+          "Only (i)"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 56,
+        "question": "In Jainism, the word 'Jain' is derived from the Sanskrit word 'Jina', which means,______ implying one who has transcended all human passions.",
+        "options": ["vigour", "conqueror", "candour", "immortal"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 57,
+        "question": "The filament of a bulb is made extremely thin and long in order to achieve:",
+        "options": [
+          "high current",
+          "high resistance",
+          "high resistivity",
+          "high voltage"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 58,
+        "question": "Refer to the following letter series and answer the question Y H S D S Y I R A Y E U G I R O A B U B R X M P Q How many such vowels are there in the series each of which is immediately preceded by a consonant and also immediately followed by a consonant?",
+        "options": ["4", "2", "3", "5"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 59,
+        "question": "Who became the first Indian woman to win a silver medal in the W orld W restling Championships in 2021?",
+        "options": ["Sarita Mor", "Babita Phogat", "Anshu Malik", "Mona"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 60,
+        "question": "In economics, the slope of the demand curve is typically______.",
+        "options": [
+          "Curved moving from left to right",
+          "Straight parallel to X axis from left to right",
+          "downward from left to right",
+          "upward from left to right"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 61,
+        "question": "The dif ference in molecular mass between two consecutive homologous series members will be:",
+        "options": ["12", "08", "16", "14"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 62,
+        "question": "Which of the following types of images can be obtained on a screen?",
+        "options": [
+          "Real and enlarged",
+          "Real and diminished",
+          "V irtual and enlarged",
+          "V irtual and diminished"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 63,
+        "question": "Tropical Evergreen Forests are found in which of the following states of India?",
+        "options": ["Gujarat", "Kerala", "Rajasthan", "Uttar Pradesh"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 64,
+        "question": "What part of the respiratory system prevents the air-passage from collapsing?",
+        "options": ["Trachea", "Rings of cartilage", "Spine", "Ribs"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 65,
+        "question": "On 7 March 2022, the Ministry of W omen and Child Development (MoWCD), in partnership with the Ministry of Education and UNICEF , launched the ______ campaign to bring back out of school adolescent girls in India to the formal education.",
+        "options": [
+          "Balika Padhao Yojana",
+          "Kanya Shikhsa Pravesh Utsav",
+          "Sukanya Samriddhi Yojana",
+          "Kishori Shakti Yojana"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 66,
+        "question": "If 3 is added to each odd digit and 1 is subtracted from each even digit in the number 42514563, what will be dif ference between the highest and lowest digits thus formed?",
+        "options": ["8", "5", "2", "7"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 67,
+        "question": "In ΔABC if ∠ A = 40° and ∠B = 70°, find the measure of exterior angle A.",
+        "options": ["140°", "110°", "70°", "30°"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 68,
+        "question": "What will come in place of the question mark (?) in the following equation, if '+' is interchanged with '÷', and '-' is interchanged with '× '? 100 × 121 + 1 1 - 7 ÷ 24 - 8 × 33 × 99 ÷ 17 = ?",
+        "options": ["100", "80", "101", "90"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 69,
+        "question": "Which of the following numbers will replace the question mark (?) in the given series? 9, 10, 18, 45, 109, ?",
+        "options": ["327", "198", "234", "218"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 70,
+        "question": "If a ray of light is incident passing through the centre of curvature of a concave mirror , then the angle between the incident ray and the reflected ray will be equal to:",
+        "options": ["150 ∘", "0∘", "180∘", "90∘"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 71,
+        "question": "The Periyar River flows in which of the following Indian states?",
+        "options": ["Punjab", "Odisha", "Kerala", "Tripura"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 72,
+        "question": "In how many languages was The Bal Sahitya Puraskar awarded in 2021?",
+        "options": ["22", "24", "21", "23"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 73,
+        "question": "Select the set in which the numbers are related in the same way as are the numbers of the following sets. (NOTE : Operations should be performed on the whole numbers, without breaking down the numbers into its constituent digits. E.g. 13 - Operations on 13 such as adding/deleting/multiplying etc. to 13 can be performed. Breaking down 13 into 1 and 3 and then performing mathematical operations on 1 and 3 is not allowed) (15, 41, 4) (19, 71, 5)",
+        "options": ["(10, 8, 2)", "(13, 55, 3)", "(41, 125, 4)", "(44, 91, 3)"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 74,
+        "question": "How many such pairs of letters are there in the word DAUGHTER (in both forward and backward directions) which have as many letters between them in the word as there are in the English alphabetical order?",
+        "options": ["2", "4", "5", "3"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 75,
+        "question": "John bought a laptop at 25% discount on the marked price. If he paid Rs. 28,473 for the laptop, what was its marked price?",
+        "options": ["Rs. 37,964", "Rs. 37,694", "Rs. 37,946", "Rs. 37,496"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 76,
+        "question": "In which of the following reactions of respiration is oxygen required?",
+        "options": [
+          "Conversion of pyruvate to ethanol",
+          "Conversion of glucose to pyruvate",
+          "Conversion of pyruvate to CO , H0 and energy 2 2",
+          "Conversion of pyruvate to CO 2"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 77,
+        "question": "The greatest possible length which can be used to measure exactly the lengths 5 m 25 cm, 7 m 35 cm and 4 m 90 cm is:",
+        "options": ["25 cm", "55 cm", "45 cm", "35 cm"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 78,
+        "question": "In this question, a group of numbers/symbols is coded using letters as per the table given below and the conditions which follow . The correct combination of codes following the conditions is your answer Number/Symbol 75E%&48 Codes SDMUTLA Conditions: (i) If the second element is an odd number and the last element is an even number , the codes for these two (the second and the last elements) are to be interchanged. (ii) If the third element is an even number and the fifth element is a symbol, the codes for these two (the third and the fifth elements) are to be interchanged. (iii) If the fifth element is a symbol and the sixth element is also a symbol, both these elements (the fifth and the sixth elements) are to be coded as R. Question: E 7 5 % & 4 % 8",
+        "options": [
+          "M S D U T L U A",
+          "M A D U R R U S",
+          "M A D U T L U S",
+          "M A T U D L U S"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 79,
+        "question": "Find the simple interest on Rs. 2,000 at 8.25% per annum for the period from 7 February 2022 to 20 April 2022.",
+        "options": ["Rs. 37", "Rs. 35", "Rs. 31", "Rs. 33"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 80,
+        "question": "The value of 27 ÷ 3 - 27 × 0 + 1 =",
+        "options": ["13", "12", "10", "-18"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 81,
+        "question": "What is the name of the indigenously developed High-Speed Expandable Aerial Target System which was successfully flight-tested by Defence Research and Development Organisation (DRDO) in December 2021?",
+        "options": ["Pralay", "Nirbhay", "Abhyas", "Shaurya"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 82,
+        "question": "The roots of the equation ax + x + b = 0 are equal if:2",
+        "options": ["ab = 1 4", "b > 4a2", "b < 4a2", "b = 4a2"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 83,
+        "question": "P, Q, R, S, T and U are six giraf fes in a jungle, each with a dif ferent height. S is taller than Q. P is taller than R. S is shorter than T. Q is taller than P but shorter than T. T is shorter than U. Which of the six giraf fes is the shortest?",
+        "options": ["R", "T", "Q", "P"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 84,
+        "question": "Which of the following relations represents the correct mathematical form of Ohm's law?",
+        "options": ["I = V R2", "V = IR", "I = R/V", "R = I/V"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 85,
+        "question": "Three statements are given, followed by two conclusions numbered I and II. Assuming the statements to be true, even if they seem to be at variance with commonly known facts, decide which of the conclusions logically follow(s) from the statements. Statements: No computer is a marker . All erasers are markers. All pens are erasers. Conclusions: I. No pen is a computer . II. Some erasers are computers.",
+        "options": [
+          "Both conclusions I and II follow",
+          "Only conclusion II follows",
+          "Neither conclusion I nor II follows",
+          "Only conclusion I follows"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 86,
+        "question": "Which of the following groups of organisms help in keeping the environment clean?",
+        "options": [
+          "Algae and Lichens",
+          "Algae and Protozoa",
+          "Protozoa and Lichens",
+          "Bacteria and Fungi"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 87,
+        "question": "If 6, 18, 39, and x are in proportion, then find the value of x.",
+        "options": ["115", "139", "117", "112"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 88,
+        "question": "Five friends A, S, D, F and G took admission in a coaching institute in consecutive months of the same calendar year . A took admission in May . Only D took admission between F and S, while G took admission exactly one month after A. F was the last one to take admission. In which month did D take admission?",
+        "options": ["July", "August", "September", "June"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 89,
+        "question": "The value of is: 0.6+( −( +0.4÷0.5)) 0.81−−−−√ 0.0144− −−−−√",
+        "options": ["0.82", "0.78", "0.62", "0.58"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 90,
+        "question": "The following pie chart shows the percentage distribution of the expenditure incurred in manufacturing a scientific calculator . Study the pie chart and answer the question. If 500 products are manufactured and the direct labour cost on them amounts to Rs. 1,00,000, then what should be the selling price of the product so that the manufacturer can earn a profit of 44%?",
+        "options": ["Rs. 6,00", "Rs. 1,500", "Rs. 1,200", "Rs. 1,000"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 91,
+        "question": "Rajan started from a point and walked a distance of 200 m towards the north, he then turned left and walked 300 m, turned right and walked 400 m, and then turned left and walked 1 km. In which direction is Rajan facing now? (All turns are 90 degree turns only)",
+        "options": ["West", "North", "South", "East"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 92,
+        "question": "Which of the following compound is/are used in black and white photography?",
+        "options": [
+          "Silver chloride",
+          "Silver oxide",
+          "Silver bromide",
+          "Silver chloride and silver bromide both"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 93,
+        "question": "The Panchayati Raj system was first implemented in which state of India?",
+        "options": [
+          "Madhya Pradesh",
+          "Utter Pradesh",
+          "Rajasthan",
+          "West Bengal"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 94,
+        "question": "Which of the following statements are correct? (i) Tin-lead alloy is used for making fuse wires. (ii) Fuse is connected to live wire. (iii) The material chosen for making fuse should have high melting point.",
+        "options": [
+          "Both (i) and (iii)",
+          "Both (i) and (ii)",
+          "Both (ii) and (iii)",
+          "(i), (ii) and (iii)"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 95,
+        "question": "The average speed of Gaurav during a two-way journey is 15 km/h. If he walked a distance of 20 km every hour while going, then his speed while returning will be:",
+        "options": ["15 km/h", "10 km/h", "12 km/h", "11 km/h"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 96,
+        "question": "In the given letter-cluster pairs, the first letter-cluster is related to the second letter-cluster following a certain logic. Study the given pairs carefully , and from the given options, select the pair that follows the same logic. PRO : LJM ZEN : BWN",
+        "options": ["KLP : QPL", "GUN : UGM", "NYZ : MCB", "DEN : WWN"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 97,
+        "question": "P, L,K, U, J and Y went for a trip to Rajasthan and Uttar Pradesh in six consecutive months of the same calendar year . P preferred to visit Rajasthan in the month of November . U visited Uttar Pradesh exactly two months prior to P . Y preferred the month of July . J preferred to visit Rajasthan exactly between the months preferred by Y and U. L visited exactly one month prior to Y. In which month did K visit?",
+        "options": ["September", "November", "August", "October"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 98,
+        "question": "In which year did the Supreme Court give its judgement in the 'Satbir Singh versus the State of Haryana' case, which was related to dowry issues?",
+        "options": ["2019", "2020", "2022", "2021"],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 99,
+        "question": "The table given below shows four methods of contraception and their modes of action. Which option shows the correct matching? Method Mode of action (A) Copper-T i) Egg will not reach uterus (B) Oral pills ii)Sperms do not reach the cervix (C) Condom iii) Prevent implantation (D) Tubectomy iv) Prevent fertilization",
+        "options": [
+          "A-iv, B-iii, C-ii, D-i",
+          "A-i, B-ii, C-iii, D-iv",
+          "A-ii, B-i, C-iv , D-iii",
+          "A-iii, B-iv , C-ii, D-i"
+        ],
+        "correctAnswer": "",
+        "explanation": ""
+      },
+      {
+        "id": 100,
+        "question": "Six persons, A, B, C, D, E and F , are sitting around a circular table. All are facing the centre of the table. Only two persons are sitting between D and A. F is to the immediate right of C. E is second to the right of F . E is second to the left of A. Who is sitting to the immediate right of F?",
+        "options": ["A", "D", "C", "E"],
+        "correctAnswer": "",
+        "explanation": ""
+      }
+    ]
   }
 }
