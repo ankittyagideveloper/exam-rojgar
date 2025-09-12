@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router";
 const Slider = () => {
   return (
     <div className="w-full lg:w-2/4 h-full">
@@ -30,28 +31,32 @@ const Slider = () => {
       >
         {/* Common slide styles applied via Tailwind */}
         <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
-          <img
-            src="/slide-1.webp"
-            alt="slide-1"
-            className="w-full h-64 object-cover rounded-lg"
-          />
+          <Link to="/test-category/rrc/rrc-group-d">
+            <img
+              src="/rrc-group-D.png"
+              alt="slide-1"
+              className="w-full h-64 md:h-90  object-cover "
+            />
+          </Link>
         </SwiperSlide>
 
         <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
-          <img
-            src="/slide-2.webp"
-            alt="slide-2"
-            className="w-full h-64 object-cover rounded-lg"
-          />
+          <Link to="/test-category/rrb/rrb-ntpc">
+            <img
+              src="/rrb-ntpc.png"
+              alt="slide-1"
+              className="w-full h-64 md:h-90  object-cover md:object-cover "
+            />
+          </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
+        {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
           <img
             src="/slide-3.jpg"
             alt="slide-3"
             className="w-full h-64 object-cover rounded-lg"
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
         {/* <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
           Slide 2
         </SwiperSlide>
