@@ -88,7 +88,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
   const {
     t,
     i18n: { changeLanguage, language },
@@ -99,6 +99,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     setCurrentLanguage(newLanguage);
     changeLanguage(newLanguage);
   };
+
   return (
     <>
       <div
@@ -131,7 +132,9 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             </button>
             <LanguageSwitcher onChange={handleLanguageChange} />
             {isSignedIn ? (
-              <UserButton />
+              <>
+                <UserButton />
+              </>
             ) : (
               // <SignOutButton>
               //   <button>LogOut</button>
@@ -158,7 +161,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               )}
             >
               <div
-                className="text-4xl absolute left-5 top-5 z-50 text-neutral-800 dark:text-neutral-200"
+                className="cursor-pointer text-4xl absolute left-5 top-5 z-50 text-neutral-800 dark:text-neutral-200"
                 onClick={() => setOpen(!open)}
               >
                 <IconX className="text-4xl" />

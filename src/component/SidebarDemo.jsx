@@ -9,9 +9,15 @@ import {
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
 import { Link } from "react-router-dom";
-import { SignedIn, SignOutButton, UserButton } from "@clerk/clerk-react";
+import {
+  SignedIn,
+  SignOutButton,
+  UserButton,
+  useUser,
+} from "@clerk/clerk-react";
 
 export default function SidebarDemo({ children }) {
+  const { user } = useUser();
   const links = [
     {
       label: "Tests",
@@ -62,10 +68,11 @@ export default function SidebarDemo({ children }) {
               ))}
             </div>
           </div>
-          <div>
+          <div className="flex items-center gap-4">
             <SignedIn>
               <UserButton />
             </SignedIn>
+            <p className="font-normal text-2xl md:text-sm"> {user.fullName}</p>
           </div>
         </SidebarBody>
       </Sidebar>
