@@ -158,11 +158,12 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               )}
             >
               <div
-                className="absolute right-10 top-10 z-50 text-neutral-800 dark:text-neutral-200"
+                className="text-4xl absolute left-5 top-5 z-50 text-neutral-800 dark:text-neutral-200"
                 onClick={() => setOpen(!open)}
               >
-                <IconX />
+                <IconX className="text-4xl" />
               </div>
+
               {children}
             </motion.div>
           )}

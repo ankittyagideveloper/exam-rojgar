@@ -78,15 +78,19 @@ export const Logo = () => {
   return (
     <Link
       to="/"
-      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 flex items-center space-x-2 py-1 text-md font-normal text-black"
     >
       <div div className="rounded-full  h-8 w-8">
-        <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
+        <img
+          src="/examrojgar-logo-s.png"
+          alt="examrojgar-logo-s"
+          className="h-10 w-10"
+        />
       </div>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium whitespace-pre text-black dark:text-white"
+        className="text-2xl font-medium whitespace-pre text-black dark:text-white"
       >
         ExamRojgar
       </motion.span>
