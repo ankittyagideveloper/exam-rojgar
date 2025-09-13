@@ -190,7 +190,7 @@ export const mockData = {
               difficulty: "Medium",
               questions: "50",
               marks: "50",
-              duration: "60",
+              duration: "25",
             },
             {
               id: "rca-gs-test-1",
@@ -202,7 +202,7 @@ export const mockData = {
               difficulty: "Medium",
               questions: "50",
               marks: "50",
-              duration: "60",
+              duration: "25",
             },
             {
               id: "rcc-physics-msc-1",

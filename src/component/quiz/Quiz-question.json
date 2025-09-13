@@ -3235,7 +3235,7 @@
   "rca-gs-test-1": {
     "title": "ABS",
     "description": "select the Abs",
-    "timeLimit": 3600,
+    "timeLimit": 1500,
     "questions": [
       {
         "id": 1,
@@ -3752,7 +3752,7 @@
   "rcc-physics-msc-1": {
     "title": "ABS",
     "description": "select the Abs",
-    "timeLimit": 3600,
+    "timeLimit": 1500,
     "questions": [
       {
         "id": 1,
