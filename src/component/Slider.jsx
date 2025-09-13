@@ -27,7 +27,7 @@ const Slider = () => {
         speed={1000}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full  h-52 md:h-1/3  rounded  mt-0"
+        className="w-full  h-52 md:h-80  rounded  mt-0"
       >
         {/* Common slide styles applied via Tailwind */}
         <SwiperSlide className="z-0 flex justify-center items-center text-center bg-gray-700">
@@ -35,7 +35,7 @@ const Slider = () => {
             <img
               src="/rrc-group-D.png"
               alt="slide-1"
-              className="w-full h-64 md:h-1/3  object-cover "
+              className="w-full h-64 md:h-full  object-cover md:object-fill "
             />
           </Link>
         </SwiperSlide>
@@ -45,7 +45,7 @@ const Slider = () => {
             <img
               src="/govt-exam.png"
               alt="slide-1"
-              className="w-full h-64 md:h-1/3  object-cover "
+              className="w-full h-64 md:h-full   object-cover md:object-fill "
             />
           </Link>
         </SwiperSlide>
@@ -55,7 +55,7 @@ const Slider = () => {
             <img
               src="/rrb-ntpc.png"
               alt="slide-1"
-              className="w-full h-64 md:h-1/3  object-cover md:object-cover "
+              className="w-full h-64 md:h-full  object-cover md:object-fill "
             />
           </Link>
         </SwiperSlide>
