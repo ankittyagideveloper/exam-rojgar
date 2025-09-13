@@ -72,7 +72,11 @@ export default function SidebarDemo({ children }) {
             <SignedIn>
               <UserButton />
             </SignedIn>
-            <p className="font-normal text-2xl md:text-sm"> {user.fullName}</p>
+            {user && (
+              <p className="font-normal text-2xl md:text-sm">
+                {user?.fullName}
+              </p>
+            )}
           </div>
         </SidebarBody>
       </Sidebar>
