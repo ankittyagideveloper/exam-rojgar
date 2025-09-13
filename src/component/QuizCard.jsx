@@ -46,7 +46,7 @@ export function QuizCard({
           </h3>
           <button
             onClick={onStartClick}
-            className="bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap"
+            className="cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap"
           >
             Start Now
           </button>
@@ -120,7 +120,7 @@ export function QuizCard({
           <div className="ml-6">
             <button
               onClick={onStartClick}
-              className="bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-8 py-3 rounded-lg transition-colors"
+              className="cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-8 py-3 rounded-lg transition-colors"
             >
               Start Now
             </button>

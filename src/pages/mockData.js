@@ -106,6 +106,7 @@ export const mockData = {
       id: "rrb",
       slug: "rrb",
       description: "Technical and engineering exams",
+
       subcategories: {
         "rrb-ntpc": {
           id: "tests",
@@ -124,6 +125,7 @@ export const mockData = {
               title: "RRB NTPC (UG): Shift-1 (05 June 2025)",
               name: "5th June 1st Shift",
               difficulty: "Medium",
+              languages: ["English"],
               questions: "100",
               marks: "100",
               duration: "90",
@@ -136,6 +138,7 @@ export const mockData = {
               title: "RRB NTPC (UG): Shift-3 (05 June 2025)",
               name: "5th June 3rd Shift",
               difficulty: "Medium",
+              languages: ["English"],
               questions: "100",
               marks: "100",
               duration: "90",
@@ -187,6 +190,7 @@ export const mockData = {
               alt: "Accounts Department Test",
               title: "RRC Group-D Shift-1 (17 Auguest 2025)",
               name: "5th June 3rd Shift",
+              languages: ["English"],
               difficulty: "Medium",
               questions: "50",
               marks: "50",
@@ -201,6 +205,7 @@ export const mockData = {
               name: "5th June 1st Shift",
               difficulty: "Medium",
               questions: "50",
+              languages: ["English"],
               marks: "50",
               duration: "25",
             },
@@ -213,6 +218,7 @@ export const mockData = {
               name: "5th June 3rd Shift",
               difficulty: "Medium",
               questions: "50",
+              languages: ["English"],
               marks: "50",
               duration: "60",
             }, //rrc-17082022-01

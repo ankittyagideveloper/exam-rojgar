@@ -195,7 +195,7 @@ const TestPage = () => {
               questions={test.questions}
               marks={test.marks}
               duration={test.duration}
-              languages={["English", "Hindi"]}
+              languages={test.languages ?? []}
               userCount="45.8k"
               isFree={true}
               isNewInterface={true}
