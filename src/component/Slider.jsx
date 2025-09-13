@@ -30,7 +30,7 @@ const Slider = () => {
         className="w-full  h-52 md:h-1/3  rounded  mt-0"
       >
         {/* Common slide styles applied via Tailwind */}
-        <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
+        <SwiperSlide className="z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrc/rrc-group-d">
             <img
               src="/rrc-group-D.png"
@@ -40,7 +40,7 @@ const Slider = () => {
           </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
+        <SwiperSlide className=" z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category">
             <img
               src="/govt-exam.png"
@@ -50,7 +50,7 @@ const Slider = () => {
           </Link>
         </SwiperSlide>
 
-        <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
+        <SwiperSlide className="z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrb/rrb-ntpc">
             <img
               src="/rrb-ntpc.png"
