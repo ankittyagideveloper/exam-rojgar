@@ -35,7 +35,7 @@ const Slider = () => {
             <img
               src="/rrc-group-D.png"
               alt="slide-1"
-              className="w-full h-64 md:h-90  object-cover "
+              className="w-full h-64 md:h-1/2  object-cover "
             />
           </Link>
         </SwiperSlide>
@@ -45,7 +45,7 @@ const Slider = () => {
             <img
               src="/rrb-ntpc.png"
               alt="slide-1"
-              className="w-full h-64 md:h-90  object-cover md:object-cover "
+              className="w-full h-64 md:h-1/2  object-cover md:object-cover "
             />
           </Link>
         </SwiperSlide>

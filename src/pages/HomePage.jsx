@@ -23,14 +23,14 @@ function HomePage() {
           {/* Hero Section */}
           {currentLanguage === "en" ? (
             <div className="hidden md:block mb-8 ">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <h2 className="text-3xl md:text-6xl font-bold text-gray-800 dark:text-white mb-2">
                 Crack your <span className="text-teal-600">goal</span>
               </h2>
-              <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+              <h3 className="text-3xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
                 with <span className="text-teal-600">ExamRojgar</span> Test
                 Series
               </h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <p className="text-gray-600 md:text-2xl text-base leading-relaxed">
                 {t("tagLine")}
               </p>
             </div>
