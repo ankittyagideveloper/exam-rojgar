@@ -100,6 +100,9 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     changeLanguage(newLanguage);
   };
 
+  const closeSidebar = () => {
+    setOpen(!open);
+  };
   return (
     <>
       <div
@@ -162,7 +165,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             >
               <div
                 className="cursor-pointer text-4xl absolute left-5 top-5 z-50 text-neutral-800 dark:text-neutral-200"
-                onClick={() => setOpen(!open)}
+                onClick={closeSidebar}
               >
                 <IconX className="text-4xl" />
               </div>
@@ -177,9 +180,10 @@ export const MobileSidebar = ({ className, children, ...props }) => {
 };
 
 export const SidebarLink = ({ link, className, ...props }) => {
-  const { open, animate } = useSidebar();
+  const { open, animate, setOpen } = useSidebar();
   return (
     <Link
+      onClick={() => setOpen(false)}
       to={link.href}
       className={cn(
         "flex items-center justify-start gap-2  group/sidebar py-2",

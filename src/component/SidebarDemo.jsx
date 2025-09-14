@@ -40,15 +40,15 @@ export default function SidebarDemo({ children }) {
         <IconFileTypePdf className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-    {
-      label: "Logout",
-      href: "/",
-      icon: (
-        <SignOutButton>
-          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
-        </SignOutButton>
-      ),
-    },
+    // {
+    //   label: "Logout",
+    //   href: "/",
+    //   icon: (
+    //     <SignOutButton>
+    //       <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+    //     </SignOutButton>
+    //   ),
+    // },
   ];
   const [open, setOpen] = useState(false);
   return (
