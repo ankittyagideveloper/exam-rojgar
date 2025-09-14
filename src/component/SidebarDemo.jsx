@@ -14,43 +14,59 @@ import {
   SignOutButton,
   UserButton,
   useUser,
+  SignInButton,
 } from "@clerk/clerk-react";
+import { useTranslation } from "react-i18next";
 
 export default function SidebarDemo({ children }) {
-  const { user } = useUser();
+  const { user, isSignedIn } = useUser();
+  const { t } = useTranslation();
   const links = [
     {
-      label: "Tests",
+      label: t("testBtn"),
       href: "/test-category",
       icon: (
         <IconClipboard className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Quiz",
+      label: t("quizBtn"),
       href: "quiz-category",
       icon: (
         <IconProgressHelp className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Pdf",
+      label: t("pdfBtn"),
       href: "pdf-category",
       icon: (
         <IconFileTypePdf className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
-    // {
-    //   label: "Logout",
-    //   href: "/",
-    //   icon: (
-    //     <SignOutButton>
-    //       <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
-    //     </SignOutButton>
-    //   ),
-    // },
+    {
+      label: isSignedIn ? (
+        <SignOutButton className="cursor-pointer">
+          <button>{t("logOutBtn")}</button>
+        </SignOutButton>
+      ) : (
+        <SignInButton className="cursor-pointer" mode="modal">
+          <button>{t("logInBtn")}</button>
+        </SignInButton>
+      ),
+      href: "/",
+      icon: isSignedIn ? (
+        <SignOutButton className="cursor-pointer">
+          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        </SignOutButton>
+      ) : (
+        <SignInButton className="cursor-pointer" mode="modal">
+          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        </SignInButton>
+      ),
+    },
   ];
   const [open, setOpen] = useState(false);
+
   return (
     <div
       className={cn(
