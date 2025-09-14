@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
+import { Sidebar, SidebarBody, SidebarLink, useSidebar } from "./ui/Sidebar";
 import {
   IconArrowLeft,
   IconFileTypePdf,
@@ -102,8 +102,10 @@ export default function SidebarDemo({ children }) {
   );
 }
 export const Logo = () => {
+  const { setOpen } = useSidebar();
   return (
     <Link
+      onClick={() => setOpen(false)}
       to="/"
       className="relative z-20 flex items-center space-x-2 py-1 text-md font-normal text-black"
     >
