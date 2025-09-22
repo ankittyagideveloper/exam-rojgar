@@ -23,7 +23,7 @@ const Header = () => {
   };
   return (
     <>
-      <header className="hidden   bg-white shadow-sm px-4 py-3 lg:flex items-center justify-between w-full dark:bg-gray-900">
+      <header className="hidden   bg-white shadow-sm px-4 py-3 lg:flex items-center justify-between w-full dark:bg-[#262626]">
         <Link className="flex items-center gap-3" to="/">
           <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
             <img src="/logo.png" alt="examrojgar-logo" />

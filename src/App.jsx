@@ -12,6 +12,7 @@ import { ClerkProvider, SignedIn, useUser } from "@clerk/clerk-react";
 import ProtectedRoute from "./component/ProtectedRoute";
 import TestLayout from "./component/test-layout/TestLayout";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
+import AttemptedTests from "./pages/AttemptedTests";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "pdf-category",
         element: <PDF_Page />,
+      },
+      {
+        path: "attempted-tests",
+        element: (
+          <ProtectedRoute>
+            <AttemptedTests />,
+          </ProtectedRoute>
+        ),
       },
       // {
       //   path: "/all-test/:categoryId",

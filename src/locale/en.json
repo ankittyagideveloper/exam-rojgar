@@ -16,6 +16,7 @@
     "gk_ca": "GK & CA",
     "tests": "Tests",
     "new": "NEW",
-    "free": "FREE"
+    "free": "FREE",
+    "attemptedTests": "Attempted Tests"
   }
 }
