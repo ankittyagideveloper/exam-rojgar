@@ -1,4 +1,4 @@
-import { SignInButton, SignOutButton, useUser } from "@clerk/clerk-react";
+import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import { Menu } from "lucide-react";
 import React, { useContext, useState } from "react";
@@ -23,7 +23,7 @@ const Header = () => {
   };
   return (
     <>
-      <header className="hidden   bg-white shadow-sm px-4 py-3 lg:flex items-center justify-between w-full dark:bg-[#262626]">
+      <header className="hidden h-[60px] fixed top-0 left-0 bg-[#F1F4F6] z-50  px-4  lg:flex items-center justify-between w-full dark:bg-[#262626] border-1 border-s border-b-[#DFE4E8]">
         <Link className="flex items-center gap-3" to="/">
           <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
             <img src="/logo.png" alt="examrojgar-logo" />
@@ -48,18 +48,10 @@ const Header = () => {
             )}
           </button>
           <LanguageSwitcher onChange={handleLanguageChange} />
-          {/* <button className="p-2">
-          <IconUserCircle className="w-6 h-6 text-gray-600" />
-        </button> */}
-          {isSignedIn ? (
-            <SignOutButton className="cursor-pointer">
-              <button>{t("logOutBtn")}</button>
-            </SignOutButton>
-          ) : (
-            <SignInButton className="cursor-pointer" mode="modal">
-              <button>LogIn</button>
-            </SignInButton>
-          )}
+
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
       </header>
     </>

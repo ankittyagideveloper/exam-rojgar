@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         path: "attempted-tests",
         element: (
           <ProtectedRoute>
-            <AttemptedTests />,
+            <AttemptedTests />
           </ProtectedRoute>
         ),
       },

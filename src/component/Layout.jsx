@@ -59,7 +59,7 @@ const Layout = () => {
     <div className="min-h-screen bg-background">
       <SidebarDemo>
         <Header />
-        <main>
+        <main className=" lg:mt-14">
           <Outlet />
         </main>
         <Footer />
