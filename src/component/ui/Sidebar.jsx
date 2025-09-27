@@ -17,6 +17,7 @@ import { Moon, Sun, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../language-switcher";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
+import { Logo } from "../SidebarDemo";
 
 const SidebarContext = createContext(undefined);
 
@@ -159,15 +160,16 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-white dark:bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white p-5 z-[100] flex flex-col justify-between",
                 className
               )}
             >
               <div
-                className="cursor-pointer text-4xl absolute left-5 top-5 z-50 text-neutral-800 dark:text-neutral-200"
+                className="cursor-pointer text-4xl absolute left-5 top-3 z-50   flex items-center gap-2"
                 onClick={closeSidebar}
               >
                 <IconX className="text-4xl" />
+                <Logo />
               </div>
 
               {children}
@@ -186,7 +188,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
       onClick={() => setOpen(false)}
       to={link.href}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2",
+        "flex items-center justify-start gap-2  group/sidebar py-2 text-sm",
         className
       )}
       {...props}
@@ -197,7 +199,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-neutral-700 dark:text-neutral-200 text-2xl md:text-xl    group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
+        className=" dark:text-neutral-200 text-sm md:text-xl    group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
       >
         {link.label}
       </motion.span>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink, useSidebar } from "./ui/Sidebar";
 import {
   IconArrowLeft,
@@ -18,37 +18,42 @@ import {
   SignInButton,
 } from "@clerk/clerk-react";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "react-responsive";
 
 export default function SidebarDemo({ children }) {
   const { user, isSignedIn } = useUser();
   const { t } = useTranslation();
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
   const links = [
     {
       label: t("testBtn"),
       href: "/test-category",
       icon: (
-        <IconClipboard className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconClipboard className="h-5 w-5 shrink-0  dark:text-neutral-200" />
       ),
     },
     {
       label: t("quizBtn"),
       href: "quiz-category",
       icon: (
-        <IconProgressHelp className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconProgressHelp className="h-5 w-5 shrink-0  dark:text-neutral-200" />
       ),
     },
     {
       label: t("pdfBtn"),
       href: "pdf-category",
       icon: (
-        <IconFileTypePdf className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconFileTypePdf className="h-5 w-5 shrink-0  dark:text-neutral-200" />
       ),
     },
     {
       label: t("attemptedTests"),
       href: "attempted-tests",
       icon: (
-        <IconChecklist className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <IconChecklist className="h-5 w-5 shrink-0  dark:text-neutral-200" />
       ),
     },
     {
@@ -64,16 +69,24 @@ export default function SidebarDemo({ children }) {
       href: "/",
       icon: isSignedIn ? (
         <SignOutButton className="cursor-pointer">
-          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+          <IconArrowLeft className="h-5 w-5 shrink-0  dark:text-neutral-200" />
         </SignOutButton>
       ) : (
         <SignInButton className="cursor-pointer" mode="modal">
-          <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+          <IconArrowLeft className="h-5 w-5 shrink-0  dark:text-neutral-200" />
         </SignInButton>
       ),
     },
   ];
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(isDesktopOrLaptop ? true : false);
+
+  useEffect(() => {
+    if (isDesktopOrLaptop) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  }, [isDesktopOrLaptop]);
 
   return (
     <div
@@ -85,8 +98,7 @@ export default function SidebarDemo({ children }) {
       <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
-            {open ? <Logo /> : <LogoIcon />}
-            <div className="mt-8 flex flex-col gap-2">
+            <div className="mt-8 flex flex-col gap-2 pt-3">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
@@ -121,13 +133,13 @@ export const Logo = () => {
         <img
           src="/examrojgar-logo-s.png"
           alt="examrojgar-logo-s"
-          className="h-10 w-10"
+          className="h-8 w-10 object-contain rounded"
         />
       </div>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-2xl font-medium whitespace-pre text-black dark:text-white"
+        className="text-lg font-medium whitespace-pre text-white "
       >
         ExamRojgar
       </motion.span>
