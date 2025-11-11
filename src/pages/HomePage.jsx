@@ -21,7 +21,7 @@ function HomePage() {
       <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
         <div className="lg:flex lg:items-center xl:flex-row justify-around">
           {/* Hero Section */}
-          {currentLanguage === "en" ? (
+          {/* {currentLanguage === "en" ? (
             <div className="hidden md:block mb-8 ">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
                 Crack your <span className="text-teal-600">goal</span>
@@ -49,7 +49,7 @@ function HomePage() {
                 {t("tagLine")}
               </p>
             </div>
-          )}
+          )} */}
 
           {/* App Preview Card */}
           <Slider />

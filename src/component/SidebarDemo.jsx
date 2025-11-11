@@ -96,7 +96,7 @@ export default function SidebarDemo({ children }) {
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
-        <SidebarBody className="justify-between gap-10">
+        <SidebarBody className="justify-between gap-10 bg-black text-[#86a1ae] text-sm">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
             <div className="mt-8 flex flex-col gap-2 pt-3">
               {links.map((link, idx) => (
