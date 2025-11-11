@@ -99,7 +99,7 @@ function HomePage() {
         <FeaturesRibbon />
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
+        {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
           <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
             Quick Actions
           </h3>
@@ -130,7 +130,7 @@ function HomePage() {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
       </main>
 
       {/* Bottom Navigation */}
