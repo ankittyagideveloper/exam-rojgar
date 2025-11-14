@@ -49,7 +49,7 @@ export default function PDF_Page() {
   };
 
   return (
-    <div className="p-4 flex justify-center flex-col">
+    <div className="p-4 flex justify-center flex-col px-2">
       {/* Buttons placed JUST below PDF */}
       <div className="flex gap-4">
         <button
