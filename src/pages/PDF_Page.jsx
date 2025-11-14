@@ -27,8 +27,10 @@
 // }
 
 import { useState } from "react";
+import "../App.css";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
+import { Download } from "lucide-react";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -50,7 +52,6 @@ export default function PDF_Page() {
 
   return (
     <div className="p-4 flex justify-center flex-col px-2">
-      {/* Buttons placed JUST below PDF */}
       <div className="flex gap-4">
         <button
           onClick={goToPrevPage}
@@ -72,6 +73,12 @@ export default function PDF_Page() {
       <p className="text-gray-700 font-medium">
         Page {pageNumber} of {numPages}
       </p>
+      <a
+        href="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf"
+        target="_blank"
+      >
+        <Download />
+      </a>
       <div className="flex flex-col items-center gap-4">
         <Document
           file="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf"
