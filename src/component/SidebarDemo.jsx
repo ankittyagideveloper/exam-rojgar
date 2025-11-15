@@ -6,6 +6,7 @@ import {
   IconProgressHelp,
   IconClipboard,
   IconChecklist,
+  IconHome,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
@@ -28,6 +29,11 @@ export default function SidebarDemo({ children }) {
     query: "(min-width: 1224px)",
   });
   const links = [
+    {
+      label: t("homeBtn"),
+      href: "/home",
+      icon: <IconHome className="h-5 w-5 shrink-0  dark:text-neutral-200" />,
+    },
     {
       label: t("testBtn"),
       href: "/test-category",
