@@ -1,7 +1,11 @@
 import "./App.css";
 import Layout from "./component/Layout";
 import HomePage from "./pages/HomePage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
@@ -26,6 +30,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Navigate to="/home" replace />,
+      },
+      {
+        path: "home",
         element: <HomePage />,
       },
       {

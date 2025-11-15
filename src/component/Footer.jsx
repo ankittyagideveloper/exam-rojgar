@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   const channelRoute =
-    "https://www.whatsapp.com/channel/0029VbAqJ1MHLHQV47i0lI3u"; // Your WhatsApp number
+    "https://www.whatsapp.com/channel/0029VbAqJ1MHLHQV47i0lI3u";
   const email = "crackgovernmentjobs@gmail.com";
   const phone = "+91 97487 41664";
 
@@ -25,7 +25,7 @@ const Footer = () => {
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
               <img
                 src="/logo.png"
-                alt="Exam Rojgaar-logo"
+                alt="Exam-Rojgaar-logo"
                 className="relative"
               />
             </div>
