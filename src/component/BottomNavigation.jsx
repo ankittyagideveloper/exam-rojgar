@@ -59,18 +59,18 @@ const BottomNavigation = () => {
                 }}
                 className={`cursor-pointer flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
                   isActive
-                    ? "text-teal-600 bg-teal-50"
+                    ? "text-[#0ad0f4] bg-teal-50"
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
                 <Icon
                   className={`w-4 h-4 mb-1 ${
-                    isActive ? "text-teal-600" : "text-gray-500"
+                    isActive ? "text-[#0ad0f4]" : "text-gray-500"
                   }`}
                 />
                 <span
                   className={`text-xs font-medium ${
-                    isActive ? "text-teal-600" : "text-gray-500"
+                    isActive ? "text-[#0ad0f4]" : "text-gray-500"
                   }`}
                 >
                   {item.label}
