@@ -30,7 +30,7 @@ const Header = () => {
           </div>
           <div>
             <h1 className="font-bold text-lg text-gray-800 dark:text-white">
-              Exam Rojgar
+              Exam Rojgaar
             </h1>
             <p className="text-xs text-gray-600">{t("testSeries")}</p>
           </div>

@@ -3,7 +3,7 @@ export default function Loader() {
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
       style={{
-        background: `linear-gradient(135deg, rgb(0, 128, 128), rgb(0, 100, 100), rgb(0, 80, 80))`,
+        background: `linear-gradient(135deg, rgb(10, 208, 244), rgb(8, 182, 214), rgb(6, 152, 179))`,
       }}
     >
       <div className="absolute inset-0 overflow-hidden">
@@ -35,7 +35,7 @@ export default function Loader() {
 
         <div className="mb-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            {"ExamRojgar".split("").map((letter, index) => (
+            {"Exam Rojgaar".split("").map((letter, index) => (
               <span
                 key={index}
                 className="inline-block animate-bounce"
