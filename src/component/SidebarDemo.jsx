@@ -54,7 +54,7 @@ export default function SidebarDemo({ children }) {
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
-        <IconHome className="h-5 w-5 shrink-0 dark:text-neutral-200" />
+        <IconHome className="h-5 w-5 shrink-0 dark:text-neutral-200 " />
       ),
     },
     {
@@ -136,14 +136,14 @@ export default function SidebarDemo({ children }) {
   return (
     <div
       className={cn(
-        "flex w-full flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-col lg:flex-row dark:border-neutral-700 dark:bg-neutral-800",
+        "flex w-full flex-1 flex-col overflow-hidden   border-neutral-200 bg-gray-100 md:flex-col lg:flex-row dark:border-neutral-700 dark:bg-neutral-800",
         "h-screen"
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10 bg-[#1b1b1b] text-[#86a1ae]">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
-            <div className="mt-12 md:mt-8 flex flex-col pt-3">
+            <div className="mt-12 md:mt-8 flex flex-col  pt-3">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
