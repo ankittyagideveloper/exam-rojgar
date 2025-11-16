@@ -195,7 +195,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
       className={cn(
         ` ${
           isActive(link.href) ? "bg-[#363940]" : ""
-        } flex items-center justify-start gap-2  group/sidebar py-2 px-4 text-sm`,
+        } hover:bg-[#363940] flex items-center justify-start gap-2  group/sidebar py-[10px] px-6 text-sm`,
         className
       )}
       {...props}

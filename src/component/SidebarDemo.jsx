@@ -141,19 +141,19 @@ export default function SidebarDemo({ children }) {
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
-        <SidebarBody className="justify-between gap-10 bg-black text-[#86a1ae]">
+        <SidebarBody className="justify-between gap-10 bg-[#1b1b1b] text-[#86a1ae]">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
-            <div className="mt-8 flex flex-col gap-2 pt-3">
+            <div className="mt-12 md:mt-8 flex flex-col pt-3">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
               {isSignedIn ? (
-                <SignOutButton className="text-left cursor-pointer px-4">
+                <SignOutButton className="text-left cursor-pointer px-6">
                   <button>{t("logOutBtn")}</button>
                 </SignOutButton>
               ) : (
                 <SignInButton
-                  className="text-left cursor-pointer px-4"
+                  className="text-left cursor-pointer px-6"
                   mode="modal"
                 >
                   <button>{t("logInBtn")}</button>
