@@ -37,7 +37,7 @@ const pdfCategories = [
     papers: [
       {
         year: "",
-        paper: "Quantitative Aptitude for Competitive Exam by R.S Aggrawal",
+        paper: "Final-CEN-06-2025-21-10-2025-Publish-1-1",
         link: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf",
       },
     ],
