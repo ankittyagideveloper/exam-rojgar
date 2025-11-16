@@ -33,47 +33,13 @@ import { Download, FileText } from "lucide-react";
 
 const pdfCategories = [
   {
-    subject: "General Studies",
+    subject: "Aptitude",
     papers: [
-      { year: 2023, paper: 1, link: "#" },
-      { year: 2023, paper: 2, link: "#" },
-      { year: 2022, paper: 1, link: "#" },
-      { year: 2022, paper: 2, link: "#" },
-      { year: 2021, paper: 1, link: "#" },
-      { year: 2021, paper: 2, link: "#" },
-    ],
-  },
-  {
-    subject: "Optional - History",
-    papers: [
-      { year: 2023, paper: 1, link: "#" },
-      { year: 2023, paper: 2, link: "#" },
-      { year: 2022, paper: 1, link: "#" },
-      { year: 2022, paper: 2, link: "#" },
-      { year: 2021, paper: 1, link: "#" },
-      { year: 2021, paper: 2, link: "#" },
-    ],
-  },
-  {
-    subject: "Optional - Geography",
-    papers: [
-      { year: 2023, paper: 1, link: "#" },
-      { year: 2023, paper: 2, link: "#" },
-      { year: 2022, paper: 1, link: "#" },
-      { year: 2022, paper: 2, link: "#" },
-      { year: 2021, paper: 1, link: "#" },
-      { year: 2021, paper: 2, link: "#" },
-    ],
-  },
-  {
-    subject: "Optional - Philosophy",
-    papers: [
-      { year: 2023, paper: 1, link: "#" },
-      { year: 2023, paper: 2, link: "#" },
-      { year: 2022, paper: 1, link: "#" },
-      { year: 2022, paper: 2, link: "#" },
-      { year: 2021, paper: 1, link: "#" },
-      { year: 2021, paper: 2, link: "#" },
+      {
+        year: "",
+        paper: "Quantitative Aptitude for Competitive Exam by R.S Aggrawal",
+        link: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf",
+      },
     ],
   },
 ];
@@ -81,7 +47,6 @@ export default function PDF_Page() {
   const [expanded, setExpanded] = useState({});
 
   const toggleExpand = (index) => {
-    debugger;
     setExpanded((prev) => ({
       ...prev,
       [index]: !prev[index],
@@ -90,15 +55,14 @@ export default function PDF_Page() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
-              Exam Previous Papers
+              Importand PDF'S
             </h1>
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-balance">
-              Access comprehensive study materials and previous year exam papers
-              organized by subject and year
+              Access comprehensive study materials by subject and year
             </p>
           </div>
         </div>
@@ -113,11 +77,11 @@ export default function PDF_Page() {
               >
                 <button
                   onClick={() => toggleExpand(categoryIndex)}
-                  className="w-full p-6 flex items-center justify-between hover:bg-slate-50 transition-colors"
+                  className="w-full p-6 flex items-center justify-between  transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <FileText className="text-blue-600" size={20} />
+                      <FileText className="text-[#0ad0f4]" size={20} />
                     </div>
                     <h3 className="font-semibold text-slate-900 text-left">
                       {category.subject}
@@ -136,16 +100,17 @@ export default function PDF_Page() {
                   <div className="border-t border-slate-200 p-4 space-y-2">
                     {category.papers.map((paper, paperIndex) => (
                       <a
+                        target="_blank"
                         key={paperIndex}
                         href={paper.link}
-                        className="flex items-center justify-between p-3 bg-slate-50 rounded-lg hover:bg-blue-50 transition-colors group"
+                        className="flex items-center justify-between p-3 bg-slate-50 rounded-lg  transition-colors group"
                       >
-                        <span className="text-sm text-slate-700 group-hover:text-blue-600 transition-colors">
-                          {paper.year} - Paper {paper.paper}
+                        <span className="text-sm text-slate-700 group-hover:text-[#0ad0f4] transition-colors">
+                          {paper.year} {paper.paper}
                         </span>
                         <Download
                           size={16}
-                          className="text-slate-400 group-hover:text-blue-600 transition-colors"
+                          className="text-slate-400 group-hover:text-[#0ad0f4] transition-colors"
                         />
                       </a>
                     ))}
