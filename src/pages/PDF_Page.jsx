@@ -72,7 +72,7 @@ export default function PDF_Page() {
               Importand PDF'S
             </h1>
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-balance">
-              Access comprehensive study materials by subject and year
+              Access comprehensive study materials by subject
             </p>
           </div>
         </div>
