@@ -33,12 +33,22 @@ import { Download, FileText } from "lucide-react";
 
 const pdfCategories = [
   {
-    subject: "Aptitude",
+    subject: "Important Notifications",
     papers: [
       {
         year: "",
         paper: "Final-CEN-06-2025-21-10-2025-Publish-1-1",
         link: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf",
+      },
+    ],
+  },
+  {
+    subject: "Aptitude",
+    papers: [
+      {
+        year: "",
+        paper: "Quantitative Aptitude for Competitive Exam by R.S Aggrawal.pdf",
+        link: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/Quantitative-Aptitude-for-Competitive-Exam-by-rs-Aggrawal-compressed.pdf",
       },
     ],
   },
