@@ -28,65 +28,142 @@
 
 import { useState } from "react";
 import "../App.css";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from "react-pdf";
-import { Download } from "lucide-react";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import { Download, FileText } from "lucide-react";
 
+const pdfCategories = [
+  {
+    subject: "General Studies",
+    papers: [
+      { year: 2023, paper: 1, link: "#" },
+      { year: 2023, paper: 2, link: "#" },
+      { year: 2022, paper: 1, link: "#" },
+      { year: 2022, paper: 2, link: "#" },
+      { year: 2021, paper: 1, link: "#" },
+      { year: 2021, paper: 2, link: "#" },
+    ],
+  },
+  {
+    subject: "Optional - History",
+    papers: [
+      { year: 2023, paper: 1, link: "#" },
+      { year: 2023, paper: 2, link: "#" },
+      { year: 2022, paper: 1, link: "#" },
+      { year: 2022, paper: 2, link: "#" },
+      { year: 2021, paper: 1, link: "#" },
+      { year: 2021, paper: 2, link: "#" },
+    ],
+  },
+  {
+    subject: "Optional - Geography",
+    papers: [
+      { year: 2023, paper: 1, link: "#" },
+      { year: 2023, paper: 2, link: "#" },
+      { year: 2022, paper: 1, link: "#" },
+      { year: 2022, paper: 2, link: "#" },
+      { year: 2021, paper: 1, link: "#" },
+      { year: 2021, paper: 2, link: "#" },
+    ],
+  },
+  {
+    subject: "Optional - Philosophy",
+    papers: [
+      { year: 2023, paper: 1, link: "#" },
+      { year: 2023, paper: 2, link: "#" },
+      { year: 2022, paper: 1, link: "#" },
+      { year: 2022, paper: 2, link: "#" },
+      { year: 2021, paper: 1, link: "#" },
+      { year: 2021, paper: 2, link: "#" },
+    ],
+  },
+];
 export default function PDF_Page() {
-  const [numPages, setNumPages] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
+  const [expanded, setExpanded] = useState({});
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
-
-  const goToPrevPage = () => {
-    setPageNumber((prev) => Math.max(prev - 1, 1));
-  };
-
-  const goToNextPage = () => {
-    setPageNumber((prev) => Math.min(prev + 1, numPages));
+  const toggleExpand = (index) => {
+    debugger;
+    setExpanded((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
   return (
-    <div className="p-4 flex justify-center flex-col px-2">
-      <div className="flex gap-4">
-        <button
-          onClick={goToPrevPage}
-          disabled={pageNumber <= 1}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg disabled:bg-gray-400 hover:bg-blue-600 transition"
-        >
-          Previous
-        </button>
+    <>
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
+              Exam Previous Papers
+            </h1>
+            <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-balance">
+              Access comprehensive study materials and previous year exam papers
+              organized by subject and year
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pdfCategories.map((category, categoryIndex) => (
+              <div
+                key={categoryIndex}
+                className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <button
+                  onClick={() => toggleExpand(categoryIndex)}
+                  className="w-full p-6 flex items-center justify-between hover:bg-slate-50 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <FileText className="text-blue-600" size={20} />
+                    </div>
+                    <h3 className="font-semibold text-slate-900 text-left">
+                      {category.subject}
+                    </h3>
+                  </div>
+                  <span
+                    className={`text-slate-400 transition-transform ${
+                      expanded[categoryIndex] ? "rotate-180" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
 
-        <button
-          onClick={goToNextPage}
-          disabled={pageNumber >= numPages}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg disabled:bg-gray-400 hover:bg-blue-600 transition"
-        >
-          Next
-        </button>
-      </div>
+                {expanded[categoryIndex] && (
+                  <div className="border-t border-slate-200 p-4 space-y-2">
+                    {category.papers.map((paper, paperIndex) => (
+                      <a
+                        key={paperIndex}
+                        href={paper.link}
+                        className="flex items-center justify-between p-3 bg-slate-50 rounded-lg hover:bg-blue-50 transition-colors group"
+                      >
+                        <span className="text-sm text-slate-700 group-hover:text-blue-600 transition-colors">
+                          {paper.year} - Paper {paper.paper}
+                        </span>
+                        <Download
+                          size={16}
+                          className="text-slate-400 group-hover:text-blue-600 transition-colors"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-      <p className="text-gray-700 font-medium">
-        Page {pageNumber} of {numPages}
-      </p>
-      <a
-        href="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf"
-        target="_blank"
-      >
-        <Download />
-      </a>
-      <div className="flex flex-col items-center gap-4">
-        <Document
-          file="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test/second-cdn.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-      </div>
-    </div>
+          <div className="mt-12 text-center">
+            <p className="text-slate-600">
+              Total: {pdfCategories.length} subjects |{" "}
+              {pdfCategories.reduce((sum, cat) => sum + cat.papers.length, 0)}{" "}
+              papers available
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
