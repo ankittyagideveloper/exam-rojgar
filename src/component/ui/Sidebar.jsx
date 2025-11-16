@@ -3,7 +3,7 @@ import { cn } from "../utils/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX, IconUserCircle } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
+import { href, Link, useLocation } from "react-router-dom";
 import {
   SignIn,
   SignedIn,
@@ -70,7 +70,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden w-[16vw]  lg:flex lg:flex-col bg-neutral-100 dark:bg-neutral-800  shrink-0",
+          "h-full py-4 hidden w-[16vw]  lg:flex lg:flex-col bg-neutral-100 dark:bg-neutral-800  shrink-0",
           className
         )}
         // animate={{
@@ -160,7 +160,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white p-5  flex flex-col justify-between z-[999]",
+                "fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]",
                 className
               )}
             >
@@ -182,13 +182,20 @@ export const MobileSidebar = ({ className, children, ...props }) => {
 };
 
 export const SidebarLink = ({ link, className, ...props }) => {
+  const location = useLocation();
+  const path = location.pathname;
   const { open, animate, setOpen } = useSidebar();
+  const isActive = (currMenu, label) => {
+    return path === currMenu || path.startsWith(currMenu);
+  };
   return (
     <Link
       onClick={() => setOpen(false)}
       to={link.href}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2 text-sm",
+        ` ${
+          isActive(link.href) ? "bg-[#363940]" : ""
+        } flex items-center justify-start gap-2  group/sidebar py-2 px-4 text-sm`,
         className
       )}
       {...props}
