@@ -30,18 +30,13 @@ const Slider = () => {
         className="w-full  h-52 md:h-full lg:h-80 md:w-[725px]  rounded  mt-0"
       >
         {/* Common slide styles applied via Tailwind */}
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          {/* <video
-            src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.3/banner-1.gif"
-            controls
-            className="w-full h-auto"
-          /> */}
+        {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <img
-            src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.3/banner-1.gif"
+            src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.5/banner-1.gif"
             alt="slide-1"
             className="w-full h-64 lg:h-full md:h-full object-cover lg:object-fill "
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         {/* <SwiperSlide className=" md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrc/rrc-group-d">
@@ -69,6 +64,18 @@ const Slider = () => {
               src="/rrb-ntpc.png"
               alt="slide-1"
               className="w-full  h-64 lg:h-full md:h-full object-cover lg:object-fill "
+            />
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+          <Link to="/test-category/rrb/rrb-ntpc">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.5/banner-1.mp4"
+              className="w-full h-auto"
             />
           </Link>
         </SwiperSlide>
