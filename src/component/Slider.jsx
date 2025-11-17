@@ -27,7 +27,7 @@ const Slider = () => {
         speed={1000}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full  h-52 md:h-full lg:h-80 md:w-[725px]  rounded  mt-0"
+        className="w-full  h-auto md:h-full lg:h-80 md:w-[725px]  rounded  mt-0"
       >
         {/* Common slide styles applied via Tailwind */}
         {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
@@ -74,7 +74,7 @@ const Slider = () => {
               loop
               muted
               playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.5/banner-1.mp4"
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.6/banner-1.mp4"
               className="w-full h-auto"
             />
           </Link>
