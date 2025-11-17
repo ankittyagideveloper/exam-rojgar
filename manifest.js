@@ -1,0 +1,71 @@
+export const manifestForPlugIn = {
+  registerType: "prompt",
+  includeAssests: ["favicon.ico", "apple-touc-icon.png", "masked-icon.svg"],
+  manifest: {
+    name: "React-vite-app",
+    short_name: "react-vite-app",
+    description: "I am a simple vite app",
+    icons: [
+      {
+        src: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "favicon",
+      },
+      {
+        src: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "favicon",
+      },
+      {
+        src: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+        purpose: "apple touch icon",
+      },
+      {
+        purpose: "maskable",
+        sizes: "274.2857142857143x274.2857142857143",
+        src: "maskable_icon.png",
+        type: "image/png",
+      },
+      {
+        purpose: "maskable",
+        sizes: "48x48",
+        src: "maskable_icon_x48.png",
+        type: "image/png",
+      },
+      {
+        purpose: "maskable",
+        sizes: "72x72",
+        src: "maskable_icon_x72.png",
+        type: "image/png",
+      },
+      {
+        purpose: "maskable",
+        sizes: "96x96",
+        src: "maskable_icon_x96.png",
+        type: "image/png",
+      },
+      {
+        purpose: "maskable",
+        sizes: "128x128",
+        src: "maskable_icon_x128.png",
+        type: "image/png",
+      },
+      {
+        purpose: "maskable",
+        sizes: "192x192",
+        src: "maskable_icon_x192.png",
+        type: "image/png",
+      },
+    ],
+    theme_color: "#171717",
+    background_color: "#f0e7db",
+    display: "standalone",
+    scope: "/",
+    start_url: "/",
+    orientation: "portrait",
+  },
+};
