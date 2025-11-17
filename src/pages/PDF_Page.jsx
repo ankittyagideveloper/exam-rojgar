@@ -69,7 +69,7 @@ export default function PDF_Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
-              Importand PDF'S
+              Important PDF'S
             </h1>
             <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto text-balance">
               Access comprehensive study materials by subject

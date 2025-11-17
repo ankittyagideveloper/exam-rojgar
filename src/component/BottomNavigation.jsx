@@ -29,7 +29,7 @@ const BottomNavigation = () => {
   const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
-    { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
+    { id: "home", label: t("homeBtn"), icon: Home, path: "/homepy02" },
     { id: "test", label: t("testBtn"), icon: FileText, path: "/test-category" },
     {
       id: "quiz",
