@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import QuizPage from "./pages/QuizPage";
-import PDF_Page from "./pages/pdf-page/PDF_Page";
+import PDF_Page from "./pages/PDF_Page";
 import TestPage from "./pages/TestPage";
 import PurchasePage from "./pages/PurchasePage";
 import { useEffect, useState } from "react";
