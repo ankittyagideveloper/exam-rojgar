@@ -60,10 +60,13 @@ const Slider = () => {
 
         <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrb/rrb-ntpc">
-            <img
-              src="/rrb-ntpc.png"
-              alt="slide-1"
-              className="w-full  h-64 lg:h-full md:h-full object-cover lg:object-fill "
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.7/banner-1.mp4"
+              className="w-full h-auto"
             />
           </Link>
         </SwiperSlide>
@@ -74,7 +77,7 @@ const Slider = () => {
               loop
               muted
               playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.6/banner-1.mp4"
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.7/banner-2.mp4"
               className="w-full h-auto"
             />
           </Link>
