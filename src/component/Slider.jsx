@@ -93,7 +93,18 @@ const Slider = () => {
             />
           </Link>
         </SwiperSlide>
-
+        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+          <Link to="/pdf-category">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.9/banner-3.mp4"
+              className="w-full h-auto"
+            />
+          </Link>
+        </SwiperSlide>
         {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
           <img
             src="/slide-3.jpg"
