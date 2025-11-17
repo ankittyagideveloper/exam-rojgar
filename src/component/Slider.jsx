@@ -27,7 +27,7 @@ const Slider = () => {
         speed={1000}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full  h-52 md:h-full lg:h-80 md:w-[725px]  rounded  mt-0"
+        className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  rounded  mt-0"
       >
         {/* Common slide styles applied via Tailwind */}
         {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
