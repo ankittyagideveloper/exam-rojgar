@@ -194,7 +194,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
       to={link.href}
       className={cn(
         ` ${
-          isActive(link.href) ? "bg-[#363940]" : ""
+          isActive(link.href) ? "bg-[#363940] text-white" : ""
         } hover:bg-[#363940]gap-1 flex items-center justify-start gap-2  group/sidebar py-[10px] px-6 text-sm`,
         className
       )}
