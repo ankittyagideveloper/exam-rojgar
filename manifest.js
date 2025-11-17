@@ -1,10 +1,11 @@
 export const manifestForPlugIn = {
-  registerType: "prompt",
+  registerType: "autoUpdate",
   includeAssests: ["favicon.ico", "apple-touc-icon.png", "masked-icon.svg"],
   manifest: {
-    name: "React-vite-app",
-    short_name: "react-vite-app",
-    description: "I am a simple vite app",
+    name: "Exam Rojgaar",
+    short_name: "Exam Rojgaar",
+    description:
+      "Exam Rojgaar Test Series one of the best online test platform in India for railway, ssc departmental exams.",
     icons: [
       {
         src: "/android-chrome-192x192.png",
