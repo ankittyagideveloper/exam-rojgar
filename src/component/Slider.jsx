@@ -24,7 +24,7 @@ const Slider = () => {
         pagination={{
           clickable: true,
         }}
-        speed={1000}
+        speed={1200}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  rounded  mt-0"
