@@ -1,6 +1,6 @@
 export const manifestForPlugIn = {
   registerType: "autoUpdate",
-  includeAssests: ["favicon.ico", "apple-touc-icon.png", "masked-icon.svg"],
+  includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
   manifest: {
     name: "Exam Rojgaar",
     short_name: "Exam Rojgaar",
@@ -11,19 +11,18 @@ export const manifestForPlugIn = {
         src: "/android-chrome-192x192.png",
         sizes: "192x192",
         type: "image/png",
-        purpose: "favicon",
+        purpose: "any",
       },
       {
         src: "/android-chrome-512x512.png",
         sizes: "512x512",
         type: "image/png",
-        purpose: "favicon",
+        purpose: "any",
       },
       {
         src: "/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
-        purpose: "apple touch icon",
       },
       {
         src: "/maskable_icon.png",
