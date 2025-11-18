@@ -30,6 +30,7 @@ import { useState } from "react";
 import "../App.css";
 
 import { Download, FileText } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const pdfCategories = [
   {
@@ -65,6 +66,14 @@ export default function PDF_Page() {
 
   return (
     <>
+      <Helmet>
+        <title>PDF Page - Exam Rojgaar</title>
+        <meta
+          name="description"
+          content="Access comprehensive study materials by subject"
+        />
+        <meta property="og:title" content="Exam Rojgaar PDF Page" />
+      </Helmet>
       <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

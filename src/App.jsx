@@ -17,6 +17,7 @@ import ProtectedRoute from "./component/ProtectedRoute";
 import TestLayout from "./component/test-layout/TestLayout";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import AttemptedTests from "./pages/AttemptedTests";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -105,11 +106,13 @@ function App() {
       {isLoading ? (
         <Loader />
       ) : (
-        <ThemeProvider>
-          <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-            <RouterProvider router={router} />
-          </ClerkProvider>
-        </ThemeProvider>
+        <HelmetProvider>
+          <ThemeProvider>
+            <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+              <RouterProvider router={router} />
+            </ClerkProvider>
+          </ThemeProvider>
+        </HelmetProvider>
       )}
     </>
   );
