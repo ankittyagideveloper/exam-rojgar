@@ -38,4 +38,8 @@ export const manifestForPlugIn = {
     start_url: "/",
     orientation: "portrait",
   },
+  workbox: {
+    clientsClaim: true,
+    skipWaiting: true,
+  },
 };
