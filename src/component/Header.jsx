@@ -1,6 +1,6 @@
 import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
 import { IconUserCircle } from "@tabler/icons-react";
-import { Menu } from "lucide-react";
+import { Download, Menu } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -40,7 +40,7 @@ function InstallPWAButton() {
     setIsReadyToInstall(false);
   };
 
-  //   if (!isReadyToInstall) return null;
+  // if (!isReadyToInstall) return null;
 
   return (
     <button
@@ -52,9 +52,10 @@ function InstallPWAButton() {
         border: "none",
         borderRadius: "8px",
         cursor: "pointer",
-        marginTop: "20px",
+        display: "flex",
       }}
     >
+      <Download />
       Install App
     </button>
   );
@@ -99,7 +100,7 @@ const Header = () => {
               <Moon className="w-5 h-5 text-slate-700" />
             )}
           </button>
-          hello
+
           <InstallPWAButton />
           <LanguageSwitcher onChange={handleLanguageChange} />
           <SignedIn>
