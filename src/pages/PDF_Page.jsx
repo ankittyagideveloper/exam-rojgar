@@ -67,13 +67,42 @@ export default function PDF_Page() {
   return (
     <>
       <Helmet>
+        {/* Basic SEO */}
         <title>PDF Page - Exam Rojgaar</title>
         <meta
           name="description"
           content="Access comprehensive study materials by subject"
         />
+
+        {/* Open Graph (Facebook, LinkedIn, WhatsApp) */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Exam Rojgaar PDF Page" />
+        <meta
+          property="og:description"
+          content="Access comprehensive study materials for competitive exams."
+        />
+        <meta
+          property="og:image"
+          content="/logo.png" // <-- Put your actual logo URL
+        />
+        <meta
+          property="og:url"
+          content="https://examrojgaar.com/pdf-category"
+        />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Exam Rojgaar PDF Page" />
+        <meta
+          name="twitter:description"
+          content="Access comprehensive study materials for competitive exams."
+        />
+        <meta
+          name="twitter:image"
+          content="/logo.png" // <-- Same or another image
+        />
       </Helmet>
+
       <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
