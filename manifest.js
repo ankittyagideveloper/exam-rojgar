@@ -41,6 +41,7 @@ export const manifestForPlugIn = {
   workbox: {
     clientsClaim: true,
     skipWaiting: true,
+    globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
   },
   devOptions: {
     enabled: true,
