@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import LanguageSwitcher from "./language-switcher";
 import { ThemeContext } from "../context/ThemeContext.jsx";
 import { Sun, Moon } from "lucide-react";
+import InstallPWAButton from "./utils/InstallPWAbutton";
 
 const Header = () => {
   const { isSignedIn } = useUser();
@@ -47,6 +48,7 @@ const Header = () => {
               <Moon className="w-5 h-5 text-slate-700" />
             )}
           </button>
+          <InstallPWAButton />
           <LanguageSwitcher onChange={handleLanguageChange} />
 
           <SignedIn>
