@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "../utils/utils";
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX, IconUserCircle } from "@tabler/icons-react";
 import { href, Link, useLocation } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
   useUser,
   SignOutButton,
 } from "@clerk/react-router";
-import { Moon, Sun, User } from "lucide-react";
+import { Download, Moon, Sun, User } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../language-switcher";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
@@ -85,7 +85,57 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
     </>
   );
 };
+function InstallPWAButton() {
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isReadyToInstall, setIsReadyToInstall] = useState(false);
 
+  useEffect(() => {
+    const handler = (e) => {
+      // Prevent automatic browser prompt
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setIsReadyToInstall(true);
+    };
+
+    window.addEventListener("beforeinstallprompt", handler);
+
+    return () => window.removeEventListener("beforeinstallprompt", handler);
+  }, []);
+
+  const installApp = async () => {
+    if (!deferredPrompt) return;
+
+    // Show the install prompt
+    deferredPrompt.prompt();
+
+    // Wait for user choice
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log("Install prompt outcome:", outcome);
+
+    // Clear prompt
+    setDeferredPrompt(null);
+    setIsReadyToInstall(false);
+  };
+
+  // if (!isReadyToInstall) return null;
+
+  return (
+    <button
+      onClick={installApp}
+      style={{
+        padding: "10px 20px",
+        background: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "8px",
+        cursor: "pointer",
+        display: "flex",
+      }}
+    >
+      <Download />
+    </button>
+  );
+}
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -135,6 +185,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               )}
             </button>
             <LanguageSwitcher onChange={handleLanguageChange} />
+            <InstallPWAButton />
             {isSignedIn ? (
               <>
                 <UserButton />
