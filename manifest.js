@@ -46,4 +46,21 @@ export const manifestForPlugIn = {
   devOptions: {
     enabled: true,
   },
+  runtimeCaching: [
+    {
+      urlPattern: ({ url }) => url.pathname.startsWith("/api/v1/data"), // Match your API calls
+      handler: "NetworkFirst",
+      options: {
+        cacheName: "api-cache",
+        expiration: {
+          maxEntries: 50,
+          maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+        },
+        // Ensure response is cacheable
+        cacheableResponse: {
+          statuses: [0, 200],
+        },
+      },
+    },
+  ],
 };
