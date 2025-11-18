@@ -42,4 +42,7 @@ export const manifestForPlugIn = {
     clientsClaim: true,
     skipWaiting: true,
   },
+  devOptions: {
+    enabled: true,
+  },
 };
