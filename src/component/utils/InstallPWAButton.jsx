@@ -32,7 +32,7 @@ export default function InstallPWAButton() {
     setIsReadyToInstall(false);
   };
 
-  if (!isReadyToInstall) return null;
+  //   if (!isReadyToInstall) return null;
 
   return (
     <button

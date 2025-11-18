@@ -3,6 +3,7 @@ import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
+import InstallPWAButton from "../component/utils/InstallPWAbutton";
 
 function HomePage() {
   const { t, i18n } = useTranslation();
@@ -97,7 +98,7 @@ function HomePage() {
         </div> */}
 
         <FeaturesRibbon />
-
+        <InstallPWAButton />
         {/* Quick Actions */}
         {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
           <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
