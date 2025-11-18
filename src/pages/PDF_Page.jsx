@@ -83,11 +83,11 @@ export default function PDF_Page() {
         />
         <meta
           property="og:image"
-          content="/logo.png" // <-- Put your actual logo URL
+          content="/public/logo.png" // <-- Put your actual logo URL
         />
         <meta
           property="og:url"
-          content="https://examrojgaar.com/pdf-category"
+          content="https://examrojgaar.netlify.app/pdf-category"
         />
 
         {/* Twitter Cards */}
@@ -99,7 +99,7 @@ export default function PDF_Page() {
         />
         <meta
           name="twitter:image"
-          content="/logo.png" // <-- Same or another image
+          content="/public/logo.png" // <-- Same or another image
         />
       </Helmet>
 
