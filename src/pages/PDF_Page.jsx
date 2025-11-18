@@ -83,7 +83,7 @@ export default function PDF_Page() {
         />
         <meta
           property="og:image"
-          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.0/logo.png" // <-- Put your actual logo URL
+          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.1/android-chrome-512x512.png" // <-- Put your actual logo URL
         />
         <meta
           property="og:url"
