@@ -64,7 +64,7 @@ const Slider = () => {
               loop
               muted
               playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.8/banner-0.mp4"
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-0.mp4"
               className="w-full h-auto"
             />
           </Link>
@@ -88,7 +88,7 @@ const Slider = () => {
               loop
               muted
               playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.7/banner-2.mp4"
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-2.mp4"
               className="w-full h-auto"
             />
           </Link>
