@@ -62,7 +62,8 @@ function InstallPWAButton() {
 }
 
 const Header = () => {
-  const { isSignedIn } = useUser();
+  const { user } = useUser();
+  const isAdmin = user?.publicMetadata?.role === "admin";
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const {
     t,
@@ -74,9 +75,22 @@ const Header = () => {
     setCurrentLanguage(newLanguage);
     changeLanguage(newLanguage);
   };
+
   return (
     <>
-      <header className="hidden h-[60px] fixed top-0 left-0 bg-[#F1F4F6] z-50  px-4  lg:flex items-center justify-between w-full dark:bg-[#262626] border-1 border-s border-b-[#DFE4E8]">
+      {/* Admin Banner */}
+      {isAdmin && (
+        <div className="fixed top-0 left-0 w-full h-[30px]   bg-gradient-to-r from-purple-700 to-indigo-700 text-white text-xs font-semibold py-1 text-center shadow-md z-[999999]">
+          Admin Panel — Full Access
+        </div>
+      )}
+
+      {/* Header */}
+      <header
+        className={`hidden h-[60px] fixed ${
+          isAdmin ? "top-[30px]" : "top-0"
+        } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
+      >
         <Link className="flex items-center gap-3" to="/">
           <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
             <img src="/logo.png" alt="examrojgar-logo" />
@@ -88,10 +102,11 @@ const Header = () => {
             <p className="text-xs text-gray-600">{t("testSeries")}</p>
           </div>
         </Link>
+
         <div className="flex gap-2 items-center">
           <button
             onClick={toggleDarkMode}
-            className=" cursor-pointer flex items-center justify-center w-10 h-10  dark:bg-gray-700  transition-all duration-200"
+            className="cursor-pointer flex items-center justify-center w-10 h-10 dark:bg-gray-700 transition-all duration-200"
             aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
           >
             {darkMode ? (

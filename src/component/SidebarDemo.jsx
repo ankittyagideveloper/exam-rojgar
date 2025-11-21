@@ -31,6 +31,8 @@ import { useMediaQuery } from "react-responsive";
 
 export default function SidebarDemo({ children }) {
   const { user, isSignedIn } = useUser();
+
+  const isAdmin = user?.publicMetadata?.role === "admin";
   const location = useLocation();
   const path = location.pathname;
   const { t } = useTranslation();
@@ -142,7 +144,11 @@ export default function SidebarDemo({ children }) {
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10 bg-[#1b1b1b] text-[#86a1ae]">
-          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+          <div
+            className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto ${
+              isAdmin ? "mt-[30px]" : ""
+            }`}
+          >
             <div className="mt-12 md:mt-8 flex flex-col  pt-3">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />

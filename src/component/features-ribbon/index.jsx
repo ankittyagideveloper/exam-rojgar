@@ -137,7 +137,7 @@ function Badge({ type, children }) {
   return (
     <span
       className={
-        "absolute -top-1.5 -right-1.5 rounded-md px-2 py-0.5 text-[10px] font-semibold leading-none shadow-sm " +
+        "absolute top-1.5 -right-1.5 rounded-md px-2 py-0.5 text-[10px] font-semibold leading-none shadow-sm " +
         styles
       }
       aria-label={typeof label === "string" ? label : "badge"}

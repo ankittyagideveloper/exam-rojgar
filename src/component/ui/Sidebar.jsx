@@ -154,11 +154,14 @@ export const MobileSidebar = ({ className, children, ...props }) => {
   const closeSidebar = () => {
     setOpen(!open);
   };
+  const isAdmin = user?.publicMetadata?.role === "admin";
   return (
     <>
       <div
         className={cn(
-          "h-[60px]  flex flex-row  lg:hidden  items-center justify-between  bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]"
+          `${
+            isAdmin ? "mt-[30px]" : ""
+          } h-[60px]  flex flex-row  lg:hidden  items-center justify-between  bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
         )}
         {...props}
       >
@@ -211,7 +214,8 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]",
+                `${isAdmin ? "mt-[30px]" : ""}
+                fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]`,
                 className
               )}
             >
