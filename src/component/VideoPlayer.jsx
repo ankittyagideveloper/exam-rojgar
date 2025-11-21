@@ -50,7 +50,7 @@ export default function VideoPlayer() {
 
       {/* Video Grid */}
       <div className="px-4 md:px-10 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl">
           {videos.map((video) => (
             <VideoCard
               key={video.id}
