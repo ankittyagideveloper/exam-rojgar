@@ -8,7 +8,7 @@ import { manifestForPlugIn } from "./manifest";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), VitePWA(manifestForPlugIn)],
-  base: "/exam-rojgar/",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve("./src"),
