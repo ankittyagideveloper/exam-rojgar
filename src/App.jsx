@@ -87,10 +87,10 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ],
-  {
-    basename: "/exam-rojgar",
-  }
+  ]
+  // {
+  //   basename: "/exam-rojgar",
+  // }
 );
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
