@@ -24,69 +24,74 @@ function PublicRoute({ children }) {
   return isSignedIn ? <Navigate to="/home" replace /> : <>{children}</>;
 }
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to="/home" replace />,
-      },
-      {
-        path: "home",
-        element: <HomePage />,
-      },
-      {
-        path: "test-category/*",
-        element: (
-          <ProtectedRoute>
-            <TestPage />,
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "quiz-category/*",
-        element: (
-          <ProtectedRoute>
-            <TestPage />,
-          </ProtectedRoute>
-        ),
-      },
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Navigate to="/home" replace />,
+        },
+        {
+          path: "home",
+          element: <HomePage />,
+        },
+        {
+          path: "test-category/*",
+          element: (
+            <ProtectedRoute>
+              <TestPage />,
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "quiz-category/*",
+          element: (
+            <ProtectedRoute>
+              <TestPage />,
+            </ProtectedRoute>
+          ),
+        },
 
-      // {
-      //   path: "user-my-purchase",
-      //   element: <PurchasePage />,
-      // },
-      {
-        path: "pdf-category",
-        element: <PDF_Page />,
-      },
-      {
-        path: "attempted-tests",
-        element: (
-          <ProtectedRoute>
-            <AttemptedTests />
-          </ProtectedRoute>
-        ),
-      },
-      // {
-      //   path: "/all-test/:categoryId",
-      //   element: <QuizPage />,
-      // },
-    ],
-  },
+        // {
+        //   path: "user-my-purchase",
+        //   element: <PurchasePage />,
+        // },
+        {
+          path: "pdf-category",
+          element: <PDF_Page />,
+        },
+        {
+          path: "attempted-tests",
+          element: (
+            <ProtectedRoute>
+              <AttemptedTests />
+            </ProtectedRoute>
+          ),
+        },
+        // {
+        //   path: "/all-test/:categoryId",
+        //   element: <QuizPage />,
+        // },
+      ],
+    },
+    {
+      path: "/all-test/:categoryId",
+      element: <TestLayout />,
+      children: [
+        {
+          index: true,
+          element: <QuizPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/all-test/:categoryId",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <QuizPage />,
-      },
-    ],
-  },
-]);
+    basename: "/exam-rojgar",
+  }
+);
 // Import your Publishable Key
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 function App() {
