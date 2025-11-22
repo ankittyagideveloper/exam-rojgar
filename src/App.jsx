@@ -89,7 +89,7 @@ const router = createBrowserRouter(
     },
   ]
   // {
-  //   basename: "/exam-rojgar",
+  //   basename: "/",
   // }
 );
 // Import your Publishable Key

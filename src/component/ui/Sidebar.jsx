@@ -154,6 +154,11 @@ export const MobileSidebar = ({ className, children, ...props }) => {
   const closeSidebar = () => {
     setOpen(!open);
   };
+
+  const handleBackdropClick = () => {
+    setOpen(false);
+  };
+
   const isAdmin = user?.publicMetadata?.role === "admin";
   return (
     <>
@@ -194,9 +199,6 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 <UserButton />
               </>
             ) : (
-              // <SignOutButton>
-              //   <button>LogOut</button>
-              // </SignOutButton>
               <SignInButton mode="modal">
                 <button>LogIn</button>
               </SignInButton>
@@ -205,30 +207,41 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         </div>
         <AnimatePresence>
           {open && (
-            <motion.div
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "-100%", opacity: 0 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-              className={cn(
-                `${isAdmin ? "mt-[30px]" : ""}
-                fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]`,
-                className
-              )}
-            >
-              <div
-                className="cursor-pointer text-4xl absolute left-5 top-3 z-50   flex items-center gap-2"
-                onClick={closeSidebar}
+            <>
+              {/* Backdrop overlay - closes sidebar on click */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black/50 z-[998]"
+                onClick={handleBackdropClick}
+              />
+              {/* Sidebar */}
+              <motion.div
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "-100%", opacity: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                }}
+                className={cn(
+                  `${isAdmin ? "mt-[30px]" : ""}
+                  fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]`,
+                  className
+                )}
               >
-                <IconX className="text-4xl" />
-                <Logo />
-              </div>
-
-              {children}
-            </motion.div>
+                <div
+                  className="cursor-pointer text-4xl absolute left-5 top-3 z-50   flex items-center gap-2"
+                  onClick={closeSidebar}
+                >
+                  <IconX className="text-4xl" />
+                  <Logo />
+                </div>
+                {children}
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
