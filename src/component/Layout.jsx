@@ -28,33 +28,33 @@ const Layout = () => {
       behavior: "smooth",
     });
   };
-  const requestOptions = {
-    username: "ankit",
-    password: "testpass",
-  };
-  fetch("https://examrojgar-v1.onrender.com/api/auth/register", requestOptions)
-    .then((response) => response.json()) // Parse the JSON response
-    .then((data) => console.log(data)) // Handle the data
-    .catch((error) => console.error("Error:", error)); // Handle errors
+  // const requestOptions = {
+  //   username: "ankit",
+  //   password: "testpass",
+  // };
+  // fetch("https://examrojgar-v1.onrender.com/api/auth/register", requestOptions)
+  //   .then((response) => response.json()) // Parse the JSON response
+  //   .then((data) => console.log(data)) // Handle the data
+  //   .catch((error) => console.error("Error:", error)); // Handle errors
 
-  const data = {
-    username: "ankit1",
-    email: "tyagiankit2@gmail.com",
-    password: "testpass",
-  };
+  // const data = {
+  //   username: "ankit1",
+  //   email: "tyagiankit2@gmail.com",
+  //   password: "testpass",
+  // };
 
-  axios
-    .post("https://examrojgar-v1.onrender.com/api/auth/register", data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response) => {
-      console.log("Success:", response.data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  // axios
+  //   .post("https://examrojgar-v1.onrender.com/api/auth/register", data, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //   .then((response) => {
+  //     console.log("Success:", response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
   return (
     <div className="min-h-screen bg-background">
       <SidebarDemo>
