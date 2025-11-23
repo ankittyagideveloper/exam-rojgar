@@ -221,7 +221,7 @@ export const LogoIcon = () => {
 
 const Dashboard = ({ children }) => {
   return (
-    <div className="flex flex-1 overflow-scroll overflow-x-hidden bg-white">
+    <div className="flex flex-1 overflow-scroll overflow-x-hidden ">
       <div className="flex min-h-screen w-full flex-1 flex-col border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-900">
         {children}
       </div>

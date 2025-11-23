@@ -166,7 +166,7 @@ function FeatureItem({
       >
         <div className="relative">
           <div
-            className={`flex h-16 w-16 items-center justify-center rounded-full  ${bgColor} ring-1 ring-inset ring-blue-100 transition-transform duration-200 group-hover:scale-105`}
+            className={`flex h-16 w-16 items-center justify-center rounded-full  ${bgColor}  ring-blue-100 transition-transform duration-200 group-hover:scale-105`}
           >
             {icons[icon]?.() || icons.play()}
             <span className="sr-only ">{label} icon</span>
@@ -242,7 +242,7 @@ export default function FeaturesRibbon() {
       //   className="mx-auto w-full max-w-6xl px-3 sm:px-4"
       className="py-4 dark:bg-[#121212]"
     >
-      <div className="md:rounded-2xl bg-white shadow-none ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
+      <div className="md:rounded-2xl bg-white shadow-none md:ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
         <ul
           role="list"
           className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 "

@@ -4,13 +4,53 @@ import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
 import VideoPlayer from "../component/VideoPlayer";
+import { Helmet } from "react-helmet-async";
 
 function HomePage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   return (
-    <div className="min-h-screen bg-gray-100 pb-20 dark:bg-[#121212]">
-      {/* <header>
+    <>
+      <Helmet>
+        {/* Basic SEO */}
+        <title>
+          Exam Rojgaar.com| Exam Rojgaar - Best Exam Preparation Platform
+        </title>
+        <meta
+          name="description"
+          content="Access comprehensive study materials by subject"
+        />
+
+        {/* Open Graph (Facebook, LinkedIn, WhatsApp) */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Exam Rojgaar Home Page" />
+        <meta
+          property="og:description"
+          content="Access comprehensive study materials for competitive exams."
+        />
+        <meta
+          property="og:image"
+          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.1/android-chrome-512x512.png" // <-- Put your actual logo URL
+        />
+        <meta
+          property="og:url"
+          content="https://examrojgaar.netlify.app/pdf-category"
+        />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Exam Rojgaar Home Page" />
+        <meta
+          name="twitter:description"
+          content="Access comprehensive study materials for competitive exams."
+        />
+        <meta
+          name="twitter:image"
+          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.0/logo.png" // <-- Same or another image
+        />
+      </Helmet>
+      <div className="min-h-screen bg-gray-100 pb-20 dark:bg-[#121212]">
+        {/* <header>
         <SignedOut>
           <SignInButton />
         </SignedOut>
@@ -18,11 +58,11 @@ function HomePage() {
           <UserButton />
         </SignedIn>
       </header> */}
-      {/* Main Content */}
-      <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
-        <div className="lg:flex lg:items-center xl:flex-row justify-around">
-          {/* Hero Section */}
-          {/* {currentLanguage === "en" ? (
+        {/* Main Content */}
+        <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
+          <div className="lg:flex lg:items-center xl:flex-row justify-around">
+            {/* Hero Section */}
+            {/* {currentLanguage === "en" ? (
             <div className="hidden md:block mb-8 ">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
                 Crack your <span className="text-teal-600">goal</span>
@@ -52,12 +92,12 @@ function HomePage() {
             </div>
           )} */}
 
-          {/* App Preview Card */}
-          <Slider />
-        </div>
+            {/* App Preview Card */}
+            <Slider />
+          </div>
 
-        {/* Features Grid */}
-        {/* <div className="grid grid-cols-2 gap-4 mb-8">
+          {/* Features Grid */}
+          {/* <div className="grid grid-cols-2 gap-4 mb-8">
           {[
             {
               title: "Mock Tests",
@@ -97,10 +137,10 @@ function HomePage() {
           ))}
         </div> */}
 
-        <FeaturesRibbon />
-        <VideoPlayer />
-        {/* Quick Actions */}
-        {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
+          <FeaturesRibbon />
+          <VideoPlayer />
+          {/* Quick Actions */}
+          {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
           <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
             Quick Actions
           </h3>
@@ -132,10 +172,10 @@ function HomePage() {
             ))}
           </div>
         </div> */}
-      </main>
+        </main>
 
-      {/* Bottom Navigation */}
-      {/* <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2">
+        {/* Bottom Navigation */}
+        {/* <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2">
         <div className="flex justify-around items-center">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -169,7 +209,8 @@ function HomePage() {
           })}
         </div>
       </nav> */}
-    </div>
+      </div>
+    </>
   );
 }
 
