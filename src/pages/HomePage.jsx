@@ -14,7 +14,8 @@ function HomePage() {
       <Helmet>
         {/* Basic SEO */}
         <title>
-          Exam Rojgaar.com| Exam Rojgaar - Best Exam Preparation Platform
+          ExamRojgaar.com - India's No.1 Govt Exam Preparation Site | Online
+          Course | Mock Test
         </title>
         <meta
           name="description"
