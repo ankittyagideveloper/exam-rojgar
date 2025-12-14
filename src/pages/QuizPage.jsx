@@ -76,11 +76,7 @@ const QuizPage = () => {
   //     }
   //   };
   // }, []);
-  return (
-    <div>
-      <QuizComponent />
-    </div>
-  );
+  return <QuizComponent />;
 };
 
 export default QuizPage;

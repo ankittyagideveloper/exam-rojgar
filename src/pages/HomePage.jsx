@@ -5,37 +5,13 @@ import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
 import VideoPlayer from "../component/VideoPlayer";
 import { Helmet } from "react-helmet-async";
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  addDoc,
-  collection,
-  getDocs,
-  limit,
-  orderBy,
-  query,
-  serverTimestamp,
-  setDoc,
-  onSnapshot,
-} from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { app } from "../../firebase";
 
 function HomePage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const db = getFirestore(app);
-
-  const handleScore = async () => {
-    const quizId = "js_quiz_1";
-    const userId = "user_1";
-
-    await setDoc(doc(db, "leaderboards", quizId, "users", userId), {
-      userId,
-      score: 55,
-      createdAt: serverTimestamp(),
-    });
-  };
 
   async function getAllUsers(quizId) {
     const usersRef = collection(db, "leaderboards", quizId, "users");
@@ -94,7 +70,7 @@ function HomePage() {
           content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.0/logo.png" // <-- Same or another image
         />
       </Helmet>
-      <button onClick={handleScore}>test1</button>
+
       <div className="min-h-screen bg-gray-100 pb-20 dark:bg-[#121212]">
         {/* <header>
         <SignedOut>

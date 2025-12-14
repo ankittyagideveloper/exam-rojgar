@@ -12,11 +12,15 @@ import { useParams } from "react-router-dom";
 import questions from "./Quiz-question.json";
 import QuizResult from "./QuizResult";
 import QuestionAnalysis from "./QuestionAnalysis";
+import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
+import { app } from "../../../firebase";
+import { useUser } from "@clerk/clerk-react";
 
 export default function QuizComponent() {
   const { categoryId } = useParams();
   const quizData = questions[categoryId] || [];
-
+  const db = getFirestore(app);
+  const { user } = useUser();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [timeRemaining, setTimeRemaining] = useState(quizData.timeLimit);
@@ -94,7 +98,6 @@ export default function QuizComponent() {
   };
 
   const handleOptionSelect = (optionIndex) => {
-    debugger;
     setSelectedOption(optionIndex);
   };
 
@@ -142,10 +145,23 @@ export default function QuizComponent() {
     setSelectedOption(userAnswers[questionIndex]?.selectedOption || null);
   };
 
+  const handleScore = async () => {
+    const quizId = categoryId;
+
+    const userId = user.id;
+
+    await setDoc(doc(db, "leaderboards", quizId, "users", userId), {
+      userId,
+      score: results.correct,
+      createdAt: serverTimestamp(),
+    });
+  };
+
   const handleSubmitQuiz = () => {
     if (selectedOption !== null) {
       saveAnswer(currentQuestion, selectedOption);
     }
+    handleScore();
     setIsQuizCompleted(true);
   };
 
@@ -303,8 +319,14 @@ export default function QuizComponent() {
                   className="bg-teal-600 hover:bg-teal-700"
                 >
                   {currentQuestion === quizData.questions.length - 1
-                    ? "SUBMIT"
+                    ? "Save"
                     : "SAVE & NEXT"}
+                </Button>
+                <Button
+                  onClick={handleSubmitQuiz}
+                  className="bg-teal-600 hover:bg-teal-700"
+                >
+                  Submit
                 </Button>
               </div>
             </CardContent>
