@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
@@ -24,10 +24,6 @@ function HomePage() {
 
     return users;
   }
-
-  useEffect(() => {
-    getAllUsers("js_quiz_1").then((res) => console.log("res", res));
-  }, []);
 
   return (
     <>

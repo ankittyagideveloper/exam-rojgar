@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
-import TestPage from "./pages/TestPage";
-import PurchasePage from "./pages/PurchasePage";
 import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
 import { ClerkProvider, SignedIn, useUser } from "@clerk/clerk-react";
@@ -18,6 +16,8 @@ import TestLayout from "./component/test-layout/TestLayout";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import AttemptedTests from "./pages/AttemptedTests";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import AdminPanel from "./pages/AdminPanel";
+import TestPage from "./pages/TestPage";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -68,6 +68,14 @@ const router = createBrowserRouter(
           element: (
             <ProtectedRoute>
               <AttemptedTests />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "admin-panel",
+          element: (
+            <ProtectedRoute>
+              <AdminPanel />
             </ProtectedRoute>
           ),
         },
