@@ -11,7 +11,7 @@ import PDF_Page from "./pages/PDF_Page";
 import { useEffect, useState } from "react";
 import Loader from "./component/Loader";
 import { ClerkProvider, SignedIn, useUser } from "@clerk/clerk-react";
-import ProtectedRoute from "./component/ProtectedRoute";
+import ProtectedRoute, { AdminRoute } from "./component/ProtectedRoute";
 import TestLayout from "./component/test-layout/TestLayout";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import AttemptedTests from "./pages/AttemptedTests";
@@ -74,9 +74,9 @@ const router = createBrowserRouter(
         {
           path: "admin-panel",
           element: (
-            <ProtectedRoute>
+            <AdminRoute>
               <AdminPanel />
-            </ProtectedRoute>
+            </AdminRoute>
           ),
         },
         // {

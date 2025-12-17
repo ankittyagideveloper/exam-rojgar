@@ -17,6 +17,7 @@
     "tests": "Tests",
     "new": "NEW",
     "free": "FREE",
-    "attemptedTests": "Attempted Tests"
+    "attemptedTests": "Attempted Tests",
+    "adminPanel": "Admin Panel"
   }
 }

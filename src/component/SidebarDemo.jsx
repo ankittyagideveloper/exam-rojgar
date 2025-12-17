@@ -15,6 +15,8 @@ import {
   IconFileText,
   IconSquareCheck,
   IconSquareCheckFilled,
+  IconUser,
+  IconUserFilled,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
@@ -32,7 +34,7 @@ import { useMediaQuery } from "react-responsive";
 export default function SidebarDemo({ children }) {
   const { user, isSignedIn } = useUser();
 
-  const isAdmin = user?.publicMetadata?.role === "admin";
+  const isAdmin = user?.publicMetadata?.role === "admin" ? "admin" : "user";
   const location = useLocation();
   const path = location.pathname;
   const { t } = useTranslation();
@@ -58,6 +60,7 @@ export default function SidebarDemo({ children }) {
       ) : (
         <IconHome className="h-5 w-5 shrink-0 dark:text-neutral-200 " />
       ),
+      role: ["user", "admin"],
     },
     {
       label: t("testBtn"),
@@ -71,6 +74,7 @@ export default function SidebarDemo({ children }) {
       ) : (
         <IconClipboard className={"h-5 w-5 shrink-0 dark:text-neutral-200"} />
       ),
+      role: ["user", "admin"],
     },
     {
       label: t("quizBtn"),
@@ -88,6 +92,7 @@ export default function SidebarDemo({ children }) {
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
+      role: ["user", "admin"],
     },
     {
       label: t("pdfBtn"),
@@ -105,6 +110,25 @@ export default function SidebarDemo({ children }) {
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
+      role: ["user", "admin"],
+    },
+    {
+      label: t("adminPanel"),
+      href: "/admin-panel",
+      icon: isActive("/admin-panel") ? (
+        <IconUserFilled
+          className={`${
+            isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconUser
+          className={`${
+            isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ),
+      role: ["admin"],
     },
     {
       label: t("attemptedTests"),
@@ -122,6 +146,7 @@ export default function SidebarDemo({ children }) {
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
+      role: ["admin", "user"],
     },
   ];
 
@@ -150,9 +175,11 @@ export default function SidebarDemo({ children }) {
             }`}
           >
             <div className="mt-12 md:mt-8 flex flex-col  pt-3">
-              {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
-              ))}
+              {links
+                .filter((link) => link.role.includes(isAdmin))
+                .map((link, idx) => (
+                  <SidebarLink key={idx} link={link} />
+                ))}
               {isSignedIn ? (
                 <SignOutButton className="text-left cursor-pointer px-6">
                   <button>{t("logOutBtn")}</button>

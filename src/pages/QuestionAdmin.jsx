@@ -10,6 +10,7 @@ import {
   where,
 } from "firebase/firestore";
 import { app } from "../../firebase";
+import ExistingQuestion from "./ExistingQuestion";
 
 export default function QuestionBankWithTestAssign() {
   const db = getFirestore(app);
@@ -157,8 +158,8 @@ export default function QuestionBankWithTestAssign() {
               <label key={test.id} className="flex items-center gap-2">
                 <input
                   type="checkbox"
-                  checked={selectedTestIds.includes(test.title)}
-                  onChange={() => toggleTestSelection(test.title)}
+                  checked={selectedTestIds.includes(test.id)}
+                  onChange={() => toggleTestSelection(test.id)}
                 />
                 <span>{test.title}</span>
               </label>
@@ -178,29 +179,7 @@ export default function QuestionBankWithTestAssign() {
         <h2 className="text-xl font-semibold mb-4">Existing Questions</h2>
 
         {questions.map((q, idx) => (
-          <div key={q.id} className="border-b pb-4 mb-4">
-            <p className="font-medium mb-2">
-              {idx + 1}. {q.questionText}
-            </p>
-
-            <ul className="ml-4 mb-2">
-              {q.options.map((opt, i) => (
-                <li
-                  key={i}
-                  className={
-                    i === q.correctIndex ? "text-green-600 font-semibold" : ""
-                  }
-                >
-                  {String.fromCharCode(65 + i)}. {opt}
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-sm text-gray-600">
-              Assigned Tests:{" "}
-              {q.testIds?.length ? q.testIds.join(", ") : "None"}
-            </p>
-          </div>
+          <ExistingQuestion q={q} idx={idx} db={db} />
         ))}
       </div>
       <h2 className="font-medium mb-2">Select Test</h2>

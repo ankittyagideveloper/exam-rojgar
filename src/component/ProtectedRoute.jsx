@@ -1,7 +1,8 @@
 import { useUser, SignIn } from "@clerk/clerk-react";
+import { Navigate } from "react-router";
 
 export default function ProtectedRoute({ children }) {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
 
   // If user is not logged in → Show Clerk's SignIn form
   if (!isSignedIn) {
@@ -15,5 +16,16 @@ export default function ProtectedRoute({ children }) {
   }
 
   // If user is logged in → Show protected content
+  return children;
+}
+
+export function AdminRoute({ children }) {
+  const { isSignedIn, user } = useUser();
+  const isAdmin = user?.publicMetadata?.role === "admin";
+
+  if (!user || !isAdmin) {
+    // Check if logged in AND is admin
+    return <Navigate to="/home" replace />;
+  }
   return children;
 }
