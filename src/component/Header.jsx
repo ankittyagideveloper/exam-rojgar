@@ -87,7 +87,7 @@ const Header = () => {
 
       {/* Header */}
       <header
-        className={`hidden h-[60px] fixed ${
+        className={`hidden h-[60px] fixed border-b-1 border-[#DFE4E8] ${
           isAdmin ? "top-[30px]" : "top-0"
         } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
       >

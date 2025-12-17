@@ -27,10 +27,9 @@ export function VideoCard({ title, embedUrl }) {
       </div>
 
       {/* Video Title */}
-      <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200">
+      <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 dark:text-[#fff]">
         {title}
       </h3>
-      <p className="text-sm text-gray-500 mt-1">YouTube Video</p>
     </div>
   );
 }

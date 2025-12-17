@@ -37,19 +37,19 @@ const videos = [
 
 export default function VideoPlayer() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50 dark:bg-[#121212] ">
       {/* Header */}
       <div className="px-4 md:px-10 py-10 md:py-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-[#fff] tracking-tight">
           Recent Classes
         </h1>
-        <p className="text-gray-600 text-lg mt-3">
+        <p className="text-gray-600 text-lg mt-3 dark:text-[#fff]">
           Discover our curated collection of amazing videos
         </p>
       </div>
 
       {/* Video Grid */}
-      <div className="px-4 md:px-10 pb-16">
+      <div className="px-4 md:px-10 pb-16 dark:bg-[#121212]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {videos.map((video) => (
             <VideoCard
