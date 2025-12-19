@@ -26,10 +26,10 @@ export default function QuestionBankWithTestAssign() {
   const [selectedTestIds, setSelectedTestIds] = useState([]);
   const [selectedTestId, setSelectedTestId] = useState(null);
 
-  const getQuestionsByTestId = async (testTitle) => {
+  const getQuestionsByTestId = async (testId) => {
     const q = query(
       collection(db, "questions"),
-      where("testIds", "array-contains", testTitle)
+      where("testIds", "array-contains", testId)
     );
 
     const snapshot = await getDocs(q);
@@ -190,8 +190,8 @@ export default function QuestionBankWithTestAssign() {
             <input
               type="radio"
               name="test"
-              checked={selectedTestId === test.title}
-              onChange={() => setSelectedTestId(test.title)}
+              checked={selectedTestId === test.testId}
+              onChange={() => setSelectedTestId(test.testId)}
             />
             <span>{test.title}</span>
           </label>
