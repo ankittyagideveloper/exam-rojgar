@@ -1,7 +1,8 @@
 import React from "react";
+import AllQuizComponent from "./AllQuizComponent";
 
 const AllQuiz = () => {
-  return <QuizComponent />;
+  return <AllQuizComponent />;
 };
 
 export default AllQuiz;

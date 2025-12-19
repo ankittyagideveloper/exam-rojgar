@@ -85,6 +85,34 @@ const AllQuizComponent = () => {
     }));
     // initialAnswers[0].status = "not-viewed";
     setUserAnswers(initialAnswers);
+
+    const disableRightClick = (e) => e.preventDefault();
+    const disableCopy = (e) => e.preventDefault();
+
+    document.addEventListener("contextmenu", disableRightClick);
+    document.addEventListener("copy", disableCopy);
+    document.addEventListener("cut", disableCopy);
+    document.addEventListener("paste", disableCopy);
+
+    const disableTouchCopy = (e) => e.preventDefault();
+
+    document.addEventListener("touchstart", disableTouchCopy, {
+      passive: false,
+    });
+    document.addEventListener("touchend", disableTouchCopy, { passive: false });
+    document.addEventListener("touchmove", disableTouchCopy, {
+      passive: false,
+    });
+
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+      document.removeEventListener("copy", disableCopy);
+      document.removeEventListener("cut", disableCopy);
+      document.removeEventListener("paste", disableCopy);
+      document.removeEventListener("touchstart", disableTouchCopy);
+      document.removeEventListener("touchend", disableTouchCopy);
+      document.removeEventListener("touchmove", disableTouchCopy);
+    };
   }, []);
 
   // Timer effect
@@ -277,7 +305,7 @@ const AllQuizComponent = () => {
   const results = calculateResults();
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 ">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Main Quiz Area */}
         <div className="lg:col-span-3 space-y-6">

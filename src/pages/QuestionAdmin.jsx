@@ -12,7 +12,7 @@ import {
 import { app } from "../../firebase";
 import ExistingQuestion from "./ExistingQuestion";
 
-export default function QuestionBankWithTestAssign() {
+export default function QuestionBankWithTestAssign(testIds) {
   const db = getFirestore(app);
 
   const [questions, setQuestions] = useState([]);
@@ -43,7 +43,7 @@ export default function QuestionBankWithTestAssign() {
   useEffect(() => {
     fetchQuestions();
     fetchTests();
-  }, []);
+  }, [testIds]);
 
   useEffect(() => {
     getQuestionsByTestId(selectedTestId).then((res) =>

@@ -16,9 +16,10 @@ export default function AdminPanel() {
   const [testId, setTestId] = useState("");
   const [duration, setDuration] = useState(90);
   const [editingTestId, setEditingTestId] = useState(null);
+
   const db = getFirestore(app);
   useEffect(() => {
-    fetchTests();
+    fetchTests().then((res) => console.log(res));
   }, []);
   const fetchTests = async () => {
     const snap = await getDocs(collection(db, "tests"));
@@ -161,7 +162,7 @@ export default function AdminPanel() {
           </tbody>
         </table>
       </div>
-      <QuestionAdmin />
+      <QuestionAdmin testids={tests} />
     </div>
   );
 }
