@@ -18,6 +18,8 @@ import AttemptedTests from "./pages/AttemptedTests";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import AdminPanel from "./pages/AdminPanel";
 import TestPage from "./pages/TestPage";
+import Quiz from "./pages/Quiz";
+import AllQuizComponent from "./pages/AllQuizComponent";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -50,7 +52,7 @@ const router = createBrowserRouter(
           path: "quiz-category/*",
           element: (
             <ProtectedRoute>
-              <TestPage />,
+              <Quiz />,
             </ProtectedRoute>
           ),
         },
@@ -92,6 +94,16 @@ const router = createBrowserRouter(
         {
           index: true,
           element: <QuizPage />,
+        },
+      ],
+    },
+    {
+      path: "/all-quiz/:categoryId",
+      element: <TestLayout />,
+      children: [
+        {
+          index: true,
+          element: <AllQuizComponent />,
         },
       ],
     },

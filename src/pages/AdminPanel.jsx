@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import {
   collection,
-  addDoc,
   getDocs,
   getFirestore,
   updateDoc,
   doc,
   deleteDoc,
+  setDoc,
 } from "firebase/firestore";
 import { app } from "../../firebase";
 import QuestionAdmin from "./QuestionAdmin";
 export default function AdminPanel() {
   const [tests, setTests] = useState([]);
   const [title, setTitle] = useState("");
+  const [testId, setTestId] = useState("");
   const [duration, setDuration] = useState(90);
   const [editingTestId, setEditingTestId] = useState(null);
   const db = getFirestore(app);
@@ -30,7 +31,8 @@ export default function AdminPanel() {
       const ref = doc(db, "tests", editingTestId);
       await updateDoc(ref, { title, durationMinutes: duration });
     } else {
-      await addDoc(collection(db, "tests"), {
+      await setDoc(doc(db, "tests", testId), {
+        testId,
         title,
         totalQuestions: 100,
         durationMinutes: duration,
@@ -39,6 +41,7 @@ export default function AdminPanel() {
         isActive: true,
       });
     }
+    setTestId("");
     setTitle("");
     setDuration(90);
     setEditingTestId(null);
@@ -69,6 +72,12 @@ export default function AdminPanel() {
         </h2>{" "}
         <input
           className="border p-2 w-full mb-3 rounded"
+          placeholder="Test Id"
+          value={testId}
+          onChange={(e) => setTestId(e.target.value)}
+        />
+        <input
+          className="border p-2 w-full mb-3 rounded"
           placeholder="Test Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -79,16 +88,14 @@ export default function AdminPanel() {
           placeholder="Duration (minutes)"
           value={duration}
           onChange={(e) => setDuration(Number(e.target.value))}
-        />{" "}
+        />
         <div className="flex gap-3">
-          {" "}
           <button
             onClick={createOrUpdateTest}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
           >
-            {" "}
             {editingTestId ? "Update Test" : "Create Test"}{" "}
-          </button>{" "}
+          </button>
           {editingTestId && (
             <button
               onClick={() => {
@@ -145,16 +152,15 @@ export default function AdminPanel() {
                       onClick={() => handleDelete(test.id)}
                       className="bg-red-600 text-white px-3 py-1 rounded"
                     >
-                      {" "}
-                      Delete{" "}
-                    </button>{" "}
-                  </div>{" "}
-                </td>{" "}
+                      Delete
+                    </button>
+                  </div>
+                </td>
               </tr>
-            ))}{" "}
-          </tbody>{" "}
-        </table>{" "}
-      </div>{" "}
+            ))}
+          </tbody>
+        </table>
+      </div>
       <QuestionAdmin />
     </div>
   );
