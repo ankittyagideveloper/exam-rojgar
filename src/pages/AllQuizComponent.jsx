@@ -110,9 +110,9 @@ const AllQuizComponent = () => {
       document.removeEventListener("copy", disableCopy);
       document.removeEventListener("cut", disableCopy);
       document.removeEventListener("paste", disableCopy);
-      document.removeEventListener("touchstart", disableTouchCopy);
-      document.removeEventListener("touchend", disableTouchCopy);
-      document.removeEventListener("touchmove", disableTouchCopy);
+      // document.removeEventListener("touchstart", disableTouchCopy);
+      // document.removeEventListener("touchend", disableTouchCopy);
+      // document.removeEventListener("touchmove", disableTouchCopy);
     };
   }, [quizData]);
 
