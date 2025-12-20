@@ -95,15 +95,15 @@ const AllQuizComponent = () => {
     document.addEventListener("cut", disableCopy);
     document.addEventListener("paste", disableCopy);
 
-    const disableTouchCopy = (e) => e.preventDefault();
+    // const disableTouchCopy = (e) => e.preventDefault();
 
-    document.addEventListener("touchstart", disableTouchCopy, {
-      passive: false,
-    });
-    document.addEventListener("touchend", disableTouchCopy, { passive: false });
-    document.addEventListener("touchmove", disableTouchCopy, {
-      passive: false,
-    });
+    // document.addEventListener("touchstart", disableTouchCopy, {
+    //   passive: false,
+    // });
+    // document.addEventListener("touchend", disableTouchCopy, { passive: false });
+    // document.addEventListener("touchmove", disableTouchCopy, {
+    //   passive: false,
+    // });
 
     return () => {
       document.removeEventListener("contextmenu", disableRightClick);
