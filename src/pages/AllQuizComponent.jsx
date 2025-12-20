@@ -77,15 +77,16 @@ const AllQuizComponent = () => {
 
   // Initialize user answers
   useEffect(() => {
-    const initialAnswers = quizData?.map((q) => ({
-      questionId: q.questionId,
+    if (!quizData.length) return;
+
+    const initialAnswers = quizData.map((q) => ({
+      questionId: q.id,
       selectedOption: null,
       status: "not-viewed",
       timeSpent: 0,
     }));
-    // initialAnswers[0].status = "not-viewed";
-    setUserAnswers(initialAnswers);
 
+    setUserAnswers(initialAnswers);
     const disableRightClick = (e) => e.preventDefault();
     const disableCopy = (e) => e.preventDefault();
 
@@ -113,7 +114,7 @@ const AllQuizComponent = () => {
       document.removeEventListener("touchend", disableTouchCopy);
       document.removeEventListener("touchmove", disableTouchCopy);
     };
-  }, []);
+  }, [quizData]);
 
   // Timer effect
   //   useEffect(() => {
@@ -184,9 +185,7 @@ const AllQuizComponent = () => {
     updateQuestionStatus(currentQuestion, "marked");
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedOption(
-        userAnswers[currentQuestion + 1]?.selectedOption || null
-      );
+      setSelectedOption(userAnswers[currentQuestion]?.selectedOption || null);
     }
   };
 
@@ -196,9 +195,7 @@ const AllQuizComponent = () => {
     }
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedOption(
-        userAnswers[currentQuestion + 1]?.selectedOption || null
-      );
+      setSelectedOption(userAnswers[currentQuestion]?.selectedOption || null);
     }
   };
 
@@ -240,7 +237,7 @@ const AllQuizComponent = () => {
     handleScore();
     setIsQuizCompleted(true);
   };
-
+  console.log(userAnswers, "userAnswers");
   const calculateResults = () => {
     let correct = 0;
     let attempted = 0;
@@ -363,9 +360,9 @@ const AllQuizComponent = () => {
                     return (
                       <button
                         key={index}
-                        onClick={() => handleOptionSelect(index + 1)}
+                        onClick={() => handleOptionSelect(index)}
                         className={`w-full text-left p-4 rounded-lg border transition-colors ${
-                          selectedOption === index + 1
+                          selectedOption === index
                             ? "border-primary bg-primary/5"
                             : "border-gray-200 hover:border-gray-300"
                         }`}

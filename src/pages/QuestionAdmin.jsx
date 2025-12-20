@@ -4,8 +4,6 @@ import {
   addDoc,
   getDocs,
   getFirestore,
-  updateDoc,
-  doc,
   query,
   where,
 } from "firebase/firestore";
@@ -22,6 +20,7 @@ export default function QuestionBankWithTestAssign(testIds) {
   const [questionText, setQuestionText] = useState("");
   const [options, setOptions] = useState(["", "", "", ""]);
   const [correctIndex, setCorrectIndex] = useState(null);
+  const [explanation, setExplanation] = useState("");
   const [difficulty, setDifficulty] = useState("Medium");
   const [selectedTestIds, setSelectedTestIds] = useState([]);
   const [selectedTestId, setSelectedTestId] = useState(null);
@@ -81,6 +80,7 @@ export default function QuestionBankWithTestAssign(testIds) {
     setCorrectIndex(null);
     setDifficulty("Medium");
     setSelectedTestIds([]);
+    setExplanation("");
   };
 
   const saveQuestion = async () => {
@@ -91,6 +91,7 @@ export default function QuestionBankWithTestAssign(testIds) {
       questionText,
       options,
       correctIndex,
+      explanation,
       difficulty,
       testIds: selectedTestIds,
       createdAt: new Date(),
@@ -100,13 +101,8 @@ export default function QuestionBankWithTestAssign(testIds) {
     fetchQuestions();
   };
 
-  const updateQuestionTests = async (questionId, testIds) => {
-    await updateDoc(doc(db, "questions", questionId), { testIds });
-    fetchQuestions();
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100 px-1 mb-30 ">
       <h1 className="text-3xl font-bold mb-6">Question Bank</h1>
       {/* Create Question */}
       <div className="bg-white p-6 rounded-xl shadow mb-8">
@@ -137,7 +133,13 @@ export default function QuestionBankWithTestAssign(testIds) {
             <span className="text-sm">Correct</span>
           </div>
         ))}
-
+        <textarea
+          className="border p-3 w-full rounded mb-4"
+          placeholder="Enter Explanation"
+          rows={3}
+          value={explanation}
+          onChange={(e) => setExplanation(e.target.value)}
+        />
         <div className="flex gap-4 mt-4">
           <select
             className="border p-2 rounded"
@@ -215,7 +217,7 @@ export default function QuestionBankWithTestAssign(testIds) {
               </li>
             ))}
           </ul>
-
+          <p className="text-sm text-green-600">{q.explanation}</p>
           <p className="text-sm text-gray-600">
             Assigned Tests: {q.testIds?.length ? q.testIds.join(", ") : "None"}
           </p>

@@ -16,7 +16,7 @@ export default function AdminPanel() {
   const [testId, setTestId] = useState("");
   const [duration, setDuration] = useState(90);
   const [editingTestId, setEditingTestId] = useState(null);
-
+  const [activeStatus, setActiveStatus] = useState(false);
   const db = getFirestore(app);
   useEffect(() => {
     fetchTests().then((res) => console.log(res));
@@ -30,7 +30,11 @@ export default function AdminPanel() {
     if (!title) return alert("Enter test title");
     if (editingTestId) {
       const ref = doc(db, "tests", editingTestId);
-      await updateDoc(ref, { title, durationMinutes: duration });
+      await updateDoc(ref, {
+        isActive: Boolean(activeStatus),
+        title,
+        durationMinutes: duration,
+      });
     } else {
       await setDoc(doc(db, "tests", testId), {
         testId,
@@ -39,19 +43,22 @@ export default function AdminPanel() {
         durationMinutes: duration,
         totalMarks: 100,
         createdAt: new Date(),
-        isActive: true,
+        isActive: activeStatus,
       });
     }
     setTestId("");
     setTitle("");
     setDuration(90);
     setEditingTestId(null);
+    setActiveStatus(false);
     fetchTests();
   };
   const handleEdit = (test) => {
-    setEditingTestId(test.id);
+    setEditingTestId(test.testId);
     setTitle(test.title);
     setDuration(test.durationMinutes);
+
+    setActiveStatus(test.isActive);
   };
   const handleDelete = async (testId) => {
     const ok = window.confirm("Are you sure you want to delete this test?");
@@ -60,21 +67,19 @@ export default function AdminPanel() {
     fetchTests();
   };
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      {" "}
-      <h1 className="text-3xl font-bold mb-6">
-        Admin Panel – Test Series
-      </h1>{" "}
+    <div className="min-h-screen px-1 bg-gray-100 md:py-8 md:px-8">
+      <h1 className="text-3xl font-bold mb-6">Admin Panel – Test Series</h1>
       <div className="bg-white p-6 rounded-xl shadow mb-8">
-        {" "}
         <h2 className="text-xl font-semibold mb-4">
-          {" "}
           {editingTestId ? "Update Test" : "Create New Test"}{" "}
-        </h2>{" "}
+        </h2>
         <input
-          className="border p-2 w-full mb-3 rounded"
+          disabled={editingTestId}
+          className={`border p-2 w-full mb-3 rounded ${
+            editingTestId && "bg-gray-200"
+          }`}
           placeholder="Test Id"
-          value={testId}
+          value={editingTestId ? editingTestId : testId}
           onChange={(e) => setTestId(e.target.value)}
         />
         <input
@@ -82,7 +87,31 @@ export default function AdminPanel() {
           placeholder="Test Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        />{" "}
+        />
+        <label className="flex flex-col gap-2 text-sm font-medium mb-4">
+          Select the Status:
+          <select
+            name="activeStatus"
+            defaultValue={activeStatus}
+            value={activeStatus}
+            className="
+      w-60
+      rounded-md
+      bg-white
+      px-3 py-2
+      shadow-sm
+      focus:outline-none
+      cursor-pointer
+    "
+            onChange={(e) => {
+              const isActive = e.target.value === "true";
+              setActiveStatus(isActive);
+            }}
+          >
+            <option value={true}>Active</option>
+            <option value={false}>Inactive</option>
+          </select>
+        </label>
         <input
           className="border p-2 w-full mb-3 rounded"
           type="number"
@@ -95,7 +124,7 @@ export default function AdminPanel() {
             onClick={createOrUpdateTest}
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
           >
-            {editingTestId ? "Update Test" : "Create Test"}{" "}
+            {editingTestId ? "Update Test" : "Create Test"}
           </button>
           {editingTestId && (
             <button
@@ -106,14 +135,12 @@ export default function AdminPanel() {
               }}
               className="bg-gray-400 text-white px-4 py-2 rounded"
             >
-              {" "}
-              Cancel{" "}
+              Cancel
             </button>
-          )}{" "}
-        </div>{" "}
-      </div>{" "}
-      <div className="bg-white p-6 rounded-xl shadow">
-        {" "}
+          )}
+        </div>
+      </div>
+      <div className="bg-white p-2 md:p-6 rounded-xl shadow">
         <h2 className="text-xl font-semibold mb-4">All Tests</h2>{" "}
         <table className="w-full border">
           {" "}
@@ -125,10 +152,9 @@ export default function AdminPanel() {
               <th className="p-2 border">Duration</th>{" "}
               <th className="p-2 border">Status</th>{" "}
               <th className="p-2 border">Actions</th>{" "}
-            </tr>{" "}
-          </thead>{" "}
+            </tr>
+          </thead>
           <tbody>
-            {" "}
             {tests.map((test) => (
               <tr key={test.id}>
                 {" "}
