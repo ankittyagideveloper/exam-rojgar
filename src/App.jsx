@@ -52,7 +52,7 @@ const router = createBrowserRouter(
           path: "quiz-category/*",
           element: (
             <ProtectedRoute>
-              <Quiz />,
+              <Quiz />
             </ProtectedRoute>
           ),
         },

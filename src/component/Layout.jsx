@@ -64,9 +64,6 @@ const Layout = () => {
           <main className=" lg:mt-14">
             <Outlet />
           </main>
-
-          {/* <Footer /> */}
-          {/* Scroll to top button */}
           {isVisible && (
             <button
               onClick={scrollToTop}
