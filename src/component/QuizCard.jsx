@@ -22,7 +22,7 @@ export function QuizCard({
   };
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
       {/* Mobile Layout */}
       <div className="md:hidden">
         {/* Badges */}
@@ -54,14 +54,14 @@ export function QuizCard({
 
         {/* Quiz Details */}
         <div className="text-xs text-gray-500 mb-3">
-          {questions} Qs • {marks} Marks • {duration} Mins
+          {questions} Questions | {marks} Marks | {duration} Mins.
         </div>
 
         {/* Languages */}
-        <div className="flex items-center text-xs text-cyan-500">
+        {/* <div className="flex items-center text-xs text-cyan-500">
           <span className="mr-1">🏳️</span>
           {formatLanguages(languages)}
-        </div>
+        </div> */}
       </div>
 
       {/* Desktop Layout */}
@@ -84,7 +84,7 @@ export function QuizCard({
 
             {/* Title and User Count */}
             <div className="flex items-center gap-3 mb-3">
-              <h3 className="text-lg font-medium text-gray-900">{title}</h3>
+              <h4 className="text-sm font-medium text-gray-900">{title}</h4>
               {userCount && (
                 <div className="flex items-center text-sm text-gray-500">
                   <span className="text-yellow-400 mr-1">⭐</span>
@@ -94,33 +94,33 @@ export function QuizCard({
             </div>
 
             {/* Quiz Details */}
-            <div className="flex items-center gap-6 text-sm text-gray-500 mb-3">
+            <div className="flex items-center gap-2 text-xs text-gray-500 mb-3 ">
               <div className="flex items-center gap-1">
-                <span className="text-gray-400">❓</span>
+                <span className="text-gray-400 p-1">❓</span>
                 {questions} Questions
               </div>
-              <div className="flex items-center gap-1">
-                <span className="text-gray-400">📋</span>
+              <div className="flex items-center gap-1 ">
+                <span className="text-gray-400 p-1">📋</span>
                 {marks} Marks
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-gray-400">⏱️</span>
+                <span className="text-gray-400 p-1">⏱️</span>
                 {duration} Mins
               </div>
             </div>
 
             {/* Languages */}
-            <div className="flex items-center text-sm text-cyan-500">
+            {/* <div className="flex items-center text-sm text-cyan-500">
               <span className="mr-2">🏳️</span>
               {formatLanguages(languages)}
-            </div>
+            </div> */}
           </div>
 
           {/* Start Button */}
           <div className="ml-6">
             <button
               onClick={onStartClick}
-              className="cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-8 py-3 rounded-lg transition-colors"
+              className="text-xs cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-4 py-2 rounded-lg transition-colors"
             >
               Start Now
             </button>
