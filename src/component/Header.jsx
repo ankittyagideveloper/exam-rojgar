@@ -87,7 +87,7 @@ const Header = () => {
 
       {/* Header */}
       <header
-        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] ${
+        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
           isAdmin ? "top-[30px]" : "top-0"
         } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
       >
@@ -99,7 +99,9 @@ const Header = () => {
             <h1 className="font-bold text-lg text-gray-800 dark:text-white">
               Exam Rojgaar
             </h1>
-            <p className="text-xs text-gray-600">{t("testSeries")}</p>
+            <p className="text-xs text-gray-600 dark:text-white">
+              {t("testSeries")}
+            </p>
           </div>
         </Link>
 

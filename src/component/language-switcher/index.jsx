@@ -53,7 +53,7 @@ export default function LanguageSwitcher({ onChange }) {
         className="flex items-center gap-2 px-1 py-1 border-none "
         aria-label="Select language"
       >
-        <Globe size={18} className="text-gray-600" />
+        <Globe size={18} className="text-gray-600 dark:text-white" />
         <span className="hidden text-sm sm:inline">{selectedLang.label}</span>
         <span className="sm:hidden font-medium">{selectedLang.shortLabel}</span>
         <ChevronDown
