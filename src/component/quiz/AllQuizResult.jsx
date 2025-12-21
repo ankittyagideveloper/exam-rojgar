@@ -70,7 +70,7 @@ const AllQuizResult = ({ results, userAnswers, quizData }) => {
             {quizData?.map((question, index) => {
               const userAnswer = userAnswers[index];
               const isCorrect =
-                userAnswer?.selectedOption === question?.correctAnswer;
+                userAnswer?.selectedOption === question?.correctIndex;
               const wasAttempted = userAnswer?.selectedOption !== null;
 
               return (
@@ -111,20 +111,20 @@ const AllQuizResult = ({ results, userAnswers, quizData }) => {
                         <div
                           key={optionIndex}
                           className={`p-2 rounded text-sm ${
-                            optionIndex + 1 === question.correctAnswer
+                            optionIndex === question.correctIndex
                               ? "bg-green-100 text-green-800 border border-green-300"
                               : optionIndex === userAnswer?.selectedOption &&
-                                optionIndex !== question.correctAnswer
+                                optionIndex !== question.correctIndex
                               ? "bg-red-100 text-red-800 border border-red-300"
                               : "bg-gray-50"
                           }`}
                         >
                           {String.fromCharCode(65 + optionIndex)}. {option}
-                          {optionIndex + 1 === question.correctAnswer && (
+                          {optionIndex + 1 === question.correctIndex && (
                             <CheckCircle className="w-4 h-4 text-green-600 inline ml-2" />
                           )}
                           {optionIndex === userAnswer?.selectedOption &&
-                            optionIndex !== question.correctAnswer && (
+                            optionIndex !== question.correctIndex && (
                               <XCircle className="w-4 h-4 text-red-600 inline ml-2" />
                             )}
                         </div>
