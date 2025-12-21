@@ -27,9 +27,9 @@ const Quiz = () => {
         .map((test) => (
           <QuizCard
             title={test.title}
-            date="08 Aug 2025"
-            questions={test.totalQuestions}
-            marks={test.totalMarks}
+            // date="08 Aug 2025"
+            questions={test.questionsCount}
+            marks={test.maxMarks}
             duration={test.durationMinutes}
             languages={test.languages ?? []}
             //  userCount="45.8k"

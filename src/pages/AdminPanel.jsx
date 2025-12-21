@@ -17,6 +17,8 @@ export default function AdminPanel() {
   const [duration, setDuration] = useState(90);
   const [editingTestId, setEditingTestId] = useState(null);
   const [activeStatus, setActiveStatus] = useState(false);
+  const [maxMarks, setMaxMarks] = useState(0);
+  const [questionsCount, setQuestionsCount] = useState(0);
   const db = getFirestore(app);
   useEffect(() => {
     fetchTests().then((res) => console.log(res));
@@ -34,14 +36,14 @@ export default function AdminPanel() {
         isActive: Boolean(activeStatus),
         title,
         durationMinutes: duration,
+        questionsCount,
+        maxMarks,
       });
     } else {
       await setDoc(doc(db, "tests", testId), {
         testId,
         title,
-        totalQuestions: 100,
         durationMinutes: duration,
-        totalMarks: 100,
         createdAt: new Date(),
         isActive: activeStatus,
       });
@@ -52,13 +54,16 @@ export default function AdminPanel() {
     setEditingTestId(null);
     setActiveStatus(false);
     fetchTests();
+    setMaxMarks(0);
+    setQuestionsCount(0);
   };
   const handleEdit = (test) => {
     setEditingTestId(test.testId);
     setTitle(test.title);
     setDuration(test.durationMinutes);
-
     setActiveStatus(test.isActive);
+    setMaxMarks(test.maxMarks);
+    setQuestionsCount(test.questionsCount);
   };
   const handleDelete = async (testId) => {
     const ok = window.confirm("Are you sure you want to delete this test?");
@@ -112,13 +117,37 @@ export default function AdminPanel() {
             <option value={false}>Inactive</option>
           </select>
         </label>
-        <input
-          className="border p-2 w-full mb-3 rounded"
-          type="number"
-          placeholder="Duration (minutes)"
-          value={duration}
-          onChange={(e) => setDuration(Number(e.target.value))}
-        />
+
+        <label className="text-sm font-medium mb-4">
+          Max Marks:
+          <input
+            className="border p-2 w-full mb-3 rounded"
+            type="number"
+            placeholder="Max Marks"
+            value={maxMarks}
+            onChange={(e) => setMaxMarks(Number(e.target.value))}
+          />
+        </label>
+        <label className="text-sm font-medium mb-4">
+          Number of Questions:
+          <input
+            className="border p-2 w-full mb-3 rounded"
+            type="number"
+            placeholder="No. of Questions"
+            value={questionsCount}
+            onChange={(e) => setQuestionsCount(Number(e.target.value))}
+          />
+        </label>
+        <label className="text-sm font-medium mb-4">
+          Duration:
+          <input
+            className="border p-2 w-full mb-3 rounded"
+            type="number"
+            placeholder="Duration (minutes)"
+            value={duration}
+            onChange={(e) => setDuration(Number(e.target.value))}
+          />
+        </label>
         <div className="flex gap-3">
           <button
             onClick={createOrUpdateTest}
