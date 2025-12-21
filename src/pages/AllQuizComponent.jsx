@@ -248,7 +248,7 @@ const AllQuizComponent = () => {
     userAnswers?.forEach((answer, index) => {
       if (
         answer.selectedOption !== null &&
-        answer.selectedOption === parseInt(quizData[index].correctAnswer)
+        answer.selectedOption === parseInt(quizData[index].correctIndex)
       ) {
         correct++;
       }
