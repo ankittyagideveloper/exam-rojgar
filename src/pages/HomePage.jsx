@@ -7,6 +7,7 @@ import VideoPlayer from "../component/VideoPlayer";
 import { Helmet } from "react-helmet-async";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { app } from "../../firebase";
+import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
 
 function HomePage() {
   const { t, i18n } = useTranslation();
@@ -77,6 +78,7 @@ function HomePage() {
         </SignedIn>
       </header> */}
         {/* Main Content */}
+        <StickyBannerDemo />
         <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
           <div className="lg:flex lg:items-center xl:flex-row justify-around">
             {/* Hero Section */}
@@ -111,6 +113,7 @@ function HomePage() {
           )} */}
 
             {/* App Preview Card */}
+
             <Slider />
           </div>
 
