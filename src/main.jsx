@@ -6,6 +6,7 @@ import "./i18n.js";
 import { registerSW } from "virtual:pwa-register";
 
 import { ClerkProvider } from "@clerk/react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const updateSW = registerSW({
   onNeedRefresh() {
@@ -17,8 +18,12 @@ const updateSW = registerSW({
     console.log("App is ready to work offline");
   },
 });
+
+const queryClient = new QueryClient();
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </StrictMode>
 );

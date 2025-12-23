@@ -13,64 +13,23 @@ import { useParams } from "react-router-dom";
 
 import QuizResult from "../component/quiz/QuizResult";
 // import QuestionAnalysis from "../component/quiz/QuestionAnalysis";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  getFirestore,
-  query,
-  serverTimestamp,
-  setDoc,
-  where,
-} from "firebase/firestore";
+import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useUser } from "@clerk/clerk-react";
 import QuestionAnalysis from "../component/quiz/QuestionAnalysis";
 import AllQuizAnalysis from "../component/quiz/AllQuizAnalysis";
 import AllQuizResult from "../component/quiz/AllQuizResult";
+import { LoaderOne } from "../components/ui/loader";
+import { useQuizData } from "../hooks/QueryData";
 
 const AllQuizComponent = () => {
   const db = getFirestore(app);
-  const [testDetails, setTestDetails] = useState({});
   const { categoryId } = useParams();
-  const fetchQuestionsByTestId = async (testId) => {
-    const q = query(
-      collection(db, "questions"),
-      where("testIds", "array-contains", testId)
-    );
-
-    const snapshot = await getDocs(q);
-
-    return snapshot.docs?.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-  };
-
-  const fetchTestById = async (testId) => {
-    const docRef = doc(db, "tests", testId);
-    const snapshot = await getDoc(docRef);
-
-    if (!snapshot.exists()) return null;
-
-    return {
-      id: snapshot.id,
-      ...snapshot.data(),
-    };
-  };
-  const [quizData, setQuizData] = useState([]);
-  useEffect(() => {
-    fetchQuestionsByTestId(categoryId).then((data) => setQuizData(data));
-    fetchTestById(categoryId).then((data) => setTestDetails(data));
-  }, [categoryId]);
-
-  //   const quizData = fetchQuestionsByTestId(categoryId, db) || [];
-
+  const { quizData, testDetails, isLoading } = useQuizData(db, categoryId);
   const { user } = useUser();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
-  const [timeRemaining, setTimeRemaining] = useState(quizData.timeLimit);
+
   const [isQuizCompleted, setIsQuizCompleted] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
@@ -116,17 +75,26 @@ const AllQuizComponent = () => {
     };
   }, [quizData]);
 
+  const [timeRemaining, setTimeRemaining] = useState(
+    testDetails?.durationMinutes
+  );
+  useEffect(() => {
+    if (testDetails?.durationMinutes) {
+      setTimeRemaining(testDetails.durationMinutes * 60);
+    }
+  }, [testDetails?.durationMinutes]);
+
   // Timer effect
-  //   useEffect(() => {
-  //     if (timeRemaining > 0 && !isQuizCompleted) {
-  //       const timer = setTimeout(() => {
-  //         setTimeRemaining(timeRemaining - 1);
-  //       }, 1000);
-  //       return () => clearTimeout(timer);
-  //     } else if (timeRemaining === 0) {
-  //       handleSubmitQuiz();
-  //     }
-  //   }, [timeRemaining, isQuizCompleted]);
+  useEffect(() => {
+    if (timeRemaining > 0 && !isQuizCompleted) {
+      const timer = setTimeout(() => {
+        setTimeRemaining(timeRemaining - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (timeRemaining === 0) {
+      handleSubmitQuiz();
+    }
+  }, [timeRemaining, isQuizCompleted, testDetails?.durationMinutes]);
 
   // Update question start time when question changes
   useEffect(() => {
@@ -140,13 +108,17 @@ const AllQuizComponent = () => {
     }
   }, [currentQuestion]);
 
-  const formatTime = (seconds) => {
+  const formatTimeFromMinutes = (totalMinutes = 0) => {
+    const seconds = Math.max(0, Math.floor(totalMinutes * 60));
+
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
-    return `${hours.toString().padStart(2, "0")}:${minutes
-      .toString()
-      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+
+    return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
+      2,
+      "0"
+    )}:${String(secs).padStart(2, "0")}`;
   };
 
   const updateQuestionStatus = (questionIndex, status) => {
@@ -158,7 +130,6 @@ const AllQuizComponent = () => {
   };
 
   const saveAnswer = (questionIndex, optionIndex) => {
-    debugger;
     const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
     setUserAnswers((prev) =>
       prev?.map((answer, index) =>
@@ -301,6 +272,13 @@ const AllQuizComponent = () => {
   const currentQuestionData = quizData[currentQuestion];
   const results = calculateResults();
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen border-1 border-red-400">
+        <LoaderOne />
+      </div>
+    );
+  }
   return (
     <div className="max-w-6xl mx-auto p-2 md:p-6 ">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -317,7 +295,7 @@ const AllQuizComponent = () => {
                   <div className="flex items-center gap-2">
                     <Clock className="w-4 h-4" />
                     <span className="font-mono text-lg">
-                      {formatTime(timeRemaining)} min left
+                      {formatTimeFromMinutes(timeRemaining)} min left
                     </span>
                   </div>
                   <div className="flex gap-2">

@@ -4,27 +4,30 @@ import { QuizCard } from "../component/QuizCard";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useNavigate } from "react-router";
+import { useQuizData } from "../hooks/QueryData";
+import { LoaderFour, LoaderOne, LoaderThree } from "../components/ui/loader";
 
 const Quiz = () => {
-  const [tests, setTests] = useState([]);
   const db = getFirestore(app);
+  const { tests, isLoading } = useQuizData(db);
   const navigate = useNavigate();
-  useEffect(() => {
-    fetchTests();
-  }, []);
-  const fetchTests = async () => {
-    const snap = await getDocs(collection(db, "tests"));
-    setTests(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
-  };
+
   const handleTest = (id) => {
     navigate(`/all-quiz/${id}`);
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen ">
+        <LoaderOne />
+      </div>
+    );
+  }
   return (
     <div className="px-4 flex flex-col gap-4 mt-6">
       {tests
-        .filter((test) => test.isActive)
-        .map((test) => (
+        ?.filter((test) => test.isActive)
+        ?.map((test) => (
           <QuizCard
             title={test.title}
             // date="08 Aug 2025"
