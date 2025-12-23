@@ -302,7 +302,7 @@ const AllQuizComponent = () => {
   const results = calculateResults();
 
   return (
-    <div className="max-w-6xl mx-auto p-6 ">
+    <div className="max-w-6xl mx-auto p-2 md:p-6 ">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Main Quiz Area */}
         <div className="lg:col-span-3 space-y-6">
@@ -363,7 +363,7 @@ const AllQuizComponent = () => {
                         onClick={() => handleOptionSelect(index)}
                         className={`w-full text-left p-4 rounded-lg border transition-colors ${
                           selectedOption === index
-                            ? "border-primary bg-primary/5"
+                            ? "border-primary bg-[#B4DBED]"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
@@ -378,12 +378,12 @@ const AllQuizComponent = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-4 pt-4">
+              <div className="flex gap-2 md:gap-4 pt-4 justify-between md:justify-center pointer">
                 <Button
                   onClick={handleMarkAndNext}
-                  className="bg-yellow-500 hover:bg-yellow-600"
+                  className="bg-yellow-500 hover:bg-yellow-600 text-xs md:text-sm "
                 >
-                  MARK & NEXT
+                  Mark for Review
                 </Button>
                 <Button onClick={handleClear} variant="secondary">
                   CLEAR
@@ -394,15 +394,17 @@ const AllQuizComponent = () => {
                       ? handleSubmitQuiz
                       : handleSaveAndNext
                   }
-                  className="bg-teal-600 hover:bg-teal-700"
+                  className="bg-teal-600 hover:bg-teal-700 text-xs md:text-sm"
                 >
                   {currentQuestion === quizData.length - 1
                     ? "Save"
                     : "SAVE & NEXT"}
                 </Button>
+              </div>
+              <div className="flex flex-end justify-end">
                 <Button
                   onClick={handleSubmitQuiz}
-                  className="bg-teal-600 hover:bg-teal-700"
+                  className="bg-teal-600 hover:bg-teal-700 text-xs md:text-sm"
                 >
                   Submit
                 </Button>
@@ -410,7 +412,7 @@ const AllQuizComponent = () => {
             </CardContent>
           </Card>
         </div>
-
+        <video id="videoElement" autoplay playsinline></video>
         {/* Questions Analysis Panel */}
         <AllQuizAnalysis
           quizData={quizData}
@@ -418,6 +420,7 @@ const AllQuizComponent = () => {
           userAnswers={userAnswers}
           currentQuestion={currentQuestion}
           handleQuestionNavigation={handleQuestionNavigation}
+          testDetails={testDetails}
         />
       </div>
     </div>
