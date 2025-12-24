@@ -120,7 +120,7 @@ const AllQuizResult = ({ results, userAnswers, quizData }) => {
                           }`}
                         >
                           {String.fromCharCode(65 + optionIndex)}. {option}
-                          {optionIndex + 1 === question.correctIndex && (
+                          {optionIndex === question.correctIndex && (
                             <CheckCircle className="w-4 h-4 text-green-600 inline ml-2" />
                           )}
                           {optionIndex === userAnswer?.selectedOption &&
