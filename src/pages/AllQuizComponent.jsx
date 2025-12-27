@@ -397,7 +397,7 @@ const AllQuizComponent = () => {
     };
   };
 
-  if (isQuizCompleted) {
+  if (isQuizCompleted || attempt?.status === "SUBMITTED") {
     const results = calculateResults();
 
     return (
