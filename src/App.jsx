@@ -98,7 +98,7 @@ const router = createBrowserRouter(
       ],
     },
     {
-      path: "/all-quiz/:categoryId",
+      path: "/all-quiz/:categoryId/attempt/:attemptId",
       element: <TestLayout />,
       children: [
         {

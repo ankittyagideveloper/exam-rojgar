@@ -19,7 +19,6 @@ export function ManageQuestions({ testId }) {
   };
 
   const addQuestion = async () => {
-    debugger;
     await addDoc(collection(db, "questions", "questionId", "questions"), {
       questionText,
       options,

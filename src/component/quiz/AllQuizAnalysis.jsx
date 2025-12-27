@@ -24,7 +24,7 @@ const AllQuizAnalysis = ({
         <CardHeader className="bg-[#b4dbed] px-3.5">
           <CardTitle className="text-[#333] flex items-center justify-start py-2">
             <span className="font-bold uppercase pr-2">{`Section:`}</span>
-            {testDetails.title ?? "Test"}
+            {testDetails?.title ?? "Test"}
           </CardTitle>
         </CardHeader>
         <CardContent className="p-4 space-y-4">
@@ -50,17 +50,17 @@ const AllQuizAnalysis = ({
           <div className="grid grid-cols-4 gap-1 text-center text-sm">
             <div>
               <Star className="w-4 h-4 text-yellow-500 mx-auto" />
-              <div className="font-bold">{results.marked}</div>
+              <div className="font-bold">{results?.marked}</div>
             </div>
             <div>
               <div className="w-4 h-4 bg-teal-600 rounded mx-auto"></div>
-              <div className="font-bold">{results.attempted}</div>
+              <div className="font-bold">{results?.attempted}</div>
             </div>
             <div>
-              <div className="font-bold">{results.skipped}</div>
+              <div className="font-bold">{results?.skipped}</div>
             </div>
             <div>
-              <div className="font-bold">{results.notViewed}</div>
+              <div className="font-bold">{results?.notViewed}</div>
             </div>
           </div>
 

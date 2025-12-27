@@ -11,6 +11,7 @@ export function QuizCard({
   isFree = false,
   isNewInterface = false,
   onStartClick,
+  attemptStatus,
 }) {
   const formatLanguages = (langs) => {
     if (langs.length <= 2) {
@@ -20,7 +21,7 @@ export function QuizCard({
     const remaining = langs.length - 2;
     return `${displayed.join(", ")} + ${remaining} More`;
   };
-
+  console.log(attemptStatus, "attemptStatus");
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
       {/* Mobile Layout */}
@@ -122,7 +123,11 @@ export function QuizCard({
               onClick={onStartClick}
               className="text-xs cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-4 py-2 rounded-lg transition-colors"
             >
-              Start Now
+              {attemptStatus === "IN_PROGRESS"
+                ? "Resume"
+                : attemptStatus === "SUBMITTED"
+                ? "Re-attempt"
+                : "Start Now"}
             </button>
           </div>
         </div>

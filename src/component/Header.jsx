@@ -1,4 +1,9 @@
-import { SignedIn, UserButton, useUser } from "@clerk/clerk-react";
+import {
+  SignedIn,
+  SignInButton,
+  UserButton,
+  useUser,
+} from "@clerk/clerk-react";
 import { IconUserCircle } from "@tabler/icons-react";
 import { Download, Menu } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
@@ -62,7 +67,7 @@ function InstallPWAButton() {
 }
 
 const Header = () => {
-  const { user } = useUser();
+  const { user, isSignedIn } = useUser();
   const isAdmin = user?.publicMetadata?.role === "admin";
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const {
@@ -120,9 +125,16 @@ const Header = () => {
 
           <InstallPWAButton />
           <LanguageSwitcher onChange={handleLanguageChange} />
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+
+          {isSignedIn ? (
+            <>
+              <UserButton />
+            </>
+          ) : (
+            <SignInButton mode="modal">
+              <button>LogIn</button>
+            </SignInButton>
+          )}
         </div>
       </header>
     </>

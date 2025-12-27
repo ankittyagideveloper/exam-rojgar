@@ -1,11 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import {
+  fetchAttemptByAttemptId,
   fetchQuestionsByTestId,
   fetchTestById,
   fetchTests,
 } from "../utils/firestoreHelpers";
+import { getFirestore } from "firebase/firestore";
 
-export const useQuizData = (db, testId) => {
+import { app } from "../../firebase";
+const db = getFirestore(app);
+export const useQuizData = (testId) => {
   const questionsQuery = useQuery({
     queryKey: ["questions", testId],
     queryFn: () => fetchQuestionsByTestId(db, testId),
@@ -31,7 +35,6 @@ export const useQuizData = (db, testId) => {
     refetchOnWindowFocus: false,
     retry: false,
   });
-
   return {
     tests: allTestsQuery.data ?? [],
     quizData: questionsQuery.data ?? [],
@@ -42,4 +45,14 @@ export const useQuizData = (db, testId) => {
       allTestsQuery.isLoading,
     error: questionsQuery.error || testQuery.error,
   };
+};
+
+export const useAttemptData = (attemptId) => {
+  return useQuery({
+    queryKey: ["attempt", attemptId],
+    queryFn: () => fetchAttemptByAttemptId(db, attemptId),
+    enabled: !!attemptId,
+    staleTime: 5 * 60 * 1000,
+    refetchOnWindowFocus: false,
+  });
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import questions from "./Quiz-question.json";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -12,6 +12,7 @@ import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
 const AllQuizResult = ({ results, userAnswers, quizData }) => {
   const { categoryId } = useParams();
+  const navigate = useNavigate();
   // const quizData = questions[categoryId] || [];
   return (
     <div className="max-w-6xl mx-auto md:p-6 space-y-6">
@@ -141,8 +142,8 @@ const AllQuizResult = ({ results, userAnswers, quizData }) => {
           </div>
 
           <div className="text-center">
-            <Button onClick={() => window.location.reload()} size="lg">
-              Retake Quiz
+            <Button onClick={() => navigate("/quiz-category")} size="lg">
+              Back
             </Button>
           </div>
         </CardContent>

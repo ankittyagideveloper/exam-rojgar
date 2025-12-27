@@ -180,8 +180,8 @@ export default function SidebarDemo({ children }) {
                 .map((link, idx) => (
                   <SidebarLink key={idx} link={link} />
                 ))}
-              {isSignedIn ? (
-                <SignOutButton className="text-left cursor-pointer px-6">
+              {/* {isSignedIn ? (
+                <SignOutButton className="md:hidden text-left cursor-pointer px-6">
                   <button>{t("logOutBtn")}</button>
                 </SignOutButton>
               ) : (
@@ -191,7 +191,7 @@ export default function SidebarDemo({ children }) {
                 >
                   <button>{t("logInBtn")}</button>
                 </SignInButton>
-              )}
+              )} */}
             </div>
           </div>
           <div className="flex items-center gap-4">
