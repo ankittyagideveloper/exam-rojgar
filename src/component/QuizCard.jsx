@@ -49,7 +49,11 @@ export function QuizCard({
             onClick={onStartClick}
             className="cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap"
           >
-            Start Now
+            {attemptStatus === "IN_PROGRESS"
+              ? "Resume"
+              : attemptStatus === "SUBMITTED"
+              ? "Re-attempt"
+              : "Start Now"}
           </button>
         </div>
 
