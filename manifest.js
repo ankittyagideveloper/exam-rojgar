@@ -41,7 +41,7 @@ export const manifestForPlugIn = {
     cleanupOutdatedCaches: true,
 
     // 🚫 NEVER cache index.html
-    globPatterns: ["**/*.{js,css,ico,png,svg,woff2}"],
+    globPatterns: ["**/*.{js,css,ico,svg,woff2}"],
 
     navigateFallbackDenylist: [/^\/api/],
   },
@@ -58,6 +58,17 @@ export const manifestForPlugIn = {
           maxAgeSeconds: 60 * 5, // only 5 minutes
         },
         cacheableResponse: { statuses: [0, 200] },
+      },
+    },
+    {
+      urlPattern: ({ request }) => request.destination === "image",
+      handler: "CacheFirst",
+      options: {
+        cacheName: "image-cache",
+        expiration: {
+          maxEntries: 100,
+          maxAgeSeconds: 60 * 60 * 24 * 30,
+        },
       },
     },
   ],
