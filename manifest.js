@@ -1,8 +1,6 @@
 export const manifestForPlugIn = {
   registerType: "autoUpdate",
-
   includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
-
   manifest: {
     name: "Exam Rojgaar",
     short_name: "Exam Rojgaar",
@@ -13,13 +11,19 @@ export const manifestForPlugIn = {
         src: "/android-chrome-192x192.png",
         sizes: "192x192",
         type: "image/png",
+        purpose: "any",
       },
       {
         src: "/android-chrome-512x512.png",
         sizes: "512x512",
         type: "image/png",
+        purpose: "any",
       },
-      { src: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        src: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
       {
         src: "/maskable_icon.png",
         sizes: "512x512",
@@ -34,46 +38,30 @@ export const manifestForPlugIn = {
     start_url: "/",
     orientation: "portrait",
   },
-
   workbox: {
     clientsClaim: true,
     skipWaiting: true,
-    cleanupOutdatedCaches: true,
-
-    // 🚫 NEVER cache index.html
-    globPatterns: ["**/*.{js,css,ico,svg,woff2}"],
-
-    navigateFallbackDenylist: [/^\/api/],
+    maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+    globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
   },
-
+  devOptions: {
+    enabled: true,
+  },
   runtimeCaching: [
-    // 🔥 API must be NetworkFirst
     {
-      urlPattern: ({ url }) => url.pathname.startsWith("/api/v1/data"),
+      urlPattern: ({ url }) => url.pathname.startsWith("/api/v1/data"), // Match your API calls
       handler: "NetworkFirst",
       options: {
         cacheName: "api-cache",
         expiration: {
           maxEntries: 50,
-          maxAgeSeconds: 60 * 5, // only 5 minutes
+          maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
         },
-        cacheableResponse: { statuses: [0, 200] },
-      },
-    },
-    {
-      urlPattern: ({ request }) => request.destination === "image",
-      handler: "CacheFirst",
-      options: {
-        cacheName: "image-cache",
-        expiration: {
-          maxEntries: 100,
-          maxAgeSeconds: 60 * 60 * 24 * 30,
+        // Ensure response is cacheable
+        cacheableResponse: {
+          statuses: [0, 200],
         },
       },
     },
   ],
-
-  devOptions: {
-    enabled: true,
-  },
 };

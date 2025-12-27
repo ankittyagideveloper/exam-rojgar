@@ -3,7 +3,6 @@ import Layout from "./component/Layout";
 import HomePage from "./pages/HomePage";
 import {
   createBrowserRouter,
-  createHashRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
@@ -27,7 +26,7 @@ function PublicRoute({ children }) {
   return isSignedIn ? <Navigate to="/home" replace /> : <>{children}</>;
 }
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       path: "/",
