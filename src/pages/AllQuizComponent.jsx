@@ -80,6 +80,7 @@ const AllQuizComponent = () => {
   // }, [quizData]);
 
   useEffect(() => {
+    debugger;
     if (!attempt?.answers || !quizData.length) return;
 
     const restored = quizData.map((q) => ({
@@ -108,7 +109,7 @@ const AllQuizComponent = () => {
       // document.removeEventListener("touchend", disableTouchCopy);
       // document.removeEventListener("touchmove", disableTouchCopy);
     };
-  }, [attempt, quizData]);
+  }, [attempt, quizData, attempt?.status]);
 
   const [timeRemaining, setTimeRemaining] = useState(
     testDetails?.durationMinutes
@@ -488,11 +489,7 @@ const AllQuizComponent = () => {
                   CLEAR
                 </Button>
                 <Button
-                  onClick={
-                    currentQuestion === quizData.length - 1
-                      ? handleSubmitQuiz
-                      : handleSaveAndNext
-                  }
+                  onClick={handleSaveAndNext}
                   className="bg-teal-600 hover:bg-teal-700 text-xs md:text-sm"
                 >
                   {currentQuestion === quizData.length - 1

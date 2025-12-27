@@ -50,11 +50,17 @@ const Quiz = () => {
     );
   }
 
-  const handleTest = async (test) => {
-    const existing = attemptMap[test.id];
+  console.log(attemptMap);
 
+  const handleTest = async (test, islastAttempt) => {
+    debugger;
+    const existing = attemptMap[test.id];
     let attemptId;
 
+    if (islastAttempt && existing?.status === "SUBMITTED") {
+      navigate(`/all-quiz/${test.id}/attempt/${existing.attemptId}`);
+      return;
+    }
     if (existing?.status === "IN_PROGRESS") {
       attemptId = existing.attemptId; // resume
     } else {
@@ -79,7 +85,7 @@ const Quiz = () => {
             languages={test.languages ?? []}
             isFree={true}
             isNewInterface={true}
-            onStartClick={() => handleTest(test)}
+            onStartClick={(islastAttempt) => handleTest(test, islastAttempt)}
             attemptStatus={attemptMap[test.id]?.status || "NOT_STARTED"}
           />
         ))}

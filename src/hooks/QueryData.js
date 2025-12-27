@@ -52,7 +52,7 @@ export const useAttemptData = (attemptId) => {
     queryKey: ["attempt", attemptId],
     queryFn: () => fetchAttemptByAttemptId(db, attemptId),
     enabled: !!attemptId,
-    staleTime: 5 * 60 * 1000,
+    staleTime: 0,
     refetchOnWindowFocus: false,
   });
 };

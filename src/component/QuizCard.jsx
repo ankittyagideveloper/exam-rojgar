@@ -21,7 +21,7 @@ export function QuizCard({
     const remaining = langs.length - 2;
     return `${displayed.join(", ")} + ${remaining} More`;
   };
-  console.log(attemptStatus, "attemptStatus");
+  const isSubmitted = attemptStatus === "SUBMITTED";
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
       {/* Mobile Layout */}
@@ -45,16 +45,29 @@ export function QuizCard({
           <h3 className="text-sm font-medium text-gray-900 leading-tight flex-1">
             {title}
           </h3>
-          <button
-            onClick={onStartClick}
-            className="cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap"
-          >
-            {attemptStatus === "IN_PROGRESS"
-              ? "Resume"
-              : attemptStatus === "SUBMITTED"
-              ? "Re-attempt"
-              : "Start Now"}
-          </button>
+          <div className="flex flex-col gap-1">
+            <button
+              disabled={attemptStatus === "SUBMITTED"}
+              onClick={onStartClick}
+              className={`${
+                isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
+              } cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+            >
+              {attemptStatus === "IN_PROGRESS"
+                ? "Resume"
+                : attemptStatus === "SUBMITTED"
+                ? "SUBMITTED"
+                : "Start Now"}
+            </button>
+            {attemptStatus === "SUBMITTED" && (
+              <button
+                onClick={onStartClick}
+                className={`cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+              >
+                Last Attempt
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Quiz Details */}
@@ -123,16 +136,29 @@ export function QuizCard({
 
           {/* Start Button */}
           <div className="ml-6">
-            <button
-              onClick={onStartClick}
-              className="text-xs cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white font-medium px-4 py-2 rounded-lg transition-colors"
-            >
-              {attemptStatus === "IN_PROGRESS"
-                ? "Resume"
-                : attemptStatus === "SUBMITTED"
-                ? "Re-attempt"
-                : "Start Now"}
-            </button>
+            <div className="flex flex-col gap-1">
+              <button
+                disabled={attemptStatus === "SUBMITTED"}
+                onClick={onStartClick}
+                className={`${
+                  isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
+                } cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+              >
+                {attemptStatus === "IN_PROGRESS"
+                  ? "Resume"
+                  : attemptStatus === "SUBMITTED"
+                  ? "SUBMITTED"
+                  : "Start Now"}
+              </button>
+              {attemptStatus === "SUBMITTED" && (
+                <button
+                  onClick={() => onStartClick(true)}
+                  className={`cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                >
+                  Last Attempt
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
