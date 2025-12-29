@@ -17,6 +17,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { app } from "../../firebase";
+import QuizHeader from "../component/quiz/QuizHeader";
 
 const db = getFirestore(app);
 const AllQuizComponent = () => {
@@ -38,49 +39,7 @@ const AllQuizComponent = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
 
-  // Initialize user answers
-  // useEffect(() => {
-  //   if (!quizData.length) return;
-
-  //   const initialAnswers = quizData.map((q) => ({
-  //     questionId: q.id,
-  //     selectedOption: null,
-  //     status: "not-viewed",
-  //     timeSpent: 0,
-  //   }));
-
-  //   setUserAnswers(initialAnswers);
-  //   const disableRightClick = (e) => e.preventDefault();
-  //   const disableCopy = (e) => e.preventDefault();
-
-  //   document.addEventListener("contextmenu", disableRightClick);
-  //   document.addEventListener("copy", disableCopy);
-  //   document.addEventListener("cut", disableCopy);
-  //   document.addEventListener("paste", disableCopy);
-
-  //   // const disableTouchCopy = (e) => e.preventDefault();
-
-  //   // document.addEventListener("touchstart", disableTouchCopy, {
-  //   //   passive: false,
-  //   // });
-  //   // document.addEventListener("touchend", disableTouchCopy, { passive: false });
-  //   // document.addEventListener("touchmove", disableTouchCopy, {
-  //   //   passive: false,
-  //   // });
-
-  //   return () => {
-  //     document.removeEventListener("contextmenu", disableRightClick);
-  //     document.removeEventListener("copy", disableCopy);
-  //     document.removeEventListener("cut", disableCopy);
-  //     document.removeEventListener("paste", disableCopy);
-  //     // document.removeEventListener("touchstart", disableTouchCopy);
-  //     // document.removeEventListener("touchend", disableTouchCopy);
-  //     // document.removeEventListener("touchmove", disableTouchCopy);
-  //   };
-  // }, [quizData]);
-
   useEffect(() => {
-    debugger;
     if (!attempt?.answers || !quizData.length) return;
 
     const restored = quizData.map((q) => ({
@@ -105,44 +64,19 @@ const AllQuizComponent = () => {
       document.removeEventListener("copy", disableCopy);
       document.removeEventListener("cut", disableCopy);
       document.removeEventListener("paste", disableCopy);
-      // document.removeEventListener("touchstart", disableTouchCopy);
-      // document.removeEventListener("touchend", disableTouchCopy);
-      // document.removeEventListener("touchmove", disableTouchCopy);
     };
   }, [attempt, quizData, attempt?.status]);
 
-  const [timeRemaining, setTimeRemaining] = useState(
-    testDetails?.durationMinutes
-  );
   useEffect(() => {
-    if (testDetails?.durationMinutes) {
-      setTimeRemaining(testDetails.durationMinutes * 60);
+    setQuestionStartTime(Date.now());
+    // Mark current question as viewed if not already marked
+    if (
+      userAnswers.length > 0 &&
+      userAnswers[currentQuestion]?.status === "not-viewed"
+    ) {
+      updateQuestionStatus(currentQuestion, "skipped");
     }
-  }, [testDetails?.durationMinutes]);
-
-  // Timer effect
-  // useEffect(() => {
-  //   if (timeRemaining > 0 && !isQuizCompleted) {
-  //     const timer = setTimeout(() => {
-  //       setTimeRemaining(timeRemaining - 1);
-  //     }, 1000);
-  //     return () => clearTimeout(timer);
-  //   } else if (timeRemaining === 0) {
-  //     handleSubmitQuiz();
-  //   }
-  // }, [timeRemaining, isQuizCompleted, testDetails?.durationMinutes]);
-
-  // Update question start time when question changes
-  // useEffect(() => {
-  //   setQuestionStartTime(Date.now());
-  //   // Mark current question as viewed if not already marked
-  //   if (
-  //     userAnswers.length > 0 &&
-  //     userAnswers[currentQuestion]?.status === "not-viewed"
-  //   ) {
-  //     updateQuestionStatus(currentQuestion, "skipped");
-  //   }
-  // }, [currentQuestion]);
+  }, [currentQuestion]);
 
   useEffect(() => {
     if (!userAnswers.length) return;
@@ -199,7 +133,7 @@ const AllQuizComponent = () => {
       timePerQuestion,
       currentQuestion,
       currentQuestionIndex,
-      timeRemaining,
+      // timeRemaining,
       status,
       lastSavedAt: serverTimestamp(),
     });
@@ -236,18 +170,6 @@ const AllQuizComponent = () => {
     // Save with the updated answers
     await saveAttempt("IN_PROGRESS", updatedAnswers, currentQuestionIndex);
   };
-  const formatTimeFromMinutes = (totalMinutes = 0) => {
-    const seconds = Math.max(0, Math.floor(totalMinutes * 60));
-
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-
-    return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
-      2,
-      "0"
-    )}:${String(secs).padStart(2, "0")}`;
-  };
 
   const updateQuestionStatus = (questionIndex, status) => {
     setUserAnswers((prev) =>
@@ -257,21 +179,21 @@ const AllQuizComponent = () => {
     );
   };
 
-  const saveAnswer = (questionIndex, optionIndex) => {
-    const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-    setUserAnswers((prev) =>
-      prev?.map((answer, index) =>
-        index === questionIndex
-          ? {
-              ...answer,
-              selectedOption: optionIndex,
-              status: "attempted",
-              timeSpent: answer.timeSpent + timeSpent,
-            }
-          : answer
-      )
-    );
-  };
+  // const saveAnswer = (questionIndex, optionIndex) => {
+  //   const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
+  //   setUserAnswers((prev) =>
+  //     prev?.map((answer, index) =>
+  //       index === questionIndex
+  //         ? {
+  //             ...answer,
+  //             selectedOption: optionIndex,
+  //             status: "attempted",
+  //             timeSpent: answer.timeSpent + timeSpent,
+  //           }
+  //         : answer
+  //     )
+  //   );
+  // };
 
   const handleOptionSelect = (optionIndex) => {
     setSelectedOption(optionIndex);
@@ -279,12 +201,20 @@ const AllQuizComponent = () => {
 
   const handleMarkAndNext = () => {
     if (selectedOption !== null) {
-      saveAnswer(currentQuestion, selectedOption);
+      // saveAnswer(currentQuestion, selectedOption);
     }
+    // updateQuestionStatus(currentQuestion, "marked");
+    // if (currentQuestion < quizData.length - 1) {
+    //   setCurrentQuestion(currentQuestion + 1);
+    //   setSelectedOption(userAnswers[currentQuestion]?.selectedOption || null);
+    // }
+
     updateQuestionStatus(currentQuestion, "marked");
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedOption(userAnswers[currentQuestion]?.selectedOption || null);
+      setSelectedOption(
+        userAnswers[currentQuestion + 1]?.selectedOption || null
+      );
     }
   };
 
@@ -314,7 +244,7 @@ const AllQuizComponent = () => {
 
   const handleQuestionNavigation = (questionIndex) => {
     if (selectedOption !== null) {
-      saveAnswer(currentQuestion, selectedOption);
+      // saveAnswer(currentQuestion, selectedOption);
     }
     setCurrentQuestion(questionIndex);
     setSelectedOption(userAnswers[questionIndex]?.selectedOption || null);
@@ -426,27 +356,12 @@ const AllQuizComponent = () => {
         {/* Main Quiz Area */}
         <div className="lg:col-span-3 space-y-6">
           {/* Header */}
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <Badge variant="outline" className="text-lg px-3 py-1">
-                    {currentQuestion + 1}
-                  </Badge>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
-                    <span className="font-mono text-lg">
-                      {formatTimeFromMinutes(timeRemaining)} min left
-                    </span>
-                  </div>
-                  <div className="flex gap-2">
-                    <Badge variant="secondary">EN</Badge>
-                  </div>
-                </div>
-              </div>
-            </CardHeader>
-          </Card>
-
+          <QuizHeader
+            currentQuestion={currentQuestion}
+            isQuizCompleted={isQuizCompleted}
+            testDetails={testDetails}
+            timesUp={handleSubmitQuiz}
+          />
           {/* Question Content */}
           <Card>
             <CardContent className="space-y-4">
@@ -508,7 +423,7 @@ const AllQuizComponent = () => {
             </CardContent>
           </Card>
         </div>
-        <video id="videoElement" autoplay playsinline></video>
+
         {/* Questions Analysis Panel */}
         <AllQuizAnalysis
           quizData={quizData}
