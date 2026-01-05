@@ -1,12 +1,17 @@
 import { QuizCard } from "../component/QuizCard";
-import { getFirestore } from "firebase/firestore";
+import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useNavigate } from "react-router";
 import { useQuizData } from "../hooks/QueryData";
 import { LoaderOne } from "../components/ui/loader";
-import { createAttempt, getActiveAttempt } from "../utils/firestoreHelpers";
+import {
+  createAttempt,
+  getActiveAttempt,
+  isUserRegistered,
+} from "../utils/firestoreHelpers";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
+import RegistrationModal from "../component/quiz/RegistrationModal";
 
 const Quiz = () => {
   const db = getFirestore(app);
@@ -14,6 +19,8 @@ const Quiz = () => {
   const navigate = useNavigate();
   const { user, isLoaded } = useUser();
   const [attemptMap, setAttemptMap] = useState({});
+  const [openRegistaration, setOpenRegistration] = useState(false);
+  const [selectedTest, setSelectedTest] = useState(null);
 
   useEffect(() => {
     // Wait until user is loaded, tests are loaded, and we have tests
@@ -49,11 +56,7 @@ const Quiz = () => {
       </div>
     );
   }
-
-  console.log(attemptMap);
-
-  const handleTest = async (test, islastAttempt) => {
-    debugger;
+  const startTest = async (test, islastAttempt) => {
     const existing = attemptMap[test.id];
     let attemptId;
 
@@ -70,26 +73,88 @@ const Quiz = () => {
     navigate(`/all-quiz/${test.id}/attempt/${attemptId}`);
   };
 
+  const handleTest = async (test, islastAttempt) => {
+    if (test.requiresRegistration) {
+      const registered = await isUserRegistered({
+        db,
+        testId: test.id,
+        userId: user.id,
+      });
+
+      if (!registered) {
+        setSelectedTest(test);
+        setOpenRegistration(true);
+        return;
+      }
+      await startTest(test, islastAttempt);
+    } else {
+      await startTest(test, islastAttempt);
+    }
+  };
+
   console.log(attemptMap);
+  const isAdmin = user?.publicMetadata?.role === "admin";
+
+  const saveRegistrationToFirestore = async ({
+    db,
+    testId,
+    userId,
+    formData,
+  }) => {
+    const ref = doc(db, "testRegistrations", testId, "users", userId);
+
+    await setDoc(ref, {
+      name: formData.name,
+      rrbRegNo: formData.rrbRegNo,
+      phone: formData.phone,
+      dob: formData.dob,
+      userId,
+      testId,
+      registeredAt: serverTimestamp(),
+    });
+
+    return true;
+  };
+
+  const handleRegister = async (formData) => {
+    await saveRegistrationToFirestore({
+      db,
+      testId: selectedTest.id,
+      userId: user.id,
+      formData,
+    });
+    setOpenRegistration(false);
+    await startTest(selectedTest, false);
+  };
+
   return (
-    <div className="px-4 flex flex-col gap-4 mt-6">
-      {tests
-        ?.filter((test) => test.isActive)
-        ?.map((test) => (
-          <QuizCard
-            key={test.id}
-            title={test.title}
-            questions={test.questionsCount}
-            marks={test.maxMarks}
-            duration={test.durationMinutes}
-            languages={test.languages ?? []}
-            isFree={true}
-            isNewInterface={true}
-            onStartClick={(islastAttempt) => handleTest(test, islastAttempt)}
-            attemptStatus={attemptMap[test.id]?.status || "NOT_STARTED"}
-          />
-        ))}
-    </div>
+    <>
+      {openRegistaration && (
+        <RegistrationModal
+          isOpen={openRegistaration}
+          onClose={() => setOpenRegistration(false)}
+          onSubmit={handleRegister}
+        />
+      )}
+      <div className="px-4 flex flex-col gap-4 mt-6">
+        {tests
+          ?.filter((test) => test.isActive || isAdmin)
+          ?.map((test) => (
+            <QuizCard
+              key={test.id}
+              title={test.title}
+              questions={test.questionsCount}
+              marks={test.maxMarks}
+              duration={test.durationMinutes}
+              languages={test.languages ?? []}
+              isFree={true}
+              isNewInterface={true}
+              onStartClick={(islastAttempt) => handleTest(test, islastAttempt)}
+              attemptStatus={attemptMap[test.id]?.status || "NOT_STARTED"}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 

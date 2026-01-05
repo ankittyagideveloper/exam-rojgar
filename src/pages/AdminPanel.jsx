@@ -17,8 +17,10 @@ export default function AdminPanel() {
   const [duration, setDuration] = useState(90);
   const [editingTestId, setEditingTestId] = useState(null);
   const [activeStatus, setActiveStatus] = useState(false);
+  const [requiresRegistration, setRequiresRegistration] = useState(false);
   const [maxMarks, setMaxMarks] = useState(0);
   const [questionsCount, setQuestionsCount] = useState(0);
+
   const db = getFirestore(app);
   useEffect(() => {
     fetchTests().then((res) => console.log(res));
@@ -34,6 +36,7 @@ export default function AdminPanel() {
       const ref = doc(db, "tests", editingTestId);
       await updateDoc(ref, {
         isActive: Boolean(activeStatus),
+        requiresRegistration: Boolean(requiresRegistration),
         title,
         durationMinutes: duration,
         questionsCount,
@@ -46,6 +49,7 @@ export default function AdminPanel() {
         durationMinutes: duration,
         createdAt: new Date(),
         isActive: activeStatus,
+        requiresRegistration,
       });
     }
     setTestId("");
@@ -53,6 +57,7 @@ export default function AdminPanel() {
     setDuration(90);
     setEditingTestId(null);
     setActiveStatus(false);
+    setRequiresRegistration(false);
     fetchTests();
     setMaxMarks(0);
     setQuestionsCount(0);
@@ -62,6 +67,7 @@ export default function AdminPanel() {
     setTitle(test.title);
     setDuration(test.durationMinutes);
     setActiveStatus(test.isActive);
+    setRequiresRegistration(test.requiresRegistration);
     setMaxMarks(test.maxMarks);
     setQuestionsCount(test.questionsCount);
   };
@@ -115,6 +121,31 @@ export default function AdminPanel() {
           >
             <option value={true}>Active</option>
             <option value={false}>Inactive</option>
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-2 text-sm font-medium mb-4">
+          Is Registration Required:
+          <select
+            name="requiresRegistration"
+            defaultValue={requiresRegistration}
+            value={requiresRegistration}
+            className="
+      w-60
+      rounded-md
+      bg-white
+      px-3 py-2
+      shadow-sm
+      focus:outline-none
+      cursor-pointer
+    "
+            onChange={(e) => {
+              const isActive = e.target.value === "true";
+              setRequiresRegistration(isActive);
+            }}
+          >
+            <option value={true}>Required</option>
+            <option value={false}>Not Required</option>
           </select>
         </label>
 

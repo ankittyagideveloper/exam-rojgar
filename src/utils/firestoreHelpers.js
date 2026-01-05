@@ -112,3 +112,9 @@ export const getActiveAttempt = async ({ db, userId, testId }) => {
 
   return snapshot.docs[0]?.data();
 };
+
+export const isUserRegistered = async ({ db, testId, userId }) => {
+  const ref = doc(db, "testRegistrations", testId, "users", userId);
+  const snap = await getDoc(ref);
+  return snap.exists();
+};
