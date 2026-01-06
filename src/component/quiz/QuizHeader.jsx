@@ -2,40 +2,45 @@ import React, { useEffect, useState, useRef } from "react";
 import { Card, CardHeader } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import { Clock } from "lucide-react";
+import { useAttemptData } from "../../hooks/QueryData";
 
 const QuizHeader = ({
   currentQuestion,
   testDetails,
   timesUp,
   isQuizCompleted,
+  attemptId,
 }) => {
-  // store seconds directly
-  const [timeRemaining, setTimeRemaining] = useState(
-    (testDetails?.durationMinutes || 0) * 60
-  );
+  const { data: attempt, isLoading } = useAttemptData(attemptId);
 
+  const [timeRemaining, setTimeRemaining] = useState(0); // seconds
   const timerRef = useRef(null);
 
-  // Reset timer when new test loads
   useEffect(() => {
-    setTimeRemaining((testDetails?.durationMinutes || 0) * 60);
-  }, [testDetails?.durationMinutes]);
+    if (!attempt || isQuizCompleted) return;
 
-  // Timer logic
-  useEffect(() => {
-    if (isQuizCompleted) return;
+    const startTimeMs = attempt.startedAt.toMillis(); // Firestore → ms
+    const durationMs = attempt.totalDurationSec * 1000; // sec → ms
 
-    if (timeRemaining <= 0) {
-      timesUp();
-      return;
-    }
+    const tick = () => {
+      const now = Date.now();
+      const elapsed = now - startTimeMs;
+      const remainingMs = durationMs - elapsed;
 
-    timerRef.current = setInterval(() => {
-      setTimeRemaining((prev) => prev - 1);
-    }, 1000);
+      if (remainingMs <= 0) {
+        setTimeRemaining(0);
+        timesUp(); // Auto-submit
+        clearInterval(timerRef.current);
+      } else {
+        setTimeRemaining(Math.floor(remainingMs / 1000));
+      }
+    };
+
+    tick(); // Run immediately on load (important for refresh)
+    timerRef.current = setInterval(tick, 1000);
 
     return () => clearInterval(timerRef.current);
-  }, [isQuizCompleted, timeRemaining, timesUp]);
+  }, [attempt, isQuizCompleted, timesUp]);
 
   const formatTime = (totalSeconds = 0) => {
     const hours = Math.floor(totalSeconds / 3600);
@@ -47,6 +52,8 @@ const QuizHeader = ({
       "0"
     )}:${String(seconds).padStart(2, "0")}`;
   };
+
+  if (isLoading || !attempt) return null;
 
   return (
     <Card>
@@ -64,9 +71,7 @@ const QuizHeader = ({
               </span>
             </div>
 
-            <div className="flex gap-2">
-              <Badge variant="secondary">EN</Badge>
-            </div>
+            <Badge variant="secondary">EN</Badge>
           </div>
         </div>
       </CardHeader>

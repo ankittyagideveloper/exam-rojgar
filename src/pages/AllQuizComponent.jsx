@@ -361,6 +361,7 @@ const AllQuizComponent = () => {
             isQuizCompleted={isQuizCompleted}
             testDetails={testDetails}
             timesUp={handleSubmitQuiz}
+            attemptId={attemptId}
           />
           {/* Question Content */}
           <Card>
