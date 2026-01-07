@@ -27,6 +27,8 @@ const calculateRanks = (submissions) => {
 
     if (a.timeSpentSec !== b.timeSpentSec)
       return a.timeSpentSec - b.timeSpentSec; // faster wins
+
+    return a.startedAt.toMillis() - b.startedAt.toMillis(); // earlier submit wins
   });
 
   return sorted.map((item, index) => ({
