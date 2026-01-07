@@ -31,6 +31,7 @@ export const manifestForPlugIn = {
         purpose: "maskable",
       },
     ],
+    version: "1.2.0",
     theme_color: "#ffffff",
     background_color: "#f0e7db",
     display: "standalone",
