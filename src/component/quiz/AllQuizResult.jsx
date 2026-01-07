@@ -47,10 +47,12 @@ const AllQuizResult = ({
 }) => {
   const { categoryId } = useParams();
   const [rank, setRank] = useState(0);
+  const [totalSubmission, setTotalSubmissions] = useState(0);
   useEffect(() => {
     const loadRanks = async () => {
       const subs = await getAllSubmissions({ db, testId });
       console.log(subs, "allsubmission");
+      setTotalSubmissions(subs.length);
       const ranked = calculateRanks(subs);
       console.log(ranked, "ranked");
       const myRank = ranked.find((r) => r.userId === userId);
@@ -86,6 +88,9 @@ const AllQuizResult = ({
               <Trophy className="w-8 h-8 text-orange-600 mx-auto mb-2" />
               <div className="font-semibold text-orange-800">Current Rank</div>
               <div className="text-2xl font-bold text-orange-600">{rank}</div>
+              <div className="text-sm  text-orange-600">
+                Total Submissions- {totalSubmission}
+              </div>
             </div>
             <div className="text-center p-4 bg-green-50 rounded-lg">
               <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
