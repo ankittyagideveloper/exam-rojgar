@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import questions from "./Quiz-question.json";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -7,11 +7,59 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../components/ui/card";
-import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
+import {
+  Clock,
+  Star,
+  CheckCircle,
+  XCircle,
+  AlertTriangle,
+  CircleX,
+  Trophy,
+} from "lucide-react";
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
-const AllQuizResult = ({ results, userAnswers, quizData }) => {
+import { getAllSubmissions } from "../../utils/firestoreHelpers";
+
+const calculateRanks = (submissions) => {
+  const sorted = [...submissions].sort((a, b) => {
+    if (b.correctCount !== a.correctCount)
+      return b.correctCount - a.correctCount; // higher score first
+
+    if (a.timeTakenSec !== b.timeTakenSec)
+      return a.timeTakenSec - b.timeTakenSec; // faster wins
+
+    return a.submittedAt.seconds - b.submittedAt.seconds; // earlier submit wins
+  });
+
+  return sorted.map((item, index) => ({
+    ...item,
+    rank: index + 1,
+  }));
+};
+
+const AllQuizResult = ({
+  db,
+  testId,
+  results,
+  userAnswers,
+  quizData,
+  userId,
+}) => {
   const { categoryId } = useParams();
+  const [rank, setRank] = useState(0);
+  useEffect(() => {
+    const loadRanks = async () => {
+      const subs = await getAllSubmissions({ db, testId });
+      console.log(subs, "allsubmission");
+      const ranked = calculateRanks(subs);
+      console.log(ranked, "ranked");
+      const myRank = ranked.find((r) => r.userId === userId);
+      setRank(myRank.rank);
+    };
+
+    loadRanks();
+  }, [testId]);
+
   const navigate = useNavigate();
   // const quizData = questions[categoryId] || [];
   return (
@@ -33,12 +81,24 @@ const AllQuizResult = ({ results, userAnswers, quizData }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+            <div className="text-center p-4 bg-orange-50 rounded-lg">
+              <Trophy className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+              <div className="font-semibold text-orange-800">Current Rank</div>
+              <div className="text-2xl font-bold text-orange-600">{rank}</div>
+            </div>
             <div className="text-center p-4 bg-green-50 rounded-lg">
               <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
               <div className="font-semibold text-green-800">Correct</div>
               <div className="text-2xl font-bold text-green-600">
                 {results?.correct}
+              </div>
+            </div>
+            <div className="text-center p-4 bg-red-50 rounded-lg">
+              <CircleX className="w-8 h-8 text-red-600 mx-auto mb-2" />
+              <div className="font-semibold text-red-800">In-Correct</div>
+              <div className="text-2xl font-bold text-red-600">
+                {results?.incorrectCount}
               </div>
             </div>
             <div className="text-center p-4 bg-blue-50 rounded-lg">

@@ -28,7 +28,6 @@ const AllQuizComponent = () => {
     useAttemptData(attemptId);
 
   const testId = attempt?.testId;
-  console.log(attempt, attemptLoading);
 
   const { quizData, testDetails, isLoading } = useQuizData(testId);
   // const { user } = useUser();
@@ -113,7 +112,8 @@ const AllQuizComponent = () => {
   const saveAttempt = async (
     status = "IN_PROGRESS",
     updatedAnswers = null,
-    currentQuestionIndex
+    currentQuestionIndex,
+    timeSpent
   ) => {
     // Use provided answers or fall back to current state
     const answersToSave = updatedAnswers || userAnswers;
@@ -128,15 +128,29 @@ const AllQuizComponent = () => {
       timePerQuestion[q.questionId] = q.timeSpent;
     });
 
-    await updateDoc(doc(db, "attempts", attemptId), {
-      answers,
-      timePerQuestion,
-      currentQuestion,
-      currentQuestionIndex,
-      // timeRemaining,
-      status,
-      lastSavedAt: serverTimestamp(),
-    });
+    if (status === "SUBMITTED") {
+      const results = calculateResults();
+      await updateDoc(doc(db, "attempts", attemptId), {
+        answers,
+        timePerQuestion,
+        currentQuestion,
+        currentQuestionIndex,
+        status,
+        correctCount: results.correct,
+        timeSpentSec: timeSpent,
+        incorrectCount: results.incorrectCount,
+        lastSavedAt: serverTimestamp(),
+      });
+    } else {
+      await updateDoc(doc(db, "attempts", attemptId), {
+        answers,
+        timePerQuestion,
+        currentQuestion,
+        currentQuestionIndex,
+        status,
+        lastSavedAt: serverTimestamp(),
+      });
+    }
   };
 
   const handleSaveAndNext = async () => {
@@ -257,9 +271,10 @@ const AllQuizComponent = () => {
 
     let updatedAnswers = userAnswers;
 
+    const timeSpent = Math.floor(
+      (Date.now() - attempt.startedAt.toMillis()) / 1000
+    );
     if (selectedOption !== null) {
-      const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-
       // Create the updated answers array immediately
       updatedAnswers = userAnswers.map((answer, index) =>
         index === currentQuestion
@@ -267,7 +282,7 @@ const AllQuizComponent = () => {
               ...answer,
               selectedOption: selectedOption,
               status: "attempted",
-              timeSpent: answer.timeSpent + timeSpent,
+              timeSpent: answer.timeSpent,
             }
           : answer
       );
@@ -276,7 +291,7 @@ const AllQuizComponent = () => {
       setUserAnswers(updatedAnswers);
     }
     // handleScore();
-    await saveAttempt("SUBMITTED", updatedAnswers, currentQuestion);
+    await saveAttempt("SUBMITTED", updatedAnswers, currentQuestion, timeSpent);
     setIsQuizCompleted(true);
   };
 
@@ -286,6 +301,7 @@ const AllQuizComponent = () => {
     let marked = 0;
     let skipped = 0;
     let notViewed = 0;
+    let incorrectCount = 0;
 
     userAnswers?.forEach((answer, index) => {
       if (
@@ -293,6 +309,13 @@ const AllQuizComponent = () => {
         answer.selectedOption === parseInt(quizData[index].correctIndex)
       ) {
         correct++;
+      }
+
+      if (
+        answer.selectedOption !== null &&
+        answer.selectedOption !== parseInt(quizData[index].correctIndex)
+      ) {
+        incorrectCount++;
       }
 
       switch (answer.status) {
@@ -314,6 +337,7 @@ const AllQuizComponent = () => {
     const totalAttempted = userAnswers.filter(
       (a) => a.selectedOption !== null
     ).length;
+
     const percentage =
       totalAttempted > 0 ? Math.round((correct / totalAttempted) * 100) : 0;
 
@@ -325,6 +349,7 @@ const AllQuizComponent = () => {
       notViewed,
       totalAttempted,
       percentage,
+      incorrectCount,
     };
   };
 
@@ -333,6 +358,9 @@ const AllQuizComponent = () => {
 
     return (
       <AllQuizResult
+        userId={attempt.userId}
+        db={db}
+        testId={testId}
         results={results}
         userAnswers={userAnswers}
         quizData={quizData}

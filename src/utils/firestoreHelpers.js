@@ -113,6 +113,17 @@ export const getActiveAttempt = async ({ db, userId, testId }) => {
   return snapshot.docs[0]?.data();
 };
 
+export const getAllSubmissions = async ({ db, testId }) => {
+  const q = query(
+    collection(db, "attempts"),
+    where("testId", "==", testId),
+    where("status", "==", "SUBMITTED")
+  );
+
+  const snap = await getDocs(q);
+  return snap.docs.map((d) => d.data());
+};
+
 export const isUserRegistered = async ({ db, testId, userId }) => {
   const ref = doc(db, "testRegistrations", testId, "users", userId);
   const snap = await getDoc(ref);
