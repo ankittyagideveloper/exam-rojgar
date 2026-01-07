@@ -25,10 +25,8 @@ const calculateRanks = (submissions) => {
     if (b.correctCount !== a.correctCount)
       return b.correctCount - a.correctCount; // higher score first
 
-    if (a.timeTakenSec !== b.timeTakenSec)
-      return a.timeTakenSec - b.timeTakenSec; // faster wins
-
-    return a.submittedAt.seconds - b.submittedAt.seconds; // earlier submit wins
+    if (a.timeSpentSec !== b.timeSpentSec)
+      return a.timeSpentSec - b.timeSpentSec; // faster wins
   });
 
   return sorted.map((item, index) => ({
@@ -52,10 +50,10 @@ const AllQuizResult = ({
     const loadRanks = async () => {
       const subs = await getAllSubmissions({ db, testId });
       console.log(subs, "allsubmission");
-      setTotalSubmissions(subs.length);
       const ranked = calculateRanks(subs);
       console.log(ranked, "ranked");
       const myRank = ranked.find((r) => r.userId === userId);
+      setTotalSubmissions(subs.length);
       setRank(myRank.rank);
     };
 
