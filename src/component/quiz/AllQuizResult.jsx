@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import questions from "./Quiz-question.json";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -15,6 +15,7 @@ import {
   AlertTriangle,
   CircleX,
   Trophy,
+  RefreshCcw,
 } from "lucide-react";
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
@@ -22,8 +23,7 @@ import { getAllSubmissions } from "../../utils/firestoreHelpers";
 
 const calculateRanks = (submissions) => {
   const sorted = [...submissions].sort((a, b) => {
-    if (b.correctCount !== a.correctCount)
-      return b.correctCount - a.correctCount; // higher score first
+    if (b.score !== a.score) return b.score - a.score; // higher score first
 
     if (a.timeSpentSec !== b.timeSpentSec)
       return a.timeSpentSec - b.timeSpentSec; // faster wins
@@ -44,21 +44,36 @@ const AllQuizResult = ({
   userAnswers,
   quizData,
   userId,
+  testDetails,
 }) => {
   const { categoryId } = useParams();
   const [rank, setRank] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
+  const timeoutRef = useRef(null);
   const [totalSubmission, setTotalSubmissions] = useState(0);
-  useEffect(() => {
-    const loadRanks = async () => {
-      const subs = await getAllSubmissions({ db, testId });
-      console.log(subs, "allsubmission");
-      const ranked = calculateRanks(subs);
-      console.log(ranked, "ranked");
-      const myRank = ranked.find((r) => r.userId === userId);
-      setTotalSubmissions(subs.length);
-      setRank(myRank.rank);
-    };
+  const loadRanks = async () => {
+    setRefreshing(true);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
 
+    setRefreshing(false); // reset so re-trigger works
+    requestAnimationFrame(() => {
+      setRefreshing(true);
+    });
+    const subs = await getAllSubmissions({ db, testId });
+    console.log(subs, "allsubmission");
+    const ranked = calculateRanks(subs);
+    console.log(ranked, "ranked");
+    const myRank = ranked.find((r) => r.userId === userId);
+    setTotalSubmissions(subs.length);
+    setRank(myRank.rank);
+
+    timeoutRef.current = setTimeout(() => {
+      setRefreshing(false);
+    }, 800);
+  };
+  useEffect(() => {
     loadRanks();
   }, [testId]);
 
@@ -74,9 +89,24 @@ const AllQuizResult = ({
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">
-              {results?.percentage}%
+            <div className="bg-gradient-to-r from-teal-50 to-blue-50 border border-teal-200 rounded-xl p-6 mb-6 shadow-sm text-center">
+              <div className="text-sm text-gray-500 mb-1">Your Score</div>
+
+              <div className="flex justify-center items-baseline gap-3">
+                <span className="text-5xl font-extrabold text-teal-700">
+                  {results?.score}
+                </span>
+                <span className="text-lg text-gray-500">
+                  /{results.totalQuestions /* {testDetails?.maxMarks} */}
+                </span>
+              </div>
+
+              <div className="mt-2 text-xl font-semibold text-blue-600">
+                {results?.percentage}% Accuracy
+              </div>
             </div>
+
+            <div className="text-4xl font-bold text-primary mb-2"></div>
             <div className="text-lg text-muted-foreground">
               {results?.correct} out of {results?.totalAttempted} questions
               correct
@@ -84,14 +114,32 @@ const AllQuizResult = ({
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-            <div className="text-center p-4 bg-orange-50 rounded-lg">
+            <div className="relative text-center p-4 bg-orange-50 rounded-lg border border-orange-200 shadow-sm">
+              {/* Refresh icon (top-right) */}
+              <button
+                onClick={loadRanks}
+                className="absolute top-3 right-3 text-orange-600 hover:text-orange-700 hover:cursor-pointer"
+                title="Refresh Rank"
+              >
+                <RefreshCcw
+                  className={`w-5 h-5 transition-transform duration-500 ${
+                    refreshing ? "animate-spin" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Trophy */}
               <Trophy className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+
               <div className="font-semibold text-orange-800">Current Rank</div>
-              <div className="text-2xl font-bold text-orange-600">{rank}</div>
-              <div className="text-sm  text-orange-600">
-                Total Submissions- {totalSubmission}
+
+              <div className="text-3xl font-bold text-orange-600">{rank}</div>
+
+              <div className="text-sm text-orange-600 mt-1">
+                Total Submissions: {totalSubmission}
               </div>
             </div>
+
             <div className="text-center p-4 bg-green-50 rounded-lg">
               <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
               <div className="font-semibold text-green-800">Correct</div>

@@ -22,7 +22,7 @@ import QuizHeader from "../component/quiz/QuizHeader";
 const db = getFirestore(app);
 const AllQuizComponent = () => {
   const { attemptId } = useParams();
-
+  const NEGATIVE_MARKING = 1 / 3;
   console.log("attemptId", attemptId, typeof attemptId);
   const { data: attempt, isLoading: attemptLoading } =
     useAttemptData(attemptId);
@@ -30,7 +30,7 @@ const AllQuizComponent = () => {
   const testId = attempt?.testId;
 
   const { quizData, testDetails, isLoading } = useQuizData(testId);
-  // const { user } = useUser();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
 
@@ -140,6 +140,7 @@ const AllQuizComponent = () => {
         timeSpentSec: timeSpent,
         incorrectCount: results.incorrectCount,
         lastSavedAt: serverTimestamp(),
+        score: results.score,
       });
     } else {
       await updateDoc(doc(db, "attempts", attemptId), {
@@ -341,6 +342,8 @@ const AllQuizComponent = () => {
     const percentage =
       totalAttempted > 0 ? Math.round((correct / totalAttempted) * 100) : 0;
 
+    const marks = correct - incorrectCount * NEGATIVE_MARKING;
+    const TotalMarks = Number(marks.toFixed(2));
     return {
       correct,
       attempted,
@@ -350,6 +353,8 @@ const AllQuizComponent = () => {
       totalAttempted,
       percentage,
       incorrectCount,
+      score: TotalMarks,
+      totalQuestions: quizData.length,
     };
   };
 
@@ -364,6 +369,7 @@ const AllQuizComponent = () => {
         results={results}
         userAnswers={userAnswers}
         quizData={quizData}
+        testDetails={testDetails}
       />
     );
   }
