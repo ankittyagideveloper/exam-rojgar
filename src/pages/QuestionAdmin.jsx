@@ -6,6 +6,7 @@ import {
   getFirestore,
   query,
   where,
+  onSnapshot,
 } from "firebase/firestore";
 import { app } from "../../firebase";
 import ExistingQuestion from "./ExistingQuestion";
@@ -25,40 +26,38 @@ export default function QuestionBankWithTestAssign(testIds) {
   const [selectedTestIds, setSelectedTestIds] = useState([]);
   const [selectedTestId, setSelectedTestId] = useState(null);
 
-  const getQuestionsByTestId = async (testId) => {
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "tests"), (snap) => {
+      setTests(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    });
+
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    const unsub = onSnapshot(collection(db, "questions"), (snap) => {
+      setQuestions(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
+    });
+
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    if (!selectedTestId) return;
+
     const q = query(
       collection(db, "questions"),
-      where("testIds", "array-contains", testId)
+      where("testIds", "array-contains", selectedTestId)
     );
 
-    const snapshot = await getDocs(q);
+    const unsub = onSnapshot(q, (snap) => {
+      setSelectedTestQuestions(
+        snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+      );
+    });
 
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-  };
-
-  useEffect(() => {
-    fetchQuestions();
-    fetchTests();
-  }, [testIds]);
-
-  useEffect(() => {
-    getQuestionsByTestId(selectedTestId).then((res) =>
-      setSelectedTestQuestions(res)
-    );
+    return () => unsub();
   }, [selectedTestId]);
-
-  const fetchQuestions = async () => {
-    const snap = await getDocs(collection(db, "questions"));
-    setQuestions(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
-  };
-
-  const fetchTests = async () => {
-    const snap = await getDocs(collection(db, "tests"));
-    setTests(snap.docs.map((d) => ({ id: d.id, ...d.data() })));
-  };
 
   const handleOptionChange = (index, value) => {
     const updated = [...options];
@@ -98,7 +97,6 @@ export default function QuestionBankWithTestAssign(testIds) {
     });
 
     resetForm();
-    fetchQuestions();
   };
 
   return (

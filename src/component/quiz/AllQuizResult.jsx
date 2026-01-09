@@ -16,6 +16,7 @@ import {
   CircleX,
   Trophy,
   RefreshCcw,
+  Clock1,
 } from "lucide-react";
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
@@ -48,6 +49,10 @@ const AllQuizResult = ({
 }) => {
   const { categoryId } = useParams();
   const [rank, setRank] = useState(0);
+  const [timeSpentInTest, setTimeSpentInTest] = useState({
+    minutes: 0,
+    seconds: 0,
+  });
   const [refreshing, setRefreshing] = useState(false);
   const timeoutRef = useRef(null);
   const [totalSubmission, setTotalSubmissions] = useState(0);
@@ -62,13 +67,18 @@ const AllQuizResult = ({
       setRefreshing(true);
     });
     const subs = await getAllSubmissions({ db, testId });
-    console.log(subs, "allsubmission");
+
     const ranked = calculateRanks(subs);
     console.log(ranked, "ranked");
     const myRank = ranked.find((r) => r.userId === userId);
     setTotalSubmissions(subs.length);
-    setRank(myRank.rank);
 
+    setRank(myRank.rank);
+    const timeSpent = myRank.timeSpentSec;
+
+    const minutes = Math.floor(timeSpent / 60);
+    const seconds = timeSpent % 60;
+    setTimeSpentInTest({ minutes, seconds });
     timeoutRef.current = setTimeout(() => {
       setRefreshing(false);
     }, 800);
@@ -78,7 +88,7 @@ const AllQuizResult = ({
   }, [testId]);
 
   const navigate = useNavigate();
-  // const quizData = questions[categoryId] || [];
+
   return (
     <div className="max-w-6xl mx-auto md:p-6 space-y-6">
       <Card>
@@ -113,7 +123,7 @@ const AllQuizResult = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
             <div className="relative text-center p-4 bg-orange-50 rounded-lg border border-orange-200 shadow-sm">
               {/* Refresh icon (top-right) */}
               <button
@@ -175,6 +185,14 @@ const AllQuizResult = ({
               </div>
               <div className="text-2xl font-bold text-gray-600">
                 {results?.skipped}
+              </div>
+            </div>
+            <div className="text-center p-4 bg-blue-50 rounded-lg">
+              <Clock1 className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+              <div className="font-semibold text-blue-800">Time Spent</div>
+              <div className="font-bold text-blue-600">
+                {timeSpentInTest.minutes} minutes {timeSpentInTest.seconds}
+                sec
               </div>
             </div>
           </div>
