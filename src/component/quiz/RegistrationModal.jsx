@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
-export default function RegistrationModal({ isOpen, onClose, onSubmit }) {
+export default function RegistrationModal({
+  isOpen,
+  onClose,
+  onSubmit,
+  testDetails,
+}) {
   const [form, setForm] = useState({
     name: "",
     rrbRegNo: "",
@@ -8,66 +14,87 @@ export default function RegistrationModal({ isOpen, onClose, onSubmit }) {
     dob: "",
   });
 
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 🔥 stop page reload
+
     if (!form.name || !form.rrbRegNo || !form.phone || !form.dob) {
-      alert("Please fill all details");
+      alert(t("common.fillAllDetails"));
       return;
     }
+
     onSubmit(form);
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="bg-white w-full max-w-md rounded-lg p-6 shadow-lg">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+      onClick={onClose}
+    >
+      <form
+        className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-full max-w-md rounded-lg p-6 shadow-lg"
+        onClick={(e) => e.stopPropagation()}
+        onSubmit={handleSubmit}
+      >
         <h2 className="text-xl font-semibold mb-4 text-center">
-          Scholarship Test Registration
+          {testDetails?.title ?? ""} {t("registerationModal.registration")}
         </h2>
 
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium">Full Name</label>
+            <label className="block text-sm font-medium">
+              {t("registerationModal.fullName")}
+            </label>
             <input
               name="name"
               value={form.name}
               onChange={handleChange}
               className="w-full border p-2 rounded"
-              placeholder="Enter your full name"
+              placeholder={t("registerationModal.placeholderText.name")}
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium">
-              RRB Registration No
+              {t("registerationModal.rrbRegNo")}
             </label>
             <input
               name="rrbRegNo"
               value={form.rrbRegNo}
               onChange={handleChange}
               className="w-full border p-2 rounded"
-              placeholder="Enter RRB Reg No"
+              placeholder={t("registerationModal.placeholderText.rrbRegNo")}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Phone Number</label>
+            <label className="block text-sm font-medium">
+              {t("registerationModal.phoneNo")}
+            </label>
             <input
               name="phone"
               type="tel"
               value={form.phone}
               onChange={handleChange}
               className="w-full border p-2 rounded"
-              placeholder="Enter Phone Number"
+              placeholder={t("registerationModal.placeholderText.phoneNo")}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Date of Birth</label>
+            <label className="block text-sm font-medium">
+              {t("registerationModal.dob")}
+            </label>
             <input
               name="dob"
               type="date"
@@ -79,17 +106,21 @@ export default function RegistrationModal({ isOpen, onClose, onSubmit }) {
         </div>
 
         <div className="flex justify-end gap-3 mt-6">
-          <button onClick={onClose} className="px-4 py-2 rounded border">
-            Cancel
+          <button
+            onClick={onClose}
+            className="px-4 py-2 rounded border"
+            type="button"
+          >
+            {t("registerationModal.cancel")}
           </button>
           <button
-            onClick={handleSubmit}
+            type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded"
           >
-            Continue
+            {t("registerationModal.continue")}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

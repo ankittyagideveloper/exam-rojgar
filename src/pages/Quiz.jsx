@@ -134,6 +134,7 @@ const Quiz = () => {
           isOpen={openRegistaration}
           onClose={() => setOpenRegistration(false)}
           onSubmit={handleRegister}
+          testDetails={selectedTest}
         />
       )}
       <div className="px-4 flex flex-col gap-4 mt-6">

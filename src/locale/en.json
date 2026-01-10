@@ -18,6 +18,23 @@
     "new": "NEW",
     "free": "FREE",
     "attemptedTests": "Attempted Tests",
-    "adminPanel": "Admin Panel"
+    "adminPanel": "Admin Panel",
+    "common": {
+      "fillAllDetails": "Fill All Details"
+    },
+    "registerationModal": {
+      "registration": "Registration",
+      "fullName": "Full Name",
+      "rrbRegNo": "RRB Registration No",
+      "phoneNo": "Phone Number",
+      "dob": "Date of Birth",
+      "cancel": "Cancel",
+      "continue": "Continue",
+      "placeholderText": {
+        "name": "Enter your full name",
+        "rrbRegNo": "Enter RRB Reg Number",
+        "phoneNo": "Enter Phone Number"
+      }
+    }
   }
 }

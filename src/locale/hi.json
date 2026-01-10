@@ -16,6 +16,23 @@
     "tests": "टेस्ट",
     "new": "नया",
     "free": "मुफ़्त",
-    "attemptedTests": "अटेम्प्टेड टेस्ट"
+    "attemptedTests": "अटेम्प्टेड टेस्ट",
+    "common": {
+      "fillAllDetails": "कृपया सभी विवरण भरें"
+    },
+    "registerationModal": {
+      "registration": "पंजीकरण",
+      "fullName": "पूरा नाम",
+      "rrbRegNo": "आरआरबी पंजीकरण संख्या",
+      "phoneNo": "मोबाइल नंबर",
+      "dob": "जन्म तिथि",
+      "cancel": "रद्द करें",
+      "continue": "जारी रखें",
+      "placeholderText": {
+        "name": "अपना पूरा नाम दर्ज करें",
+        "rrbRegNo": "आरआरबी पंजीकरण संख्या दर्ज करें",
+        "phoneNo": "मोबाइल नंबर दर्ज करें"
+      }
+    }
   }
 }
