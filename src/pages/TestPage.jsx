@@ -64,8 +64,8 @@ const TestPage = () => {
   const handleTest = (id) => {
     navigate(`/all-test/${id}`);
   };
-
-  return (
+  const isAdmin = user?.publicMetadata?.role === "admin";
+  return isAdmin ? (
     <>
       <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 ">
         {/* {categories.map((test, index) => (
@@ -204,6 +204,8 @@ const TestPage = () => {
           ))}
       </div>
     </>
+  ) : (
+    <div>Tests will be added soon...</div>
   );
 };
 
