@@ -12,19 +12,19 @@ import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
 function HomePage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const db = getFirestore(app);
+  // const db = getFirestore(app);
 
-  async function getAllUsers(quizId) {
-    const usersRef = collection(db, "leaderboards", quizId, "users");
-    const snapshot = await getDocs(usersRef);
+  // async function getAllUsers(quizId) {
+  //   const usersRef = collection(db, "leaderboards", quizId, "users");
+  //   const snapshot = await getDocs(usersRef);
 
-    const users = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+  //   const users = snapshot.docs.map((doc) => ({
+  //     id: doc.id,
+  //     ...doc.data(),
+  //   }));
 
-    return users;
-  }
+  //   return users;
+  // }
 
   return (
     <>

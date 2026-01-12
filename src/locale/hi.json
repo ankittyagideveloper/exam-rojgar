@@ -18,7 +18,29 @@
     "free": "मुफ़्त",
     "attemptedTests": "अटेम्प्टेड टेस्ट",
     "common": {
-      "fillAllDetails": "कृपया सभी विवरण भरें"
+      "fillAllDetails": "कृपया सभी विवरण भरें",
+      "errorMessages": {
+        "name": {
+          "nameRequired": "नाम आवश्यक है",
+          "nameInvalid": "नाम में केवल अक्षर और स्पेस ही हो सकते हैं",
+          "nameMin": "नाम कम से कम 3 अक्षरों का होना चाहिए",
+          "nameMax": "नाम अधिकतम 40 अक्षरों का हो सकता है"
+        },
+        "rrbRegNo": {
+          "regNoLength": "आरआरबी रजिस्ट्रेशन नंबर ठीक 10 अक्षरों का होना चाहिए",
+          "regNoRequired": "आरआरबी रजिस्ट्रेशन नंबर आवश्यक है"
+        },
+        "phoneNo": {
+          "phoneNoLength": "कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें",
+          "phoneNoRequired": "मोबाइल नंबर आवश्यक है"
+        },
+        "dob": {
+          "dobRequired": "जन्म तिथि आवश्यक है",
+          "dobFutureValidation": "जन्म तिथि भविष्य की नहीं हो सकती",
+          "dobAgeLimit": "आपकी आयु कम से कम 18 वर्ष होनी चाहिए",
+          "invalidDOB": "अमान्य जन्म तिथि"
+        }
+      }
     },
     "registerationModal": {
       "registration": "पंजीकरण",

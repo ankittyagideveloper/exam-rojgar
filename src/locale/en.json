@@ -20,7 +20,30 @@
     "attemptedTests": "Attempted Tests",
     "adminPanel": "Admin Panel",
     "common": {
-      "fillAllDetails": "Fill All Details"
+      "fillAllDetails": "Fill All Details",
+      "errorMessages": {
+        "name": {
+          "nameRequired": "Name is required",
+          "nameInvalid": "Name can contain only letters and spaces",
+          "nameMin": "Name must be at least 3 characters",
+          "nameMax": "Name must be at most 40 characters"
+        },
+
+        "rrbRegNo": {
+          "regNoLength": "RRB Reg No must be exactly 10 characters",
+          "regNoRequired": "RRB Reg Number is required"
+        },
+        "phoneNo": {
+          "phoneNoLength": "Enter valid 10 digit phone Number",
+          "phoneNoRequired": "Phone Number is required"
+        },
+        "dob": {
+          "dobRequired": "Date of birth is required",
+          "dobFutureValidation": "DOB cannot be in the future",
+          "dobAgeLimit": "You must be at least 18 years old",
+          "invalidDOB": "Invalid date"
+        }
+      }
     },
     "registerationModal": {
       "registration": "Registration",
