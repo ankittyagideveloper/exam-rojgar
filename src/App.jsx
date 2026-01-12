@@ -44,7 +44,7 @@ const router = createBrowserRouter(
           path: "test-category/*",
           element: (
             <ProtectedRoute>
-              <TestPage />,
+              <TestPage />
             </ProtectedRoute>
           ),
         },

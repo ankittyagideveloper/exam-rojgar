@@ -5,6 +5,7 @@ import { mockData } from "./mockData";
 import { motion } from "motion/react";
 import TestCard2 from "../component/TestCard2";
 import { QuizCard } from "../component/QuizCard";
+import { useUser } from "@clerk/clerk-react";
 
 const TestPage = () => {
   const location = useLocation();
@@ -64,6 +65,7 @@ const TestPage = () => {
   const handleTest = (id) => {
     navigate(`/all-test/${id}`);
   };
+  const { user } = useUser();
   const isAdmin = user?.publicMetadata?.role === "admin";
   return isAdmin ? (
     <>
