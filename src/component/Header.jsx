@@ -69,18 +69,12 @@ function InstallPWAButton() {
 const Header = () => {
   const { user, isSignedIn } = useUser();
   const isAdmin = user?.publicMetadata?.role === "admin";
-  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+  const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+    useContext(ThemeContext);
   const {
     t,
     i18n: { changeLanguage, language },
   } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(language);
-  const handleLanguageChange = () => {
-    const newLanguage = currentLanguage === "en" ? "hi" : "en";
-    setCurrentLanguage(newLanguage);
-    changeLanguage(newLanguage);
-  };
-
   return (
     <>
       {/* Admin Banner */}
@@ -124,7 +118,10 @@ const Header = () => {
           </button>
 
           <InstallPWAButton />
-          <LanguageSwitcher onChange={handleLanguageChange} />
+          <LanguageSwitcher
+            onChange={handleLanguageChange}
+            currentLanguage={currentLanguage}
+          />
 
           {isSignedIn ? (
             <>

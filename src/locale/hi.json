@@ -55,6 +55,31 @@
         "rrbRegNo": "आरआरबी पंजीकरण संख्या दर्ज करें",
         "phoneNo": "मोबाइल नंबर दर्ज करें"
       }
+    },
+
+    "testSubmissionModal": {
+      "title": "परीक्षा जमा करें",
+
+      "table": {
+        "section": "अनुभाग",
+        "noOfQuestions": "कुल प्रश्न",
+        "answered": "हल किए गए प्रश्न",
+        "notAnswered": "अनुत्तरित प्रश्न",
+        "markedForReview": "समीक्षा हेतु चिह्नित",
+        "notVisited": "न देखे गए प्रश्न"
+      },
+
+      "buttons": {
+        "close": "बंद करें",
+        "submit": "जमा करें"
+      }
+    },
+    "confirmationModal": {
+      "buttons": {
+        "yes": "हाँ",
+        "no": "नहीं"
+      },
+      "lastQuestionConfirm": "आप परीक्षा के अंतिम प्रश्न पर पहुँच चुके हैं। क्या आप पहले प्रश्न पर जाना चाहते हैं?"
     }
   }
 }

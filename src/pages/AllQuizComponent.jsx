@@ -18,6 +18,9 @@ import {
 } from "firebase/firestore";
 import { app } from "../../firebase";
 import QuizHeader from "../component/quiz/QuizHeader";
+import { ConfirmationModal } from "../component/modals/confirmation-modal";
+import { TestSubmissionModal } from "../component/modals/test-submission-modal";
+import { useTranslation } from "react-i18next";
 
 const db = getFirestore(app);
 const AllQuizComponent = () => {
@@ -28,7 +31,7 @@ const AllQuizComponent = () => {
     useAttemptData(attemptId);
 
   const testId = attempt?.testId;
-
+  const { t } = useTranslation();
   const { quizData, testDetails, isLoading } = useQuizData(testId);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -38,6 +41,8 @@ const AllQuizComponent = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
 
+  const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
+  const [openSubmissionModal, setopenSubmissionModal] = useState(false);
   useEffect(() => {
     if (!attempt?.answers || !quizData.length) return;
 
@@ -155,6 +160,9 @@ const AllQuizComponent = () => {
   };
 
   const handleSaveAndNext = async () => {
+    if (currentQuestion === quizData.length - 1) {
+      setOpenConfirmationModal(true);
+    }
     let updatedAnswers = userAnswers;
 
     if (selectedOption !== null) {
@@ -296,6 +304,10 @@ const AllQuizComponent = () => {
     setIsQuizCompleted(true);
   };
 
+  const handleSubmission = () => {
+    setopenSubmissionModal(true);
+  };
+
   const calculateResults = () => {
     let correct = 0;
     let attempted = 0;
@@ -384,8 +396,34 @@ const AllQuizComponent = () => {
       </div>
     );
   }
+
+  const testStatistics = [
+    {
+      section: testDetails?.title ?? "Test",
+      totalQuestions: results.totalQuestions,
+      answered: results.totalAttempted,
+      notAnswered: results.totalQuestions - results.totalAttempted,
+      markedForReview: results.marked,
+      notVisited: results.notViewed,
+    },
+  ];
   return (
     <div className="max-w-6xl mx-auto p-2 md:p-6 ">
+      <ConfirmationModal
+        isOpen={openConfirmationModal}
+        message={t("confirmationModal.lastQuestionConfirm")}
+        onConfirm={() => {
+          setCurrentQuestion(0);
+          setOpenConfirmationModal(false);
+        }}
+        onCancel={() => setOpenConfirmationModal(false)}
+      />
+      <TestSubmissionModal
+        isOpen={openSubmissionModal}
+        onClose={() => setopenSubmissionModal(false)}
+        statistics={testStatistics}
+        onSubmit={handleSubmitQuiz}
+      />
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Main Quiz Area */}
         <div className="lg:col-span-3 space-y-6">
@@ -442,14 +480,12 @@ const AllQuizComponent = () => {
                   onClick={handleSaveAndNext}
                   className="bg-teal-600 hover:bg-teal-700 text-xs md:text-sm"
                 >
-                  {currentQuestion === quizData.length - 1
-                    ? "Save"
-                    : "SAVE & NEXT"}
+                  SAVE & NEXT
                 </Button>
               </div>
               <div className="flex flex-end justify-end">
                 <Button
-                  onClick={handleSubmitQuiz}
+                  onClick={handleSubmission}
                   className="bg-teal-600 hover:bg-teal-700 text-xs md:text-sm"
                 >
                   Submit

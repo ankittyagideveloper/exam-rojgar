@@ -58,6 +58,30 @@
         "rrbRegNo": "Enter RRB Reg Number",
         "phoneNo": "Enter Phone Number"
       }
+    },
+    "testSubmissionModal": {
+      "title": "Submit Test",
+
+      "table": {
+        "section": "Section",
+        "noOfQuestions": "Total Questions",
+        "answered": "Answered",
+        "notAnswered": "Unanswered",
+        "markedForReview": "Marked for Review",
+        "notVisited": "Not Visited"
+      },
+
+      "buttons": {
+        "close": "Close",
+        "submit": "Submit"
+      }
+    },
+    "confirmationModal": {
+      "buttons": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "lastQuestionConfirm": "You have reached the last question of the exam. Do you want to go to the first question?"
     }
   }
 }

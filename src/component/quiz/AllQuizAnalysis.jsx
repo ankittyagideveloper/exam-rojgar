@@ -6,8 +6,6 @@ import {
   CardTitle,
 } from "../../../components/ui/card";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
-import { useParams } from "react-router";
-import questions from "./Quiz-question.json";
 import { Progress } from "../../../components/ui/progress";
 
 const AllQuizAnalysis = ({
@@ -19,7 +17,7 @@ const AllQuizAnalysis = ({
   testDetails,
 }) => {
   return (
-    <div className="lg:col-span-1  lg:fixed right-0 top-0 bottom-0 w-80 z-40 ">
+    <div className="lg:col-span-1  lg:fixed right-0 top-0 bottom-0 w-92 md:w-80 z-40 ">
       <Card className="bg-[#d9edf7] ">
         <CardHeader className="bg-[#b4dbed] px-3.5">
           <CardTitle className="text-[#333] flex items-center justify-start py-2">
@@ -93,13 +91,13 @@ const AllQuizAnalysis = ({
           </div>
 
           {/* Progress */}
-          {/* <div className="space-y-2">
+          <div className="space-y-2">
             <div className="flex justify-between text-sm">
               <span>Progress</span>
               <span>
                 {Math.round(
                   ((results.attempted + results.marked) /
-                    quizData.questions.length) *
+                    results.totalQuestions) *
                     100
                 )}
                 %
@@ -108,11 +106,11 @@ const AllQuizAnalysis = ({
             <Progress
               value={
                 ((results.attempted + results.marked) /
-                  quizData.questions.length) *
+                  results.totalQuestions) *
                 100
               }
             />
-          </div> */}
+          </div>
         </CardContent>
       </Card>
     </div>
