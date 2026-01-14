@@ -22,9 +22,9 @@ export default function RegistrationModal({
       .min(3, t("common.errorMessages.name.nameMin"))
       .max(40, t("common.errorMessages.name.nameMax")),
 
-    rrbRegNo: Yup.string()
-      .length(10, t("common.errorMessages.rrbRegNo.regNoLength"))
-      .required(t("common.errorMessages.rrbRegNo.regNoRequired")),
+    rrbRegNo: Yup.string().required(
+      t("common.errorMessages.rrbRegNo.regNoRequired")
+    ),
     phone: Yup.string()
       .matches(/^[0-9]{10}$/, t("common.errorMessages.phoneNo.phoneNoLength"))
       .required(t("common.errorMessages.phoneNo.phoneNoRequired")),
