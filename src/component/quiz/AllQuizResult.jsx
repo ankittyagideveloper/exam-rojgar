@@ -214,7 +214,7 @@ const AllQuizResult = ({
                       : wasAttempted
                       ? "border-red-200"
                       : "border-gray-200"
-                  }`}
+                  } `}
                 >
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between mb-2">
@@ -242,7 +242,7 @@ const AllQuizResult = ({
                       {question.options.map((option, optionIndex) => (
                         <div
                           key={optionIndex}
-                          className={`p-2 rounded text-sm ${
+                          className={`p-2 rounded text-sm dark:text-black ${
                             optionIndex === question.correctIndex
                               ? "bg-green-100 text-green-800 border border-green-300"
                               : optionIndex === userAnswer?.selectedOption &&
@@ -263,7 +263,7 @@ const AllQuizResult = ({
                       ))}
                     </div>
 
-                    <div className="text-sm text-muted-foreground bg-blue-50 p-3 rounded">
+                    <div className="text-sm text-muted-foreground bg-blue-50 p-3 rounded dark:text-black">
                       <strong>Explanation:</strong> {question.explanation}
                     </div>
                   </CardContent>
