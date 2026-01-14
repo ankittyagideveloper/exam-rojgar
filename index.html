@@ -77,6 +77,16 @@
         ]
       }
     </script>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get("redirect");
+        if (redirect) {
+          window.history.replaceState(null, "", decodeURIComponent(redirect));
+        }
+      })();
+    </script>
   </head>
 
   <body>
