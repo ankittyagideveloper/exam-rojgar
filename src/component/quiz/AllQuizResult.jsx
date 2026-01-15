@@ -100,10 +100,16 @@ const AllQuizResult = ({
             Quiz Results
           </CardTitle>
           <Button
-            className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6"
+            className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 hidden md:block"
             onClick={downloadPDF}
           >
             <Download /> Download PDF
+          </Button>
+          <Button
+            className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 md:hidden block"
+            onClick={downloadPDF}
+          >
+            <Download />
           </Button>
         </CardHeader>
         <CardContent className="space-y-6">
