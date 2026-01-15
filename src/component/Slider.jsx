@@ -76,7 +76,7 @@ const Slider = () => {
               loop
               muted
               playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.7/banner-1.mp4"
+              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.3/banner-1.mp4"
               className="w-full h-auto"
             />
           </Link>

@@ -197,7 +197,7 @@ export default function FeaturesRibbon() {
       label: t("liveClasses"),
       icon: "play",
       badge: t("free"),
-      href: "https://www.youtube.com/@ExamRojgaar",
+      href: "https://www.youtube.com/@ExamRojgaar/streams",
       target: "_blank",
       isLive: true,
       bgColor: "bg-red-100",
