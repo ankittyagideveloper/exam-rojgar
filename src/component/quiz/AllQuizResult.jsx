@@ -17,6 +17,7 @@ import {
   Trophy,
   RefreshCcw,
   Clock1,
+  Download,
 } from "lucide-react";
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
@@ -88,14 +89,22 @@ const AllQuizResult = ({
   }, [testId]);
 
   const navigate = useNavigate();
-
+  function downloadPDF() {
+    window.print();
+  }
   return (
     <div className="max-w-6xl mx-auto md:p-6 space-y-6">
       <Card>
-        <CardHeader>
+        <CardHeader className="relative">
           <CardTitle className="text-2xl font-bold text-center">
             Quiz Results
           </CardTitle>
+          <Button
+            className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6"
+            onClick={downloadPDF}
+          >
+            <Download /> Download PDF
+          </Button>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="text-center">
