@@ -176,7 +176,7 @@ const TestPage = () => {
                 percentage={1}
                 onGoToTest={() => {
                   navigate(
-                    `/test-category/${[...pathSegments, sub.slug].join("/")}`
+                    `/test-category/${[...pathSegments, sub.slug].join("/")}`,
                   );
                 }}
               />

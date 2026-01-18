@@ -25,13 +25,35 @@ import { useTranslation } from "react-i18next";
 const db = getFirestore(app);
 const AllQuizComponent = () => {
   const { attemptId } = useParams();
-  const NEGATIVE_MARKING = 1 / 3;
+
   console.log("attemptId", attemptId, typeof attemptId);
   const { data: attempt, isLoading: attemptLoading } =
     useAttemptData(attemptId);
 
   const testId = attempt?.testId;
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHindi = i18n.language === "hi";
+
+  const getBilingualText = (obj, field) => {
+    if (!obj) return "";
+    if (isHindi && obj[`${field}Hindi`]) {
+      return obj[`${field}Hindi`];
+    }
+    return obj[field];
+  };
+
+  const getBilingualOptions = (q) => {
+    if (!q) return [];
+    if (
+      isHindi &&
+      q.optionsHindi &&
+      q.optionsHindi.length === 4 &&
+      q.optionsHindi.some((o) => o)
+    ) {
+      return q.optionsHindi;
+    }
+    return q.options;
+  };
   const { quizData, testDetails, isLoading } = useQuizData(testId);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -118,7 +140,7 @@ const AllQuizComponent = () => {
     status = "IN_PROGRESS",
     updatedAnswers = null,
     currentQuestionIndex,
-    timeSpent
+    timeSpent,
   ) => {
     // Use provided answers or fall back to current state
     const answersToSave = updatedAnswers || userAnswers;
@@ -177,7 +199,7 @@ const AllQuizComponent = () => {
               status: "attempted",
               timeSpent: answer.timeSpent + timeSpent,
             }
-          : answer
+          : answer,
       );
 
       // Update state
@@ -197,8 +219,8 @@ const AllQuizComponent = () => {
   const updateQuestionStatus = (questionIndex, status) => {
     setUserAnswers((prev) =>
       prev?.map((answer, index) =>
-        index === questionIndex ? { ...answer, status } : answer
-      )
+        index === questionIndex ? { ...answer, status } : answer,
+      ),
     );
   };
 
@@ -236,7 +258,7 @@ const AllQuizComponent = () => {
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(
-        userAnswers[currentQuestion + 1]?.selectedOption || null
+        userAnswers[currentQuestion + 1]?.selectedOption || null,
       );
     }
   };
@@ -260,8 +282,8 @@ const AllQuizComponent = () => {
       prev?.map((answer, index) =>
         index === currentQuestion
           ? { ...answer, selectedOption: null, status: "skipped" }
-          : answer
-      )
+          : answer,
+      ),
     );
   };
 
@@ -281,7 +303,7 @@ const AllQuizComponent = () => {
     let updatedAnswers = userAnswers;
 
     const timeSpent = Math.floor(
-      (Date.now() - attempt.startedAt.toMillis()) / 1000
+      (Date.now() - attempt.startedAt.toMillis()) / 1000,
     );
     if (selectedOption !== null) {
       // Create the updated answers array immediately
@@ -293,7 +315,7 @@ const AllQuizComponent = () => {
               status: "attempted",
               timeSpent: answer.timeSpent,
             }
-          : answer
+          : answer,
       );
 
       // Update state
@@ -348,13 +370,19 @@ const AllQuizComponent = () => {
     });
 
     const totalAttempted = userAnswers.filter(
-      (a) => a.selectedOption !== null
+      (a) => a.selectedOption !== null,
     ).length;
 
     const percentage =
       totalAttempted > 0 ? Math.round((correct / totalAttempted) * 100) : 0;
 
-    const marks = correct - incorrectCount * NEGATIVE_MARKING;
+    const marksPerQuestion = testDetails?.marksPerQuestion || 1;
+    const negativeMarking =
+      testDetails?.negativeMarking !== undefined
+        ? testDetails.negativeMarking
+        : 1 / 3;
+
+    const marks = correct * marksPerQuestion - incorrectCount * negativeMarking;
     const TotalMarks = Number(marks.toFixed(2));
     return {
       correct,
@@ -440,28 +468,31 @@ const AllQuizComponent = () => {
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <h3 className="font-medium text-lg whitespace-pre-line">
-                  {currentQuestion + 1}. {currentQuestionData?.questionText}
+                  {currentQuestion + 1}.{" "}
+                  {getBilingualText(currentQuestionData, "questionText")}
                 </h3>
 
                 <div className="space-y-2">
-                  {currentQuestionData?.options?.map((option, index) => {
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => handleOptionSelect(index)}
-                        className={`w-full text-left p-4 rounded-lg border transition-colors ${
-                          selectedOption === index
-                            ? "border-primary bg-[#B4DBED]"
-                            : "border-gray-200 hover:border-gray-300"
-                        }`}
-                      >
-                        <span className="font-medium mr-2">
-                          {String.fromCharCode(65 + index)}.
-                        </span>
-                        {option}
-                      </button>
-                    );
-                  })}
+                  {getBilingualOptions(currentQuestionData)?.map(
+                    (option, index) => {
+                      return (
+                        <button
+                          key={index}
+                          onClick={() => handleOptionSelect(index)}
+                          className={`w-full text-left p-4 rounded-lg border transition-colors ${
+                            selectedOption === index
+                              ? "border-primary bg-[#B4DBED]"
+                              : "border-gray-200 hover:border-gray-300"
+                          }`}
+                        >
+                          <span className="font-medium mr-2">
+                            {String.fromCharCode(65 + index)}.
+                          </span>
+                          {option}
+                        </button>
+                      );
+                    },
+                  )}
                 </div>
               </div>
 

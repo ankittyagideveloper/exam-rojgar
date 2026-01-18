@@ -48,6 +48,29 @@ const AllQuizResult = ({
   userId,
   testDetails,
 }) => {
+  const currentLang = localStorage.getItem("currentLanguage") || "en";
+  const isHindi = currentLang.startsWith("hi");
+
+  const getBilingualText = (obj, field) => {
+    if (!obj) return "";
+    if (isHindi && obj[`${field}Hindi`]) {
+      return obj[`${field}Hindi`];
+    }
+    return obj[field]; // Fallback to English
+  };
+
+  const getBilingualOptions = (q) => {
+    if (!q) return [];
+    if (
+      isHindi &&
+      q.optionsHindi &&
+      q.optionsHindi.length > 0 &&
+      q.optionsHindi.some((o) => o)
+    ) {
+      return q.optionsHindi;
+    }
+    return q.options;
+  };
   const { categoryId } = useParams();
   const [rank, setRank] = useState(0);
   const [timeSpentInTest, setTimeSpentInTest] = useState({
@@ -100,7 +123,7 @@ const AllQuizResult = ({
             Quiz Results
           </CardTitle>
           <Button
-            className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 hidden md:block"
+            className="w-48 md:flex items-center gap-2 justify-center no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 hidden "
             onClick={downloadPDF}
           >
             <Download /> Download PDF
@@ -227,59 +250,67 @@ const AllQuizResult = ({
                     isCorrect
                       ? "border-green-200"
                       : wasAttempted
-                      ? "border-red-200"
-                      : "border-gray-200"
+                        ? "border-red-200"
+                        : "border-gray-200"
                   } `}
                 >
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between mb-2">
                       <h4 className="font-medium">
-                        Q{index + 1}: {question.questionText}
+                        Q{index + 1}:{" "}
+                        {getBilingualText(question, "questionText")}
                       </h4>
                       <Badge
                         variant={
                           isCorrect
                             ? "default"
                             : wasAttempted
-                            ? "destructive"
-                            : "secondary"
+                              ? "destructive"
+                              : "secondary"
                         }
                       >
                         {isCorrect
                           ? "Correct"
                           : wasAttempted
-                          ? "Incorrect"
-                          : "Not Attempted"}
+                            ? "Incorrect"
+                            : "Not Attempted"}
                       </Badge>
                     </div>
 
                     <div className="space-y-2 mb-3">
-                      {question.options.map((option, optionIndex) => (
-                        <div
-                          key={optionIndex}
-                          className={`p-2 rounded text-sm dark:text-black ${
-                            optionIndex === question.correctIndex
-                              ? "bg-green-100 text-green-800 border border-green-300"
-                              : optionIndex === userAnswer?.selectedOption &&
-                                optionIndex !== question.correctIndex
-                              ? "bg-red-100 text-red-800 border border-red-300"
-                              : "bg-gray-50"
-                          }`}
-                        >
-                          {String.fromCharCode(65 + optionIndex)}. {option}
-                          {optionIndex === question.correctIndex && (
-                            <CheckCircle className="w-4 h-4 text-green-600 inline ml-2" />
-                          )}
-                          {optionIndex === userAnswer?.selectedOption &&
-                            optionIndex !== question.correctIndex && (
-                              <XCircle className="w-4 h-4 text-red-600 inline ml-2" />
+                      {getBilingualOptions(question).map(
+                        (option, optionIndex) => (
+                          <div
+                            key={optionIndex}
+                            className={`p-2 rounded text-sm dark:text-black ${
+                              optionIndex === question.correctIndex
+                                ? "bg-green-100 text-green-800 border border-green-300"
+                                : optionIndex === userAnswer?.selectedOption &&
+                                    optionIndex !== question.correctIndex
+                                  ? "bg-red-100 text-red-800 border border-red-300"
+                                  : "bg-gray-50"
+                            }`}
+                          >
+                            {String.fromCharCode(65 + optionIndex)}. {option}
+                            {optionIndex === question.correctIndex && (
+                              <CheckCircle className="w-4 h-4 text-green-600 inline ml-2" />
                             )}
-                        </div>
-                      ))}
+                            {optionIndex === userAnswer?.selectedOption &&
+                              optionIndex !== question.correctIndex && (
+                                <XCircle className="w-4 h-4 text-red-600 inline ml-2" />
+                              )}
+                          </div>
+                        ),
+                      )}
                     </div>
 
                     <div className="text-sm text-muted-foreground bg-blue-50 p-3 rounded dark:text-black">
-                      <strong>Explanation:</strong> {question.explanation}
+                      <strong>Explanation:</strong>
+                      {getBilingualText(question, "explanation")
+                        .split("\n")
+                        .map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
                     </div>
                   </CardContent>
                 </Card>

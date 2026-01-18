@@ -145,7 +145,10 @@ const Quiz = () => {
               key={test.id}
               title={test.title}
               questions={test.questionsCount}
-              marks={test.maxMarks}
+              marks={
+                test.maxMarks ||
+                (test.questionsCount || 0) * (test.marksPerQuestion || 1)
+              }
               duration={test.durationMinutes}
               languages={test.languages ?? []}
               isFree={true}

@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
+  Outlet,
 } from "react-router-dom";
 import QuizPage from "./pages/QuizPage";
 import PDF_Page from "./pages/PDF_Page";
@@ -16,10 +17,15 @@ import TestLayout from "./component/test-layout/TestLayout";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import AttemptedTests from "./pages/AttemptedTests";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import AdminPanel from "./pages/AdminPanel";
+import TestsListPage from "./pages/admin/TestsListPage";
+import TestDetailLayout from "./pages/admin/TestDetailLayout";
+import TestQuestionsPage from "./pages/admin/TestQuestionsPage";
+import TestSettingsPage from "./pages/admin/TestSettingsPage";
+import TestPreviewPage from "./pages/admin/TestPreviewPage";
 import TestPage from "./pages/TestPage";
 import Quiz from "./pages/Quiz";
 import AllQuizComponent from "./pages/AllQuizComponent";
+import QuestionBankPage from "./pages/admin/QuestionBankPage";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -73,13 +79,46 @@ const router = createBrowserRouter(
             </ProtectedRoute>
           ),
         },
+
         {
-          path: "admin-panel",
+          path: "admin",
           element: (
             <AdminRoute>
-              <AdminPanel />
+              <Outlet />
             </AdminRoute>
           ),
+          children: [
+            {
+              path: "tests",
+              element: <TestsListPage />,
+            },
+            {
+              path: "question-bank",
+              element: <QuestionBankPage />,
+            },
+            {
+              path: "tests/:testId",
+              element: <TestDetailLayout />,
+              children: [
+                {
+                  index: true,
+                  element: <Navigate to="questions" replace />,
+                },
+                {
+                  path: "questions",
+                  element: <TestQuestionsPage />,
+                },
+                {
+                  path: "settings",
+                  element: <TestSettingsPage />,
+                },
+                {
+                  path: "preview",
+                  element: <TestPreviewPage />,
+                },
+              ],
+            },
+          ],
         },
         // {
         //   path: "/all-test/:categoryId",
@@ -107,7 +146,7 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ]
+  ],
   // {
   //   basename: "/",
   // }

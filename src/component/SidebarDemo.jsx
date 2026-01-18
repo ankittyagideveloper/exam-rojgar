@@ -114,7 +114,7 @@ export default function SidebarDemo({ children }) {
     },
     {
       label: t("adminPanel"),
-      href: "/admin-panel",
+      href: "/admin/tests",
       icon: isActive("/admin-panel") ? (
         <IconUserFilled
           className={`${
@@ -164,7 +164,7 @@ export default function SidebarDemo({ children }) {
     <div
       className={cn(
         "flex w-full flex-1 flex-col overflow-hidden border-neutral-200 bg-gray-100 md:flex-col lg:flex-row dark:border-neutral-700 dark:bg-neutral-800",
-        "h-screen"
+        "h-screen",
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
