@@ -26,6 +26,8 @@ import TestPage from "./pages/TestPage";
 import Quiz from "./pages/Quiz";
 import AllQuizComponent from "./pages/AllQuizComponent";
 import QuestionBankPage from "./pages/admin/QuestionBankPage";
+import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorPage from "./pages/ErrorPage";
 
 function PublicRoute({ children }) {
   const { isSignedIn } = useUser();
@@ -36,7 +38,12 @@ const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <ErrorBoundary>
+          <Layout />
+        </ErrorBoundary>
+      ),
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -124,6 +131,16 @@ const router = createBrowserRouter(
         //   path: "/all-test/:categoryId",
         //   element: <QuizPage />,
         // },
+        {
+          path: "*",
+          element: (
+            <ErrorPage
+              code="404"
+              title="Page Not Found"
+              message="The page you are looking for doesn't exist or has been moved."
+            />
+          ),
+        },
       ],
     },
     {
