@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useTests } from './hooks/useTests';
-import { Button } from '../../../components/ui/button';
+import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useTests } from "./hooks/useTests";
+import { Button } from "../../../components/ui/button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '../../../components/ui/card';
+} from "../../../components/ui/card";
 
 /**
  * TestSettingsPage - Settings tab for editing test metadata
@@ -22,7 +22,7 @@ export default function TestSettingsPage() {
   const { updateTest, isLoading } = useTests();
 
   const [formData, setFormData] = useState({
-    title: '',
+    title: "",
     duration: 90,
     isActive: false,
     requiresRegistration: false,
@@ -31,7 +31,7 @@ export default function TestSettingsPage() {
   useEffect(() => {
     if (initialTest) {
       setFormData({
-        title: initialTest.title || '',
+        title: initialTest.title || "",
         duration: initialTest.durationMinutes || 90,
         isActive: initialTest.isActive || false,
         requiresRegistration: initialTest.requiresRegistration || false,
@@ -50,26 +50,26 @@ export default function TestSettingsPage() {
     e.preventDefault();
 
     if (!formData.title.trim()) {
-      alert('Test title is required');
+      alert("Test title is required");
       return;
     }
 
     if (formData.duration < 1) {
-      alert('Duration must be at least 1 minute');
+      alert("Duration must be at least 1 minute");
       return;
     }
 
     try {
       await updateTest(testId, formData);
-      alert('Test updated successfully');
+      alert("Test updated successfully");
     } catch (error) {
-      console.error('Error updating test:', error);
+      console.error("Error updating test:", error);
       alert(`Error: ${error.message}`);
     }
   };
 
   return (
-    <Card>
+    <Card className="mb-20">
       <CardHeader>
         <CardTitle>Test Settings</CardTitle>
       </CardHeader>
@@ -84,7 +84,7 @@ export default function TestSettingsPage() {
               className="w-full border border-gray-300 p-2 rounded"
               placeholder="Enter test title"
               value={formData.title}
-              onChange={(e) => handleChange('title', e.target.value)}
+              onChange={(e) => handleChange("title", e.target.value)}
               required
             />
           </div>
@@ -99,7 +99,7 @@ export default function TestSettingsPage() {
               className="w-full border border-gray-300 p-2 rounded"
               placeholder="Enter duration in minutes"
               value={formData.duration}
-              onChange={(e) => handleChange('duration', Number(e.target.value))}
+              onChange={(e) => handleChange("duration", Number(e.target.value))}
               required
             />
           </div>
@@ -109,7 +109,9 @@ export default function TestSettingsPage() {
             <select
               className="w-full border border-gray-300 rounded-md bg-white px-3 py-2"
               value={formData.isActive}
-              onChange={(e) => handleChange('isActive', e.target.value === 'true')}
+              onChange={(e) =>
+                handleChange("isActive", e.target.value === "true")
+              }
             >
               <option value={true}>Live (Active)</option>
               <option value={false}>Draft (Inactive)</option>
@@ -124,7 +126,7 @@ export default function TestSettingsPage() {
               className="w-full border border-gray-300 rounded-md bg-white px-3 py-2"
               value={formData.requiresRegistration}
               onChange={(e) =>
-                handleChange('requiresRegistration', e.target.value === 'true')
+                handleChange("requiresRegistration", e.target.value === "true")
               }
             >
               <option value={true}>Required</option>
@@ -134,12 +136,12 @@ export default function TestSettingsPage() {
 
           <div className="flex gap-3 pt-4">
             <Button type="submit" disabled={isLoading}>
-              {isLoading ? 'Saving...' : 'Save Changes'}
+              {isLoading ? "Saving..." : "Save Changes"}
             </Button>
             <Button
               type="button"
               variant="outline"
-              onClick={() => navigate('/admin/tests')}
+              onClick={() => navigate("/admin/tests")}
             >
               Back to Tests
             </Button>

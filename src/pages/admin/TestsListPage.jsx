@@ -75,14 +75,15 @@ export default function TestsListPage() {
         onCancel={handleCancel}
         isLoading={isLoading}
       />
-
-      <TestsTable
-        tests={tests}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-        onView={handleView}
-        isLoading={isLoading}
-      />
+      <div className="mb-20">
+        <TestsTable
+          tests={tests}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+          onView={handleView}
+          isLoading={isLoading}
+        />
+      </div>
     </div>
   );
 }

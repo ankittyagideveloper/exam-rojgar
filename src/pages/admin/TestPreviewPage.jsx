@@ -52,7 +52,7 @@ export default function TestPreviewPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 mb-20">
       <Card>
         <CardHeader>
           <CardTitle>Test Preview</CardTitle>

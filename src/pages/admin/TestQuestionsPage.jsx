@@ -148,7 +148,7 @@ export default function TestQuestionsPage() {
 
   const handleDelete = async (questionId) => {
     const ok = window.confirm(
-      "Are you sure you want to delete this question? This cannot be undone.",
+      "Are you sure you want to delete this question? This cannot be undone."
     );
     if (!ok) return;
 
@@ -310,8 +310,8 @@ export default function TestQuestionsPage() {
                 {isLoading
                   ? "Saving..."
                   : editingQuestion
-                    ? "Update Question"
-                    : "Create Question"}
+                  ? "Update Question"
+                  : "Create Question"}
               </Button>
               {editingQuestion && (
                 <Button type="button" variant="outline" onClick={resetForm}>
@@ -324,7 +324,7 @@ export default function TestQuestionsPage() {
       </Card>
 
       {/* Questions List */}
-      <Card>
+      <Card className="mb-20">
         <CardHeader>
           <CardTitle>
             Questions ({questions.length}) - {test?.title || "Test"}
