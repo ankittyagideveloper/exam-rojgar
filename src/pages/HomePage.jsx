@@ -5,13 +5,13 @@ import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
 import VideoPlayer from "../component/VideoPlayer";
 import { Helmet } from "react-helmet-async";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { app } from "../../firebase";
+
 import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
 
 function HomePage() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+
   // const db = getFirestore(app);
 
   // async function getAllUsers(quizId) {
@@ -29,42 +29,46 @@ function HomePage() {
   return (
     <>
       <Helmet>
-        {/* Basic SEO */}
         <title>
-          ExamRojgaar.com - India's No.1 Govt Exam Preparation Site | Online
-          Course | Mock Test
+          Exam Rojgaar – RRB, SSC, Banking Mock Tests, PYQs & Live Classes
         </title>
         <meta
           name="description"
-          content="Access comprehensive study materials by subject"
+          content="Prepare for RRB NTPC, JE, SSC & Banking exams with free mock tests, previous year questions, live classes and detailed performance analysis. Join ExamRojgaar today."
         />
 
-        {/* Open Graph (Facebook, LinkedIn, WhatsApp) */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Exam Rojgaar Home Page" />
+        <meta property="og:site_name" content="ExamRojgaar" />
+        <meta
+          property="og:title"
+          content="Exam Rojgaar – RRB, SSC, Banking Mock Tests & Live Classes"
+        />
         <meta
           property="og:description"
-          content="Access comprehensive study materials for competitive exams."
+          content="Free mock tests, PYQs, live classes and rank analysis for RRB, SSC & Banking exams. Start preparing today."
         />
         <meta
           property="og:image"
-          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.1/android-chrome-512x512.png" // <-- Put your actual logo URL
+          content="https://www.examrojgaar.com/android-chrome-512x512.png"
         />
-        <meta
-          property="og:url"
-          content="https://examrojgaar.netlify.app/pdf-category"
-        />
+        <meta property="og:url" content="https://www.examrojgaar.com" />
 
-        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Exam Rojgaar Home Page" />
+        <meta
+          name="twitter:title"
+          content="Exam Rojgaar – RRB, SSC, Banking Exam Preparation"
+        />
         <meta
           name="twitter:description"
-          content="Access comprehensive study materials for competitive exams."
+          content="Free mock tests, PYQs & live classes for RRB NTPC, JE, SSC and Banking exams."
         />
         <meta
           name="twitter:image"
-          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.0/logo.png" // <-- Same or another image
+          content="https://www.examrojgaar.com/android-chrome-512x512.png"
         />
       </Helmet>
 
