@@ -3,6 +3,8 @@ import { Card, CardHeader } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import { Clock } from "lucide-react";
 import { useAttemptData } from "../../hooks/QueryData";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 const QuizHeader = ({
   currentQuestion,
@@ -15,6 +17,14 @@ const QuizHeader = ({
 
   const [timeRemaining, setTimeRemaining] = useState(0); // seconds
   const timerRef = useRef(null);
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+
+  const [currlanguage, setCurrLanguage] = useState(() => {
+    return localStorage.getItem("currentLanguage") || language;
+  });
 
   useEffect(() => {
     if (!attempt || isQuizCompleted) return;
@@ -55,6 +65,11 @@ const QuizHeader = ({
 
   if (isLoading || !attempt) return null;
 
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "hi", label: "Hindi" },
+  ];
+
   return (
     <Card>
       <CardHeader className="pb-3">
@@ -71,7 +86,34 @@ const QuizHeader = ({
               </span>
             </div>
 
-            <Badge variant="secondary">EN</Badge>
+            <select
+              id="language-select"
+              value={language}
+              onChange={(e) => {
+                const newLang = e.target.value;
+                changeLanguage(newLang);
+                localStorage.setItem("currentLanguage", newLang);
+              }}
+              className="
+    h-8
+    px-3
+    rounded-full
+    border
+    text-sm
+    font-medium
+    cursor-pointer
+    bg-secondary
+    focus:outline-none
+    focus:ring-2
+    focus:ring-ring
+  "
+            >
+              {languages.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.label}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </CardHeader>
