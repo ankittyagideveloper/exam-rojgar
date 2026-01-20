@@ -120,7 +120,7 @@ const Header = () => {
           <InstallPWAButton />
           <LanguageSwitcher
             onChange={handleLanguageChange}
-            currentLanguage={currentLanguage}
+            currentLanguage={language}
           />
 
           {isSignedIn ? (

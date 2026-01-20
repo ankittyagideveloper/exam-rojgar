@@ -22,10 +22,6 @@ const QuizHeader = ({
     i18n: { changeLanguage, language },
   } = useTranslation();
 
-  const [currlanguage, setCurrLanguage] = useState(() => {
-    return localStorage.getItem("currentLanguage") || language;
-  });
-
   useEffect(() => {
     if (!attempt || isQuizCompleted) return;
 
