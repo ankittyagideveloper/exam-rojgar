@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,7 +11,53 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router";
+import { getCachedVideo } from "../db/getCachedVideo";
+
+const SLIDES = [
+  {
+    to: "/test-category/rrb/rrb-ntpc",
+    url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-0.mp4",
+  },
+  {
+    to: "/test-category/rrb/rrb-ntpc",
+    url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.3/banner-1.mp4",
+  },
+  {
+    to: "/test-category/rrb/rrb-ntpc",
+    url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-2.mp4",
+  },
+  {
+    to: "/pdf-category",
+    url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.9/banner-3.mp4",
+  },
+];
+
 const Slider = () => {
+  const [videoSources, setVideoSources] = useState([]);
+
+  useEffect(() => {
+    debugger;
+    let active = true;
+    const objectUrls = [];
+
+    async function loadVideos() {
+      const result = [];
+      for (const slide of SLIDES) {
+        const localUrl = await getCachedVideo(slide.url);
+        objectUrls.push(localUrl);
+        result.push(localUrl);
+      }
+      if (active) setVideoSources(result);
+    }
+
+    loadVideos();
+
+    return () => {
+      active = false;
+      objectUrls.forEach(URL.revokeObjectURL); // prevent memory leak
+    };
+  }, []);
+
   return (
     <div className="w-full  h-full">
       <Swiper
@@ -57,7 +103,7 @@ const Slider = () => {
             />
           </Link>
         </SwiperSlide> */}
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+        {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrb/rrb-ntpc">
             <video
               autoPlay
@@ -104,7 +150,7 @@ const Slider = () => {
               className="w-full h-auto"
             />
           </Link>
-        </SwiperSlide>
+        </SwiperSlide> */}
         {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
           <img
             src="/slide-3.jpg"
@@ -136,6 +182,26 @@ const Slider = () => {
         <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
           Slide 9
         </SwiperSlide> */}
+
+        {SLIDES.map((slide, index) => (
+          <SwiperSlide
+            key={index}
+            className="md:w-[725px] flex justify-center items-center bg-gray-700"
+          >
+            <Link to={slide.to}>
+              {videoSources[index] && (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  src={videoSources[index]}
+                  className="w-full h-auto"
+                />
+              )}
+            </Link>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
