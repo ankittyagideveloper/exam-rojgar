@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import SidebarDemo from "./SidebarDemo";
 import axios from "axios";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
+import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
 
 const Layout = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -36,7 +36,6 @@ const Slider = () => {
   const [videoSources, setVideoSources] = useState([]);
 
   useEffect(() => {
-    debugger;
     let active = true;
     const objectUrls = [];
 
