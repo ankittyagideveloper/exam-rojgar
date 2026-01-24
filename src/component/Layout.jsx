@@ -8,6 +8,7 @@ import SidebarDemo from "./SidebarDemo";
 import axios from "axios";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
+import { useClerk } from "@clerk/clerk-react";
 
 const Layout = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +21,9 @@ const Layout = () => {
     }
   };
 
+  const { openSignIn } = useClerk();
   useEffect(() => {
+    openSignIn();
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
@@ -57,6 +60,7 @@ const Layout = () => {
   //   .catch((error) => {
   //     console.error("Error:", error);
   //   });
+
   return (
     <>
       <div className="min-h-screen bg-background">
