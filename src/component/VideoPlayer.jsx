@@ -51,7 +51,7 @@ export default function VideoPlayer() {
       </div>
 
       {/* Video Grid */}
-      <div className="px-4 md:px-10 md:py-5 pb-16 dark:bg-[#121212] md:rounded-4xl">
+      <div className="px-4 md:px-10 md:py-5 pb-16 md:dark:bg-[#121212] md:rounded-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {videos.map((video) => (
             <VideoCard
