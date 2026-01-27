@@ -37,7 +37,7 @@ const videos = [
 
 export default function VideoPlayer() {
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-[#121212] ">
+    <main className="min-h-screen  ">
       {/* Header */}
       <div className="px-4 md:px-10 py-6 ">
         <img
@@ -45,13 +45,13 @@ export default function VideoPlayer() {
           src="./live-classes.png"
         />
 
-        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-[#fff]  ml-1">
+        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-[black]  ml-1">
           Discover our curated collection of amazing videos
         </p>
       </div>
 
       {/* Video Grid */}
-      <div className="px-4 md:px-10 pb-16 dark:bg-[#121212]">
+      <div className="px-4 md:px-10 md:py-5 pb-16 dark:bg-[#121212] md:rounded-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {videos.map((video) => (
             <VideoCard

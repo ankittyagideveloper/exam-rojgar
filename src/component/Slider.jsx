@@ -58,7 +58,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="w-full  h-full">
+    <div className="w-full  h-full  rounded">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -72,7 +72,7 @@ const Slider = () => {
         speed={1200}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  rounded  mt-0"
+        className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  md:rounded-2xl  mt-0 border-2 border-[#84CAFF]"
       >
         {/* Common slide styles applied via Tailwind */}
         {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">

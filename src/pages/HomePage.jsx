@@ -30,26 +30,29 @@ function HomePage() {
     <>
       <Helmet>
         <title>
-          Exam Rojgaar – RRB, SSC, Banking Mock Tests, PYQs & Live Classes
+          Exam Rojgaar – RRB NTPC, JE, ALP & Group D Mock Tests & PYQs
         </title>
+
         <meta
           name="description"
-          content="Prepare for RRB NTPC, JE, SSC & Banking exams with free mock tests, previous year questions, live classes and detailed performance analysis. Join ExamRojgaar today."
+          content="Prepare for Railway exams with Exam Rojgaar. Practice RRB NTPC, JE, ALP & Group D mock tests, previous year questions, detailed analysis and smart preparation tools."
         />
 
+        {/* Icons */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+        {/* Open Graph (Facebook, WhatsApp, LinkedIn) */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="ExamRojgaar" />
+        <meta property="og:site_name" content="Exam Rojgaar" />
         <meta
           property="og:title"
-          content="Exam Rojgaar – RRB, SSC, Banking Mock Tests & Live Classes"
+          content="Exam Rojgaar – Railway Exam Preparation Platform"
         />
         <meta
           property="og:description"
-          content="Free mock tests, PYQs, live classes and rank analysis for RRB, SSC & Banking exams. Start preparing today."
+          content="Free Railway mock tests & PYQs for RRB NTPC, JE, ALP and Group D. Prepare smarter with Exam Rojgaar."
         />
         <meta
           property="og:image"
@@ -57,14 +60,15 @@ function HomePage() {
         />
         <meta property="og:url" content="https://www.examrojgaar.com" />
 
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Exam Rojgaar – RRB, SSC, Banking Exam Preparation"
+          content="Exam Rojgaar – RRB NTPC, JE, ALP & Group D Preparation"
         />
         <meta
           name="twitter:description"
-          content="Free mock tests, PYQs & live classes for RRB NTPC, JE, SSC and Banking exams."
+          content="Railway exam preparation made easy. Attempt RRB mock tests, PYQs and track your performance with Exam Rojgaar."
         />
         <meta
           name="twitter:image"
@@ -72,7 +76,12 @@ function HomePage() {
         />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-100 pb-20 dark:bg-[#121212]">
+      <div
+        className="min-h-screen bg-gray-100 pb-20"
+        style={{
+          backgroundImage: "url('/hero-background.svg')",
+        }}
+      >
         {/* <header>
         <SignedOut>
           <SignInButton />
@@ -83,7 +92,7 @@ function HomePage() {
       </header> */}
         {/* Main Content */}
         <StickyBannerDemo />
-        <main className="px-0 py-0 md:px-4 md:py-6 dark:bg-[#121212]">
+        <main className="px-0 py-0 md:px-4 md:py-6 ">
           <div className="lg:flex lg:items-center xl:flex-row justify-around">
             {/* Hero Section */}
             {/* {currentLanguage === "en" ? (

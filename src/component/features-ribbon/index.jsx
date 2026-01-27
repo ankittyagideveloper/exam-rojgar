@@ -240,7 +240,7 @@ export default function FeaturesRibbon() {
     <section
       aria-label="Feature menu"
       //   className="mx-auto w-full max-w-6xl px-3 sm:px-4"
-      className="py-4 dark:bg-[#121212]"
+      className="py-4 "
     >
       <div className="md:rounded-2xl bg-white shadow-none md:ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
         <ul
