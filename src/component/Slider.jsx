@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router";
 import { getCachedVideo } from "../db/getCachedVideo";
+import { BackgroundGradient } from "../components/ui/background-gradient";
 
 const SLIDES = [
   {
@@ -58,24 +59,25 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="w-full  h-full  rounded">
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        speed={1200}
-        // navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  md:rounded-2xl  mt-0 border-2 border-[#84CAFF]"
-      >
-        {/* Common slide styles applied via Tailwind */}
-        {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+    <BackgroundGradient className="md:rounded-[22px]  p-1 sm:p-2 bg-white">
+      <div className="w-full  h-full  rounded">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          speed={1200}
+          // navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  md:rounded-2xl  mt-0 border-2 border-[#84CAFF]"
+        >
+          {/* Common slide styles applied via Tailwind */}
+          {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <img
             src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.5/banner-1.gif"
             alt="slide-1"
@@ -83,7 +85,7 @@ const Slider = () => {
           />
         </SwiperSlide> */}
 
-        {/* <SwiperSlide className=" md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+          {/* <SwiperSlide className=" md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrc/rrc-group-d">
             <img
               src="/rrc-group-D.png"
@@ -102,7 +104,7 @@ const Slider = () => {
             />
           </Link>
         </SwiperSlide> */}
-        {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
+          {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
           <Link to="/test-category/rrb/rrb-ntpc">
             <video
               autoPlay
@@ -150,14 +152,14 @@ const Slider = () => {
             />
           </Link>
         </SwiperSlide> */}
-        {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
+          {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
           <img
             src="/slide-3.jpg"
             alt="slide-3"
             className="w-full h-64 object-cover rounded-lg"
           />
         </SwiperSlide> */}
-        {/* <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
+          {/* <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
           Slide 2
         </SwiperSlide>
         <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
@@ -182,27 +184,28 @@ const Slider = () => {
           Slide 9
         </SwiperSlide> */}
 
-        {SLIDES.map((slide, index) => (
-          <SwiperSlide
-            key={index}
-            className="md:w-[725px] flex justify-center items-center bg-gray-700"
-          >
-            <Link to={slide.to}>
-              {videoSources[index] && (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  src={videoSources[index]}
-                  className="w-full h-auto"
-                />
-              )}
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          {SLIDES.map((slide, index) => (
+            <SwiperSlide
+              key={index}
+              className="md:w-[725px] flex justify-center items-center bg-gray-700"
+            >
+              <Link to={slide.to}>
+                {videoSources[index] && (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    src={videoSources[index]}
+                    className="w-full h-auto"
+                  />
+                )}
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </BackgroundGradient>
   );
 };
 export default Slider;

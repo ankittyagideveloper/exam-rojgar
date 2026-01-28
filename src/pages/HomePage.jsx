@@ -80,6 +80,7 @@ function HomePage() {
         className="min-h-screen bg-gray-100 pb-20"
         style={{
           backgroundImage: "url('/hero-background.svg')",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/* <header>
