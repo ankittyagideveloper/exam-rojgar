@@ -62,22 +62,22 @@ export default function SidebarDemo({ children }) {
       ),
       role: ["user", "admin"],
     },
+    // {
+    //   label: t("testBtn"),
+    //   href: "/test-category",
+    //   icon: isActive("/test-category") ? (
+    //     <IconClipboardFilled
+    //       className={`${
+    //         isActive("/test-category") ? "text-[#0ad0f4] fill-red" : ""
+    //       } h-5 w-5 shrink-0 dark:text-neutral-200`}
+    //     />
+    //   ) : (
+    //     <IconClipboard className={"h-5 w-5 shrink-0 dark:text-neutral-200"} />
+    //   ),
+    //   role: ["user", "admin"],
+    // },
     {
       label: t("testBtn"),
-      href: "/test-category",
-      icon: isActive("/test-category") ? (
-        <IconClipboardFilled
-          className={`${
-            isActive("/test-category") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconClipboard className={"h-5 w-5 shrink-0 dark:text-neutral-200"} />
-      ),
-      role: ["user", "admin"],
-    },
-    {
-      label: t("quizBtn"),
       href: "/quiz-category",
       icon: isActive("/quiz-category") ? (
         <IconHelpHexagonFilled
@@ -130,24 +130,24 @@ export default function SidebarDemo({ children }) {
       ),
       role: ["admin"],
     },
-    {
-      label: t("attemptedTests"),
-      href: "/attempted-tests",
-      icon: isActive("/attempted-tests") ? (
-        <IconSquareCheckFilled
-          className={`${
-            isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconSquareCheck
-          className={`${
-            isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ),
-      role: ["admin", "user"],
-    },
+    // {
+    //   label: t("attemptedTests"),
+    //   href: "/attempted-tests",
+    //   icon: isActive("/attempted-tests") ? (
+    //     <IconSquareCheckFilled
+    //       className={`${
+    //         isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+    //       } h-5 w-5 shrink-0 dark:text-neutral-200`}
+    //     />
+    //   ) : (
+    //     <IconSquareCheck
+    //       className={`${
+    //         isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+    //       } h-5 w-5 shrink-0 dark:text-neutral-200`}
+    //     />
+    //   ),
+    //   role: ["admin", "user"],
+    // },
   ];
 
   const [open, setOpen] = useState(isDesktopOrLaptop ? true : false);

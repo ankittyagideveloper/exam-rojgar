@@ -53,14 +53,14 @@ const router = createBrowserRouter(
           path: "home",
           element: <HomePage />,
         },
-        {
-          path: "test-category/*",
-          element: (
-            <ProtectedRoute>
-              <TestPage />
-            </ProtectedRoute>
-          ),
-        },
+        // {
+        //   path: "test-category/*",
+        //   element: (
+        //     // <ProtectedRoute>
+        //     <TestPage />
+        //     // </ProtectedRoute>
+        //   ),
+        // },
         {
           path: "quiz-category/*",
           element: (

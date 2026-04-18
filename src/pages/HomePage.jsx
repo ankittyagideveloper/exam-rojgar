@@ -81,6 +81,7 @@ function HomePage() {
         style={{
           backgroundImage: "url('/hero-background.svg')",
           backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
         }}
       >
         {/* <header>
@@ -94,7 +95,7 @@ function HomePage() {
         {/* Main Content */}
         <StickyBannerDemo />
         <main className="px-0 py-0 md:px-4 md:py-6 ">
-          <div className="lg:flex lg:items-center xl:flex-row justify-around">
+          <div className="md:flex md:items-center xl:flex-row justify-around">
             {/* Hero Section */}
             {/* {currentLanguage === "en" ? (
             <div className="hidden md:block mb-8 ">
