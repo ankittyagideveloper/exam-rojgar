@@ -8,7 +8,7 @@ import SidebarDemo from "./SidebarDemo";
 import axios from "axios";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
-import { useClerk } from "@clerk/clerk-react";
+import { useClerk, useAuth } from "@clerk/clerk-react";
 
 const Layout = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,11 +22,15 @@ const Layout = () => {
   };
 
   const { openSignIn } = useClerk();
+  const { isSignedIn } = useAuth();
+
   useEffect(() => {
-    openSignIn();
+    if (!isSignedIn) {
+      openSignIn();
+    }
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isSignedIn, openSignIn]);
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
