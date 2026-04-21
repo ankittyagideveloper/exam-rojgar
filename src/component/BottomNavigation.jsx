@@ -19,7 +19,7 @@ const BottomNavigation = () => {
 
     if (path === "/") {
       setActiveTab("home");
-    } else if (path.startsWith("/test-category")) {
+    } else if (path.startsWith("/online-test-series")) {
       setActiveTab("test");
     } else if (path.startsWith("/quiz-category")) {
       setActiveTab("quiz");
@@ -31,7 +31,12 @@ const BottomNavigation = () => {
 
   const navItems = [
     { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
-    { id: "test", label: t("testBtn"), icon: FileText, path: "/test-category" },
+    {
+      id: "test",
+      label: t("testBtn"),
+      icon: FileText,
+      path: "/online-test-series",
+    },
     {
       id: "quiz",
       label: t("quizBtn"),

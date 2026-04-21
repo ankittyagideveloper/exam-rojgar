@@ -207,7 +207,7 @@ export default function FeaturesRibbon() {
       icon: "clipboard",
       bgColor: "bg-green-100",
       badge: t("free"),
-      href: "/test-category",
+      href: "/online-test-series",
       isLive: true,
     },
     {
@@ -221,18 +221,18 @@ export default function FeaturesRibbon() {
       label: t("prevYearPapers"),
       icon: "doc",
       bgColor: "bg-yellow-100",
-      href: "/test-category/rrb/rrb-ntpc",
+      href: "/online-test-series/rrb/rrb-ntpc",
     },
     {
       label: t("tests"),
       icon: "refresh",
-      href: "/test-category/rrb/rrb-ntpc",
+      href: "/online-test-series/rrb/rrb-ntpc",
       bgColor: "bg-pink-100",
     },
     {
       label: t("gk_ca"),
       icon: "article",
-      href: "/test-category/rrb/rrb-ntpc",
+      href: "/online-test-series/rrb/rrb-ntpc",
       bgColor: "bg-blue-100",
     },
   ];

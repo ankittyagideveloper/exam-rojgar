@@ -10,7 +10,7 @@ import { useUser } from "@clerk/clerk-react";
 const TestPage = () => {
   const location = useLocation();
   const pathSegments = location.pathname
-    .replace("/test-category", "")
+    .replace("/online-test-series", "")
     .replace("/quiz-category", "")
     .split("/")
     .filter(Boolean);
@@ -84,7 +84,7 @@ const TestPage = () => {
           Object.values(mockData.categories).map((cat, i) => (
             // <Link
             //   key={cat.id}
-            //   to={`/test-category/${cat.slug}`}
+            //   to={`/online-test-series/${cat.slug}`}
             //   style={{
             //     border: "1px solid #ddd",
             //     padding: "16px",
@@ -107,7 +107,7 @@ const TestPage = () => {
                 }}
               >
                 {/* <TestCard
-                onClick={() => navigate(`/test-category/${cat.slug}`)}
+                onClick={() => navigate(`/online-test-series/${cat.slug}`)}
                 key={cat.id}
                 image={cat.image}
                 alt={cat.alt}
@@ -122,7 +122,7 @@ const TestPage = () => {
                   total={1}
                   percentage={1}
                   onGoToTest={() => {
-                    navigate(`/test-category/${cat.slug}`);
+                    navigate(`/online-test-series/${cat.slug}`);
                   }}
                 />
               </motion.div>
@@ -134,7 +134,7 @@ const TestPage = () => {
           Object.values(current.subcategories).map((sub, i) => (
             // <Link
             //   key={sub.id}
-            //   to={`/test-category/${[...pathSegments, sub.slug].join("/")}`}
+            //   to={`/online-test-series/${[...pathSegments, sub.slug].join("/")}`}
             //   style={{
             //     border: "1px solid #ddd",
             //     padding: "16px",
@@ -158,7 +158,7 @@ const TestPage = () => {
               {/* <TestCard
                 onClick={() =>
                   navigate(
-                    `/test-category/${[...pathSegments, sub.slug].join("/")}`
+                    `/online-test-series/${[...pathSegments, sub.slug].join("/")}`
                   )
                 }
                 key={sub.id}
@@ -176,7 +176,7 @@ const TestPage = () => {
                 percentage={1}
                 onGoToTest={() => {
                   navigate(
-                    `/test-category/${[...pathSegments, sub.slug].join("/")}`,
+                    `/online-test-series/${[...pathSegments, sub.slug].join("/")}`,
                   );
                 }}
               />

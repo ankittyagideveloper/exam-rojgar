@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import questions from "./Quiz-question.json";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   Card,
@@ -22,6 +21,9 @@ import {
 import { Badge } from "../../../components/ui/badge";
 import { Button } from "../../../components/ui/button";
 import { getAllSubmissions } from "../../utils/firestoreHelpers";
+import { useAttemptData, useQuizData } from "../../hooks/QueryData";
+import { getFirestore } from "firebase/firestore";
+import { app } from "../../../firebase";
 
 const calculateRanks = (submissions) => {
   const sorted = [...submissions].sort((a, b) => {
@@ -39,15 +41,102 @@ const calculateRanks = (submissions) => {
   }));
 };
 
-const AllQuizResult = ({
-  db,
-  testId,
-  results,
-  userAnswers,
-  quizData,
-  userId,
-  testDetails,
-}) => {
+const AllQuizResult = () => {
+  const { attemptId } = useParams();
+  const { data: attempt } = useAttemptData(attemptId);
+  const userId = attempt?.userId;
+  const testId = attempt?.testId;
+  const { quizData, testDetails, isLoading } = useQuizData(testId);
+
+  const db = getFirestore(app);
+
+  const [userAnswers, setUserAnswers] = useState([]);
+  const [results, setResults] = useState(null);
+  const calculateResults = useCallback(() => {
+    let correct = 0;
+    let attempted = 0;
+    let marked = 0;
+    let skipped = 0;
+    let notViewed = 0;
+    let incorrectCount = 0;
+
+    userAnswers?.forEach((answer, index) => {
+      if (
+        answer.selectedOption !== null &&
+        answer.selectedOption === parseInt(quizData[index].correctIndex)
+      ) {
+        correct++;
+      }
+
+      if (
+        answer.selectedOption !== null &&
+        answer.selectedOption !== parseInt(quizData[index].correctIndex)
+      ) {
+        incorrectCount++;
+      }
+
+      switch (answer.status) {
+        case "attempted":
+          attempted++;
+          break;
+        case "marked":
+          marked++;
+          break;
+        case "skipped":
+          skipped++;
+          break;
+        case "not-viewed":
+          notViewed++;
+          break;
+      }
+    });
+
+    const totalAttempted = userAnswers.filter(
+      (a) => a.selectedOption !== null,
+    ).length;
+
+    const percentage =
+      totalAttempted > 0 ? Math.round((correct / totalAttempted) * 100) : 0;
+
+    const marksPerQuestion = testDetails?.marksPerQuestion || 1;
+    const negativeMarking =
+      testDetails?.negativeMarking !== undefined
+        ? testDetails.negativeMarking
+        : 1 / 3;
+
+    const marks = correct * marksPerQuestion - incorrectCount * negativeMarking;
+    const TotalMarks = Number(marks.toFixed(2));
+    return {
+      correct,
+      attempted,
+      marked,
+      skipped,
+      notViewed,
+      totalAttempted,
+      percentage,
+      incorrectCount,
+      score: TotalMarks,
+      totalQuestions: quizData.length,
+    };
+  }, [userAnswers, quizData, testDetails]);
+  useEffect(() => {
+    if (!attempt?.answers || !quizData.length) return;
+
+    const restored = quizData.map((q) => ({
+      questionId: q.id,
+      selectedOption: attempt.answers[q.id] ?? null,
+      status: attempt.answers[q.id] != null ? "attempted" : "not-viewed",
+      timeSpent: attempt.timePerQuestion?.[q.id] || 0,
+    }));
+    setUserAnswers(restored);
+  }, [attempt, quizData]);
+
+  useEffect(() => {
+    if (userAnswers.length > 0 && quizData.length > 0) {
+      const calculatedResults = calculateResults();
+      setResults(calculatedResults);
+    }
+  }, [userAnswers, quizData, calculateResults]);
   const currentLang = localStorage.getItem("currentLanguage") || "en";
   const isHindi = currentLang.startsWith("hi");
 
@@ -71,7 +160,6 @@ const AllQuizResult = ({
     }
     return q.options;
   };
-  const { categoryId } = useParams();
   const [rank, setRank] = useState(0);
   const [timeSpentInTest, setTimeSpentInTest] = useState({
     minutes: 0,
@@ -80,7 +168,8 @@ const AllQuizResult = ({
   const [refreshing, setRefreshing] = useState(false);
   const timeoutRef = useRef(null);
   const [totalSubmission, setTotalSubmissions] = useState(0);
-  const loadRanks = async () => {
+
+  const loadRanks = useCallback(async () => {
     setRefreshing(true);
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -106,15 +195,27 @@ const AllQuizResult = ({
     timeoutRef.current = setTimeout(() => {
       setRefreshing(false);
     }, 800);
-  };
+  }, [db, testId, userId]);
   useEffect(() => {
     loadRanks();
-  }, [testId]);
+  }, [testId, loadRanks]);
 
   const navigate = useNavigate();
   function downloadPDF() {
     window.print();
   }
+
+  if (isLoading || !results) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading results...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-6xl mx-auto md:p-6 space-y-6">
       <Card>

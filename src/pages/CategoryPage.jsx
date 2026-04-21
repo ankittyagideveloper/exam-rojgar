@@ -4,9 +4,9 @@ import { mockData } from "./mockData";
 const CategoryPage = () => {
   const location = useLocation();
 
-  // Grab everything after `/test-category`
+  // Grab everything after `/online-test-series`
   const pathSegments = location.pathname
-    .replace("/test-category", "")
+    .replace("/online-test-series", "")
     .split("/")
     .filter(Boolean);
 
@@ -24,7 +24,7 @@ const CategoryPage = () => {
     }
   }
 
-  // Root level (/test-category) → show all top-level categories
+  // Root level (/online-test-series) → show all top-level categories
   const isRoot = pathSegments.length === 0;
 
   return (
@@ -35,7 +35,7 @@ const CategoryPage = () => {
           {Object.values(mockData.categories).map((cat) => (
             <Link
               key={cat.id}
-              to={`/test-category/${cat.slug}`}
+              to={`/online-test-series/${cat.slug}`}
               style={{
                 border: "1px solid #ddd",
                 padding: "16px",
@@ -59,7 +59,7 @@ const CategoryPage = () => {
             {Object.values(current.subcategories).map((sub) => (
               <Link
                 key={sub.id}
-                to={`/test-category/${[...pathSegments, sub.slug].join("/")}`}
+                to={`/online-test-series/${[...pathSegments, sub.slug].join("/")}`}
                 style={{
                   border: "1px solid #ddd",
                   padding: "16px",

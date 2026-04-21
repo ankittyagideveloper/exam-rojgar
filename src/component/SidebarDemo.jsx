@@ -64,11 +64,11 @@ export default function SidebarDemo({ children }) {
     },
     {
       label: t("testBtn"),
-      href: "/test-category",
-      icon: isActive("/test-category") ? (
+      href: "/online-test-series",
+      icon: isActive("/online-test-series") ? (
         <IconClipboardFilled
           className={`${
-            isActive("/test-category") ? "text-[#0ad0f4] fill-red" : ""
+            isActive("/online-test-series") ? "text-[#0ad0f4] fill-red" : ""
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (

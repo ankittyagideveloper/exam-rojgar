@@ -16,15 +16,15 @@ import { BackgroundGradient } from "../components/ui/background-gradient";
 
 const SLIDES = [
   {
-    to: "/test-category/rrb/rrb-ntpc",
+    to: "/online-test-series/rrb/rrb-ntpc",
     url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-0.mp4",
   },
   {
-    to: "/test-category/rrb/rrb-ntpc",
+    to: "/online-test-series/rrb/rrb-ntpc",
     url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.3/banner-1.mp4",
   },
   {
-    to: "/test-category/rrb/rrb-ntpc",
+    to: "/online-test-series/rrb/rrb-ntpc",
     url: "https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-2.mp4",
   },
   {
@@ -86,7 +86,7 @@ const Slider = () => {
         </SwiperSlide> */}
 
           {/* <SwiperSlide className=" md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/test-category/rrc/rrc-group-d">
+          <Link to="/online-test-series/rrc/rrc-group-d">
             <img
               src="/rrc-group-D.png"
               alt="slide-1"
@@ -96,7 +96,7 @@ const Slider = () => {
         </SwiperSlide>
 
         <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/test-category">
+          <Link to="/online-test-series">
             <img
               src="/govt-exam.png"
               alt="slide-1"
@@ -105,7 +105,7 @@ const Slider = () => {
           </Link>
         </SwiperSlide> */}
           {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/test-category/rrb/rrb-ntpc">
+          <Link to="/online-test-series/rrb/rrb-ntpc">
             <video
               autoPlay
               loop
@@ -117,7 +117,7 @@ const Slider = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/test-category/rrb/rrb-ntpc">
+          <Link to="/online-test-series/rrb/rrb-ntpc">
             <video
               autoPlay
               loop
@@ -129,7 +129,7 @@ const Slider = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/test-category/rrb/rrb-ntpc">
+          <Link to="/online-test-series/rrb/rrb-ntpc">
             <video
               autoPlay
               loop

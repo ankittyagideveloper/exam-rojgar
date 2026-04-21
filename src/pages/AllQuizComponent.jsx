@@ -4,10 +4,9 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardHeader } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Clock } from "lucide-react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import AllQuizAnalysis from "../component/quiz/AllQuizAnalysis";
-import AllQuizResult from "../component/quiz/AllQuizResult";
 import { LoaderOne } from "../components/ui/loader";
 import { useAttemptData, useQuizData } from "../hooks/QueryData";
 import {
@@ -25,6 +24,7 @@ import { useTranslation } from "react-i18next";
 const db = getFirestore(app);
 const AllQuizComponent = () => {
   const { attemptId } = useParams();
+  const navigate = useNavigate();
 
   console.log("attemptId", attemptId, typeof attemptId);
   const { data: attempt, isLoading: attemptLoading } =
@@ -399,19 +399,9 @@ const AllQuizComponent = () => {
   };
 
   if (isQuizCompleted || attempt?.status === "SUBMITTED") {
-    const results = calculateResults();
-
-    return (
-      <AllQuizResult
-        userId={attempt.userId}
-        db={db}
-        testId={testId}
-        results={results}
-        userAnswers={userAnswers}
-        quizData={quizData}
-        testDetails={testDetails}
-      />
-    );
+    // Navigate to result page with sidebar
+    navigate(`/attempt/${attemptId}/result`);
+    return null;
   }
 
   const currentQuestionData = quizData[currentQuestion];
