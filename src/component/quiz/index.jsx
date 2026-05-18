@@ -76,8 +76,8 @@ export default function QuizComponent() {
   const updateQuestionStatus = (questionIndex, status) => {
     setUserAnswers((prev) =>
       prev.map((answer, index) =>
-        index === questionIndex ? { ...answer, status } : answer
-      )
+        index === questionIndex ? { ...answer, status } : answer,
+      ),
     );
   };
 
@@ -92,8 +92,8 @@ export default function QuizComponent() {
               status: "attempted",
               timeSpent: answer.timeSpent + timeSpent,
             }
-          : answer
-      )
+          : answer,
+      ),
     );
   };
 
@@ -109,7 +109,7 @@ export default function QuizComponent() {
     if (currentQuestion < quizData.questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(
-        userAnswers[currentQuestion + 1]?.selectedOption || null
+        userAnswers[currentQuestion + 1]?.selectedOption || null,
       );
     }
   };
@@ -121,7 +121,7 @@ export default function QuizComponent() {
     if (currentQuestion < quizData.questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(
-        userAnswers[currentQuestion + 1]?.selectedOption || null
+        userAnswers[currentQuestion + 1]?.selectedOption || null,
       );
     }
   };
@@ -132,8 +132,8 @@ export default function QuizComponent() {
       prev.map((answer, index) =>
         index === currentQuestion
           ? { ...answer, selectedOption: null, status: "skipped" }
-          : answer
-      )
+          : answer,
+      ),
     );
   };
 
@@ -198,7 +198,7 @@ export default function QuizComponent() {
     });
 
     const totalAttempted = userAnswers.filter(
-      (a) => a.selectedOption !== null
+      (a) => a.selectedOption !== null,
     ).length;
     const percentage =
       totalAttempted > 0 ? Math.round((correct / totalAttempted) * 100) : 0;
@@ -268,14 +268,26 @@ export default function QuizComponent() {
                 <h3 className="font-medium text-lg whitespace-pre-line">
                   {currentQuestion + 1}. {currentQuestionData.question}
                 </h3>
-                {currentQuestionData?.image ? (
-                  <img
-                    height={300}
-                    width={300}
-                    src={currentQuestionData.image}
-                    alt={currentQuestionData.id + 1}
-                  />
-                ) : null}
+
+                {/* Display question image if available */}
+                {(currentQuestionData?.imageUrl ||
+                  currentQuestionData?.image) && (
+                  <div className="my-4">
+                    <img
+                      src={
+                        currentQuestionData.imageUrl ||
+                        currentQuestionData.image
+                      }
+                      alt={`Question ${currentQuestion + 1}`}
+                      className="max-w-full h-auto rounded-lg border border-gray-200 shadow-sm"
+                      style={{ maxHeight: "400px" }}
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                        console.error("Failed to load question image");
+                      }}
+                    />
+                  </div>
+                )}
 
                 <div className="space-y-2">
                   {currentQuestionData.options.map((option, index) => {

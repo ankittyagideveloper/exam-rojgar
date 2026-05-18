@@ -5,7 +5,6 @@ import Header from "./Header";
 import BottomNavigation from "./BottomNavigation";
 import Footer from "./Footer";
 import SidebarDemo from "./SidebarDemo";
-import axios from "axios";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
 import { useClerk, useAuth } from "@clerk/clerk-react";
@@ -37,33 +36,6 @@ const Layout = () => {
       behavior: "smooth",
     });
   };
-  // const requestOptions = {
-  //   username: "ankit",
-  //   password: "testpass",
-  // };
-  // fetch("https://examrojgar-v1.onrender.com/api/auth/register", requestOptions)
-  //   .then((response) => response.json()) // Parse the JSON response
-  //   .then((data) => console.log(data)) // Handle the data
-  //   .catch((error) => console.error("Error:", error)); // Handle errors
-
-  // const data = {
-  //   username: "ankit1",
-  //   email: "tyagiankit2@gmail.com",
-  //   password: "testpass",
-  // };
-
-  // axios
-  //   .post("https://examrojgar-v1.onrender.com/api/auth/register", data, {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //   .then((response) => {
-  //     console.log("Success:", response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
 
   return (
     <>

@@ -233,14 +233,23 @@ export default function QuestionBankPage() {
                 {questions.map((q) => (
                   <tr key={q.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4">
-                      <div
-                        className="text-sm text-gray-900 line-clamp-2 max-w-xl"
-                        title={q.questionText}
-                      >
-                        {q.questionText || "(No text)"}
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        ID: {q.id}
+                      <div className="flex items-start gap-2">
+                        <div className="flex-1">
+                          <div
+                            className="text-sm text-gray-900 line-clamp-2 max-w-xl"
+                            title={q.questionText}
+                          >
+                            {q.questionText || "(No text)"}
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1">
+                            ID: {q.id}
+                          </div>
+                        </div>
+                        {q.hasImage && (
+                          <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-blue-700 bg-blue-100 rounded-full whitespace-nowrap">
+                            📷 Image
+                          </span>
+                        )}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">

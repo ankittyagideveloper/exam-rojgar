@@ -1,5 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTests } from "../hooks/useTests";
+import {
+  validateImageFile,
+  uploadQuestionImage,
+  deleteQuestionImage,
+  createImagePreview,
+} from "../../../utils/storageHelpers";
 
 export default function EditQuestionModal({
   question,
@@ -8,6 +14,8 @@ export default function EditQuestionModal({
   isSaving,
 }) {
   const { tests } = useTests();
+  const fileInputRef = useRef(null);
+
   const [formData, setFormData] = useState({
     questionText: "",
     questionTextHindi: "",
@@ -16,9 +24,17 @@ export default function EditQuestionModal({
     explanation: "",
     explanationHindi: "",
     testIds: [],
-    correctAnswerIndex: 0, // Assuming 0-indexed or similar. Check existing data model.
-    // If existing model uses option text as answer, adapt accordingly.
+    correctAnswerIndex: 0,
+    imageUrl: "",
+    imagePath: "",
+    hasImage: false,
   });
+
+  // Image-related state
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [imageError, setImageError] = useState(null);
 
   // Load question data
   useEffect(() => {
@@ -31,10 +47,66 @@ export default function EditQuestionModal({
         explanation: question.explanation || "",
         explanationHindi: question.explanationHindi || "",
         testIds: question.testIds || [],
-        correctAnswerIndex: question.correctAnswerIndex ?? 0, // Default if missing
+        correctAnswerIndex: question.correctAnswerIndex ?? 0,
+        imageUrl: question.imageUrl || "",
+        imagePath: question.imagePath || "",
+        hasImage: question.hasImage || false,
       });
+
+      // Reset image-related state
+      setImageFile(null);
+      setImagePreview(null);
+      setImageError(null);
     }
   }, [question]);
+
+  // Image handling functions
+  const handleImageSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate
+    const validation = validateImageFile(file);
+    if (!validation.valid) {
+      setImageError(validation.error);
+      return;
+    }
+
+    // Clear error and set file
+    setImageError(null);
+    setImageFile(file);
+
+    // Create preview
+    try {
+      const preview = await createImagePreview(file);
+      setImagePreview(preview);
+    } catch (error) {
+      setImageError("Failed to create image preview");
+      console.error(error);
+    }
+  };
+
+  const handleRemoveImage = () => {
+    setImageFile(null);
+    setImagePreview(null);
+    setImageError(null);
+
+    // Clear file input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+
+    // Mark for deletion if existing image
+    if (formData.imagePath) {
+      setFormData((prev) => ({
+        ...prev,
+        imageUrl: "",
+        imagePath: "",
+        hasImage: false,
+        _deleteImage: true, // Flag for deletion
+      }));
+    }
+  };
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -58,9 +130,51 @@ export default function EditQuestionModal({
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSave(question.id, formData);
+
+    let finalData = { ...formData };
+
+    // Handle image upload if new file selected
+    if (imageFile) {
+      setIsUploadingImage(true);
+      setImageError(null);
+
+      try {
+        const { imageUrl, imagePath } = await uploadQuestionImage(
+          imageFile,
+          question.id,
+        );
+
+        finalData = {
+          ...finalData,
+          imageUrl,
+          imagePath,
+          hasImage: true,
+        };
+
+        // Delete old image if exists
+        if (question.imagePath && question.imagePath !== imagePath) {
+          await deleteQuestionImage(question.imagePath);
+        }
+      } catch (error) {
+        setImageError(error.message);
+        setIsUploadingImage(false);
+        return; // Don't proceed with save if upload fails
+      }
+
+      setIsUploadingImage(false);
+    }
+
+    // Handle image deletion
+    if (finalData._deleteImage && question.imagePath) {
+      await deleteQuestionImage(question.imagePath);
+    }
+
+    // Remove internal flags
+    delete finalData._deleteImage;
+
+    onSave(question.id, finalData);
   };
 
   if (!question) return null;
@@ -194,6 +308,123 @@ export default function EditQuestionModal({
             </div>
           </div>
 
+          {/* Question Image */}
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Question Image (Optional)
+            </label>
+
+            {/* Hidden file input */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/jpeg,image/jpg,image/png,image/webp"
+              onChange={handleImageSelect}
+              className="hidden"
+            />
+
+            {/* Upload button or preview */}
+            {!imagePreview && !formData.imageUrl ? (
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={isUploadingImage}
+                className="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-md hover:border-blue-500 transition-colors text-gray-600 hover:text-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isUploadingImage ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        fill="none"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                    Uploading...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                    Click to Upload Image
+                  </span>
+                )}
+              </button>
+            ) : (
+              <div className="relative inline-block">
+                <img
+                  src={imagePreview || formData.imageUrl}
+                  alt="Question preview"
+                  className="max-w-full max-h-64 rounded-md border border-gray-300 shadow-sm"
+                />
+                <button
+                  type="button"
+                  onClick={handleRemoveImage}
+                  disabled={isUploadingImage}
+                  className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-full hover:bg-red-700 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  title="Remove image"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            )}
+
+            {/* Error message */}
+            {imageError && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {imageError}
+              </p>
+            )}
+
+            {/* Help text */}
+            <p className="text-xs text-gray-500">
+              Supported formats: JPG, PNG, WEBP (max 5MB)
+            </p>
+          </div>
+
           {/* Linked Tests */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -226,16 +457,20 @@ export default function EditQuestionModal({
               type="button"
               onClick={onClose}
               className="px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
-              disabled={isSaving}
+              disabled={isSaving || isUploadingImage}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50"
-              disabled={isSaving}
+              className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isSaving || isUploadingImage}
             >
-              {isSaving ? "Saving..." : "Save Changes"}
+              {isUploadingImage
+                ? "Uploading Image..."
+                : isSaving
+                  ? "Saving..."
+                  : "Save Changes"}
             </button>
           </div>
         </form>

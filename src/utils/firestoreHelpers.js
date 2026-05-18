@@ -130,6 +130,18 @@ export const getAllSubmissions = async ({ db, testId }) => {
   return snap.docs.map((d) => d.data());
 };
 
+export const getAllAttemptsByUserId = async ({ db, userId }) => {
+  if (!userId) return [];
+
+  const q = query(collection(db, "attempts"), where("userId", "==", userId));
+
+  const snap = await getDocs(q);
+  return snap.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+};
+
 export const isUserRegistered = async ({ db, testId, userId }) => {
   const ref = doc(db, "testRegistrations", testId, "users", userId);
   const snap = await getDoc(ref);
