@@ -65,6 +65,24 @@ export default function SidebarDemo({ children }) {
       role: ["user", "admin"],
     },
     {
+      label: "Courses",
+      href: "/learn",
+      icon: isActive("/learn") ? (
+        <IconBookFilled
+          className={`${
+            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconBook
+          className={`${
+            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ),
+      role: ["user", "admin"],
+    },
+    {
       label: t("testBtn"),
       href: "/online-test-series",
       icon: isActive("/online-test-series") ? (
@@ -114,24 +132,7 @@ export default function SidebarDemo({ children }) {
       ),
       role: ["user", "admin"],
     },
-    {
-      label: "Courses",
-      href: "/learn",
-      icon: isActive("/learn") ? (
-        <IconBookFilled
-          className={`${
-            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconBook
-          className={`${
-            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ),
-      role: ["user", "admin"],
-    },
+
     {
       label: t("adminPanel"),
       href: "/admin/tests",

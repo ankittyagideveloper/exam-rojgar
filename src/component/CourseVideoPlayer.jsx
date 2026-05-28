@@ -2,7 +2,7 @@ import React from "react";
 
 function CourseVideoPlayer({ youtubeId, title }) {
   return (
-    <div className="aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl">
+    <div className="aspect-video w-full overflow-hidden md: rounded-2xl bg-black shadow-2xl">
       <iframe
         width="100%"
         height="100%"

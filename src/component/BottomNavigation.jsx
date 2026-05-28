@@ -11,6 +11,7 @@ const BottomNavigation = () => {
 
   const navItems = [
     { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
+    { id: "courses", label: "Courses", icon: BookOpen, path: "/learn" },
     {
       id: "test",
       label: t("testBtn"),
@@ -24,7 +25,6 @@ const BottomNavigation = () => {
       path: "/quiz-category",
     },
     { id: "pdfs", label: t(["pdfBtn"]), icon: FileDown, path: "/pdf-category" },
-    { id: "courses", label: "Courses", icon: BookOpen, path: "/learn" },
     // {
     //   id: "purchase",
     //   label: "My Purchase",

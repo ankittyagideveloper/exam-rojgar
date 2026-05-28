@@ -101,7 +101,7 @@ function VideoPlayerPage() {
 
       <div className="min-h-screen bg-gray-100">
         {/* Navigation Bar */}
-        <div className="border-b border-gray-200 bg-white shadow-sm">
+        {/* <div className="border-b border-gray-200 bg-white shadow-sm">
           <div className="mx-auto max-w-7xl px-4 py-4 md:px-6 lg:px-8">
             <div className="flex items-center justify-between">
               <Link
@@ -117,10 +117,10 @@ function VideoPlayerPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Video Player Section */}
-        <div className="mx-auto max-w-7xl px-4 py-6 md:px-6 lg:px-8 md:py-8">
+        <div className="mx-auto max-w-7xl mb- py-6 md:px-6 lg:px-8 md:py-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_350px]">
             {/* Main Content */}
             <div>
@@ -134,11 +134,11 @@ function VideoPlayerPage() {
               <div className="mt-6">
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
+                    <h1 className="mx-2 **:text-2xl font-bold text-gray-900 md:text-3xl">
                       {currentVideo.episodeNumber} | {currentVideo.title}
                     </h1>
                     {currentVideo.duration && (
-                      <p className="mt-2 text-sm text-gray-600">
+                      <p className="mx-2 mt-2 text-sm text-gray-600">
                         Duration: {currentVideo.duration}
                       </p>
                     )}
@@ -153,7 +153,7 @@ function VideoPlayerPage() {
                   )}
                 </div>
 
-                <div className="rounded-2xl bg-white p-6 border border-gray-200 shadow-sm">
+                <div className="md:rounded-2xl bg-white p-2 md:p-6 border border-gray-200 shadow-sm">
                   <h2 className="mb-3 text-lg font-semibold text-gray-900">
                     About this video
                   </h2>
@@ -163,7 +163,7 @@ function VideoPlayerPage() {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
+                {/* <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
                   <button
                     onClick={handlePrevious}
                     disabled={!previousVideo}
@@ -180,7 +180,7 @@ function VideoPlayerPage() {
                   <button
                     onClick={handleNext}
                     disabled={!nextVideo}
-                    className={`flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold transition-all ${
+                    className={`flex items-center justify-center gap-2 md:rounded-xl px-6 py-3 font-semibold transition-all ${
                       nextVideo
                         ? "bg-[#2C7873] text-white hover:bg-[#245d59] shadow-sm"
                         : "bg-gray-100 text-gray-400 cursor-not-allowed"
@@ -189,7 +189,7 @@ function VideoPlayerPage() {
                     <span>Next Video</span>
                     <IconChevronRight className="h-5 w-5" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
 

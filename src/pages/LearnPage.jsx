@@ -16,7 +16,7 @@ function LearnPage() {
 
       <div className="min-h-screen bg-gray-100 px-4 py-6 md:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <section className="mb-8 rounded-3xl bg-white p-6 shadow-sm md:p-8">
+          {/* <section className="mb-8 rounded-3xl bg-white p-6 shadow-sm md:p-8">
             <div className="max-w-3xl">
               <span className="mb-3 inline-flex rounded-full bg-teal-50 px-3 py-1 text-sm font-medium text-teal-700">
                 Learn
@@ -30,9 +30,9 @@ function LearnPage() {
                 filters, categories, and API-powered course discovery.
               </p>
             </div>
-          </section>
+          </section> */}
 
-          <section className="mb-6">
+          {/* <section className="mb-6">
             <div className="flex flex-col gap-3 rounded-2xl border border-dashed border-gray-300 bg-white p-4 text-sm text-gray-500 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="font-medium text-gray-700">Future-ready layout</p>
@@ -45,7 +45,7 @@ function LearnPage() {
                 {courseMockData.length} Courses
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {courseMockData.map((course) => (
