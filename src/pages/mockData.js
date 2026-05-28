@@ -110,3 +110,39 @@ export const mockData = {
     },
   },
 };
+
+export const courseMockData = [
+  {
+    id: "course-rrb-ntpc-foundation",
+    title: "RRB NTPC Foundation Course",
+    description:
+      "Build strong fundamentals for RRB NTPC with concept-focused lessons, practice support, and structured preparation guidance.",
+    thumbnail: "/rrb-ntpc.webp",
+    thumbnailAlt: "RRB NTPC Foundation Course thumbnail",
+    category: "Railway Exams",
+    level: "Beginner",
+    slug: "rrb-ntpc-foundation",
+  },
+  // {
+  //   id: "course-rrc-group-d-complete",
+  //   title: "RRC Group D Complete Course",
+  //   description:
+  //     "Prepare for RRC Group D with topic-wise learning modules, revision support, and exam-oriented coverage.",
+  //   thumbnail: "/rrc-group-D.png",
+  //   thumbnailAlt: "RRC Group D Complete Course thumbnail",
+  //   category: "Railway Exams",
+  //   level: "Intermediate",
+  //   slug: "rrc-group-d-complete",
+  // },
+  // {
+  //   id: "course-general-science-masterclass",
+  //   title: "General Science Masterclass",
+  //   description:
+  //     "Strengthen your General Science preparation through concise lessons, visual explanations, and targeted exam practice.",
+  //   thumbnail: "/govt-exam.png",
+  //   thumbnailAlt: "General Science Masterclass thumbnail",
+  //   category: "Subject Course",
+  //   level: "All Levels",
+  //   slug: "general-science-masterclass",
+  // },
+];

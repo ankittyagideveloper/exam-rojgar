@@ -27,6 +27,7 @@ import QuestionBankPage from "./pages/admin/QuestionBankPage";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ErrorPage from "./pages/ErrorPage";
 import AllQuizResult from "./component/quiz/AllQuizResult";
+import LearnPage from "./pages/LearnPage";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <HomePage />,
+      },
+      {
+        path: "learn",
+        element: <LearnPage />,
       },
       {
         path: "online-test-series/*",

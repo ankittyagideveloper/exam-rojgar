@@ -17,6 +17,8 @@ import {
   IconSquareCheckFilled,
   IconUser,
   IconUserFilled,
+  IconBook,
+  IconBookFilled,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
@@ -107,6 +109,24 @@ export default function SidebarDemo({ children }) {
         <IconFileText
           className={`${
             isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ),
+      role: ["user", "admin"],
+    },
+    {
+      label: "Courses",
+      href: "/learn",
+      icon: isActive("/learn") ? (
+        <IconBookFilled
+          className={`${
+            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconBook
+          className={`${
+            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
