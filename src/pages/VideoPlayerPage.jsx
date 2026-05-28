@@ -24,13 +24,13 @@ function VideoPlayerPage() {
           <h1 className="text-4xl font-bold mb-4 text-gray-900">
             Course Not Found
           </h1>
-          <Link
+          {/* <Link
             to="/learn"
             className="inline-flex items-center gap-2 rounded-lg bg-[#2C7873] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
           >
             <IconArrowLeft className="h-5 w-5" />
             Back to Courses
-          </Link>
+          </Link> */}
         </div>
       </div>
     );

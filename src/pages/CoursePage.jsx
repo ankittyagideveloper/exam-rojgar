@@ -76,7 +76,7 @@ function CoursePage() {
 
       <div className="min-h-screen bg-gray-100">
         {/* Back Navigation */}
-        <div className="border-b border-gray-200 bg-white shadow-sm">
+        {/* <div className="border-b border-gray-200 bg-white shadow-sm">
           <div className="mx-auto max-w-7xl px-4 py-4 md:px-6 lg:px-8">
             <Link
               to="/learn"
@@ -86,7 +86,7 @@ function CoursePage() {
               <span>Back to Courses</span>
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* Course Header Section */}
         <div className="border-b border-gray-200 bg-white">
