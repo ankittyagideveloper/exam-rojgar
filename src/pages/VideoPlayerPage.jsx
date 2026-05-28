@@ -120,7 +120,7 @@ function VideoPlayerPage() {
         </div> */}
 
         {/* Video Player Section */}
-        <div className="mx-auto max-w-7xl mb- py-6 md:px-6 lg:px-8 md:py-8">
+        <div className="mx-auto max-w-7xl  md:px-6 lg:px-8 md:py-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_350px]">
             {/* Main Content */}
             <div>
@@ -195,7 +195,7 @@ function VideoPlayerPage() {
 
             {/* Sidebar - Course Content */}
             <div className="lg:sticky lg:top-6 lg:h-fit">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="md:rounded-2xl border border-gray-200 bg-white p-4 shadow-sm mb-8">
                 <h3 className="mb-4 text-lg font-semibold text-gray-900">
                   Course Content
                 </h3>
