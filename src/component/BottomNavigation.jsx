@@ -1,11 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  Home,
-  FileText,
-  HelpCircle,
-  FileDown,
-  ShoppingBag,
-} from "lucide-react";
+import React from "react";
+import { Home, FileText, HelpCircle, FileDown, BookOpen } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
@@ -14,20 +8,6 @@ const BottomNavigation = () => {
   const location = useLocation();
   const path = location.pathname;
   const { t } = useTranslation();
-  useEffect(() => {
-    const path = location.pathname;
-
-    if (path === "/") {
-      setActiveTab("home");
-    } else if (path.startsWith("/online-test-series")) {
-      setActiveTab("test");
-    } else if (path.startsWith("/quiz-category")) {
-      setActiveTab("quiz");
-    } else if (path.startsWith("/pdf-category")) {
-      setActiveTab("pdfs");
-    }
-  }, [path]);
-  const [activeTab, setActiveTab] = useState("home");
 
   const navItems = [
     { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
@@ -44,6 +24,7 @@ const BottomNavigation = () => {
       path: "/quiz-category",
     },
     { id: "pdfs", label: t(["pdfBtn"]), icon: FileDown, path: "/pdf-category" },
+    { id: "courses", label: "Courses", icon: BookOpen, path: "/learn" },
     // {
     //   id: "purchase",
     //   label: "My Purchase",
@@ -63,12 +44,8 @@ const BottomNavigation = () => {
             const Icon = item.icon;
 
             return (
-              <Link to={item.path}>
+              <Link to={item.path} key={item.id}>
                 <button
-                  key={item.id}
-                  onClick={() => {
-                    setActiveTab(item.id);
-                  }}
                   className={`cursor-pointer flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
                     isActive(item.path)
                       ? "text-[#0ad0f4] bg-teal-50"

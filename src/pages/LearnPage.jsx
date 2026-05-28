@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { courseMockData } from "./mockData";
 
 function LearnPage() {
@@ -48,38 +49,41 @@ function LearnPage() {
 
           <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {courseMockData.map((course) => (
-              <article
+              <Link
                 key={course.id}
-                className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+                to={`/learn/${course.slug}`}
+                className="group block"
               >
-                <div className="aspect-[16/9] w-full overflow-hidden bg-gray-200">
-                  <img
-                    src={course.thumbnail}
-                    alt={course.thumbnailAlt}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-
-                <div className="p-5">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-                      {course.category}
-                    </span>
-                    {course.level && (
-                      <span className="text-xs font-medium text-gray-500">
-                        {course.level}
-                      </span>
-                    )}
+                <article className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer">
+                  <div className="aspect-[16/9] w-full overflow-hidden bg-gray-200">
+                    <img
+                      src={course.thumbnail}
+                      alt={course.thumbnailAlt}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
 
-                  <h2 className="text-xl font-semibold text-gray-900">
-                    {course.title}
-                  </h2>
-                  <p className="mt-3 text-sm leading-6 text-gray-600">
-                    {course.description}
-                  </p>
-                </div>
-              </article>
+                  <div className="p-5">
+                    <div className="mb-3 flex items-center justify-between gap-3">
+                      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                        {course.category}
+                      </span>
+                      {course.level && (
+                        <span className="text-xs font-medium text-gray-500">
+                          {course.level}
+                        </span>
+                      )}
+                    </div>
+
+                    <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {course.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-6 text-gray-600">
+                      {course.description}
+                    </p>
+                  </div>
+                </article>
+              </Link>
             ))}
           </section>
         </div>

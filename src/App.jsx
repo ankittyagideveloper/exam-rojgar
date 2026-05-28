@@ -28,6 +28,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import ErrorPage from "./pages/ErrorPage";
 import AllQuizResult from "./component/quiz/AllQuizResult";
 import LearnPage from "./pages/LearnPage";
+import CoursePage from "./pages/CoursePage";
+import VideoPlayerPage from "./pages/VideoPlayerPage";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "learn",
         element: <LearnPage />,
+      },
+      {
+        path: "learn/:courseName",
+        element: <CoursePage />,
+      },
+      {
+        path: "learn/:courseName/:videoId",
+        element: <VideoPlayerPage />,
       },
       {
         path: "online-test-series/*",
