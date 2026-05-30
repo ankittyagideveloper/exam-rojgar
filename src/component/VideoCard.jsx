@@ -19,9 +19,9 @@ export function VideoCard({ title, embedUrl }) {
       >
         <iframe
           className="absolute top-0 left-0 w-full h-full border-0"
-          src={`${embedUrl}${embedUrl.includes("?") ? "&" : "?"}playsinline=1`}
+          src={embedUrl}
           title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; screen-orientation-lock"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
       </div>

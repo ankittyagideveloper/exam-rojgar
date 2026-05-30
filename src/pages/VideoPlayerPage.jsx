@@ -148,93 +148,10 @@ function VideoPlayerPage() {
         <div className="mx-auto max-w-7xl  md:px-6 lg:px-8 md:py-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_350px]">
             {/* Main Content */}
-            <div>
-              {/* Video Player */}
-              <CourseVideoPlayer
-                youtubeId={currentVideo.youtubeId}
-                title={currentVideo.title}
-              />
-
-              {/* Video Info */}
-              <div className="mt-6">
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <h1 className="mx-2 text-2xl font-bold text-gray-900 md:text-3xl">
-                      {currentVideo.episodeNumber} | {currentVideo.title}
-                    </h1>
-                    {currentVideo.duration && (
-                      <p className="mx-2 mt-2 text-sm text-gray-600">
-                        Duration: {currentVideo.duration}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Mark as Complete Button */}
-                  <button
-                    onClick={handleToggleComplete}
-                    className={`flex items-center gap-2 rounded-lg px-4 py-2 border transition-all ${
-                      isCompleted
-                        ? "bg-green-50 border-green-200 hover:bg-green-100"
-                        : "bg-white border-gray-300 hover:bg-gray-50"
-                    } ${showCompletionFeedback ? "scale-105" : ""}`}
-                  >
-                    {isCompleted ? (
-                      <>
-                        <IconCircleCheck className="h-5 w-5 text-green-600" />
-                        <span className="text-sm font-medium text-green-700">
-                          Completed
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <IconCircle className="h-5 w-5 text-gray-400" />
-                        <span className="text-sm font-medium text-gray-600">
-                          Mark Complete
-                        </span>
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                <div className="md:rounded-2xl bg-white p-2 md:p-6 border border-gray-200 shadow-sm">
-                  <h2 className="mb-3 text-lg font-semibold text-gray-900">
-                    About this video
-                  </h2>
-                  <p className="text-base leading-relaxed text-gray-700">
-                    {currentVideo.description}
-                  </p>
-                </div>
-
-                {/* Navigation Buttons */}
-                {/* <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
-                  <button
-                    onClick={handlePrevious}
-                    disabled={!previousVideo}
-                    className={`flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold transition-all ${
-                      previousVideo
-                        ? "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 shadow-sm"
-                        : "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    }`}
-                  >
-                    <IconChevronLeft className="h-5 w-5" />
-                    <span>Previous Video</span>
-                  </button>
-
-                  <button
-                    onClick={handleNext}
-                    disabled={!nextVideo}
-                    className={`flex items-center justify-center gap-2 md:rounded-xl px-6 py-3 font-semibold transition-all ${
-                      nextVideo
-                        ? "bg-[#2C7873] text-white hover:bg-[#245d59] shadow-sm"
-                        : "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    }`}
-                  >
-                    <span>Next Video</span>
-                    <IconChevronRight className="h-5 w-5" />
-                  </button>
-                </div> */}
-              </div>
-            </div>
+            <CourseVideoPlayer
+              youtubeId={currentVideo.youtubeId}
+              title={currentVideo.title}
+            />
 
             {/* Sidebar - Course Content */}
             <div className="lg:sticky lg:top-6 lg:h-fit">
