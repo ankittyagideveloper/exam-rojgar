@@ -150,10 +150,17 @@ function VideoPlayerPage() {
             {/* Main Content */}
             <div>
               {/* Video Player */}
-              <CourseVideoPlayer
-                youtubeId={currentVideo.youtubeId}
-                title={currentVideo.title}
-              />
+              <div
+                className="relative w-full"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                <div className="absolute inset-0">
+                  <CourseVideoPlayer
+                    youtubeId={currentVideo.youtubeId}
+                    title={currentVideo.title}
+                  />
+                </div>
+              </div>
 
               {/* Video Info */}
               <div className="mt-6">

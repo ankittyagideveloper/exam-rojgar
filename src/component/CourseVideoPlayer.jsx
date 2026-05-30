@@ -6,12 +6,19 @@ function CourseVideoPlayer({ youtubeId, title }) {
       <iframe
         width="100%"
         height="100%"
-        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
+        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&playsinline=1`}
         title={title}
         frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; screen-orientation-lock"
         allowFullScreen
         className="h-full w-full"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
       />
     </div>
   );
