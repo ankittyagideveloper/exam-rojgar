@@ -30,6 +30,7 @@ import AllQuizResult from "./component/quiz/AllQuizResult";
 import LearnPage from "./pages/LearnPage";
 import CoursePage from "./pages/CoursePage";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
+import SangamMockTestPage from "./pages/SangamMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -167,6 +168,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <AllQuizComponent />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/sangam",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <SangamMockTestPage />,
       },
     ],
   },

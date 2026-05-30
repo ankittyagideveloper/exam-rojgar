@@ -188,10 +188,8 @@ const TestPage = () => {
         {!isRoot &&
           current.tests &&
           current.tests.map((test) => (
-            // <button onClick={() => handleTest(test.id)} key={test.id}>
-            //   {test.title} ({test.difficulty})
-            // </button>
             <QuizCard
+              key={test.id}
               title={test.title}
               date="08 Aug 2025"
               questions={test.questions}
@@ -201,7 +199,13 @@ const TestPage = () => {
               userCount="45.8k"
               isFree={true}
               isNewInterface={true}
-              onStartClick={() => handleTest(test.id)}
+              onStartClick={() => {
+                if (test.isSpecialMock && test.route) {
+                  navigate(test.route);
+                } else {
+                  handleTest(test.id);
+                }
+              }}
             />
           ))}
       </div>
