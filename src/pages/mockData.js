@@ -138,7 +138,6 @@ export const courseMockData = [
               "Prepare for the RRB NTPC Foundation exam by learning about computer basics, including MS Word.",
             youtubeId: "EaTwYxmEcJs",
             duration: "14:35",
-            completed: false,
           },
           {
             id: "Lesson-02",
@@ -149,7 +148,6 @@ export const courseMockData = [
 
             youtubeId: "oZ8TPlLGXEY",
             duration: "11:46",
-            completed: false,
           },
           {
             id: "Lesson-03",
@@ -160,7 +158,6 @@ export const courseMockData = [
 
             youtubeId: "IwKuLAiifKw",
             duration: "12:10",
-            completed: false,
           },
           {
             id: "Lesson-04",
@@ -170,7 +167,6 @@ export const courseMockData = [
               "Develop logical reasoning skills and learn problem-solving techniques for the reasoning section.",
             youtubeId: "M-VXlMlmRik",
             duration: "13:47",
-            completed: false,
           },
           {
             id: "Lesson-05",
@@ -181,7 +177,6 @@ export const courseMockData = [
               "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
             youtubeId: "1iApXL8iuko",
             duration: "13:27",
-            completed: false,
           },
           {
             id: "Lesson-06",
@@ -192,7 +187,6 @@ export const courseMockData = [
 
             youtubeId: "jpdDV_ZImXs",
             duration: "22:18",
-            completed: false,
           },
           {
             id: "Lesson-07",
@@ -203,7 +197,6 @@ export const courseMockData = [
 
             youtubeId: "UAoRvp7iU9s",
             duration: "17:48",
-            completed: false,
           },
         ],
       },

@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { courseMockData } from "./mockData";
 import CourseVideoPlayer from "../component/CourseVideoPlayer";
+import { useVideoCompletion } from "../hooks/useVideoProgress";
+import { setLastWatchedVideo } from "../utils/videoProgressStorage";
 import {
   IconArrowLeft,
   IconChevronLeft,
   IconChevronRight,
   IconCircleCheck,
+  IconCircle,
 } from "@tabler/icons-react";
 
 function VideoPlayerPage() {
   const { courseName, videoId } = useParams();
   const navigate = useNavigate();
+  const [showCompletionFeedback, setShowCompletionFeedback] = useState(false);
 
   // Find course by slug
   const course = courseMockData.find((c) => c.slug === courseName);
+
+  // Get video completion state and toggle function
+  const { isCompleted, toggle } = useVideoCompletion(course?.id, videoId);
+
+  // Track last watched video when component mounts or videoId changes
+  useEffect(() => {
+    if (course?.id && videoId) {
+      setLastWatchedVideo(course.id, videoId);
+    }
+  }, [course?.id, videoId]);
 
   if (!course) {
     return (
@@ -90,6 +104,17 @@ function VideoPlayerPage() {
     }
   };
 
+  // Handle mark as complete toggle
+  const handleToggleComplete = () => {
+    toggle();
+
+    // Show feedback animation
+    setShowCompletionFeedback(true);
+    setTimeout(() => {
+      setShowCompletionFeedback(false);
+    }, 2000);
+  };
+
   return (
     <>
       <Helmet>
@@ -134,7 +159,7 @@ function VideoPlayerPage() {
               <div className="mt-6">
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h1 className="mx-2 **:text-2xl font-bold text-gray-900 md:text-3xl">
+                    <h1 className="mx-2 text-2xl font-bold text-gray-900 md:text-3xl">
                       {currentVideo.episodeNumber} | {currentVideo.title}
                     </h1>
                     {currentVideo.duration && (
@@ -143,14 +168,32 @@ function VideoPlayerPage() {
                       </p>
                     )}
                   </div>
-                  {currentVideo.completed && (
-                    <div className="flex items-center gap-2 rounded-lg bg-green-50 px-3 py-2 border border-green-200">
-                      <IconCircleCheck className="h-5 w-5 text-green-600" />
-                      <span className="text-sm font-medium text-green-700">
-                        Completed
-                      </span>
-                    </div>
-                  )}
+
+                  {/* Mark as Complete Button */}
+                  <button
+                    onClick={handleToggleComplete}
+                    className={`flex items-center gap-2 rounded-lg px-4 py-2 border transition-all ${
+                      isCompleted
+                        ? "bg-green-50 border-green-200 hover:bg-green-100"
+                        : "bg-white border-gray-300 hover:bg-gray-50"
+                    } ${showCompletionFeedback ? "scale-105" : ""}`}
+                  >
+                    {isCompleted ? (
+                      <>
+                        <IconCircleCheck className="h-5 w-5 text-green-600" />
+                        <span className="text-sm font-medium text-green-700">
+                          Completed
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <IconCircle className="h-5 w-5 text-gray-400" />
+                        <span className="text-sm font-medium text-gray-600">
+                          Mark Complete
+                        </span>
+                      </>
+                    )}
+                  </button>
                 </div>
 
                 <div className="md:rounded-2xl bg-white p-2 md:p-6 border border-gray-200 shadow-sm">
@@ -205,41 +248,66 @@ function VideoPlayerPage() {
                       <div className="mb-2 text-sm font-semibold text-gray-600">
                         {season.title}
                       </div>
-                      {season.videos.map((video) => (
-                        <Link
-                          key={video.id}
-                          to={`/learn/${courseName}/${video.id}`}
-                          className={`group mb-2 flex items-start gap-3 rounded-lg p-3 transition-colors ${
-                            video.id === videoId
-                              ? "bg-[#2C7873]/10 border border-[#2C7873]/30"
-                              : "hover:bg-gray-50"
-                          }`}
-                        >
-                          <div className="flex-shrink-0 pt-1">
-                            {video.completed ? (
-                              <IconCircleCheck className="h-5 w-5 text-green-600" />
-                            ) : (
-                              <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
-                            )}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p
-                              className={`text-sm font-medium ${
+                      {season.videos.map((video) => {
+                        // Use the hook to get real-time completion status
+                        const VideoItem = ({ video }) => {
+                          const { isCompleted: videoCompleted, toggle } =
+                            useVideoCompletion(course.id, video.id);
+
+                          const handleToggleCompletion = (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggle();
+                          };
+
+                          return (
+                            <div
+                              className={`group mb-2 flex items-start gap-3 rounded-lg p-3 transition-colors ${
                                 video.id === videoId
-                                  ? "text-[#2C7873]"
-                                  : "text-gray-700 group-hover:text-gray-900"
+                                  ? "bg-[#2C7873]/10 border border-[#2C7873]/30"
+                                  : "hover:bg-gray-50"
                               }`}
                             >
-                              {video.episodeNumber} | {video.title}
-                            </p>
-                            {video.duration && (
-                              <p className="mt-1 text-xs text-gray-500">
-                                {video.duration}
-                              </p>
-                            )}
-                          </div>
-                        </Link>
-                      ))}
+                              <button
+                                onClick={handleToggleCompletion}
+                                className="flex-shrink-0 pt-1 hover:scale-110 transition-transform"
+                                title={
+                                  videoCompleted
+                                    ? "Mark as incomplete"
+                                    : "Mark as complete"
+                                }
+                              >
+                                {videoCompleted ? (
+                                  <IconCircleCheck className="h-5 w-5 text-green-600" />
+                                ) : (
+                                  <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
+                                )}
+                              </button>
+                              <Link
+                                to={`/learn/${courseName}/${video.id}`}
+                                className="flex-1 min-w-0"
+                              >
+                                <p
+                                  className={`text-sm font-medium ${
+                                    video.id === videoId
+                                      ? "text-[#2C7873]"
+                                      : "text-gray-700 group-hover:text-gray-900"
+                                  }`}
+                                >
+                                  {video.episodeNumber} | {video.title}
+                                </p>
+                                {video.duration && (
+                                  <p className="mt-1 text-xs text-gray-500">
+                                    {video.duration}
+                                  </p>
+                                )}
+                              </Link>
+                            </div>
+                          );
+                        };
+
+                        return <VideoItem key={video.id} video={video} />;
+                      })}
                     </div>
                   ))}
                 </div>
