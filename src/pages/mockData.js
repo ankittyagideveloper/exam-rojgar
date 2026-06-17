@@ -147,54 +147,16 @@ export const courseMockData = [
           {
             id: "Lesson-01",
             episodeNumber: "Lesson-01",
-            title: "Computer|PYQ|MS Word",
+            title: "Computer for All Government Exams Lecture -1",
             description:
-              "Prepare for the RRB NTPC Foundation exam by learning about computer basics, including MS Word.",
-            youtubeId: "EaTwYxmEcJs",
-            duration: "14:35",
+              "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
+
+            youtubeId: "UAoRvp7iU9s",
+            duration: "17:48",
           },
           {
             id: "Lesson-02",
             episodeNumber: "Lesson-02",
-            title: "Computer|MS Office|MS Excel|",
-            description:
-              "Learn how to use MS Office effectively for your computer exams.",
-
-            youtubeId: "oZ8TPlLGXEY",
-            duration: "11:46",
-          },
-          {
-            id: "Lesson-03",
-            episodeNumber: "Lesson-03",
-            title: "Computer|MS Office||MS Powerpoint",
-            description:
-              "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
-
-            youtubeId: "IwKuLAiifKw",
-            duration: "12:10",
-          },
-          {
-            id: "Lesson-04",
-            episodeNumber: "Lesson-04",
-            title: "Reasoning Basics 🧠 & Logical Thinking",
-            description:
-              "Develop logical reasoning skills and learn problem-solving techniques for the reasoning section.",
-            youtubeId: "M-VXlMlmRik",
-            duration: "13:47",
-          },
-          {
-            id: "Lesson-05",
-            episodeNumber: "Lesson-05",
-            title:
-              "Computer|MS Office||MS WordComputer|Operating System|Lecture -3",
-            description:
-              "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
-            youtubeId: "1iApXL8iuko",
-            duration: "13:27",
-          },
-          {
-            id: "Lesson-06",
-            episodeNumber: "Lesson-06",
             title: "Computer for All Government Exams Lecture -2",
             description:
               "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
@@ -203,14 +165,52 @@ export const courseMockData = [
             duration: "22:18",
           },
           {
-            id: "Lesson-07",
-            episodeNumber: "Lesson-07",
-            title: "Computer for All Government Exams Lecture -1",
+            id: "Lesson-03",
+            episodeNumber: "Lesson-03",
+            title:
+              "Computer|MS Office||MS WordComputer|Operating System|Lecture -3",
+            description:
+              "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
+            youtubeId: "1iApXL8iuko",
+            duration: "13:27",
+          },
+          {
+            id: "Lesson-04",
+            episodeNumber: "Lesson-04",
+            title: "Computer|Operating System|Lecture -3|Railway|SSC",
+            description:
+              "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
+            youtubeId: "M-VXlMlmRik",
+            duration: "13:47",
+          },
+          {
+            id: "Lesson-05",
+            episodeNumber: "Lesson-05",
+            title: "Computer|MS Office||MS Powerpoint",
             description:
               "Learn how to use MS Excel and MS Powerpoint effectively for your computer exams.",
 
-            youtubeId: "UAoRvp7iU9s",
-            duration: "17:48",
+            youtubeId: "IwKuLAiifKw",
+            duration: "12:10",
+          },
+          {
+            id: "Lesson-06",
+            episodeNumber: "Lesson-06",
+            title: "Computer|MS Office|MS Excel|",
+            description:
+              "Learn how to use MS Office effectively for your computer exams.",
+
+            youtubeId: "oZ8TPlLGXEY",
+            duration: "11:46",
+          },
+          {
+            id: "Lesson-07",
+            episodeNumber: "Lesson-07",
+            title: "Computer|PYQ|MS Word",
+            description:
+              "Prepare for the RRB NTPC Foundation exam by learning about computer basics, including MS Word.",
+            youtubeId: "EaTwYxmEcJs",
+            duration: "14:35",
           },
         ],
       },
