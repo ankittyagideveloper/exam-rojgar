@@ -4,6 +4,7 @@ import {
   fetchQuestionsByTestId,
   fetchTestById,
   fetchTests,
+  getAllAttemptsByUserId,
 } from "../utils/firestoreHelpers";
 import { getFirestore } from "firebase/firestore";
 
@@ -54,5 +55,16 @@ export const useAttemptData = (attemptId) => {
     enabled: !!attemptId,
     staleTime: 0,
     refetchOnWindowFocus: false,
+  });
+};
+
+export const useUserAttempts = (userId) => {
+  return useQuery({
+    queryKey: ["userAttempts", userId],
+    queryFn: () => getAllAttemptsByUserId({ db, userId }),
+    enabled: !!userId,
+    staleTime: 5 * 60 * 1000,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 };
