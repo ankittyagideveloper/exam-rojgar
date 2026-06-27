@@ -31,6 +31,16 @@ import LearnPage from "./pages/LearnPage";
 import CoursePage from "./pages/CoursePage";
 import VideoPlayerPage from "./pages/VideoPlayerPage";
 import SangamMockTestPage from "./pages/SangamMockTestPage";
+import ProfitLossDiscountMockTestPage from "./pages/ProfitLossDiscountMockTestPage";
+import VijayanagarBahmaniMockTestPage from "./pages/VijayanagarBahmaniMockTestPage";
+import RevisionTest2MockTestPage from "./pages/RevisionTest2MockTestPage";
+import RevisionTest1MockTestPage from "./pages/RevisionTest1MockTestPage";
+import HarappaMockTestPage from "./pages/HarappaMockTestPage";
+import HCFLCMMockTestPage from "./pages/HCFLCMMockTestPage";
+import EnvironmentQuizMockTestPage from "./pages/EnvironmentQuizMockTestPage";
+import MahajanpadMockTestPage from "./pages/MahajanpadMockTestPage";
+import JainismMockTestPage from "./pages/JainismMockTestPage";
+import BuddhismMockTestPage from "./pages/BuddhismMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -178,6 +188,106 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <SangamMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/profit-loss-discount",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <ProfitLossDiscountMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/vijayanagar-bahmani",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <VijayanagarBahmaniMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/revision-test-1",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <RevisionTest1MockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/revision-test-2",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <RevisionTest2MockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/harappa",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <HarappaMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/hcf-lcm",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <HCFLCMMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/environment-quiz",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <EnvironmentQuizMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/mahajanpad",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <MahajanpadMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/buddhism",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <BuddhismMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/jainism",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <JainismMockTestPage />,
       },
     ],
   },

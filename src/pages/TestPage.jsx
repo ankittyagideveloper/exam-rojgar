@@ -65,9 +65,8 @@ const TestPage = () => {
   const handleTest = (id) => {
     navigate(`/all-test/${id}`);
   };
-  const { user } = useUser();
-  const isAdmin = user?.publicMetadata?.role === "admin";
-  return isAdmin ? (
+
+  return (
     <>
       <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 ">
         {/* {categories.map((test, index) => (
@@ -183,7 +182,7 @@ const TestPage = () => {
             </motion.div>
           ))}
       </div>
-      <div className="mx-4 flex flex-col gap-4">
+      <div className="mx-4 mb-28 flex flex-col gap-4">
         {/* Tests */}
         {!isRoot &&
           current.tests &&
@@ -210,8 +209,6 @@ const TestPage = () => {
           ))}
       </div>
     </>
-  ) : (
-    <div>Tests will be added soon...</div>
   );
 };
 
