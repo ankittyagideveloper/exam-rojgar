@@ -43,6 +43,7 @@ import JainismMockTestPage from "./pages/JainismMockTestPage";
 import BuddhismMockTestPage from "./pages/BuddhismMockTestPage";
 import AverageMockTestPage from "./pages/AverageMockTestPage";
 import PostMauryanEmpireMockTestPage from "./pages/PostMauryanEmpireMockTestPage";
+import MauryanEmpireMockTestPage from "./pages/MauryanEmpireMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -310,6 +311,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <PostMauryanEmpireMockTestPage />,
+      },
+    ],
+  },
+  {
+    path: "/mock-test/mauryan-empire",
+    element: <TestLayout />,
+    children: [
+      {
+        index: true,
+        element: <MauryanEmpireMockTestPage />,
       },
     ],
   },

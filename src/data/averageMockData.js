@@ -3,7 +3,7 @@ export const averageMockData = {
   subtitle:
     "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
   category: "Average - Quantitative Aptitude",
-  duration: 3, // minutes
+  duration: 10, // minutes
   questions: [
     {
       id: 1,
