@@ -1,16 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script>
-      // GitHub Pages SPA Redirect
-      const redirectTo =
-        window.location.pathname +
-        window.location.search +
-        window.location.hash;
-      window.location.replace("/?redirect=" + encodeURIComponent(redirectTo));
+    <meta charset="UTF-8" class="scroll-smooth" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>
+      Exam Rojgaar – RRB, SSC, Banking Mock Tests, PYQs & Live Classes
+    </title>
+    <meta
+      name="description"
+      content="Prepare for RRB NTPC, JE, SSC & Banking exams with free mock tests, previous year questions, live classes and detailed performance analysis. Join ExamRojgaar today."
+    />
+
+    <!-- Google Favicon (MOST IMPORTANT) -->
+    <link rel="icon" href="/exam-rojgar/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/exam-rojgar/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/exam-rojgar/apple-touch-icon.png" />
+
+    <!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ExamRojgaar" />
+    <meta
+      property="og:title"
+      content="Exam Rojgaar – RRB, SSC, Banking Mock Tests & Live Classes"
+    />
+    <meta
+      property="og:description"
+      content="Free mock tests, PYQs, live classes and rank analysis for RRB, SSC & Banking exams. Start preparing today."
+    />
+    <meta
+      property="og:image"
+      content="https://www.examrojgaar.com/android-chrome-512x512.png"
+    />
+    <meta property="og:url" content="https://www.examrojgaar.com" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Exam Rojgaar – RRB, SSC, Banking Exam Preparation"
+    />
+    <meta
+      name="twitter:description"
+      content="Free mock tests, PYQs & live classes for RRB NTPC, JE, SSC and Banking exams."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.examrojgaar.com/android-chrome-512x512.png"
+    />
+
+    <!-- Google Brand Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Exam Rojgaar",
+        "url": "https://www.examrojgaar.com",
+        "logo": "https://www.examrojgaar.com/favicon.ico",
+        "sameAs": [
+          "https://www.youtube.com/@examrojgaar",
+          "https://www.instagram.com/examrojgaar"
+        ]
+      }
     </script>
-  </head>
-  <body></body>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": ["Test Series", "Quiz", "PDF"],
+        "url": [
+          "https://www.examrojgaar.com/online-test-series",
+          "https://www.examrojgaar.com/quiz-category",
+          "https://www.examrojgaar.com/pdf-category"
+        ]
+      }
+    </script>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const redirect = params.get("redirect");
+        if (redirect) {
+          window.history.replaceState(null, "", decodeURIComponent(redirect));
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/exam-rojgar/assets/index-D4NQ8FY-.js"></script>
+    <link rel="stylesheet" crossorigin href="/exam-rojgar/assets/index-BiuOgvH1.css">
+  <link rel="manifest" href="/exam-rojgar/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/exam-rojgar/registerSW.js"></script></head>
+
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
