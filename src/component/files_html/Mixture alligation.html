@@ -468,235 +468,124 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "In what proportion must wheat at ₹6.20 per kg be mixed with wheat at ₹7.20 per kg so that the mixture be worth ₹6.50 per kg?",
+hin: "₹6.20 प्रति किग्रा वाले गेहूँ को ₹7.20 प्रति किग्रा वाले गेहूँ के साथ किस अनुपात में मिलाया जाए ताकि मिश्रण का मूल्य ₹6.50 प्रति किग्रा हो जाए?",
+optE: ["3:7","7:3","3:10","7:10"],
+optH: ["3:7","7:3","3:10","7:10"],
+ans: 1,
+solE: "By alligation:\nCheaper : Costlier = (7.20 - 6.50) : (6.50 - 6.20)\n= 0.70 : 0.30 = 7 : 3\nHence, required ratio = 7 : 3",
+solH: "एलिगेशन विधि से:\nसस्ता : महंगा = (7.20 - 6.50) : (6.50 - 6.20)\n= 0.70 : 0.30 = 7 : 3\nअतः आवश्यक अनुपात = 7 : 3"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "In a container, milk and water are present in the ratio 7 : 5. If 15 L water is added to this mixture, the ratio of milk and water becomes 7 : 8. Find the quantity of water in the new mixture.",
+hin: "एक पात्र में दूध और पानी का अनुपात 7 : 5 है। यदि इस मिश्रण में 15 लीटर पानी मिलाया जाए, तो दूध और पानी का अनुपात 7 : 8 हो जाता है। नए मिश्रण में पानी की मात्रा ज्ञात कीजिए।",
+optE: ["25 L","15 L","40 L","10 L"],
+optH: ["25 लीटर","15 लीटर","40 लीटर","10 लीटर"],
+ans: 2,
+solE: "Let milk = 7x and water = 5x.\nAfter adding 15 L water:\n7x : (5x + 15) = 7 : 8\n56x = 35x + 105\n21x = 105\nx = 5\nNew quantity of water = 5x + 15 = 40 L",
+solH: "मान लें दूध = 7x तथा पानी = 5x\n15 लीटर पानी मिलाने पर:\n7x : (5x + 15) = 7 : 8\n56x = 35x + 105\n21x = 105\nx = 5\nनई पानी की मात्रा = 5x + 15 = 40 लीटर"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "A container contains 40 L of milk. From this container, 4 L of milk was taken out and replaced by water. This process was further repeated two times. How much milk is now there in the container?",
+hin: "एक पात्र में 40 लीटर दूध है। इसमें से 4 लीटर दूध निकालकर पानी भर दिया गया। यही प्रक्रिया दो बार और दोहराई गई। अब पात्र में कितना दूध शेष है?",
+optE: ["29.16 L","32.4 L","3.6 L","3.24 L"],
+optH: ["29.16 लीटर","32.4 लीटर","3.6 लीटर","3.24 लीटर"],
+ans: 0,
+solE: "Milk left after n operations:\n= V(1 - x/V)^n\n= 40(1 - 4/40)^3\n= 40(9/10)^3\n= 40 × 729/1000\n= 29.16 L",
+solH: "n बार प्रक्रिया के बाद शेष दूध:\n= V(1 - x/V)^n\n= 40(1 - 4/40)^3\n= 40(9/10)^3\n= 40 × 729/1000\n= 29.16 लीटर"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "A container contains a mixture of two liquids A and B in the ratio 7 : 5. When 9 L of mixture is drawn off and the container is filled with B, the ratio of A and B becomes 7 : 9. How many litres of liquid A was contained by the container initially?",
+hin: "एक पात्र में A और B तरल का मिश्रण 7 : 5 के अनुपात में है। जब 9 लीटर मिश्रण निकालकर उतनी ही मात्रा में B भर दिया जाता है, तो A और B का अनुपात 7 : 9 हो जाता है। प्रारंभ में पात्र में A की मात्रा कितनी थी?",
+optE: ["63 L","72 L","21 L","112 L"],
+optH: ["63 लीटर","72 लीटर","21 लीटर","112 लीटर"],
+ans: 2,
+solE: "Let the initial quantities of A and B be 7x and 5x.\nTotal mixture = 12x\n\nWhen 9 L mixture is removed:\nA removed = (7/12) × 9 = 21/4 L\nB removed = (5/12) × 9 = 15/4 L\n\nRemaining A = 7x - 21/4\nRemaining B = 5x - 15/4\n\nNow 9 L of B is added:\nNew B = 5x - 15/4 + 9\n\nGiven ratio becomes 7 : 9\n(7x - 21/4) / (5x - 15/4 + 9) = 7/9\n\nSolving:\n9(28x - 21) = 7(20x + 21)\n252x - 189 = 140x + 147\n112x = 336\nx = 3\n\nInitial quantity of A = 7x = 21 L",
+solH: "मान लें प्रारंभ में A और B की मात्रा क्रमशः 7x और 5x है।\nकुल मिश्रण = 12x\n\nजब 9 लीटर मिश्रण निकाला गया:\nनिकाला गया A = (7/12) × 9 = 21/4 लीटर\nनिकाला गया B = (5/12) × 9 = 15/4 लीटर\n\nशेष A = 7x - 21/4\nशेष B = 5x - 15/4\n\nअब 9 लीटर B मिलाया गया:\nनया B = 5x - 15/4 + 9\n\nदिया है नया अनुपात 7 : 9 है\n(7x - 21/4) / (5x - 15/4 + 9) = 7/9\n\nहल करने पर:\n9(28x - 21) = 7(20x + 21)\n252x - 189 = 140x + 147\n112x = 336\nx = 3\n\nप्रारंभिक A की मात्रा = 7x = 21 लीटर"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "If 50 L of milk solution has 40% milk in it, then how much milk should be added to make it 60% in the solution?",
+hin: "यदि 50 लीटर घोल में 40% दूध है, तो उसे 60% दूध वाला बनाने के लिए कितना दूध मिलाना होगा?",
+optE: ["25 L","20 L","35 L","100 L"],
+optH: ["25 लीटर","20 लीटर","35 लीटर","100 लीटर"],
+ans: 0,
+solE: "Initial milk = 40% of 50 = 20 L\nLet x L milk be added.\nThen,\n(20 + x)/(50 + x) = 60/100\n100(20 + x) = 60(50 + x)\n2000 + 100x = 3000 + 60x\n40x = 1000\nx = 25 L",
+solH: "प्रारंभिक दूध = 50 का 40% = 20 लीटर\nमान लें x लीटर दूध मिलाया गया।\nतब,\n(20 + x)/(50 + x) = 60/100\n100(20 + x) = 60(50 + x)\n2000 + 100x = 3000 + 60x\n40x = 1000\nx = 25 लीटर"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "In what proportion must a grocer mix wheat at ₹2.04 per kg and ₹2.88 per kg so as to make a mixture worth ₹2.52 per kg?",
+hin: "एक दुकानदार ₹2.04 प्रति किग्रा और ₹2.88 प्रति किग्रा वाले गेहूँ को किस अनुपात में मिलाए ताकि मिश्रण का मूल्य ₹2.52 प्रति किग्रा हो जाए?",
+optE: ["2 : 3","3 : 2","5 : 3","3 : 4"],
+optH: ["2 : 3","3 : 2","5 : 3","3 : 4"],
+ans: 3,
+solE: "By alligation:\nCheaper : Costlier = (2.88 - 2.52) : (2.52 - 2.04)\n= 0.36 : 0.48\n= 3 : 4",
+solH: "एलिगेशन विधि से:\nसस्ता : महंगा = (2.88 - 2.52) : (2.52 - 2.04)\n= 0.36 : 0.48\n= 3 : 4"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "If the price of three types of rice are ₹480, ₹576 and ₹696 per quintal, then find the ratio in which these types of rice should be mixed so that the resultant mixture costs ₹564 per quintal.",
+hin: "यदि तीन प्रकार के चावल की कीमत क्रमशः ₹480, ₹576 और ₹696 प्रति क्विंटल है, तो इन्हें किस अनुपात में मिलाया जाए ताकि मिश्रण का मूल्य ₹564 प्रति क्विंटल हो जाए?",
+optE: ["22:11:9","28:14:7","14:7:21","11:77:7"],
+optH: ["22:11:9","28:14:7","14:7:21","11:77:7"],
+ans: 3,
+solE: "Using alligation:\nDifferences with mean price ₹564 are:\n564 - 480 = 84\n576 - 564 = 12\n696 - 564 = 132\nRequired ratio = 11 : 77 : 7",
+solH: "एलिगेशन विधि से:\n₹564 के साथ अंतर:\n564 - 480 = 84\n576 - 564 = 12\n696 - 564 = 132\nआवश्यक अनुपात = 11 : 77 : 7"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "In a mixture of 60 L, the ratio of acid and water is 2 : 1. If the ratio of acid and water is to be 1 : 2, then the amount of water to be added is:",
+hin: "60 लीटर मिश्रण में अम्ल और पानी का अनुपात 2 : 1 है। यदि अम्ल और पानी का अनुपात 1 : 2 करना हो, तो कितना पानी मिलाना होगा?",
+optE: ["55 L","60 L","50 L","45 L"],
+optH: ["55 लीटर","60 लीटर","50 लीटर","45 लीटर"],
+ans: 1,
+solE: "Acid = (2/3) × 60 = 40 L\nWater = (1/3) × 60 = 20 L\nLet x L water be added.\nThen,\n40 : (20 + x) = 1 : 2\n80 = 20 + x\nx = 60 L",
+solH: "अम्ल = (2/3) × 60 = 40 लीटर\nपानी = (1/3) × 60 = 20 लीटर\nमान लें x लीटर पानी मिलाया गया।\nतब,\n40 : (20 + x) = 1 : 2\n80 = 20 + x\nx = 60 लीटर"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "A mixture of a certain quantity of milk with 16 L of water is worth ₹0.75 per litre. If pure milk costs ₹2.25 per litre, then how much milk is there in the mixture?",
+hin: "16 लीटर पानी के साथ किसी मात्रा में दूध मिलाकर बना मिश्रण ₹0.75 प्रति लीटर का है। यदि शुद्ध दूध का मूल्य ₹2.25 प्रति लीटर है, तो मिश्रण में दूध की मात्रा कितनी है?",
+optE: ["32 L","4 L","16 L","8 L"],
+optH: ["32 लीटर","4 लीटर","16 लीटर","8 लीटर"],
+ans: 3,
+solE: "Let milk = x L\nTotal cost = 2.25x\nTotal mixture = x + 16\nGiven,\n2.25x/(x + 16) = 0.75\n2.25x = 0.75x + 12\n1.5x = 12\nx = 8 L",
+solH: "मान लें दूध = x लीटर\nकुल लागत = 2.25x\nकुल मिश्रण = x + 16\nदिया है,\n2.25x/(x + 16) = 0.75\n2.25x = 0.75x + 12\n1.5x = 12\nx = 8 लीटर"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
-},
-
-{
-id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
-},
-
-{
-id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
+eng: "Tea worth ₹126 per kg and ₹135 per kg are mixed with a third variety in the ratio 1 : 1 : 2. If the mixture is worth ₹153 per kg, then the price of the third variety per kg is:",
+hin: "₹126 प्रति किग्रा और ₹135 प्रति किग्रा वाली चाय को तीसरी किस्म की चाय के साथ 1 : 1 : 2 के अनुपात में मिलाया जाता है। यदि मिश्रण का मूल्य ₹153 प्रति किग्रा है, तो तीसरी किस्म की चाय का मूल्य प्रति किग्रा कितना होगा?",
+optE: ["₹153","₹175.5","₹351","₹162.5"],
+optH: ["₹153","₹175.5","₹351","₹162.5"],
 ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
-},
-
-{
-id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
-},
-
-{
-id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
-},
-
-{
-id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
-},
-
-{
-id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
-},
-
-{
-id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
-},
-
-{
-id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
-},
-
-{
-id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
-},
-
-{
-id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
-ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "Let the price of third variety = ₹x per kg\nAccording to weighted average:\n(126×1 + 135×1 + x×2)/4 = 153\n261 + 2x = 612\n2x = 351\nx = ₹175.5",
+solH: "मान लें तीसरी किस्म की चाय का मूल्य = ₹x प्रति किग्रा\nभारित औसत के अनुसार:\n(126×1 + 135×1 + x×2)/4 = 153\n261 + 2x = 612\n2x = 351\nx = ₹175.5"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 10 * 60; // 10 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;
@@ -1008,7 +897,6 @@ solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई
 
 		}, 500);
 }
-
         // Called from Telegram Gate
         function unlockResult() {
             setTimeout(() => {

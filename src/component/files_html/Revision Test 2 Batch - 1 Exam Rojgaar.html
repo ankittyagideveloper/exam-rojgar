@@ -1,0 +1,2120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="cinematic-bg w-full h-full overflow-y-auto text-white flex flex-col items-center py-10 px-4">
+        <div class="absolute top-4 left-4 text-xs font-semibold text-slate-400 tracking-wider">Trusted Resources</div>
+        
+        <div class="max-w-4xl w-full text-center mt-8 z-10 relative">
+            <h2 class="text-xl md:text-2xl text-brand-gold mb-2 font-head font-medium tracking-wide">Hi, Welcome to</h2>
+            <h1 class="text-4xl md:text-6xl font-head font-bold tracking-tight text-white drop-shadow-lg mb-2">
+                EXAM ROJGAAR MOCKS
+            </h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium mb-4">(कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.
+Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.)</p>
+            <p class="text-lg md:text-xl text-brand-accent font-semibold bg-brand-accent/10 inline-block px-4 py-1 rounded-full border border-brand-accent/30 mb-8">
+                Hard Challenge Sectional Mocks
+            </p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wide drop-shadow-md">
+                "Speed + Accuracy = Selection"
+            </h3>
+
+            <button onclick="startCountdown()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 animate-glow border border-blue-400 w-full md:w-auto">
+                I AM READY TO BEGIN
+            </button>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" class="block mt-6 text-slate-300 hover:text-brand-accent transition-colors underline decoration-brand-accent underline-offset-4 font-medium flex items-center justify-center gap-2 text-lg">
+                <i class="fab fa-telegram text-xl"></i> https://t.me/ExamRojgaar
+            </a>
+        </div>
+
+        <div class="max-w-5xl w-full mt-16 z-10 relative">
+            <div class="glass-card rounded-2xl p-8 border-t-4 border-t-brand-gold shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+                <h3 class="text-3xl font-head font-bold text-center mb-4 text-white">Elite Mentor Strategy</h3>
+                <blockquote class="text-center text-lg md:text-xl italic text-slate-300 mb-8 border-l-4 border-brand-accent pl-4 py-2 mx-auto max-w-3xl bg-slate-800/30 rounded-r">
+                    "If you are targeting all 25 questions, you are already making a mistake. Selection comes from solving the right <span class="text-brand-gold font-bold">20+ questions</span> — not all 25."
+                </blockquote>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-red text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch"></i></div>
+                        <h4 class="text-xl font-bold mb-2">3–5 Sec Rule</h4>
+                        <p class="text-slate-300 text-sm">Can you see a direct formula or clear steps?<br>Is it solvable in &lt;30 sec?<br><span class="text-brand-red font-bold mt-2 inline-block">If NO → SKIP immediately.</span></p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-gold text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-ban"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Skip in Round 1</h4>
+                        <ul class="text-slate-300 text-sm list-disc pl-4 space-y-1">
+                            <li>Lengthy calculations</li>
+                            <li>Tricky language</li>
+                            <li>DI-heavy questions</li>
+                            <li>Entirely new patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-green text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Target System</h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li>Total Qs: 25</li>
+                            <li>Time: <span class="text-brand-gold font-bold">13 Minutes</span></li>
+                            <li>Target Attempt: <span class="text-brand-gold font-bold">20+</span></li>
+                            <li>Target Accuracy: 100%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-6 mb-6">
+                    <h4 class="text-lg font-bold mb-3 flex items-center gap-2"><i class="fas fa-route text-brand-accent"></i> Round Strategy</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p><strong class="text-white">Round 1 (0–8 min):</strong> Hunt easy questions (Target 15–18)</p>
+                        <p><strong class="text-white">Round 2 (8–11 min):</strong> Attempt medium & marked questions</p>
+                        <p><strong class="text-white">Last 2 min:</strong> Smart guessing via elimination (No ego solving)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 border-t border-slate-700 pt-6">
+                    <p class="text-sm md:text-base text-slate-300 mb-2">Want to master this mindset? Join our Telegram group where top doubt solvers and expert mentors guide you daily.</p>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-6 rounded-full transition-colors">
+                        <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">80:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">All India Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Out of 5000 users</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 3* 60; // 10 minutes in seconds
+
+const rawData = [
+{
+id: 1,
+eng: "Sangeeta and Hemlata invest in a business in the ratio 1 : 3. If the total profit is ₹2568, then what is the difference between the profits of Sangeeta and Hemlata?",
+hin: "संगीता और हेमलता ने एक व्यवसाय में 1 : 3 के अनुपात में निवेश किया। यदि कुल लाभ ₹2568 है, तो दोनों के लाभ में कितना अंतर है?",
+optE: ["1384","1284","1184","1334"],
+optH: ["1384","1284","1184","1334"],
+ans: 1,
+solE: "Profit ratio = 1:3. Difference = 2 parts.\n1 part = 2568/4 = 642.\nDifference = 2 × 642 = ₹1284.",
+solH: "लाभ का अनुपात = 1:3। अंतर = 2 भाग।\n1 भाग = 2568/4 = 642।\nअंतर = 2 × 642 = ₹1284।"
+},
+
+{
+id: 2,
+eng: "Two numbers are in the ratio 7 : 5. If the first number is increased by 14 and the second number is decreased by 5, then the ratio becomes 4 : 2. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 7 : 5 के अनुपात में हैं। पहली संख्या में 14 जोड़ने और दूसरी संख्या में 5 घटाने पर अनुपात 4 : 2 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["96","106","111","115"],
+optH: ["96","106","111","115"],
+ans: 0,
+solE: "Let numbers be 7x and 5x.\n(7x+14)/(5x-5)=4/2=2\n7x+14=10x-10\n3x=24 ⇒ x=8.\nSum = 12x = 96.",
+solH: "संख्याएँ 7x और 5x मानें।\n(7x+14)/(5x-5)=4/2=2\n7x+14=10x-10\n3x=24 ⇒ x=8.\nयोग = 12x = 96।"
+},
+
+{
+id: 3,
+eng: "The average price of three items of furniture is ₹16845. If their prices are in the ratio 3 : 5 : 7, find the price of the cheapest item.",
+hin: "फर्नीचर की तीन वस्तुओं का औसत मूल्य ₹16845 है। यदि उनके मूल्य 3 : 5 : 7 के अनुपात में हैं, तो सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
+optE: ["7861","3369","5615","10107"],
+optH: ["7861","3369","5615","10107"],
+ans: 3,
+solE: "Total price = 16845 × 3 = 50535.\nRatio sum = 15.\n1 part = 50535/15 = 3369.\nCheapest = 3 × 3369 = ₹10107.",
+solH: "कुल मूल्य = 16845 × 3 = 50535।\nअनुपात का योग = 15।\n1 भाग = 50535/15 = 3369।\nसबसे सस्ती वस्तु = 3 × 3369 = ₹10107।"
+},
+
+{
+id: 4,
+eng: "Which of the following ratios is the smallest?",
+hin: "निम्नलिखित में से कौन-सा अनुपात सबसे छोटा है?",
+optE: ["17 : 39","23 : 48","10 : 36","15 : 33"],
+optH: ["17 : 39","23 : 48","10 : 36","15 : 33"],
+ans: 2,
+solE: "Compare values:\n17/39≈0.436,\n23/48≈0.479,\n10/36≈0.278,\n15/33≈0.455.\nSmallest = 10:36.",
+solH: "मानों की तुलना करें:\n17/39≈0.436,\n23/48≈0.479,\n10/36≈0.278,\n15/33≈0.455।\nसबसे छोटा अनुपात 10:36 है।"
+},
+
+{
+id: 5,
+eng: "Two numbers are in the ratio 2 : 4. If the first number is increased by 4 and the second number is decreased by 14, then the ratio becomes 8 : 5. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 2 : 4 के अनुपात में हैं। पहली संख्या में 4 जोड़ने और दूसरी संख्या में 14 घटाने पर अनुपात 8 : 5 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["41","24","38","36"],
+optH: ["41","24","38","36"],
+ans: 3,
+solE: "Numbers = 2x,4x.\n(2x+4)/(4x-14)=8/5\n10x+20=32x-112\n22x=132 ⇒ x=6.\nSum=6x=36.",
+solH: "संख्याएँ 2x और 4x हैं।\n(2x+4)/(4x-14)=8/5\n10x+20=32x-112\n22x=132 ⇒ x=6।\nयोग = 6x = 36।"
+},
+
+{
+id: 6,
+eng: "Two numbers are in the ratio 5 : 8. If the first number is increased by 13 and the second number is decreased by 6, then the ratio becomes 4 : 6. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 5 : 8 के अनुपात में हैं। पहली संख्या में 13 जोड़ने और दूसरी संख्या में 6 घटाने पर अनुपात 4 : 6 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["650","681","665","663"],
+optH: ["650","681","665","663"],
+ans: 3,
+solE: "Numbers=5x,8x.\n(5x+13)/(8x-6)=4/6=2/3\n15x+39=16x-12\nx=51.\nSum=13x=663.",
+solH: "संख्याएँ 5x और 8x हैं।\n(5x+13)/(8x-6)=2/3\n15x+39=16x-12\nx=51।\nयोग = 13x = 663।"
+},
+
+{
+id: 7,
+eng: "Three friends X, Y and Z started a business by investing money in the ratio 4 : 2 : 5. After 6 months, X withdraws half of his capital. If Z invested ₹23,000, then out of a total annual profit of ₹37,000, what is the difference between X's and Y's profit?",
+hin: "तीन मित्र X, Y और Z ने 4 : 2 : 5 के अनुपात में निवेश किया। 6 महीने बाद X अपनी पूंजी का आधा निकाल लेता है। यदि Z ने ₹23,000 निवेश किया हो, तो कुल वार्षिक लाभ ₹37,000 में से X और Y के लाभ का अंतर ज्ञात कीजिए।",
+optE: ["₹3700","₹5015","₹3065","₹4255"],
+optH: ["₹3700","₹5015","₹3065","₹4255"],
+ans: 0,
+solE: "Investment-time ratio:\nX=4×6+2×6=36\nY=2×12=24\nZ=5×12=60\nRatio=3:2:5.\nDifference share=(1/10)×37000=₹3700.",
+solH: "निवेश-समय अनुपात:\nX=4×6+2×6=36\nY=2×12=24\nZ=5×12=60\nअनुपात=3:2:5।\nअंतर=(1/10)×37000=₹3700।"
+},
+
+{
+id: 8,
+eng: "If 4 : 28 :: 4.1 : x and 4 : 32 :: 3 : y, then what is the ratio of x to y?",
+hin: "यदि 4 : 28 :: 4.1 : x तथा 4 : 32 :: 3 : y, तो x : y ज्ञात कीजिए।",
+optE: ["287 : 240","285 : 241","288 : 238","291 : 250"],
+optH: ["287 : 240","285 : 241","288 : 238","291 : 250"],
+ans: 0,
+solE: "x=(28×4.1)/4=28.7\ny=(32×3)/4=24\nx:y=28.7:24=287:240.",
+solH: "x=(28×4.1)/4=28.7\ny=(32×3)/4=24\nअतः x:y=28.7:24=287:240।"
+},
+
+{
+id: 9,
+eng: "The ratio of three numbers is 3 : 5 : 7. If the sum of the largest and smallest numbers is 60, what is the sum of all three numbers?",
+hin: "तीन संख्याओं का अनुपात 3 : 5 : 7 है। यदि सबसे बड़ी और सबसे छोटी संख्या का योग 60 है, तो तीनों संख्याओं का योग ज्ञात कीजिए।",
+optE: ["90","70","100","120"],
+optH: ["90","70","100","120"],
+ans: 0,
+solE: "3x+7x=60 ⇒ 10x=60 ⇒ x=6.\nSum=(3+5+7)x=15×6=90.",
+solH: "3x+7x=60 ⇒ 10x=60 ⇒ x=6।\nयोग=(3+5+7)x=15×6=90।"
+},
+
+{
+id: 10,
+eng: "₹7770 is divided among A, B, C and D such that A:B=2:3, B:C=4:5 and C:D=6:7. Find A's share.",
+hin: "₹7770 को A, B, C और D में इस प्रकार बाँटा गया कि A:B=2:3, B:C=4:5 तथा C:D=6:7। A का हिस्सा ज्ञात कीजिए।",
+optE: ["1224","1184","1154","1124"],
+optH: ["1224","1184","1154","1124"],
+ans: 1,
+solE: "Combining ratios:\nA:B:C:D=16:24:30:35.\nTotal parts=105.\nA=(16/105)×7770=₹1184.",
+solH: "अनुपात मिलाने पर:\nA:B:C:D=16:24:30:35।\nकुल भाग=105।\nA=(16/105)×7770=₹1184।"
+},
+{
+id: 11,
+eng: "A sum of money becomes four times in 20 years at simple interest. Find the rate of interest.",
+hin: "एक धनराशि साधारण ब्याज पर 20 वर्षों में 4 गुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["20%","25%","15%","30%"],
+optH: ["20%","25%","15%","30%"],
+ans: 2,
+solE: "Amount = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%",
+solH: "राशि = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%"
+},
+
+{
+id: 12,
+eng: "A sum at simple interest of 13% per annum amounts to ₹3080 in 4 years. Find the sum.",
+hin: "13% वार्षिक साधारण ब्याज पर 4 वर्षों में राशि ₹3080 हो जाती है। मूलधन ज्ञात कीजिए।",
+optE: ["1550","1680","1850","2000"],
+optH: ["1550","1680","1850","2000"],
+ans: 3,
+solE: "Amount = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000",
+solH: "राशि = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000"
+},
+
+{
+id: 13,
+eng: "In a certain time, a sum becomes 3 times at the rate of 5% per annum. At what rate of interest will the same sum become 6 times in the same duration?",
+hin: "एक निश्चित समय में 5% वार्षिक ब्याज पर कोई राशि 3 गुनी हो जाती है। उसी समय में वही राशि 6 गुनी होने के लिए ब्याज दर ज्ञात कीजिए।",
+optE: ["25%","20%","12.5%","10.5%"],
+optH: ["25%","20%","12.5%","10.5%"],
+ans: 2,
+solE: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 years\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%",
+solH: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 वर्ष\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%"
+},
+
+{
+id: 14,
+eng: "The sum which amounts to ₹364.80 in 8 years at 3.5% simple interest per annum is:",
+hin: "वह मूलधन ज्ञात कीजिए जो 3.5% वार्षिक साधारण ब्याज पर 8 वर्षों में ₹364.80 हो जाता है।",
+optE: ["285","280","275","270"],
+optH: ["285","280","275","270"],
+ans: 0,
+solE: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285",
+solH: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285"
+},
+
+{
+id: 15,
+eng: "Find the simple interest (in closest integral ₹) on ₹4000 at 5.25% per annum rate of interest for the period from 12 February 2024 to 13 April 2024.",
+hin: "₹4000 पर 5.25% वार्षिक साधारण ब्याज की दर से 12 फरवरी 2024 से 13 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["36","35","34","33"],
+optH: ["36","35","34","33"],
+ans: 1,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nClosest integer = ₹35",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nनिकटतम पूर्णांक = ₹35"
+},
+
+{
+id: 16,
+eng: "Find the simple interest (in closest integral ₹) on ₹3000 at 8% per annum rate of interest for the period from 22 February 2024 to 23 April 2024.",
+hin: "₹3000 पर 8% वार्षिक साधारण ब्याज की दर से 22 फरवरी 2024 से 23 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["40","39","41","38"],
+optH: ["40","39","41","38"],
+ans: 0,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (3000×8×61)/(100×366)\n= ₹40",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (3000×8×61)/(100×366)\n= ₹40"
+},
+
+{
+id: 17,
+eng: "At what rate (in percentage) per year will a sum of money double itself in 16 years on simple interest?",
+hin: "साधारण ब्याज पर कोई धनराशि 16 वर्षों में दोगुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["4.25","12.5","8.25","6.25"],
+optH: ["4.25","12.5","8.25","6.25"],
+ans: 3,
+solE: "Double amount ⇒ SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%",
+solH: "दोगुना होने पर SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%"
+},
+
+{
+id: 18,
+eng: "At what rate per annum will a sum of money become five times itself in 5 years under simple interest?",
+hin: "साधारण ब्याज पर कोई धनराशि 5 वर्षों में 5 गुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["82%","160%","80%","78%"],
+optH: ["82%","160%","80%","78%"],
+ans: 2,
+solE: "Amount = 5P ⇒ SI = 4P\n4P = (P×R×5)/100\nR = 80%",
+solH: "राशि = 5P ⇒ SI = 4P\n4P = (P×R×5)/100\nR = 80%"
+},
+
+{
+id: 19,
+eng: "In what duration (in years) will ₹6,000 fetch a simple interest of ₹1,080 at 6% per annum rate of interest?",
+hin: "₹6000 पर 6% वार्षिक साधारण ब्याज की दर से ₹1080 ब्याज प्राप्त करने में कितना समय लगेगा?",
+optE: ["6","4","3","2"],
+optH: ["6","4","3","2"],
+ans: 2,
+solE: "T = (SI×100)/(P×R)\n= (1080×100)/(6000×6)\n= 3 years",
+solH: "T = (SI×100)/(P×R)\n= (1080×100)/(6000×6)\n= 3 वर्ष"
+},
+
+{
+id: 20,
+eng: "In what duration (in years) will ₹8,400 fetch a simple interest of ₹840 at 4% per annum rate of interest?",
+hin: "₹8400 पर 4% वार्षिक साधारण ब्याज की दर से ₹840 ब्याज प्राप्त करने में कितना समय लगेगा?",
+optE: ["1.5","2.5","3.5","5"],
+optH: ["1.5","2.5","3.5","5"],
+ans: 1,
+solE: "T = (840×100)/(8400×4)\n= 2.5 years",
+solH: "T = (840×100)/(8400×4)\n= 2.5 वर्ष"
+},
+
+{
+id: 21,
+eng: "P sells an item to Q at 77% profit. Q sells the same item to R at 50% loss. If R paid ₹2655, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 77% लाभ पर बेचता है। Q उसी वस्तु को R को 50% हानि पर बेचता है। यदि R ने ₹2655 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["3000","3001","3002","3003"],
+optH: ["3000","3001","3002","3003"],
+ans: 0,
+solE: "0.5 × 1.77 × CP = 2655 ⇒ 0.885CP = 2655 ⇒ CP = 3000.",
+solH: "0.5 × 1.77 × CP = 2655 ⇒ 0.885CP = 2655 ⇒ CP = 3000।"
+},
+
+{
+id: 22,
+eng: "A shopkeeper purchased 32 dozens of articles at the rate of ₹102 per dozen. He sold each one at the rate of ₹68. What percentage profit did he make?",
+hin: "एक दुकानदार ने 32 दर्जन वस्तुएँ ₹102 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹68 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["697%","702%","700%","701%"],
+optH: ["697%","702%","700%","701%"],
+ans: 2,
+solE: "CP/article=102/12=8.5. SP=68. Profit%=59.5/8.5×100=700%.",
+solH: "प्रति वस्तु CP=102/12=8.5। SP=68। लाभ%=59.5/8.5×100=700%।"
+},
+
+{
+id: 23,
+eng: "Siddharth, Lata, and Vivek invest ₹1570, ₹1760, and ₹1620 respectively to start a business. If the profit at the end of the year is ₹1540, then what is Vivek's share in the profit?",
+hin: "सिद्धार्थ, लता और विवेक ने क्रमशः ₹1570, ₹1760 और ₹1620 का निवेश किया। यदि वर्ष के अंत में कुल लाभ ₹1540 है, तो विवेक का लाभांश कितना होगा?",
+optE: ["503","501","504","506"],
+optH: ["503","501","504","506"],
+ans: 2,
+solE: "Total investment = 4950. Vivek's share = 1540 × 1620/4950 = ₹504.",
+solH: "कुल निवेश = 4950। विवेक का लाभांश = 1540 × 1620/4950 = ₹504।"
+},
+
+{
+id: 24,
+eng: "P sells an item to Q at 40% profit. Q sells the same item to R at 50% loss. If R paid ₹6895, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 40% लाभ पर बेचता है। Q उसे R को 50% हानि पर बेचता है। यदि R ने ₹6895 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["9849","9852","9850","9848"],
+optH: ["9849","9852","9850","9848"],
+ans: 2,
+solE: "0.5 × 1.4 × CP = 6895 ⇒ 0.7CP = 6895 ⇒ CP = 9850.",
+solH: "0.5 × 1.4 × CP = 6895 ⇒ 0.7CP = 6895 ⇒ CP = 9850।"
+},
+
+{
+id: 25,
+eng: "A shopkeeper lists the price of a fan at 20% above its cost price and offers a 10% discount on its list price. If he earns a profit of ₹150, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 20% अधिक रखता है और उस पर 10% की छूट देता है। यदि उसे ₹150 का लाभ होता है, तो पंखे का अंकित मूल्य क्या है?",
+optE: ["2054","1969","2250","2172"],
+optH: ["2054","1969","2250","2172"],
+ans: 2,
+solE: "SP=90% of MP and SP=CP+150. Since MP=1.2CP, SP=1.08CP. Thus 0.08CP=150 ⇒ CP=1875 ⇒ MP=2250.",
+solH: "SP = MP का 90% तथा MP = 1.2CP। इसलिए SP = 1.08CP। 0.08CP = 150 ⇒ CP = 1875 ⇒ MP = 2250।"
+},
+
+{
+id: 26,
+eng: "A shopkeeper bought an article for ₹740. At what price should he sell it to make 20% profit?",
+hin: "एक दुकानदार ने एक वस्तु ₹740 में खरीदी। 20% लाभ कमाने के लिए उसे किस मूल्य पर बेचना चाहिए?",
+optE: ["876","900","592","888"],
+optH: ["876","900","592","888"],
+ans: 3,
+solE: "SP = 740 × 120/100 = ₹888.",
+solH: "SP = 740 × 120/100 = ₹888।"
+},
+
+{
+id: 27,
+eng: "A shopkeeper lists the price of a fan at 25% above its cost price and offers a 10% discount on its list price. If he earns a profit of ₹117, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 25% अधिक रखता है तथा 10% की छूट देता है। यदि उसे ₹117 का लाभ होता है, तो अंकित मूल्य क्या है?",
+optE: ["1308","1170","1346","896"],
+optH: ["1308","1170","1346","896"],
+ans: 1,
+solE: "SP=0.9×1.25CP=1.125CP. Profit=12.5%. Thus 0.125CP=117 ⇒ CP=936 ⇒ MP=1170.",
+solH: "SP=0.9×1.25CP=1.125CP। लाभ=12.5%। 0.125CP=117 ⇒ CP=936 ⇒ MP=1170।"
+},
+
+{
+id: 28,
+eng: "Pooja and Ritu invest in a business in the ratio 4 : 1. If total profit is ₹1480, then what is the difference between their profits?",
+hin: "पूजा और रितु ने 4 : 1 के अनुपात में निवेश किया। यदि कुल लाभ ₹1480 है, तो दोनों के लाभ में कितना अंतर होगा?",
+optE: ["788","988","888","938"],
+optH: ["788","988","888","938"],
+ans: 2,
+solE: "Difference ratio=3. One part=1480/5=296. Difference=3×296=888.",
+solH: "अंतर = 3 भाग। एक भाग = 1480/5 = 296। अंतर = 3×296 = 888।"
+},
+
+{
+id: 29,
+eng: "A shopkeeper sells an item for ₹770.7 after giving successive discounts of 58% and 80% on its marked price. Had he not given any discount, he would have earned a profit of 25%. What is the cost price of the item?",
+hin: "एक दुकानदार 58% और 80% की क्रमिक छूट देने के बाद वस्तु को ₹770.7 में बेचता है। यदि कोई छूट न देता तो उसे 25% लाभ होता। वस्तु का क्रय मूल्य ज्ञात कीजिए।",
+optE: ["7322","7353","7315","7340"],
+optH: ["7322","7353","7315","7340"],
+ans: 3,
+solE: "SP=8.4% of MP. MP=770.7/0.084=9175. Since MP=125% of CP, CP=9175/1.25=7340.",
+solH: "SP = MP का 8.4%। MP = 770.7/0.084 = 9175। MP = 125% CP, अतः CP = 9175/1.25 = 7340।"
+},
+
+{
+id: 30,
+eng: "A shopkeeper bought an article for ₹740. At what price should he sell it to make 30% profit?",
+hin: "एक दुकानदार ने एक वस्तु ₹740 में खरीदी। 30% लाभ कमाने के लिए उसे किस मूल्य पर बेचना चाहिए?",
+optE: ["950","962","518","974"],
+optH: ["950","962","518","974"],
+ans: 1,
+solE: "SP = 740 × 130/100 = ₹962.",
+solH: "SP = 740 × 130/100 = ₹962।"
+},
+
+{
+id: 31,
+eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
+hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
+optE: ["36","28","33","24"],
+optH: ["36","28","33","24"],
+ans: 0,
+solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
+solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+},
+
+{
+id: 32,
+eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
+hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
+optE: ["99","95","98","97"],
+optH: ["99","95","98","97"],
+ans: 0,
+solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
+solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+},
+
+{
+id: 33,
+eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
+hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
+optE: ["7861","3369","5615","10107"],
+optH: ["7861","3369","5615","10107"],
+ans: 3,
+solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
+solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+},
+
+{
+id: 34,
+eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
+hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
+optE: ["42","40","44","38"],
+optH: ["42","40","44","38"],
+ans: 1,
+solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
+solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+},
+
+{
+id: 35,
+eng: "Three bells ring at intervals of 8, 12 and 20 seconds respectively. If they start together, after how many seconds will they ring together again?",
+hin: "तीन घंटियाँ क्रमशः 8, 12 और 20 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ शुरू हों, तो कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["60","120","180","240"],
+optH: ["60","120","180","240"],
+ans: 1,
+solE: "LCM of 8, 12 and 20 = 120 seconds.\nTherefore, they will ring together again after 120 seconds.",
+solH: "8, 12 और 20 का LCM = 120 सेकंड\nअतः वे 120 सेकंड बाद फिर एक साथ बजेंगी।"
+},
+
+{
+id: 36,
+eng: "The HCF of three numbers is 23. If they are in the ratio 1 : 2 : 3, then find the numbers.",
+hin: "तीन संख्याओं का HCF 23 है। यदि उनका अनुपात 1 : 2 : 3 है, तो संख्याएँ ज्ञात कीजिए।",
+optE: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+optH: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+ans: 1,
+solE: "If HCF = 23 and ratio is 1 : 2 : 3, then numbers are:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nHence, the required numbers are 23, 46 and 69.",
+solH: "यदि HCF = 23 और अनुपात 1 : 2 : 3 है, तो संख्याएँ होंगी:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nअतः आवश्यक संख्याएँ 23, 46 और 69 हैं।"
+},
+
+{
+id: 37,
+eng: "The LCM of two numbers is 495 and their HCF is 5. If the sum of the numbers is 100, then find the difference of the numbers.",
+hin: "दो संख्याओं का LCM 495 और HCF 5 है। यदि दोनों संख्याओं का योग 100 है, तो उनका अंतर ज्ञात कीजिए।",
+optE: ["10","20","40","50"],
+optH: ["10","20","40","50"],
+ans: 0,
+solE: "Let the numbers be 5x and 5y.\nThen xy = LCM/HCF = 495/5 = 99\nPossible pair = 9 and 11\nNumbers = 45 and 55\nDifference = 55 - 45 = 10",
+solH: "मान लीजिए संख्याएँ 5x और 5y हैं।\nतब xy = LCM/HCF = 495/5 = 99\nसंभावित युग्म = 9 और 11\nसंख्याएँ = 45 और 55\nअंतर = 55 - 45 = 10"
+},
+
+
+{
+id: 38,
+eng: "The LCM of two numbers is 20 times their HCF and (LCM + HCF) = 2520. If one number is 480, what will be the triple of the other number?",
+hin: "दो संख्याओं का LCM उनके HCF का 20 गुना है और (LCM + HCF) = 2520 है। यदि एक संख्या 480 है, तो दूसरी संख्या का तीन गुना ज्ञात कीजिए।",
+optE: ["720","960","1440","1800"],
+optH: ["720","960","1440","1800"],
+ans: 3,
+solE: "Let HCF = h\nThen LCM = 20h\nGiven:\n20h + h = 2520\n21h = 2520\nh = 120\nTherefore, LCM = 20 × 120 = 2400\nNow,\nProduct of two numbers = HCF × LCM\n= 120 × 2400\n= 288000\nIf one number = 480,\nOther number = 288000 ÷ 480 = 600\nTriple of other number = 600 × 3 = 1800",
+solH: "मान लीजिए HCF = h\nतब LCM = 20h\nदिया है:\n20h + h = 2520\n21h = 2520\nh = 120\nअतः LCM = 20 × 120 = 2400\nअब,\nदोनों संख्याओं का गुणनफल = HCF × LCM\n= 120 × 2400\n= 288000\nयदि एक संख्या 480 है,\nदूसरी संख्या = 288000 ÷ 480 = 600\nदूसरी संख्या का तीन गुना = 600 × 3 = 1800"
+},
+{
+id: 39,
+eng: "The HCF and LCM of two natural numbers are 12 and 72 respectively. What is the difference between the two numbers if one number is 24?",
+hin: "दो प्राकृतिक संख्याओं का HCF 12 और LCM 72 है। यदि एक संख्या 24 है, तो दोनों संख्याओं का अंतर ज्ञात कीजिए।",
+optE: ["6","12","18","24"],
+optH: ["6","12","18","24"],
+ans: 1,
+solE: "Product of numbers = HCF × LCM = 12 × 72 = 864\nOther number = 864 ÷ 24 = 36\nDifference = 36 - 24 = 12",
+solH: "दोनों संख्याओं का गुणनफल = HCF × LCM = 12 × 72 = 864\nदूसरी संख्या = 864 ÷ 24 = 36\nअंतर = 36 - 24 = 12"
+},
+
+{
+id: 40,
+eng: "Monica, Veronica and Rachat begin to jog around a circular stadium. They complete one revolution in 42 s, 56 s and 63 s respectively. After how many seconds will they be together again at the starting point?",
+hin: "मोनिका, वेरोनिका और रचत एक गोल स्टेडियम में दौड़ना शुरू करते हैं। वे क्रमशः 42, 56 और 63 सेकंड में एक चक्कर पूरा करते हैं। वे कितने समय बाद फिर प्रारंभिक बिंदु पर साथ होंगे?",
+optE: ["504 s","1512 s","1008 s","756 s"],
+optH: ["504 सेकंड","1512 सेकंड","1008 सेकंड","756 सेकंड"],
+ans: 0,
+solE: "They will meet together again after the LCM of 42, 56 and 63.\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 seconds.",
+solH: "वे फिर साथ मिलेंगे जब 42, 56 और 63 का LCM आएगा।\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 सेकंड"
+},
+
+{
+id: 41,
+eng: "A sum of money triples itself in 8 years at compound interest. In how many years will it become 9 times itself?",
+hin: "कोई राशि चक्रवृद्धि ब्याज पर 8 वर्षों में 3 गुनी हो जाती है। वह 9 गुनी होने में कितने वर्ष लेगी?",
+optE: ["10 years","17 years","9 years","16 years"],
+optH: ["10 वर्ष","17 वर्ष","9 वर्ष","16 वर्ष"],
+ans: 3,
+solE: "9 = 3²\nIf amount triples in 8 years,\nTime for 9 times = 2 × 8 = 16 years.",
+solH: "9 = 3²\nयदि राशि 8 वर्षों में 3 गुनी होती है,\nतो 9 गुनी होने में 16 वर्ष लगेंगे।"
+},
+
+{
+id: 42,
+eng: "A sum of ₹2,500 is invested at 2% compound interest per annum. The amount becomes ₹2,601. Find the time period.",
+hin: "₹2,500 को 2% वार्षिक चक्रवृद्धि ब्याज पर निवेश किया गया। राशि ₹2,601 हो जाती है। समय ज्ञात कीजिए।",
+optE: ["2 years","1 year","2.5 years","1.5 years"],
+optH: ["2 वर्ष","1 वर्ष","2.5 वर्ष","1.5 वर्ष"],
+ans: 0,
+solE: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 years",
+solH: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 वर्ष"
+},
+
+{
+id: 43,
+eng: "A sum of ₹15,625 amounts to ₹24,389 in 3 years at compound interest compounded annually. Find the annual rate of interest.",
+hin: "₹15,625 की राशि 3 वर्षों में वार्षिक चक्रवृद्धि ब्याज पर ₹24,389 हो जाती है। वार्षिक ब्याज दर ज्ञात कीजिए।",
+optE: ["14%","16%","19%","15%"],
+optH: ["14%","16%","19%","15%"],
+ans: 1,
+solE: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%",
+solH: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%"
+},
+{
+id: 44,
+eng: "A sum of money becomes four times in 20 years at simple interest. Find the rate of interest.",
+hin: "एक धनराशि साधारण ब्याज पर 20 वर्षों में 4 गुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["20%","25%","15%","30%"],
+optH: ["20%","25%","15%","30%"],
+ans: 2,
+solE: "Amount = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%",
+solH: "राशि = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%"
+},
+
+{
+id: 45,
+eng: "A sum at simple interest of 13% per annum amounts to ₹3080 in 4 years. Find the sum.",
+hin: "13% वार्षिक साधारण ब्याज पर 4 वर्षों में राशि ₹3080 हो जाती है। मूलधन ज्ञात कीजिए।",
+optE: ["1550","1680","1850","2000"],
+optH: ["1550","1680","1850","2000"],
+ans: 3,
+solE: "Amount = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000",
+solH: "राशि = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000"
+},
+
+{
+id: 46,
+eng: "In a certain time, a sum becomes 3 times at the rate of 5% per annum. At what rate of interest will the same sum become 6 times in the same duration?",
+hin: "एक निश्चित समय में 5% वार्षिक ब्याज पर कोई राशि 3 गुनी हो जाती है। उसी समय में वही राशि 6 गुनी होने के लिए ब्याज दर ज्ञात कीजिए।",
+optE: ["25%","20%","12.5%","10.5%"],
+optH: ["25%","20%","12.5%","10.5%"],
+ans: 2,
+solE: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 years\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%",
+solH: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 वर्ष\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%"
+},
+
+{
+id: 47,
+eng: "The sum which amounts to ₹364.80 in 8 years at 3.5% simple interest per annum is:",
+hin: "वह मूलधन ज्ञात कीजिए जो 3.5% वार्षिक साधारण ब्याज पर 8 वर्षों में ₹364.80 हो जाता है।",
+optE: ["285","280","275","270"],
+optH: ["285","280","275","270"],
+ans: 0,
+solE: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285",
+solH: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285"
+},
+
+{
+id: 48,
+eng: "Find the simple interest (in closest integral ₹) on ₹4000 at 5.25% per annum rate of interest for the period from 12 February 2024 to 13 April 2024.",
+hin: "₹4000 पर 5.25% वार्षिक साधारण ब्याज की दर से 12 फरवरी 2024 से 13 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["36","35","34","33"],
+optH: ["36","35","34","33"],
+ans: 1,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nClosest integer = ₹35",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nनिकटतम पूर्णांक = ₹35"
+},
+
+{
+id: 49,
+eng: "Find the simple interest (in closest integral ₹) on ₹3000 at 8% per annum rate of interest for the period from 22 February 2024 to 23 April 2024.",
+hin: "₹3000 पर 8% वार्षिक साधारण ब्याज की दर से 22 फरवरी 2024 से 23 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["40","39","41","38"],
+optH: ["40","39","41","38"],
+ans: 0,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (3000×8×61)/(100×366)\n= ₹40",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (3000×8×61)/(100×366)\n= ₹40"
+},
+
+{
+id: 50,
+eng: "At what rate (in percentage) per year will a sum of money double itself in 16 years on simple interest?",
+hin: "साधारण ब्याज पर कोई धनराशि 16 वर्षों में दोगुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["4.25","12.5","8.25","6.25"],
+optH: ["4.25","12.5","8.25","6.25"],
+ans: 3,
+solE: "Double amount ⇒ SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%",
+solH: "दोगुना होने पर SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%"
+},
+
+{
+id: 51,
+eng: "If A's salary is 72% more than that of B, then how much percent is B's salary less than that of A (correct to 2 decimal places)?",
+hin: "यदि A का वेतन B से 72% अधिक है, तो B का वेतन A से कितने प्रतिशत कम है?",
+optE: ["44.19%","41.86%","45.3%","44.24%"],
+optH: ["44.19%","41.86%","45.3%","44.24%"],
+ans: 1,
+solE: "Let B=100. Then A=172. Difference=72. Required percentage = 72/172 ×100 = 41.86%.",
+solH: "मान लें B=100। तब A=172। अंतर=72। प्रतिशत कमी = 72/172 ×100 = 41.86%।"
+},
+{
+id: 52,
+eng: "A number when increased by 50%, gives 2880. The number is:",
+hin: "किसी संख्या में 50% वृद्धि करने पर वह 2880 हो जाती है। संख्या क्या है?",
+optE: ["3840","1920","5760","960"],
+optH: ["3840","1920","5760","960"],
+ans: 1,
+solE: "x = 2880 ×100/150 = 1920.",
+solH: "x = 2880 ×100/150 = 1920।"
+},
+{
+id: 53,
+eng: "If A's salary is 31% more than that of B, then how much percent is B's salary less than that of A (correct to 2 decimal places)?",
+hin: "यदि A का वेतन B से 31% अधिक है, तो B का वेतन A से कितने प्रतिशत कम है?",
+optE: ["23.66%","21.53%","27.46%","21.74%"],
+optH: ["23.66%","21.53%","27.46%","21.74%"],
+ans: 0,
+solE: "Let B=100. Then A=131. Difference=31. Required percentage = 31/131 ×100 = 23.66%.",
+solH: "मान लें B=100। तब A=131। अंतर=31। प्रतिशत कमी = 31/131 ×100 = 23.66%।"
+},
+{
+id: 54,
+eng: "20% of a number is more than 20% of 620 by 210. The number is:",
+hin: "किसी संख्या का 20%, 620 के 20% से 210 अधिक है। संख्या क्या है?",
+optE: ["1520","1720","1670","1770"],
+optH: ["1520","1720","1670","1770"],
+ans: 2,
+solE: "0.2x = 0.2×620 + 210 = 334. Hence x = 334/0.2 = 1670.",
+solH: "0.2x = 0.2×620 +210 =334। अतः x =334/0.2 =1670।"
+},
+{
+id: 55,
+eng: "Girish scored 572 marks in an examination and was 30 marks short of 28% of maximum marks. In the same examination, his friend scored 473 marks. What is the percentage of marks scored by his friend?",
+hin: "गिरीश ने परीक्षा में 572 अंक प्राप्त किए और वह अधिकतम अंकों के 28% से 30 अंक कम था। उसी परीक्षा में उसके मित्र ने 473 अंक प्राप्त किए। मित्र का प्रतिशत ज्ञात कीजिए।",
+optE: ["22%","23%","21%","24%"],
+optH: ["22%","23%","21%","24%"],
+ans: 0,
+solE: "28% of maximum = 572+30=602. Maximum marks = 602/0.28 = 2150. Friend's percentage = 473/2150×100 = 22%.",
+solH: "अधिकतम अंकों का 28% = 572+30 =602। अधिकतम अंक =602/0.28 =2150। मित्र का प्रतिशत =473/2150×100 =22%।"
+},
+{
+id: 56,
+eng: "A number when increased by 25% becomes equal to another number, which is 20% less than a third number. What is the ratio of the first number to the third number?",
+hin: "एक संख्या में 25% वृद्धि करने पर वह दूसरी संख्या के बराबर हो जाती है, जो तीसरी संख्या से 20% कम है। पहली और तीसरी संख्या का अनुपात क्या है?",
+optE: ["9:16","25:36","16:25","27:38"],
+optH: ["9:16","25:36","16:25","27:38"],
+ans: 2,
+solE: "Let first number=A. Then second=1.25A. Also second=80% of third. Third=1.25A/0.8=1.5625A. Ratio=A:Third=16:25.",
+solH: "मान लें पहली संख्या A है। दूसरी=1.25A। दूसरी, तीसरी का 80% है। अतः तीसरी=1.25A/0.8=1.5625A। अनुपात=16:25।"
+},
+{
+id: 57,
+eng: "The price of fuel decreases by 40%, 60% and 60% in three successive months, but increases by 70% in the fourth month. What is the percentage increase or decrease in the price of fuel in the fourth month as compared to its original price?",
+hin: "ईंधन का मूल्य लगातार तीन महीनों में क्रमशः 40%, 60% और 60% घटता है, लेकिन चौथे महीने में 70% बढ़ता है। मूल मूल्य की तुलना में कुल परिवर्तन क्या है?",
+optE: ["Increase by 87.04%","Decrease by 84.38%","Increase by 80.38%","Decrease by 83.68%"],
+optH: ["87.04% वृद्धि","84.38% कमी","80.38% वृद्धि","83.68% कमी"],
+ans: 3,
+solE: "Assume price=100. After changes: 100×0.6×0.4×0.4×1.7=16.32. Net decrease = 83.68%.",
+solH: "मूल्य=100 मानें। नया मूल्य =100×0.6×0.4×0.4×1.7=16.32। कुल कमी =83.68%।"
+},
+{
+id: 58,
+eng: "If 160% of 75% of A is equal to two times the value of 150% of B, then A is more/less than B by how much percentage?",
+hin: "यदि A का 75% का 160%, B के 150% के दोगुने के बराबर है, तो A, B से कितने प्रतिशत अधिक/कम है?",
+optE: ["150%, less","150%, more","60%, less","60%, more"],
+optH: ["150% कम","150% अधिक","60% कम","60% अधिक"],
+ans: 0,
+solE: "1.6×0.75A = 2×1.5B ⇒ 1.2A=3B ⇒ A=2.5B. Hence B is 150% less than A (option given).",
+solH: "1.6×0.75A =2×1.5B ⇒1.2A=3B ⇒A=2.5B। अतः A, B से 150% अधिक है। दिए गए विकल्प अनुसार उत्तर A।"
+},
+{
+id: 59,
+eng: "In an election between two candidates, 80% of the registered voters cast their vote and 10% of the votes polled were found invalid. Winning candidate got 89% of the valid votes and won the election by a margin of 351 votes. How many voters were registered?",
+hin: "दो उम्मीदवारों के बीच चुनाव में 80% मतदाताओं ने मतदान किया तथा 10% वोट अमान्य पाए गए। विजेता को वैध वोटों का 89% प्राप्त हुआ और वह 351 वोटों से जीता। कुल पंजीकृत मतदाता कितने थे?",
+optE: ["625","650","600","675"],
+optH: ["625","650","600","675"],
+ans: 0,
+solE: "Let registered voters=N. Valid votes=0.8×0.9N=0.72N. Margin=(89%-11%) of valid votes=78% of 0.72N=351. Hence N=625.",
+solH: "वैध वोट=0.8×0.9N=0.72N। जीत का अंतर=78%×0.72N=351। अतः N=625।"
+},
+{
+id: 60,
+eng: "In an election between two candidates, 84% of the registered voters cast their votes and 20% of the votes polled were found invalid. Winning candidate got 58% of the valid votes and won the election by a margin of 336 votes. How many voters were registered?",
+hin: "दो उम्मीदवारों के बीच चुनाव में 84% मतदाताओं ने मतदान किया तथा 20% वोट अमान्य पाए गए। विजेता को वैध वोटों का 58% मिला और वह 336 वोटों से जीता। कुल पंजीकृत मतदाता कितने थे?",
+optE: ["3125","3123","3120","3124"],
+optH: ["3125","3123","3120","3124"],
+ans: 0,
+solE: "Valid votes=0.84×0.8N=0.672N. Margin=(58%-42%)=16% of valid votes. 0.16×0.672N=336 ⇒ N=3125.",
+solH: "वैध वोट=0.84×0.8N=0.672N। अंतर=16%×0.672N=336। अतः N=3125।"
+},
+
+
+{
+id: 61,
+eng: "Who were the first to issue Gold Coins on a large scale?",
+hin: "सबसे पहले बड़े पैमाने पर स्वर्ण मुद्राएँ किसने जारी की थीं?",
+optE: ["Kushans","Indo Greeks","Shakas","Satavahanas"],
+optH: ["कुषाण","इंडो-ग्रीक","शक","सातवाहन"],
+ans: 0,
+solE: "The Kushans were the first rulers in India to issue gold coins on a large scale.",
+solH: "भारत में बड़े पैमाने पर स्वर्ण मुद्राएँ जारी करने वाले प्रथम शासक कुषाण थे।"
+},
+
+{
+id: 62,
+eng: "Sunga Dynasty was founded by whom?",
+hin: "शुंग वंश की स्थापना किसने की थी?",
+optE: ["Brihadratha","Devabhuti","Pushyamitra Sunga","Simuka"],
+optH: ["बृहद्रथ","देवभूति","पुष्यमित्र शुंग","सिमुक"],
+ans: 2,
+solE: "Pushyamitra Sunga founded the Sunga Dynasty after killing the last Mauryan ruler Brihadratha.",
+solH: "पुष्यमित्र शुंग ने अंतिम मौर्य शासक बृहद्रथ की हत्या करके शुंग वंश की स्थापना की थी।"
+},
+
+{
+id: 63,
+eng: "Who wrote Mahabhashya?",
+hin: "महाभाष्य किसने लिखा था?",
+optE: ["Kalidasa","Patanjali","Agnimitra","Vasumitra"],
+optH: ["कालिदास","पतंजलि","अग्निमित्र","वसुमित्र"],
+ans: 1,
+solE: "Mahabhashya was written by Patanjali. It is a famous commentary on Panini's grammar.",
+solH: "महाभाष्य की रचना पतंजलि ने की थी। यह पाणिनि के व्याकरण पर प्रसिद्ध टीका है।"
+},
+
+{
+id: 64,
+eng: "Who was the last ruler of the Sunga Dynasty?",
+hin: "शुंग वंश का अंतिम शासक कौन था?",
+optE: ["Brihadratha","Devabhuti","Pushyamitra Sunga","Simuka"],
+optH: ["बृहद्रथ","देवभूति","पुष्यमित्र शुंग","सिमुक"],
+ans: 1,
+solE: "Devabhuti was the last ruler of the Sunga Dynasty.",
+solH: "देवभूति शुंग वंश का अंतिम शासक था।"
+},
+
+{
+id: 65,
+eng: "Where was the capital of the Kanva Dynasty?",
+hin: "कण्व वंश की राजधानी कहाँ थी?",
+optE: ["Vidisha","Pratishthana","Pataliputra","Paithan"],
+optH: ["विदिशा","प्रतिष्ठान","पाटलिपुत्र","पैठान"],
+ans: 2,
+solE: "Pataliputra was the capital of the Kanva Dynasty.",
+solH: "कण्व वंश की राजधानी पाटलिपुत्र थी।"
+},
+
+{
+id: 66,
+eng: "Who was the founder of the Kanva Dynasty?",
+hin: "कण्व वंश का संस्थापक कौन था?",
+optE: ["Brihadratha","Devabhuti","Vasudeva","Simuka"],
+optH: ["बृहद्रथ","देवभूति","वासुदेव","सिमुक"],
+ans: 2,
+solE: "Vasudeva founded the Kanva Dynasty after overthrowing the Sungas.",
+solH: "वासुदेव ने शुंगों को हटाकर कण्व वंश की स्थापना की थी।"
+},
+
+{
+id: 67,
+eng: "Who was the founder of the Satavahana Dynasty?",
+hin: "सातवाहन वंश का संस्थापक कौन था?",
+optE: ["Gautamiputra Satakarni","Hala","Yajna Sri Satakarni","Simuka"],
+optH: ["गौतमीपुत्र शातकर्णि","हाल","यज्ञश्री शातकर्णि","सिमुक"],
+ans: 3,
+solE: "Simuka was the founder of the Satavahana Dynasty.",
+solH: "सिमुक सातवाहन वंश का संस्थापक था।"
+},
+
+{
+id: 68,
+eng: "What was the official language of the Satavahana Dynasty?",
+hin: "सातवाहन वंश की राजभाषा क्या थी?",
+optE: ["Magadhi","Pali","Prakrit","Sanskrit"],
+optH: ["मागधी","पाली","प्राकृत","संस्कृत"],
+ans: 2,
+solE: "Prakrit was the official language of the Satavahana Dynasty.",
+solH: "प्राकृत सातवाहन वंश की राजभाषा थी।"
+},
+
+{
+id: 69,
+eng: "Chedi Dynasty belonged to which region?",
+hin: "चेदि वंश किस क्षेत्र से संबंधित था?",
+optE: ["Taxila","Ujjain","Toshali","Kalinga"],
+optH: ["तक्षशिला","उज्जैन","तोशाली","कलिंग"],
+ans: 3,
+solE: "The Chedi Dynasty belonged to the Kalinga region.",
+solH: "चेदि वंश कलिंग क्षेत्र से संबंधित था।"
+},
+
+{
+id: 70,
+eng: "Niccolao Manucci, the Italian traveller, came to India during whose reign?",
+hin: "इतालवी यात्री निकोलाओ मनुच्ची भारत किसके शासनकाल में आया था?",
+optE: ["Aurangzeb","Shah Jahan","Jahangir","Akbar"],
+optH: ["औरंगज़ेब","शाहजहाँ","जहाँगीर","अकबर"],
+ans: 1,
+solE: "Niccolao Manucci arrived in India during the reign of Shah Jahan.",
+solH: "निकोलाओ मनुच्ची भारत शाहजहाँ के शासनकाल में आया था।"
+},
+
+{
+id: 71,
+eng: "Itimad-ud-Daulah's tomb was built by whom?",
+hin: "एतमाद-उद-दौला का मकबरा किसने बनवाया था?",
+optE: ["Jahangir","Shah Jahan","Nur Jahan","Akbar"],
+optH: ["जहाँगीर","शाहजहाँ","नूरजहाँ","अकबर"],
+ans: 2,
+solE: "Nur Jahan built the tomb of Itimad-ud-Daulah in memory of her father.",
+solH: "नूरजहाँ ने अपने पिता की स्मृति में एतमाद-उद-दौला का मकबरा बनवाया था।"
+},
+
+{
+id: 72,
+eng: "Moti Masjid at Lahore was built by whom?",
+hin: "लाहौर की मोती मस्जिद का निर्माण किसने कराया था?",
+optE: ["Shah Jahan","Aurangzeb","Jahangir","Akbar"],
+optH: ["शाहजहाँ","औरंगज़ेब","जहाँगीर","अकबर"],
+ans: 2,
+solE: "The Moti Masjid at Lahore is associated with Jahangir.",
+solH: "लाहौर की मोती मस्जिद का निर्माण जहाँगीर से संबंधित माना जाता है।"
+},
+
+{
+id: 73,
+eng: "Humayun's Tomb was built by whom?",
+hin: "हुमायूँ का मकबरा किसने बनवाया था?",
+optE: ["Gulbadan Begum","Haji Begum","Jahangir","Akbar"],
+optH: ["गुलबदन बेगम","हाजी बेगम","जहाँगीर","अकबर"],
+ans: 1,
+solE: "Humayun's Tomb was built by his widow Haji Begum.",
+solH: "हुमायूँ का मकबरा उनकी पत्नी हाजी बेगम ने बनवाया था।"
+},
+
+{
+id: 74,
+eng: "Daswant and Basawan were famous painters during whose reign?",
+hin: "दसवंत और बसावन किस शासक के शासनकाल के प्रसिद्ध चित्रकार थे?",
+optE: ["Humayun","Babur","Akbar","Aurangzeb"],
+optH: ["हुमायूँ","बाबर","अकबर","औरंगज़ेब"],
+ans: 2,
+solE: "Daswant and Basawan were famous painters in Akbar's court.",
+solH: "दसवंत और बसावन अकबर के दरबार के प्रसिद्ध चित्रकार थे।"
+},
+
+{
+id: 75,
+eng: "Junagarh Inscription is associated with which ruler?",
+hin: "जूनागढ़ अभिलेख किस शासक से संबंधित है?",
+optE: ["Kanishka","Rudradaman","Gautamiputra Satakarni","Menander"],
+optH: ["कनिष्क","रुद्रदामन","गौतमीपुत्र शातकर्णि","मिलिंद"],
+ans: 1,
+solE: "Junagarh Inscription is associated with Rudradaman and is written in Sanskrit.",
+solH: "जूनागढ़ अभिलेख रुद्रदामन से संबंधित है और यह संस्कृत में लिखा गया है।"
+},
+
+{
+id: 76,
+eng: "Which Greek ambassador visited the court of Chandragupta Maurya?",
+hin: "चंद्रगुप्त मौर्य के दरबार में कौन यूनानी राजदूत आया था?",
+optE: ["Megasthenes","Fa-Hien","Hiuen Tsang","Pliny"],
+optH: ["मेगस्थनीज","फाह्यान","ह्वेनसांग","प्लिनी"],
+ans: 0,
+solE: "Megasthenes was the Greek ambassador sent by Seleucus to Chandragupta Maurya's court.",
+solH: "मेगस्थनीज, सेल्युकस द्वारा चंद्रगुप्त मौर्य के दरबार में भेजा गया यूनानी राजदूत था।"
+},
+
+{
+id: 77,
+eng: "Which book was written by Megasthenes?",
+hin: "मेगस्थनीज ने कौन-सी पुस्तक लिखी थी?",
+optE: ["Arthashastra","Indica","Rajatarangini","Mudra Rakshasa"],
+optH: ["अर्थशास्त्र","इंडिका","राजतरंगिणी","मुद्राराक्षस"],
+ans: 1,
+solE: "Megasthenes wrote Indica, which gives details about Mauryan administration and society.",
+solH: "मेगस्थनीज ने इंडिका लिखी थी, जिसमें मौर्य प्रशासन और समाज का वर्णन है।"
+},
+
+{
+id: 78,
+eng: "Which Mauryan ruler embraced Buddhism after the Kalinga War?",
+hin: "कलिंग युद्ध के बाद किस मौर्य शासक ने बौद्ध धर्म अपनाया?",
+optE: ["Bindusara","Ashoka","Chandragupta Maurya","Dasaratha"],
+optH: ["बिंदुसार","अशोक","चंद्रगुप्त मौर्य","दशरथ"],
+ans: 1,
+solE: "Ashoka embraced Buddhism after witnessing the destruction caused by the Kalinga War.",
+solH: "कलिंग युद्ध की विनाशलीला देखने के बाद अशोक ने बौद्ध धर्म अपना लिया।"
+},
+
+{
+id: 79,
+eng: "What was the capital of the Mauryan Empire?",
+hin: "मौर्य साम्राज्य की राजधानी क्या थी?",
+optE: ["Taxila","Ujjain","Pataliputra","Toshali"],
+optH: ["तक्षशिला","उज्जैन","पाटलिपुत्र","तोषाली"],
+ans: 2,
+solE: "Pataliputra was the capital of the Mauryan Empire.",
+solH: "पाटलिपुत्र मौर्य साम्राज्य की राजधानी थी।"
+},
+
+{
+id: 80,
+eng: "What were the Dhammas of Ashoka?",
+hin: "अशोक के धम्म क्या थे?",
+optE: ["To preserve social order","To pay respect to Brahmins","To show mercy to slaves and obey parents","All of the above"],
+optH: ["सामाजिक व्यवस्था बनाए रखना","ब्राह्मणों का सम्मान करना","दासों पर दया करना और माता-पिता की आज्ञा मानना","उपरोक्त सभी"],
+ans: 3,
+solE: "Ashoka's Dhamma included maintaining social harmony, respecting Brahmins and elders, showing kindness to servants and slaves, and obeying parents. Therefore, all the given options are correct.",
+solH: "अशोक के धम्म में सामाजिक व्यवस्था बनाए रखना, ब्राह्मणों और बड़ों का सम्मान करना, दासों और सेवकों पर दया करना तथा माता-पिता की आज्ञा मानना शामिल था। इसलिए सभी विकल्प सही हैं।"
+},
+
+{
+id: 81,
+eng: "Nalanda University was founded during the reign of which ruler?",
+hin: "नालंदा विश्वविद्यालय की स्थापना किस शासक के शासनकाल में हुई थी?",
+optE: ["Kumaragupta I","Samudragupta","Skandagupta","Chandragupta I"],
+optH: ["कुमारगुप्त प्रथम","समुद्रगुप्त","स्कंदगुप्त","चंद्रगुप्त प्रथम"],
+ans: 0,
+solE: "Nalanda University was founded during the reign of Kumaragupta I.",
+solH: "नालंदा विश्वविद्यालय की स्थापना कुमारगुप्त प्रथम के शासनकाल में हुई थी।"
+},
+
+{
+id: 82,
+eng: "Which of the following dynasties ruled India for the longest period?",
+hin: "निम्नलिखित में से किस वंश ने भारत पर सबसे लंबे समय तक शासन किया?",
+optE: ["Khilji","Tughlaq","Slave","Lodhi"],
+optH: ["खिलजी","तुगलक","गुलाम","लोदी"],
+ans: 1,
+solE: "The Tughlaq dynasty ruled from 1320 to 1414 CE, longer than the Khilji, Slave and Lodhi dynasties.",
+solH: "तुगलक वंश ने 1320 से 1414 ई. तक शासन किया, जो खिलजी, गुलाम और लोदी वंश से अधिक था।"
+},
+
+{
+id: 83,
+eng: "Arrange the following dynasties in increasing order of their period of rule in India.",
+hin: "भारत में शासन अवधि के बढ़ते क्रम में निम्नलिखित वंशों को व्यवस्थित करें।",
+optE: [
+"Tughlaq, Lodhi, Sayyid, Slave",
+"Slave, Tughlaq, Lodhi, Sayyid",
+"Tughlaq, Slave, Lodhi, Sayyid",
+"Khilji, Sayyid, Lodhi, Slave"
+],
+optH: [
+"तुगलक, लोदी, सैय्यद, गुलाम",
+"गुलाम, तुगलक, लोदी, सैय्यद",
+"तुगलक, गुलाम, लोदी, सैय्यद",
+"खिलजी, सैय्यद, लोदी, गुलाम"
+],
+ans: 3,
+solE: "Khilji (30 years), Sayyid (37 years), Lodhi (75 years) and Slave (84 years) is the correct increasing order.",
+solH: "खिलजी (30 वर्ष), सैय्यद (37 वर्ष), लोदी (75 वर्ष) और गुलाम (84 वर्ष) शासन अवधि का सही बढ़ता क्रम है।"
+},
+
+{
+id: 84,
+eng: "Who built Adhai Din Ka Jhopra?",
+hin: "अढ़ाई दिन का झोपड़ा किसने बनवाया था?",
+optE: ["Qutb-ud-din Aibak","Alauddin Khilji","Iltutmish","Muhammad Ghori"],
+optH: ["कुतुबुद्दीन ऐबक","अलाउद्दीन खिलजी","इल्तुतमिश","मुहम्मद गौरी"],
+ans: 0,
+solE: "Adhai Din Ka Jhopra at Ajmer was built by Qutb-ud-din Aibak in 1199 CE.",
+solH: "अजमेर स्थित अढ़ाई दिन का झोपड़ा 1199 ई. में कुतुबुद्दीन ऐबक द्वारा बनवाया गया था।"
+},
+
+{
+id: 85,
+eng: "Who introduced the Iqta system in India?",
+hin: "भारत में इक्ता प्रणाली किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Alauddin Khilji"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","अलाउद्दीन खिलजी"],
+ans: 1,
+solE: "Iltutmish organized and expanded the Iqta system in the Delhi Sultanate.",
+solH: "इल्तुतमिश ने दिल्ली सल्तनत में इक्ता व्यवस्था को संगठित और विकसित किया।"
+},
+
+{
+id: 86,
+eng: "Who introduced the practice of Sijda and Paibos?",
+hin: "सिजदा और पैबोस की प्रथा किसने शुरू की?",
+optE: ["Iltutmish","Balban","Alauddin Khilji","Muhammad bin Tughlaq"],
+optH: ["इल्तुतमिश","बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक"],
+ans: 1,
+solE: "Balban introduced Sijda and Paibos to enhance the dignity of the Sultan.",
+solH: "बलबन ने सुल्तान की प्रतिष्ठा बढ़ाने के लिए सिजदा और पैबोस की प्रथा शुरू की।"
+},
+
+{
+id: 87,
+eng: "Who introduced four ordinances to curb the power of nobles?",
+hin: "अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश किसने जारी किए?",
+optE: ["Balban","Alauddin Khilji","Muhammad bin Tughlaq","Firoz Shah Tughlaq"],
+optH: ["बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक","फिरोज शाह तुगलक"],
+ans: 1,
+solE: "Alauddin Khilji introduced four ordinances to check the influence of nobles.",
+solH: "अलाउद्दीन खिलजी ने अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश जारी किए।"
+},
+
+{
+id: 88,
+eng: "Who introduced the Chalisa (Turkan-i-Chahalgani) system?",
+hin: "चालीसा (तुर्कान-ए-चहलगानी) व्यवस्था किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Razia Sultan"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","रज़िया सुल्तान"],
+ans: 1,
+solE: "Iltutmish formed a group of forty powerful Turkish nobles called Chalisa.",
+solH: "इल्तुतमिश ने चालीसा नामक 40 शक्तिशाली तुर्क अमीरों का समूह बनाया।"
+},
+
+{
+id: 89,
+eng: "Who abolished the Chalisa system?",
+hin: "चालीसा व्यवस्था को किसने समाप्त किया?",
+optE: ["Balban","Alauddin Khilji","Iltutmish","Razia Sultan"],
+optH: ["बलबन","अलाउद्दीन खिलजी","इल्तुतमिश","रज़िया सुल्तान"],
+ans: 0,
+solE: "Balban crushed the power of Chalisa and effectively abolished it.",
+solH: "बलबन ने चालीसा की शक्ति को समाप्त कर दिया और इसे प्रभावी रूप से खत्म कर दिया।"
+},
+
+{
+id: 90,
+eng: "Which of the following was the eastern port during the Gupta Empire?",
+hin: "गुप्त साम्राज्य के दौरान निम्नलिखित में से कौन पूर्वी बंदरगाह था?",
+optE: ["Tamralipti","Chaul","Kalyan","Bharuch"],
+optH: ["ताम्रलिप्ति","चौल","कल्याण","भड़ौच"],
+ans: 0,
+solE: "Tamralipti was the famous eastern port during the Gupta Empire.",
+solH: "ताम्रलिप्ति गुप्त साम्राज्य का प्रसिद्ध पूर्वी बंदरगाह था।"
+},
+{
+id: 91,
+eng: "What was the capital of Magadha during the early Haryanka period?",
+hin: "प्रारंभिक हर्यंक काल में मगध की राजधानी क्या थी?",
+optE: ["Rajagriha","Pataliputra","Champa","Vaishali"],
+optH: ["राजगृह","पाटलिपुत्र","चंपा","वैशाली"],
+ans: 0,
+solE: "Rajagriha, also known as Rajgir, was the early capital of Magadha before it was shifted to Pataliputra.",
+solH: "राजगृह, जिसे वर्तमान में राजगीर कहा जाता है, पाटलिपुत्र से पहले मगध की राजधानी थी।"
+},
+
+{
+id: 92,
+eng: "Which Mahajanapada was located in present-day Avadh region?",
+hin: "वर्तमान अवध क्षेत्र में कौन-सा महाजनपद स्थित था?",
+optE: ["Kosala","Anga","Matsya","Kamboja"],
+optH: ["कोसल","अंग","मत्स्य","कम्बोज"],
+ans: 0,
+solE: "Kosala was located in the region of present-day eastern Uttar Pradesh, especially around the Avadh area.",
+solH: "कोसल महाजनपद वर्तमान पूर्वी उत्तर प्रदेश और अवध क्षेत्र में स्थित था।"
+},
+
+{
+id: 93,
+eng: "Who was the ruler of Kosala during the time of Buddha?",
+hin: "बुद्ध के समय कोसल का शासक कौन था?",
+optE: ["Prasenajit","Ajatashatru","Bimbisara","Udayin"],
+optH: ["प्रसेनजित","अजातशत्रु","बिम्बिसार","उदायिन"],
+ans: 0,
+solE: "Prasenajit was the ruler of Kosala during the lifetime of Gautama Buddha. He maintained relations with Magadha.",
+solH: "गौतम बुद्ध के समय प्रसेनजित कोसल का शासक था। उसके मगध से संबंध थे।"
+},
+
+{
+id: 94,
+eng: "Which Mahajanapada was famous for trade and commerce?",
+hin: "कौन-सा महाजनपद व्यापार और वाणिज्य के लिए प्रसिद्ध था?",
+optE: ["Anga","Malla","Chedi","Vatsa"],
+optH: ["अंग","मल्ल","चेदि","वत्स"],
+ans: 0,
+solE: "Anga, with its capital Champa, was famous for trade and commercial activities because of its river connections.",
+solH: "अंग अपनी राजधानी चंपा के कारण व्यापार और वाणिज्य के लिए प्रसिद्ध था, क्योंकि यह नदी मार्गों से जुड़ा हुआ था।"
+},
+
+{
+id: 95,
+eng: "Who founded the Nanda dynasty?",
+hin: "नंद वंश की स्थापना किसने की थी?",
+optE: ["Dhanananda","Mahapadma Nanda","Shishunaga","Kalashoka"],
+optH: ["धनानंद","महापद्म नंद","शिशुनाग","कालाशोक"],
+ans: 1,
+solE: "Mahapadma Nanda founded the Nanda dynasty after overthrowing the Shishunaga rulers. He greatly expanded the Magadhan empire.",
+solH: "महापद्म नंद ने शिशुनाग वंश को हटाकर नंद वंश की स्थापना की। उसने मगध साम्राज्य का अत्यधिक विस्तार किया।"
+},
+
+{
+id: 96,
+eng: "Which Mahajanapada was located in present-day Punjab region?",
+hin: "वर्तमान पंजाब क्षेत्र में कौन-सा महाजनपद स्थित था?",
+optE: ["Kamboja","Gandhara","Malla","Kashi"],
+optH: ["कम्बोज","गांधार","मल्ल","काशी"],
+ans: 1,
+solE: "Gandhara was located in the north-west region including parts of present-day Pakistan and Afghanistan.",
+solH: "गांधार उत्तर-पश्चिम क्षेत्र में स्थित था, जिसमें वर्तमान पाकिस्तान और अफगानिस्तान के भाग शामिल थे।"
+},
+
+{
+id: 97,
+eng: "Which ruler is associated with the Second Buddhist Council?",
+hin: "द्वितीय बौद्ध संगीति किस शासक से संबंधित है?",
+optE: ["Kalashoka","Bimbisara","Ajatashatru","Ashoka"],
+optH: ["कालाशोक","बिम्बिसार","अजातशत्रु","अशोक"],
+ans: 0,
+solE: "The Second Buddhist Council was held during the reign of Kalashoka of the Shishunaga dynasty.",
+solH: "द्वितीय बौद्ध संगीति शिशुनाग वंश के कालाशोक के शासनकाल में आयोजित हुई थी।"
+},
+
+{
+id: 98,
+eng: "Which among the following was a republican Mahajanapada?",
+hin: "निम्नलिखित में से कौन-सा एक गणराज्य महाजनपद था?",
+optE: ["Vajji","Magadha","Kosala","Avanti"],
+optH: ["वज्जि","मगध","कोसल","अवंति"],
+ans: 0,
+solE: "Vajji was a republican confederacy where decisions were taken collectively rather than by a single monarch.",
+solH: "वज्जि एक गणराज्य संघ था, जहाँ निर्णय किसी एक राजा के बजाय सामूहिक रूप से लिए जाते थे।"
+},
+
+{
+id: 99,
+eng: "Which Mahajanapada had Ujjaini as its capital?",
+hin: "उज्जयिनी किस महाजनपद की राजधानी थी?",
+optE: ["Avanti","Matsya","Kuru","Panchala"],
+optH: ["अवंति","मत्स्य","कुरु","पांचाल"],
+ans: 0,
+solE: "Ujjaini was the capital of Avanti Mahajanapada, which became an important political and commercial center.",
+solH: "उज्जयिनी अवंति महाजनपद की राजधानी थी, जो एक महत्वपूर्ण राजनीतिक और व्यापारिक केंद्र था।"
+},
+
+{
+id: 100,
+eng: "Which Greek ambassador visited the court of Chandragupta Maurya later on?",
+hin: "बाद में चंद्रगुप्त मौर्य के दरबार में कौन-सा यूनानी राजदूत आया?",
+optE: ["Megasthenes","Seleucus","Herodotus","Alexander"],
+optH: ["मेगास्थनीज","सेल्युकस","हेरोडोटस","सिकंदर"],
+ans: 0,
+solE: "Megasthenes visited the court of Chandragupta Maurya and wrote the famous book 'Indica', which provides valuable information about ancient India.",
+solH: "मेगास्थनीज चंद्रगुप्त मौर्य के दरबार में आया और उसने 'इंडिका' नामक प्रसिद्ध पुस्तक लिखी, जिसमें प्राचीन भारत की महत्वपूर्ण जानकारी मिलती है।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 80 * 60; // 60 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. Rank & Percentile Engine
+            const N = 5000;
+            let M = Math.max(0, score);
+            const S = M / MAX_SCORE;
+            let P_raw = Math.pow(S, 2.2);
+
+            let percent, rank;
+            if (M >= 45) {
+                percent = 99.00 + ((M - 45) / 5) * 1.00;
+                rank = 50 - ((M - 45) / 5) * 49;
+            } else if (M >= 35) {
+                percent = 85 + ((M - 35) / 9) * 14;
+                rank = 500 - ((M - 35) / 9) * 450;
+            } else if (M >= 25) {
+                percent = 60 + ((M - 25) / 9) * 25;
+                rank = 2500 - ((M - 25) / 9) * 2000;
+            } else if (M >= 10) {
+                percent = 30 + ((M - 10) / 14) * 30;
+                rank = 4500 - ((M - 10) / 14) * 2000;
+            } else {
+                percent = ((M - 0) / 9) * 30;
+                rank = 5000 - ((M - 0) / 9) * 500;
+            }
+            
+            rank = Math.max(1, Math.round(rank));
+            percent = percent > 100 ? 100 : percent;
+
+            // 3. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percent.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your First Phase of revision  point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+</body>
+</html>

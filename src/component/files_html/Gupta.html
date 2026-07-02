@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,286 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "What were Dinaras called as during the Gupta period?",
+hin: "गुप्त काल में दीनार किसे कहा जाता था?",
+optE: ["Ports","Coins","Books","Rulers"],
+optH: ["बंदरगाह","सिक्के","पुस्तकें","शासक"],
+ans: 1,
+solE: "Dinaras were gold coins used during the Gupta period.",
+solH: "दीनार गुप्त काल में प्रचलित स्वर्ण मुद्राएँ थीं।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Who was the court poet of Samudragupta?",
+hin: "समुद्रगुप्त का दरबारी कवि कौन था?",
+optE: ["Harisena","Ravikirti","James Prinsep","V.A. Smith"],
+optH: ["हरिषेण","रविकीर्ति","जेम्स प्रिन्सेप","वी. ए. स्मिथ"],
+ans: 0,
+solE: "Harisena was the court poet of Samudragupta and wrote Prayag Prashasti.",
+solH: "हरिषेण समुद्रगुप्त का दरबारी कवि था और उसने प्रयाग प्रशस्ति लिखी थी।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
+eng: "The title 'Indian Napoleon' was given to Samudragupta by whom?",
+hin: "'भारत का नेपोलियन' की उपाधि समुद्रगुप्त को किसने दी थी?",
+optE: ["James Prinsep","V.A. Smith","Harisena","Ravikirti"],
+optH: ["जेम्स प्रिन्सेप","वी. ए. स्मिथ","हरिषेण","रविकीर्ति"],
 ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+solE: "V.A. Smith called Samudragupta the 'Indian Napoleon' due to his military conquests.",
+solH: "वी. ए. स्मिथ ने समुद्रगुप्त को उसकी विजयों के कारण 'भारत का नेपोलियन' कहा।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Gupta Period belonged to which duration?",
+hin: "गुप्त काल किस अवधि से संबंधित था?",
+optE: ["319-540 AD","319-540 BC","391-540 AD","391-540 BC"],
+optH: ["319-540 ई.","319-540 ई.पू.","391-540 ई.","391-540 ई.पू."],
+ans: 0,
+solE: "The Gupta Period is generally considered from 319 AD to 540 AD.",
+solH: "गुप्त काल को सामान्यतः 319 ईस्वी से 540 ईस्वी तक माना जाता है।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Which of the following was not among the Navratnas of Vikramaditya?",
+hin: "निम्नलिखित में से कौन विक्रमादित्य के नवरत्नों में शामिल नहीं था?",
+optE: ["Vararuchi","Dhanvantari","Kalidasa","Harisena"],
+optH: ["वररुचि","धन्वंतरि","कालिदास","हरिषेण"],
+ans: 3,
+solE: "Harisena was not among the Navratnas of Vikramaditya.",
+solH: "हरिषेण विक्रमादित्य के नवरत्नों में शामिल नहीं था।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
+eng: "Which of the following was the western port during the Gupta Empire?",
+hin: "गुप्त साम्राज्य के दौरान निम्नलिखित में से कौन पश्चिमी बंदरगाह था?",
+optE: ["Chaul","Ghantasala","Kadura","Tamralipti"],
+optH: ["चौल","घंटशाला","कदूरा","ताम्रलिप्ति"],
 ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+solE: "Chaul was an important western port during the Gupta Empire.",
+solH: "चौल गुप्त साम्राज्य का एक महत्वपूर्ण पश्चिमी बंदरगाह था।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Mehrauli Pillar Inscription is located at which place?",
+hin: "मेहरौली स्तंभ अभिलेख किस स्थान पर स्थित है?",
+optE: ["Meerut","Delhi","Prayagraj","Sanchi"],
+optH: ["मेरठ","दिल्ली","प्रयागराज","सांची"],
+ans: 1,
+solE: "The Mehrauli Iron Pillar is located in Delhi.",
+solH: "मेहरौली का लौह स्तंभ दिल्ली में स्थित है।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Which of the following was not written by Kalidasa?",
+hin: "निम्नलिखित में से कौन-सी रचना कालिदास द्वारा नहीं लिखी गई थी?",
+optE: ["Kumarasambhavam","Navinatakam","Vikramorvashiyam","Meghadutam"],
+optH: ["कुमारसंभवम्","नवीनाटक","विक्रमोर्वशीयम्","मेघदूतम्"],
+ans: 1,
+solE: "Navinatakam was not written by Kalidasa.",
+solH: "नवीनाटक की रचना कालिदास ने नहीं की थी।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Fa-Hien came to India during Chandragupta II and wrote which travelogue?",
+hin: "फाह्यान चंद्रगुप्त द्वितीय के समय भारत आया और उसने कौन-सा यात्रा-वृत्तांत लिखा?",
+optE: ["Fu-Kwo-Ki","Si-Yu-Ki","Xi Yu Ji","fo-gu-oji"],
+optH: ["फू-क्वो-की","सी-यू-की","शी यू जी","फ़ो-गुओ-जी"],
+ans: 3,
+solE: "Fa-Hien wrote the travelogue 'फ़ो-गुओ-जी'.",
+solH: "फाह्यान ने 'फ़ो-गुओ-जी' नामक यात्रा-वृत्तांत लिखा था।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Who defeated the Shakas?",
+hin: "शकों को किसने पराजित किया था?",
+optE: ["Samudragupta","Chandragupta II","Kumaragupta","Skandagupta"],
+optH: ["समुद्रगुप्त","चंद्रगुप्त द्वितीय","कुमारगुप्त","स्कंदगुप्त"],
+ans: 1,
+solE: "Chandragupta II defeated the Shakas and adopted the title Vikramaditya.",
+solH: "चंद्रगुप्त द्वितीय ने शकों को पराजित कर विक्रमादित्य की उपाधि धारण की।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Nalanda University was founded during the reign of which ruler?",
+hin: "नालंदा विश्वविद्यालय की स्थापना किस शासक के शासनकाल में हुई थी?",
+optE: ["Kumaragupta I","Samudragupta","Skandagupta","Chandragupta I"],
+optH: ["कुमारगुप्त प्रथम","समुद्रगुप्त","स्कंदगुप्त","चंद्रगुप्त प्रथम"],
+ans: 0,
+solE: "Nalanda University was founded during the reign of Kumaragupta I.",
+solH: "नालंदा विश्वविद्यालय की स्थापना कुमारगुप्त प्रथम के शासनकाल में हुई थी।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "Who saved the Gupta Empire from the Hunas?",
+hin: "हूणों से गुप्त साम्राज्य की रक्षा किसने की थी?",
+optE: ["Chandragupta II","Kumaragupta","Skandagupta","Samudragupta"],
+optH: ["चंद्रगुप्त द्वितीय","कुमारगुप्त","स्कंदगुप्त","समुद्रगुप्त"],
+ans: 2,
+solE: "Skandagupta protected the Gupta Empire from the Hunas.",
+solH: "स्कंदगुप्त ने हूणों से गुप्त साम्राज्य की रक्षा की थी।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Bhitari Pillar Inscription is related to which ruler?",
+hin: "भितरी स्तंभ अभिलेख किस शासक से संबंधित है?",
+optE: ["Samudragupta","Chandragupta II","Kumaragupta","Skandagupta"],
+optH: ["समुद्रगुप्त","चंद्रगुप्त द्वितीय","कुमारगुप्त","स्कंदगुप्त"],
+ans: 3,
+solE: "The Bhitari Pillar Inscription is related to Skandagupta.",
+solH: "भितरी स्तंभ अभिलेख स्कंदगुप्त से संबंधित है।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "Who was the famous ruler of the Hunas?",
+hin: "हूणों का प्रसिद्ध शासक कौन था?",
+optE: ["Rudradaman","Damodarsena","Mihirkula","Pravarasena"],
+optH: ["रुद्रदामन","दामोदरसेन","मिहिरकुल","प्रवरसेन"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Mihirkula was the famous ruler of the Hunas.",
+solH: "मिहिरकुल हूणों का प्रसिद्ध शासक था।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "Toramana belonged to which dynasty?",
+hin: "तोरमाण किस वंश से संबंधित था?",
+optE: ["Vakatakas","Guptas","Hunas","Mauryas"],
+optH: ["वाकाटक","गुप्त","हूण","मौर्य"],
+ans: 2,
+solE: "Toramana belonged to the Huna dynasty.",
+solH: "तोरमाण हूण वंश से संबंधित था।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "What was the biggest administrative unit of the Gupta Empire called?",
+hin: "गुप्त साम्राज्य की सबसे बड़ी प्रशासनिक इकाई क्या कहलाती थी?",
+optE: ["Vishaya","Vithika","Gram","Bhukti"],
+optH: ["विषय","वीथिका","ग्राम","भुक्ति"],
+ans: 3,
+solE: "Bhukti was the biggest administrative unit during the Gupta Empire.",
+solH: "गुप्त साम्राज्य में भुक्ति सबसे बड़ी प्रशासनिक इकाई थी।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
+eng: "Land revenue during the Gupta Empire varied between?",
+hin: "गुप्त काल में भूमि कर कितना होता था?",
+optE: ["1/2 to 1/4 of produce","1/4 to 1/6 of produce","1/4 to 1/8 of produce","1/6 to 1/18 of produce"],
+optH: ["उपज का 1/2 से 1/4","उपज का 1/4 से 1/6","उपज का 1/4 से 1/8","उपज का 1/6 से 1/18"],
 ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+solE: "Land revenue during the Gupta period generally varied from one-fourth to one-sixth of the produce.",
+solH: "गुप्त काल में भूमि कर सामान्यतः उपज के एक-चौथाई से एक-छठे भाग तक होता था।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "What were guilds called during the Gupta Empire?",
+hin: "गुप्त काल में श्रेणियों (Guilds) को क्या कहा जाता था?",
+optE: ["Nigama","Shreni","Bhukti","Vishaya"],
+optH: ["निगम","श्रेणी","भुक्ति","विषय"],
+ans: 1,
+solE: "Guilds during the Gupta period were called Shreni.",
+solH: "गुप्त काल में गिल्ड्स को श्रेणी कहा जाता था।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
+eng: "What was Uparikara called during the Gupta Empire?",
+hin: "गुप्त काल में उपरिकर किसे कहा जाता था?",
+optE: ["Permanent tax","Additional tax","Trade tax","Land grant"],
+optH: ["स्थायी कर","अतिरिक्त कर","व्यापार कर","भूमि अनुदान"],
 ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+solE: "Uparikara was an additional tax imposed during the Gupta period.",
+solH: "उपरिकर गुप्त काल में लगाया जाने वाला अतिरिक्त कर था।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "Which of the following was the eastern port during the Gupta Empire?",
+hin: "गुप्त साम्राज्य के दौरान निम्नलिखित में से कौन पूर्वी बंदरगाह था?",
+optE: ["Tamralipti","Chaul","Kalyan","Bharuch"],
+optH: ["ताम्रलिप्ति","चौल","कल्याण","भड़ौच"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
-}
+solE: "Tamralipti was the famous eastern port during the Gupta Empire.",
+solH: "ताम्रलिप्ति गुप्त साम्राज्य का प्रसिद्ध पूर्वी बंदरगाह था।"
+},
+
+{
+id: 21,
+eng: "Kiratarjuniya was written by whom?",
+hin: "किरातार्जुनीय की रचना किसने की थी?",
+optE: ["Dandin","Vishakhadatta","Bharavi","Vatsyayana"],
+optH: ["दंडी","विशाखदत्त","भारवि","वात्स्यायन"],
+ans: 2,
+solE: "Kiratarjuniya was written by Bharavi.",
+solH: "किरातार्जुनीय की रचना भारवि ने की थी।"
+},
+
+{
+id: 22,
+eng: "Nagara style of temple architecture is mainly used in which region of India?",
+hin: "नागर शैली की मंदिर वास्तुकला भारत के किस क्षेत्र में प्रमुख रूप से प्रयुक्त होती है?",
+optE: ["Northern","Southern","Eastern","Western"],
+optH: ["उत्तरी","दक्षिणी","पूर्वी","पश्चिमी"],
+ans: 0,
+solE: "Nagara style of temple architecture is mainly found in Northern India.",
+solH: "नागर शैली की मंदिर वास्तुकला मुख्यतः उत्तर भारत में पाई जाती है।"
+},
+{
+id: 23,
+eng: "Which Gupta ruler issued silver coins?",
+hin: "किस गुप्त शासक ने चाँदी के सिक्के जारी किए थे?",
+optE: ["Sri Gupta","Samudragupta","Chandragupta II","Kumaragupta"],
+optH: ["श्रीगुप्त","समुद्रगुप्त","चंद्रगुप्त द्वितीय","कुमारगुप्त"],
+ans: 2,
+solE: "Chandragupta II issued silver coins after defeating the Shakas.",
+solH: "चंद्रगुप्त द्वितीय ने शकों को हराने के बाद चाँदी के सिक्के जारी किए थे।"
+},
+{
+id: 24,
+eng: "Who wrote Prayag Prashasti?",
+hin: "प्रयाग प्रशस्ति किसने लिखी थी?",
+optE: ["Kalidasa","Banabhatta","Harisena","Vishakhadatta"],
+optH: ["कालिदास","बाणभट्ट","हरिषेण","विशाखदत्त"],
+ans: 2,
+solE: "Prayag Prashasti was written by Harisena, the court poet of Samudragupta.",
+solH: "प्रयाग प्रशस्ति समुद्रगुप्त के दरबारी कवि हरिषेण ने लिखी थी।"
+},
+{
+id: 25,
+eng: "Who wrote Panchatantra?",
+hin: "पंचतंत्र  किसने लिखी थी?",
+optE: ["Kalidasa","Banabhatta","VishnuSharma","Vishakhadatta"],
+optH: ["कालिदास","बाणभट्ट","विष्णु शर्मा","विशाखदत्त"],
+ans: 2,
+solE: "Panchatantra was written by VishnuSharma.",
+solH: "प्रयाग प्रशस्ति विष्णु शर्मा ने लिखी थी।"
+},
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

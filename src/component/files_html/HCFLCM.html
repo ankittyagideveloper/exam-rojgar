@@ -348,7 +348,7 @@ Never consider yourself the cause of the results of your activities, and never b
             <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
                 <i class="fab fa-telegram-plane"></i>
             </div>
-            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
             <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
             
             <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
@@ -468,235 +468,234 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "What is the greatest number that will divide 105, 165 and 255 leaving the same remainder in each case?",
+hin: "वह महत्तम संख्या क्या होगी जो 105, 165 और 255 को विभाजित करने पर प्रत्येक स्थिति में समान शेष छोड़े?",
+optE: ["10","15","20","30"],
+optH: ["10","15","20","30"],
+ans: 3,
+solE: "When the same remainder is left, we subtract the numbers pairwise.\n165 - 105 = 60\n255 - 165 = 90\nNow find HCF of 60 and 90.\nHCF = 30\nHence, 30 is the greatest required number.",
+solH: "जब समान शेष बचता है, तब संख्याओं का अंतर लेते हैं।\n165 - 105 = 60\n255 - 165 = 90\nअब 60 और 90 का HCF निकालेंगे।\nHCF = 30\nअतः वांछित महत्तम संख्या 30 है।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Find the least number which when divided by 18, 24 and 42 leaves 7 as remainder in each case.",
+hin: "वह सबसे छोटी संख्या ज्ञात कीजिए जिसे 18, 24 और 42 से विभाजित करने पर प्रत्येक बार 7 शेष बचे।",
+optE: ["497","503","511","259"],
+optH: ["497","503","511","259"],
+ans: 1,
+solE: "Required number - 7 should be divisible by 18, 24 and 42.\nLCM of 18, 24 and 42 = 504\nRequired number = 504 + 7 = 511",
+solH: "आवश्यक संख्या - 7, 18, 24 और 42 से विभाजित होनी चाहिए।\n18, 24 और 42 का LCM = 504\nआवश्यक संख्या = 504 + 7 = 511"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "The LCM of two numbers is 20 times their HCF and (LCM + HCF) = 2520. If one number is 480, what will be the triple of the other number?",
+hin: "दो संख्याओं का LCM उनके HCF का 20 गुना है और (LCM + HCF) = 2520 है। यदि एक संख्या 480 है, तो दूसरी संख्या का तीन गुना ज्ञात कीजिए।",
+optE: ["720","960","1440","1800"],
+optH: ["720","960","1440","1800"],
+ans: 3,
+solE: "Let HCF = h\nThen LCM = 20h\nSo, h + 20h = 2520\n21h = 2520\nh = 120\nLCM = 2400\nProduct of numbers = HCF × LCM = 120 × 2400 = 288000\nIf one number = 480,\nOther number = 288000 ÷ 480 = 600\nTriple of other number = 600 × 3 = 1800",
+solH: "मान लीजिए HCF = h\nतब LCM = 20h\nअतः h + 20h = 2520\n21h = 2520\nh = 120\nLCM = 2400\nदोनों संख्याओं का गुणनफल = HCF × LCM = 120 × 2400 = 288000\nयदि एक संख्या 480 है,\nदूसरी संख्या = 288000 ÷ 480 = 600\nदूसरी संख्या का तीन गुना = 600 × 3 = 1800"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
+eng: "The HCF and LCM of two natural numbers are 12 and 72 respectively. What is the difference between the two numbers, if one of the numbers is 24?",
+hin: "दो प्राकृतिक संख्याओं का HCF 12 और LCM 72 है। यदि एक संख्या 24 है, तो दोनों संख्याओं का अंतर ज्ञात कीजिए।",
+optE: ["6","12","18","24"],
+optH: ["6","12","18","24"],
 ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+solE: "Product of two numbers = HCF × LCM\n= 12 × 72 = 864\nIf one number = 24\nOther number = 864 ÷ 24 = 36\nDifference = 36 - 24 = 12",
+solH: "दोनों संख्याओं का गुणनफल = HCF × LCM\n= 12 × 72 = 864\nयदि एक संख्या 24 है\nदूसरी संख्या = 864 ÷ 24 = 36\nअंतर = 36 - 24 = 12"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Monica, Veronica and Rachat begin to jog around a circular stadium. They complete their revolutions in 42 s, 56 s and 63 s respectively. After how many seconds will they be together at the starting point?",
+hin: "मोनिका, वेरोनिका और रचत एक गोल स्टेडियम में दौड़ना शुरू करते हैं। वे क्रमशः 42, 56 और 63 सेकंड में एक चक्कर पूरा करते हैं। वे कितने सेकंड बाद फिर प्रारंभिक बिंदु पर साथ होंगे?",
+optE: ["504","756","1008","1512"],
+optH: ["504","756","1008","1512"],
+ans: 0,
+solE: "They will meet together again after the LCM of 42, 56 and 63.\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 seconds.",
+solH: "वे फिर साथ मिलेंगे जब 42, 56 और 63 का LCM आएगा।\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 सेकंड"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "When apples were packed in boxes containing 5 or 6 dozens each, 3 dozens remained. Bigger boxes of 8 or 9 dozens were then used, but still 3 dozens remained. What was the least number of dozens of apples to be packed?",
+hin: "जब सेबों को 5 या 6 दर्जन वाले डिब्बों में भरा गया, तब भी 3 दर्जन बच गए। बाद में 8 या 9 दर्जन वाले बड़े डिब्बों का उपयोग किया गया, तब भी 3 दर्जन बच गए। सेबों की न्यूनतम संख्या (दर्जन में) ज्ञात कीजिए।",
+optE: ["360","363","720","723"],
+optH: ["360","363","720","723"],
+ans: 1,
+solE: "Required number - 3 should be divisible by 5, 6, 8 and 9.\nLCM of 5, 6, 8 and 9 = 360\nRequired number = 360 + 3 = 363 dozens.",
+solH: "आवश्यक संख्या - 3, 5, 6, 8 और 9 से विभाजित होनी चाहिए।\n5, 6, 8 और 9 का LCM = 360\nआवश्यक संख्या = 360 + 3 = 363 दर्जन"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Three bells ring at intervals of 9, 12 and 15 seconds respectively. If they start together, after how many seconds will they ring together again?",
+hin: "तीन घंटियाँ क्रमशः 9, 12 और 15 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ शुरू हों, तो कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["120","150","180","240"],
+optH: ["120","150","180","240"],
+ans: 2,
+solE: "LCM of 9, 12 and 15:\n9 = 3²\n12 = 2² × 3\n15 = 3 × 5\nLCM = 2² × 3² × 5 = 180 seconds.\nHence, the bells will ring together again after 180 seconds.",
+solH: "9, 12 और 15 का LCM:\n9 = 3²\n12 = 2² × 3\n15 = 3 × 5\nLCM = 2² × 3² × 5 = 180 सेकंड\nअतः घंटियाँ 180 सेकंड बाद फिर साथ बजेंगी।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Find the least number which when divided by 16, 20 and 28 leaves 9 as remainder in each case.",
+hin: "वह सबसे छोटी संख्या ज्ञात कीजिए जिसे 16, 20 और 28 से विभाजित करने पर प्रत्येक बार 9 शेष बचे।",
+optE: ["289","569","1129","849"],
+optH: ["289","569","1129","849"],
+ans: 1,
+solE: "Required number - 9 should be divisible by 16, 20 and 28.\nLCM = 560\nRequired number = 560 + 9 = 569",
+solH: "आवश्यक संख्या - 9, 16, 20 और 28 से विभाजित होनी चाहिए।\nLCM = 560\nआवश्यक संख्या = 560 + 9 = 569"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Five bells ring at intervals of 6, 9, 15, 18 and 24 seconds respectively. After how many seconds will they ring together again?",
+hin: "पाँच घंटियाँ क्रमशः 6, 9, 15, 18 और 24 सेकंड के अंतराल पर बजती हैं। वे कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["180","240","360","720"],
+optH: ["180","240","360","720"],
+ans: 2,
+solE: "LCM of 6, 9, 15, 18 and 24:\n6 = 2 × 3\n9 = 3²\n15 = 3 × 5\n18 = 2 × 3²\n24 = 2³ × 3\nLCM = 2³ × 3² × 5 = 360 seconds.",
+solH: "6, 9, 15, 18 और 24 का LCM:\n6 = 2 × 3\n9 = 3²\n15 = 3 × 5\n18 = 2 × 3²\n24 = 2³ × 3\nLCM = 2³ × 3² × 5 = 360 सेकंड"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Three bells ring at intervals of 8, 12 and 20 seconds respectively. If they start together, after how many seconds will they ring together again?",
+hin: "तीन घंटियाँ क्रमशः 8, 12 और 20 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ शुरू हों, तो कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["60","120","180","240"],
+optH: ["60","120","180","240"],
+ans: 1,
+solE: "LCM of 8, 12 and 20 = 120 seconds.\nTherefore, they will ring together again after 120 seconds.",
+solH: "8, 12 और 20 का LCM = 120 सेकंड\nअतः वे 120 सेकंड बाद फिर एक साथ बजेंगी।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "The HCF of three numbers is 23. If they are in the ratio 1 : 2 : 3, then find the numbers.",
+hin: "तीन संख्याओं का HCF 23 है। यदि उनका अनुपात 1 : 2 : 3 है, तो संख्याएँ ज्ञात कीजिए।",
+optE: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+optH: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+ans: 1,
+solE: "If HCF = 23 and ratio is 1 : 2 : 3, then numbers are:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nHence, the required numbers are 23, 46 and 69.",
+solH: "यदि HCF = 23 और अनुपात 1 : 2 : 3 है, तो संख्याएँ होंगी:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nअतः आवश्यक संख्याएँ 23, 46 और 69 हैं।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "The LCM of two numbers is 495 and their HCF is 5. If the sum of the numbers is 100, then find the difference of the numbers.",
+hin: "दो संख्याओं का LCM 495 और HCF 5 है। यदि दोनों संख्याओं का योग 100 है, तो उनका अंतर ज्ञात कीजिए।",
+optE: ["10","20","40","50"],
+optH: ["10","20","40","50"],
+ans: 0,
+solE: "Let the numbers be 5x and 5y.\nThen xy = LCM/HCF = 495/5 = 99\nPossible pair = 9 and 11\nNumbers = 45 and 55\nDifference = 55 - 45 = 10",
+solH: "मान लीजिए संख्याएँ 5x और 5y हैं।\nतब xy = LCM/HCF = 495/5 = 99\nसंभावित युग्म = 9 और 11\nसंख्याएँ = 45 और 55\nअंतर = 55 - 45 = 10"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "The LCM of two numbers is 20 times their HCF and (LCM + HCF) = 2520. If one number is 480, what will be the triple of the other number?",
+hin: "दो संख्याओं का LCM उनके HCF का 20 गुना है और (LCM + HCF) = 2520 है। यदि एक संख्या 480 है, तो दूसरी संख्या का तीन गुना ज्ञात कीजिए।",
+optE: ["720","960","1440","1800"],
+optH: ["720","960","1440","1800"],
+ans: 3,
+solE: "Let HCF = h\nThen LCM = 20h\nGiven:\n20h + h = 2520\n21h = 2520\nh = 120\nTherefore, LCM = 20 × 120 = 2400\nNow,\nProduct of two numbers = HCF × LCM\n= 120 × 2400\n= 288000\nIf one number = 480,\nOther number = 288000 ÷ 480 = 600\nTriple of other number = 600 × 3 = 1800",
+solH: "मान लीजिए HCF = h\nतब LCM = 20h\nदिया है:\n20h + h = 2520\n21h = 2520\nh = 120\nअतः LCM = 20 × 120 = 2400\nअब,\nदोनों संख्याओं का गुणनफल = HCF × LCM\n= 120 × 2400\n= 288000\nयदि एक संख्या 480 है,\nदूसरी संख्या = 288000 ÷ 480 = 600\nदूसरी संख्या का तीन गुना = 600 × 3 = 1800"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "The HCF and LCM of two natural numbers are 12 and 72 respectively. What is the difference between the two numbers if one number is 24?",
+hin: "दो प्राकृतिक संख्याओं का HCF 12 और LCM 72 है। यदि एक संख्या 24 है, तो दोनों संख्याओं का अंतर ज्ञात कीजिए।",
+optE: ["6","12","18","24"],
+optH: ["6","12","18","24"],
+ans: 1,
+solE: "Product of numbers = HCF × LCM = 12 × 72 = 864\nOther number = 864 ÷ 24 = 36\nDifference = 36 - 24 = 12",
+solH: "दोनों संख्याओं का गुणनफल = HCF × LCM = 12 × 72 = 864\nदूसरी संख्या = 864 ÷ 24 = 36\nअंतर = 36 - 24 = 12"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "Monica, Veronica and Rachat begin to jog around a circular stadium. They complete one revolution in 42 s, 56 s and 63 s respectively. After how many seconds will they be together again at the starting point?",
+hin: "मोनिका, वेरोनिका और रचत एक गोल स्टेडियम में दौड़ना शुरू करते हैं। वे क्रमशः 42, 56 और 63 सेकंड में एक चक्कर पूरा करते हैं। वे कितने समय बाद फिर प्रारंभिक बिंदु पर साथ होंगे?",
+optE: ["504 s","1512 s","1008 s","756 s"],
+optH: ["504 सेकंड","1512 सेकंड","1008 सेकंड","756 सेकंड"],
+ans: 0,
+solE: "They will meet together again after the LCM of 42, 56 and 63.\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 seconds.",
+solH: "वे फिर साथ मिलेंगे जब 42, 56 और 63 का LCM आएगा।\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 सेकंड"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "When apples were packed in boxes containing 5 or 6 dozens each, 3 dozens remained. Bigger boxes of 8 or 9 dozens were then used, but still 3 dozens remained. What was the least number of dozens of apples?",
+hin: "जब सेबों को 5 या 6 दर्जन वाले डिब्बों में भरा गया, तब भी 3 दर्जन बच गए। बाद में 8 या 9 दर्जन वाले बड़े डिब्बों का उपयोग किया गया, तब भी 3 दर्जन बच गए। सेबों की न्यूनतम संख्या (दर्जन में) ज्ञात कीजिए।",
+optE: ["360","363","723","720"],
+optH: ["360","363","723","720"],
+ans: 1,
+solE: "Required number - 3 must be divisible by 5, 6, 8 and 9.\nLCM of 5, 6, 8 and 9 = 360\nRequired number = 360 + 3 = 363 dozens.",
+solH: "आवश्यक संख्या - 3, 5, 6, 8 और 9 से विभाजित होनी चाहिए।\n5, 6, 8 और 9 का LCM = 360\nआवश्यक संख्या = 360 + 3 = 363 दर्जन"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "Three bells ring at intervals of 9, 12 and 15 seconds respectively. If they start together, after how many seconds will they ring together again?",
+hin: "तीन घंटियाँ क्रमशः 9, 12 और 15 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ शुरू हों, तो कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["120","150","180","240"],
+optH: ["120","150","180","240"],
+ans: 2,
+solE: "LCM of 9, 12 and 15 = 180 seconds.\nHence, the bells will ring together again after 180 seconds.",
+solH: "9, 12 और 15 का LCM = 180 सेकंड\nअतः घंटियाँ 180 सेकंड बाद फिर साथ बजेंगी।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Four bells ring at intervals of 8, 10, 12 and 15 seconds respectively. How many times will they ring together in 20 minutes including the first ring?",
+hin: "चार घंटियाँ क्रमशः 8, 10, 12 और 15 सेकंड के अंतराल पर बजती हैं। पहली बार को शामिल करते हुए 20 मिनट में वे कितनी बार साथ बजेंगी?",
+optE: ["20","21","11","10"],
+optH: ["20","21","11","10"],
+ans: 2,
+solE: "LCM of 8, 10, 12 and 15 = 120 seconds.\n20 minutes = 1200 seconds.\nNumber of times = (1200 ÷ 120) + 1 = 10 + 1 = 11",
+solH: "8, 10, 12 और 15 का LCM = 120 सेकंड\n20 मिनट = 1200 सेकंड\nसाथ बजने की संख्या = (1200 ÷ 120) + 1 = 10 + 1 = 11"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Five bells ring at intervals of 6, 9, 15, 18 and 24 seconds respectively. After how many seconds will they ring together again?",
+hin: "पाँच घंटियाँ क्रमशः 6, 9, 15, 18 और 24 सेकंड के अंतराल पर बजती हैं। वे कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["180","240","360","720"],
+optH: ["180","240","360","720"],
+ans: 2,
+solE: "LCM of 6, 9, 15, 18 and 24 = 360 seconds.\nHence, all bells will ring together again after 360 seconds.",
+solH: "6, 9, 15, 18 और 24 का LCM = 360 सेकंड\nअतः सभी घंटियाँ 360 सेकंड बाद फिर साथ बजेंगी।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
-ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+eng: "Three bells toll at intervals of 20, 30 and 45 minutes respectively. If they toll together at 6:00 AM, at what time will they next toll together?",
+hin: "तीन घंटियाँ क्रमशः 20, 30 और 45 मिनट के अंतराल पर बजती हैं। यदि वे सुबह 6:00 बजे साथ बजती हैं, तो अगली बार कब साथ बजेंगी?",
+optE: ["8:00 AM","8:30 AM","9:00 AM","9:30 AM"],
+optH: ["सुबह 8:00 बजे","सुबह 8:30 बजे","सुबह 9:00 बजे","सुबह 9:30 बजे"],
+ans: 2,
+solE: "LCM of 20, 30 and 45 = 180 minutes.\n180 minutes = 3 hours.\n6:00 AM + 3 hours = 9:00 AM",
+solH: "20, 30 और 45 का LCM = 180 मिनट\n180 मिनट = 3 घंटे\nसुबह 6:00 बजे + 3 घंटे = सुबह 9:00 बजे"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 10 * 60; // 10 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

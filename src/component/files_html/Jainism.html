@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,235 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
 
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
+eng: "Who was the first Tirthankara of Jainism?",
+hin: "जैन धर्म के प्रथम तीर्थंकर कौन थे?",
+optE: ["Mahavira","Parshvanatha","Rishabhanatha","Neminatha"],
+optH: ["महावीर","पार्श्वनाथ","ऋषभनाथ","नेमिनाथ"],
 ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+solE: "Rishabhanatha, also known as Adinatha, was the first Tirthankara of Jainism. He is regarded as the founder of the Jain tradition.",
+solH: "ऋषभनाथ, जिन्हें आदिनाथ भी कहा जाता है, जैन धर्म के प्रथम तीर्थंकर थे। उन्हें जैन परंपरा का प्रवर्तक माना जाता है।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "What was the symbol of the 24th Tirthankara Mahavira?",
+hin: "24वें तीर्थंकर महावीर का प्रतीक चिन्ह क्या था?",
+optE: ["Bull","Snake","Lion","Elephant"],
+optH: ["बैल","सर्प","सिंह","हाथी"],
+ans: 2,
+solE: "The lion was the symbol of Mahavira, the 24th and last Tirthankara of Jainism.",
+solH: "सिंह जैन धर्म के 24वें और अंतिम तीर्थंकर महावीर का प्रतीक चिन्ह था।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "Mahavira was born in which village?",
+hin: "महावीर का जन्म किस ग्राम में हुआ था?",
+optE: ["Kundagrama","Vaishali","Rajagriha","Pawapuri"],
+optH: ["कुंडग्राम","वैशाली","राजगृह","पावापुरी"],
+ans: 0,
+solE: "Mahavira was born at Kundagrama near Vaishali in present-day Bihar. He belonged to the Kshatriya clan.",
+solH: "महावीर का जन्म वर्तमान बिहार के वैशाली के निकट कुंडग्राम में हुआ था। वे क्षत्रिय कुल से संबंधित थे।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Who became the first disciple of Mahavira?",
+hin: "महावीर के प्रथम शिष्य कौन बने?",
+optE: ["Jamali","Bhadrabahu","Sthulabhadra","Gosala"],
+optH: ["जमाली","भद्रबाहु","स्थूलभद्र","गोशाल"],
+ans: 0,
+solE: "Jamali is regarded as the first disciple and son-in-law of Mahavira in Jain tradition.",
+solH: "जमाली को जैन परंपरा में महावीर का प्रथम शिष्य और दामाद माना जाता है।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Which of the following belong to the Three Jewels of Jainism?",
+hin: "निम्नलिखित में से कौन जैन धर्म के त्रिरत्न हैं?",
+optE: ["Right Faith","Right Knowledge","Right Conduct","All of the above"],
+optH: ["सम्यक श्रद्धा","सम्यक ज्ञान","सम्यक आचरण","उपरोक्त सभी"],
+ans: 3,
+solE: "The Three Jewels or Triratnas of Jainism are Right Faith, Right Knowledge and Right Conduct. These are considered essential for liberation.",
+solH: "जैन धर्म के त्रिरत्न हैं — सम्यक श्रद्धा, सम्यक ज्ञान और सम्यक आचरण। इन्हें मोक्ष प्राप्ति के लिए आवश्यक माना गया है।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Syadvada is associated with which religion?",
+hin: "स्यादवाद किस धर्म से संबंधित है?",
+optE: ["Buddhism","Jainism","Hinduism","Islam"],
+optH: ["बौद्ध धर्म","जैन धर्म","हिंदू धर्म","इस्लाम"],
+ans: 1,
+solE: "Syadvada is an important doctrine of Jain philosophy which explains the theory of relativity and multiple viewpoints.",
+solH: "स्यादवाद जैन दर्शन का महत्वपूर्ण सिद्धांत है, जो सापेक्षता और अनेक दृष्टिकोणों की व्याख्या करता है।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "The Second Jain Council was held at which place?",
+hin: "द्वितीय जैन संगीति कहाँ आयोजित हुई थी?",
+optE: ["Pataliputra","Rajagriha","Vallabhi","Pawapuri"],
+optH: ["पाटलिपुत्र","राजगृह","वल्लभी","पावापुरी"],
+ans: 2,
+solE: "The Second Jain Council was held at Vallabhi in Gujarat where Jain scriptures were compiled in written form.",
+solH: "द्वितीय जैन संगीति गुजरात के वल्लभी में आयोजित हुई थी, जहाँ जैन ग्रंथों को लिखित रूप में संकलित किया गया।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Who was the chairman of the First Jain Council?",
+hin: "प्रथम जैन संगीति के अध्यक्ष कौन थे?",
+optE: ["Bhadrabahu","Jamali","Sthulabhadra","Mahavira"],
+optH: ["भद्रबाहु","जमाली","स्थूलभद्र","महावीर"],
+ans: 2,
+solE: "Sthulabhadra presided over the First Jain Council held at Pataliputra after the famine in Magadha.",
+solH: "मगध में अकाल के बाद पाटलिपुत्र में आयोजित प्रथम जैन संगीति की अध्यक्षता स्थूलभद्र ने की थी।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Chandragupta Maurya belonged to which sect of Jainism?",
+hin: "चंद्रगुप्त मौर्य जैन धर्म के किस संप्रदाय से संबंधित थे?",
+optE: ["Digambara","Shvetambara","All of the above","None of the above"],
+optH: ["दिगंबर","श्वेतांबर","उपरोक्त सभी","इनमें से कोई नहीं"],
+ans: 0,
+solE: "Chandragupta Maurya is associated with the Digambara sect of Jainism. He is believed to have spent his last days at Shravanabelagola.",
+solH: "चंद्रगुप्त मौर्य को जैन धर्म के दिगंबर संप्रदाय से संबंधित माना जाता है। कहा जाता है कि उन्होंने अपने अंतिम दिन श्रवणबेलगोला में बिताए।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Hathigumpha and Baghagumpha caves are associated with which dynasty?",
+hin: "हाथीगुफा और बाघगुफा गुफाएँ किस वंश से संबंधित हैं?",
+optE: ["Maurya","Gupta","Kharavela","Satavahana"],
+optH: ["मौर्य","गुप्त","खारवेल","सातवाहन"],
+ans: 2,
+solE: "The Hathigumpha inscription is associated with King Kharavela of Kalinga, who was a great patron of Jainism.",
+solH: "हाथीगुफा अभिलेख कलिंग के राजा खारवेल से संबंधित है, जो जैन धर्म के महान संरक्षक थे।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Girnar Jain temple of Shri Neminath is located in which state?",
+hin: "श्री नेमिनाथ का गिरनार जैन मंदिर किस राज्य में स्थित है?",
+optE: ["Rajasthan","Madhya Pradesh","Gujarat","Bihar"],
+optH: ["राजस्थान","मध्य प्रदेश","गुजरात","बिहार"],
+ans: 2,
+solE: "The famous Girnar Jain temples dedicated to Neminatha are located in Gujarat near Junagadh.",
+solH: "नेमिनाथ को समर्पित प्रसिद्ध गिरनार जैन मंदिर गुजरात के जूनागढ़ के निकट स्थित हैं।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "Which of the following are sects of Jainism?",
+hin: "निम्नलिखित में से कौन जैन धर्म के संप्रदाय हैं?",
+optE: ["Shvetambara","Digambara","None of the above","All of the above"],
+optH: ["श्वेतांबर","दिगंबर","इनमें से कोई नहीं","उपरोक्त सभी"],
+ans: 3,
+solE: "Shvetambara and Digambara are the two main sects of Jainism that emerged after differences in practices and discipline.",
+solH: "श्वेतांबर और दिगंबर जैन धर्म के दो प्रमुख संप्रदाय हैं, जो आचार-विचार के मतभेदों के कारण विकसित हुए।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Which among the following does NOT belong to the initial four vows of Jainism?",
+hin: "निम्नलिखित में से कौन जैन धर्म के प्रारंभिक चार व्रतों में शामिल नहीं था?",
+optE: ["Ahimsa","Satya","Asteya","Brahmacharya"],
+optH: ["अहिंसा","सत्य","अस्तेय","ब्रह्मचर्य"],
+ans: 3,
+solE: "Parshvanatha preached four vows, while Mahavira added Brahmacharya as the fifth vow.",
+solH: "पार्श्वनाथ ने चार व्रतों का उपदेश दिया था, जबकि महावीर ने ब्रह्मचर्य को पाँचवें व्रत के रूप में जोड़ा।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "Which vow was added by Mahavira to the existing four vows?",
+hin: "महावीर ने प्रारंभिक चार व्रतों में कौन-सा व्रत जोड़ा?",
+optE: ["Aparigraha","Satya","Brahmacharya","Asteya"],
+optH: ["अपरिग्रह","सत्य","ब्रह्मचर्य","अस्तेय"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Mahavira added Brahmacharya or celibacy to the four vows already preached by Parshvanatha.",
+solH: "महावीर ने पार्श्वनाथ द्वारा बताए गए चार व्रतों में ब्रह्मचर्य को जोड़ा।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "Who went to South India with Bhadrabahu during the famine in Magadha?",
+hin: "मगध में अकाल के समय भद्रबाहु के साथ दक्षिण भारत कौन गया था?",
+optE: ["Samudragupta","Chandragupta II","Chandragupta Maurya","Sthulabhadra"],
+optH: ["समुद्रगुप्त","चंद्रगुप्त द्वितीय","चंद्रगुप्त मौर्य","स्थूलभद्र"],
+ans: 2,
+solE: "Chandragupta Maurya accompanied Bhadrabahu to South India during the famine in Magadha and later adopted Jainism.",
+solH: "मगध में अकाल के समय चंद्रगुप्त मौर्य भद्रबाहु के साथ दक्षिण भारत गए और बाद में जैन धर्म अपना लिया।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "At which place did Mahavira attain Nirvana?",
+hin: "महावीर ने निर्वाण कहाँ प्राप्त किया था?",
+optE: ["Rajagriha","Pawapuri","Vaishali","Shravanabelagola"],
+optH: ["राजगृह","पावापुरी","वैशाली","श्रवणबेलगोला"],
+ans: 1,
+solE: "Mahavira attained Nirvana at Pawapuri in Bihar. It is an important Jain pilgrimage center.",
+solH: "महावीर ने बिहार के पावापुरी में निर्वाण प्राप्त किया था। यह जैन धर्म का प्रमुख तीर्थस्थल है।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "Which language was mainly used for early Jain teachings?",
+hin: "प्रारंभिक जैन शिक्षाओं के लिए मुख्यतः किस भाषा का उपयोग हुआ?",
+optE: ["Sanskrit","Pali","Ardhamagadhi","Persian"],
+optH: ["संस्कृत","पाली","अर्धमागधी","फारसी"],
+ans: 2,
+solE: "Early Jain teachings were mainly delivered in Ardhamagadhi Prakrit so that common people could understand them easily.",
+solH: "प्रारंभिक जैन शिक्षाएँ मुख्यतः अर्धमागधी प्राकृत में दी गईं ताकि सामान्य लोग उन्हें आसानी से समझ सकें।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Who was the 23rd Tirthankara of Jainism?",
+hin: "जैन धर्म के 23वें तीर्थंकर कौन थे?",
+optE: ["Mahavira","Parshvanatha","Rishabhanatha","Neminatha"],
+optH: ["महावीर","पार्श्वनाथ","ऋषभनाथ","नेमिनाथ"],
+ans: 1,
+solE: "Parshvanatha was the 23rd Tirthankara of Jainism and is considered a historical figure before Mahavira.",
+solH: "पार्श्वनाथ जैन धर्म के 23वें तीर्थंकर थे और उन्हें महावीर से पूर्व का ऐतिहासिक व्यक्तित्व माना जाता है।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Which principle of Jainism emphasizes non-violence?",
+hin: "जैन धर्म का कौन-सा सिद्धांत अहिंसा पर बल देता है?",
+optE: ["Ahimsa","Anekantavada","Syadvada","Aparigraha"],
+optH: ["अहिंसा","अनेकांतवाद","स्यादवाद","अपरिग्रह"],
+ans: 0,
+solE: "Ahimsa or non-violence is the central principle of Jainism. Jains avoid harming any living being.",
+solH: "अहिंसा जैन धर्म का मुख्य सिद्धांत है। जैन धर्म में किसी भी जीव को हानि पहुँचाने से बचने पर बल दिया जाता है।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
-ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+eng: "Which Jain sect believes that monks should not wear clothes?",
+hin: "जैन धर्म का कौन-सा संप्रदाय मानता है कि साधुओं को वस्त्र नहीं पहनने चाहिए?",
+optE: ["Shvetambara","Digambara","Both","None"],
+optH: ["श्वेतांबर","दिगंबर","दोनों","कोई नहीं"],
+ans: 1,
+solE: "The Digambara sect believes in complete renunciation, including not wearing clothes, as a symbol of detachment.",
+solH: "दिगंबर संप्रदाय पूर्ण त्याग में विश्वास करता है, जिसमें वस्त्र न पहनना भी वैराग्य का प्रतीक माना जाता है।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

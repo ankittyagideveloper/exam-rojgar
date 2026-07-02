@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">15:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -348,7 +348,7 @@ Never consider yourself the cause of the results of your activities, and never b
             <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
                 <i class="fab fa-telegram-plane"></i>
             </div>
-            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
             <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
             
             <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
@@ -468,235 +468,233 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "Jaspreet deposited a sum of ₹28,450 at 20% per annum compound interest, compounded annually. What total amount will she receive after 2 years?",
+hin: "जसप्रीत ने ₹28,450 को 20% वार्षिक चक्रवृद्धि ब्याज (वार्षिक संयोजन) पर जमा किया। 2 वर्ष बाद उसे कुल कितनी राशि प्राप्त होगी?",
+optE: ["₹40,624","₹40,968","₹40,958","₹41,126"],
+optH: ["₹40,624","₹40,968","₹40,958","₹41,126"],
+ans: 1,
+solE: "A = P(1+r/100)^n\n= 28450(1.20)^2\n= 28450 × 1.44\n= ₹40,968",
+solH: "A = P(1+r/100)^n\n= 28450(1.20)^2\n= 28450 × 1.44\n= ₹40,968"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Shan has ₹1407. He divides it between his sons Piyush and Manoj. Both invest at 10% compound interest per annum. Piyush's amount after 18 years equals Manoj's amount after 19 years. How much did Manoj receive?",
+hin: "शान के पास ₹1407 हैं। वह इसे अपने पुत्रों पीयूष और मनोज में बाँटता है। दोनों 10% वार्षिक चक्रवृद्धि ब्याज पर निवेश करते हैं। 18 वर्ष बाद पीयूष की राशि, 19 वर्ष बाद मनोज की राशि के बराबर हो जाती है। मनोज को कितनी राशि मिली?",
+optE: ["670","837","737","520"],
+optH: ["670","837","737","520"],
+ans: 0,
+solE: "P(1.1)^18 = M(1.1)^19\nP = 1.1M\nP + M = 1407\n2.1M = 1407\nM = ₹670",
+solH: "P(1.1)^18 = M(1.1)^19\nP = 1.1M\nP + M = 1407\n2.1M = 1407\nM = ₹670"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
+eng: "Amit invested the same sum at simple interest and compound interest (compounded annually) for 2 years at 4% per annum. The difference between compound interest and simple interest is ₹47. Find the principal.",
+hin: "अमित ने समान राशि को 4% वार्षिक दर पर 2 वर्षों के लिए साधारण ब्याज तथा वार्षिक चक्रवृद्धि ब्याज पर निवेश किया। दोनों ब्याजों का अंतर ₹47 है। मूलधन ज्ञात कीजिए।",
+optE: ["₹29,725","₹29,375","₹28,625","₹28,475"],
+optH: ["₹29,725","₹29,375","₹28,625","₹28,475"],
 ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+solE: "Difference = P(r/100)^2\n47 = P(4/100)^2\n47 = 0.0016P\nP = ₹29,375",
+solH: "अंतर = P(r/100)^2\n47 = P(4/100)^2\n47 = 0.0016P\nP = ₹29,375"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Subrata gets double the amount in 8 years at compound interest compounded annually. In how many years will the amount become eight times?",
+hin: "सुब्रत को वार्षिक चक्रवृद्धि ब्याज पर 8 वर्षों में राशि दोगुनी मिलती है। राशि 8 गुनी होने में कितने वर्ष लगेंगे?",
+optE: ["24","64","32","16"],
+optH: ["24","64","32","16"],
+ans: 0,
+solE: "2 times in 8 years.\n8 = 2^3\nRequired time = 3 × 8 = 24 years.",
+solH: "8 वर्षों में राशि 2 गुनी होती है।\n8 = 2³\nअतः समय = 3 × 8 = 24 वर्ष।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Ajay gets double the amount in 7 years at compound interest compounded annually. In how many years will the amount become sixteen times?",
+hin: "अजय को वार्षिक चक्रवृद्धि ब्याज पर 7 वर्षों में राशि दोगुनी मिलती है। राशि 16 गुनी होने में कितने वर्ष लगेंगे?",
+optE: ["112","28","56","14"],
+optH: ["112","28","56","14"],
+ans: 1,
+solE: "16 = 2^4\nIf amount doubles in 7 years,\nTime = 4 × 7 = 28 years.",
+solH: "16 = 2⁴\nयदि राशि 7 वर्षों में दोगुनी होती है,\nतो समय = 4 × 7 = 28 वर्ष।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Find the difference between compound interest (compounded annually) and simple interest on ₹4,000 for 2 years at 6% per annum.",
+hin: "₹4,000 पर 6% वार्षिक दर से 2 वर्षों के लिए चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+optE: ["₹15.90","₹13.80","₹16.80","₹14.40"],
+optH: ["₹15.90","₹13.80","₹16.80","₹14.40"],
+ans: 3,
+solE: "Difference = P(r/100)^2\n= 4000 × (6/100)^2\n= ₹14.40",
+solH: "अंतर = P(r/100)^2\n= 4000 × (6/100)^2\n= ₹14.40"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
+eng: "Veer has ₹1404. He divides it between his sons Nitin and Pravin. Both invest at 8% compound interest. Nitin's amount after 19 years equals Pravin's amount after 20 years. How much did Pravin receive?",
+hin: "वीर के पास ₹1404 हैं। वह इसे नितिन और प्रवीण में बाँटता है। दोनों 8% वार्षिक चक्रवृद्धि ब्याज पर निवेश करते हैं। 19 वर्ष बाद नितिन की राशि, 20 वर्ष बाद प्रवीण की राशि के बराबर हो जाती है। प्रवीण को कितनी राशि मिली?",
+optE: ["675","525","829","729"],
+optH: ["675","525","829","729"],
 ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+solE: "N(1.08)^19 = P(1.08)^20\nN = 1.08P\nN + P = 1404\n2.08P = 1404\nP = ₹675",
+solH: "N(1.08)^19 = P(1.08)^20\nN = 1.08P\nN + P = 1404\n2.08P = 1404\nP = ₹675"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Amit invested equal sums in simple interest and compound interest schemes for 2 years at 4% per annum. Compound interest exceeded simple interest by ₹58. Find the principal.",
+hin: "अमित ने समान राशि को 4% वार्षिक दर पर 2 वर्षों के लिए साधारण एवं चक्रवृद्धि ब्याज योजनाओं में निवेश किया। चक्रवृद्धि ब्याज, साधारण ब्याज से ₹58 अधिक था। मूलधन ज्ञात कीजिए।",
+optE: ["₹36,250","₹35,500","₹35,350","₹36,600"],
+optH: ["₹36,250","₹35,500","₹35,350","₹36,600"],
+ans: 0,
+solE: "58 = P(4/100)^2\n58 = 0.0016P\nP = ₹36,250",
+solH: "58 = P(4/100)^2\n58 = 0.0016P\nP = ₹36,250"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "A sum of ₹625 is invested at 16% compound interest per annum. The amount becomes ₹841. Find the time period.",
+hin: "₹625 को 16% वार्षिक चक्रवृद्धि ब्याज पर निवेश किया गया। राशि ₹841 हो जाती है। समय ज्ञात कीजिए।",
+optE: ["1.5 years","2.5 years","2 years","1 year"],
+optH: ["1.5 वर्ष","2.5 वर्ष","2 वर्ष","1 वर्ष"],
+ans: 2,
+solE: "625(1.16)^n = 841\n(1.16)^n = 841/625 = 1.3456\n= (1.16)^2\nn = 2 years",
+solH: "625(1.16)^n = 841\n(1.16)^n = 841/625 = 1.3456\n= (1.16)^2\nn = 2 वर्ष"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "If the interest earned during the second year on a certain sum is ₹9,828 at 12% compound interest per annum, find the principal.",
+hin: "यदि किसी राशि पर 12% वार्षिक चक्रवृद्धि ब्याज की दर से दूसरे वर्ष का ब्याज ₹9,828 है, तो मूलधन ज्ञात कीजिए।",
+optE: ["₹73,520","₹73,475","₹73,125","₹72,185"],
+optH: ["₹73,520","₹73,475","₹73,125","₹72,185"],
+ans: 2,
+solE: "Second year interest = P×1.12×12/100\n9828 = 0.1344P\nP = ₹73,125",
+solH: "दूसरे वर्ष का ब्याज = P×1.12×12/100\n9828 = 0.1344P\nP = ₹73,125"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
+eng: "A sum of money triples itself in 8 years at compound interest. In how many years will it become 9 times itself?",
+hin: "कोई राशि चक्रवृद्धि ब्याज पर 8 वर्षों में 3 गुनी हो जाती है। वह 9 गुनी होने में कितने वर्ष लेगी?",
+optE: ["10 years","17 years","9 years","16 years"],
+optH: ["10 वर्ष","17 वर्ष","9 वर्ष","16 वर्ष"],
 ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+solE: "9 = 3²\nIf amount triples in 8 years,\nTime for 9 times = 2 × 8 = 16 years.",
+solH: "9 = 3²\nयदि राशि 8 वर्षों में 3 गुनी होती है,\nतो 9 गुनी होने में 16 वर्ष लगेंगे।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "A sum of ₹2,500 is invested at 2% compound interest per annum. The amount becomes ₹2,601. Find the time period.",
+hin: "₹2,500 को 2% वार्षिक चक्रवृद्धि ब्याज पर निवेश किया गया। राशि ₹2,601 हो जाती है। समय ज्ञात कीजिए।",
+optE: ["2 years","1 year","2.5 years","1.5 years"],
+optH: ["2 वर्ष","1 वर्ष","2.5 वर्ष","1.5 वर्ष"],
+ans: 0,
+solE: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 years",
+solH: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 वर्ष"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
+eng: "A sum of ₹15,625 amounts to ₹24,389 in 3 years at compound interest compounded annually. Find the annual rate of interest.",
+hin: "₹15,625 की राशि 3 वर्षों में वार्षिक चक्रवृद्धि ब्याज पर ₹24,389 हो जाती है। वार्षिक ब्याज दर ज्ञात कीजिए।",
+optE: ["14%","16%","19%","15%"],
+optH: ["14%","16%","19%","15%"],
 ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+solE: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%",
+solH: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%"
 },
-
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "A sum of money becomes four times in 20 years at simple interest. Find the rate of interest.",
+hin: "एक धनराशि साधारण ब्याज पर 20 वर्षों में 4 गुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["20%","25%","15%","30%"],
+optH: ["20%","25%","15%","30%"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Amount = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%",
+solH: "राशि = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "A sum at simple interest of 13% per annum amounts to ₹3080 in 4 years. Find the sum.",
+hin: "13% वार्षिक साधारण ब्याज पर 4 वर्षों में राशि ₹3080 हो जाती है। मूलधन ज्ञात कीजिए।",
+optE: ["1550","1680","1850","2000"],
+optH: ["1550","1680","1850","2000"],
+ans: 3,
+solE: "Amount = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000",
+solH: "राशि = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
+eng: "In a certain time, a sum becomes 3 times at the rate of 5% per annum. At what rate of interest will the same sum become 6 times in the same duration?",
+hin: "एक निश्चित समय में 5% वार्षिक ब्याज पर कोई राशि 3 गुनी हो जाती है। उसी समय में वही राशि 6 गुनी होने के लिए ब्याज दर ज्ञात कीजिए।",
+optE: ["25%","20%","12.5%","10.5%"],
+optH: ["25%","20%","12.5%","10.5%"],
 ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+solE: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 years\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%",
+solH: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 वर्ष\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "The sum which amounts to ₹364.80 in 8 years at 3.5% simple interest per annum is:",
+hin: "वह मूलधन ज्ञात कीजिए जो 3.5% वार्षिक साधारण ब्याज पर 8 वर्षों में ₹364.80 हो जाता है।",
+optE: ["285","280","275","270"],
+optH: ["285","280","275","270"],
+ans: 0,
+solE: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285",
+solH: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Find the simple interest (in closest integral ₹) on ₹4000 at 5.25% per annum rate of interest for the period from 12 February 2024 to 13 April 2024.",
+hin: "₹4000 पर 5.25% वार्षिक साधारण ब्याज की दर से 12 फरवरी 2024 से 13 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["36","35","34","33"],
+optH: ["36","35","34","33"],
+ans: 1,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nClosest integer = ₹35",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nनिकटतम पूर्णांक = ₹35"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Find the simple interest (in closest integral ₹) on ₹3000 at 8% per annum rate of interest for the period from 22 February 2024 to 23 April 2024.",
+hin: "₹3000 पर 8% वार्षिक साधारण ब्याज की दर से 22 फरवरी 2024 से 23 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["40","39","41","38"],
+optH: ["40","39","41","38"],
+ans: 0,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (3000×8×61)/(100×366)\n= ₹40",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (3000×8×61)/(100×366)\n= ₹40"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
-ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+eng: "At what rate (in percentage) per year will a sum of money double itself in 16 years on simple interest?",
+hin: "साधारण ब्याज पर कोई धनराशि 16 वर्षों में दोगुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["4.25","12.5","8.25","6.25"],
+optH: ["4.25","12.5","8.25","6.25"],
+ans: 3,
+solE: "Double amount ⇒ SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%",
+solH: "दोगुना होने पर SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 15 * 60; // 15 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

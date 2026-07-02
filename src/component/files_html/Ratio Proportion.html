@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">20:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -348,7 +348,7 @@ Never consider yourself the cause of the results of your activities, and never b
             <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
                 <i class="fab fa-telegram-plane"></i>
             </div>
-            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
             <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
             
             <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
@@ -468,235 +468,344 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "Sangeeta and Hemlata invest in a business in the ratio 1 : 3. If the total profit is ₹2568, then what is the difference between the profits of Sangeeta and Hemlata?",
+hin: "संगीता और हेमलता ने एक व्यवसाय में 1 : 3 के अनुपात में निवेश किया। यदि कुल लाभ ₹2568 है, तो दोनों के लाभ में कितना अंतर है?",
+optE: ["1384","1284","1184","1334"],
+optH: ["1384","1284","1184","1334"],
+ans: 1,
+solE: "Profit ratio = 1:3. Difference = 2 parts.\n1 part = 2568/4 = 642.\nDifference = 2 × 642 = ₹1284.",
+solH: "लाभ का अनुपात = 1:3। अंतर = 2 भाग।\n1 भाग = 2568/4 = 642।\nअंतर = 2 × 642 = ₹1284।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Two numbers are in the ratio 7 : 5. If the first number is increased by 14 and the second number is decreased by 5, then the ratio becomes 4 : 2. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 7 : 5 के अनुपात में हैं। पहली संख्या में 14 जोड़ने और दूसरी संख्या में 5 घटाने पर अनुपात 4 : 2 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["96","106","111","115"],
+optH: ["96","106","111","115"],
+ans: 0,
+solE: "Let numbers be 7x and 5x.\n(7x+14)/(5x-5)=4/2=2\n7x+14=10x-10\n3x=24 ⇒ x=8.\nSum = 12x = 96.",
+solH: "संख्याएँ 7x और 5x मानें।\n(7x+14)/(5x-5)=4/2=2\n7x+14=10x-10\n3x=24 ⇒ x=8.\nयोग = 12x = 96।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "The average price of three items of furniture is ₹16845. If their prices are in the ratio 3 : 5 : 7, find the price of the cheapest item.",
+hin: "फर्नीचर की तीन वस्तुओं का औसत मूल्य ₹16845 है। यदि उनके मूल्य 3 : 5 : 7 के अनुपात में हैं, तो सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
+optE: ["7861","3369","5615","10107"],
+optH: ["7861","3369","5615","10107"],
+ans: 3,
+solE: "Total price = 16845 × 3 = 50535.\nRatio sum = 15.\n1 part = 50535/15 = 3369.\nCheapest = 3 × 3369 = ₹10107.",
+solH: "कुल मूल्य = 16845 × 3 = 50535।\nअनुपात का योग = 15।\n1 भाग = 50535/15 = 3369।\nसबसे सस्ती वस्तु = 3 × 3369 = ₹10107।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Which of the following ratios is the smallest?",
+hin: "निम्नलिखित में से कौन-सा अनुपात सबसे छोटा है?",
+optE: ["17 : 39","23 : 48","10 : 36","15 : 33"],
+optH: ["17 : 39","23 : 48","10 : 36","15 : 33"],
+ans: 2,
+solE: "Compare values:\n17/39≈0.436,\n23/48≈0.479,\n10/36≈0.278,\n15/33≈0.455.\nSmallest = 10:36.",
+solH: "मानों की तुलना करें:\n17/39≈0.436,\n23/48≈0.479,\n10/36≈0.278,\n15/33≈0.455।\nसबसे छोटा अनुपात 10:36 है।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Two numbers are in the ratio 2 : 4. If the first number is increased by 4 and the second number is decreased by 14, then the ratio becomes 8 : 5. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 2 : 4 के अनुपात में हैं। पहली संख्या में 4 जोड़ने और दूसरी संख्या में 14 घटाने पर अनुपात 8 : 5 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["41","24","38","36"],
+optH: ["41","24","38","36"],
+ans: 3,
+solE: "Numbers = 2x,4x.\n(2x+4)/(4x-14)=8/5\n10x+20=32x-112\n22x=132 ⇒ x=6.\nSum=6x=36.",
+solH: "संख्याएँ 2x और 4x हैं।\n(2x+4)/(4x-14)=8/5\n10x+20=32x-112\n22x=132 ⇒ x=6।\nयोग = 6x = 36।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Two numbers are in the ratio 5 : 8. If the first number is increased by 13 and the second number is decreased by 6, then the ratio becomes 4 : 6. What is the sum of the original two numbers?",
+hin: "दो संख्याएँ 5 : 8 के अनुपात में हैं। पहली संख्या में 13 जोड़ने और दूसरी संख्या में 6 घटाने पर अनुपात 4 : 6 हो जाता है। मूल संख्याओं का योग ज्ञात कीजिए।",
+optE: ["650","681","665","663"],
+optH: ["650","681","665","663"],
+ans: 3,
+solE: "Numbers=5x,8x.\n(5x+13)/(8x-6)=4/6=2/3\n15x+39=16x-12\nx=51.\nSum=13x=663.",
+solH: "संख्याएँ 5x और 8x हैं।\n(5x+13)/(8x-6)=2/3\n15x+39=16x-12\nx=51।\nयोग = 13x = 663।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
+eng: "Three friends X, Y and Z started a business by investing money in the ratio 4 : 2 : 5. After 6 months, X withdraws half of his capital. If Z invested ₹23,000, then out of a total annual profit of ₹37,000, what is the difference between X's and Y's profit?",
+hin: "तीन मित्र X, Y और Z ने 4 : 2 : 5 के अनुपात में निवेश किया। 6 महीने बाद X अपनी पूंजी का आधा निकाल लेता है। यदि Z ने ₹23,000 निवेश किया हो, तो कुल वार्षिक लाभ ₹37,000 में से X और Y के लाभ का अंतर ज्ञात कीजिए।",
+optE: ["₹3700","₹5015","₹3065","₹4255"],
+optH: ["₹3700","₹5015","₹3065","₹4255"],
 ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+solE: "Investment-time ratio:\nX=4×6+2×6=36\nY=2×12=24\nZ=5×12=60\nRatio=3:2:5.\nDifference share=(1/10)×37000=₹3700.",
+solH: "निवेश-समय अनुपात:\nX=4×6+2×6=36\nY=2×12=24\nZ=5×12=60\nअनुपात=3:2:5।\nअंतर=(1/10)×37000=₹3700।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "If 4 : 28 :: 4.1 : x and 4 : 32 :: 3 : y, then what is the ratio of x to y?",
+hin: "यदि 4 : 28 :: 4.1 : x तथा 4 : 32 :: 3 : y, तो x : y ज्ञात कीजिए।",
+optE: ["287 : 240","285 : 241","288 : 238","291 : 250"],
+optH: ["287 : 240","285 : 241","288 : 238","291 : 250"],
+ans: 0,
+solE: "x=(28×4.1)/4=28.7\ny=(32×3)/4=24\nx:y=28.7:24=287:240.",
+solH: "x=(28×4.1)/4=28.7\ny=(32×3)/4=24\nअतः x:y=28.7:24=287:240।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "The ratio of three numbers is 3 : 5 : 7. If the sum of the largest and smallest numbers is 60, what is the sum of all three numbers?",
+hin: "तीन संख्याओं का अनुपात 3 : 5 : 7 है। यदि सबसे बड़ी और सबसे छोटी संख्या का योग 60 है, तो तीनों संख्याओं का योग ज्ञात कीजिए।",
+optE: ["90","70","100","120"],
+optH: ["90","70","100","120"],
+ans: 0,
+solE: "3x+7x=60 ⇒ 10x=60 ⇒ x=6.\nSum=(3+5+7)x=15×6=90.",
+solH: "3x+7x=60 ⇒ 10x=60 ⇒ x=6।\nयोग=(3+5+7)x=15×6=90।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "₹7770 is divided among A, B, C and D such that A:B=2:3, B:C=4:5 and C:D=6:7. Find A's share.",
+hin: "₹7770 को A, B, C और D में इस प्रकार बाँटा गया कि A:B=2:3, B:C=4:5 तथा C:D=6:7। A का हिस्सा ज्ञात कीजिए।",
+optE: ["1224","1184","1154","1124"],
+optH: ["1224","1184","1154","1124"],
+ans: 1,
+solE: "Combining ratios:\nA:B:C:D=16:24:30:35.\nTotal parts=105.\nA=(16/105)×7770=₹1184.",
+solH: "अनुपात मिलाने पर:\nA:B:C:D=16:24:30:35।\nकुल भाग=105।\nA=(16/105)×7770=₹1184।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Three friends X, Y and Z started a business by investing money in the ratio 5 : 3 : 7. After 6 months, X withdraws half of his capital. If Z invested ₹14,000, then out of a total annual profit of ₹55,000, what is the difference between X's and Y's profit?",
+hin: "तीन मित्र X, Y और Z ने 5 : 3 : 7 के अनुपात में निवेश किया। 6 महीने बाद X अपनी पूंजी का आधा निकाल लेता है। यदि Z ने ₹14,000 निवेश किया हो, तो कुल वार्षिक लाभ ₹55,000 में से X और Y के लाभ का अंतर ज्ञात कीजिए।",
+optE: ["₹1910","₹4465","₹3000","₹3440"],
+optH: ["₹1910","₹4465","₹3000","₹3440"],
+ans: 2,
+solE: "Profit ratio ∝ capital × time.\nX = 5×6 + 2.5×6 = 45\nY = 3×12 = 36\nZ = 7×12 = 84\nRatio = 15:12:28.\nDifference = (3/55)×55000 = ₹3000.",
+solH: "लाभ का अनुपात ∝ पूंजी × समय।\nX = 5×6 + 2.5×6 = 45\nY = 3×12 = 36\nZ = 7×12 = 84\nअनुपात = 15:12:28।\nअंतर = (3/55)×55000 = ₹3000।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
+eng: "The monthly incomes of A and B are in the ratio 4 : 5, and their monthly expenditures are in the ratio 3 : 4. A saves ₹10,000 while B saves ₹12,000. Find the monthly income of A.",
+hin: "A और B की मासिक आय का अनुपात 4 : 5 तथा मासिक व्यय का अनुपात 3 : 4 है। A ₹10,000 और B ₹12,000 बचाते हैं। A की मासिक आय ज्ञात कीजिए।",
+optE: ["14000","16000","15000","13000"],
+optH: ["14000","16000","15000","13000"],
 ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+solE: "Income = 4x,5x; Expenditure = 3y,4y.\n4x-3y=10000\n5x-4y=12000\nSolving: x=4000.\nIncome of A=4x=₹16000.",
+solH: "आय = 4x,5x; व्यय = 3y,4y।\n4x-3y=10000\n5x-4y=12000\nहल करने पर x=4000।\nA की आय = 4x = ₹16000।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "There are 9,632 students in a school and the ratio of boys to girls is 17 : 11. Find the number of boys.",
+hin: "एक विद्यालय में 9,632 विद्यार्थी हैं तथा लड़कों और लड़कियों का अनुपात 17 : 11 है। लड़कों की संख्या ज्ञात कीजिए।",
+optE: ["5848","5831","5851","5828"],
+optH: ["5848","5831","5851","5828"],
+ans: 0,
+solE: "Total parts = 17+11 = 28.\nBoys = (17/28)×9632 = 5848.",
+solH: "कुल भाग = 17+11 = 28।\nलड़के = (17/28)×9632 = 5848।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "What is the ratio between the fourth proportional of 10, 80, 30 and the fourth proportional of 7, 28, 19?",
+hin: "10, 80, 30 का चतुर्थानुपाती तथा 7, 28, 19 का चतुर्थानुपाती का अनुपात ज्ञात कीजिए।",
+optE: ["29:26","60:19","10:7","30:19"],
+optH: ["29:26","60:19","10:7","30:19"],
+ans: 1,
+solE: "Fourth proportional = (b×c)/a.\n=(80×30)/10 = 240.\n=(28×19)/7 = 76.\nRatio = 240:76 = 60:19.",
+solH: "चतुर्थानुपाती = (b×c)/a.\n=(80×30)/10 = 240\n=(28×19)/7 = 76\nअनुपात = 240:76 = 60:19।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "9 : 81 :: 2.5 : x and 3 : 6 :: 5 : y. What is the ratio of x to y?",
+hin: "9 : 81 :: 2.5 : x तथा 3 : 6 :: 5 : y। x : y ज्ञात कीजिए।",
+optE: ["10:2","13:14","9:4","5:3"],
+optH: ["10:2","13:14","9:4","5:3"],
+ans: 2,
+solE: "x=(81×2.5)/9=22.5\ny=(6×5)/3=10\nx:y=22.5:10=9:4.",
+solH: "x=(81×2.5)/9=22.5\ny=(6×5)/3=10\nअतः x:y=22.5:10=9:4।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "The price of each article of type P, Q and R is ₹280, ₹180 and ₹115 respectively. Rohit buys articles in the ratio 4 : 2 : 7 for ₹6855. How many articles of type Q did he purchase?",
+hin: "P, Q और R प्रकार की वस्तुओं का मूल्य क्रमशः ₹280, ₹180 और ₹115 है। रोहित इन्हें 4 : 2 : 7 के अनुपात में खरीदता है और कुल ₹6855 खर्च करता है। उसने Q प्रकार की कितनी वस्तुएँ खरीदीं?",
+optE: ["12","6","14","3"],
+optH: ["12","6","14","3"],
+ans: 1,
+solE: "Let quantities = 4x,2x,7x.\nTotal = 280(4x)+180(2x)+115(7x)=2285x.\n2285x=6855 ⇒ x=3.\nQ articles = 2x = 6.",
+solH: "मात्राएँ = 4x,2x,7x।\nकुल = 280(4x)+180(2x)+115(7x)=2285x।\n2285x=6855 ⇒ x=3।\nQ वस्तुएँ = 2x = 6।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "The monthly incomes of Mohan and David are in the ratio 6 : 7 and each saves ₹69,000 per month. If their monthly expenditures are in the ratio 2 : 3, find Mohan's monthly income.",
+hin: "मोहन और डेविड की मासिक आय का अनुपात 6 : 7 है तथा दोनों ₹69,000 प्रति माह बचाते हैं। यदि उनके मासिक व्यय का अनुपात 2 : 3 है, तो मोहन की मासिक आय ज्ञात कीजिए।",
+optE: ["103500","104500","144900","102500"],
+optH: ["103500","104500","144900","102500"],
+ans: 0,
+solE: "Income=6x,7x; Expenditure=2y,3y.\n6x-2y=69000\n7x-3y=69000\nSolving gives x=17250.\nMohan's income=6x=₹103500.",
+solH: "आय=6x,7x; व्यय=2y,3y।\n6x-2y=69000\n7x-3y=69000\nहल करने पर x=17250।\nमोहन की आय=6x=₹103500।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "If 7 : 63 :: 6.5 : x and 7 : 42 :: 4 : y, then what is the ratio of x to y?",
+hin: "यदि 7 : 63 :: 6.5 : x तथा 7 : 42 :: 4 : y, तो x : y ज्ञात कीजिए।",
+optE: ["43:26","37:17","39:16","40:14"],
+optH: ["43:26","37:17","39:16","40:14"],
+ans: 2,
+solE: "x=(63×6.5)/7=58.5\ny=(42×4)/7=24\nx:y=58.5:24=39:16.",
+solH: "x=(63×6.5)/7=58.5\ny=(42×4)/7=24\nअतः x:y=58.5:24=39:16।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "The ratio of the salaries of A and B is 4 : 5. If A's salary is increased by 20% and B's salary is decreased by 10%, what is the new ratio of their salaries?",
+hin: "A और B के वेतन का अनुपात 4 : 5 है। यदि A का वेतन 20% बढ़ा दिया जाए तथा B का वेतन 10% घटा दिया जाए, तो नया अनुपात ज्ञात कीजिए।",
+optE: ["16:15","14:13","15:14","13:12"],
+optH: ["16:15","14:13","15:14","13:12"],
+ans: 0,
+solE: "New ratio = 4×120 : 5×90\n= 480 : 450\n= 16 : 15.",
+solH: "नया अनुपात = 4×120 : 5×90\n= 480 : 450\n= 16 : 15।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "In a business, A, B and C invest in the ratio 3 : 5 : 4. Out of the total profit, B gives ₹15,000 to A such that A's share becomes equal to C's share. Find the total profit.",
+hin: "एक व्यवसाय में A, B और C ने 3 : 5 : 4 के अनुपात में निवेश किया। कुल लाभ में से B, A को ₹15,000 देता है जिससे A का लाभ C के बराबर हो जाता है। कुल लाभ ज्ञात कीजिए।",
+optE: ["120000","240000","150000","180000"],
+optH: ["120000","240000","150000","180000"],
+ans: 3,
+solE: "Profit shares = 3x,5x,4x.\n3x+15000=4x\nx=15000.\nTotal profit = 12x = ₹180000.",
+solH: "लाभांश = 3x,5x,4x।\n3x+15000=4x\nx=15000।\nकुल लाभ = 12x = ₹180000।"
+},
+
+{
+id: 21,
+eng: "A school employs trained and untrained teachers in the ratio 5 : 3. The salaries of a trained and an untrained teacher are in the ratio 4 : 1. If the total salary paid to all teachers in a month is ₹4,60,000, how much total salary is paid to the untrained teachers?",
+hin: "एक विद्यालय में प्रशिक्षित और अप्रशिक्षित शिक्षकों की संख्या का अनुपात 5 : 3 है। प्रशिक्षित और अप्रशिक्षित शिक्षक के वेतन का अनुपात 4 : 1 है। यदि कुल मासिक वेतन ₹4,60,000 है, तो अप्रशिक्षित शिक्षकों को कुल कितना वेतन दिया जाता है?",
+optE: ["₹45,000","₹1,20,000","₹60,000","₹75,000"],
+optH: ["₹45,000","₹1,20,000","₹60,000","₹75,000"],
+ans: 2,
+solE: "Total salary ratio = (5×4):(3×1)=20:3.\nTotal parts=23.\nUntrained salary=(3/23)×460000=₹60000.",
+solH: "कुल वेतन अनुपात = (5×4):(3×1)=20:3।\nकुल भाग=23।\nअप्रशिक्षित वेतन=(3/23)×460000=₹60000।"
+},
+
+{
+id: 22,
+eng: "Four classes have ratios of boys to girls as 4 : 5, 3 : 2, 6 : 5 and 5 : 6 respectively. Which class has the highest proportion of boys?",
+hin: "चार कक्षाओं में लड़कों और लड़कियों का अनुपात क्रमशः 4 : 5, 3 : 2, 6 : 5 और 5 : 6 है। किस कक्षा में लड़कों का अनुपात सबसे अधिक है?",
+optE: ["Second class (3 : 2)","Third class (6 : 5)","First class (4 : 5)","Fourth class (5 : 6)"],
+optH: ["द्वितीय कक्षा (3 : 2)","तृतीय कक्षा (6 : 5)","प्रथम कक्षा (4 : 5)","चतुर्थ कक्षा (5 : 6)"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "Compare boys fraction:\n4/9, 3/2, 6/11, 5/11.\nHighest = 3/2.\nHence second class.",
+solH: "लड़कों का अनुपात:\n4/9, 3/2, 6/11, 5/11।\nसबसे बड़ा 3/2 है।\nअतः द्वितीय कक्षा।"
+},
+
+{
+id: 23,
+eng: "The ratio of the ages of P and Q is 3 : 4. After 6 years, the ratio becomes 4 : 5. What is the present age of P?",
+hin: "P और Q की आयु का अनुपात 3 : 4 है। 6 वर्ष बाद यह अनुपात 4 : 5 हो जाता है। P की वर्तमान आयु ज्ञात कीजिए।",
+optE: ["18 years","30 years","20 years","13 years"],
+optH: ["18 वर्ष","30 वर्ष","20 वर्ष","13 वर्ष"],
+ans: 0,
+solE: "Let ages=3x,4x.\n(3x+6)/(4x+6)=4/5\n15x+30=16x+24\nx=6.\nP=18 years.",
+solH: "आयु=3x,4x।\n(3x+6)/(4x+6)=4/5\n15x+30=16x+24\nx=6।\nP=18 वर्ष।"
+},
+
+{
+id: 24,
+eng: "A bag contains ₹1, ₹2 and ₹5 coins in the ratio 8 : 4 : 3. If the total value of the coins is ₹930, find the total number of coins.",
+hin: "एक थैले में ₹1, ₹2 और ₹5 के सिक्के 8 : 4 : 3 के अनुपात में हैं। यदि कुल मूल्य ₹930 है, तो सिक्कों की कुल संख्या ज्ञात कीजिए।",
+optE: ["400","450","420","480"],
+optH: ["400","450","420","480"],
+ans: 1,
+solE: "Coins=8x,4x,3x.\nValue=8x+8x+15x=31x.\n31x=930 ⇒ x=30.\nTotal coins=15x=450.",
+solH: "सिक्के=8x,4x,3x।\nमूल्य=8x+8x+15x=31x।\n31x=930 ⇒ x=30।\nकुल सिक्के=15x=450।"
+},
+
+{
+id: 25,
+eng: "The price of each article of type P, Q and R is ₹280, ₹180 and ₹120 respectively. Subrata buys articles in the ratio 3 : 2 : 3 for ₹6240. How many articles of type Q did he purchase?",
+hin: "P, Q और R प्रकार की वस्तुओं के मूल्य क्रमशः ₹280, ₹180 और ₹120 हैं। सुब्रत इन्हें 3 : 2 : 3 के अनुपात में खरीदता है और कुल ₹6240 खर्च करता है। Q प्रकार की कितनी वस्तुएँ खरीदी गईं?",
+optE: ["16","8","14","5"],
+optH: ["16","8","14","5"],
+ans: 1,
+solE: "Quantities=3x,2x,3x.\nTotal=280(3x)+180(2x)+120(3x)=1560x.\n1560x=6240 ⇒ x=4.\nQ=2x=8.",
+solH: "मात्राएँ=3x,2x,3x।\nकुल=1560x।\n1560x=6240 ⇒ x=4।\nQ=2x=8।"
+},
+
+{
+id: 26,
+eng: "The areas of two similar triangles are 841 cm² and 676 cm² respectively. What is the ratio of their corresponding altitudes?",
+hin: "दो समरूप त्रिभुजों के क्षेत्रफल क्रमशः 841 सेमी² और 676 सेमी² हैं। उनकी संगत ऊँचाइयों का अनुपात ज्ञात कीजिए।",
+optE: ["38 : 27","29 : 26","24 : 28","27 : 24"],
+optH: ["38 : 27","29 : 26","24 : 28","27 : 24"],
+ans: 1,
+solE: "Altitude ratio = √(Area ratio)\n= √(841/676)\n= 29/26.\nHence 29:26.",
+solH: "ऊँचाइयों का अनुपात = √(क्षेत्रफल अनुपात)\n= √(841/676)\n= 29/26।"
+},
+
+{
+id: 27,
+eng: "If 2820 is divided into two parts such that one-fifth of the first part and one-eighth of the second part are in the ratio 3 : 4, what is the ratio of the first part to the second part?",
+hin: "2820 को दो भागों में इस प्रकार विभाजित किया जाता है कि पहले भाग का 1/5 और दूसरे भाग का 1/8 का अनुपात 3 : 4 है। दोनों भागों का अनुपात ज्ञात कीजिए।",
+optE: ["18 : 19","15 : 32","15 : 37","17 : 36"],
+optH: ["18 : 19","15 : 32","15 : 37","17 : 36"],
+ans: 1,
+solE: "Let parts=A,B.\n(A/5):(B/8)=3:4\n8A=15B\nA:B=15:32.",
+solH: "मान लें भाग A और B हैं।\n(A/5):(B/8)=3:4\n8A=15B\nA:B=15:32।"
+},
+
+{
+id: 28,
+eng: "The prices of articles of types P, Q and R are ₹280, ₹180 and ₹120 respectively. Tejas buys these articles in the ratio 3 : 2 : 5 for a total of ₹12,600. How many articles of type Q did he purchase?",
+hin: "P, Q और R प्रकार की वस्तुओं के मूल्य क्रमशः ₹280, ₹180 और ₹120 हैं। तेजस इन्हें 3 : 2 : 5 के अनुपात में खरीदता है और कुल ₹12,600 खर्च करता है। Q प्रकार की कितनी वस्तुएँ खरीदी गईं?",
+optE: ["15","14","7","13"],
+optH: ["15","14","7","13"],
+ans: 1,
+solE: "Quantities=3x,2x,5x.\nTotal=280(3x)+180(2x)+120(5x)=1800x.\n1800x=12600 ⇒ x=7.\nQ=2x=14.",
+solH: "मात्राएँ=3x,2x,5x।\nकुल=1800x।\n1800x=12600 ⇒ x=7।\nQ=2x=14।"
+},
+
+{
+id: 29,
+eng: "₹6241 is divided among A, B, C and D such that A:B=2:3, B:C=4:5 and C:D=10:3. Find A's share.",
+hin: "₹6241 को A, B, C और D में इस प्रकार बाँटा गया कि A:B=2:3, B:C=4:5 तथा C:D=10:3। A का हिस्सा ज्ञात कीजिए।",
+optE: ["1174","1264","1384","1334"],
+optH: ["1174","1264","1384","1334"],
+ans: 1,
+solE: "Combining ratios:\nA:B:C:D=16:24:30:9.\nTotal parts=79.\nA=(16/79)×6241=₹1264.",
+solH: "अनुपात मिलाने पर:\nA:B:C:D=16:24:30:9।\nकुल भाग=79।\nA=(16/79)×6241=₹1264।"
+},
+
+{
+id: 30,
+eng: "The ages of A and B are in the ratio 5 : 8. After 6 years, the ratio becomes 3 : 4. What is A's present age?",
+hin: "A और B की आयु का अनुपात 5 : 8 है। 6 वर्ष बाद यह अनुपात 3 : 4 हो जाता है। A की वर्तमान आयु ज्ञात कीजिए।",
+optE: ["9 years","9.7 years","7.5 years","11 years"],
+optH: ["9 वर्ष","9.7 वर्ष","7.5 वर्ष","11 वर्ष"],
+ans: 2,
+solE: "Let ages=5x,8x.\n(5x+6)/(8x+6)=3/4\n20x+24=24x+18\nx=1.5.\nA=5x=7.5 years.",
+solH: "आयु=5x,8x।\n(5x+6)/(8x+6)=3/4\n20x+24=24x+18\nx=1.5।\nA=5x=7.5 वर्ष।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 20 * 60; // 20 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

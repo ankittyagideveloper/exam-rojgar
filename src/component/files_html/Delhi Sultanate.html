@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,254 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "First Muslim invasion of India was done by whom?",
+hin: "भारत पर पहला मुस्लिम आक्रमण किसने किया था?",
+optE: ["Muhammad bin Qasim","Mahmud of Ghazni","Muhammad Ghori","Qutb-ud-din Aibak"],
+optH: ["मुहम्मद बिन कासिम","महमूद गजनवी","मुहम्मद गौरी","कुतुबुद्दीन ऐबक"],
+ans: 0,
+solE: "Muhammad bin Qasim invaded Sindh in 712 CE and is regarded as the first Muslim invader of India.",
+solH: "मुहम्मद बिन कासिम ने 712 ई. में सिंध पर आक्रमण किया था और उन्हें भारत का प्रथम मुस्लिम आक्रमणकारी माना जाता है।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Which of the following dynasties ruled India for the longest period?",
+hin: "निम्नलिखित में से किस वंश ने भारत पर सबसे लंबे समय तक शासन किया?",
+optE: ["Khilji","Tughlaq","Slave","Lodhi"],
+optH: ["खिलजी","तुगलक","गुलाम","लोदी"],
+ans: 1,
+solE: "The Tughlaq dynasty ruled from 1320 to 1414 CE, longer than the Khilji, Slave and Lodhi dynasties.",
+solH: "तुगलक वंश ने 1320 से 1414 ई. तक शासन किया, जो खिलजी, गुलाम और लोदी वंश से अधिक था।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "Arrange the following dynasties in increasing order of their period of rule in India.",
+hin: "भारत में शासन अवधि के बढ़ते क्रम में निम्नलिखित वंशों को व्यवस्थित करें।",
+optE: [
+"Tughlaq, Lodhi, Sayyid, Slave",
+"Slave, Tughlaq, Lodhi, Sayyid",
+"Tughlaq, Slave, Lodhi, Sayyid",
+"Khilji, Sayyid, Lodhi, Slave"
+],
+optH: [
+"तुगलक, लोदी, सैय्यद, गुलाम",
+"गुलाम, तुगलक, लोदी, सैय्यद",
+"तुगलक, गुलाम, लोदी, सैय्यद",
+"खिलजी, सैय्यद, लोदी, गुलाम"
+],
+ans: 3,
+solE: "Khilji (30 years), Sayyid (37 years), Lodhi (75 years) and Slave (84 years) is the correct increasing order.",
+solH: "खिलजी (30 वर्ष), सैय्यद (37 वर्ष), लोदी (75 वर्ष) और गुलाम (84 वर्ष) शासन अवधि का सही बढ़ता क्रम है।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Who built Adhai Din Ka Jhopra?",
+hin: "अढ़ाई दिन का झोपड़ा किसने बनवाया था?",
+optE: ["Qutb-ud-din Aibak","Alauddin Khilji","Iltutmish","Muhammad Ghori"],
+optH: ["कुतुबुद्दीन ऐबक","अलाउद्दीन खिलजी","इल्तुतमिश","मुहम्मद गौरी"],
+ans: 0,
+solE: "Adhai Din Ka Jhopra at Ajmer was built by Qutb-ud-din Aibak in 1199 CE.",
+solH: "अजमेर स्थित अढ़ाई दिन का झोपड़ा 1199 ई. में कुतुबुद्दीन ऐबक द्वारा बनवाया गया था।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Who introduced the Iqta system in India?",
+hin: "भारत में इक्ता प्रणाली किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Alauddin Khilji"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","अलाउद्दीन खिलजी"],
+ans: 1,
+solE: "Iltutmish organized and expanded the Iqta system in the Delhi Sultanate.",
+solH: "इल्तुतमिश ने दिल्ली सल्तनत में इक्ता व्यवस्था को संगठित और विकसित किया।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Who introduced the practice of Sijda and Paibos?",
+hin: "सिजदा और पैबोस की प्रथा किसने शुरू की?",
+optE: ["Iltutmish","Balban","Alauddin Khilji","Muhammad bin Tughlaq"],
+optH: ["इल्तुतमिश","बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक"],
+ans: 1,
+solE: "Balban introduced Sijda and Paibos to enhance the dignity of the Sultan.",
+solH: "बलबन ने सुल्तान की प्रतिष्ठा बढ़ाने के लिए सिजदा और पैबोस की प्रथा शुरू की।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Who introduced four ordinances to curb the power of nobles?",
+hin: "अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश किसने जारी किए?",
+optE: ["Balban","Alauddin Khilji","Muhammad bin Tughlaq","Firoz Shah Tughlaq"],
+optH: ["बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक","फिरोज शाह तुगलक"],
+ans: 1,
+solE: "Alauddin Khilji introduced four ordinances to check the influence of nobles.",
+solH: "अलाउद्दीन खिलजी ने अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश जारी किए।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Who introduced the Chalisa (Turkan-i-Chahalgani) system?",
+hin: "चालीसा (तुर्कान-ए-चहलगानी) व्यवस्था किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Razia Sultan"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","रज़िया सुल्तान"],
+ans: 1,
+solE: "Iltutmish formed a group of forty powerful Turkish nobles called Chalisa.",
+solH: "इल्तुतमिश ने चालीसा नामक 40 शक्तिशाली तुर्क अमीरों का समूह बनाया।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Who abolished the Chalisa system?",
+hin: "चालीसा व्यवस्था को किसने समाप्त किया?",
+optE: ["Balban","Alauddin Khilji","Iltutmish","Razia Sultan"],
+optH: ["बलबन","अलाउद्दीन खिलजी","इल्तुतमिश","रज़िया सुल्तान"],
+ans: 0,
+solE: "Balban crushed the power of Chalisa and effectively abolished it.",
+solH: "बलबन ने चालीसा की शक्ति को समाप्त कर दिया और इसे प्रभावी रूप से खत्म कर दिया।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "During the Khilji dynasty, the officer of market was known as?",
+hin: "खिलजी काल में बाजार अधिकारी को क्या कहा जाता था?",
+optE: ["Shahna-e-Mandi","Mustakhraj","Diwan-e-Bandgan","Barid"],
+optH: ["शहना-ए-मंडी","मुस्तखराज","दीवान-ए-बंदगान","बरीद"],
+ans: 0,
+solE: "Shahna-e-Mandi was the officer responsible for market regulation under Alauddin Khilji.",
+solH: "अलाउद्दीन खिलजी के समय शहना-ए-मंडी बाजार नियंत्रण अधिकारी था।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Who was the last ruler of the Slave Dynasty?",
+hin: "गुलाम वंश का अंतिम शासक कौन था?",
+optE: ["Kaiqubad","Balban","Aram Shah","Nasiruddin Mahmud"],
+optH: ["कैकुबाद","बलबन","आराम शाह","नासिरुद्दीन महमूद"],
+ans: 0,
+solE: "Kaiqubad was the last ruler of the Slave Dynasty before the rise of the Khiljis.",
+solH: "कैकुबाद गुलाम वंश का अंतिम शासक था, जिसके बाद खिलजी वंश सत्ता में आया।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
+eng: "The Qarachil expedition was undertaken by whom?",
+hin: "कराचिल अभियान किसने चलाया था?",
+optE: ["Firoz Shah Tughlaq","Muhammad bin Tughlaq","Balban","Alauddin Khilji"],
+optH: ["फिरोज शाह तुगलक","मुहम्मद बिन तुगलक","बलबन","अलाउद्दीन खिलजी"],
 ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+solE: "The Qarachil expedition was launched by Muhammad bin Tughlaq.",
+solH: "कराचिल अभियान मुहम्मद बिन तुगलक द्वारा चलाया गया था।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Muhammad bin Tughlaq transferred the capital from where to where?",
+hin: "मुहम्मद बिन तुगलक ने राजधानी कहाँ से कहाँ स्थानांतरित की?",
+optE: ["Delhi to Daulatabad","Delhi to Agra","Lahore to Delhi","Daulatabad to Delhi"],
+optH: ["दिल्ली से दौलताबाद","दिल्ली से आगरा","लाहौर से दिल्ली","दौलताबाद से दिल्ली"],
+ans: 0,
+solE: "Muhammad bin Tughlaq shifted the capital from Delhi to Daulatabad.",
+solH: "मुहम्मद बिन तुगलक ने राजधानी दिल्ली से दौलताबाद स्थानांतरित की।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "Who built Hazar Sutun (Hall of Thousand Pillars)?",
+hin: "हजार स्तंभों वाला हज़ार सुतून किसने बनवाया?",
+optE: ["Balban","Alauddin Khilji","Muhammad bin Tughlaq","Firoz Shah Tughlaq"],
+optH: ["बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक","फिरोज शाह तुगलक"],
+ans: 1,
+solE: "Alauddin Khilji built the famous Hazar Sutun palace at Siri.",
+solH: "अलाउद्दीन खिलजी ने सीरी में प्रसिद्ध हज़ार सुतून महल बनवाया।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "What was the real name of Hazar Dinari?",
+hin: "हजार दिनारी का वास्तविक नाम क्या था?",
+optE: ["Malik Kafur","Malik Ayaz","Khusrau Khan","Ain-ul-Mulk"],
+optH: ["मलिक काफूर","मलिक अयाज़","खुसरो खान","ऐन-उल-मुल्क"],
+ans: 0,
+solE: "Malik Kafur was called Hazar Dinari because he was purchased for one thousand dinars.",
+solH: "मलिक काफूर को हजार दिनारी कहा जाता था क्योंकि उसे एक हजार दीनार में खरीदा गया था।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "The Department of Agriculture was known as?",
+hin: "कृषि विभाग को क्या कहा जाता था?",
+optE: ["Diwan-i-Kohi","Diwan-i-Ariz","Diwan-i-Risalat","Diwan-i-Mustakhraj"],
+optH: ["दीवान-ए-कोही","दीवान-ए-अरीज","दीवान-ए-रिसालत","दीवान-ए-मुस्तखराज"],
+ans: 0,
+solE: "Diwan-i-Kohi was established to promote agriculture.",
+solH: "दीवान-ए-कोही कृषि विकास के लिए स्थापित किया गया था।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "The Department of Charity was called?",
+hin: "दान एवं परोपकार विभाग को क्या कहा जाता था?",
+optE: ["Diwan-i-Kohi","Diwan-i-Ariz","Diwan-i-Risalat","Diwan-i-Khairat"],
+optH: ["दीवान-ए-कोही","दीवान-ए-अरीज","दीवान-ए-रिसालत","दीवान-ए-खैरात"],
+ans: 3,
+solE: "Diwan-i-Khairat was the department responsible for charity.",
+solH: "दीवान-ए-खैरात दान एवं परोपकार से संबंधित विभाग था।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "The Department of Correspondence was known as?",
+hin: "पत्राचार विभाग को क्या कहा जाता था?",
+optE: ["Diwan-i-Kohi","Diwan-i-Insha","Diwan-i-Risalat","Diwan-i-Mustakhraj"],
+optH: ["दीवान-ए-कोही","दीवान-ए-इंशा","दीवान-ए-रिसालत","दीवान-ए-मुस्तखराज"],
+ans: 1,
+solE: "Diwan-i-Insha handled royal correspondence and records.",
+solH: "दीवान-ए-इंशा शाही पत्राचार और अभिलेखों का कार्य करता था।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Who founded Diwan-i-Kohi?",
+hin: "दीवान-ए-कोही की स्थापना किसने की?",
+optE: ["Muhammad bin Tughlaq","Firoz Shah Tughlaq","Alauddin Khilji","Balban"],
+optH: ["मुहम्मद बिन तुगलक","फिरोज शाह तुगलक","अलाउद्दीन खिलजी","बलबन"],
+ans: 0,
+solE: "Muhammad bin Tughlaq established Diwan-i-Kohi for agricultural development.",
+solH: "मुहम्मद बिन तुगलक ने कृषि विकास हेतु दीवान-ए-कोही की स्थापना की।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "Arrange the administrative units in ascending order.",
+hin: "प्रशासनिक इकाइयों को आरोही क्रम में व्यवस्थित करें।",
+optE: [
+"Gram < Pargana < Shiq < Iqta",
+"Iqta < Shiq < Pargana < Gram",
+"Pargana < Gram < Shiq < Iqta",
+"Gram < Shiq < Pargana < Iqta"
+],
+optH: [
+"ग्राम < परगना < शिक < इक्ता",
+"इक्ता < शिक < परगना < ग्राम",
+"परगना < ग्राम < शिक < इक्ता",
+"ग्राम < शिक < परगना < इक्ता"
+],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "The correct ascending order is Gram, Pargana, Shiq and Iqta.",
+solH: "सही आरोही क्रम ग्राम, परगना, शिक और इक्ता है।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

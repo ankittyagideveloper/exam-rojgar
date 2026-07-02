@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,288 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "Who were the first to issue Gold Coins on a large scale?",
+hin: "सबसे पहले बड़े पैमाने पर स्वर्ण मुद्राएँ किसने जारी की थीं?",
+optE: ["Kushans","Indo Greeks","Shakas","Satavahanas"],
+optH: ["कुषाण","इंडो-ग्रीक","शक","सातवाहन"],
+ans: 0,
+solE: "The Kushans were the first rulers in India to issue gold coins on a large scale.",
+solH: "भारत में बड़े पैमाने पर स्वर्ण मुद्राएँ जारी करने वाले प्रथम शासक कुषाण थे।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Sunga Dynasty was founded by whom?",
+hin: "शुंग वंश की स्थापना किसने की थी?",
+optE: ["Brihadratha","Devabhuti","Pushyamitra Sunga","Simuka"],
+optH: ["बृहद्रथ","देवभूति","पुष्यमित्र शुंग","सिमुक"],
+ans: 2,
+solE: "Pushyamitra Sunga founded the Sunga Dynasty after killing the last Mauryan ruler Brihadratha.",
+solH: "पुष्यमित्र शुंग ने अंतिम मौर्य शासक बृहद्रथ की हत्या करके शुंग वंश की स्थापना की थी।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
+eng: "Who wrote Mahabhashya?",
+hin: "महाभाष्य किसने लिखा था?",
+optE: ["Kalidasa","Patanjali","Agnimitra","Vasumitra"],
+optH: ["कालिदास","पतंजलि","अग्निमित्र","वसुमित्र"],
 ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+solE: "Mahabhashya was written by Patanjali. It is a famous commentary on Panini's grammar.",
+solH: "महाभाष्य की रचना पतंजलि ने की थी। यह पाणिनि के व्याकरण पर प्रसिद्ध टीका है।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
+eng: "Who was the last ruler of the Sunga Dynasty?",
+hin: "शुंग वंश का अंतिम शासक कौन था?",
+optE: ["Brihadratha","Devabhuti","Pushyamitra Sunga","Simuka"],
+optH: ["बृहद्रथ","देवभूति","पुष्यमित्र शुंग","सिमुक"],
 ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+solE: "Devabhuti was the last ruler of the Sunga Dynasty.",
+solH: "देवभूति शुंग वंश का अंतिम शासक था।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
+eng: "Where was the capital of the Kanva Dynasty?",
+hin: "कण्व वंश की राजधानी कहाँ थी?",
+optE: ["Vidisha","Pratishthana","Pataliputra","Paithan"],
+optH: ["विदिशा","प्रतिष्ठान","पाटलिपुत्र","पैठान"],
 ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+solE: "Pataliputra was the capital of the Kanva Dynasty.",
+solH: "कण्व वंश की राजधानी पाटलिपुत्र थी।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Who was the founder of the Kanva Dynasty?",
+hin: "कण्व वंश का संस्थापक कौन था?",
+optE: ["Brihadratha","Devabhuti","Vasudeva","Simuka"],
+optH: ["बृहद्रथ","देवभूति","वासुदेव","सिमुक"],
+ans: 2,
+solE: "Vasudeva founded the Kanva Dynasty after overthrowing the Sungas.",
+solH: "वासुदेव ने शुंगों को हटाकर कण्व वंश की स्थापना की थी।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Who was the founder of the Satavahana Dynasty?",
+hin: "सातवाहन वंश का संस्थापक कौन था?",
+optE: ["Gautamiputra Satakarni","Hala","Yajna Sri Satakarni","Simuka"],
+optH: ["गौतमीपुत्र शातकर्णि","हाल","यज्ञश्री शातकर्णि","सिमुक"],
+ans: 3,
+solE: "Simuka was the founder of the Satavahana Dynasty.",
+solH: "सिमुक सातवाहन वंश का संस्थापक था।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "What was the official language of the Satavahana Dynasty?",
+hin: "सातवाहन वंश की राजभाषा क्या थी?",
+optE: ["Magadhi","Pali","Prakrit","Sanskrit"],
+optH: ["मागधी","पाली","प्राकृत","संस्कृत"],
+ans: 2,
+solE: "Prakrit was the official language of the Satavahana Dynasty.",
+solH: "प्राकृत सातवाहन वंश की राजभाषा थी।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Chedi Dynasty belonged to which region?",
+hin: "चेदि वंश किस क्षेत्र से संबंधित था?",
+optE: ["Taxila","Ujjain","Toshali","Kalinga"],
+optH: ["तक्षशिला","उज्जैन","तोशाली","कलिंग"],
+ans: 3,
+solE: "The Chedi Dynasty belonged to the Kalinga region.",
+solH: "चेदि वंश कलिंग क्षेत्र से संबंधित था।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Hathigumpha Inscription belonged to which dynasty?",
+hin: "हाथीगुम्फा अभिलेख किस वंश से संबंधित था?",
+optE: ["Chedi","Satavahana","Parthians","Kanva"],
+optH: ["चेदि","सातवाहन","पार्थियन","कण्व"],
+ans: 0,
+solE: "Hathigumpha Inscription is associated with King Kharavela of the Chedi Dynasty.",
+solH: "हाथीगुम्फा अभिलेख चेदि वंश के राजा खारवेल से संबंधित है।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Udayagiri Hill is located near which place?",
+hin: "उदयगिरि पहाड़ी किस स्थान के पास स्थित है?",
+optE: ["Bhubaneswar","Kolkata","Palitana","Pataliputra"],
+optH: ["भुवनेश्वर","कोलकाता","पालीताना","पाटलिपुत्र"],
+ans: 0,
+solE: "Udayagiri Hill is located near Bhubaneswar in Odisha.",
+solH: "उदयगिरि पहाड़ी ओडिशा में भुवनेश्वर के पास स्थित है।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
+eng: "Who were the first among these to issue gold coins?",
+hin: "इनमें सबसे पहले स्वर्ण मुद्राएँ किसने जारी की थीं?",
+optE: ["Satavahanas","Indo Greeks","Parthians","Kushans"],
+optH: ["सातवाहन","इंडो-ग्रीक","पार्थियन","कुषाण"],
 ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+solE: "Indo Greeks were among the earliest rulers to issue gold coins in India.",
+solH: "भारत में स्वर्ण मुद्राएँ जारी करने वालों में इंडो-ग्रीक सबसे प्रारंभिक थे।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
+eng: "Rudradaman was the famous ruler of which dynasty?",
+hin: "रुद्रदामन किस वंश का प्रसिद्ध शासक था?",
+optE: ["Parthians","Shakas","Kushans","Indo Greeks"],
+optH: ["पार्थियन","शक","कुषाण","इंडो-ग्रीक"],
 ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+solE: "Rudradaman was a famous ruler of the Shaka Dynasty.",
+solH: "रुद्रदामन शक वंश का प्रसिद्ध शासक था।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "Which of the following was another name of Indo Greeks?",
+hin: "निम्नलिखित में से इंडो-ग्रीक का दूसरा नाम क्या था?",
+optE: ["Scythians","Parthians","Bactrians","Kaphesis"],
+optH: ["सिथियन","पार्थियन","बैक्ट्रियन","कफेसिस"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Indo Greeks were also known as Bactrians.",
+solH: "इंडो-ग्रीक को बैक्ट्रियन भी कहा जाता था।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "Gondaphernes was the famous ruler of which dynasty?",
+hin: "गोंडोफर्नीस किस वंश का प्रसिद्ध शासक था?",
+optE: ["Parthians","Scythians","Kushans","Satavahanas"],
+optH: ["पार्थियन","सिथियन","कुषाण","सातवाहन"],
+ans: 0,
+solE: "Gondaphernes was a famous ruler of the Parthian Dynasty.",
+solH: "गोंडोफर्नीस पार्थियन वंश का प्रसिद्ध शासक था।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "Who was the founder of Shaka rule in North-Western India?",
+hin: "उत्तर-पश्चिम भारत में शक शासन का संस्थापक कौन था?",
+optE: ["Maues","Azes","Rudradaman","Menander"],
+optH: ["माउस","एजेस","रुद्रदामन","मिलिंद"],
+ans: 0,
+solE: "Maues was the founder of Shaka rule in North-Western India.",
+solH: "माउस उत्तर-पश्चिम भारत में शक शासन का संस्थापक था।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "The first Kushan Dynasty was founded by whom?",
+hin: "प्रथम कुषाण वंश की स्थापना किसने की थी?",
+optE: ["Kujula Kadphises","Vima Kadphises","Kanishka","Vasudeva II"],
+optH: ["कुजुल कडफिसेस","विम कडफिसेस","कनिष्क","वासुदेव द्वितीय"],
+ans: 0,
+solE: "Kujula Kadphises founded the Kushan Dynasty.",
+solH: "कुजुल कडफिसेस ने कुषाण वंश की स्थापना की थी।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Who were the first to issue Lead coins?",
+hin: "सबसे पहले सीसे के सिक्के किसने जारी किए थे?",
+optE: ["Kushans","Indo Greeks","Shakas","Satavahanas"],
+optH: ["कुषाण","इंडो-ग्रीक","शक","सातवाहन"],
+ans: 3,
+solE: "The Satavahanas were the first to issue lead coins in India.",
+solH: "भारत में सबसे पहले सीसे के सिक्के सातवाहनों ने जारी किए थे।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
+eng: "Who was called the Second Ashoka?",
+hin: "द्वितीय अशोक किसे कहा जाता है?",
+optE: ["Kalashoka","Kanishka","Kadphises","Kalidasa"],
+optH: ["कालाशोक","कनिष्क","कडफिसेस","कालिदास"],
 ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+solE: "Kanishka was called the Second Ashoka because of his patronage of Buddhism.",
+solH: "बौद्ध धर्म के संरक्षण के कारण कनिष्क को द्वितीय अशोक कहा जाता है।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "Kanishka followed which sect of Buddhism?",
+hin: "कनिष्क बौद्ध धर्म के किस संप्रदाय का अनुयायी था?",
+optE: ["Hinayana","Mahayana","Vajrayana","Syadvada"],
+optH: ["हीनयान","महायान","वज्रयान","स्यादवाद"],
+ans: 1,
+solE: "Kanishka was a follower of Mahayana Buddhism.",
+solH: "कनिष्क महायान बौद्ध धर्म का अनुयायी था।"
+},
+{
+id: 21,
+eng: "Who was the last ruler of the Kushan Dynasty?",
+hin: "कुषाण वंश का अंतिम शासक कौन था?",
+optE: ["Devavrata","Brihadratha","Vasudeva","Kanishka"],
+optH: ["देवव्रत","बृहद्रथ","वासुदेव","कनिष्क"],
+ans: 2,
+solE: "Vasudeva was considered the last important ruler of the Kushan Dynasty.",
+solH: "वासुदेव कुषाण वंश का अंतिम महत्वपूर्ण शासक माना जाता है।"
+},
+
+{
+id: 22,
+eng: "Who wrote the book 'Periplus of the Erythraean Sea'?",
+hin: "'पेरिप्लस ऑफ द एरिथ्रियन सी' पुस्तक किसने लिखी थी?",
+optE: ["Strabo","Ptolemy","Pliny","Unknown Greek Author"],
+optH: ["स्ट्रैबो","टॉलेमी","प्लिनी","अज्ञात यूनानी लेखक"],
+ans: 3,
+solE: "Periplus of the Erythraean Sea was written by an unknown Greek author.",
+solH: "पेरिप्लस ऑफ द एरिथ्रियन सी की रचना एक अज्ञात यूनानी लेखक ने की थी।"
+},
+
+{
+id: 23,
+eng: "Chaityas were mainly known as?",
+hin: "चैत्य मुख्य रूप से किसके लिए प्रसिद्ध थे?",
+optE: ["Prayer halls","Monasteries","Residential places","Relics"],
+optH: ["प्रार्थना सभागार","मठ","आवासीय स्थान","अवशेष"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "Chaityas were Buddhist prayer halls used for worship.",
+solH: "चैत्य बौद्ध धर्म के प्रार्थना सभागार होते थे जिनका उपयोग पूजा के लिए किया जाता था।"
+},
+
+{
+id: 24,
+eng: "Who wrote the famous Gatha Saptashati?",
+hin: "प्रसिद्ध गाथा सप्तशती किसने लिखी थी?",
+optE: ["Kanishka","Hala","Simuka","Rudradaman"],
+optH: ["कनिष्क","हाल","सिमुक","रुद्रदामन"],
+ans: 1,
+solE: "Gatha Saptashati was written by Satavahana ruler Hala in Prakrit language.",
+solH: "गाथा सप्तशती की रचना सातवाहन शासक हाल ने प्राकृत भाषा में की थी।"
+},
+
+{
+id: 25,
+eng: "Junagarh Inscription is associated with which ruler?",
+hin: "जूनागढ़ अभिलेख किस शासक से संबंधित है?",
+optE: ["Kanishka","Rudradaman","Gautamiputra Satakarni","Menander"],
+optH: ["कनिष्क","रुद्रदामन","गौतमीपुत्र शातकर्णि","मिलिंद"],
+ans: 1,
+solE: "Junagarh Inscription is associated with Rudradaman and is written in Sanskrit.",
+solH: "जूनागढ़ अभिलेख रुद्रदामन से संबंधित है और यह संस्कृत में लिखा गया है।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

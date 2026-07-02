@@ -44,6 +44,8 @@ import BuddhismMockTestPage from "./pages/BuddhismMockTestPage";
 import AverageMockTestPage from "./pages/AverageMockTestPage";
 import PostMauryanEmpireMockTestPage from "./pages/PostMauryanEmpireMockTestPage";
 import MauryanEmpireMockTestPage from "./pages/MauryanEmpireMockTestPage";
+import GuptaMockTestPage from "./pages/GuptaMockTestPage";
+import MixtureAlligationMockTestPage from "./pages/MixtureAlligationMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -185,142 +187,40 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/mock-test/sangam",
-    element: <TestLayout />,
+    path: "/mock-test",
+    element: (
+      <ProtectedRoute>
+        <TestLayout />
+      </ProtectedRoute>
+    ),
     children: [
+      { path: "sangam", element: <SangamMockTestPage /> },
       {
-        index: true,
-        element: <SangamMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/profit-loss-discount",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
+        path: "profit-loss-discount",
         element: <ProfitLossDiscountMockTestPage />,
       },
-    ],
-  },
-  {
-    path: "/mock-test/vijayanagar-bahmani",
-    element: <TestLayout />,
-    children: [
       {
-        index: true,
+        path: "vijayanagar-bahmani",
         element: <VijayanagarBahmaniMockTestPage />,
       },
-    ],
-  },
-  {
-    path: "/mock-test/revision-test-1",
-    element: <TestLayout />,
-    children: [
+      { path: "revision-test-1", element: <RevisionTest1MockTestPage /> },
+      { path: "revision-test-2", element: <RevisionTest2MockTestPage /> },
+      { path: "harappa", element: <HarappaMockTestPage /> },
+      { path: "hcf-lcm", element: <HCFLCMMockTestPage /> },
+      { path: "environment-quiz", element: <EnvironmentQuizMockTestPage /> },
+      { path: "mahajanpad", element: <MahajanpadMockTestPage /> },
+      { path: "buddhism", element: <BuddhismMockTestPage /> },
+      { path: "jainism", element: <JainismMockTestPage /> },
+      { path: "average", element: <AverageMockTestPage /> },
       {
-        index: true,
-        element: <RevisionTest1MockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/revision-test-2",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <RevisionTest2MockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/harappa",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <HarappaMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/hcf-lcm",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <HCFLCMMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/environment-quiz",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <EnvironmentQuizMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/mahajanpad",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <MahajanpadMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/buddhism",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <BuddhismMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/jainism",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <JainismMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/average",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
-        element: <AverageMockTestPage />,
-      },
-    ],
-  },
-  {
-    path: "/mock-test/post-mauryan-empire",
-    element: <TestLayout />,
-    children: [
-      {
-        index: true,
+        path: "post-mauryan-empire",
         element: <PostMauryanEmpireMockTestPage />,
       },
-    ],
-  },
-  {
-    path: "/mock-test/mauryan-empire",
-    element: <TestLayout />,
-    children: [
+      { path: "mauryan-empire", element: <MauryanEmpireMockTestPage /> },
+      { path: "gupta", element: <GuptaMockTestPage /> },
       {
-        index: true,
-        element: <MauryanEmpireMockTestPage />,
+        path: "mixture-alligation",
+        element: <MixtureAlligationMockTestPage />,
       },
     ],
   },

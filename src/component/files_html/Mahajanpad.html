@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,234 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
+eng: "What was the capital of the Anga Mahajanapada?",
+hin: "अंग महाजनपद की राजधानी क्या थी?",
+optE: ["Rajagriha","Vaishali","Champa","Kaushambi"],
+optH: ["राजगृह","वैशाली","चंपा","कौशांबी"],
 ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+solE: "Champa was the capital of Anga Mahajanapada. It was an important center of trade and commerce situated near the Ganga river system.",
+solH: "चंपा अंग महाजनपद की राजधानी थी। यह गंगा नदी तंत्र के निकट स्थित एक महत्वपूर्ण व्यापारिक केंद्र था।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "The Haryanka dynasty of Magadha began around which year?",
+hin: "मगध के हर्यंक वंश की शुरुआत लगभग किस वर्ष हुई थी?",
+optE: ["326 BC","544 BC","600 BC","450 BC"],
+optH: ["326 ईसा पूर्व","544 ईसा पूर्व","600 ईसा पूर्व","450 ईसा पूर्व"],
+ans: 1,
+solE: "The Haryanka dynasty was founded around 544 BC by Bimbisara. This dynasty laid the foundation of Magadha's rise as a powerful kingdom.",
+solH: "हर्यंक वंश की स्थापना लगभग 544 ईसा पूर्व में बिम्बिसार द्वारा की गई थी। इसी वंश ने मगध को एक शक्तिशाली राज्य बनाने की नींव रखी।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "Pataliputra was made the capital during the Haryanka dynasty by whom?",
+hin: "हर्यंक वंश के दौरान पाटलिपुत्र को राजधानी किसने बनाया?",
+optE: ["Ajatashatru","Bimbisara","Udayin","Mahapadma Nanda"],
+optH: ["अजातशत्रु","बिम्बिसार","उदायिन","महापद्म नंद"],
+ans: 2,
+solE: "Udayin, the son of Ajatashatru, shifted the capital from Rajagriha to Pataliputra because of its strategic location near rivers and trade routes.",
+solH: "अजातशत्रु के पुत्र उदायिन ने राजधानी राजगृह से पाटलिपुत्र स्थानांतरित की, क्योंकि यह नदियों और व्यापार मार्गों के निकट रणनीतिक दृष्टि से महत्वपूर्ण था।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Which dynasty succeeded the Haryanka dynasty in Magadha?",
+hin: "मगध में हर्यंक वंश के बाद कौन-सा वंश आया?",
+optE: ["Nanda dynasty","Maurya dynasty","Shishunaga dynasty","Gupta dynasty"],
+optH: ["नंद वंश","मौर्य वंश","शिशुनाग वंश","गुप्त वंश"],
+ans: 2,
+solE: "The Shishunaga dynasty succeeded the Haryanka dynasty in Magadha. Shishunaga established a new ruling line after the decline of the Haryankas.",
+solH: "हर्यंक वंश के बाद मगध में शिशुनाग वंश का उदय हुआ। शिशुनाग ने हर्यंकों के पतन के बाद नए शासक वंश की स्थापना की।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
+eng: "Alexander invaded India in which year?",
+hin: "सिकंदर ने भारत पर किस वर्ष आक्रमण किया था?",
+optE: ["544 AD","326 AD","326 BC","362 BC"],
+optH: ["544  ईसवी","326  ईसवी","326 ईसा पूर्व","362 ईसा पूर्व"],
 ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+solE: "Alexander invaded north-western India in 326 BC. He crossed the Indus River and fought several local rulers including King Porus.",
+solH: "सिकंदर ने 326 ईसा पूर्व में उत्तर-पश्चिम भारत पर आक्रमण किया। उसने सिंधु नदी पार कर राजा पोरस सहित कई स्थानीय शासकों से युद्ध किया।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
+eng: "The Battle of Vitasta was fought on the banks of which river?",
+hin: "वितस्ता का युद्ध किस नदी के किनारे लड़ा गया था?",
+optE: ["Jhelum","Chenab","Ravi","Beas"],
+optH: ["झेलम","चेनाब","रावी","ब्यास"],
 ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+solE: "Vitasta was the ancient name of the Jhelum River. The famous battle between Alexander and Porus was fought near this river.",
+solH: "वितस्ता झेलम नदी का प्राचीन नाम था। सिकंदर और पोरस के बीच प्रसिद्ध युद्ध इसी नदी के निकट लड़ा गया था।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Who was the first ruler of the Haryanka dynasty?",
+hin: "हर्यंक वंश का प्रथम शासक कौन था?",
+optE: ["Bindusara","Bimbisara","Udayin","Ajathshatru"],
+optH: ["बिन्दुसार","बिम्बिसार","उदायिन","अजातशत्रु"],
+ans: 1,
+solE: "Bimbisara was the founder and first ruler of the Haryanka dynasty. He expanded Magadha through conquest and matrimonial alliances.",
+solH: "बिम्बिसार हर्यंक वंश का संस्थापक और प्रथम शासक था। उसने विजय और वैवाहिक संबंधों के माध्यम से मगध का विस्तार किया।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Which Mahajanapada had Vaishali as its capital?",
+hin: "किस महाजनपद की राजधानी वैशाली थी?",
+optE: ["Vajji","Kosala","Kashi","Malla"],
+optH: ["वज्जि","कोसल","काशी","मल्ल"],
+ans: 0,
+solE: "Vaishali was the capital of the Vajji confederacy. It is regarded as one of the earliest republican states in ancient India.",
+solH: "वैशाली वज्जि संघ की राजधानी थी। इसे प्राचीन भारत के प्रारंभिक गणराज्यों में से एक माना जाता है।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Which Mahajanapada became the most powerful during the 6th century BC?",
+hin: "6वीं शताब्दी ईसा पूर्व में कौन-सा महाजनपद सबसे शक्तिशाली बना?",
+optE: ["Kosala","Avanti","Magadha","Kashi"],
+optH: ["कोसल","अवंति","मगध","काशी"],
+ans: 2,
+solE: "Magadha emerged as the most powerful Mahajanapada due to strong rulers, fertile land, iron resources and strategic location.",
+solH: "मगध शक्तिशाली शासकों, उपजाऊ भूमि, लौह संसाधनों और रणनीतिक स्थिति के कारण सबसे शक्तिशाली महाजनपद बन गया।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Which ruler defeated the Vajji confederacy?",
+hin: "वज्जि संघ को किस शासक ने पराजित किया?",
+optE: ["Bimbisara","Ajatashatru","Udayin","Prasenajit"],
+optH: ["बिम्बिसार","अजातशत्रु","उदायिन","प्रसेनजित"],
+ans: 1,
+solE: "Ajatashatru defeated the Vajji confederacy after a long struggle. He used new military weapons and diplomatic strategies in the war.",
+solH: "अजातशत्रु ने लंबे संघर्ष के बाद वज्जि संघ को पराजित किया। उसने युद्ध में नए हथियारों और कूटनीतिक रणनीतियों का उपयोग किया।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "What was the capital of Magadha during the early Haryanka period?",
+hin: "प्रारंभिक हर्यंक काल में मगध की राजधानी क्या थी?",
+optE: ["Rajagriha","Pataliputra","Champa","Vaishali"],
+optH: ["राजगृह","पाटलिपुत्र","चंपा","वैशाली"],
+ans: 0,
+solE: "Rajagriha, also known as Rajgir, was the early capital of Magadha before it was shifted to Pataliputra.",
+solH: "राजगृह, जिसे वर्तमान में राजगीर कहा जाता है, पाटलिपुत्र से पहले मगध की राजधानी थी।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "Which Mahajanapada was located in present-day Avadh region?",
+hin: "वर्तमान अवध क्षेत्र में कौन-सा महाजनपद स्थित था?",
+optE: ["Kosala","Anga","Matsya","Kamboja"],
+optH: ["कोसल","अंग","मत्स्य","कम्बोज"],
+ans: 0,
+solE: "Kosala was located in the region of present-day eastern Uttar Pradesh, especially around the Avadh area.",
+solH: "कोसल महाजनपद वर्तमान पूर्वी उत्तर प्रदेश और अवध क्षेत्र में स्थित था।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Who was the ruler of Kosala during the time of Buddha?",
+hin: "बुद्ध के समय कोसल का शासक कौन था?",
+optE: ["Prasenajit","Ajatashatru","Bimbisara","Udayin"],
+optH: ["प्रसेनजित","अजातशत्रु","बिम्बिसार","उदायिन"],
+ans: 0,
+solE: "Prasenajit was the ruler of Kosala during the lifetime of Gautama Buddha. He maintained relations with Magadha.",
+solH: "गौतम बुद्ध के समय प्रसेनजित कोसल का शासक था। उसके मगध से संबंध थे।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "Which Mahajanapada was famous for trade and commerce?",
+hin: "कौन-सा महाजनपद व्यापार और वाणिज्य के लिए प्रसिद्ध था?",
+optE: ["Anga","Malla","Chedi","Vatsa"],
+optH: ["अंग","मल्ल","चेदि","वत्स"],
+ans: 0,
+solE: "Anga, with its capital Champa, was famous for trade and commercial activities because of its river connections.",
+solH: "अंग अपनी राजधानी चंपा के कारण व्यापार और वाणिज्य के लिए प्रसिद्ध था, क्योंकि यह नदी मार्गों से जुड़ा हुआ था।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
+eng: "Who founded the Nanda dynasty?",
+hin: "नंद वंश की स्थापना किसने की थी?",
+optE: ["Dhanananda","Mahapadma Nanda","Shishunaga","Kalashoka"],
+optH: ["धनानंद","महापद्म नंद","शिशुनाग","कालाशोक"],
 ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+solE: "Mahapadma Nanda founded the Nanda dynasty after overthrowing the Shishunaga rulers. He greatly expanded the Magadhan empire.",
+solH: "महापद्म नंद ने शिशुनाग वंश को हटाकर नंद वंश की स्थापना की। उसने मगध साम्राज्य का अत्यधिक विस्तार किया।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "Which Mahajanapada was located in present-day Punjab region?",
+hin: "वर्तमान पंजाब क्षेत्र में कौन-सा महाजनपद स्थित था?",
+optE: ["Kamboja","Gandhara","Malla","Kashi"],
+optH: ["कम्बोज","गांधार","मल्ल","काशी"],
+ans: 1,
+solE: "Gandhara was located in the north-west region including parts of present-day Pakistan and Afghanistan.",
+solH: "गांधार उत्तर-पश्चिम क्षेत्र में स्थित था, जिसमें वर्तमान पाकिस्तान और अफगानिस्तान के भाग शामिल थे।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "Which ruler is associated with the Second Buddhist Council?",
+hin: "द्वितीय बौद्ध संगीति किस शासक से संबंधित है?",
+optE: ["Kalashoka","Bimbisara","Ajatashatru","Ashoka"],
+optH: ["कालाशोक","बिम्बिसार","अजातशत्रु","अशोक"],
+ans: 0,
+solE: "The Second Buddhist Council was held during the reign of Kalashoka of the Shishunaga dynasty.",
+solH: "द्वितीय बौद्ध संगीति शिशुनाग वंश के कालाशोक के शासनकाल में आयोजित हुई थी।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
+eng: "Which among the following was a republican Mahajanapada?",
+hin: "निम्नलिखित में से कौन-सा एक गणराज्य महाजनपद था?",
+optE: ["Vajji","Magadha","Kosala","Avanti"],
+optH: ["वज्जि","मगध","कोसल","अवंति"],
 ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+solE: "Vajji was a republican confederacy where decisions were taken collectively rather than by a single monarch.",
+solH: "वज्जि एक गणराज्य संघ था, जहाँ निर्णय किसी एक राजा के बजाय सामूहिक रूप से लिए जाते थे।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Which Mahajanapada had Ujjaini as its capital?",
+hin: "उज्जयिनी किस महाजनपद की राजधानी थी?",
+optE: ["Avanti","Matsya","Kuru","Panchala"],
+optH: ["अवंति","मत्स्य","कुरु","पांचाल"],
+ans: 0,
+solE: "Ujjaini was the capital of Avanti Mahajanapada, which became an important political and commercial center.",
+solH: "उज्जयिनी अवंति महाजनपद की राजधानी थी, जो एक महत्वपूर्ण राजनीतिक और व्यापारिक केंद्र था।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "Which Greek ambassador visited the court of Chandragupta Maurya later on?",
+hin: "बाद में चंद्रगुप्त मौर्य के दरबार में कौन-सा यूनानी राजदूत आया?",
+optE: ["Megasthenes","Seleucus","Herodotus","Alexander"],
+optH: ["मेगास्थनीज","सेल्युकस","हेरोडोटस","सिकंदर"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "Megasthenes visited the court of Chandragupta Maurya and wrote the famous book 'Indica', which provides valuable information about ancient India.",
+solH: "मेगास्थनीज चंद्रगुप्त मौर्य के दरबार में आया और उसने 'इंडिका' नामक प्रसिद्ध पुस्तक लिखी, जिसमें प्राचीन भारत की महत्वपूर्ण जानकारी मिलती है।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;
@@ -979,8 +978,7 @@ solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई
             alert("Time is over. Your test has been automatically submitted.");
             finalizeTest();
         }
-
-        function finalizeTest() {
+		function finalizeTest() {
 					clearInterval(timerInterval);
 					recordTime();
 					mockSubmitted = true;
@@ -1006,9 +1004,8 @@ solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई
 						// Optional end audio
 							playEndAudio();
 
-		}, 500);
-}
-
+			}, 500);
+		}
         // Called from Telegram Gate
         function unlockResult() {
             setTimeout(() => {

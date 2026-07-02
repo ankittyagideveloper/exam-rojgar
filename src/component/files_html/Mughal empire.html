@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,234 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 10 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
+eng: "Garha-Katanga of Gondwana was conquered during Akbar's reign. Who was the ruler of Garha-Katanga?",
+hin: "गढ़-कटंगा (गोंडवाना) को अकबर के शासनकाल में जीता गया था। गढ़-कटंगा की शासक कौन थीं?",
+optE: ["Rana Udai Singh","Jaimal","Rani Durgavati","Chand Bibi"],
+optH: ["राणा उदय सिंह","जयमल","रानी दुर्गावती","चाँद बीबी"],
 ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+solE: "Garha-Katanga was ruled by Rani Durgavati, a brave Gond queen who fought against the Mughal forces of Akbar.",
+solH: "गढ़-कटंगा पर रानी दुर्गावती का शासन था। उन्होंने अकबर की मुगल सेना के विरुद्ध वीरतापूर्वक संघर्ष किया।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Who introduced the Mansabdari system in the Mughal Empire?",
+hin: "मुगल साम्राज्य में मनसबदारी व्यवस्था किसने प्रारम्भ की थी?",
+optE: ["Babur","Humayun","Akbar","Jahangir"],
+optH: ["बाबर","हुमायूँ","अकबर","जहाँगीर"],
+ans: 2,
+solE: "The Mansabdari system was introduced by Akbar to organize the military and civil administration.",
+solH: "मनसबदारी व्यवस्था अकबर द्वारा प्रशासन एवं सेना के संगठन हेतु प्रारम्भ की गई थी।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
+eng: "Which post was held by Raja Todar Mal among Akbar's Navratnas?",
+hin: "अकबर के नवरत्नों में राजा टोडरमल कौन-सा पद संभालते थे?",
+optE: ["Military Chief","Finance Minister","Chief Qazi","Governor"],
+optH: ["सैन्य प्रमुख","वित्त मंत्री","मुख्य काजी","राज्यपाल"],
 ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+solE: "Raja Todar Mal was Akbar's Finance Minister and is known for his land revenue reforms.",
+solH: "राजा टोडरमल अकबर के वित्त मंत्री थे और भूमि राजस्व सुधारों के लिए प्रसिद्ध हैं।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
+eng: "Who abolished the Jaziya tax during the Mughal period?",
+hin: "मुगल काल में जज़िया कर को किसने समाप्त किया था?",
+optE: ["Babur","Akbar","Jahangir","Aurangzeb"],
+optH: ["बाबर","अकबर","जहाँगीर","औरंगज़ेब"],
 ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+solE: "Akbar abolished the Jaziya tax as part of his policy of religious tolerance.",
+solH: "अकबर ने धार्मिक सहिष्णुता की नीति के अंतर्गत जज़िया कर समाप्त किया था।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Arrange the administrative units during Sher Shah Suri's reign in descending order.",
+hin: "शेरशाह सूरी के शासनकाल में प्रशासनिक इकाइयों को बड़े से छोटे क्रम में व्यवस्थित कीजिए।",
+optE: ["Iqta > Sarkar > Pargana > Gram","Sarkar > Iqta > Gram > Pargana","Pargana > Sarkar > Iqta > Gram","Gram > Pargana > Sarkar > Iqta"],
+optH: ["इक्ता > सरकार > परगना > ग्राम","सरकार > इक्ता > ग्राम > परगना","परगना > सरकार > इक्ता > ग्राम","ग्राम > परगना > सरकार > इक्ता"],
+ans: 0,
+solE: "During Sher Shah Suri's administration, the hierarchy was Iqta (Province) > Sarkar > Pargana > Gram.",
+solH: "शेरशाह सूरी के प्रशासन में क्रम था: इक्ता (प्रांत) > सरकार > परगना > ग्राम।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Who was known by the title 'Hazrat-e-Ala'?",
+hin: "'हज़रत-ए-आला' की उपाधि किसे दी गई थी?",
+optE: ["Babur","Akbar","Sher Shah Suri","Humayun"],
+optH: ["बाबर","अकबर","शेरशाह सूरी","हुमायूँ"],
+ans: 2,
+solE: "Sher Shah Suri was known by the title Hazrat-e-Ala.",
+solH: "शेरशाह सूरी को हज़रत-ए-आला की उपाधि से जाना जाता था।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "The Battle of Kannauj was fought in which year?",
+hin: "कन्नौज का युद्ध किस वर्ष लड़ा गया था?",
+optE: ["1539","1540","1537","1538"],
+optH: ["1539","1540","1537","1538"],
+ans: 1,
+solE: "The Battle of Kannauj (Bilgram) was fought in 1540 between Humayun and Sher Shah Suri.",
+solH: "कन्नौज (बिलग्राम) का युद्ध 1540 में हुमायूँ और शेरशाह सूरी के बीच लड़ा गया था।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
+eng: "Captain William Hawkins came to India in which year?",
+hin: "कैप्टन विलियम हॉकिंस भारत किस वर्ष आया था?",
+optE: ["1613","1600","1615","1608"],
+optH: ["1613","1600","1615","1608"],
 ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+solE: "William Hawkins arrived at Jahangir's court in 1608.",
+solH: "विलियम हॉकिंस 1608 में जहाँगीर के दरबार में पहुँचा था।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
+eng: "Who was the fifth Sikh Guru?",
+hin: "पाँचवें सिख गुरु कौन थे?",
+optE: ["Guru Tegh Bahadur","Guru Arjun Dev","Guru Gobind Singh","Lakshman Dev"],
+optH: ["गुरु तेग बहादुर","गुरु अर्जुन देव","गुरु गोविंद सिंह","लक्ष्मण देव"],
 ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+solE: "Guru Arjun Dev was the fifth Sikh Guru.",
+solH: "गुरु अर्जुन देव पाँचवें सिख गुरु थे।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "Niccolao Manucci, the Italian traveller, came to India during whose reign?",
+hin: "इतालवी यात्री निकोलाओ मनुच्ची भारत किसके शासनकाल में आया था?",
+optE: ["Aurangzeb","Shah Jahan","Jahangir","Akbar"],
+optH: ["औरंगज़ेब","शाहजहाँ","जहाँगीर","अकबर"],
+ans: 1,
+solE: "Niccolao Manucci arrived in India during the reign of Shah Jahan.",
+solH: "निकोलाओ मनुच्ची भारत शाहजहाँ के शासनकाल में आया था।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Itimad-ud-Daulah's tomb was built by whom?",
+hin: "एतमाद-उद-दौला का मकबरा किसने बनवाया था?",
+optE: ["Jahangir","Shah Jahan","Nur Jahan","Akbar"],
+optH: ["जहाँगीर","शाहजहाँ","नूरजहाँ","अकबर"],
+ans: 2,
+solE: "Nur Jahan built the tomb of Itimad-ud-Daulah in memory of her father.",
+solH: "नूरजहाँ ने अपने पिता की स्मृति में एतमाद-उद-दौला का मकबरा बनवाया था।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "Moti Masjid at Lahore was built by whom?",
+hin: "लाहौर की मोती मस्जिद का निर्माण किसने कराया था?",
+optE: ["Shah Jahan","Aurangzeb","Jahangir","Akbar"],
+optH: ["शाहजहाँ","औरंगज़ेब","जहाँगीर","अकबर"],
+ans: 2,
+solE: "The Moti Masjid at Lahore is associated with Jahangir.",
+solH: "लाहौर की मोती मस्जिद का निर्माण जहाँगीर से संबंधित माना जाता है।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
+eng: "Humayun's Tomb was built by whom?",
+hin: "हुमायूँ का मकबरा किसने बनवाया था?",
+optE: ["Gulbadan Begum","Haji Begum","Jahangir","Akbar"],
+optH: ["गुलबदन बेगम","हाजी बेगम","जहाँगीर","अकबर"],
 ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+solE: "Humayun's Tomb was built by his widow Haji Begum.",
+solH: "हुमायूँ का मकबरा उनकी पत्नी हाजी बेगम ने बनवाया था।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "Daswant and Basawan were famous painters during whose reign?",
+hin: "दसवंत और बसावन किस शासक के शासनकाल के प्रसिद्ध चित्रकार थे?",
+optE: ["Humayun","Babur","Akbar","Aurangzeb"],
+optH: ["हुमायूँ","बाबर","अकबर","औरंगज़ेब"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Daswant and Basawan were famous painters in Akbar's court.",
+solH: "दसवंत और बसावन अकबर के दरबार के प्रसिद्ध चित्रकार थे।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
+eng: "Who was known by the title 'Kavi Priya'?",
+hin: "'कवि प्रिय' की उपाधि किसे प्राप्त थी?",
+optE: ["Akbar","Birbal","Ustad Mansur","Hamida Banu"],
+optH: ["अकबर","बीरबल","उस्ताद मंसूर","हमीदा बानो"],
 ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+solE: "Birbal was known by the title Kavi Priya.",
+solH: "बीरबल को कवि प्रिय की उपाधि प्राप्त थी।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "The extensive use of Pietra Dura art is associated with whom?",
+hin: "पिएत्रा ड्यूरा कला का व्यापक प्रयोग किस  से संबंधित है?",
+optE: ["Jahangir","Nur Jahan","Akbar","Shah Jahan"],
+optH: ["जहाँगीर","नूरजहाँ","अकबर","शाहजहाँ"],
+ans: 1,
+solE: "Pietra Dura reached its peak during Nur Jahan's reign, especially in the Taj Mahal.",
+solH: "पिएत्रा ड्यूरा कला का सर्वोच्च विकास नूरजहाँ के काल में हुआ, विशेषकर ताजमहल में।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "Who introduced the Rupiya for the first time in India?",
+hin: "भारत में पहली बार रुपया किसने चलाया था?",
+optE: ["Akbar","Shah Jahan","Sher Shah Suri","Babur"],
+optH: ["अकबर","शाहजहाँ","शेरशाह सूरी","बाबर"],
+ans: 2,
+solE: "Sher Shah Suri introduced the silver Rupiya, the precursor of the modern rupee.",
+solH: "शेरशाह सूरी ने चाँदी का रुपया चलाया, जो आधुनिक रुपये का पूर्वरूप था।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Who was associated with Tauhid-e-Ilahi?",
+hin: "तौहीद-ए-इलाही से कौन संबंधित था?",
+optE: ["Balban","Jahangir","Shah Jahan","Akbar"],
+optH: ["बलबन","जहाँगीर","शाहजहाँ","अकबर"],
+ans: 3,
+solE: "Din-i-Ilahi was introduced by Akbar in 1582.",
+solH: "दीन-ए-इलाही की शुरुआत अकबर ने 1582 में की थी।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Arrange the Mughal administrative units in descending order.",
+hin: "मुगल प्रशासनिक इकाइयों को बड़े से छोटे क्रम में व्यवस्थित कीजिए।",
+optE: ["Sarkar > Pargana > Suba > Gram","Gram > Pargana > Sarkar > Suba","Sarkar > Suba > Pargana > Gram","Suba > Sarkar > Pargana > Gram"],
+optH: ["सरकार > परगना > सूबा > ग्राम","ग्राम > परगना > सरकार > सूबा","सरकार > सूबा > परगना > ग्राम","सूबा > सरकार > परगना > ग्राम"],
+ans: 3,
+solE: "The administrative order was Suba > Sarkar > Pargana > Gram.",
+solH: "मुगल प्रशासनिक क्रम था: सूबा > सरकार > परगना > ग्राम।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "Who built the Takht-e-Taus (Peacock Throne)?",
+hin: "तख्त-ए-ताऊस (मयूर सिंहासन) का निर्माण किसने करवाया था?",
+optE: ["Shah Jahan","Humayun","Akbar","Aurangzeb"],
+optH: ["शाहजहाँ","हुमायूँ","अकबर","औरंगज़ेब"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "The famous Peacock Throne (Takht-e-Taus) was commissioned by Shah Jahan.",
+solH: "प्रसिद्ध मयूर सिंहासन (तख्त-ए-ताऊस) का निर्माण शाहजहाँ ने करवाया था।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;
@@ -979,8 +978,7 @@ solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई
             alert("Time is over. Your test has been automatically submitted.");
             finalizeTest();
         }
-
-        function finalizeTest() {
+		function finalizeTest() {
 					clearInterval(timerInterval);
 					recordTime();
 					mockSubmitted = true;
@@ -1006,9 +1004,8 @@ solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई
 						// Optional end audio
 							playEndAudio();
 
-		}, 500);
-}
-
+			}, 500);
+		}
         // Called from Telegram Gate
         function unlockResult() {
             setTimeout(() => {

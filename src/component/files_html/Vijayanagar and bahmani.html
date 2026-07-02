@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,298 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
+eng: "Which Delhi Sultan captured Bukka and Harihara after the fall of the Kakatiya Kingdom?",
+hin: "काकतीय साम्राज्य के पतन के बाद बुक्का और हरिहर को किस दिल्ली सुल्तान ने बंदी बनाया था?",
+optE: ["Firoz Shah Tughlaq","Balban","Muhammad bin Tughlaq","Alauddin Khalji"],
+optH: ["फिरोज शाह तुगलक","बलबन","मुहम्मद बिन तुगलक","अलाउद्दीन खिलजी"],
 ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+solE: "Bukka and Harihara were captured by Muhammad bin Tughlaq after the fall of the Kakatiya Kingdom.",
+solH: "काकतीय साम्राज्य के पतन के बाद बुक्का और हरिहर को मुहम्मद बिन तुगलक ने बंदी बनाया था।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Arrange the dynasties of the Vijayanagara Empire in chronological order.",
+hin: "विजयनगर साम्राज्य के राजवंशों को कालक्रमानुसार व्यवस्थित कीजिए।",
+optE: [
+"Saluva, Sangama, Aravidu, Tuluva",
+"Sangama, Saluva, Aravidu, Tuluva",
+"Sangama, Saluva, Tuluva, Aravidu",
+"Sangama, Tuluva, Saluva, Aravidu"
+],
+optH: [
+"सालुव, संगम, अरावीडु, तुलुव",
+"संगम, सालुव, अरावीडु, तुलुव",
+"संगम, सालुव, तुलुव, अरावीडु",
+"संगम, तुलुव, सालुव, अरावीडु"
+],
+ans: 2,
+solE: "The correct order is Sangama → Saluva → Tuluva → Aravidu.",
+solH: "सही क्रम है: संगम → सालुव → तुलुव → अरावीडु।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
+eng: "During whose reign were a large number of Muslim cavalrymen and archers recruited into the army?",
+hin: "किस शासक के शासनकाल में बड़ी संख्या में मुस्लिम घुड़सवारों और तीरंदाजों को सेना में भर्ती किया गया?",
+optE: ["Krishna Deva Raya","Deva Raya I","Harihara I","Achyuta Raya"],
+optH: ["कृष्णदेवराय","देवराय प्रथम","हरिहर प्रथम","अच्युत राय"],
 ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+solE: "Deva Raya I recruited many Muslim cavalrymen and archers into the Vijayanagara army.",
+solH: "देवराय प्रथम ने विजयनगर सेना में बड़ी संख्या में मुस्लिम घुड़सवारों और तीरंदाजों की भर्ती की।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "Nicolo de Conti visited India and Vijayanagara during whose reign?",
+hin: "निकोलो डी कॉन्टी भारत और विजयनगर किस शासक के शासनकाल में आया था?",
+optE: ["Deva Raya I","Krishna Deva Raya","Harihara II","Achyuta Raya"],
+optH: ["देवराय प्रथम","कृष्णदेवराय","हरिहर द्वितीय","अच्युत राय"],
+ans: 0,
+solE: "Nicolo de Conti visited Vijayanagara during the reign of Deva Raya I.",
+solH: "निकोलो डी कॉन्टी देवराय प्रथम के शासनकाल में विजयनगर आया था।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "Who wrote Jambavati Kalyanam?",
+hin: "‘जाम्बवती कल्याणम्’ की रचना किसने की?",
+optE: ["Krishna Deva Raya","Allasani Peddana","Tenali Ramakrishna","Nandi Thimmana"],
+optH: ["कृष्णदेवराय","अल्लसानी पेद्दना","तेनाली रामकृष्ण","नंदी तिम्मना"],
+ans: 0,
+solE: "Jambavati Kalyanam was written by Krishna Deva Raya.",
+solH: "‘जाम्बवती कल्याणम्’ की रचना कृष्णदेवराय ने की थी।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Who founded the Sangama Dynasty?",
+hin: "संगम वंश की स्थापना किसने की?",
+optE: ["Krishna Deva Raya","Deva Raya I","Harihara and Bukka","Saluva Narasimha"],
+optH: ["कृष्णदेवराय","देवराय प्रथम","हरिहर और बुक्का","सालुव नरसिंह"],
+ans: 2,
+solE: "The Sangama Dynasty was founded by Harihara and Bukka.",
+solH: "संगम वंश की स्थापना हरिहर और बुक्का ने की थी।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
+eng: "Duarte Barbosa and Domingo Paes visited Vijayanagara during whose reign?",
+hin: "दुआर्ते बारबोसा और डोमिंगो पेस विजयनगर किस शासक के शासनकाल में आए थे?",
+optE: ["Krishna Deva Raya","Achyuta Raya","Harihara II","Deva Raya I"],
+optH: ["कृष्णदेवराय","अच्युत राय","हरिहर द्वितीय","देवराय प्रथम"],
 ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+solE: "Both Duarte Barbosa and Domingo Paes visited during Krishna Deva Raya's reign.",
+solH: "दुआर्ते बारबोसा और डोमिंगो पेस दोनों कृष्णदेवराय के शासनकाल में आए थे।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Who founded the Tuluva Dynasty?",
+hin: "तुलुव वंश की स्थापना किसने की?",
+optE: ["Vira Narasimha","Krishna Deva Raya","Harihara","Achyuta Raya"],
+optH: ["वीर नरसिंह","कृष्णदेवराय","हरिहर","अच्युत राय"],
+ans: 0,
+solE: "Vira Narasimha is regarded as the founder of the Tuluva Dynasty.",
+solH: "वीर नरसिंह को तुलुव वंश का संस्थापक माना जाता है।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "Who founded the Saluva Dynasty?",
+hin: "सालुव वंश की स्थापना किसने की?",
+optE: ["Vira Narasimha","Krishna Deva Raya","Harihara","Saluva Narasimha"],
+optH: ["वीर नरसिंह","कृष्णदेवराय","हरिहर","सालुव नरसिंह"],
+ans: 3,
+solE: "Saluva Narasimha founded the Saluva Dynasty.",
+solH: "सालुव नरसिंह ने सालुव वंश की स्थापना की थी।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
+eng: "Arrange the administrative units in ascending order.",
+hin: "प्रशासनिक इकाइयों को आरोही क्रम में व्यवस्थित कीजिए।",
+optE: ["Nadu, Gram, Mandalam","Gram, Mandalam, Nadu","Mandalam, Nadu, Gram","None of the above"],
+optH: ["नाडु, ग्राम, मंडलम","ग्राम, मंडलम, नाडु","मंडलम, नाडु, ग्राम","उपरोक्त में से कोई नहीं"],
 ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+solE: "Correct ascending order is Gram → Nadu → Mandalam.",
+solH: "सही आरोही क्रम है: ग्राम → नाडु → मंडलम।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Perta, Pagodas, Fanam and Varahas were known as:",
+hin: "पर्ता, पगोडा, फनम और वराह किसके नाम थे?",
+optE: ["Ports","Coins","Administrative Units","Taxes"],
+optH: ["बंदरगाह","सिक्के","प्रशासनिक इकाइयाँ","कर"],
+ans: 1,
+solE: "Pagoda, Fanam and Varaha were important coins of South India.",
+solH: "पगोडा, फनम और वराह दक्षिण भारत के महत्वपूर्ण सिक्के थे।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "The Battle of Rakshasa Tangadi (Talikota) was fought in:",
+hin: "राक्षस-तंगड़ी (तालीकोटा) का युद्ध किस वर्ष लड़ा गया था?",
+optE: ["1556","1575","1565","1566"],
+optH: ["1556","1575","1565","1566"],
+ans: 2,
+solE: "The Battle of Talikota was fought in 1565.",
+solH: "तालीकोटा का युद्ध 1565 ई. में लड़ा गया था।"
 },
-
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Fernao Nuniz visited the Vijayanagara Empire during whose reign?",
+hin: "फर्नाओ नुनिज विजयनगर साम्राज्य में किस शासक के शासनकाल में आया था?",
+optE: ["Achyuta Deva Raya","Krishna Deva Raya","Deva Raya I","Sadasiva Raya"],
+optH: ["अच्युत देवराय","कृष्णदेवराय","देवराय प्रथम","सदाशिव राय"],
+ans: 0,
+solE: "Fernao Nuniz visited Vijayanagara during the reign of Achyuta Deva Raya.",
+solH: "फर्नाओ नुनिज अच्युत देवराय के शासनकाल में विजयनगर आया था।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
+eng: "Caesar Frederick visited Vijayanagara during whose reign?",
+hin: "सीज़र फ्रेडरिक विजयनगर किस शासक के शासनकाल में आया था?",
+optE: ["Krishna Deva Raya","Achyuta Deva Raya","Sadasiva Raya","Deva Raya II"],
+optH: ["कृष्णदेवराय","अच्युत देवराय","सदाशिव राय","देवराय द्वितीय"],
 ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+solE: "Caesar Frederick visited during the reign of Sadasiva Raya.",
+solH: "सीज़र फ्रेडरिक सदाशिव राय के शासनकाल में आया था।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "The Vijayanagara Empire ruled during which period?",
+hin: "विजयनगर साम्राज्य का शासनकाल किस अवधि में था?",
+optE: ["1336-1565","1363-1556","1363-1565","1336-1556"],
+optH: ["1336-1565","1363-1556","1363-1565","1336-1556"],
+ans: 0,
+solE: "The Vijayanagara Empire was founded in 1336 and effectively ended after the Battle of Talikota in 1565.",
+solH: "विजयनगर साम्राज्य की स्थापना 1336 ई. में हुई तथा 1565 ई. के तालीकोटा युद्ध के बाद इसका पतन आरम्भ हुआ।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "Who built the Hazara Rama Temple, Vittala Swami Temple and Vijay Mahal?",
+hin: "हजार राम मंदिर, विट्ठल स्वामी मंदिर और विजय महल का निर्माण किसने कराया?",
+optE: ["Krishna Deva Raya","Harihara I","Achyuta Raya","Deva Raya II"],
+optH: ["कृष्णदेवराय","हरिहर प्रथम","अच्युत राय","देवराय द्वितीय"],
+ans: 0,
+solE: "Krishna Deva Raya is credited with the construction and development of these famous monuments.",
+solH: "इन प्रसिद्ध स्मारकों के निर्माण एवं विकास का श्रेय कृष्णदेवराय को दिया जाता है।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
+eng: "The Ashtadiggajas were in the court of:",
+hin: "अष्टदिग्गज किस शासक के दरबार में थे?",
+optE: ["Achyuta Raya","Krishna Deva Raya","Harihara II","Deva Raya I"],
+optH: ["अच्युत राय","कृष्णदेवराय","हरिहर द्वितीय","देवराय प्रथम"],
 ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+solE: "The famous group of eight Telugu scholars known as Ashtadiggajas adorned the court of Krishna Deva Raya.",
+solH: "अष्टदिग्गज नामक आठ महान तेलुगु विद्वान कृष्णदेवराय के दरबार की शोभा थे।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
+eng: "What was the original name of Tenali Ramakrishna?",
+hin: "तेनाली रामकृष्ण का मूल नाम क्या था?",
+optE: ["Panduranga Mahamatya","Parajita Papaharnama","Timmaya","Raju Ramachandra"],
+optH: ["पांडुरंग महामात्य","पराजित पापहारणम","तिम्मय","राजू रामचंद्र"],
 ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+solE: "Tenali Ramakrishna was originally known as Panduranga Mahamatya.",
+solH: "तेनाली रामकृष्ण का मूल नाम पांडुरंग महामात्य था।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "Who built the Golconda Fort?",
+hin: "गोलकुंडा किले का निर्माण किसने कराया?",
+optE: ["Quli Qutb Shah","Muhammad Adil Shah","Ibrahim Adil Shah","Ahmad Shah Abdali"],
+optH: ["कुली कुतुब शाह","मुहम्मद आदिल शाह","इब्राहिम आदिल शाह","अहमद शाह अब्दाली"],
+ans: 0,
+solE: "Golconda Fort is associated with Quli Qutb Shah and the Qutb Shahi rulers.",
+solH: "गोलकुंडा किला कुली कुतुब शाह तथा कुतुबशाही शासकों से संबंधित है।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "What was the old name of Hyderabad?",
+hin: "हैदराबाद का प्राचीन नाम क्या था?",
+optE: ["Bhagwannagar","Allahabad","Bhagyanagar","Bhagyagram"],
+optH: ["भगवन्नगर","इलाहाबाद","भाग्यनगर","भाग्यग्राम"],
+ans: 2,
+solE: "Hyderabad was earlier known as Bhagyanagar.",
+solH: "हैदराबाद का पुराना नाम भाग्यनगर था।"
+},
+
+{
+id: 21,
+eng: "Which of the following kingdoms did NOT participate in the Battle of Talikota?",
+hin: "निम्नलिखित में से किस राज्य ने तालीकोटा के युद्ध में भाग नहीं लिया था?",
+optE: ["Bijapur","Golconda","Bidar","Berar"],
+optH: ["बीजापुर","गोलकुंडा","बीदर","बरार"],
+ans: 3,
+solE: "Berar did not participate in the confederacy that fought Vijayanagara at Talikota.",
+solH: "तालीकोटा युद्ध में विजयनगर के विरुद्ध बने संघ में बरार शामिल नहीं था।"
+},
+
+{
+id: 22,
+eng: "Who was known as Hasan Gangu?",
+hin: "हसन गंगू के नाम से कौन प्रसिद्ध था?",
+optE: ["Bahram Shah","Adil Shah","Quli Qutb Shah","Bahman Shah"],
+optH: ["बहराम शाह","आदिल शाह","कुली कुतुब शाह","बहमन शाह"],
+ans: 3,
+solE: "Ala-ud-Din Bahman Shah, founder of the Bahmani Kingdom, was known as Hasan Gangu.",
+solH: "बहमनी राज्य के संस्थापक अलाउद्दीन बहमन शाह को हसन गंगू के नाम से जाना जाता था।"
+},
+
+{
+id: 23,
+eng: "What was the capital of the Vijayanagara Empire?",
+hin: "विजयनगर साम्राज्य की राजधानी क्या थी?",
+optE: ["Hampi","Warangal","Gulbarga","Bidar"],
+optH: ["हम्पी","वारंगल","गुलबर्गा","बीदर"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "Hampi (Vijayanagara) was the capital of the Vijayanagara Empire.",
+solH: "हम्पी (विजयनगर) विजयनगर साम्राज्य की राजधानी थी।"
+},
+
+{
+id: 24,
+eng: "What was the capital of the Bahmani Kingdom?",
+hin: "बहमनी राज्य की राजधानी क्या थी?",
+optE: ["Gulbarga","Bidar","Bijapur","Daulatabad"],
+optH: ["गुलबर्गा","बीदर","बीजापुर","दौलताबाद"],
+ans: 0,
+solE: "The first capital of the Bahmani Kingdom was Gulbarga (Ahsanabad). Later it was shifted to Bidar.",
+solH: "बहमनी राज्य की प्रारंभिक राजधानी गुलबर्गा (अहसानाबाद) थी। बाद में इसे बीदर स्थानांतरित किया गया।"
+},
+{
+id: 25,
+eng: "The Battle of Talikota (1565) was fought between Vijayanagara and the combined forces of which Sultanates?",
+hin: "तालीकोटा का युद्ध (1565) विजयनगर और किन सल्तनतों की संयुक्त सेना के बीच लड़ा गया था?",
+optE: ["Bijapur, Golconda, Bidar and Ahmadnagar","Bijapur, Berar, Delhi and Golconda","Golconda, Gujarat, Malwa and Bidar","Ahmadnagar, Bengal, Bidar and Berar"],
+optH: ["बीजापुर, गोलकुंडा, बीदर और अहमदनगर","बीजापुर, बरार, दिल्ली और गोलकुंडा","गोलकुंडा, गुजरात, मालवा और बीदर","अहमदनगर, बंगाल, बीदर और बरार"],
+ans: 0,
+solE: "The combined forces of Ahmadnagar, Bijapur, Golconda and Bidar defeated Vijayanagara in the Battle of Talikota in 1565.",
+solH: "1565 के तालीकोटा युद्ध में अहमदनगर, बीजापुर, गोलकुंडा और बीदर की संयुक्त सेना ने विजयनगर को पराजित किया था।"
 }
+
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

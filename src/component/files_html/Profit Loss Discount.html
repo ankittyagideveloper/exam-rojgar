@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">30:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -348,7 +348,7 @@ Never consider yourself the cause of the results of your activities, and never b
             <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
                 <i class="fab fa-telegram-plane"></i>
             </div>
-            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
             <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
             
             <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
@@ -468,235 +468,399 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 30 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "P sells an item to Q at 50% profit. Q sells the same item to R at 60% loss. If R paid ₹3234 for the item, then at what price (in ₹) is the item purchased by P?",
+hin: "P किसी वस्तु को Q को 50% लाभ पर बेचता है। Q उसी वस्तु को R को 60% हानि पर बेचता है। यदि R ने वस्तु के लिए ₹3234 का भुगतान किया, तो P ने वह वस्तु कितने रुपये में खरीदी थी?",
+optE: ["5390","5387","5391","5393"],
+optH: ["5390","5387","5391","5393"],
+ans: 0,
+solE: "Let P's purchase price = x. Q buys it at 150% of x. R pays 40% of that price. Hence 0.4 × 1.5x = 3234 ⇒ 0.6x = 3234 ⇒ x = 5390.",
+solH: "मान लें P का क्रय मूल्य x है। Q इसे 50% लाभ पर खरीदता है अर्थात 1.5x। R इसे 60% हानि पर खरीदता है अर्थात 1.5x का 40%। इसलिए 0.4 × 1.5x = 3234 ⇒ 0.6x = 3234 ⇒ x = 5390।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "A dealer buys two articles X and Y for ₹500 each. He marks each of them at the same price. He sells X by giving two successive discounts of 50% and 28% and still earns ₹958 as profit. If he sells Y at a single discount of 77%, then what is the profit percentage on Y?",
+hin: "एक व्यापारी X और Y दो वस्तुएँ ₹500-₹500 में खरीदता है। दोनों का अंकित मूल्य समान रखता है। X पर 50% और 28% की क्रमिक छूट देने के बाद भी उसे ₹958 का लाभ होता है। यदि Y को 77% की एकल छूट पर बेचा जाए, तो Y पर लाभ प्रतिशत कितना होगा?",
+optE: ["86.3%","86%","85%","85.3%"],
+optH: ["86.3%","86%","85%","85.3%"],
+ans: 0,
+solE: "SP of X = 500 + 958 = 1458. After discounts, SP = 36% of MP. MP = 1458/0.36 = 4050. For Y, SP = 23% of 4050 = 931.5. Profit% = (931.5−500)/500 ×100 = 86.3%.",
+solH: "X का विक्रय मूल्य = 500 + 958 = 1458। दो छूटों के बाद विक्रय मूल्य अंकित मूल्य का 36% है। अतः MP = 1458/0.36 = 4050। Y का विक्रय मूल्य = 4050 का 23% = 931.5। लाभ% = (931.5−500)/500 ×100 = 86.3%।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "Suman, Kunal, and Pooja invest ₹1050, ₹1510, and ₹1280 respectively to start a business. If the profit at the end of the year is ₹1650, then what is the share of Pooja in the profit?",
+hin: "सुमन, कुणाल और पूजा ने क्रमशः ₹1050, ₹1510 और ₹1280 का निवेश करके व्यवसाय शुरू किया। यदि वर्ष के अंत में कुल लाभ ₹1650 है, तो पूजा का लाभांश कितना होगा?",
+optE: ["550","549","551","548"],
+optH: ["550","549","551","548"],
+ans: 0,
+solE: "Total investment = 1050 + 1510 + 1280 = 3840. Pooja's share = 1650 × 1280/3840 = ₹550.",
+solH: "कुल निवेश = 1050 + 1510 + 1280 = 3840। पूजा का लाभांश = 1650 × 1280/3840 = ₹550।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
-ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+eng: "A shopkeeper purchased 59 dozens of articles at the rate of ₹520 per dozen. He sold each one of them at the rate of ₹52. What percentage profit did he make?",
+hin: "एक दुकानदार ने 59 दर्जन वस्तुएँ ₹520 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹52 में बेची। उसका लाभ प्रतिशत कितना है?",
+optE: ["19%","23%","21%","20%"],
+optH: ["19%","23%","21%","20%"],
+ans: 3,
+solE: "CP per article = 520/12 = 43.33. SP per article = 52. Profit% = (52−43.33)/43.33 ×100 = 20%.",
+solH: "प्रति वस्तु क्रय मूल्य = 520/12 = 43.33। प्रति वस्तु विक्रय मूल्य = 52। लाभ% = (52−43.33)/43.33 ×100 = 20%।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
-ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+eng: "A dealer buys two articles X and Y for ₹800 each. He marks each of them at the same price. He sells X by giving two successive discounts of 45% and 73% and still earns ₹523 as profit. If he sells Y at a single discount of 89%, then what is the profit percentage on Y?",
+hin: "एक व्यापारी X और Y दो वस्तुएँ ₹800-₹800 में खरीदता है। दोनों का अंकित मूल्य समान रखता है। X पर 45% और 73% की क्रमिक छूट देने के बाद भी उसे ₹523 का लाभ होता है। यदि Y को 89% की एकल छूट पर बेचा जाए, तो Y पर लाभ प्रतिशत कितना होगा?",
+optE: ["22%","21.5%","21%","22.5%"],
+optH: ["22%","21.5%","21%","22.5%"],
+ans: 3,
+solE: "SP of X = 800 + 523 = 1323. After discounts SP = 55% × 27% = 14.85% of MP. MP = 1323/0.1485 = 8909.09. SP of Y = 11% of MP = 980. Profit% = (980−800)/800 ×100 = 22.5%.",
+solH: "X का विक्रय मूल्य = 800 + 523 = 1323। दो छूटों के बाद SP = MP का 14.85% है। MP = 1323/0.1485 = 8909.09। Y का SP = MP का 11% = 980। लाभ% = (980−800)/800 ×100 = 22.5%।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
+eng: "During a sale 50% of the goods are sold at 16% profit, 40% of the remaining goods are sold at 35% profit and the still remaining goods are sold at a loss of 25%. If there is an overall profit of x%, then what is the value of x?",
+hin: "एक बिक्री में 50% माल 16% लाभ पर बेचा गया, शेष माल के 40% को 35% लाभ पर बेचा गया तथा बचा हुआ माल 25% हानि पर बेचा गया। यदि कुल लाभ x% है, तो x का मान ज्ञात कीजिए।",
+optE: ["7.5","8","6","9"],
+optH: ["7.5","8","6","9"],
 ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+solE: "Assume total CP = 100. Profit = 50×16% + 20×35% − 30×25% = 8 + 7 − 7.5 = 7.5%.",
+solH: "कुल क्रय मूल्य 100 मानें। लाभ = 50×16% + 20×35% − 30×25% = 8 + 7 − 7.5 = 7.5%।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
+eng: "A shopkeeper purchased 62 dozens of articles at the rate of ₹100 per dozen. He sold each one of them at the rate of ₹75. What percentage profit did he make?",
+hin: "एक दुकानदार ने 62 दर्जन वस्तुएँ ₹100 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹75 में बेची। उसका लाभ प्रतिशत कितना है?",
+optE: ["800%","801%","797%","798%"],
+optH: ["800%","801%","797%","798%"],
 ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+solE: "CP/article = 100/12. SP/article = 75. Profit% = [(75−100/12)/(100/12)]×100 = 800%.",
+solH: "प्रति वस्तु क्रय मूल्य = 100/12। विक्रय मूल्य = 75। लाभ% = [(75−100/12)/(100/12)]×100 = 800%।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
+eng: "Madhu and Madhuri start a business by investing in the ratio 31 : 34. If total profit is ₹44,850, then what is the difference between the shares of profit of Madhu and Madhuri?",
+hin: "मधु और माधुरी ने 31 : 34 के अनुपात में निवेश करके व्यवसाय शुरू किया। यदि कुल लाभ ₹44,850 है, तो दोनों के लाभांश में कितना अंतर होगा?",
+optE: ["3570","1570","570","2070"],
+optH: ["3570","1570","570","2070"],
 ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+solE: "Difference ratio = 3. One part = 44850/65 = 690. Difference = 3×690 = ₹2070.",
+solH: "अंतर = 3 भाग। एक भाग = 44850/65 = 690। अतः अंतर = 3×690 = ₹2070।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
-ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+eng: "P sells an item to Q at 70% profit. Q sells the same item to R at 67% loss. If R paid ₹3927 for the item, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 70% लाभ पर बेचता है। Q उसे R को 67% हानि पर बेचता है। यदि R ने ₹3927 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["7003","6998","6997","7000"],
+optH: ["7003","6998","6997","7000"],
+ans: 3,
+solE: "0.33 × 1.70 × CP = 3927 ⇒ CP = 3927/0.561 = 7000.",
+solH: "0.33 × 1.70 × CP = 3927 ⇒ CP = 3927/0.561 = 7000।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "A shopkeeper purchased 42 dozens of articles at the rate of ₹630 per dozen. He sold each one of them at the rate of ₹63. What percentage profit did he make?",
+hin: "एक दुकानदार ने 42 दर्जन वस्तुएँ ₹630 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹63 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["21%","23%","20%","17%"],
+optH: ["21%","23%","20%","17%"],
+ans: 2,
+solE: "CP/article = 630/12 = 52.5, SP = 63. Profit% = (10.5/52.5)×100 = 20%.",
+solH: "प्रति वस्तु CP = 630/12 = 52.5, SP = 63। लाभ% = (10.5/52.5)×100 = 20%।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
+eng: "A man bought two types of chocolates, one at ₹8 for 9 chocolates and the other at ₹8 per chocolate. He purchased an equal number of each type and sold all the chocolates at ₹8 per piece. Find his percentage profit.",
+hin: "एक व्यक्ति ने दो प्रकार की चॉकलेट खरीदीं। पहली ₹8 में 9 चॉकलेट तथा दूसरी ₹8 प्रति चॉकलेट। दोनों की समान संख्या खरीदी और सभी को ₹8 प्रति चॉकलेट बेचा। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["78%","84%","82%","80%"],
+optH: ["78%","84%","82%","80%"],
 ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+solE: "Take 9 chocolates of each type. Total CP = 8 + 72 = 80. Total SP = 18×8 = 144. Profit% = 64/80×100 = 80%.",
+solH: "प्रत्येक प्रकार की 9 चॉकलेट लें। कुल CP = 8 + 72 = 80। कुल SP = 18×8 = 144। लाभ% = 64/80×100 = 80%।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "P sells an item to Q at 30% profit. Q sells the same item to R at 52% loss. If R paid ₹3900, then what was the purchase price of P?",
+hin: "P किसी वस्तु को Q को 30% लाभ पर बेचता है। Q उसे R को 52% हानि पर बेचता है। यदि R ने ₹3900 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["6250","6252","6253","6248"],
+optH: ["6250","6252","6253","6248"],
+ans: 0,
+solE: "0.48 × 1.30 × CP = 3900 ⇒ CP = 3900/0.624 = 6250.",
+solH: "0.48 × 1.30 × CP = 3900 ⇒ CP = 3900/0.624 = 6250।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "A dealer buys two articles X and Y for ₹500 each. He marks each at the same price. He sells X by giving discounts of 20% and 45% and earns ₹636 profit. If Y is sold at a single discount of 67%, what is the profit percentage on Y?",
+hin: "एक व्यापारी X और Y दो वस्तुएँ ₹500-₹500 में खरीदता है। X पर 20% और 45% की क्रमिक छूट देने के बाद ₹636 लाभ कमाता है। यदि Y को 67% की एकल छूट पर बेचा जाए, तो लाभ प्रतिशत कितना होगा?",
+optE: ["69.4%","69%","70%","70.4%"],
+optH: ["69.4%","69%","70%","70.4%"],
+ans: 3,
+solE: "SP(X)=1136. MP=1136/(0.8×0.55)=2581.82. SP(Y)=33% of MP=852. Profit%=352/500×100=70.4%.",
+solH: "SP(X)=1136। MP=1136/(0.8×0.55)=2581.82। SP(Y)=MP का 33%=852। लाभ%=352/500×100=70.4%।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "A shopkeeper purchased 47 dozens of articles at ₹480 per dozen and sold each article at ₹78. What percentage profit did he make?",
+hin: "एक दुकानदार ने 47 दर्जन वस्तुएँ ₹480 प्रति दर्जन की दर से खरीदीं तथा प्रत्येक वस्तु ₹78 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["92%","93%","98%","95%"],
+optH: ["92%","93%","98%","95%"],
+ans: 3,
+solE: "CP/article=40. SP=78. Profit%=38/40×100=95%.",
+solH: "प्रति वस्तु CP=40, SP=78। लाभ%=38/40×100=95%।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "A vendor bought oranges at the rate of 40 oranges for ₹220 and sold them at ₹98 per dozen. Find his profit or loss percent.",
+hin: "एक विक्रेता ने 40 संतरे ₹220 में खरीदे तथा उन्हें ₹98 प्रति दर्जन की दर से बेचा। उसका लाभ या हानि प्रतिशत ज्ञात कीजिए।",
+optE: ["Profit 48.48%","Loss 28.56%","Loss 48.48%","Profit 28.56%"],
+optH: ["लाभ 48.48%","हानि 28.56%","हानि 48.48%","लाभ 28.56%"],
+ans: 0,
+solE: "CP/orange=220/40=5.5. SP/orange=98/12=8.1667. Profit%=2.6667/5.5×100=48.48%.",
+solH: "प्रति संतरा CP=220/40=5.5। SP=98/12=8.1667। लाभ%=2.6667/5.5×100=48.48%।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "P sells an item to Q at 50% profit. Q sells the same item to R at 32% loss. If R paid ₹5406 for the item, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 50% लाभ पर बेचता है। Q उसी वस्तु को R को 32% हानि पर बेचता है। यदि R ने ₹5406 का भुगतान किया, तो P का क्रय मूल्य कितना था?",
+optE: ["5300","5301","5302","5299"],
+optH: ["5300","5301","5302","5299"],
+ans: 0,
+solE: "0.68 × 1.5 × CP = 5406 ⇒ 1.02CP = 5406 ⇒ CP = 5300.",
+solH: "0.68 × 1.5 × CP = 5406 ⇒ 1.02CP = 5406 ⇒ CP = 5300।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
-ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+eng: "During a sale 35% of the goods are sold at 22% profit, 40% of the remaining goods are sold at 37% profit and the still remaining goods are sold at a loss of 38%. If there is an overall profit of x%, then what is the value of x?",
+hin: "एक बिक्री में 35% माल 22% लाभ पर, शेष माल के 40% को 37% लाभ पर तथा बचा हुआ माल 38% हानि पर बेचा गया। कुल लाभ x% है। x का मान ज्ञात कीजिए।",
+optE: ["10.8","5.4","2.5","6.8"],
+optH: ["10.8","5.4","2.5","6.8"],
+ans: 2,
+solE: "Assume CP=100. Profit = 35×22% + 26×37% − 39×38% = 7.7 + 9.62 − 14.82 = 2.5%.",
+solH: "कुल CP=100 मानें। लाभ = 35×22% + 26×37% − 39×38% = 7.7 + 9.62 − 14.82 = 2.5%।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "A shopkeeper purchased 52 dozens of articles at the rate of ₹400 per dozen. He sold each one at the rate of ₹58. What percentage profit did he make?",
+hin: "एक दुकानदार ने 52 दर्जन वस्तुएँ ₹400 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹58 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["73%","74%","71%","75%"],
+optH: ["73%","74%","71%","75%"],
+ans: 1,
+solE: "CP/article = 400/12 = 33.33. SP = 58. Profit% = (58−33.33)/33.33 ×100 ≈ 74%.",
+solH: "प्रति वस्तु CP = 400/12 = 33.33। SP = 58। लाभ% = (58−33.33)/33.33 ×100 ≈ 74%।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
+eng: "A shopkeeper purchased 21 dozens of articles at the rate of ₹150 per dozen. He sold each one at the rate of ₹78. What percentage profit did he make?",
+hin: "एक दुकानदार ने 21 दर्जन वस्तुएँ ₹150 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹78 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["526%","524%","523%","525%"],
+optH: ["526%","524%","523%","525%"],
 ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+solE: "CP/article = 150/12 = 12.5. SP = 78. Profit% = (78−12.5)/12.5 ×100 = 524%.",
+solH: "प्रति वस्तु CP = 150/12 = 12.5। SP = 78। लाभ% = (78−12.5)/12.5 ×100 = 524%।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
+eng: "A shopkeeper buys 45 identical calculators for ₹54,000. He sells 30 of them at a profit of 25% and the remaining at a loss of 20%. What is the overall profit or loss percentage?",
+hin: "एक दुकानदार 45 समान कैलकुलेटर ₹54,000 में खरीदता है। वह 30 को 25% लाभ पर तथा शेष को 20% हानि पर बेचता है। कुल लाभ या हानि प्रतिशत ज्ञात कीजिए।",
+optE: ["5% profit","10% profit","5% loss","10% loss"],
+optH: ["5% लाभ","10% लाभ","5% हानि","10% हानि"],
+ans: 1,
+solE: "CP/calculator=1200. Profit on 30 = 30×300 = 9000. Loss on 15 = 15×240 = 3600. Net profit=5400. Profit%=5400/54000×100=10%.",
+solH: "प्रति कैलकुलेटर CP=1200। 30 पर लाभ=9000। 15 पर हानि=3600। शुद्ध लाभ=5400। लाभ%=5400/54000×100=10%।"
+},
+
+{
+id: 21,
+eng: "P sells an item to Q at 77% profit. Q sells the same item to R at 50% loss. If R paid ₹2655, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 77% लाभ पर बेचता है। Q उसी वस्तु को R को 50% हानि पर बेचता है। यदि R ने ₹2655 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["3000","3001","3002","3003"],
+optH: ["3000","3001","3002","3003"],
 ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+solE: "0.5 × 1.77 × CP = 2655 ⇒ 0.885CP = 2655 ⇒ CP = 3000.",
+solH: "0.5 × 1.77 × CP = 2655 ⇒ 0.885CP = 2655 ⇒ CP = 3000।"
+},
+
+{
+id: 22,
+eng: "A shopkeeper purchased 32 dozens of articles at the rate of ₹102 per dozen. He sold each one at the rate of ₹68. What percentage profit did he make?",
+hin: "एक दुकानदार ने 32 दर्जन वस्तुएँ ₹102 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹68 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["697%","702%","700%","701%"],
+optH: ["697%","702%","700%","701%"],
+ans: 2,
+solE: "CP/article=102/12=8.5. SP=68. Profit%=59.5/8.5×100=700%.",
+solH: "प्रति वस्तु CP=102/12=8.5। SP=68। लाभ%=59.5/8.5×100=700%।"
+},
+
+{
+id: 23,
+eng: "Siddharth, Lata, and Vivek invest ₹1570, ₹1760, and ₹1620 respectively to start a business. If the profit at the end of the year is ₹1540, then what is Vivek's share in the profit?",
+hin: "सिद्धार्थ, लता और विवेक ने क्रमशः ₹1570, ₹1760 और ₹1620 का निवेश किया। यदि वर्ष के अंत में कुल लाभ ₹1540 है, तो विवेक का लाभांश कितना होगा?",
+optE: ["503","501","504","506"],
+optH: ["503","501","504","506"],
+ans: 2,
+solE: "Total investment = 4950. Vivek's share = 1540 × 1620/4950 = ₹504.",
+solH: "कुल निवेश = 4950। विवेक का लाभांश = 1540 × 1620/4950 = ₹504।"
+},
+
+{
+id: 24,
+eng: "P sells an item to Q at 40% profit. Q sells the same item to R at 50% loss. If R paid ₹6895, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 40% लाभ पर बेचता है। Q उसे R को 50% हानि पर बेचता है। यदि R ने ₹6895 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["9849","9852","9850","9848"],
+optH: ["9849","9852","9850","9848"],
+ans: 2,
+solE: "0.5 × 1.4 × CP = 6895 ⇒ 0.7CP = 6895 ⇒ CP = 9850.",
+solH: "0.5 × 1.4 × CP = 6895 ⇒ 0.7CP = 6895 ⇒ CP = 9850।"
+},
+
+{
+id: 25,
+eng: "A shopkeeper lists the price of a fan at 20% above its cost price and offers a 10% discount on its list price. If he earns a profit of ₹150, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 20% अधिक रखता है और उस पर 10% की छूट देता है। यदि उसे ₹150 का लाभ होता है, तो पंखे का अंकित मूल्य क्या है?",
+optE: ["2054","1969","2250","2172"],
+optH: ["2054","1969","2250","2172"],
+ans: 2,
+solE: "SP=90% of MP and SP=CP+150. Since MP=1.2CP, SP=1.08CP. Thus 0.08CP=150 ⇒ CP=1875 ⇒ MP=2250.",
+solH: "SP = MP का 90% तथा MP = 1.2CP। इसलिए SP = 1.08CP। 0.08CP = 150 ⇒ CP = 1875 ⇒ MP = 2250।"
+},
+
+{
+id: 26,
+eng: "A shopkeeper bought an article for ₹740. At what price should he sell it to make 20% profit?",
+hin: "एक दुकानदार ने एक वस्तु ₹740 में खरीदी। 20% लाभ कमाने के लिए उसे किस मूल्य पर बेचना चाहिए?",
+optE: ["876","900","592","888"],
+optH: ["876","900","592","888"],
+ans: 3,
+solE: "SP = 740 × 120/100 = ₹888.",
+solH: "SP = 740 × 120/100 = ₹888।"
+},
+
+{
+id: 27,
+eng: "A shopkeeper lists the price of a fan at 25% above its cost price and offers a 10% discount on its list price. If he earns a profit of ₹117, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 25% अधिक रखता है तथा 10% की छूट देता है। यदि उसे ₹117 का लाभ होता है, तो अंकित मूल्य क्या है?",
+optE: ["1308","1170","1346","896"],
+optH: ["1308","1170","1346","896"],
+ans: 1,
+solE: "SP=0.9×1.25CP=1.125CP. Profit=12.5%. Thus 0.125CP=117 ⇒ CP=936 ⇒ MP=1170.",
+solH: "SP=0.9×1.25CP=1.125CP। लाभ=12.5%। 0.125CP=117 ⇒ CP=936 ⇒ MP=1170।"
+},
+
+{
+id: 28,
+eng: "Pooja and Ritu invest in a business in the ratio 4 : 1. If total profit is ₹1480, then what is the difference between their profits?",
+hin: "पूजा और रितु ने 4 : 1 के अनुपात में निवेश किया। यदि कुल लाभ ₹1480 है, तो दोनों के लाभ में कितना अंतर होगा?",
+optE: ["788","988","888","938"],
+optH: ["788","988","888","938"],
+ans: 2,
+solE: "Difference ratio=3. One part=1480/5=296. Difference=3×296=888.",
+solH: "अंतर = 3 भाग। एक भाग = 1480/5 = 296। अंतर = 3×296 = 888।"
+},
+
+{
+id: 29,
+eng: "A shopkeeper sells an item for ₹770.7 after giving successive discounts of 58% and 80% on its marked price. Had he not given any discount, he would have earned a profit of 25%. What is the cost price of the item?",
+hin: "एक दुकानदार 58% और 80% की क्रमिक छूट देने के बाद वस्तु को ₹770.7 में बेचता है। यदि कोई छूट न देता तो उसे 25% लाभ होता। वस्तु का क्रय मूल्य ज्ञात कीजिए।",
+optE: ["7322","7353","7315","7340"],
+optH: ["7322","7353","7315","7340"],
+ans: 3,
+solE: "SP=8.4% of MP. MP=770.7/0.084=9175. Since MP=125% of CP, CP=9175/1.25=7340.",
+solH: "SP = MP का 8.4%। MP = 770.7/0.084 = 9175। MP = 125% CP, अतः CP = 9175/1.25 = 7340।"
+},
+
+{
+id: 30,
+eng: "A shopkeeper bought an article for ₹740. At what price should he sell it to make 30% profit?",
+hin: "एक दुकानदार ने एक वस्तु ₹740 में खरीदी। 30% लाभ कमाने के लिए उसे किस मूल्य पर बेचना चाहिए?",
+optE: ["950","962","518","974"],
+optH: ["950","962","518","974"],
+ans: 1,
+solE: "SP = 740 × 130/100 = ₹962.",
+solH: "SP = 740 × 130/100 = ₹962।"
+},
+
+{
+id: 31,
+eng: "Nikhil, Nidhi and Tejas invested ₹1,200, ₹1,070 and ₹1,310, respectively to start a business. If the profit at the end of the year is ₹1,790, what is Tejas's share of the profit?",
+hin: "निखिल, निधि और तेजस ने क्रमशः ₹1200, ₹1070 और ₹1310 का निवेश करके एक व्यवसाय शुरू किया। यदि वर्ष के अंत में कुल लाभ ₹1790 है, तो तेजस का लाभांश कितना होगा?",
+optE: ["654","657","658","655"],
+optH: ["654","657","658","655"],
+ans: 3,
+solE: "Total investment = 1200 + 1070 + 1310 = 3580. Tejas's share = 1790 × 1310 / 3580 = ₹655.",
+solH: "कुल निवेश = 1200 + 1070 + 1310 = 3580। तेजस का लाभांश = 1790 × 1310 / 3580 = ₹655।"
+},
+
+{
+id: 32,
+eng: "M and N started a business. M invested ₹50,000 more than N for 3 months, while N invested for 7 months. M's share is ₹328 more than that of N, out of a total profit of ₹4,920. Find the capital contributed by M.",
+hin: "M और N ने एक व्यवसाय शुरू किया। M ने N से ₹50,000 अधिक राशि 3 माह के लिए निवेश की, जबकि N ने अपनी राशि 7 माह के लिए निवेश की। कुल लाभ ₹4920 में M का हिस्सा N से ₹328 अधिक है। M द्वारा निवेशित पूंजी ज्ञात कीजिए।",
+optE: ["120000","100000","80000","60000"],
+optH: ["120000","100000","80000","60000"],
+ans: 2,
+solE: "Difference in profit = ₹328. Profit ratio = (2624 : 2296) = 8 : 7. Let N's capital = x. Then 3(x+50000) : 7x = 8 : 7 ⇒ x = 30000. Therefore M's capital = 30000 + 50000 = ₹80000.",
+solH: "लाभ का अंतर ₹328 है। लाभ अनुपात 2624 : 2296 = 8 : 7 होगा। यदि N की पूंजी x हो, तो 3(x+50000) : 7x = 8 : 7 ⇒ x = 30000। अतः M की पूंजी = 30000 + 50000 = ₹80000।"
+},
+
+{
+id: 33,
+eng: "A shopkeeper lists the price of a fan at 50% above its cost price and offers a 30% discount on its list price. If he earns a profit of ₹86, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 50% अधिक रखता है और उस पर 30% की छूट देता है। यदि उसे ₹86 का लाभ होता है, तो पंखे का अंकित मूल्य क्या है?",
+optE: ["2444","2580","2825","2386"],
+optH: ["2444","2580","2825","2386"],
+ans: 1,
+solE: "MP = 1.5CP. After 30% discount, SP = 0.7 × 1.5CP = 1.05CP. Profit = 5% of CP = ₹86. Therefore CP = 86/0.05 = 1720 and MP = 1720 × 1.5 = ₹2580.",
+solH: "MP = 1.5CP। 30% छूट के बाद SP = 0.7 × 1.5CP = 1.05CP। लाभ = CP का 5% = ₹86। अतः CP = 86/0.05 = 1720 तथा MP = 1720 × 1.5 = ₹2580।"
+},
+
+{
+id: 34,
+eng: "Ravi started a business by investing ₹50,000. After six months, Raju joined him and invested ₹1,00,000. In one year since Ravi invested, they earned a profit of ₹63,000. What is Raju’s share of the profit?",
+hin: "रवि ने ₹50,000 निवेश करके व्यवसाय शुरू किया। छह महीने बाद राजू ₹1,00,000 निवेश करके शामिल हुआ। रवि के निवेश के एक वर्ष बाद कुल लाभ ₹63,000 हुआ। राजू का लाभांश कितना होगा?",
+optE: ["32500","31000","31500","32000"],
+optH: ["32500","31000","31500","32000"],
+ans: 2,
+solE: "Profit ratio = 50000×12 : 100000×6 = 600000 : 600000 = 1 : 1. Hence Raju's share = 63000/2 = ₹31500.",
+solH: "लाभ अनुपात = 50000×12 : 100000×6 = 1 : 1। अतः राजू का लाभांश = 63000/2 = ₹31500।"
+},
+
+{
+id: 35,
+eng: "A shopkeeper lists the price of a fan at 34% above its cost price and offers a 25% discount on its list price. If he earns a profit of ₹177, then what is the list price of the fan?",
+hin: "एक दुकानदार पंखे का अंकित मूल्य उसके क्रय मूल्य से 34% अधिक रखता है और उस पर 25% की छूट देता है। यदि उसे ₹177 का लाभ होता है, तो पंखे का अंकित मूल्य क्या है?",
+optE: ["47209","47148","47436","47300"],
+optH: ["47209","47148","47436","47300"],
+ans: 2,
+solE: "SP = 75% of MP and MP = 134% of CP. Therefore SP = 0.75 × 1.34CP = 1.005CP. Profit = 0.5% of CP = ₹177. Hence CP = 177/0.005 = 35400. MP = 35400 × 1.34 = ₹47436.",
+solH: "SP = MP का 75% तथा MP = CP का 134%। इसलिए SP = 0.75 × 1.34CP = 1.005CP। लाभ = CP का 0.5% = ₹177। अतः CP = 177/0.005 = 35400 तथा MP = 35400 × 1.34 = ₹47436।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 30 * 60; // 30 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;

@@ -233,7 +233,7 @@ Never consider yourself the cause of the results of your activities, and never b
                 <!-- Timer -->
                 <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
                     <i class="fas fa-clock text-blue-500"></i>
-                    <span class="timer-display">10:00</span>
+                    <span class="timer-display">03:00</span>
                 </div>
                 <!-- Submit Btn -->
                 <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
@@ -468,235 +468,234 @@ Never consider yourself the cause of the results of your activities, and never b
     <!-- ==================== SCRIPT ==================== -->
     <script>
         // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
-       const totalTime = 3* 60; // 10 minutes in seconds
+       const totalTime = 3 * 60; // 10 minutes in seconds
 
 const rawData = [
-
 {
 id: 1,
-eng: "There are 78 members in group A, 22 members in group B and 34 members in group C. The average amounts spent on each member of groups A, B and C are ₹136, ₹383 and ₹457 respectively. The overall average amount spent per member is:",
-hin: "समूह A में 78 सदस्य, समूह B में 22 सदस्य और समूह C में 34 सदस्य हैं। प्रत्येक सदस्य द्वारा खर्च की गई औसत राशि क्रमशः ₹136, ₹383 और ₹457 है। प्रति सदस्य कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["256","261","258","255"],
-optH: ["256","261","258","255"],
-ans: 2,
-solE: "Overall average = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258.",
-solH: "कुल औसत = [(78×136)+(22×383)+(34×457)]/(78+22+34) = 34586/134 = 258।"
+eng: "Who has written Arthashastra?",
+hin: "अर्थशास्त्र किसने लिखा था?",
+optE: ["Kalidasa","Kautilya","Megasthenes","Ashoka"],
+optH: ["कालिदास","कौटिल्य","मेगस्थनीज","अशोक"],
+ans: 1,
+solE: "Arthashastra was written by Kautilya, who was also known as Chanakya or Vishnugupta. He was the chief advisor of Chandragupta Maurya.",
+solH: "अर्थशास्त्र की रचना कौटिल्य ने की थी, जिन्हें चाणक्य या विष्णुगुप्त भी कहा जाता है। वे चंद्रगुप्त मौर्य के मुख्य सलाहकार थे।"
 },
 
 {
 id: 2,
-eng: "The average of 11 results is 61. If the average of the first 6 results is 64 and that of the last 6 results is 61, then find the 6th result.",
-hin: "11 परिणामों का औसत 61 है। यदि पहले 6 परिणामों का औसत 64 तथा अंतिम 6 परिणामों का औसत 61 है, तो छठा परिणाम ज्ञात कीजिए।",
-optE: ["81","80","78","79"],
-optH: ["81","80","78","79"],
-ans: 3,
-solE: "Total of 11 results = 11×61 = 671. Sum of first 6 = 384 and last 6 = 366. Common term = 384 + 366 − 671 = 79.",
-solH: "11 परिणामों का योग = 11×61 = 671। पहले 6 का योग = 384 और अंतिम 6 का योग = 366। समान पद = 384 + 366 − 671 = 79।"
+eng: "Mudra Rakshasa was written by whom?",
+hin: "मुद्राराक्षस किसके द्वारा लिखी गई थी?",
+optE: ["Bhasa","Vishakhadatta","Kalhana","Banabhatta"],
+optH: ["भास","विशाखदत्त","कल्हण","बाणभट्ट"],
+ans: 1,
+solE: "Mudra Rakshasa was written by Vishakhadatta. It describes the rise of Chandragupta Maurya with the help of Chanakya.",
+solH: "मुद्राराक्षस की रचना विशाखदत्त ने की थी। इसमें चाणक्य की सहायता से चंद्रगुप्त मौर्य के उदय का वर्णन है।"
 },
 
 {
 id: 3,
-eng: "The average of the first 62 even natural numbers is:",
-hin: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["61","63","62","64"],
-optH: ["61","63","62","64"],
-ans: 1,
-solE: "First 62 even numbers are from 2 to 124. Average = (2 + 124)/2 = 63.",
-solH: "पहली 62 सम संख्याएँ 2 से 124 तक हैं। औसत = (2 + 124)/2 = 63।"
+eng: "Dipavamsa and Mahavamsa are related to which religion?",
+hin: "दीपवंस और महावंस किस धर्म से संबंधित हैं?",
+optE: ["Hinduism","Jainism","Buddhism","Islam"],
+optH: ["हिंदू धर्म","जैन धर्म","बौद्ध धर्म","इस्लाम"],
+ans: 2,
+solE: "Dipavamsa and Mahavamsa are important Buddhist chronicles written in Sri Lanka.",
+solH: "दीपवंस और महावंस श्रीलंका में लिखे गए महत्वपूर्ण बौद्ध ग्रंथ हैं।"
 },
 
 {
 id: 4,
-eng: "Find the average of 312, 126, 100 and 99.",
-hin: "312, 126, 100 और 99 का औसत ज्ञात कीजिए।",
-optE: ["157.25","159.25","156.25","158.25"],
-optH: ["157.25","159.25","156.25","158.25"],
+eng: "Who deciphered Ashokan Edicts and inscriptions?",
+hin: "अशोक के शिलालेखों और अभिलेखों को किसने पढ़ा था?",
+optE: ["Alexander Cunningham","James Prinsep","Megasthenes","John Marshall"],
+optH: ["अलेक्जेंडर कनिंघम","जेम्स प्रिंसेप","मेगस्थनीज","जॉन मार्शल"],
 ans: 1,
-solE: "Average = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25.",
-solH: "औसत = (312 + 126 + 100 + 99)/4 = 637/4 = 159.25।"
+solE: "James Prinsep deciphered the Brahmi script used in Ashokan inscriptions in 1837.",
+solH: "जेम्स प्रिंसेप ने 1837 में अशोक के अभिलेखों में प्रयुक्त ब्राह्मी लिपि को पढ़ा था।"
 },
 
 {
 id: 5,
-eng: "There are 30 members in group A, 72 members in group B and 75 members in group C. The average amounts spent are ₹434, ₹324 and ₹280 respectively. Find the overall average amount spent.",
-hin: "समूह A में 30 सदस्य, समूह B में 72 सदस्य और समूह C में 75 सदस्य हैं। औसत खर्च क्रमशः ₹434, ₹324 और ₹280 है। कुल औसत खर्च ज्ञात कीजिए।",
-optE: ["326","321","324","323"],
-optH: ["326","321","324","323"],
+eng: "Kalsi Rock Edict of Ashoka is located in which state?",
+hin: "अशोक का कालसी शिलालेख किस राज्य में स्थित है?",
+optE: ["Bihar","Uttar Pradesh","Uttarakhand","Madhya Pradesh"],
+optH: ["बिहार","उत्तर प्रदेश","उत्तराखंड","मध्य प्रदेश"],
 ans: 2,
-solE: "Overall average = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 324",
-solH: "कुल औसत = [(30×434)+(72×324)+(75×280)]/177 = 57228/177 =324।"
+solE: "The Kalsi Rock Edict of Ashoka is located in Uttarakhand.",
+solH: "अशोक का कालसी शिलालेख उत्तराखंड में स्थित है।"
 },
 
 {
 id: 6,
-eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
-hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["36","28","33","24"],
-optH: ["36","28","33","24"],
-ans: 0,
-solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
-solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+eng: "Maski Ashokan Minor Rock Edict is located in which state?",
+hin: "मास्की का अशोक लघु शिलालेख किस राज्य में स्थित है?",
+optE: ["Andhra Pradesh","Tamil Nadu","Karnataka","Odisha"],
+optH: ["आंध्र प्रदेश","तमिलनाडु","कर्नाटक","ओडिशा"],
+ans: 2,
+solE: "The Maski Minor Rock Edict is located in Karnataka and it contains the name of Ashoka.",
+solH: "मास्की का लघु शिलालेख कर्नाटक में स्थित है और इसमें अशोक का नाम मिलता है।"
 },
 
 {
 id: 7,
-eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
-hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
-optE: ["99","95","98","97"],
-optH: ["99","95","98","97"],
-ans: 0,
-solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
-solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+eng: "Who asked for wine and dried figs from Syrian king Antiochus-I?",
+hin: "सीरिया के राजा एंटियोकस-I से शराब और सूखे अंजीर किसने मांगे थे?",
+optE: ["Bimbisara","Bindusara","Chandragupta Maurya","Ashoka"],
+optH: ["बिम्बिसार","बिंदुसार","चंद्रगुप्त मौर्य","अशोक"],
+ans: 1,
+solE: "Bindusara requested sweet wine and dried figs from the Syrian king Antiochus-I.",
+solH: "बिंदुसार ने सीरिया के राजा एंटियोकस-I से मीठी शराब और सूखे अंजीर मांगे थे।"
 },
 
 {
 id: 8,
-eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
-hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
-optE: ["7861","3369","5615","10107"],
-optH: ["7861","3369","5615","10107"],
-ans: 3,
-solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
-solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+eng: "Who was the last ruler of the Mauryan Empire?",
+hin: "मौर्य साम्राज्य का अंतिम शासक कौन था?",
+optE: ["Ashoka","Dasaratha","Brihadratha","Kunala"],
+optH: ["अशोक","दशरथ","बृहद्रथ","कुणाल"],
+ans: 2,
+solE: "Brihadratha was the last ruler of the Mauryan Empire. He was killed by Pushyamitra Shunga.",
+solH: "बृहद्रथ मौर्य साम्राज्य का अंतिम शासक था। उसकी हत्या पुष्यमित्र शुंग ने की थी।"
 },
 
 {
 id: 9,
-eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
-hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
-optE: ["42","40","44","38"],
-optH: ["42","40","44","38"],
+eng: "What was the capital of Kalinga province during Mauryan administration?",
+hin: "मौर्य प्रशासन के दौरान कलिंग प्रांत की राजधानी क्या थी?",
+optE: ["Suvarnagiri","Toshali","Pataliputra","Taxila"],
+optH: ["सुवर्णगिरि","तोषाली","पाटलिपुत्र","तक्षशिला"],
 ans: 1,
-solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
-solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+solE: "Toshali was the capital of the Kalinga province during the Mauryan period.",
+solH: "मौर्य काल में कलिंग प्रांत की राजधानी तोषाली थी।"
 },
 
 {
 id: 10,
-eng: "What is the average of all natural numbers from 1 to 59?",
-hin: "1 से 59 तक की सभी प्राकृतिक संख्याओं का औसत क्या है?",
-optE: ["29.5","31","30.5","30"],
-optH: ["29.5","31","30.5","30"],
-ans: 3,
-solE: "Average of consecutive numbers = (first + last)/2 = (1+59)/2 = 30.",
-solH: "क्रमागत संख्याओं का औसत = (पहली + अंतिम)/2 = (1+59)/2 = 30।"
+eng: "The largest administrative unit during the Mauryan Empire was called?",
+hin: "मौर्य साम्राज्य की सबसे बड़ी प्रशासनिक इकाई को क्या कहा जाता था?",
+optE: ["Ahar","Sangrahana","Chakra","Gram"],
+optH: ["आहर","संग्रहण","चक्र","ग्राम"],
+ans: 2,
+solE: "The province, the largest administrative unit in the Mauryan Empire, was also called Chakra.",
+solH: "मौर्य साम्राज्य में प्रांत, जो सबसे बड़ी प्रशासनिक इकाई थी, उसे चक्र कहा जाता था।"
 },
 
 {
 id: 11,
-eng: "The average score of a cricketer in 20 matches is 40 runs. His highest score is 78 runs. Find the average score in remaining 19 matches.",
-hin: "एक क्रिकेटर का 20 मैचों में औसत स्कोर 40 रन है। उसका सर्वोच्च स्कोर 78 रन है। शेष 19 मैचों का औसत ज्ञात कीजिए।",
-optE: ["34","36","40","38"],
-optH: ["34","36","40","38"],
-ans: 3,
-solE: "Total runs = 20×40 = 800. Remaining runs = 800−78 = 722. Average = 722/19 = 38.",
-solH: "कुल रन = 20×40 = 800। शेष रन = 800−78 = 722। औसत = 722/19 = 38।"
+eng: "Who was called the Collector General of Revenue during the Mauryan Empire?",
+hin: "मौर्य साम्राज्य में राजस्व संग्रह का प्रमुख अधिकारी किसे कहा जाता था?",
+optE: ["Sannidhata","Samaharta","Pradeshta","Vyavaharika"],
+optH: ["सन्निधाता","समाहर्ता","प्रदेष्टा","व्यवहारिक"],
+ans: 1,
+solE: "Samaharta was the chief revenue collector in the Mauryan administration.",
+solH: "समाहर्ता मौर्य प्रशासन में मुख्य राजस्व संग्राहक अधिकारी था।"
 },
 
 {
 id: 12,
-eng: "The average of four consecutive odd numbers is 36. Find the greatest number.",
-hin: "चार क्रमागत विषम संख्याओं का औसत 36 है। सबसे बड़ी संख्या ज्ञात कीजिए।",
-optE: ["37","39","43","41"],
-optH: ["37","39","43","41"],
-ans: 1,
-solE: "Numbers are 33, 35, 37 and 39. Greatest number = 39.",
-solH: "संख्याएँ 33, 35, 37 और 39 हैं। सबसे बड़ी संख्या = 39।"
+eng: "Ashoka ruled during which period?",
+hin: "अशोक ने किस अवधि में शासन किया?",
+optE: ["232-273 AD","332-372 AD","273-232 BC","232-273 BC"],
+optH: ["232-273 ई.","332-372 ई.","273-232 ईसा पूर्व","232-273 ईसा पूर्व"],
+ans: 2,
+solE: "Ashoka ruled from 273 BC to 232 BC.",
+solH: "अशोक ने 273 ईसा पूर्व से 232 ईसा पूर्व तक शासन किया।"
 },
 
 {
 id: 13,
-eng: "Shalini travels 270 km at 54 km/h and 300 km at 30 km/h. Find her average speed.",
-hin: "शालिनी 270 किमी दूरी 54 किमी/घंटा तथा 300 किमी दूरी 30 किमी/घंटा की गति से तय करती है। उसकी औसत गति ज्ञात कीजिए।",
-optE: ["47","38","43","44"],
-optH: ["47","38","43","44"],
-ans: 1,
-solE: "Total distance = 570 km. Total time = 270/54 + 300/30 = 5 + 10 = 15 hours. Average speed = 570/15 = 38 km/h.",
-solH: "कुल दूरी = 570 किमी। कुल समय = 270/54 + 300/30 = 5 + 10 = 15 घंटे। औसत गति = 570/15 = 38 किमी/घंटा।"
+eng: "Did the Mauryan Empire maintain a navy?",
+hin: "क्या मौर्य साम्राज्य के पास नौसेना थी?",
+optE: ["Yes","No","None of the above","All of the above"],
+optH: ["हाँ","नहीं","उपरोक्त में से कोई नहीं","उपरोक्त सभी"],
+ans: 0,
+solE: "Yes, the Mauryan Empire maintained a navy for protecting trade routes and coastal areas.",
+solH: "हाँ, मौर्य साम्राज्य ने व्यापार मार्गों और तटीय क्षेत्रों की सुरक्षा के लिए नौसेना रखी थी।"
 },
 
 {
 id: 14,
-eng: "The average age of 40 boys is 18 years. One boy aged 26 leaves and two boys join. The average remains 18 years. Find the average age of the two newcomers.",
-hin: "40 लड़कों की औसत आयु 18 वर्ष है। 26 वर्ष का एक लड़का चला जाता है और दो नए लड़के आते हैं। औसत आयु 18 वर्ष ही रहती है। नए लड़कों की औसत आयु ज्ञात कीजिए।",
-optE: ["21 years","20 years","22 years","24 years"],
-optH: ["21 वर्ष","20 वर्ष","22 वर्ष","24 वर्ष"],
-ans: 2,
-solE: "Initial total = 40×18 = 720. After one leaves, total = 694. Final total for 41 boys = 738. Sum of newcomers = 44. Average = 22 years.",
-solH: "प्रारंभिक कुल आयु = 40×18 = 720। एक लड़का जाने पर कुल = 694। अंतिम कुल आयु = 41×18 = 738। नए लड़कों की कुल आयु = 44। औसत = 22 वर्ष।"
+eng: "Kautilya was also known as?",
+hin: "कौटिल्य को और किस नाम से जाना जाता था?",
+optE: ["Vishnugupta","Chandragupta","Seleucus","Ajatashatru"],
+optH: ["विष्णुगुप्त","चंद्रगुप्त","सेल्युकस","अजातशत्रु"],
+ans: 0,
+solE: "Kautilya was also called Vishnugupta and Chanakya.",
+solH: "कौटिल्य को विष्णुगुप्त और चाणक्य के नाम से भी जाना जाता था।"
 },
 
 {
 id: 15,
-eng: "The average marks of some students is 75. When five students scoring 80, 85, 89, 81 and 82 are included, the average becomes 78. Find the original number of students.",
-hin: "कुछ छात्रों का औसत अंक 75 है। जब 80, 85, 89, 81 और 82 अंक वाले पाँच छात्रों को शामिल किया जाता है, तो औसत 78 हो जाता है। प्रारंभिक छात्रों की संख्या ज्ञात कीजिए।",
-optE: ["6","9","8","10"],
-optH: ["6","9","8","10"],
-ans: 1,
-solE: "Let original students = x. Then 75x + 417 = 78(x+5). Solving gives x = 9.",
-solH: "मान लें प्रारंभिक छात्रों की संख्या x है। तब 75x + 417 = 78(x+5)। हल करने पर x = 9।"
+eng: "Who was the founder of the Mauryan Empire?",
+hin: "मौर्य साम्राज्य का संस्थापक कौन था?",
+optE: ["Ashoka","Bindusara","Chandragupta Maurya","Bimbisara"],
+optH: ["अशोक","बिंदुसार","चंद्रगुप्त मौर्य","बिम्बिसार"],
+ans: 2,
+solE: "Chandragupta Maurya founded the Mauryan Empire in 322 BC.",
+solH: "चंद्रगुप्त मौर्य ने 322 ईसा पूर्व में मौर्य साम्राज्य की स्थापना की थी।"
 },
 
 {
 id: 16,
-eng: "The average of five consecutive numbers is 48. Find the smallest number.",
-hin: "पाँच क्रमागत संख्याओं का औसत 48 है। सबसे छोटी संख्या ज्ञात कीजिए।",
-optE: ["44","45","46","47"],
-optH: ["44","45","46","47"],
-ans: 2,
-solE: "Let x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48,Numbers are 46, 47, 48, 49 and 50. Smallest number = 46.",
-solH: "x−2, x−1, x, x+1, x+2 be the numbers which are consecutive  ,x = 48 संख्याएँ 46, 47, 48, 49 और 50 हैं। सबसे छोटी संख्या = 46।"
+eng: "Which Greek ambassador visited the court of Chandragupta Maurya?",
+hin: "चंद्रगुप्त मौर्य के दरबार में कौन यूनानी राजदूत आया था?",
+optE: ["Megasthenes","Fa-Hien","Hiuen Tsang","Pliny"],
+optH: ["मेगस्थनीज","फाह्यान","ह्वेनसांग","प्लिनी"],
+ans: 0,
+solE: "Megasthenes was the Greek ambassador sent by Seleucus to Chandragupta Maurya's court.",
+solH: "मेगस्थनीज, सेल्युकस द्वारा चंद्रगुप्त मौर्य के दरबार में भेजा गया यूनानी राजदूत था।"
 },
 
 {
 id: 17,
-eng: "The average of 15 numbers is 32. If one number 48 is removed, find the new average.",
-hin: "15 संख्याओं का औसत 32 है। यदि 48 को हटा दिया जाए, तो नया औसत ज्ञात कीजिए।",
-optE: ["30.68","31.86","30.86","31.86"],
-optH: ["30.68","31.86","30.86","31.86"],
+eng: "Which book was written by Megasthenes?",
+hin: "मेगस्थनीज ने कौन-सी पुस्तक लिखी थी?",
+optE: ["Arthashastra","Indica","Rajatarangini","Mudra Rakshasa"],
+optH: ["अर्थशास्त्र","इंडिका","राजतरंगिणी","मुद्राराक्षस"],
 ans: 1,
-solE: "Total = 15×32 = 480. New total = 480−48 = 432. New average = 432/14 ≈ 30.86.",
-solH: "कुल योग = 15×32 = 480। नया योग = 480−48 = 432। नया औसत = 432/14 ≈ 30.86।"
+solE: "Megasthenes wrote Indica, which gives details about Mauryan administration and society.",
+solH: "मेगस्थनीज ने इंडिका लिखी थी, जिसमें मौर्य प्रशासन और समाज का वर्णन है।"
 },
 
 {
 id: 18,
-eng: "The average of 8 numbers is 25. If two numbers 30 and 40 are added, find the new average.",
-hin: "8 संख्याओं का औसत 25 है। यदि 30 और 40 जोड़ दिए जाएँ, तो नया औसत ज्ञात कीजिए।",
-optE: ["27","28","29","30"],
-optH: ["27","28","29","30"],
-ans: 0,
-solE: "Initial sum = 8×25 = 200. New sum = 270. New average = 270/10 = 27.",
-solH: "प्रारंभिक योग = 8×25 = 200। नया योग = 270। नया औसत = 270/10 = 27।"
+eng: "Which Mauryan ruler embraced Buddhism after the Kalinga War?",
+hin: "कलिंग युद्ध के बाद किस मौर्य शासक ने बौद्ध धर्म अपनाया?",
+optE: ["Bindusara","Ashoka","Chandragupta Maurya","Dasaratha"],
+optH: ["बिंदुसार","अशोक","चंद्रगुप्त मौर्य","दशरथ"],
+ans: 1,
+solE: "Ashoka embraced Buddhism after witnessing the destruction caused by the Kalinga War.",
+solH: "कलिंग युद्ध की विनाशलीला देखने के बाद अशोक ने बौद्ध धर्म अपना लिया।"
 },
 
 {
 id: 19,
-eng: "The average weight of 25 students is 60 kg. If the teacher’s weight is included, the average becomes 61 kg. Find the teacher’s weight.",
-hin: "25 छात्रों का औसत वजन 60 किग्रा है। यदि शिक्षक का वजन शामिल किया जाए, तो औसत 61 किग्रा हो जाता है। शिक्षक का वजन ज्ञात कीजिए।",
-optE: ["85 kg","86 kg","87 kg","88 kg"],
-optH: ["85 किग्रा","86 किग्रा","87 किग्रा","88 किग्रा"],
-ans: 1,
-solE: "Students' total weight = 25×60 = 1500. Total with teacher = 26×61 = 1586. Teacher’s weight = 86 kg.",
-solH: "छात्रों का कुल वजन = 25×60 = 1500। शिक्षक सहित कुल = 26×61 = 1586। शिक्षक का वजन = 86 किग्रा।"
+eng: "What was the capital of the Mauryan Empire?",
+hin: "मौर्य साम्राज्य की राजधानी क्या थी?",
+optE: ["Taxila","Ujjain","Pataliputra","Toshali"],
+optH: ["तक्षशिला","उज्जैन","पाटलिपुत्र","तोषाली"],
+ans: 2,
+solE: "Pataliputra was the capital of the Mauryan Empire.",
+solH: "पाटलिपुत्र मौर्य साम्राज्य की राजधानी थी।"
 },
 
 {
 id: 20,
-eng: "The average monthly income of a family of 4 members is ₹22500. If one more member joins with income ₹18000, find the new average income.",
-hin: "4 सदस्यों वाले परिवार की औसत मासिक आय ₹22500 है। यदि ₹18000 आय वाला एक सदस्य और जुड़ जाए, तो नई औसत आय ज्ञात कीजिए।",
-optE: ["21600","22500","24000","21900"],
-optH: ["21600","22500","24000","21900"],
-ans: 0,
-solE: "Initial total income = 4×22500 = 90000. New total = 108000. New average = 108000/5 = 21600.",
-solH: "प्रारंभिक कुल आय = 4×22500 = 90000। नई कुल आय = 108000। नया औसत = 108000/5 = 21600।"
+eng: "What were the Dhammas of Ashoka?",
+hin: "अशोक के धम्म क्या थे?",
+optE: ["To preserve social order","To pay respect to Brahmins","To show mercy to slaves and obey parents","All of the above"],
+optH: ["सामाजिक व्यवस्था बनाए रखना","ब्राह्मणों का सम्मान करना","दासों पर दया करना और माता-पिता की आज्ञा मानना","उपरोक्त सभी"],
+ans: 3,
+solE: "Ashoka's Dhamma included maintaining social harmony, respecting Brahmins and elders, showing kindness to servants and slaves, and obeying parents. Therefore, all the given options are correct.",
+solH: "अशोक के धम्म में सामाजिक व्यवस्था बनाए रखना, ब्राह्मणों और बड़ों का सम्मान करना, दासों और सेवकों पर दया करना तथा माता-पिता की आज्ञा मानना शामिल था। इसलिए सभी विकल्प सही हैं।"
 }
 ];;
 
         // --- STATE VARIABLES ---
         let currentLang = 'eng';
         let currentQIndex = 0;
-        let timeLeft = 10 * 60; // 3 mins
+        let timeLeft = 3 * 60; // 3 mins
         let timerInterval;
         let mockStarted = false;
         let mockSubmitted = false;
