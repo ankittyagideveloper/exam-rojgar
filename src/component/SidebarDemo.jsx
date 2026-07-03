@@ -65,7 +65,7 @@ export default function SidebarDemo({ children }) {
       role: ["user", "admin"],
     },
     {
-      label: "Courses",
+      label: t("coursesBtn"),
       href: "/learn",
       icon: isActive("/learn") ? (
         <IconBookFilled
