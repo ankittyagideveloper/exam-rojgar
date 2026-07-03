@@ -11,7 +11,7 @@ const BottomNavigation = () => {
 
   const navItems = [
     { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
-    { id: "courses", label: "Courses", icon: BookOpen, path: "/learn" },
+    { id: "courses", label: t("coursesBtn"), icon: BookOpen, path: "/learn" },
     {
       id: "test",
       label: t("testBtn"),

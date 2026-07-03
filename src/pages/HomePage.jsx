@@ -4,6 +4,7 @@ import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
 import VideoPlayer from "../component/VideoPlayer";
+import MeetInstructor from "../component/MeetInstructor";
 import { Helmet } from "react-helmet-async";
 
 import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
@@ -174,6 +175,7 @@ function HomePage() {
 
           <FeaturesRibbon />
           <VideoPlayer />
+          {/* <MeetInstructor /> */}
           {/* Quick Actions */}
           {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
           <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
