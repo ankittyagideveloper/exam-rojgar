@@ -225,11 +225,11 @@ const router = createBrowserRouter([
         path: "mixture-alligation",
         element: <MixtureAlligationMockTestPage />,
       },
-    
+
       { path: "delhi-sultanate", element: <DelhiSultanateMockTestPage /> },
-    
+
       { path: "vedic-mock-2", element: <VedicMock2MockTestPage /> },
-    
+
       { path: "compound-interest", element: <CompoundInterestMockTestPage /> },
     ],
   },
