@@ -46,6 +46,9 @@ import PostMauryanEmpireMockTestPage from "./pages/PostMauryanEmpireMockTestPage
 import MauryanEmpireMockTestPage from "./pages/MauryanEmpireMockTestPage";
 import GuptaMockTestPage from "./pages/GuptaMockTestPage";
 import MixtureAlligationMockTestPage from "./pages/MixtureAlligationMockTestPage";
+import DelhiSultanateMockTestPage from "./pages/DelhiSultanateMockTestPage";
+import VedicMock2MockTestPage from "./pages/VedicMock2MockTestPage";
+import CompoundInterestMockTestPage from "./pages/CompoundInterestMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -222,6 +225,12 @@ const router = createBrowserRouter([
         path: "mixture-alligation",
         element: <MixtureAlligationMockTestPage />,
       },
+    
+      { path: "delhi-sultanate", element: <DelhiSultanateMockTestPage /> },
+    
+      { path: "vedic-mock-2", element: <VedicMock2MockTestPage /> },
+    
+      { path: "compound-interest", element: <CompoundInterestMockTestPage /> },
     ],
   },
 ]);
