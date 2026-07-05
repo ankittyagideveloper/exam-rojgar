@@ -1,164 +1,34 @@
-# Snyk Security workflow
-# Runs Snyk Code (SAST) and uploads results to GitHub Code Scanning.
-# Requires a SNYK_TOKEN secret set in the repository settings.
-# Sign up for free at https://snyk.io/login
+name: Snyk Security Scan
 
-name: Snyk Security
-
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
-permissions:
-  contents: read
+on: [push, pull_request]
 
 jobs:
-  snyk:
-    permissions:
-      contents: read        # for actions/checkout
-      security-events: write # for codeql-action/upload-sarif
-      actions: read         # required by upload-sarif on private repos
+  snyk-scan:
     runs-on: ubuntu-latest
-
-    env:
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Set up Snyk CLI
-        uses: snyk/actions/setup@806182742461562b67788a64410098c9d9b96adb
-
-      - name: Snyk Code test
-        run: snyk code test --sarif > snyk-code.sarif || true
-
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
-          sarif_file: snyk-code.sarif
+          node-version: "20"
 
-      - name: Generate HTML report from SARIF
+      - name: Install Snyk and HTML Generator
+        run: npm install -g snyk snyk-to-html
+
+      - name: Authenticate and Generate Report
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        # The true statement ensures the pipeline doesn't fail before archiving if vulnerabilities are found
         run: |
-          node - <<'EOF'
-          const fs   = require('fs');
-          const path = require('path');
+          snyk test --json | snyk-to-html -o snyk-report.html || true
 
-          const sarif = JSON.parse(fs.readFileSync('snyk-code.sarif', 'utf8'));
-          const run   = sarif.runs?.[0] ?? {};
-          const rules = Object.fromEntries(
-            (run.tool?.driver?.rules ?? []).map(r => [r.id, r])
-          );
-          const results = run.results ?? [];
+      - name: Package Report into ZIP
+        run: zip -r snyk-report.zip snyk-report.html
 
-          const sev = r => {
-            const lvl = (r.level ?? '').toLowerCase();
-            if (lvl === 'error')   return { label: 'High',   cls: 'high'   };
-            if (lvl === 'warning') return { label: 'Medium', cls: 'medium' };
-            return                        { label: 'Low',    cls: 'low'    };
-          };
-
-          const counts = { high: 0, medium: 0, low: 0 };
-          results.forEach(r => counts[sev(r).cls]++);
-
-          const escape = s => String(s ?? '')
-            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
-          const rows = results.map((r, i) => {
-            const rule  = rules[r.ruleId] ?? {};
-            const s     = sev(r);
-            const loc   = r.locations?.[0]?.physicalLocation ?? {};
-            const file  = loc.artifactLocation?.uri ?? '—';
-            const line  = loc.region?.startLine ?? '—';
-            const msg   = r.message?.text ?? rule.shortDescription?.text ?? '—';
-            const help  = rule.helpUri ?? '';
-            return `<tr>
-              <td>${i + 1}</td>
-              <td><span class="badge ${s.cls}">${s.label}</span></td>
-              <td><code>${escape(r.ruleId)}</code></td>
-              <td>${escape(msg)}${help ? ` <a href="${escape(help)}" target="_blank">↗</a>` : ''}</td>
-              <td><code>${escape(file)}</code></td>
-              <td>${escape(line)}</td>
-            </tr>`;
-          }).join('\n');
-
-          const noFindings = results.length === 0
-            ? '<tr><td colspan="6" style="text-align:center;color:#57606a;padding:2rem">No vulnerabilities found 🎉</td></tr>'
-            : rows;
-
-          const html = `<!DOCTYPE html>
-          <html lang="en">
-          <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>Snyk Code Security Report</title>
-          <style>
-            *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-            body { font-family: -apple-system,"Segoe UI",system-ui,sans-serif; font-size: 14px;
-                   line-height: 1.6; background: #f7f8fa; color: #1f2328; padding: 2rem; }
-            .wrap { max-width: 960px; margin: 0 auto; }
-            h1 { font-size: 1.4rem; margin-bottom: .25rem; }
-            .meta { color: #57606a; font-size: .85rem; margin-bottom: 1.5rem; }
-            .summary { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-            .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 6px;
-                    padding: .75rem 1.25rem; min-width: 120px; text-align: center; }
-            .card .num  { font-size: 1.8rem; font-weight: 700; }
-            .card .lbl  { font-size: .78rem; color: #57606a; text-transform: uppercase; letter-spacing: .04em; }
-            .high   { color: #b91c1c; } .medium { color: #b45309; } .low { color: #15803d; }
-            .badge  { display: inline-block; padding: .15em .55em; border-radius: 4px;
-                      font-size: .75rem; font-weight: 600; }
-            .badge.high   { background: #fee2e2; color: #b91c1c; }
-            .badge.medium { background: #fef3c7; color: #b45309; }
-            .badge.low    { background: #dcfce7; color: #15803d; }
-            table { width: 100%; border-collapse: collapse; background: #fff;
-                    border: 1px solid #e5e7eb; border-radius: 6px; overflow: hidden; }
-            th { background: #f7f8fa; text-align: left; padding: .55rem .75rem;
-                 font-size: .78rem; text-transform: uppercase; letter-spacing: .04em;
-                 border-bottom: 1px solid #e5e7eb; color: #57606a; }
-            td { padding: .55rem .75rem; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
-            tr:last-child td { border-bottom: none; }
-            tr:hover td { background: #f7f8fa; }
-            code { font-size: .82rem; background: #f0f0f0; padding: .1em .35em; border-radius: 3px; }
-            a { color: #3b82d4; text-decoration: none; }
-            a:hover { text-decoration: underline; }
-            footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e5e7eb;
-                     text-align: center; font-size: .75rem; color: #57606a; }
-          </style>
-          </head>
-          <body>
-          <div class="wrap">
-            <h1>Snyk Code Security Report</h1>
-            <p class="meta">Generated: ${new Date().toUTCString()} &nbsp;|&nbsp; Total findings: ${results.length}</p>
-            <div class="summary">
-              <div class="card"><div class="num high">${counts.high}</div><div class="lbl">High</div></div>
-              <div class="card"><div class="num medium">${counts.medium}</div><div class="lbl">Medium</div></div>
-              <div class="card"><div class="num low">${counts.low}</div><div class="lbl">Low</div></div>
-              <div class="card"><div class="num">${results.length}</div><div class="lbl">Total</div></div>
-            </div>
-            <table>
-              <thead>
-                <tr>
-                  <th>#</th><th>Severity</th><th>Rule ID</th>
-                  <th>Description</th><th>File</th><th>Line</th>
-                </tr>
-              </thead>
-              <tbody>${noFindings}</tbody>
-            </table>
-            <footer>Made with IBM Bob &nbsp;&mdash;&nbsp; Snyk Code SARIF report</footer>
-          </div>
-          </body>
-          </html>`;
-
-          fs.writeFileSync('snyk-report.html', html.replace(/^          /gm, ''));
-          console.log('Report written to snyk-report.html');
-          EOF
-
-      - name: Save report as downloadable artifact
+      - name: Upload ZIP Artifact
         uses: actions/upload-artifact@v4
         with:
           name: snyk-security-report
-          path: |
-            snyk-code.sarif
-            snyk-report.html
-          retention-days: 30
+          path: snyk-report.zip
