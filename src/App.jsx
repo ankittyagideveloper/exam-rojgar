@@ -51,6 +51,12 @@ import VedicMock2MockTestPage from "./pages/VedicMock2MockTestPage";
 import CompoundInterestMockTestPage from "./pages/CompoundInterestMockTestPage";
 import PipeCisternMockTestPage from "./pages/PipeCisternMockTestPage";
 
+// Inline redirect element — only redirects when the route is actually rendered
+const ExternalRedirect = ({ url }) => {
+  window.location.replace(url);
+  return null;
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -159,6 +165,22 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "/whatsapp",
+        element: (
+          <ExternalRedirect url="https://whatsapp.com/channel/0029VbAqJ1MHLHQV47i0lI3u" />
+        ),
+      },
+      {
+        path: "/telegram",
+        element: <ExternalRedirect url="https://t.me/ExamRojgaar" />,
+      },
+      {
+        path: "/youtube",
+        element: (
+          <ExternalRedirect url="https://www.youtube.com/@ExamRojgaar" />
+        ),
+      },
+      {
         path: "*",
         element: (
           <ErrorPage
@@ -232,7 +254,7 @@ const router = createBrowserRouter([
       { path: "vedic-mock-2", element: <VedicMock2MockTestPage /> },
 
       { path: "compound-interest", element: <CompoundInterestMockTestPage /> },
-    
+
       { path: "pipe-cistern", element: <PipeCisternMockTestPage /> },
     ],
   },
