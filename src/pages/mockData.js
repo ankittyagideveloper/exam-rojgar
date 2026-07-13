@@ -334,7 +334,7 @@ export const mockData = {
               languages: ["English", "Hindi"],
               questions: "100",
               marks: "100",
-              duration: "3",
+              duration: "80",
               isSpecialMock: true,
               route: "/mock-test/Revision",
             },
