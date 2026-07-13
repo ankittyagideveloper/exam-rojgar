@@ -51,6 +51,7 @@ import VedicMock2MockTestPage from "./pages/VedicMock2MockTestPage";
 import CompoundInterestMockTestPage from "./pages/CompoundInterestMockTestPage";
 import PipeCisternMockTestPage from "./pages/PipeCisternMockTestPage";
 import RevisionMockTestPage from "./pages/RevisionMockTestPage";
+import RevisionTest3MockTestPage from "./pages/RevisionTest3MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -259,6 +260,8 @@ const router = createBrowserRouter([
       { path: "pipe-cistern", element: <PipeCisternMockTestPage /> },
     
       { path: "Revision", element: <RevisionMockTestPage /> },
+    
+      { path: "Revision-Test-3", element: <RevisionTest3MockTestPage /> },
     ],
   },
 ]);
