@@ -1,0 +1,2206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="cinematic-bg w-full h-full overflow-y-auto text-white flex flex-col items-center py-10 px-4">
+        <div class="absolute top-4 left-4 text-xs font-semibold text-slate-400 tracking-wider">Trusted Resources</div>
+        
+        <div class="max-w-4xl w-full text-center mt-8 z-10 relative">
+            <h2 class="text-xl md:text-2xl text-brand-gold mb-2 font-head font-medium tracking-wide">Hi, Welcome to</h2>
+            <h1 class="text-4xl md:text-6xl font-head font-bold tracking-tight text-white drop-shadow-lg mb-2">
+                EXAM ROJGAAR MOCKS
+            </h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium mb-4">(कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.
+Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.)</p>
+            <p class="text-lg md:text-xl text-brand-accent font-semibold bg-brand-accent/10 inline-block px-4 py-1 rounded-full border border-brand-accent/30 mb-8">
+                Hard Challenge Sectional Mocks
+            </p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wide drop-shadow-md">
+                "Speed + Accuracy = Selection"
+            </h3>
+
+            <button onclick="startCountdown()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 animate-glow border border-blue-400 w-full md:w-auto">
+                I AM READY TO BEGIN
+            </button>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" class="block mt-6 text-slate-300 hover:text-brand-accent transition-colors underline decoration-brand-accent underline-offset-4 font-medium flex items-center justify-center gap-2 text-lg">
+                <i class="fab fa-telegram text-xl"></i> https://t.me/ExamRojgaar
+            </a>
+        </div>
+
+        <div class="max-w-5xl w-full mt-16 z-10 relative">
+            <div class="glass-card rounded-2xl p-8 border-t-4 border-t-brand-gold shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+                <h3 class="text-3xl font-head font-bold text-center mb-4 text-white">Elite Mentor Strategy</h3>
+                <blockquote class="text-center text-lg md:text-xl italic text-slate-300 mb-8 border-l-4 border-brand-accent pl-4 py-2 mx-auto max-w-3xl bg-slate-800/30 rounded-r">
+                    "If you are targeting all 25 questions, you are already making a mistake. Selection comes from solving the right <span class="text-brand-gold font-bold">20+ questions</span> — not all 25."
+                </blockquote>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-red text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch"></i></div>
+                        <h4 class="text-xl font-bold mb-2">3–5 Sec Rule</h4>
+                        <p class="text-slate-300 text-sm">Can you see a direct formula or clear steps?<br>Is it solvable in &lt;30 sec?<br><span class="text-brand-red font-bold mt-2 inline-block">If NO → SKIP immediately.</span></p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-gold text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-ban"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Skip in Round 1</h4>
+                        <ul class="text-slate-300 text-sm list-disc pl-4 space-y-1">
+                            <li>Lengthy calculations</li>
+                            <li>Tricky language</li>
+                            <li>DI-heavy questions</li>
+                            <li>Entirely new patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-green text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Target System</h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li>Total Qs: 25</li>
+                            <li>Time: <span class="text-brand-gold font-bold">13 Minutes</span></li>
+                            <li>Target Attempt: <span class="text-brand-gold font-bold">20+</span></li>
+                            <li>Target Accuracy: 100%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-6 mb-6">
+                    <h4 class="text-lg font-bold mb-3 flex items-center gap-2"><i class="fas fa-route text-brand-accent"></i> Round Strategy</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p><strong class="text-white">Round 1 (0–8 min):</strong> Hunt easy questions (Target 15–18)</p>
+                        <p><strong class="text-white">Round 2 (8–11 min):</strong> Attempt medium & marked questions</p>
+                        <p><strong class="text-white">Last 2 min:</strong> Smart guessing via elimination (No ego solving)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 border-t border-slate-700 pt-6">
+                    <p class="text-sm md:text-base text-slate-300 mb-2">Want to master this mindset? Join our Telegram group where top doubt solvers and expert mentors guide you daily.</p>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-6 rounded-full transition-colors">
+                        <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">80:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">All India Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Out of 5000 users</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 3* 60; // 10 minutes in seconds
+
+const rawData = [
+{
+id: 1,
+eng: "P sells an item to Q at 50% profit. Q sells the same item to R at 60% loss. If R paid ₹3234 for the item, then at what price (in ₹) is the item purchased by P?",
+hin: "P किसी वस्तु को Q को 50% लाभ पर बेचता है। Q उसी वस्तु को R को 60% हानि पर बेचता है। यदि R ने वस्तु के लिए ₹3234 का भुगतान किया, तो P ने वह वस्तु कितने रुपये में खरीदी थी?",
+optE: ["5390","5387","5391","5393"],
+optH: ["5390","5387","5391","5393"],
+ans: 0,
+solE: "Let P's purchase price = x. Q buys it at 150% of x. R pays 40% of that price. Hence 0.4 × 1.5x = 3234 ⇒ 0.6x = 3234 ⇒ x = 5390.",
+solH: "मान लें P का क्रय मूल्य x है। Q इसे 50% लाभ पर खरीदता है अर्थात 1.5x। R इसे 60% हानि पर खरीदता है अर्थात 1.5x का 40%। इसलिए 0.4 × 1.5x = 3234 ⇒ 0.6x = 3234 ⇒ x = 5390।"
+},
+
+{
+id: 2,
+eng: "A dealer buys two articles X and Y for ₹500 each. He marks each of them at the same price. He sells X by giving two successive discounts of 50% and 28% and still earns ₹958 as profit. If he sells Y at a single discount of 77%, then what is the profit percentage on Y?",
+hin: "एक व्यापारी X और Y दो वस्तुएँ ₹500-₹500 में खरीदता है। दोनों का अंकित मूल्य समान रखता है। X पर 50% और 28% की क्रमिक छूट देने के बाद भी उसे ₹958 का लाभ होता है। यदि Y को 77% की एकल छूट पर बेचा जाए, तो Y पर लाभ प्रतिशत कितना होगा?",
+optE: ["86.3%","86%","85%","85.3%"],
+optH: ["86.3%","86%","85%","85.3%"],
+ans: 0,
+solE: "SP of X = 500 + 958 = 1458. After discounts, SP = 36% of MP. MP = 1458/0.36 = 4050. For Y, SP = 23% of 4050 = 931.5. Profit% = (931.5−500)/500 ×100 = 86.3%.",
+solH: "X का विक्रय मूल्य = 500 + 958 = 1458। दो छूटों के बाद विक्रय मूल्य अंकित मूल्य का 36% है। अतः MP = 1458/0.36 = 4050। Y का विक्रय मूल्य = 4050 का 23% = 931.5। लाभ% = (931.5−500)/500 ×100 = 86.3%।"
+},
+
+{
+id: 3,
+eng: "Suman, Kunal, and Pooja invest ₹1050, ₹1510, and ₹1280 respectively to start a business. If the profit at the end of the year is ₹1650, then what is the share of Pooja in the profit?",
+hin: "सुमन, कुणाल और पूजा ने क्रमशः ₹1050, ₹1510 और ₹1280 का निवेश करके व्यवसाय शुरू किया। यदि वर्ष के अंत में कुल लाभ ₹1650 है, तो पूजा का लाभांश कितना होगा?",
+optE: ["550","549","551","548"],
+optH: ["550","549","551","548"],
+ans: 0,
+solE: "Total investment = 1050 + 1510 + 1280 = 3840. Pooja's share = 1650 × 1280/3840 = ₹550.",
+solH: "कुल निवेश = 1050 + 1510 + 1280 = 3840। पूजा का लाभांश = 1650 × 1280/3840 = ₹550।"
+},
+
+{
+id: 4,
+eng: "A shopkeeper purchased 59 dozens of articles at the rate of ₹520 per dozen. He sold each one of them at the rate of ₹52. What percentage profit did he make?",
+hin: "एक दुकानदार ने 59 दर्जन वस्तुएँ ₹520 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹52 में बेची। उसका लाभ प्रतिशत कितना है?",
+optE: ["19%","23%","21%","20%"],
+optH: ["19%","23%","21%","20%"],
+ans: 3,
+solE: "CP per article = 520/12 = 43.33. SP per article = 52. Profit% = (52−43.33)/43.33 ×100 = 20%.",
+solH: "प्रति वस्तु क्रय मूल्य = 520/12 = 43.33। प्रति वस्तु विक्रय मूल्य = 52। लाभ% = (52−43.33)/43.33 ×100 = 20%।"
+},
+
+{
+id: 5,
+eng: "A dealer buys two articles X and Y for ₹800 each. He marks each of them at the same price. He sells X by giving two successive discounts of 45% and 73% and still earns ₹523 as profit. If he sells Y at a single discount of 89%, then what is the profit percentage on Y?",
+hin: "एक व्यापारी X और Y दो वस्तुएँ ₹800-₹800 में खरीदता है। दोनों का अंकित मूल्य समान रखता है। X पर 45% और 73% की क्रमिक छूट देने के बाद भी उसे ₹523 का लाभ होता है। यदि Y को 89% की एकल छूट पर बेचा जाए, तो Y पर लाभ प्रतिशत कितना होगा?",
+optE: ["22%","21.5%","21%","22.5%"],
+optH: ["22%","21.5%","21%","22.5%"],
+ans: 3,
+solE: "SP of X = 800 + 523 = 1323. After discounts SP = 55% × 27% = 14.85% of MP. MP = 1323/0.1485 = 8909.09. SP of Y = 11% of MP = 980. Profit% = (980−800)/800 ×100 = 22.5%.",
+solH: "X का विक्रय मूल्य = 800 + 523 = 1323। दो छूटों के बाद SP = MP का 14.85% है। MP = 1323/0.1485 = 8909.09। Y का SP = MP का 11% = 980। लाभ% = (980−800)/800 ×100 = 22.5%।"
+},
+
+{
+id: 6,
+eng: "During a sale 50% of the goods are sold at 16% profit, 40% of the remaining goods are sold at 35% profit and the still remaining goods are sold at a loss of 25%. If there is an overall profit of x%, then what is the value of x?",
+hin: "एक बिक्री में 50% माल 16% लाभ पर बेचा गया, शेष माल के 40% को 35% लाभ पर बेचा गया तथा बचा हुआ माल 25% हानि पर बेचा गया। यदि कुल लाभ x% है, तो x का मान ज्ञात कीजिए।",
+optE: ["7.5","8","6","9"],
+optH: ["7.5","8","6","9"],
+ans: 0,
+solE: "Assume total CP = 100. Profit = 50×16% + 20×35% − 30×25% = 8 + 7 − 7.5 = 7.5%.",
+solH: "कुल क्रय मूल्य 100 मानें। लाभ = 50×16% + 20×35% − 30×25% = 8 + 7 − 7.5 = 7.5%।"
+},
+
+{
+id: 7,
+eng: "A shopkeeper purchased 62 dozens of articles at the rate of ₹100 per dozen. He sold each one of them at the rate of ₹75. What percentage profit did he make?",
+hin: "एक दुकानदार ने 62 दर्जन वस्तुएँ ₹100 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹75 में बेची। उसका लाभ प्रतिशत कितना है?",
+optE: ["800%","801%","797%","798%"],
+optH: ["800%","801%","797%","798%"],
+ans: 0,
+solE: "CP/article = 100/12. SP/article = 75. Profit% = [(75−100/12)/(100/12)]×100 = 800%.",
+solH: "प्रति वस्तु क्रय मूल्य = 100/12। विक्रय मूल्य = 75। लाभ% = [(75−100/12)/(100/12)]×100 = 800%।"
+},
+
+{
+id: 8,
+eng: "Madhu and Madhuri start a business by investing in the ratio 31 : 34. If total profit is ₹44,850, then what is the difference between the shares of profit of Madhu and Madhuri?",
+hin: "मधु और माधुरी ने 31 : 34 के अनुपात में निवेश करके व्यवसाय शुरू किया। यदि कुल लाभ ₹44,850 है, तो दोनों के लाभांश में कितना अंतर होगा?",
+optE: ["3570","1570","570","2070"],
+optH: ["3570","1570","570","2070"],
+ans: 3,
+solE: "Difference ratio = 3. One part = 44850/65 = 690. Difference = 3×690 = ₹2070.",
+solH: "अंतर = 3 भाग। एक भाग = 44850/65 = 690। अतः अंतर = 3×690 = ₹2070।"
+},
+
+{
+id: 9,
+eng: "P sells an item to Q at 70% profit. Q sells the same item to R at 67% loss. If R paid ₹3927 for the item, then at what price was the item purchased by P?",
+hin: "P किसी वस्तु को Q को 70% लाभ पर बेचता है। Q उसे R को 67% हानि पर बेचता है। यदि R ने ₹3927 का भुगतान किया, तो P का क्रय मूल्य क्या था?",
+optE: ["7003","6998","6997","7000"],
+optH: ["7003","6998","6997","7000"],
+ans: 3,
+solE: "0.33 × 1.70 × CP = 3927 ⇒ CP = 3927/0.561 = 7000.",
+solH: "0.33 × 1.70 × CP = 3927 ⇒ CP = 3927/0.561 = 7000।"
+},
+
+{
+id: 10,
+eng: "A shopkeeper purchased 42 dozens of articles at the rate of ₹630 per dozen. He sold each one of them at the rate of ₹63. What percentage profit did he make?",
+hin: "एक दुकानदार ने 42 दर्जन वस्तुएँ ₹630 प्रति दर्जन की दर से खरीदीं। उसने प्रत्येक वस्तु ₹63 में बेची। लाभ प्रतिशत ज्ञात कीजिए।",
+optE: ["21%","23%","20%","17%"],
+optH: ["21%","23%","20%","17%"],
+ans: 2,
+solE: "CP/article = 630/12 = 52.5, SP = 63. Profit% = (10.5/52.5)×100 = 20%.",
+solH: "प्रति वस्तु CP = 630/12 = 52.5, SP = 63। लाभ% = (10.5/52.5)×100 = 20%।"
+},
+{
+id: 11,
+eng: "One pipe can fill a tank in 21 minutes while another pipe can empty the completely filled tank in 24 minutes. If both pipes are operated together, how long will it take to fill one-fourth of the tank?",
+hin: "एक पाइप टैंक को 21 मिनट में भर सकता है जबकि दूसरा पाइप भरे हुए टैंक को 24 मिनट में खाली कर सकता है। यदि दोनों पाइप एक साथ चलें, तो टैंक का एक-चौथाई भाग भरने में कितना समय लगेगा?",
+optE: ["42","126","84","168"],
+optH: ["42","126","84","168"],
+ans: 0,
+solE: "Net rate = 1/21 − 1/24 = 1/168 tank/minute. Time for one-fourth tank = (1/4)/(1/168) = 42 minutes.",
+solH: "शुद्ध दर = 1/21 − 1/24 = 1/168 टैंक/मिनट। 1/4 टैंक भरने का समय = (1/4)/(1/168) = 42 मिनट।"
+},
+{
+id: 12,
+eng: "One pipe can fill a tank in 9 minutes while another pipe can empty the completely filled tank in 90 minutes. If both pipes are operated together, how long will it take to fill half of the tank?",
+hin: "एक पाइप टैंक को 9 मिनट में भर सकता है जबकि दूसरा पाइप भरे हुए टैंक को 90 मिनट में खाली कर सकता है। यदि दोनों पाइप एक साथ चलें, तो आधा टैंक भरने में कितना समय लगेगा?",
+optE: ["5","10","6","11"],
+optH: ["5 मिनट","10 मिनट","6 मिनट","11 मिनट"],
+ans: 0,
+solE: "Net rate = 1/9 − 1/90 = 1/10 tank/minute. Time for half tank = (1/2)/(1/10) = 5 minutes.",
+solH: "शुद्ध दर = 1/9 − 1/90 = 1/10 टैंक/मिनट। आधा टैंक भरने का समय = (1/2)/(1/10) = 5 मिनट।"
+},
+{
+id: 13,
+eng: "One pipe can fill a tank in 9 minutes while another pipe can empty the completely filled tank in 90 minutes. If both pipes are operated together, how long will it take to fill the tank completely?",
+hin: "एक पाइप टैंक को 9 मिनट में भर सकता है जबकि दूसरा पाइप भरे हुए टैंक को 90 मिनट में खाली कर सकता है। यदि दोनों पाइप एक साथ चलें, तो पूरा टैंक भरने में कितना समय लगेगा?",
+optE: ["13","11","12","10"],
+optH: ["13 मिनट","11 मिनट","12 मिनट","10 मिनट"],
+ans: 3,
+solE: "Net rate = 1/9 − 1/90 = 1/10 tank/minute. Therefore, the whole tank is filled in 10 minutes.",
+solH: "शुद्ध दर = 1/9 − 1/90 = 1/10 टैंक/मिनट। अतः पूरा टैंक 10 मिनट में भर जाएगा।"
+},
+
+{
+id: 14,
+eng: "A water tank can be filled in 29 minutes by using 23 pipes of the same capacity. In how many minutes (rounded off to two decimal places) will the water tank be filled if 47 pipes of the same capacity are used?",
+hin: "23 समान क्षमता वाले पाइपों से एक पानी की टंकी 29 मिनट में भर जाती है। यदि उसी क्षमता के 47 पाइप लगाए जाएँ, तो टंकी कितने मिनट (दो दशमलव स्थान तक) में भरेगी?",
+optE: ["21.97","17.43","14.19","24.44"],
+optH: ["21.97","17.43","14.19","24.44"],
+ans: 2,
+solE: "Time is inversely proportional to the number of identical pipes. Required time = (23 × 29)/47 = 14.19 minutes.",
+solH: "समय समान पाइपों की संख्या के व्युत्क्रमानुपाती होता है। आवश्यक समय = (23 × 29)/47 = 14.19 मिनट।"
+},
+{
+id: 15,
+eng: "One pipe can fill a tank in 7 minutes while another pipe can empty the completely filled tank in 56 minutes. If both the pipes are operated together on an empty tank, how long will it take to fill three-fourths of the tank?",
+hin: "एक पाइप टैंक को 7 मिनट में भर सकता है जबकि दूसरा पाइप भरे हुए टैंक को 56 मिनट में खाली कर सकता है। यदि दोनों पाइप एक साथ चलें, तो टैंक का तीन-चौथाई भाग भरने में कितना समय लगेगा?",
+optE: ["7","12","6","13"],
+optH: ["7 मिनट","12 मिनट","6 मिनट","13 मिनट"],
+ans: 2,
+solE: "Net rate = 1/7 − 1/56 = 1/8 tank/minute. Time for 3/4 tank = (3/4)/(1/8) = 6 minutes.",
+solH: "शुद्ध दर = 1/7 − 1/56 = 1/8 टैंक/मिनट। 3/4 टैंक भरने का समय = (3/4)/(1/8) = 6 मिनट।"
+},
+{
+id: 16,
+eng: "Two pipes can fill a cistern individually in 35 minutes and 15 minutes respectively. A third pipe empties it. If all three pipes are opened together, the cistern is filled in 6 minutes. How long will the third pipe alone take to empty the full cistern?",
+hin: "दो पाइप क्रमशः 35 मिनट और 15 मिनट में टंकी भर सकते हैं। तीसरा पाइप उसे खाली करता है। यदि तीनों पाइप एक साथ खोले जाएँ, तो टंकी 6 मिनट में भर जाती है। तीसरा पाइप अकेले पूरी टंकी कितने समय में खाली करेगा?",
+optE: ["14 min","5 min","8 min","17 min"],
+optH: ["14 मिनट","5 मिनट","8 मिनट","17 मिनट"],
+ans: 0,
+solE: "Emptying rate = 1/35 + 1/15 − 1/6 = 1/14 tank/minute. Hence the emptying pipe alone takes 14 minutes.",
+solH: "खाली करने की दर = 1/35 + 1/15 − 1/6 = 1/14 टैंक/मिनट। अतः पाइप अकेले 14 मिनट में टंकी खाली करेगा।"
+},
+{
+id: 17,
+eng: "Pipes A and B can fill an empty cistern in 84 minutes and 36 minutes respectively. Both pipes are opened together. After how much time should pipe B be turned off so that the cistern is completely filled in a total of 42 minutes?",
+hin: "पाइप A और B क्रमशः 84 मिनट और 36 मिनट में टंकी भर सकते हैं। दोनों पाइप एक साथ खोले जाते हैं। यदि टंकी को कुल 42 मिनट में भरना हो, तो पाइप B को कितनी देर बाद बंद करना चाहिए?",
+optE: ["18 minutes","12 minutes","15 minutes","24 minutes"],
+optH: ["18 मिनट","12 मिनट","15 मिनट","24 मिनट"],
+ans: 0,
+solE: "Let B run for x minutes. x(1/84+1/36)+(42−x)(1/84)=1. Solving gives x=18 minutes.",
+solH: "मान लें B, x मिनट तक चलता है। तब x(1/84+1/36)+(42−x)(1/84)=1। हल करने पर x=18 मिनट प्राप्त होता है।"
+},
+{
+id: 18,
+eng: "One pipe can fill a tank in 19 minutes while another pipe can empty the completely filled tank in 21 minutes. If both pipes are operated together, how long will it take to fill two-thirds of the tank?",
+hin: "एक पाइप टैंक को 19 मिनट में भर सकता है जबकि दूसरा पाइप भरे हुए टैंक को 21 मिनट में खाली कर सकता है। यदि दोनों पाइप एक साथ चलें, तो टैंक का दो-तिहाई भाग भरने में कितना समय लगेगा?",
+optE: ["266","532","399","133"],
+optH: ["266 मिनट","532 मिनट","399 मिनट","133 मिनट"],
+ans: 3,
+solE: "Net rate = 1/19 − 1/21 = 2/399 tank/minute. Time for 2/3 tank = (2/3)/(2/399)=133 minutes.",
+solH: "शुद्ध दर = 1/19 − 1/21 = 2/399 टैंक/मिनट। 2/3 टैंक भरने का समय = (2/3)/(2/399)=133 मिनट।"
+},
+{
+id: 19,
+eng: "Pipes A and B can fill an empty cistern in 72 minutes and 76 minutes respectively. Both are opened together. After how much time should pipe B be turned off so that the cistern is completely filled in 54 minutes?",
+hin: "पाइप A और B क्रमशः 72 मिनट और 76 मिनट में टंकी भर सकते हैं। दोनों पाइप एक साथ खोले जाते हैं। यदि टंकी को कुल 54 मिनट में भरना हो, तो पाइप B को कितनी देर बाद बंद करना चाहिए?",
+optE: ["13 minutes","17 minutes","19 minutes","23 minutes"],
+optH: ["13 मिनट","17 मिनट","19 मिनट","23 मिनट"],
+ans: 2,
+solE: "Let B work for x minutes. x(1/72+1/76)+(54−x)(1/72)=1. Solving gives x=19 minutes.",
+solH: "मान लें B, x मिनट तक चलता है। तब x(1/72+1/76)+(54−x)(1/72)=1। हल करने पर x=19 मिनट प्राप्त होता है।"
+},
+{
+id: 20,
+eng: "Pipes A and B can fill an empty cistern in 21 minutes and 42 minutes respectively. Both are opened together. After how much time should pipe B be turned off so that the cistern is completely filled in 16 minutes?",
+hin: "पाइप A और B क्रमशः 21 मिनट और 42 मिनट में टंकी भर सकते हैं। दोनों पाइप एक साथ खोले जाते हैं। यदि टंकी को कुल 16 मिनट में भरना हो, तो पाइप B को कितनी देर बाद बंद करना चाहिए?",
+optE: ["5 minutes","10 minutes","15 minutes","12 minutes"],
+optH: ["5 मिनट","10 मिनट","15 मिनट","12 मिनट"],
+ans: 1,
+solE: "Let B run for x minutes. x(1/21+1/42)+(16−x)(1/21)=1. Solving gives x=10 minutes.",
+solH: "मान लें B, x मिनट तक चलता है। तब x(1/21+1/42)+(16−x)(1/21)=1। हल करने पर x=10 मिनट प्राप्त होता है।"
+},
+{
+id: 21,
+eng: "A, B and C alone can complete a piece of work in 11, 33 and 48 days, respectively. They all started the work together, but A left after 2 days. In how many days was the remaining work completed?",
+hin: "A, B और C अकेले क्रमशः 11, 33 और 48 दिनों में एक कार्य पूरा कर सकते हैं। तीनों ने साथ में कार्य प्रारम्भ किया, लेकिन A ने 2 दिन बाद कार्य छोड़ दिया। शेष कार्य कितने दिनों में पूरा हुआ?",
+optE: ["16 days","13 days","14 days","15 days"],
+optH: ["16 दिन","13 दिन","14 दिन","15 दिन"],
+ans: 2,
+solE: "In 2 days, all three complete 2 × (1/11 + 1/33 + 1/48) = 95/264 of the work. Remaining work = 169/264. B and C together work at 1/33 + 1/48 = 9/176 per day. Remaining time = (169/264) ÷ (9/176) = 338/27 ≈ 12.52 days. Total time ≈ 14 days.",
+solH: "2 दिनों में तीनों मिलकर 95/264 कार्य पूरा करते हैं। शेष कार्य = 169/264। B और C की संयुक्त कार्य क्षमता = 9/176 कार्य/दिन है। शेष कार्य लगभग 12.52 दिनों में पूरा होगा। कुल समय लगभग 14 दिन होगा।"
+},
+
+{
+id: 22,
+eng: "A, B and C alone can complete a piece of work in 5, 55 and 66 days, respectively. They all started the work together, but A left after 4 days. In how many days was the whole work completed?",
+hin: "A, B और C अकेले क्रमशः 5, 55 और 66 दिनों में एक कार्य पूरा कर सकते हैं। तीनों ने साथ में कार्य प्रारम्भ किया, लेकिन A ने 4 दिन बाद कार्य छोड़ दिया। पूरा कार्य कुल कितने दिनों में समाप्त हुआ?",
+optE: ["7 days","3 days","2 days","6 days"],
+optH: ["7 दिन","3 दिन","2 दिन","6 दिन"],
+ans: 3,
+solE: "In 4 days, all three complete 4 × (1/5 + 1/55 + 1/66) = 154/165 of the work. Remaining work = 11/165. B and C together work at 1/55 + 1/66 = 1/30 per day. Remaining time = 2 days. Therefore, total time = 6 days.",
+solH: "4 दिनों में तीनों मिलकर 154/165 कार्य पूरा करते हैं। शेष कार्य = 11/165। B और C की संयुक्त कार्य क्षमता = 1/30 कार्य/दिन है। शेष कार्य 2 दिनों में पूरा होगा। अतः कुल समय = 6 दिन।"
+},
+
+{
+id: 23,
+eng: "Ramesh can complete a piece of work alone in 16 days and Suresh can complete the same work alone in 10 days. They started the work together, but Ramesh left 4 days before the completion of the work. In how many days was the work completed?",
+hin: "रमेश अकेले 16 दिनों में तथा सुरेश अकेले 10 दिनों में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया, लेकिन कार्य समाप्त होने से 4 दिन पहले रमेश कार्य छोड़कर चला गया। कार्य कुल कितने दिनों में पूरा हुआ?",
+optE: ["100/13 days","105/13 days","107/13 days","150/13 days"],
+optH: ["100/13 दिन","105/13 दिन","107/13 दिन","150/13 दिन"],
+ans: 0,
+solE: "Let the total time be T days. Then, (T − 4)/16 + T/10 = 1. Solving this equation gives T = 100/13 days.",
+solH: "मान लें कुल समय T दिन है। तब (T − 4)/16 + T/10 = 1। समीकरण हल करने पर T = 100/13 दिन प्राप्त होता है।"
+},
+
+{
+id: 24,
+eng: "Jitesh and Kamal can complete a piece of work in 5 days and 18 days, respectively. They started working together, and after 3 days, Kamal left. In how many more days will Jitesh complete the remaining work?",
+hin: "जितेश और कमल अकेले क्रमशः 5 दिन और 18 दिन में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया और 3 दिनों बाद कमल चला गया। शेष कार्य को जितेश कितने दिनों में पूरा करेगा?",
+optE: ["11/6 days","13/6 days","25/6 days","7/6 days"],
+optH: ["11/6 दिन","13/6 दिन","25/6 दिन","7/6 दिन"],
+ans: 3,
+solE: "In 3 days they complete 3 × (1/5 + 1/18) = 23/30 of the work. Remaining work = 7/30. Jitesh's rate = 1/5. Time required = (7/30) ÷ (1/5) = 7/6 days.",
+solH: "3 दिनों में दोनों मिलकर 23/30 कार्य पूरा करते हैं। शेष कार्य = 7/30। जितेश की कार्य क्षमता = 1/5 कार्य/दिन है। अतः समय = 7/6 दिन।"
+},
+
+{
+id: 25,
+eng: "Hemant and Irfan can complete a piece of work in 6 days and 10 days, respectively. They started working together, and after 2 days, Irfan left. In how many more days will Hemant complete the remaining work?",
+hin: "हेमंत और इरफान अकेले क्रमशः 6 दिन और 10 दिन में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया और 2 दिनों बाद इरफान चला गया। शेष कार्य को हेमंत कितने दिनों में पूरा करेगा?",
+optE: ["14/5 days","17/5 days","11/5 days","9/5 days"],
+optH: ["14/5 दिन","17/5 दिन","11/5 दिन","9/5 दिन"],
+ans: 0,
+solE: "In 2 days they complete 2 × (1/6 + 1/10) = 8/15 of the work. Remaining work = 7/15. Hemant's rate = 1/6. Time required = (7/15) ÷ (1/6) = 14/5 days.",
+solH: "2 दिनों में दोनों मिलकर 8/15 कार्य पूरा करते हैं। शेष कार्य = 7/15। हेमंत की कार्य क्षमता = 1/6 कार्य/दिन है। अतः समय = 14/5 दिन।"
+},
+
+{
+id: 26,
+eng: "Varun and Ashish together can paint a hall in 3 days. Varun alone can paint it in 7 days. In how many days can Ashish alone paint 4 such halls?",
+hin: "वरुण और आशीष मिलकर एक हॉल को 3 दिनों में रंग सकते हैं। वरुण अकेले उसी हॉल को 7 दिनों में रंग सकता है। आशीष अकेले ऐसे 4 हॉल कितने दिनों में रंगेगा?",
+optE: ["5.25 days","6.25 days","22 days","21 days"],
+optH: ["5.25 दिन","6.25 दिन","22 दिन","21 दिन"],
+ans: 3,
+solE: "Ashish's rate = 1/3 − 1/7 = 4/21 hall/day. Time for one hall = 21/4 days. Time for four halls = 21 days.",
+solH: "आशीष की कार्य क्षमता = 1/3 − 1/7 = 4/21 हॉल/दिन है। एक हॉल के लिए समय = 21/4 दिन। 4 हॉल के लिए समय = 21 दिन।"
+},
+
+{
+id: 27,
+eng: "Robin and Varun together can paint a hall in 6 days. Robin alone can paint it in 42 days. In how many days can Varun alone paint the same hall?",
+hin: "रॉबिन और वरुण मिलकर एक हॉल को 6 दिनों में रंग सकते हैं। रॉबिन अकेले उसी हॉल को 42 दिनों में रंग सकता है। वरुण अकेले उसी हॉल को कितने दिनों में रंगेगा?",
+optE: ["7 days","9 days","10 days","8 days"],
+optH: ["7 दिन","9 दिन","10 दिन","8 दिन"],
+ans: 0,
+solE: "Varun's rate = 1/6 − 1/42 = 1/7. Hence, Varun alone completes the work in 7 days.",
+solH: "वरुण की कार्य क्षमता = 1/6 − 1/42 = 1/7 कार्य/दिन है। अतः वरुण अकेले कार्य 7 दिनों में पूरा करेगा।"
+},
+
+{
+id: 28,
+eng: "A can finish a work in 2 days and B can do the same work in 52 days. B worked alone for 26 days and then left the job. In how many days can A alone finish the remaining work?",
+hin: "A किसी कार्य को 2 दिनों में तथा B उसी कार्य को 52 दिनों में पूरा कर सकता है। B ने 26 दिनों तक अकेले कार्य किया और फिर कार्य छोड़ दिया। शेष कार्य को A अकेले कितने दिनों में पूरा करेगा?",
+optE: ["3 days","2 days","1 day","4 days"],
+optH: ["3 दिन","2 दिन","1 दिन","4 दिन"],
+ans: 2,
+solE: "B completes 26 × (1/52) = 1/2 of the work. The remaining 1/2 work is completed by A, whose rate is 1/2 per day. Hence, time required = (1/2)/(1/2) = 1 day.",
+solH: "B ने 26 × (1/52) = 1/2 कार्य पूरा किया। शेष 1/2 कार्य A करेगा जिसकी कार्य क्षमता 1/2 कार्य प्रति दिन है। अतः समय = 1 दिन।"
+},
+
+{
+id: 29,
+eng: "A can complete a piece of work in 14 days and B can complete it in 10 days. If they work on alternate days, starting with B on the first day, then in how many days will the work be finished?",
+hin: "A किसी कार्य को 14 दिनों में तथा B उसी कार्य को 10 दिनों में पूरा कर सकता है। यदि वे बारी-बारी से कार्य करें तथा B पहले दिन कार्य प्रारम्भ करे, तो कार्य कितने दिनों में पूरा होगा?",
+optE: ["68/5 days","78/5 days","67/5 days","58/5 days"],
+optH: ["68/5 दिन","78/5 दिन","67/5 दिन","58/5 दिन"],
+ans: 3,
+solE: "In every two days, A and B complete (1/10 + 1/14) = 6/35 of the work. Continuing this alternating pattern, the total time taken is 58/5 days.",
+solH: "प्रत्येक दो दिनों में A और B मिलकर (1/10 + 1/14) = 6/35 कार्य पूरा करते हैं। इसी क्रम से कार्य 58/5 दिनों में पूरा होता है।"
+},
+
+{
+id: 30,
+eng: "Nirbhay can complete a piece of work alone in 19 days and Vismay can complete the same work alone in 6 days. They started the work together, but Nirbhay left 4 days before the completion of the work. In how many days was the work completed?",
+hin: "निर्भय अकेले 19 दिनों में तथा विस्मय अकेले 6 दिनों में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया, लेकिन कार्य समाप्त होने से 4 दिन पहले निर्भय कार्य छोड़कर चला गया। कार्य कुल कितने दिनों में पूरा हुआ?",
+optE: ["148/25 days","158/25 days","128/25 days","138/25 days"],
+optH: ["148/25 दिन","158/25 दिन","128/25 दिन","138/25 दिन"],
+ans: 3,
+solE: "Let the total time be T days. Nirbhay worked for (T − 4) days and Vismay worked for T days. So, (T − 4)/19 + T/6 = 1. Solving gives T = 138/25 days.",
+solH: "मान लें कुल समय T दिन है। निर्भय ने (T − 4) दिन तथा विस्मय ने T दिन कार्य किया। अतः (T − 4)/19 + T/6 = 1। हल करने पर T = 138/25 दिन प्राप्त होता है।"
+},
+
+{
+id: 31,
+eng: "There are 120 students in sections A, B and C. The average marks of all students is 85. The average marks of sections B and C together is 88 and average marks of section A is 78. Find the number of students in section A.",
+hin: "कक्षा 10 की A, B और C तीनों सेक्शनों में कुल 120 छात्र हैं। सभी का औसत अंक 85 है। B और C सेक्शन का औसत 88 तथा A सेक्शन का औसत 78 है। A सेक्शन के छात्रों की संख्या ज्ञात कीजिए।",
+optE: ["36","28","33","24"],
+optH: ["36","28","33","24"],
+ans: 0,
+solE: "Let students in A = x. Then 78x + 88(120−x) = 85×120. Solving gives x = 36.",
+solH: "मान लें A सेक्शन में x छात्र हैं। तब 78x + 88(120−x) = 85×120। हल करने पर x = 36 प्राप्त होता है।"
+},
+
+{
+id: 32,
+eng: "The average marks of a student in six subjects is 94. After re-evaluation, marks changed from 75 to 89, 82 to 90 and 80 to 88. Find the new average marks.",
+hin: "एक छात्र के 6 विषयों का औसत 94 है। पुनर्मूल्यांकन के बाद अंक 75 से 89, 82 से 90 तथा 80 से 88 हो गए। नया औसत ज्ञात कीजिए।",
+optE: ["99","95","98","97"],
+optH: ["99","95","98","97"],
+ans: 0,
+solE: "Increase in marks = 14 + 8 + 8 = 30. New total = 94×6 + 30 = 594. New average = 594/6 = 99.",
+solH: "अंकों में वृद्धि = 14 + 8 + 8 = 30। नया कुल = 94×6 + 30 = 594। नया औसत = 594/6 = 99।"
+},
+
+{
+id: 33,
+eng: "The average price of three furniture items is ₹16845. Their prices are in the ratio 3:5:7. Find the price of the cheapest item.",
+hin: "तीन फर्नीचर वस्तुओं का औसत मूल्य ₹16845 है। उनके मूल्य का अनुपात 3:5:7 है। सबसे सस्ती वस्तु का मूल्य ज्ञात कीजिए।",
+optE: ["7861","3369","5615","10107"],
+optH: ["7861","3369","5615","10107"],
+ans: 3,
+solE: "Total price = 16845×3 = 50535. Ratio sum = 15. Cheapest item = (3/15)×50535 = 10107.",
+solH: "कुल मूल्य = 16845×3 = 50535। अनुपात योग = 15। सबसे सस्ती वस्तु = (3/15)×50535 = 10107।"
+},
+
+{
+id: 34,
+eng: "The average age of Mohan and his four friends is 36 years. Mohan is 5 years older than the average age of his four friends. Find Mohan’s age.",
+hin: "मोहन और उसके चार मित्रों की औसत आयु 36 वर्ष है। मोहन अपने चार मित्रों की औसत आयु से 5 वर्ष बड़ा है। मोहन की आयु ज्ञात कीजिए।",
+optE: ["42","40","44","38"],
+optH: ["42","40","44","38"],
+ans: 1,
+solE: "Total age = 36×5 = 180. Let friends' average = x, then Mohan = x+5. So 4x + (x+5)=180 → x=35. Mohan = 40.",
+solH: "कुल आयु = 36×5 = 180। मान लें मित्रों की औसत आयु x है, तब मोहन = x+5। अतः 4x + (x+5)=180 → x=35। मोहन = 40।"
+},
+
+{
+id: 35,
+eng: "Three bells ring at intervals of 8, 12 and 20 seconds respectively. If they start together, after how many seconds will they ring together again?",
+hin: "तीन घंटियाँ क्रमशः 8, 12 और 20 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ शुरू हों, तो कितने सेकंड बाद फिर साथ बजेंगी?",
+optE: ["60","120","180","240"],
+optH: ["60","120","180","240"],
+ans: 1,
+solE: "LCM of 8, 12 and 20 = 120 seconds.\nTherefore, they will ring together again after 120 seconds.",
+solH: "8, 12 और 20 का LCM = 120 सेकंड\nअतः वे 120 सेकंड बाद फिर एक साथ बजेंगी।"
+},
+
+{
+id: 36,
+eng: "The HCF of three numbers is 23. If they are in the ratio 1 : 2 : 3, then find the numbers.",
+hin: "तीन संख्याओं का HCF 23 है। यदि उनका अनुपात 1 : 2 : 3 है, तो संख्याएँ ज्ञात कीजिए।",
+optE: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+optH: ["69, 15, 22","23, 46, 69","25, 31, 41","23, 21, 35"],
+ans: 1,
+solE: "If HCF = 23 and ratio is 1 : 2 : 3, then numbers are:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nHence, the required numbers are 23, 46 and 69.",
+solH: "यदि HCF = 23 और अनुपात 1 : 2 : 3 है, तो संख्याएँ होंगी:\n23×1 = 23\n23×2 = 46\n23×3 = 69\nअतः आवश्यक संख्याएँ 23, 46 और 69 हैं।"
+},
+
+{
+id: 37,
+eng: "The LCM of two numbers is 495 and their HCF is 5. If the sum of the numbers is 100, then find the difference of the numbers.",
+hin: "दो संख्याओं का LCM 495 और HCF 5 है। यदि दोनों संख्याओं का योग 100 है, तो उनका अंतर ज्ञात कीजिए।",
+optE: ["10","20","40","50"],
+optH: ["10","20","40","50"],
+ans: 0,
+solE: "Let the numbers be 5x and 5y.\nThen xy = LCM/HCF = 495/5 = 99\nPossible pair = 9 and 11\nNumbers = 45 and 55\nDifference = 55 - 45 = 10",
+solH: "मान लीजिए संख्याएँ 5x और 5y हैं।\nतब xy = LCM/HCF = 495/5 = 99\nसंभावित युग्म = 9 और 11\nसंख्याएँ = 45 और 55\nअंतर = 55 - 45 = 10"
+},
+
+
+{
+id: 38,
+eng: "The LCM of two numbers is 20 times their HCF and (LCM + HCF) = 2520. If one number is 480, what will be the triple of the other number?",
+hin: "दो संख्याओं का LCM उनके HCF का 20 गुना है और (LCM + HCF) = 2520 है। यदि एक संख्या 480 है, तो दूसरी संख्या का तीन गुना ज्ञात कीजिए।",
+optE: ["720","960","1440","1800"],
+optH: ["720","960","1440","1800"],
+ans: 3,
+solE: "Let HCF = h\nThen LCM = 20h\nGiven:\n20h + h = 2520\n21h = 2520\nh = 120\nTherefore, LCM = 20 × 120 = 2400\nNow,\nProduct of two numbers = HCF × LCM\n= 120 × 2400\n= 288000\nIf one number = 480,\nOther number = 288000 ÷ 480 = 600\nTriple of other number = 600 × 3 = 1800",
+solH: "मान लीजिए HCF = h\nतब LCM = 20h\nदिया है:\n20h + h = 2520\n21h = 2520\nh = 120\nअतः LCM = 20 × 120 = 2400\nअब,\nदोनों संख्याओं का गुणनफल = HCF × LCM\n= 120 × 2400\n= 288000\nयदि एक संख्या 480 है,\nदूसरी संख्या = 288000 ÷ 480 = 600\nदूसरी संख्या का तीन गुना = 600 × 3 = 1800"
+},
+{
+id: 39,
+eng: "The HCF and LCM of two natural numbers are 12 and 72 respectively. What is the difference between the two numbers if one number is 24?",
+hin: "दो प्राकृतिक संख्याओं का HCF 12 और LCM 72 है। यदि एक संख्या 24 है, तो दोनों संख्याओं का अंतर ज्ञात कीजिए।",
+optE: ["6","12","18","24"],
+optH: ["6","12","18","24"],
+ans: 1,
+solE: "Product of numbers = HCF × LCM = 12 × 72 = 864\nOther number = 864 ÷ 24 = 36\nDifference = 36 - 24 = 12",
+solH: "दोनों संख्याओं का गुणनफल = HCF × LCM = 12 × 72 = 864\nदूसरी संख्या = 864 ÷ 24 = 36\nअंतर = 36 - 24 = 12"
+},
+
+{
+id: 40,
+eng: "Monica, Veronica and Rachat begin to jog around a circular stadium. They complete one revolution in 42 s, 56 s and 63 s respectively. After how many seconds will they be together again at the starting point?",
+hin: "मोनिका, वेरोनिका और रचत एक गोल स्टेडियम में दौड़ना शुरू करते हैं। वे क्रमशः 42, 56 और 63 सेकंड में एक चक्कर पूरा करते हैं। वे कितने समय बाद फिर प्रारंभिक बिंदु पर साथ होंगे?",
+optE: ["504 s","1512 s","1008 s","756 s"],
+optH: ["504 सेकंड","1512 सेकंड","1008 सेकंड","756 सेकंड"],
+ans: 0,
+solE: "They will meet together again after the LCM of 42, 56 and 63.\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 seconds.",
+solH: "वे फिर साथ मिलेंगे जब 42, 56 और 63 का LCM आएगा।\n42 = 2 × 3 × 7\n56 = 2³ × 7\n63 = 3² × 7\nLCM = 2³ × 3² × 7 = 504 सेकंड"
+},
+
+{
+id: 41,
+eng: "A sum of money triples itself in 8 years at compound interest. In how many years will it become 9 times itself?",
+hin: "कोई राशि चक्रवृद्धि ब्याज पर 8 वर्षों में 3 गुनी हो जाती है। वह 9 गुनी होने में कितने वर्ष लेगी?",
+optE: ["10 years","17 years","9 years","16 years"],
+optH: ["10 वर्ष","17 वर्ष","9 वर्ष","16 वर्ष"],
+ans: 3,
+solE: "9 = 3²\nIf amount triples in 8 years,\nTime for 9 times = 2 × 8 = 16 years.",
+solH: "9 = 3²\nयदि राशि 8 वर्षों में 3 गुनी होती है,\nतो 9 गुनी होने में 16 वर्ष लगेंगे।"
+},
+
+{
+id: 42,
+eng: "A sum of ₹2,500 is invested at 2% compound interest per annum. The amount becomes ₹2,601. Find the time period.",
+hin: "₹2,500 को 2% वार्षिक चक्रवृद्धि ब्याज पर निवेश किया गया। राशि ₹2,601 हो जाती है। समय ज्ञात कीजिए।",
+optE: ["2 years","1 year","2.5 years","1.5 years"],
+optH: ["2 वर्ष","1 वर्ष","2.5 वर्ष","1.5 वर्ष"],
+ans: 0,
+solE: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 years",
+solH: "2500(1.02)^n = 2601\n(1.02)^n = 2601/2500 = 1.0404\n= (1.02)^2\nn = 2 वर्ष"
+},
+
+{
+id: 43,
+eng: "A sum of ₹15,625 amounts to ₹24,389 in 3 years at compound interest compounded annually. Find the annual rate of interest.",
+hin: "₹15,625 की राशि 3 वर्षों में वार्षिक चक्रवृद्धि ब्याज पर ₹24,389 हो जाती है। वार्षिक ब्याज दर ज्ञात कीजिए।",
+optE: ["14%","16%","19%","15%"],
+optH: ["14%","16%","19%","15%"],
+ans: 1,
+solE: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%",
+solH: "24389/15625 = 1.560896\n(1+r/100)^3 = 1.560896\n= (1.16)^3\nr = 16%"
+},
+{
+id: 44,
+eng: "A sum of money becomes four times in 20 years at simple interest. Find the rate of interest.",
+hin: "एक धनराशि साधारण ब्याज पर 20 वर्षों में 4 गुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["20%","25%","15%","30%"],
+optH: ["20%","25%","15%","30%"],
+ans: 2,
+solE: "Amount = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%",
+solH: "राशि = 4P ⇒ SI = 3P\nSI = (P×R×20)/100\n3P = (P×R×20)/100\nR = 15%"
+},
+
+{
+id: 45,
+eng: "A sum at simple interest of 13% per annum amounts to ₹3080 in 4 years. Find the sum.",
+hin: "13% वार्षिक साधारण ब्याज पर 4 वर्षों में राशि ₹3080 हो जाती है। मूलधन ज्ञात कीजिए।",
+optE: ["1550","1680","1850","2000"],
+optH: ["1550","1680","1850","2000"],
+ans: 3,
+solE: "Amount = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000",
+solH: "राशि = P(1 + 13×4/100)\n3080 = 1.52P\nP = 3080/1.52 = 2000"
+},
+
+{
+id: 46,
+eng: "In a certain time, a sum becomes 3 times at the rate of 5% per annum. At what rate of interest will the same sum become 6 times in the same duration?",
+hin: "एक निश्चित समय में 5% वार्षिक ब्याज पर कोई राशि 3 गुनी हो जाती है। उसी समय में वही राशि 6 गुनी होने के लिए ब्याज दर ज्ञात कीजिए।",
+optE: ["25%","20%","12.5%","10.5%"],
+optH: ["25%","20%","12.5%","10.5%"],
+ans: 2,
+solE: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 years\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%",
+solH: "3P ⇒ SI = 2P\n2P = (P×5×T)/100 ⇒ T = 40 वर्ष\n6P ⇒ SI = 5P\n5P = (P×R×40)/100\nR = 12.5%"
+},
+
+{
+id: 47,
+eng: "The sum which amounts to ₹364.80 in 8 years at 3.5% simple interest per annum is:",
+hin: "वह मूलधन ज्ञात कीजिए जो 3.5% वार्षिक साधारण ब्याज पर 8 वर्षों में ₹364.80 हो जाता है।",
+optE: ["285","280","275","270"],
+optH: ["285","280","275","270"],
+ans: 0,
+solE: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285",
+solH: "364.80 = P(1 + 3.5×8/100)\n364.80 = 1.28P\nP = 364.80/1.28 = 285"
+},
+
+{
+id: 48,
+eng: "Find the simple interest (in closest integral ₹) on ₹4000 at 5.25% per annum rate of interest for the period from 12 February 2024 to 13 April 2024.",
+hin: "₹4000 पर 5.25% वार्षिक साधारण ब्याज की दर से 12 फरवरी 2024 से 13 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["36","35","34","33"],
+optH: ["36","35","34","33"],
+ans: 1,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nClosest integer = ₹35",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (4000×5.25×61)/(100×366)\n≈ ₹34.97\nनिकटतम पूर्णांक = ₹35"
+},
+
+{
+id: 49,
+eng: "Find the simple interest (in closest integral ₹) on ₹3000 at 8% per annum rate of interest for the period from 22 February 2024 to 23 April 2024.",
+hin: "₹3000 पर 8% वार्षिक साधारण ब्याज की दर से 22 फरवरी 2024 से 23 अप्रैल 2024 तक का साधारण ब्याज (निकटतम पूर्णांक ₹ में) ज्ञात कीजिए।",
+optE: ["40","39","41","38"],
+optH: ["40","39","41","38"],
+ans: 0,
+solE: "2024 is a leap year.\nTime = 61 days\nSI = (3000×8×61)/(100×366)\n= ₹40",
+solH: "2024 लीप वर्ष है।\nसमय = 61 दिन\nSI = (3000×8×61)/(100×366)\n= ₹40"
+},
+
+{
+id: 50,
+eng: "At what rate (in percentage) per year will a sum of money double itself in 16 years on simple interest?",
+hin: "साधारण ब्याज पर कोई धनराशि 16 वर्षों में दोगुनी हो जाती है। ब्याज दर ज्ञात कीजिए।",
+optE: ["4.25","12.5","8.25","6.25"],
+optH: ["4.25","12.5","8.25","6.25"],
+ans: 3,
+solE: "Double amount ⇒ SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%",
+solH: "दोगुना होने पर SI = P\nP = (P×R×16)/100\nR = 100/16 = 6.25%"
+},
+
+{
+id: 51,
+eng: "If A's salary is 72% more than that of B, then how much percent is B's salary less than that of A (correct to 2 decimal places)?",
+hin: "यदि A का वेतन B से 72% अधिक है, तो B का वेतन A से कितने प्रतिशत कम है?",
+optE: ["44.19%","41.86%","45.3%","44.24%"],
+optH: ["44.19%","41.86%","45.3%","44.24%"],
+ans: 1,
+solE: "Let B=100. Then A=172. Difference=72. Required percentage = 72/172 ×100 = 41.86%.",
+solH: "मान लें B=100। तब A=172। अंतर=72। प्रतिशत कमी = 72/172 ×100 = 41.86%।"
+},
+{
+id: 52,
+eng: "A number when increased by 50%, gives 2880. The number is:",
+hin: "किसी संख्या में 50% वृद्धि करने पर वह 2880 हो जाती है। संख्या क्या है?",
+optE: ["3840","1920","5760","960"],
+optH: ["3840","1920","5760","960"],
+ans: 1,
+solE: "x = 2880 ×100/150 = 1920.",
+solH: "x = 2880 ×100/150 = 1920।"
+},
+{
+id: 53,
+eng: "If A's salary is 31% more than that of B, then how much percent is B's salary less than that of A (correct to 2 decimal places)?",
+hin: "यदि A का वेतन B से 31% अधिक है, तो B का वेतन A से कितने प्रतिशत कम है?",
+optE: ["23.66%","21.53%","27.46%","21.74%"],
+optH: ["23.66%","21.53%","27.46%","21.74%"],
+ans: 0,
+solE: "Let B=100. Then A=131. Difference=31. Required percentage = 31/131 ×100 = 23.66%.",
+solH: "मान लें B=100। तब A=131। अंतर=31। प्रतिशत कमी = 31/131 ×100 = 23.66%।"
+},
+{
+id: 54,
+eng: "20% of a number is more than 20% of 620 by 210. The number is:",
+hin: "किसी संख्या का 20%, 620 के 20% से 210 अधिक है। संख्या क्या है?",
+optE: ["1520","1720","1670","1770"],
+optH: ["1520","1720","1670","1770"],
+ans: 2,
+solE: "0.2x = 0.2×620 + 210 = 334. Hence x = 334/0.2 = 1670.",
+solH: "0.2x = 0.2×620 +210 =334। अतः x =334/0.2 =1670।"
+},
+{
+id: 55,
+eng: "A boat goes 20,000 m upstream and 44,000 m downstream in 8 hours, while it goes 15,000 m upstream and 22,000 m downstream in 5 hours. Find the speed of the boat in still water.",
+hin: "एक नाव 20,000 मीटर धारा के विपरीत तथा 44,000 मीटर धारा की दिशा में 8 घंटे में चलती है। वहीं 15,000 मीटर धारा के विपरीत तथा 22,000 मीटर धारा की दिशा में 5 घंटे में चलती है। स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["19/9 m/s","40/9 m/s","20/9 m/s","29/9 m/s"],
+optH: ["19/9 मी/से","40/9 मी/से","20/9 मी/से","29/9 मी/से"],
+ans: 2,
+solE: "Let upstream and downstream speeds be u and d. Form two equations using the given distances and times. Solving gives boat speed = (u+d)/2 = 20/9 m/s.",
+solH: "मान लें धारा के विपरीत गति u तथा धारा की दिशा में गति d है। दिए गए समय और दूरी से दो समीकरण बनाकर हल करने पर स्थिर जल में नाव की गति (u+d)/2 = 20/9 मी/से प्राप्त होती है।"
+},
+
+{
+id: 56,
+eng: "A boat covers a certain distance downstream in 6 hours and takes 8 hours to return upstream. If the speed of the stream is 4 km/h, find the speed of the boat in still water.",
+hin: "एक नाव किसी निश्चित दूरी को धारा की दिशा में 6 घंटे तथा उसी दूरी को धारा के विपरीत 8 घंटे में तय करती है। यदि धारा की गति 4 किमी/घंटा है, तो स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["24 km/h","28 km/h","12 km/h","18 km/h"],
+optH: ["24 किमी/घंटा","28 किमी/घंटा","12 किमी/घंटा","18 किमी/घंटा"],
+ans: 1,
+solE: "Let boat speed be x km/h. Equal distances imply 6(x+4)=8(x−4). Solving gives x=28 km/h.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। समान दूरी के कारण 6(x+4)=8(x−4)। हल करने पर x=28 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 57,
+eng: "A boat travels 36 km downstream and 24 km upstream in a total of 6 hours. If the speed of the stream is 2 km/h, find the time taken for downstream and upstream journeys respectively.",
+hin: "एक नाव 36 किमी धारा की दिशा में तथा 24 किमी धारा के विपरीत कुल 6 घंटे में तय करती है। यदि धारा की गति 2 किमी/घंटा है, तो क्रमशः धारा की दिशा तथा धारा के विपरीत लगने वाला समय ज्ञात कीजिए।",
+optE: ["3.0 and 3.0","3.2 and 2.8","3.4 and 2.6","3.6 and 2.4"],
+optH: ["3.0 और 3.0","3.2 और 2.8","3.4 और 2.6","3.6 और 2.4"],
+ans: 0,
+solE: "Let the boat speed be x km/h. Using 36/(x+2)+24/(x−2)=6 gives x=10 km/h. Hence times are 36/12=3 hours and 24/8=3 hours.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। 36/(x+2)+24/(x−2)=6 से x=10 किमी/घंटा प्राप्त होता है। अतः दोनों यात्राओं में 3-3 घंटे लगते हैं।"
+},
+
+{
+id: 58,
+eng: "A boat takes 8 hours to row 72 km downstream and 12 hours to row the same distance upstream. Find the boat's speed in still water and the speed of the current respectively.",
+hin: "एक नाव 72 किमी धारा की दिशा में 8 घंटे तथा उसी दूरी को धारा के विपरीत 12 घंटे में तय करती है। क्रमशः स्थिर जल में नाव की गति तथा धारा की गति ज्ञात कीजिए।",
+optE: ["7.5 km/h and 1.5 km/h","8.5 km/h and 2.5 km/h","6.5 km/h and 0.5 km/h","9.5 km/h and 3.5 km/h"],
+optH: ["7.5 किमी/घंटा और 1.5 किमी/घंटा","8.5 किमी/घंटा और 2.5 किमी/घंटा","6.5 किमी/घंटा और 0.5 किमी/घंटा","9.5 किमी/घंटा और 3.5 किमी/घंटा"],
+ans: 0,
+solE: "Downstream speed = 72/8 = 9 km/h and upstream speed = 72/12 = 6 km/h. Boat speed = 7.5 km/h and current speed = 1.5 km/h.",
+solH: "धारा की दिशा में गति = 9 किमी/घंटा तथा धारा के विपरीत गति = 6 किमी/घंटा। अतः स्थिर जल में नाव की गति 7.5 किमी/घंटा तथा धारा की गति 1.5 किमी/घंटा होगी।"
+},
+
+{
+id: 59,
+eng: "Boat A, whose speed in still water is 10 km/h, goes downstream from city P to city Q in 3 hours. Boat B goes from city Q to city P in 5 hours. What is the time taken by Boat B to travel from city P to city Q if the speed of the stream is 5 km/h?",
+hin: "नाव A की स्थिर जल में गति 10 किमी/घंटा है। वह P से Q तक धारा की दिशा में 3 घंटे में जाती है। नाव B, Q से P तक धारा के विपरीत 5 घंटे में जाती है। यदि धारा की गति 5 किमी/घंटा है, तो नाव B को P से Q तक जाने में कितना समय लगेगा?",
+optE: ["49/15 hours","48/19 hours","45/19 hours","19/45 hours"],
+optH: ["49/15 घंटे","48/19 घंटे","45/19 घंटे","19/45 घंटे"],
+ans: 2,
+solE: "Distance PQ = (10+5)×3 = 45 km. Boat B's upstream speed = 45/5 = 9 km/h, so still-water speed = 14 km/h. Downstream speed = 19 km/h. Time = 45/19 hours.",
+solH: "PQ की दूरी = (10+5)×3 = 45 किमी। नाव B की धारा के विपरीत गति = 45/5 = 9 किमी/घंटा, अतः स्थिर जल में उसकी गति 14 किमी/घंटा होगी। धारा की दिशा में गति 19 किमी/घंटा होगी। समय = 45/19 घंटे।"
+},
+
+{
+id: 60,
+eng: "Train A is 150 m long and runs at 72 km/h. Train B is 120 m long and runs in the same direction at 54 km/h. How long will Train A take to completely overtake Train B?",
+hin: "ट्रेन A की लंबाई 150 मीटर है तथा उसकी गति 72 किमी/घंटा है। ट्रेन B की लंबाई 120 मीटर है तथा उसकी गति 54 किमी/घंटा है। ट्रेन A को ट्रेन B को पूरी तरह पार करने में कितना समय लगेगा?",
+optE: ["58 seconds","50 seconds","54 seconds","52 seconds"],
+optH: ["58 सेकंड","50 सेकंड","54 सेकंड","52 सेकंड"],
+ans: 2,
+solE: "Relative speed = 72−54 =18 km/h =5 m/s. Total length =150+120=270 m. Time =270/5=54 seconds.",
+solH: "सापेक्ष गति =72−54=18 किमी/घंटा =5 मी/से। कुल लंबाई =150+120=270 मीटर। समय =270/5=54 सेकंड।"
+},
+
+{
+id: 61,
+eng: "A train travels from P to Q at 144 km/h and returns at a slower speed. If the average speed for the entire journey is 126 km/h, find the return speed.",
+hin: "एक ट्रेन P से Q तक 144 किमी/घंटा की गति से जाती है तथा वापस कम गति से लौटती है। यदि पूरी यात्रा की औसत गति 126 किमी/घंटा है, तो वापसी की गति ज्ञात कीजिए।",
+optE: ["124 km/h","128 km/h","121 km/h","112 km/h"],
+optH: ["124 किमी/घंटा","128 किमी/घंटा","121 किमी/घंटा","112 किमी/घंटा"],
+ans: 3,
+solE: "Average speed = (2ab)/(a+b). Therefore 126 = (2×144×x)/(144+x). Solving gives x =112 km/h.",
+solH: "औसत गति = (2ab)/(a+b) होती है। अतः 126=(2×144×x)/(144+x)। हल करने पर x=112 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 62,
+eng: "Two trains are moving in opposite directions at 130 km/h and 70 km/h. One train is 130 m long. They cross each other in 14 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 130 किमी/घंटा और 70 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 130 मीटर है। वे 14 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["647.78 m","650.67 m","646.47 m","649.6 m"],
+optH: ["647.78 मीटर","650.67 मीटर","646.47 मीटर","649.6 मीटर"],
+ans: 0,
+solE: "Relative speed =200 km/h =500/9 m/s. Total length =(500/9)×14=777.78 m. Other train =777.78−130=647.78 m.",
+solH: "सापेक्ष गति =200 किमी/घंटा =500/9 मी/से। कुल लंबाई =(500/9)×14=777.78 मीटर। दूसरी ट्रेन =777.78−130=647.78 मीटर।"
+},
+
+{
+id: 63,
+eng: "Two trains move in opposite directions at 90 km/h and 70 km/h. One train is 480 m long. They cross each other in 27 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 90 किमी/घंटा और 70 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 480 मीटर है। वे 27 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["735 m","725 m","730 m","720 m"],
+optH: ["735 मीटर","725 मीटर","730 मीटर","720 मीटर"],
+ans: 3,
+solE: "Relative speed =160 km/h =400/9 m/s. Total length =(400/9)×27=1200 m. Other train =1200−480=720 m.",
+solH: "सापेक्ष गति =160 किमी/घंटा =400/9 मी/से। कुल लंबाई =(400/9)×27=1200 मीटर। दूसरी ट्रेन =1200−480=720 मीटर।"
+},
+
+{
+id: 64,
+eng: "A train of length 120 m travelling at 60 km/h crosses another train travelling in the same direction at 24 km/h in 30 seconds. Find the length of the other train.",
+hin: "120 मीटर लंबी एक ट्रेन 60 किमी/घंटा की गति से चल रही है। वह 24 किमी/घंटा की गति से उसी दिशा में चल रही दूसरी ट्रेन को 30 सेकंड में पार करती है। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["250 m","200 m","225 m","180 m"],
+optH: ["250 मीटर","200 मीटर","225 मीटर","180 मीटर"],
+ans: 3,
+solE: "Relative speed =60−24=36 km/h =10 m/s. Total length =10×30=300 m. Other train =300−120=180 m.",
+solH: "सापेक्ष गति =60−24=36 किमी/घंटा =10 मी/से। कुल लंबाई =10×30=300 मीटर। दूसरी ट्रेन =300−120=180 मीटर।"
+},
+
+{
+id: 65,
+eng: "Two trains are running at 49 km/h and 59 km/h towards each other. Their lengths are 349 m and 371 m respectively. In how many seconds will they completely cross each other?",
+hin: "दो ट्रेनें 49 किमी/घंटा और 59 किमी/घंटा की गति से एक-दूसरे की ओर चल रही हैं। उनकी लंबाइयाँ क्रमशः 349 मीटर और 371 मीटर हैं। वे एक-दूसरे को पूरी तरह कितने सेकंड में पार करेंगी?",
+optE: ["42 seconds","30 seconds","24 seconds","34 seconds"],
+optH: ["42 सेकंड","30 सेकंड","24 सेकंड","34 सेकंड"],
+ans: 2,
+solE: "Relative speed =49+59=108 km/h =30 m/s. Total length =349+371=720 m. Time =720/30=24 seconds.",
+solH: "सापेक्ष गति =49+59=108 किमी/घंटा =30 मी/से। कुल लंबाई =349+371=720 मीटर। समय =720/30=24 सेकंड।"
+},
+
+{
+id: 66,
+eng: "Who led the Maratha army in the Third Battle of Panipat?",
+hin: "पानीपत के तृतीय युद्ध में मराठा सेना का नेतृत्व किसने किया था?",
+optE: ["Mahadji Scindia","Sadashivrao Bhau","Baji Rao II","Nana Phadnavis"],
+optH: ["महादजी सिंधिया","सदाशिवराव भाऊ","बाजीराव द्वितीय","नाना फड़नवीस"],
+ans: 1,
+solE: "Sadashivrao Bhau commanded the Maratha forces in 1761.",
+solH: "1761 के युद्ध में मराठा सेना का नेतृत्व सदाशिवराव भाऊ ने किया था।"
+},
+
+{
+id: 67,
+eng: "Against whom did the Marathas fight in the Third Battle of Panipat?",
+hin: "पानीपत के तृतीय युद्ध में मराठों का सामना किससे हुआ था?",
+optE: ["Nadir Shah","Ahmad Shah Abdali","Babur","Sher Shah Suri"],
+optH: ["नादिर शाह","अहमद शाह अब्दाली","बाबर","शेरशाह सूरी"],
+ans: 1,
+solE: "The Marathas fought Ahmad Shah Abdali in the Third Battle of Panipat.",
+solH: "पानीपत के तृतीय युद्ध में मराठों का मुकाबला अहमद शाह अब्दाली से हुआ था।"
+},
+
+{
+id: 68,
+eng: "Which Maratha ruler is known as the 'Mountain Rat' by his enemies?",
+hin: "किस मराठा शासक को उसके शत्रुओं ने 'पहाड़ी चूहा' कहा था?",
+optE: ["Sambhaji","Shivaji Maharaj","Rajaram","Shahu"],
+optH: ["संभाजी","छत्रपति शिवाजी महाराज","राजाराम","शाहू"],
+ans: 1,
+solE: "Due to his effective guerrilla warfare, Shivaji was nicknamed the 'Mountain Rat' by some enemies.",
+solH: "गुरिल्ला युद्ध नीति के कारण कुछ शत्रुओं ने शिवाजी को 'पहाड़ी चूहा' कहा।"
+},
+
+{
+id: 69,
+eng: "What was Shivaji's guerrilla warfare strategy popularly known as?",
+hin: "शिवाजी की गुरिल्ला युद्ध नीति किस नाम से प्रसिद्ध थी?",
+optE: ["Ganimi Kava","Dhanurveda","Malla Yuddha","Ashwa Sena"],
+optH: ["गनिमी कावा","धनुर्वेद","मल्ल युद्ध","अश्व सेना"],
+ans: 0,
+solE: "Ganimi Kava was the famous guerrilla warfare strategy adopted by Shivaji.",
+solH: "गनिमी कावा शिवाजी द्वारा अपनाई गई प्रसिद्ध गुरिल्ला युद्ध नीति थी।"
+},
+
+{
+id: 70,
+eng: "Who was known as the 'Lion of the Marathas'?",
+hin: "मराठों का 'सिंह' किसे कहा जाता है?",
+optE: ["Baji Rao I","Tanaji Malusare","Santaji Ghorpade","Shivaji Maharaj"],
+optH: ["बाजीराव प्रथम","तानाजी मालुसरे","संताजी घोरपड़े","छत्रपति शिवाजी महाराज"],
+ans: 1,
+solE: "Tanaji Malusare earned immortal fame after the Battle of Sinhagad.",
+solH: "सिंहगढ़ के युद्ध में वीरता के कारण तानाजी मालुसरे अमर हो गए।"
+},
+
+{
+  id: 71,
+  eng: "Which of the following tribal communities was primarily involved in the Chuar Rebellion in the Jungle Mahals region?",
+  hin: "जंगलमहल क्षेत्र में हुए चुआर विद्रोह में मुख्य रूप से निम्नलिखित में से किस जनजातीय समुदाय ने भाग लिया था?",
+  optE: [
+    "Bhumij",
+    "Khasis",
+    "Bhils",
+    "Kols"
+  ],
+  optH: [
+    "भूमिज",
+    "खासी",
+    "भील",
+    "कोल"
+  ],
+  ans: 0,
+  solE: "The Chuar (Bhumij) Rebellion (1766–72 and 1798–99) occurred in the Jungle Mahals of present-day West Bengal and was mainly fought by the Bhumij tribe against excessive land revenue, the Permanent Settlement and British interference. Important leaders included Durjan Singh, Jagannath Singh and Rani Shiromani. The Khasi Rebellion (1829–33) was led by Tirot Sing against British road construction. The Bhil Revolts (1818–31) occurred in western India under leaders like Sewaram against British rule. The Kol Revolt (1831–32) under Buddho Bhagat was directed against landlords, moneylenders and British officials in Chotanagpur.",
+  solH: "चुआर (भूमिज) विद्रोह (1766–72 तथा 1798–99) वर्तमान पश्चिम बंगाल के जंगलमहल क्षेत्र में हुआ और इसका नेतृत्व मुख्यतः भूमिज जनजाति ने किया। इसका कारण अत्यधिक भू-राजस्व, स्थायी बंदोबस्त तथा अंग्रेजी हस्तक्षेप था। इसके प्रमुख नेताओं में दुर्जन सिंह, जगन्नाथ सिंह तथा रानी शिरोमणि शामिल थे। खासी विद्रोह (1829–33) तिरोत सिंह के नेतृत्व में ब्रिटिश सड़क निर्माण के विरोध में हुआ। भील विद्रोह (1818–31) पश्चिम भारत में सेवाराम जैसे नेताओं के नेतृत्व में हुआ। कोल विद्रोह (1831–32) बुद्धू भगत के नेतृत्व में छोटानागपुर में जमींदारों, महाजनों तथा अंग्रेज अधिकारियों के विरुद्ध हुआ।"
+},
+{
+  id: 72,
+  eng: "Which policy of the British greatly affected tribal landholding patterns and led to widespread discontent among the tribes, thereby fueling rebellions?",
+  hin: "ब्रिटिशों की कौन-सी नीति ने जनजातीय भूमि स्वामित्व व्यवस्था को सबसे अधिक प्रभावित किया और व्यापक असंतोष उत्पन्न कर अनेक विद्रोहों को जन्म दिया?",
+  optE: [
+    "The Ryotwari System",
+    "Doctrine of Lapse",
+    "Permanent Settlement",
+    "Forest Laws and Land Settlements"
+  ],
+  optH: [
+    "रैयतवाड़ी व्यवस्था",
+    "व्यपगत सिद्धांत",
+    "स्थायी बंदोबस्त",
+    "वन कानून एवं भूमि बंदोबस्त"
+  ],
+  ans: 3,
+  solE: "Forest Laws and various land settlements deprived tribes of their traditional rights over forests, grazing lands and shifting cultivation, triggering revolts such as the Koya Revolt (1879–80), Rampa Rebellion (1922–24), Birsa Munda's Ulgulan (1899–1900) and Bastar Rebellion (1910). Ryotwari was introduced by Thomas Munro in Madras and Bombay Presidencies. Permanent Settlement was introduced by Lord Cornwallis in Bengal in 1793. The Doctrine of Lapse, introduced by Lord Dalhousie in 1848, mainly affected princely states rather than tribal land rights.",
+  solH: "वन कानूनों तथा विभिन्न भूमि बंदोबस्तों ने जनजातियों को जंगलों, चरागाहों तथा झूम खेती के पारंपरिक अधिकारों से वंचित कर दिया, जिससे कोया विद्रोह (1879–80), राम्पा विद्रोह (1922–24), बिरसा मुंडा का उलगुलान (1899–1900) तथा बस्तर विद्रोह (1910) जैसे आंदोलन हुए। रैयतवाड़ी व्यवस्था थॉमस मुनरो द्वारा मद्रास एवं बंबई में लागू की गई। स्थायी बंदोबस्त 1793 में लॉर्ड कॉर्नवालिस ने बंगाल में लागू किया। व्यपगत सिद्धांत 1848 में लॉर्ड डलहौजी ने लागू किया, जिसका प्रभाव मुख्यतः रियासतों पर पड़ा।"
+},
+{
+  id: 73,
+  eng: "Which system of land tenure prevalent before Independence led to widespread exploitation of farmers?",
+  hin: "स्वतंत्रता से पूर्व प्रचलित कौन-सी भू-राजस्व व्यवस्था किसानों के व्यापक शोषण का कारण बनी?",
+  optE: [
+    "Mahalwari System",
+    "Zamindari System",
+    "Cooperative Farming",
+    "Ryotwari System"
+  ],
+  optH: [
+    "महालवाड़ी व्यवस्था",
+    "जमींदारी व्यवस्था",
+    "सहकारी खेती",
+    "रैयतवाड़ी व्यवस्था"
+  ],
+  ans: 1,
+  solE: "The Zamindari System caused severe exploitation because zamindars collected fixed revenue from cultivators regardless of agricultural conditions. It originated under the Permanent Settlement introduced by Lord Cornwallis in Bengal in 1793. Ryotwari (Thomas Munro, Madras and Bombay) collected revenue directly from cultivators. Mahalwari (introduced by Holt Mackenzie in 1822 and modified by William Bentinck in 1833) collected revenue from entire villages, mainly in North-Western Provinces, Punjab and Central India. Cooperative farming is a post-independence concept and not a British land revenue system.",
+  solH: "जमींदारी व्यवस्था किसानों के अत्यधिक शोषण का कारण बनी क्योंकि जमींदार किसानों से निश्चित लगान वसूलते थे, चाहे उत्पादन कैसा भी हो। इसका आधार 1793 में लॉर्ड कॉर्नवालिस द्वारा बंगाल में लागू स्थायी बंदोबस्त था। रैयतवाड़ी व्यवस्था (थॉमस मुनरो) में सरकार सीधे किसान से लगान लेती थी। महालवाड़ी व्यवस्था (1822—होल्ट मैकेंज़ी; 1833—विलियम बेंटिक द्वारा संशोधित) में पूरे गाँव से सामूहिक रूप से लगान लिया जाता था। सहकारी खेती ब्रिटिश भू-राजस्व व्यवस्था नहीं थी।"
+},
+{
+  id: 74,
+  eng: "Land revenue systems under British rule varied regionally. Which land revenue system was primarily followed in Bombay and Madras Presidencies?",
+  hin: "ब्रिटिश शासन के दौरान भू-राजस्व व्यवस्थाएँ क्षेत्रानुसार भिन्न थीं। बंबई एवं मद्रास प्रेसिडेंसी में मुख्यतः कौन-सी व्यवस्था लागू थी?",
+  optE: [
+    "Ryotwari",
+    "Mahalwari",
+    "Jagirdari",
+    "Zamindari"
+  ],
+  optH: [
+    "रैयतवाड़ी",
+    "महालवाड़ी",
+    "जागीरदारी",
+    "जमींदारी"
+  ],
+  ans: 0,
+  solE: "The Ryotwari System was mainly introduced in the Madras and Bombay Presidencies by Thomas Munro during the early nineteenth century. Revenue was collected directly from cultivators (ryots). Zamindari operated mainly in Bengal, Bihar and Odisha after the Permanent Settlement of 1793. Mahalwari prevailed in the North-Western Provinces, Punjab and parts of Central India. Jagirdari was a pre-British feudal arrangement and not a principal British land revenue settlement.",
+  solH: "रैयतवाड़ी व्यवस्था मुख्यतः मद्रास एवं बंबई प्रेसिडेंसी में थॉमस मुनरो द्वारा लागू की गई। इसमें सरकार सीधे रैयत (किसान) से लगान वसूलती थी। जमींदारी व्यवस्था 1793 के स्थायी बंदोबस्त के बाद मुख्यतः बंगाल, बिहार एवं ओडिशा में लागू थी। महालवाड़ी व्यवस्था उत्तर-पश्चिमी प्रांत, पंजाब तथा मध्य भारत के कुछ भागों में प्रचलित थी। जागीरदारी ब्रिटिशों की प्रमुख भू-राजस्व व्यवस्था नहीं थी।"
+},
+{
+  id: 75,
+  eng: "Which of the following statements regarding the Ryotwari Settlement is correct?\n1. It was developed by Thomas Munro.\n2. The settlement was made directly with the cultivators, not zamindars.\n3. It was first tested in the annexed territories of Tipu Sultan.\n4. Finding it successful, it was then applied in the Ganga plains.",
+  hin: "रैयतवाड़ी व्यवस्था के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. इसका विकास थॉमस मुनरो ने किया।\n2. इसमें समझौता सीधे किसानों से किया गया, जमींदारों से नहीं।\n3. इसका प्रारंभिक प्रयोग टीपू सुल्तान के अधिगृहीत क्षेत्रों में किया गया।\n4. सफल होने पर इसे गंगा के मैदानों में लागू किया गया।",
+  optE: [
+    "1 and 2 only",
+    "1 only",
+    "1, 2 and 3 only",
+    "1, 2, 3 and 4"
+  ],
+  optH: [
+    "केवल 1 और 2",
+    "केवल 1",
+    "केवल 1, 2 और 3",
+    "1, 2, 3 और 4"
+  ],
+  ans: 2,
+  solE: "Statements 1, 2 and 3 are correct. Ryotwari was developed by Thomas Munro and Alexander Read. Revenue was settled directly with cultivators and the system was first experimented with in the territories acquired from Tipu Sultan. Statement 4 is incorrect because the Ganga plains largely followed the Zamindari and Mahalwari systems, not the Ryotwari settlement.",
+  solH: "कथन 1, 2 और 3 सही हैं। रैयतवाड़ी व्यवस्था का विकास थॉमस मुनरो एवं अलेक्जेंडर रीड ने किया। इसमें सरकार ने सीधे किसानों से समझौता किया तथा इसका प्रारंभिक प्रयोग टीपू सुल्तान से प्राप्त क्षेत्रों में किया गया। कथन 4 गलत है क्योंकि गंगा के मैदानों में मुख्यतः जमींदारी एवं महालवाड़ी व्यवस्था लागू थी, रैयतवाड़ी नहीं।"
+},
+{
+  id: 76,
+  eng: "British land revenue policies were deeply exploitative. Under which system were landlords required to pay a fixed revenue to the British Government regardless of crop yield?",
+  hin: "ब्रिटिश भू-राजस्व नीतियाँ अत्यंत शोषणकारी थीं। किस व्यवस्था में जमींदारों को फसल की उपज की परवाह किए बिना सरकार को निश्चित राजस्व देना पड़ता था?",
+  optE: [
+    "Ryotwari",
+    "Zamindari",
+    "Mahalwari",
+    "Indian Revenue System"
+  ],
+  optH: [
+    "रैयतवाड़ी",
+    "जमींदारी",
+    "महालवाड़ी",
+    "भारतीय राजस्व व्यवस्था"
+  ],
+  ans: 1,
+  solE: "The Zamindari System (Permanent Settlement, 1793) required zamindars to pay a fixed revenue to the British Government irrespective of agricultural output. It was introduced by Lord Cornwallis in Bengal, Bihar and Odisha. Ryotwari (introduced by Thomas Munro and Alexander Read) involved direct settlement with cultivators in Madras and Bombay Presidencies. Mahalwari (introduced by Holt Mackenzie in 1822 and modified by William Bentinck in 1833) settled revenue with entire villages in North-Western Provinces, Punjab and parts of Central India.",
+  solH: "जमींदारी व्यवस्था (स्थायी बंदोबस्त, 1793) में जमींदारों को फसल की उपज की परवाह किए बिना सरकार को निश्चित लगान देना पड़ता था। इसे लॉर्ड कॉर्नवालिस ने बंगाल, बिहार तथा ओडिशा में लागू किया। रैयतवाड़ी व्यवस्था (थॉमस मुनरो एवं अलेक्जेंडर रीड) में सरकार सीधे किसान से लगान लेती थी और यह मद्रास एवं बंबई में लागू थी। महालवाड़ी व्यवस्था (1822—होल्ट मैकेंज़ी; 1833—विलियम बेंटिक द्वारा संशोधित) उत्तर-पश्चिमी प्रांत, पंजाब तथा मध्य भारत के कुछ भागों में लागू थी।"
+},
+{
+  id: 77,
+  eng: "Who introduced the Permanent Settlement in British India?",
+  hin: "ब्रिटिश भारत में स्थायी बंदोबस्त (Permanent Settlement) किसने लागू किया था?",
+  optE: [
+    "Lord Dalhousie",
+    "Lord Wellesley",
+    "Thomas Munro",
+    "Lord Cornwallis"
+  ],
+  optH: [
+    "लॉर्ड डलहौजी",
+    "लॉर्ड वेलेजली",
+    "थॉमस मुनरो",
+    "लॉर्ड कॉर्नवालिस"
+  ],
+  ans: 3,
+  solE: "Lord Cornwallis introduced the Permanent Settlement in 1793 in Bengal, Bihar and Odisha. Under this system, zamindars became hereditary landowners and paid a fixed revenue to the Government. Lord Dalhousie introduced the Doctrine of Lapse (1848). Lord Wellesley is associated with the Subsidiary Alliance. Thomas Munro introduced the Ryotwari Settlement in Madras Presidency.",
+  solH: "लॉर्ड कॉर्नवालिस ने 1793 में बंगाल, बिहार तथा ओडिशा में स्थायी बंदोबस्त लागू किया। इसके अंतर्गत जमींदारों को वंशानुगत भू-स्वामी माना गया तथा उनसे निश्चित राजस्व लिया गया। लॉर्ड डलहौजी व्यपगत सिद्धांत (Doctrine of Lapse) के लिए प्रसिद्ध हैं। लॉर्ड वेलेजली सहायक संधि (Subsidiary Alliance) से संबंधित हैं। थॉमस मुनरो ने मद्रास में रैयतवाड़ी व्यवस्था लागू की।"
+},
+{
+  id: 78,
+  eng: "Majnu Shah is associated with which of the following rebellions?",
+  hin: "मजनू शाह निम्नलिखित में से किस विद्रोह से संबंधित थे?",
+  optE: [
+    "Santhal Rebellion",
+    "Indigo Revolt",
+    "Fakir–Sannyasi Rebellion",
+    "Kol Rebellion"
+  ],
+  optH: [
+    "संथाल विद्रोह",
+    "नील विद्रोह",
+    "फकीर-संन्यासी विद्रोह",
+    "कोल विद्रोह"
+  ],
+  ans: 2,
+  solE: "Majnu Shah was one of the principal leaders of the Fakir–Sannyasi Rebellion (c.1763–1800) in Bengal against the oppressive revenue policies of the East India Company following the Bengal Famine of 1770. The Santhal Rebellion (1855–56) was led by Sidhu and Kanhu Murmu. The Indigo Revolt (1859–60) was a peasant movement against forced indigo cultivation led locally by Digambar Biswas, Bishnu Biswas and others. The Kol Rebellion (1831–32) was led by Buddho Bhagat in Chotanagpur.",
+  solH: "मजनू शाह फकीर-संन्यासी विद्रोह (लगभग 1763–1800) के प्रमुख नेताओं में से एक थे। यह विद्रोह 1770 के बंगाल अकाल के बाद ईस्ट इंडिया कंपनी की दमनकारी भू-राजस्व नीतियों के विरुद्ध हुआ। संथाल विद्रोह (1855–56) सिद्धू एवं कान्हू मुर्मू के नेतृत्व में हुआ। नील विद्रोह (1859–60) जबरन नील की खेती के विरुद्ध किसानों का आंदोलन था, जिसके स्थानीय नेताओं में दिगम्बर बिस्वास और बिष्णु बिस्वास प्रमुख थे। कोल विद्रोह (1831–32) बुद्धू भगत के नेतृत्व में छोटानागपुर में हुआ।"
+},
+{
+  id: 79,
+  eng: "In which present-day state did the Jungle Mahal Uprising, also known as the Bhumij Revolt, take place?",
+  hin: "जंगलमहल विद्रोह, जिसे भूमिज विद्रोह भी कहा जाता है, वर्तमान में किस राज्य में हुआ था?",
+  optE: [
+    "West Bengal",
+    "Odisha",
+    "Bihar",
+    "Jharkhand"
+  ],
+  optH: [
+    "पश्चिम बंगाल",
+    "ओडिशा",
+    "बिहार",
+    "झारखंड"
+  ],
+  ans: 0,
+  solE: "The Jungle Mahal or Bhumij Revolt (1832–33) occurred mainly in present-day West Bengal under Ganga Narain Singh. It was directed against excessive revenue demands, oppressive zamindars and British interference. It should not be confused with the earlier Chuar Rebellion (1766–72 and 1798–99), which also took place in the Jungle Mahals and involved the Bhumij community.",
+  solH: "जंगलमहल अथवा भूमिज विद्रोह (1832–33) वर्तमान पश्चिम बंगाल में मुख्यतः गंगा नारायण सिंह के नेतृत्व में हुआ। इसका कारण अत्यधिक लगान, जमींदारों का शोषण तथा अंग्रेजी हस्तक्षेप था। इसे चुआर विद्रोह (1766–72 एवं 1798–99) से अलग समझना चाहिए, जो भी जंगलमहल क्षेत्र में भूमिज समुदाय द्वारा लड़ा गया था।"
+},
+{
+  id: 80,
+  eng: "Which of the following statements is INCORRECT about the Rampa Rebellion?",
+  hin: "राम्पा विद्रोह के संबंध में निम्नलिखित में से कौन-सा कथन गलत है?",
+  optE: [
+    "It was led by Alluri Sitarama Raju.",
+    "It was against forest laws and moneylenders.",
+    "It took place in present-day Maharashtra.",
+    "It involved the use of guerrilla warfare tactics."
+  ],
+  optH: [
+    "इसका नेतृत्व अल्लूरी सीताराम राजू ने किया था।",
+    "यह वन कानूनों एवं महाजनों के विरुद्ध था।",
+    "यह वर्तमान महाराष्ट्र में हुआ था।",
+    "इसमें गुरिल्ला युद्ध पद्धति का प्रयोग किया गया।"
+  ],
+  ans: 2,
+  solE: "The incorrect statement is that the Rampa Rebellion took place in present-day Maharashtra. The Rampa Rebellion (1922–24) occurred in the Godavari Agency area of present-day Andhra Pradesh. It was led by Alluri Sitarama Raju against oppressive forest laws, forced labour and exploitation by moneylenders and colonial officials. Raju successfully employed guerrilla warfare against the British before being captured and executed in 1924.",
+  solH: "गलत कथन यह है कि राम्पा विद्रोह वर्तमान महाराष्ट्र में हुआ था। वास्तव में राम्पा विद्रोह (1922–24) वर्तमान आंध्र प्रदेश के गोदावरी एजेंसी क्षेत्र में हुआ था। इसका नेतृत्व अल्लूरी सीताराम राजू ने किया। यह वन कानूनों, बेगार, महाजनों तथा अंग्रेजी अधिकारियों के शोषण के विरुद्ध था। अल्लूरी सीताराम राजू ने गुरिल्ला युद्ध पद्धति अपनाई और 1924 में अंग्रेजों द्वारा गिरफ्तार कर मृत्युदंड दिया गया।"
+},
+
+{
+id: 81,
+eng: "Nalanda University was founded during the reign of which ruler?",
+hin: "नालंदा विश्वविद्यालय की स्थापना किस शासक के शासनकाल में हुई थी?",
+optE: ["Kumaragupta I","Samudragupta","Skandagupta","Chandragupta I"],
+optH: ["कुमारगुप्त प्रथम","समुद्रगुप्त","स्कंदगुप्त","चंद्रगुप्त प्रथम"],
+ans: 0,
+solE: "Nalanda University was founded during the reign of Kumaragupta I.",
+solH: "नालंदा विश्वविद्यालय की स्थापना कुमारगुप्त प्रथम के शासनकाल में हुई थी।"
+},
+
+{
+id: 82,
+eng: "Which of the following dynasties ruled India for the longest period?",
+hin: "निम्नलिखित में से किस वंश ने भारत पर सबसे लंबे समय तक शासन किया?",
+optE: ["Khilji","Tughlaq","Slave","Lodhi"],
+optH: ["खिलजी","तुगलक","गुलाम","लोदी"],
+ans: 1,
+solE: "The Tughlaq dynasty ruled from 1320 to 1414 CE, longer than the Khilji, Slave and Lodhi dynasties.",
+solH: "तुगलक वंश ने 1320 से 1414 ई. तक शासन किया, जो खिलजी, गुलाम और लोदी वंश से अधिक था।"
+},
+
+{
+id: 83,
+eng: "Arrange the following dynasties in increasing order of their period of rule in India.",
+hin: "भारत में शासन अवधि के बढ़ते क्रम में निम्नलिखित वंशों को व्यवस्थित करें।",
+optE: [
+"Tughlaq, Lodhi, Sayyid, Slave",
+"Slave, Tughlaq, Lodhi, Sayyid",
+"Tughlaq, Slave, Lodhi, Sayyid",
+"Khilji, Sayyid, Lodhi, Slave"
+],
+optH: [
+"तुगलक, लोदी, सैय्यद, गुलाम",
+"गुलाम, तुगलक, लोदी, सैय्यद",
+"तुगलक, गुलाम, लोदी, सैय्यद",
+"खिलजी, सैय्यद, लोदी, गुलाम"
+],
+ans: 3,
+solE: "Khilji (30 years), Sayyid (37 years), Lodhi (75 years) and Slave (84 years) is the correct increasing order.",
+solH: "खिलजी (30 वर्ष), सैय्यद (37 वर्ष), लोदी (75 वर्ष) और गुलाम (84 वर्ष) शासन अवधि का सही बढ़ता क्रम है।"
+},
+
+{
+id: 84,
+eng: "Who built Adhai Din Ka Jhopra?",
+hin: "अढ़ाई दिन का झोपड़ा किसने बनवाया था?",
+optE: ["Qutb-ud-din Aibak","Alauddin Khilji","Iltutmish","Muhammad Ghori"],
+optH: ["कुतुबुद्दीन ऐबक","अलाउद्दीन खिलजी","इल्तुतमिश","मुहम्मद गौरी"],
+ans: 0,
+solE: "Adhai Din Ka Jhopra at Ajmer was built by Qutb-ud-din Aibak in 1199 CE.",
+solH: "अजमेर स्थित अढ़ाई दिन का झोपड़ा 1199 ई. में कुतुबुद्दीन ऐबक द्वारा बनवाया गया था।"
+},
+
+{
+id: 85,
+eng: "Who introduced the Iqta system in India?",
+hin: "भारत में इक्ता प्रणाली किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Alauddin Khilji"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","अलाउद्दीन खिलजी"],
+ans: 1,
+solE: "Iltutmish organized and expanded the Iqta system in the Delhi Sultanate.",
+solH: "इल्तुतमिश ने दिल्ली सल्तनत में इक्ता व्यवस्था को संगठित और विकसित किया।"
+},
+
+{
+id: 86,
+eng: "Who introduced the practice of Sijda and Paibos?",
+hin: "सिजदा और पैबोस की प्रथा किसने शुरू की?",
+optE: ["Iltutmish","Balban","Alauddin Khilji","Muhammad bin Tughlaq"],
+optH: ["इल्तुतमिश","बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक"],
+ans: 1,
+solE: "Balban introduced Sijda and Paibos to enhance the dignity of the Sultan.",
+solH: "बलबन ने सुल्तान की प्रतिष्ठा बढ़ाने के लिए सिजदा और पैबोस की प्रथा शुरू की।"
+},
+
+{
+id: 87,
+eng: "Who introduced four ordinances to curb the power of nobles?",
+hin: "अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश किसने जारी किए?",
+optE: ["Balban","Alauddin Khilji","Muhammad bin Tughlaq","Firoz Shah Tughlaq"],
+optH: ["बलबन","अलाउद्दीन खिलजी","मुहम्मद बिन तुगलक","फिरोज शाह तुगलक"],
+ans: 1,
+solE: "Alauddin Khilji introduced four ordinances to check the influence of nobles.",
+solH: "अलाउद्दीन खिलजी ने अमीरों की शक्ति को नियंत्रित करने हेतु चार अध्यादेश जारी किए।"
+},
+
+{
+id: 88,
+eng: "Who introduced the Chalisa (Turkan-i-Chahalgani) system?",
+hin: "चालीसा (तुर्कान-ए-चहलगानी) व्यवस्था किसने प्रारंभ की?",
+optE: ["Qutb-ud-din Aibak","Iltutmish","Balban","Razia Sultan"],
+optH: ["कुतुबुद्दीन ऐबक","इल्तुतमिश","बलबन","रज़िया सुल्तान"],
+ans: 1,
+solE: "Iltutmish formed a group of forty powerful Turkish nobles called Chalisa.",
+solH: "इल्तुतमिश ने चालीसा नामक 40 शक्तिशाली तुर्क अमीरों का समूह बनाया।"
+},
+
+{
+id: 89,
+eng: "Who abolished the Chalisa system?",
+hin: "चालीसा व्यवस्था को किसने समाप्त किया?",
+optE: ["Balban","Alauddin Khilji","Iltutmish","Razia Sultan"],
+optH: ["बलबन","अलाउद्दीन खिलजी","इल्तुतमिश","रज़िया सुल्तान"],
+ans: 0,
+solE: "Balban crushed the power of Chalisa and effectively abolished it.",
+solH: "बलबन ने चालीसा की शक्ति को समाप्त कर दिया और इसे प्रभावी रूप से खत्म कर दिया।"
+},
+
+{
+id: 90,
+eng: "Which of the following was the eastern port during the Gupta Empire?",
+hin: "गुप्त साम्राज्य के दौरान निम्नलिखित में से कौन पूर्वी बंदरगाह था?",
+optE: ["Tamralipti","Chaul","Kalyan","Bharuch"],
+optH: ["ताम्रलिप्ति","चौल","कल्याण","भड़ौच"],
+ans: 0,
+solE: "Tamralipti was the famous eastern port during the Gupta Empire.",
+solH: "ताम्रलिप्ति गुप्त साम्राज्य का प्रसिद्ध पूर्वी बंदरगाह था।"
+},
+{
+id: 91,
+eng: "What was the capital of Magadha during the early Haryanka period?",
+hin: "प्रारंभिक हर्यंक काल में मगध की राजधानी क्या थी?",
+optE: ["Rajagriha","Pataliputra","Champa","Vaishali"],
+optH: ["राजगृह","पाटलिपुत्र","चंपा","वैशाली"],
+ans: 0,
+solE: "Rajagriha, also known as Rajgir, was the early capital of Magadha before it was shifted to Pataliputra.",
+solH: "राजगृह, जिसे वर्तमान में राजगीर कहा जाता है, पाटलिपुत्र से पहले मगध की राजधानी थी।"
+},
+
+{
+id: 92,
+eng: "Which Mahajanapada was located in present-day Avadh region?",
+hin: "वर्तमान अवध क्षेत्र में कौन-सा महाजनपद स्थित था?",
+optE: ["Kosala","Anga","Matsya","Kamboja"],
+optH: ["कोसल","अंग","मत्स्य","कम्बोज"],
+ans: 0,
+solE: "Kosala was located in the region of present-day eastern Uttar Pradesh, especially around the Avadh area.",
+solH: "कोसल महाजनपद वर्तमान पूर्वी उत्तर प्रदेश और अवध क्षेत्र में स्थित था।"
+},
+
+{
+id: 93,
+eng: "Who was the ruler of Kosala during the time of Buddha?",
+hin: "बुद्ध के समय कोसल का शासक कौन था?",
+optE: ["Prasenajit","Ajatashatru","Bimbisara","Udayin"],
+optH: ["प्रसेनजित","अजातशत्रु","बिम्बिसार","उदायिन"],
+ans: 0,
+solE: "Prasenajit was the ruler of Kosala during the lifetime of Gautama Buddha. He maintained relations with Magadha.",
+solH: "गौतम बुद्ध के समय प्रसेनजित कोसल का शासक था। उसके मगध से संबंध थे।"
+},
+
+{
+id: 94,
+eng: "Which Mahajanapada was famous for trade and commerce?",
+hin: "कौन-सा महाजनपद व्यापार और वाणिज्य के लिए प्रसिद्ध था?",
+optE: ["Anga","Malla","Chedi","Vatsa"],
+optH: ["अंग","मल्ल","चेदि","वत्स"],
+ans: 0,
+solE: "Anga, with its capital Champa, was famous for trade and commercial activities because of its river connections.",
+solH: "अंग अपनी राजधानी चंपा के कारण व्यापार और वाणिज्य के लिए प्रसिद्ध था, क्योंकि यह नदी मार्गों से जुड़ा हुआ था।"
+},
+
+{
+id: 95,
+eng: "Who founded the Nanda dynasty?",
+hin: "नंद वंश की स्थापना किसने की थी?",
+optE: ["Dhanananda","Mahapadma Nanda","Shishunaga","Kalashoka"],
+optH: ["धनानंद","महापद्म नंद","शिशुनाग","कालाशोक"],
+ans: 1,
+solE: "Mahapadma Nanda founded the Nanda dynasty after overthrowing the Shishunaga rulers. He greatly expanded the Magadhan empire.",
+solH: "महापद्म नंद ने शिशुनाग वंश को हटाकर नंद वंश की स्थापना की। उसने मगध साम्राज्य का अत्यधिक विस्तार किया।"
+},
+
+{
+id: 96,
+eng: "Who founded the Sangama Dynasty?",
+hin: "संगम वंश की स्थापना किसने की?",
+optE: ["Krishna Deva Raya","Deva Raya I","Harihara and Bukka","Saluva Narasimha"],
+optH: ["कृष्णदेवराय","देवराय प्रथम","हरिहर और बुक्का","सालुव नरसिंह"],
+ans: 2,
+solE: "The Sangama Dynasty was founded by Harihara and Bukka.",
+solH: "संगम वंश की स्थापना हरिहर और बुक्का ने की थी।"
+},
+
+{
+id: 97,
+eng: "Duarte Barbosa and Domingo Paes visited Vijayanagara during whose reign?",
+hin: "दुआर्ते बारबोसा और डोमिंगो पेस विजयनगर किस शासक के शासनकाल में आए थे?",
+optE: ["Krishna Deva Raya","Achyuta Raya","Harihara II","Deva Raya I"],
+optH: ["कृष्णदेवराय","अच्युत राय","हरिहर द्वितीय","देवराय प्रथम"],
+ans: 0,
+solE: "Both Duarte Barbosa and Domingo Paes visited during Krishna Deva Raya's reign.",
+solH: "दुआर्ते बारबोसा और डोमिंगो पेस दोनों कृष्णदेवराय के शासनकाल में आए थे।"
+},
+
+{
+id: 98,
+eng: "Who founded the Tuluva Dynasty?",
+hin: "तुलुव वंश की स्थापना किसने की?",
+optE: ["Vira Narasimha","Krishna Deva Raya","Harihara","Achyuta Raya"],
+optH: ["वीर नरसिंह","कृष्णदेवराय","हरिहर","अच्युत राय"],
+ans: 0,
+solE: "Vira Narasimha is regarded as the founder of the Tuluva Dynasty.",
+solH: "वीर नरसिंह को तुलुव वंश का संस्थापक माना जाता है।"
+},
+
+{
+id: 99,
+eng: "Who founded the Saluva Dynasty?",
+hin: "सालुव वंश की स्थापना किसने की?",
+optE: ["Vira Narasimha","Krishna Deva Raya","Harihara","Saluva Narasimha"],
+optH: ["वीर नरसिंह","कृष्णदेवराय","हरिहर","सालुव नरसिंह"],
+ans: 3,
+solE: "Saluva Narasimha founded the Saluva Dynasty.",
+solH: "सालुव नरसिंह ने सालुव वंश की स्थापना की थी।"
+},
+
+{
+id: 100,
+eng: "Arrange the administrative units in ascending order.",
+hin: "प्रशासनिक इकाइयों को आरोही क्रम में व्यवस्थित कीजिए।",
+optE: ["Nadu, Gram, Mandalam","Gram, Mandalam, Nadu","Mandalam, Nadu, Gram","None of the above"],
+optH: ["नाडु, ग्राम, मंडलम","ग्राम, मंडलम, नाडु","मंडलम, नाडु, ग्राम","उपरोक्त में से कोई नहीं"],
+ans: 3,
+solE: "Correct ascending order is Gram → Nadu → Mandalam.",
+solH: "सही आरोही क्रम है: ग्राम → नाडु → मंडलम।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 80 * 60; // 60 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. Rank & Percentile Engine
+            const N = 5000;
+            let M = Math.max(0, score);
+            const S = M / MAX_SCORE;
+            let P_raw = Math.pow(S, 2.2);
+
+            let percent, rank;
+            if (M >= 45) {
+                percent = 99.00 + ((M - 45) / 5) * 1.00;
+                rank = 50 - ((M - 45) / 5) * 49;
+            } else if (M >= 35) {
+                percent = 85 + ((M - 35) / 9) * 14;
+                rank = 500 - ((M - 35) / 9) * 450;
+            } else if (M >= 25) {
+                percent = 60 + ((M - 25) / 9) * 25;
+                rank = 2500 - ((M - 25) / 9) * 2000;
+            } else if (M >= 10) {
+                percent = 30 + ((M - 10) / 14) * 30;
+                rank = 4500 - ((M - 10) / 14) * 2000;
+            } else {
+                percent = ((M - 0) / 9) * 30;
+                rank = 5000 - ((M - 0) / 9) * 500;
+            }
+            
+            rank = Math.max(1, Math.round(rank));
+            percent = percent > 100 ? 100 : percent;
+
+            // 3. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percent.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your First Phase of revision  point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+</body>
+</html>

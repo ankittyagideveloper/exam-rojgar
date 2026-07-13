@@ -50,6 +50,7 @@ import DelhiSultanateMockTestPage from "./pages/DelhiSultanateMockTestPage";
 import VedicMock2MockTestPage from "./pages/VedicMock2MockTestPage";
 import CompoundInterestMockTestPage from "./pages/CompoundInterestMockTestPage";
 import PipeCisternMockTestPage from "./pages/PipeCisternMockTestPage";
+import RevisionMockTestPage from "./pages/RevisionMockTestPage";
 
 const router = createBrowserRouter([
   {
@@ -234,6 +235,8 @@ const router = createBrowserRouter([
       { path: "compound-interest", element: <CompoundInterestMockTestPage /> },
     
       { path: "pipe-cistern", element: <PipeCisternMockTestPage /> },
+    
+      { path: "Revision", element: <RevisionMockTestPage /> },
     ],
   },
 ]);
