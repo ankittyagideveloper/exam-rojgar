@@ -53,6 +53,8 @@ import PipeCisternMockTestPage from "./pages/PipeCisternMockTestPage";
 import RevisionMockTestPage from "./pages/RevisionMockTestPage";
 import RevisionTest3MockTestPage from "./pages/RevisionTest3MockTestPage";
 import PercentageMockTestPage from "./pages/PercentageMockTestPage";
+import MughalMockTestPage from "./pages/MughalMockTestPage";
+import RatioMockTestPage from "./pages/RatioMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -265,6 +267,10 @@ const router = createBrowserRouter([
       { path: "Revision-Test-3", element: <RevisionTest3MockTestPage /> },
     
       { path: "Percentage", element: <PercentageMockTestPage /> },
+    
+      { path: "Mughal", element: <MughalMockTestPage /> },
+    
+      { path: "Ratio", element: <RatioMockTestPage /> },
     ],
   },
 ]);
