@@ -1,0 +1,1295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="cinematic-bg w-full h-full overflow-y-auto text-white flex flex-col items-center py-10 px-4">
+        <div class="absolute top-4 left-4 text-xs font-semibold text-slate-400 tracking-wider">Trusted Resources</div>
+        
+        <div class="max-w-4xl w-full text-center mt-8 z-10 relative">
+            <h2 class="text-xl md:text-2xl text-brand-gold mb-2 font-head font-medium tracking-wide">Hi, Welcome to</h2>
+            <h1 class="text-4xl md:text-6xl font-head font-bold tracking-tight text-white drop-shadow-lg mb-2">
+                EXAM ROJGAAR MOCKS
+            </h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium mb-4">(कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.
+Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.)</p>
+            <p class="text-lg md:text-xl text-brand-accent font-semibold bg-brand-accent/10 inline-block px-4 py-1 rounded-full border border-brand-accent/30 mb-8">
+                Hard Challenge Sectional Mocks
+            </p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wide drop-shadow-md">
+                "Speed + Accuracy = Selection"
+            </h3>
+
+            <button onclick="startCountdown()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 animate-glow border border-blue-400 w-full md:w-auto">
+                I AM READY TO BEGIN
+            </button>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" class="block mt-6 text-slate-300 hover:text-brand-accent transition-colors underline decoration-brand-accent underline-offset-4 font-medium flex items-center justify-center gap-2 text-lg">
+                <i class="fab fa-telegram text-xl"></i> https://t.me/ExamRojgaar
+            </a>
+        </div>
+
+        <div class="max-w-5xl w-full mt-16 z-10 relative">
+            <div class="glass-card rounded-2xl p-8 border-t-4 border-t-brand-gold shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+                <h3 class="text-3xl font-head font-bold text-center mb-4 text-white">Elite Mentor Strategy</h3>
+                <blockquote class="text-center text-lg md:text-xl italic text-slate-300 mb-8 border-l-4 border-brand-accent pl-4 py-2 mx-auto max-w-3xl bg-slate-800/30 rounded-r">
+                    "If you are targeting all 25 questions, you are already making a mistake. Selection comes from solving the right <span class="text-brand-gold font-bold">20+ questions</span> — not all 25."
+                </blockquote>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-red text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch"></i></div>
+                        <h4 class="text-xl font-bold mb-2">3–5 Sec Rule</h4>
+                        <p class="text-slate-300 text-sm">Can you see a direct formula or clear steps?<br>Is it solvable in &lt;30 sec?<br><span class="text-brand-red font-bold mt-2 inline-block">If NO → SKIP immediately.</span></p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-gold text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-ban"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Skip in Round 1</h4>
+                        <ul class="text-slate-300 text-sm list-disc pl-4 space-y-1">
+                            <li>Lengthy calculations</li>
+                            <li>Tricky language</li>
+                            <li>DI-heavy questions</li>
+                            <li>Entirely new patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-green text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Target System</h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li>Total Qs: 25</li>
+                            <li>Time: <span class="text-brand-gold font-bold">13 Minutes</span></li>
+                            <li>Target Attempt: <span class="text-brand-gold font-bold">20+</span></li>
+                            <li>Target Accuracy: 100%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-6 mb-6">
+                    <h4 class="text-lg font-bold mb-3 flex items-center gap-2"><i class="fas fa-route text-brand-accent"></i> Round Strategy</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p><strong class="text-white">Round 1 (0–8 min):</strong> Hunt easy questions (Target 15–18)</p>
+                        <p><strong class="text-white">Round 2 (8–11 min):</strong> Attempt medium & marked questions</p>
+                        <p><strong class="text-white">Last 2 min:</strong> Smart guessing via elimination (No ego solving)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 border-t border-slate-700 pt-6">
+                    <p class="text-sm md:text-base text-slate-300 mb-2">Want to master this mindset? Join our Telegram group where top doubt solvers and expert mentors guide you daily.</p>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-6 rounded-full transition-colors">
+                        <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">20:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">All India Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Out of 5000 users</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 10 * 60; // 10 minutes in seconds
+
+const rawData = [
+{
+id: 1,
+eng: "Reema and Juhi, when each is working alone, can complete a piece of work in 12 days and 36 days, respectively. They work on alternate days, with Reema starting on Day 1 and Juhi on Day 2. How many days will it take to complete the work?",
+hin: "रीमा और जूही अकेले क्रमशः 12 दिन और 36 दिन में एक कार्य पूरा कर सकती हैं। वे एक-एक दिन बारी-बारी से काम करती हैं, जिसमें रीमा पहले दिन और जूही दूसरे दिन काम शुरू करती हैं। कार्य पूरा होने में कुल कितने दिन लगेंगे?",
+optE: ["16 days","24 days","18 days","28 days"],
+optH: ["16 दिन","24 दिन","18 दिन","28 दिन"],
+ans: 2,
+solE: "In every 2 days they complete 1/12 + 1/36 = 1/9 of the work. After 16 days, 8/9 work is completed. On the 17th day Reema completes 1/12, making total 35/36. The remaining 1/36 is completed by Juhi on the 18th day. Hence, total time is 18 days.",
+solH: "प्रत्येक 2 दिनों में दोनों मिलकर 1/12 + 1/36 = 1/9 कार्य करती हैं। 16 दिनों में 8/9 कार्य पूरा हो जाता है। 17वें दिन रीमा 1/12 कार्य कर कुल 35/36 कार्य पूरा कर देती है। शेष 1/36 कार्य जूही 18वें दिन पूरा करती है। इसलिए कुल समय 18 दिन है।"
+},
+
+{
+id: 2,
+eng: "100 men have provisions for 26 days. If 50 men leave, for how many days will the remaining provisions last?",
+hin: "100 व्यक्तियों के पास 26 दिनों का राशन है। यदि 50 व्यक्ति चले जाएँ, तो शेष राशन बचे हुए व्यक्तियों के लिए कितने दिनों तक चलेगा?",
+optE: ["50 days","54 days","52 days","56 days"],
+optH: ["50 दिन","54 दिन","52 दिन","56 दिन"],
+ans: 2,
+solE: "Total provisions = 100 × 26 = 2600 man-days. Remaining men = 50. Hence, duration = 2600/50 = 52 days.",
+solH: "कुल राशन = 100 × 26 = 2600 मैन-डे। शेष व्यक्ति = 50। अतः राशन 2600/50 = 52 दिनों तक चलेगा।"
+},
+
+{
+id: 3,
+eng: "100 men have provisions for 27 days. If 55 men leave, for how many days will the remaining provisions last?",
+hin: "100 व्यक्तियों के पास 27 दिनों का राशन है। यदि 55 व्यक्ति चले जाएँ, तो शेष राशन बचे हुए व्यक्तियों के लिए कितने दिनों तक चलेगा?",
+optE: ["60 days","64 days","62 days","58 days"],
+optH: ["60 दिन","64 दिन","62 दिन","58 दिन"],
+ans: 0,
+solE: "Total provisions = 100 × 27 = 2700 man-days. Remaining men = 45. Hence, duration = 2700/45 = 60 days.",
+solH: "कुल राशन = 100 × 27 = 2700 मैन-डे। शेष व्यक्ति = 45। अतः राशन 2700/45 = 60 दिनों तक चलेगा।"
+},
+
+{
+id: 4,
+eng: "If 15 men working 6 hours a day can complete a work in 20 days, how many days will 18 men working 5 hours a day take to complete the same work?",
+hin: "यदि 15 व्यक्ति प्रतिदिन 6 घंटे कार्य करके किसी कार्य को 20 दिनों में पूरा करते हैं, तो 18 व्यक्ति प्रतिदिन 5 घंटे कार्य करके उसी कार्य को कितने दिनों में पूरा करेंगे?",
+optE: ["15 days","24 days","18 days","20 days"],
+optH: ["15 दिन","24 दिन","18 दिन","20 दिन"],
+ans: 3,
+solE: "Work = 15 × 6 × 20 = 1800 man-hours. Required days = 1800/(18 × 5) = 20 days.",
+solH: "कुल कार्य = 15 × 6 × 20 = 1800 मैन-आवर। आवश्यक दिन = 1800/(18 × 5) = 20 दिन।"
+},
+
+{
+id: 5,
+eng: "P, Q and R can complete a work alone in 10, 15 and 25 days respectively. P works every day, Q works on every odd-numbered day and R works on every even-numbered day. In how many days will the work be completed?",
+hin: "P, Q और R अकेले क्रमशः 10, 15 और 25 दिनों में कार्य पूरा कर सकते हैं। P प्रतिदिन कार्य करता है, Q विषम दिनों में तथा R सम दिनों में कार्य करता है। कार्य कितने दिनों में पूरा होगा?",
+optE: ["211/25 days","303/25 days","209/25 days","162/25 days"],
+optH: ["211/25 दिन","303/25 दिन","209/25 दिन","162/25 दिन"],
+ans: 3,
+solE: "On odd days work = 1/10 + 1/15 = 1/6. On even days work = 1/10 + 1/25 = 7/50. Continuing alternately, the work finishes in 162/25 days.",
+solH: "विषम दिनों में कार्य = 1/10 + 1/15 = 1/6 तथा सम दिनों में कार्य = 1/10 + 1/25 = 7/50 होता है। इसी प्रकार कार्य 162/25 दिनों में पूरा होता है।"
+},
+
+{
+id: 6,
+eng: "A, B and C can complete a task in 12, 15 and 18 days respectively. B works every day while A and C work on alternate days, beginning with C on the first day. In how many days will the task be completed?",
+hin: "A, B और C क्रमशः 12, 15 और 18 दिनों में कार्य पूरा कर सकते हैं। B प्रतिदिन कार्य करता है जबकि A और C एक-एक दिन छोड़कर कार्य करते हैं तथा पहले दिन C कार्य करता है। कार्य कितने दिनों में पूरा होगा?",
+optE: ["207/27 days","200/27 days","205/27 days","211/27 days"],
+optH: ["207/27 दिन","200/27 दिन","205/27 दिन","211/27 दिन"],
+ans: 1,
+solE: "Alternating daily contributions of A and C with B working daily gives the total completion time as 200/27 days.",
+solH: "B प्रतिदिन तथा A और C के वैकल्पिक कार्य करने पर कुल कार्य 200/27 दिनों में पूरा होता है।"
+},
+
+{
+id: 7,
+eng: "P and Q can complete a piece of work in 20 days and 30 days respectively. They work on alternate days, starting with P. In how many days will the work be completed?",
+hin: "P और Q क्रमशः 20 दिन और 30 दिन में कार्य पूरा कर सकते हैं। वे बारी-बारी से कार्य करते हैं तथा P पहले दिन कार्य शुरू करता है। कार्य कितने दिनों में पूरा होगा?",
+optE: ["24 days","18 days","21 days","25 days"],
+optH: ["24 दिन","18 दिन","21 दिन","25 दिन"],
+ans: 0,
+solE: "In every 2 days they complete 1/20 + 1/30 = 1/12 work. After 22 days, 11/12 work is completed. P finishes the remaining work on the 23rd day, and counting the alternate schedule, the work completes on the 24th day.",
+solH: "प्रत्येक 2 दिनों में दोनों 1/12 कार्य करते हैं। 22 दिनों में 11/12 कार्य पूरा हो जाता है। शेष कार्य वैकल्पिक क्रम के अनुसार 24वें दिन पूरा होता है।"
+},
+
+{
+id: 8,
+eng: "4 men can complete a piece of work in 12 days, while 8 women can do it in 15 days. In how many days can 2 men and 3 women complete the same work?",
+hin: "4 पुरुष 12 दिनों में तथा 8 महिलाएँ 15 दिनों में एक कार्य पूरा कर सकती हैं। 2 पुरुष और 3 महिलाएँ मिलकर वही कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["19 days","15 days","11 days","14 days"],
+optH: ["19 दिन","15 दिन","11 दिन","14 दिन"],
+ans: 1,
+solE: "One man's work/day = 1/48 and one woman's work/day = 1/120. Rate of 2 men and 3 women = 2/48 + 3/120 = 1/15. Hence, time = 15 days.",
+solH: "एक पुरुष की कार्य क्षमता = 1/48 तथा एक महिला की = 1/120 है। 2 पुरुष और 3 महिलाओं की संयुक्त क्षमता = 1/15 है। अतः कार्य 15 दिनों में पूरा होगा।"
+},
+
+{
+id: 9,
+eng: "Anjani can complete a work in 12 days. Anjani and Khushbu together can complete it in 9 days, and Anjani, Khushbu and Sushmita together can complete it in 8 days. In how many days can Anjani and Sushmita together complete the work?",
+hin: "अंजनी अकेले 12 दिनों में कार्य पूरा कर सकती है। अंजनी और खुशबू मिलकर 9 दिनों में तथा अंजनी, खुशबू और सुष्मिता मिलकर 8 दिनों में वही कार्य पूरा करती हैं। अंजनी और सुष्मिता मिलकर कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["72/7 days","82/7 days","92/7 days","62/7 days"],
+optH: ["72/7 दिन","82/7 दिन","92/7 दिन","62/7 दिन"],
+ans: 0,
+solE: "Anjani = 1/12, Anjani + Khushbu = 1/9 ⇒ Khushbu = 1/36. Three together = 1/8 ⇒ Sushmita = 1/8 − 1/9 = 1/72. Hence, Anjani + Sushmita = 1/12 + 1/72 = 7/72. Required time = 72/7 days.",
+solH: "अंजनी = 1/12, अंजनी + खुशबू = 1/9 ⇒ खुशबू = 1/36। तीनों = 1/8 ⇒ सुष्मिता = 1/72। अतः अंजनी + सुष्मिता = 7/72 कार्य/दिन। इसलिए समय = 72/7 दिन।"
+},
+{
+id: 10,
+eng: "Naman and Omar can complete a certain piece of work in 13 days and 4 days, respectively. They started working together, and after 2 days, Omar left. In how many more days will Naman complete the remaining work?",
+hin: "नमन और उमर अकेले क्रमशः 13 दिन और 4 दिन में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया और 2 दिनों बाद उमर चला गया। शेष कार्य नमन कितने दिनों में पूरा करेगा?",
+optE: ["4.5 days","6 days","6.5 days","5 days"],
+optH: ["4.5 दिन","6 दिन","6.5 दिन","5 दिन"],
+ans: 0,
+solE: "Together they complete 2 × (1/13 + 1/4) = 17/26 of the work in 2 days. Remaining work = 9/26. Naman's rate = 1/13. Time required = (9/26) ÷ (1/13) = 9/2 = 4.5 days.",
+solH: "दोनों 2 दिनों में 2 × (1/13 + 1/4) = 17/26 कार्य कर लेते हैं। शेष कार्य = 9/26। नमन की कार्य क्षमता = 1/13 है। अतः समय = (9/26) ÷ (1/13) = 9/2 = 4.5 दिन।"
+},
+
+{
+id: 11,
+eng: "6 men can complete a piece of work in 9 days, while 6 women can complete it in 6 days. In how many days can 3 men and 2 women complete the same work?",
+hin: "6 पुरुष 9 दिनों में तथा 6 महिलाएँ 6 दिनों में एक कार्य पूरा कर सकती हैं। 3 पुरुष और 2 महिलाएँ मिलकर वही कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["10 days","11 days","12 days","9 days"],
+optH: ["10 दिन","11 दिन","12 दिन","9 दिन"],
+ans: 3,
+solE: "One man's rate = 1/54 and one woman's rate = 1/36. Rate of 3 men and 2 women = 3/54 + 2/36 = 1/9. Hence, time = 9 days.",
+solH: "एक पुरुष की कार्य क्षमता = 1/54 तथा एक महिला की = 1/36 है। 3 पुरुष और 2 महिलाओं की संयुक्त क्षमता = 1/9 है। अतः कार्य 9 दिनों में पूरा होगा।"
+},
+
+{
+id: 12,
+eng: "Isha can complete a piece of work in 24 days. Isha and Smriti together can complete it in 20 days, and Isha, Smriti and Ashlesha together can complete it in 12 days. In how many days can Isha and Ashlesha together complete the work?",
+hin: "ईशा अकेले 24 दिनों में कार्य पूरा कर सकती है। ईशा और स्मृति मिलकर 20 दिनों में तथा ईशा, स्मृति और आश्लेषा मिलकर 12 दिनों में वही कार्य पूरा करती हैं। ईशा और आश्लेषा मिलकर कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["40/3 days","50/3 days","34/3 days","43/3 days"],
+optH: ["40/3 दिन","50/3 दिन","34/3 दिन","43/3 दिन"],
+ans: 0,
+solE: "Isha = 1/24. Isha + Smriti = 1/20 ⇒ Smriti = 1/120. Three together = 1/12 ⇒ Ashlesha = 3/120 = 1/40. Hence, Isha + Ashlesha = 1/24 + 1/40 = 3/40. Time = 40/3 days.",
+solH: "ईशा = 1/24। ईशा + स्मृति = 1/20 ⇒ स्मृति = 1/120। तीनों = 1/12 ⇒ आश्लेषा = 1/40। अतः ईशा + आश्लेषा = 3/40 कार्य/दिन। इसलिए समय = 40/3 दिन।"
+},
+
+{
+id: 13,
+eng: "6 men can complete a piece of work in 8 days, while 3 women can complete it in 18 days. In how many days can 8 men and 9 women complete the same work?",
+hin: "6 पुरुष 8 दिनों में तथा 3 महिलाएँ 18 दिनों में एक कार्य पूरा कर सकती हैं। 8 पुरुष और 9 महिलाएँ मिलकर वही कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["8 days","1 day","3 days","6 days"],
+optH: ["8 दिन","1 दिन","3 दिन","6 दिन"],
+ans: 2,
+solE: "One man's rate = 1/48 and one woman's rate = 1/54. Combined rate = 8/48 + 9/54 = 1/6 + 1/6 = 1/3. Hence, time = 3 days.",
+solH: "एक पुरुष की कार्य क्षमता = 1/48 तथा एक महिला की = 1/54 है। 8 पुरुष और 9 महिलाओं की संयुक्त क्षमता = 1/3 है। अतः कार्य 3 दिनों में पूरा होगा।"
+},
+
+{
+id: 14,
+eng: "Hema can complete a piece of work in 30 days. Hema and Raji together can complete it in 25 days, and Hema, Raji and Smitha together can complete it in 10 days. In how many days can Hema and Smitha together complete the work?",
+hin: "हेमा अकेले 30 दिनों में कार्य पूरा कर सकती है। हेमा और राजी मिलकर 25 दिनों में तथा हेमा, राजी और स्मिता मिलकर 10 दिनों में वही कार्य पूरा करती हैं। हेमा और स्मिता मिलकर कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["75/7 days","72/7 days","85/7 days","71/8 days"],
+optH: ["75/7 दिन","72/7 दिन","85/7 दिन","71/8 दिन"],
+ans: 0,
+solE: "Hema = 1/30. Hema + Raji = 1/25 ⇒ Raji = 1/150. Three together = 1/10 ⇒ Smitha = 1/15 - 1/150 = 7/150. Hence, Hema + Smitha = 1/30 + 7/150 = 2/25. Time = 75/7 days.",
+solH: "हेमा = 1/30। हेमा + राजी = 1/25 ⇒ राजी = 1/150। तीनों = 1/10 ⇒ स्मिता = 7/150। अतः हेमा + स्मिता = 2/25 कार्य/दिन। इसलिए समय = 75/7 दिन।"
+},
+
+{
+id: 15,
+eng: "4 men can complete a piece of work in 18 days, while 9 women can complete it in 8 days. In how many days can 6 men and 3 women complete the same work?",
+hin: "4 पुरुष 18 दिनों में तथा 9 महिलाएँ 8 दिनों में एक कार्य पूरा कर सकती हैं। 6 पुरुष और 3 महिलाएँ मिलकर वही कार्य कितने दिनों में पूरा करेंगी?",
+optE: ["11 days","13 days","8 days","4 days"],
+optH: ["11 दिन","13 दिन","8 दिन","4 दिन"],
+ans: 2,
+solE: "One man's rate = 1/72 and one woman's rate = 1/72. Therefore, 6 men + 3 women = 9/72 = 1/8 work/day. Hence, time = 8 days.",
+solH: "एक पुरुष तथा एक महिला दोनों की कार्य क्षमता 1/72 है। अतः 6 पुरुष और 3 महिलाओं की संयुक्त क्षमता = 1/8 कार्य/दिन है। इसलिए कार्य 8 दिनों में पूरा होगा।"
+},
+
+{
+id: 16,
+eng: "Varun and Ashish together can paint a hall in 3 days. Varun alone can paint it in 7 days. In how many days can Ashish alone paint 4 such halls?",
+hin: "वरुण और आशीष मिलकर एक हॉल को 3 दिनों में रंग सकते हैं। वरुण अकेले उसी हॉल को 7 दिनों में रंग सकता है। आशीष अकेले ऐसे 4 हॉल कितने दिनों में रंगेगा?",
+optE: ["5.25 days","6.25 days","22 days","21 days"],
+optH: ["5.25 दिन","6.25 दिन","22 दिन","21 दिन"],
+ans: 3,
+solE: "Ashish's rate = 1/3 − 1/7 = 4/21 hall/day. Time for one hall = 21/4 days. Time for four halls = 21 days.",
+solH: "आशीष की कार्य क्षमता = 1/3 − 1/7 = 4/21 हॉल/दिन है। एक हॉल के लिए समय = 21/4 दिन। 4 हॉल के लिए समय = 21 दिन।"
+},
+
+{
+id: 17,
+eng: "Robin and Varun together can paint a hall in 6 days. Robin alone can paint it in 42 days. In how many days can Varun alone paint the same hall?",
+hin: "रॉबिन और वरुण मिलकर एक हॉल को 6 दिनों में रंग सकते हैं। रॉबिन अकेले उसी हॉल को 42 दिनों में रंग सकता है। वरुण अकेले उसी हॉल को कितने दिनों में रंगेगा?",
+optE: ["7 days","9 days","10 days","8 days"],
+optH: ["7 दिन","9 दिन","10 दिन","8 दिन"],
+ans: 0,
+solE: "Varun's rate = 1/6 − 1/42 = 1/7. Hence, Varun alone completes the work in 7 days.",
+solH: "वरुण की कार्य क्षमता = 1/6 − 1/42 = 1/7 कार्य/दिन है। अतः वरुण अकेले कार्य 7 दिनों में पूरा करेगा।"
+},
+
+{
+id: 18,
+eng: "A can finish a work in 2 days and B can do the same work in 52 days. B worked alone for 26 days and then left the job. In how many days can A alone finish the remaining work?",
+hin: "A किसी कार्य को 2 दिनों में तथा B उसी कार्य को 52 दिनों में पूरा कर सकता है। B ने 26 दिनों तक अकेले कार्य किया और फिर कार्य छोड़ दिया। शेष कार्य को A अकेले कितने दिनों में पूरा करेगा?",
+optE: ["3 days","2 days","1 day","4 days"],
+optH: ["3 दिन","2 दिन","1 दिन","4 दिन"],
+ans: 2,
+solE: "B completes 26 × (1/52) = 1/2 of the work. The remaining 1/2 work is completed by A, whose rate is 1/2 per day. Hence, time required = (1/2)/(1/2) = 1 day.",
+solH: "B ने 26 × (1/52) = 1/2 कार्य पूरा किया। शेष 1/2 कार्य A करेगा जिसकी कार्य क्षमता 1/2 कार्य प्रति दिन है। अतः समय = 1 दिन।"
+},
+
+{
+id: 19,
+eng: "A can complete a piece of work in 14 days and B can complete it in 10 days. If they work on alternate days, starting with B on the first day, then in how many days will the work be finished?",
+hin: "A किसी कार्य को 14 दिनों में तथा B उसी कार्य को 10 दिनों में पूरा कर सकता है। यदि वे बारी-बारी से कार्य करें तथा B पहले दिन कार्य प्रारम्भ करे, तो कार्य कितने दिनों में पूरा होगा?",
+optE: ["68/5 days","78/5 days","67/5 days","58/5 days"],
+optH: ["68/5 दिन","78/5 दिन","67/5 दिन","58/5 दिन"],
+ans: 3,
+solE: "In every two days, A and B complete (1/10 + 1/14) = 6/35 of the work. Continuing this alternating pattern, the total time taken is 58/5 days.",
+solH: "प्रत्येक दो दिनों में A और B मिलकर (1/10 + 1/14) = 6/35 कार्य पूरा करते हैं। इसी क्रम से कार्य 58/5 दिनों में पूरा होता है।"
+},
+
+{
+id: 20,
+eng: "Nirbhay can complete a piece of work alone in 19 days and Vismay can complete the same work alone in 6 days. They started the work together, but Nirbhay left 4 days before the completion of the work. In how many days was the work completed?",
+hin: "निर्भय अकेले 19 दिनों में तथा विस्मय अकेले 6 दिनों में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया, लेकिन कार्य समाप्त होने से 4 दिन पहले निर्भय कार्य छोड़कर चला गया। कार्य कुल कितने दिनों में पूरा हुआ?",
+optE: ["148/25 days","158/25 days","128/25 days","138/25 days"],
+optH: ["148/25 दिन","158/25 दिन","128/25 दिन","138/25 दिन"],
+ans: 3,
+solE: "Let the total time be T days. Nirbhay worked for (T − 4) days and Vismay worked for T days. So, (T − 4)/19 + T/6 = 1. Solving gives T = 138/25 days.",
+solH: "मान लें कुल समय T दिन है। निर्भय ने (T − 4) दिन तथा विस्मय ने T दिन कार्य किया। अतः (T − 4)/19 + T/6 = 1। हल करने पर T = 138/25 दिन प्राप्त होता है।"
+},
+
+{
+id: 21,
+eng: "A, B and C alone can complete a piece of work in 11, 33 and 48 days, respectively. They all started the work together, but A left after 2 days. In how many days was the remaining work completed?",
+hin: "A, B और C अकेले क्रमशः 11, 33 और 48 दिनों में एक कार्य पूरा कर सकते हैं। तीनों ने साथ में कार्य प्रारम्भ किया, लेकिन A ने 2 दिन बाद कार्य छोड़ दिया। शेष कार्य कितने दिनों में पूरा हुआ?",
+optE: ["16 days","13 days","14 days","15 days"],
+optH: ["16 दिन","13 दिन","14 दिन","15 दिन"],
+ans: 2,
+solE: "In 2 days, all three complete 2 × (1/11 + 1/33 + 1/48) = 95/264 of the work. Remaining work = 169/264. B and C together work at 1/33 + 1/48 = 9/176 per day. Remaining time = (169/264) ÷ (9/176) = 338/27 ≈ 12.52 days. Total time ≈ 14 days.",
+solH: "2 दिनों में तीनों मिलकर 95/264 कार्य पूरा करते हैं। शेष कार्य = 169/264। B और C की संयुक्त कार्य क्षमता = 9/176 कार्य/दिन है। शेष कार्य लगभग 12.52 दिनों में पूरा होगा। कुल समय लगभग 14 दिन होगा।"
+},
+
+{
+id: 22,
+eng: "A, B and C alone can complete a piece of work in 5, 55 and 66 days, respectively. They all started the work together, but A left after 4 days. In how many days was the whole work completed?",
+hin: "A, B और C अकेले क्रमशः 5, 55 और 66 दिनों में एक कार्य पूरा कर सकते हैं। तीनों ने साथ में कार्य प्रारम्भ किया, लेकिन A ने 4 दिन बाद कार्य छोड़ दिया। पूरा कार्य कुल कितने दिनों में समाप्त हुआ?",
+optE: ["7 days","3 days","2 days","6 days"],
+optH: ["7 दिन","3 दिन","2 दिन","6 दिन"],
+ans: 3,
+solE: "In 4 days, all three complete 4 × (1/5 + 1/55 + 1/66) = 154/165 of the work. Remaining work = 11/165. B and C together work at 1/55 + 1/66 = 1/30 per day. Remaining time = 2 days. Therefore, total time = 6 days.",
+solH: "4 दिनों में तीनों मिलकर 154/165 कार्य पूरा करते हैं। शेष कार्य = 11/165। B और C की संयुक्त कार्य क्षमता = 1/30 कार्य/दिन है। शेष कार्य 2 दिनों में पूरा होगा। अतः कुल समय = 6 दिन।"
+},
+
+{
+id: 23,
+eng: "Ramesh can complete a piece of work alone in 16 days and Suresh can complete the same work alone in 10 days. They started the work together, but Ramesh left 4 days before the completion of the work. In how many days was the work completed?",
+hin: "रमेश अकेले 16 दिनों में तथा सुरेश अकेले 10 दिनों में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया, लेकिन कार्य समाप्त होने से 4 दिन पहले रमेश कार्य छोड़कर चला गया। कार्य कुल कितने दिनों में पूरा हुआ?",
+optE: ["100/13 days","105/13 days","107/13 days","150/13 days"],
+optH: ["100/13 दिन","105/13 दिन","107/13 दिन","150/13 दिन"],
+ans: 0,
+solE: "Let the total time be T days. Then, (T − 4)/16 + T/10 = 1. Solving this equation gives T = 100/13 days.",
+solH: "मान लें कुल समय T दिन है। तब (T − 4)/16 + T/10 = 1। समीकरण हल करने पर T = 100/13 दिन प्राप्त होता है।"
+},
+
+{
+id: 24,
+eng: "Jitesh and Kamal can complete a piece of work in 5 days and 18 days, respectively. They started working together, and after 3 days, Kamal left. In how many more days will Jitesh complete the remaining work?",
+hin: "जितेश और कमल अकेले क्रमशः 5 दिन और 18 दिन में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया और 3 दिनों बाद कमल चला गया। शेष कार्य को जितेश कितने दिनों में पूरा करेगा?",
+optE: ["11/6 days","13/6 days","25/6 days","7/6 days"],
+optH: ["11/6 दिन","13/6 दिन","25/6 दिन","7/6 दिन"],
+ans: 3,
+solE: "In 3 days they complete 3 × (1/5 + 1/18) = 23/30 of the work. Remaining work = 7/30. Jitesh's rate = 1/5. Time required = (7/30) ÷ (1/5) = 7/6 days.",
+solH: "3 दिनों में दोनों मिलकर 23/30 कार्य पूरा करते हैं। शेष कार्य = 7/30। जितेश की कार्य क्षमता = 1/5 कार्य/दिन है। अतः समय = 7/6 दिन।"
+},
+
+{
+id: 25,
+eng: "Hemant and Irfan can complete a piece of work in 6 days and 10 days, respectively. They started working together, and after 2 days, Irfan left. In how many more days will Hemant complete the remaining work?",
+hin: "हेमंत और इरफान अकेले क्रमशः 6 दिन और 10 दिन में एक कार्य पूरा कर सकते हैं। दोनों ने साथ में कार्य प्रारम्भ किया और 2 दिनों बाद इरफान चला गया। शेष कार्य को हेमंत कितने दिनों में पूरा करेगा?",
+optE: ["14/5 days","17/5 days","11/5 days","9/5 days"],
+optH: ["14/5 दिन","17/5 दिन","11/5 दिन","9/5 दिन"],
+ans: 0,
+solE: "In 2 days they complete 2 × (1/6 + 1/10) = 8/15 of the work. Remaining work = 7/15. Hemant's rate = 1/6. Time required = (7/15) ÷ (1/6) = 14/5 days.",
+solH: "2 दिनों में दोनों मिलकर 8/15 कार्य पूरा करते हैं। शेष कार्य = 7/15। हेमंत की कार्य क्षमता = 1/6 कार्य/दिन है। अतः समय = 14/5 दिन।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 20 * 60; // 15 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. Rank & Percentile Engine
+            const N = 5000;
+            let M = Math.max(0, score);
+            const S = M / MAX_SCORE;
+            let P_raw = Math.pow(S, 2.2);
+
+            let percent, rank;
+            if (M >= 45) {
+                percent = 99.00 + ((M - 45) / 5) * 1.00;
+                rank = 50 - ((M - 45) / 5) * 49;
+            } else if (M >= 35) {
+                percent = 85 + ((M - 35) / 9) * 14;
+                rank = 500 - ((M - 35) / 9) * 450;
+            } else if (M >= 25) {
+                percent = 60 + ((M - 25) / 9) * 25;
+                rank = 2500 - ((M - 25) / 9) * 2000;
+            } else if (M >= 10) {
+                percent = 30 + ((M - 10) / 14) * 30;
+                rank = 4500 - ((M - 10) / 14) * 2000;
+            } else {
+                percent = ((M - 0) / 9) * 30;
+                rank = 5000 - ((M - 0) / 9) * 500;
+            }
+            
+            rank = Math.max(1, Math.round(rank));
+            percent = percent > 100 ? 100 : percent;
+
+            // 3. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percent.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+</body>
+</html>
