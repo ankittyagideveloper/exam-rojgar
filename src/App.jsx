@@ -59,6 +59,7 @@ import ProfitMockTestPage from "./pages/ProfitMockTestPage";
 import VijayNagarAndBahmaniMockTestPage from "./pages/VijayNagarAndBahmaniMockTestPage";
 import BhaktiAndSufiMockTestPage from "./pages/BhaktiAndSufiMockTestPage";
 import TimeAndWorkMockTestPage from "./pages/TimeAndWorkMockTestPage";
+import MarathaMockTestPage from "./pages/MarathaMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -283,6 +284,8 @@ const router = createBrowserRouter([
       { path: "BhaktiAndSufi", element: <BhaktiAndSufiMockTestPage /> },
     
       { path: "TimeAndWork", element: <TimeAndWorkMockTestPage /> },
+    
+      { path: "Maratha", element: <MarathaMockTestPage /> },
     ],
   },
 ]);
