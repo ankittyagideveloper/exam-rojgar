@@ -60,6 +60,8 @@ import VijayNagarAndBahmaniMockTestPage from "./pages/VijayNagarAndBahmaniMockTe
 import BhaktiAndSufiMockTestPage from "./pages/BhaktiAndSufiMockTestPage";
 import TimeAndWorkMockTestPage from "./pages/TimeAndWorkMockTestPage";
 import MarathaMockTestPage from "./pages/MarathaMockTestPage";
+import PipeMockTestPage from "./pages/PipeMockTestPage";
+import AdventMockTestPage from "./pages/AdventMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -286,6 +288,10 @@ const router = createBrowserRouter([
       { path: "TimeAndWork", element: <TimeAndWorkMockTestPage /> },
     
       { path: "Maratha", element: <MarathaMockTestPage /> },
+    
+      { path: "Pipe", element: <PipeMockTestPage /> },
+    
+      { path: "Advent", element: <AdventMockTestPage /> },
     ],
   },
 ]);
