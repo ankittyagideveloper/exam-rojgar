@@ -62,6 +62,9 @@ import TimeAndWorkMockTestPage from "./pages/TimeAndWorkMockTestPage";
 import MarathaMockTestPage from "./pages/MarathaMockTestPage";
 import PipeMockTestPage from "./pages/PipeMockTestPage";
 import AdventMockTestPage from "./pages/AdventMockTestPage";
+import TimeSpeedDistanceBoatMockTestPage from "./pages/TimeSpeedDistanceBoatMockTestPage";
+import TimeMockTestPage from "./pages/TimeMockTestPage";
+import RevoltEconomicImpactPeasantMockTestPage from "./pages/RevoltEconomicImpactPeasantMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -292,6 +295,12 @@ const router = createBrowserRouter([
       { path: "Pipe", element: <PipeMockTestPage /> },
     
       { path: "Advent", element: <AdventMockTestPage /> },
+    
+      { path: "TimeSpeedDistanceBoat", element: <TimeSpeedDistanceBoatMockTestPage /> },
+    
+      { path: "Time", element: <TimeMockTestPage /> },
+    
+      { path: "RevoltEconomicImpactPeasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
     ],
   },
 ]);

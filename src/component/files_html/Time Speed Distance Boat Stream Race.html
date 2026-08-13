@@ -1,0 +1,1347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="cinematic-bg w-full h-full overflow-y-auto text-white flex flex-col items-center py-10 px-4">
+        <div class="absolute top-4 left-4 text-xs font-semibold text-slate-400 tracking-wider">Trusted Resources</div>
+        
+        <div class="max-w-4xl w-full text-center mt-8 z-10 relative">
+            <h2 class="text-xl md:text-2xl text-brand-gold mb-2 font-head font-medium tracking-wide">Hi, Welcome to</h2>
+            <h1 class="text-4xl md:text-6xl font-head font-bold tracking-tight text-white drop-shadow-lg mb-2">
+                EXAM ROJGAAR MOCKS
+            </h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium mb-4">(कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.
+Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.)</p>
+            <p class="text-lg md:text-xl text-brand-accent font-semibold bg-brand-accent/10 inline-block px-4 py-1 rounded-full border border-brand-accent/30 mb-8">
+                Hard Challenge Sectional Mocks
+            </p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wide drop-shadow-md">
+                "Speed + Accuracy = Selection"
+            </h3>
+
+            <button onclick="startCountdown()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 animate-glow border border-blue-400 w-full md:w-auto">
+                I AM READY TO BEGIN
+            </button>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" class="block mt-6 text-slate-300 hover:text-brand-accent transition-colors underline decoration-brand-accent underline-offset-4 font-medium flex items-center justify-center gap-2 text-lg">
+                <i class="fab fa-telegram text-xl"></i> https://t.me/ExamRojgaar
+            </a>
+        </div>
+
+        <div class="max-w-5xl w-full mt-16 z-10 relative">
+            <div class="glass-card rounded-2xl p-8 border-t-4 border-t-brand-gold shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+                <h3 class="text-3xl font-head font-bold text-center mb-4 text-white">Elite Mentor Strategy</h3>
+                <blockquote class="text-center text-lg md:text-xl italic text-slate-300 mb-8 border-l-4 border-brand-accent pl-4 py-2 mx-auto max-w-3xl bg-slate-800/30 rounded-r">
+                    "If you are targeting all 25 questions, you are already making a mistake. Selection comes from solving the right <span class="text-brand-gold font-bold">20+ questions</span> — not all 25."
+                </blockquote>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-red text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch"></i></div>
+                        <h4 class="text-xl font-bold mb-2">3–5 Sec Rule</h4>
+                        <p class="text-slate-300 text-sm">Can you see a direct formula or clear steps?<br>Is it solvable in &lt;30 sec?<br><span class="text-brand-red font-bold mt-2 inline-block">If NO → SKIP immediately.</span></p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-gold text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-ban"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Skip in Round 1</h4>
+                        <ul class="text-slate-300 text-sm list-disc pl-4 space-y-1">
+                            <li>Lengthy calculations</li>
+                            <li>Tricky language</li>
+                            <li>DI-heavy questions</li>
+                            <li>Entirely new patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-green text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Target System</h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li>Total Qs: 25</li>
+                            <li>Time: <span class="text-brand-gold font-bold">13 Minutes</span></li>
+                            <li>Target Attempt: <span class="text-brand-gold font-bold">20+</span></li>
+                            <li>Target Accuracy: 100%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-6 mb-6">
+                    <h4 class="text-lg font-bold mb-3 flex items-center gap-2"><i class="fas fa-route text-brand-accent"></i> Round Strategy</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p><strong class="text-white">Round 1 (0–8 min):</strong> Hunt easy questions (Target 15–18)</p>
+                        <p><strong class="text-white">Round 2 (8–11 min):</strong> Attempt medium & marked questions</p>
+                        <p><strong class="text-white">Last 2 min:</strong> Smart guessing via elimination (No ego solving)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 border-t border-slate-700 pt-6">
+                    <p class="text-sm md:text-base text-slate-300 mb-2">Want to master this mindset? Join our Telegram group where top doubt solvers and expert mentors guide you daily.</p>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-6 rounded-full transition-colors">
+                        <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">30:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">All India Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Out of 5000 users</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 10 * 60; // 10 minutes in seconds
+
+const rawData = [
+{
+id: 1,
+eng: "In a 150-meter race, R beats S by 6 meters. In a 250-meter race, R beats S by 2 seconds. If R runs for 30 seconds in another race, then by how many meters does he beat S?",
+hin: "150 मीटर की दौड़ में R, S को 6 मीटर से हराता है। 250 मीटर की दौड़ में R, S को 2 सेकंड से हराता है। यदि किसी दौड़ में R 30 सेकंड तक दौड़ता है, तो वह S को कितने मीटर से हराएगा?",
+optE: ["5.75 m","7.25 m","6.75 m","6.25 m"],
+optH: ["5.75 मीटर","7.25 मीटर","6.75 मीटर","6.25 मीटर"],
+ans: 3,
+solE: "From the 150 m race, speed ratio R:S = 150:144 = 25:24. Using the 250 m race, R takes 48 seconds while S takes 50 seconds. Hence R's speed = 250/48 m/s. In 30 seconds, R covers 156.25 m while S covers 150 m. Therefore, R beats S by 6.25 m.",
+solH: "150 मीटर की दौड़ से गति अनुपात R:S = 150:144 = 25:24 मिलता है। 250 मीटर की दौड़ में R को 48 सेकंड तथा S को 50 सेकंड लगते हैं। इसलिए R की गति 250/48 मी/से है। 30 सेकंड में R 156.25 मीटर तथा S 150 मीटर दौड़ता है। अतः R, S को 6.25 मीटर से हराता है।"
+},
+
+{
+id: 2,
+eng: "In a 1200 m race, Amit gives Bhushan a head start of 200 m. Amit starts 20 seconds after Bhushan. Amit overtakes Bhushan 4 minutes after he starts running and finishes the race 10 seconds before Bhushan. What is Amit's speed?",
+hin: "1200 मीटर की दौड़ में अमित, भूषण को 200 मीटर की बढ़त देता है। अमित, भूषण के 20 सेकंड बाद दौड़ना शुरू करता है। अमित अपने दौड़ने के 4 मिनट बाद भूषण को पकड़ लेता है और भूषण से 10 सेकंड पहले दौड़ समाप्त करता है। अमित की गति क्या है?",
+optE: ["44/9 m/s","40/9 m/s","10/3 m/s","31/9 m/s"],
+optH: ["44/9 मी/से","40/9 मी/से","10/3 मी/से","31/9 मी/से"],
+ans: 1,
+solE: "Let Amit's speed be x m/s. Bhushan covers 1000 m in (20+240)=260 seconds before being overtaken. Hence Bhushan's speed =1000/260. Using finishing times, Amit's total time is 1200/x and Bhushan's total time is 1000/(1000/260). Solving gives x=40/9 m/s.",
+solH: "मान लें अमित की गति x मी/से है। भूषण, अमित द्वारा पकड़े जाने तक 260 सेकंड में 1000 मीटर चलता है, अतः उसकी गति 1000/260 मी/से होगी। अंतिम समयों के आधार पर समीकरण बनाने और हल करने पर अमित की गति 40/9 मी/से प्राप्त होती है।"
+},
+
+{
+id: 3,
+eng: "In a circular race of length 1530 m, Shahrukh and Amir start together from the same point and run in the same direction. Shahrukh completes one round in 85 seconds while Amir completes one round in 90 seconds. How many different meeting points are there on the track?",
+hin: "1530 मीटर की वृत्ताकार दौड़ में शाहरुख और आमिर एक ही बिंदु से एक ही दिशा में दौड़ना शुरू करते हैं। शाहरुख एक चक्कर 85 सेकंड में तथा आमिर 90 सेकंड में पूरा करता है। ट्रैक पर कुल कितने अलग-अलग मिलने के बिंदु होंगे?",
+optE: ["1","35","11","2"],
+optH: ["1","35","11","2"],
+ans: 0,
+solE: "They meet every LCM-related interval. Since gcd(85,90)=5, the number of distinct meeting points is gcd(17,18)=1. Hence they always meet only at the starting point.",
+solH: "दोनों का मिलने का पैटर्न उनके चक्कर लगाने के समय पर निर्भर करता है। 85 और 90 का महत्तम समापवर्तक 5 है तथा 17 और 18 सहाभाज्य हैं। इसलिए दोनों केवल प्रारंभिक बिंदु पर ही मिलते हैं।"
+},
+
+{
+id: 4,
+eng: "A, B and C run a 1200 m race. A gives B a head start of 300 m and C a head start of 600 m. A finishes 30 seconds before B and 60 seconds before C. If A's speed is 10 m/s, find the respective speeds of B and C.",
+hin: "A, B और C 1200 मीटर की दौड़ दौड़ते हैं। A, B को 300 मीटर तथा C को 600 मीटर की बढ़त देता है। A, B से 30 सेकंड और C से 60 सेकंड पहले दौड़ समाप्त करता है। यदि A की गति 10 मी/से है, तो B और C की गति क्रमशः ज्ञात करें।",
+optE: ["7.5 m/s, 2.5 m/s","6 m/s, 3.3 m/s","5.5 m/s, 3 m/s","8.5 m/s, 5 m/s"],
+optH: ["7.5 मी/से, 2.5 मी/से","6 मी/से, 3.3 मी/से","5.5 मी/से, 3 मी/से","8.5 मी/से, 5 मी/से"],
+ans: 1,
+solE: "A takes 120 seconds. B runs 900 m in 150 seconds, so speed=900/150=6 m/s. C runs 600 m in 180 seconds, so speed=600/180=3.33 m/s.",
+solH: "A को 120 सेकंड लगते हैं। B, 900 मीटर को 150 सेकंड में पूरा करता है, अतः उसकी गति 6 मी/से है। C, 600 मीटर को 180 सेकंड में पूरा करता है, अतः उसकी गति 3.33 मी/से है।"
+},
+
+{
+id: 5,
+eng: "In a circular race of 1850 m, Aman and Suman start together from the same point with speeds of 22 km/h and 15 km/h respectively. After how many seconds will they meet for the first time while running in opposite directions?",
+hin: "1850 मीटर की वृत्ताकार दौड़ में अमन और सुमन एक ही बिंदु से क्रमशः 22 किमी/घंटा और 15 किमी/घंटा की गति से विपरीत दिशाओं में दौड़ते हैं। वे पहली बार कितने सेकंड बाद मिलेंगे?",
+optE: ["189 seconds","170 seconds","180 seconds","172 seconds"],
+optH: ["189 सेकंड","170 सेकंड","180 सेकंड","172 सेकंड"],
+ans: 2,
+solE: "Relative speed =22+15=37 km/h = 185/18 m/s. Time =1850 ÷ (185/18)=180 seconds.",
+solH: "सापेक्ष गति =22+15=37 किमी/घंटा =185/18 मी/से। समय =1850 ÷ (185/18)=180 सेकंड।"
+},
+
+{
+id: 6,
+eng: "A boat can row 36 km downstream in the same time as it rows 24 km upstream. If the speed of the stream is 3 km/h, find the speed of the boat in still water.",
+hin: "एक नाव 36 किमी धारा की दिशा में उतने ही समय में तय करती है जितने समय में 24 किमी धारा के विपरीत तय करती है। यदि धारा की गति 3 किमी/घंटा है, तो स्थिर जल में नाव की गति ज्ञात करें।",
+optE: ["15 km/h","12 km/h","21 km/h","18 km/h"],
+optH: ["15 किमी/घंटा","12 किमी/घंटा","21 किमी/घंटा","18 किमी/घंटा"],
+ans: 0,
+solE: "Let boat speed=x km/h. Then 36/(x+3)=24/(x−3). Solving gives x=15 km/h.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। तब 36/(x+3)=24/(x−3)। हल करने पर x=15 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 7,
+eng: "A motorboat has a speed of 25 km/h in still water. It takes 4 hours to cover 80 km upstream. Find the total time required to travel the same distance upstream and then downstream.",
+hin: "एक मोटरबोट की स्थिर जल में गति 25 किमी/घंटा है। वह 80 किमी धारा के विपरीत 4 घंटे में तय करती है। उसी दूरी को पहले धारा के विपरीत और फिर धारा की दिशा में तय करने में कुल कितना समय लगेगा?",
+optE: ["5 hours 30 minutes","6 hours 40 minutes","6 hours 20 minutes","5 hours 42 minutes"],
+optH: ["5 घंटे 30 मिनट","6 घंटे 40 मिनट","6 घंटे 20 मिनट","5 घंटे 42 मिनट"],
+ans: 1,
+solE: "Upstream speed=80/4=20 km/h, so stream speed=5 km/h. Downstream speed=30 km/h. Total time=80/20+80/30=4+2⅔=6 hours 40 minutes.",
+solH: "धारा के विपरीत गति 20 किमी/घंटा है, इसलिए धारा की गति 5 किमी/घंटा होगी। धारा की दिशा में गति 30 किमी/घंटा होगी। कुल समय=4+2⅔=6 घंटे 40 मिनट।"
+},
+
+{
+id: 8,
+eng: "If a boat travels at 12 km/h in still water and the speed of the stream is 3 km/h, how much time will it take to travel 60 km downstream?",
+hin: "यदि स्थिर जल में नाव की गति 12 किमी/घंटा तथा धारा की गति 3 किमी/घंटा है, तो 60 किमी धारा की दिशा में जाने में कितना समय लगेगा?",
+optE: ["4 hours","9 hours","5 hours","6 hours"],
+optH: ["4 घंटे","9 घंटे","5 घंटे","6 घंटे"],
+ans: 0,
+solE: "Downstream speed=12+3=15 km/h. Time=60/15=4 hours.",
+solH: "धारा की दिशा में नाव की गति =12+3=15 किमी/घंटा होगी। समय=60/15=4 घंटे।"
+},
+{
+id: 9,
+eng: "A boat moves at a speed of 7 km/h in still water. The boat goes 40 km downstream and then 40 km upstream. It is observed that the total time taken for this journey is 560 minutes less than the time it would take if the speed of the stream were 2 km/h faster. What is the initial speed of the stream?",
+hin: "एक नाव की स्थिर जल में गति 7 किमी/घंटा है। नाव 40 किमी धारा की दिशा में तथा 40 किमी धारा के विपरीत जाती है। यह देखा गया कि इस यात्रा में लगा कुल समय उस समय से 560 मिनट कम है, जो धारा की गति 2 किमी/घंटा अधिक होने पर लगता। धारा की प्रारम्भिक गति ज्ञात कीजिए।",
+optE: ["3.5 km/h","4.5 km/h","4 km/h","3 km/h"],
+optH: ["3.5 किमी/घंटा","4.5 किमी/घंटा","4 किमी/घंटा","3 किमी/घंटा"],
+ans: 3,
+solE: "Let the stream speed be x km/h. Then 40/(7+x)+40/(7−x) − [40/(9+x)+40/(5−x)] = 560/60 = 28/3 hours. Solving gives x = 3 km/h.",
+solH: "मान लें धारा की गति x किमी/घंटा है। तब 40/(7+x)+40/(7−x) − [40/(9+x)+40/(5−x)] = 560/60 = 28/3 घंटे। हल करने पर x = 3 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 10,
+eng: "A boat travels 120 km downstream in 6 hours and 120 km upstream in 10 hours. The speed of the current is 4 km/h. What is the speed of the boat in still water?",
+hin: "एक नाव 120 किमी धारा की दिशा में 6 घंटे तथा 120 किमी धारा के विपरीत 10 घंटे में तय करती है। यदि धारा की गति 4 किमी/घंटा है, तो स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["14 km/h","8 km/h","16 km/h","10 km/h"],
+optH: ["14 किमी/घंटा","8 किमी/घंटा","16 किमी/घंटा","10 किमी/घंटा"],
+ans: 2,
+solE: "Downstream speed = 120/6 = 20 km/h and upstream speed = 120/10 = 12 km/h. Boat speed = (20+12)/2 = 16 km/h.",
+solH: "धारा की दिशा में गति = 120/6 = 20 किमी/घंटा तथा धारा के विपरीत गति = 120/10 = 12 किमी/घंटा। स्थिर जल में नाव की गति = (20+12)/2 = 16 किमी/घंटा।"
+},
+
+{
+id: 11,
+eng: "A boat goes 20,000 m upstream and 44,000 m downstream in 8 hours, while it goes 15,000 m upstream and 22,000 m downstream in 5 hours. Find the speed of the boat in still water.",
+hin: "एक नाव 20,000 मीटर धारा के विपरीत तथा 44,000 मीटर धारा की दिशा में 8 घंटे में चलती है। वहीं 15,000 मीटर धारा के विपरीत तथा 22,000 मीटर धारा की दिशा में 5 घंटे में चलती है। स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["19/9 m/s","40/9 m/s","20/9 m/s","29/9 m/s"],
+optH: ["19/9 मी/से","40/9 मी/से","20/9 मी/से","29/9 मी/से"],
+ans: 2,
+solE: "Let upstream and downstream speeds be u and d. Form two equations using the given distances and times. Solving gives boat speed = (u+d)/2 = 20/9 m/s.",
+solH: "मान लें धारा के विपरीत गति u तथा धारा की दिशा में गति d है। दिए गए समय और दूरी से दो समीकरण बनाकर हल करने पर स्थिर जल में नाव की गति (u+d)/2 = 20/9 मी/से प्राप्त होती है।"
+},
+
+{
+id: 12,
+eng: "A boat covers a certain distance downstream in 6 hours and takes 8 hours to return upstream. If the speed of the stream is 4 km/h, find the speed of the boat in still water.",
+hin: "एक नाव किसी निश्चित दूरी को धारा की दिशा में 6 घंटे तथा उसी दूरी को धारा के विपरीत 8 घंटे में तय करती है। यदि धारा की गति 4 किमी/घंटा है, तो स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["24 km/h","28 km/h","12 km/h","18 km/h"],
+optH: ["24 किमी/घंटा","28 किमी/घंटा","12 किमी/घंटा","18 किमी/घंटा"],
+ans: 1,
+solE: "Let boat speed be x km/h. Equal distances imply 6(x+4)=8(x−4). Solving gives x=28 km/h.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। समान दूरी के कारण 6(x+4)=8(x−4)। हल करने पर x=28 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 13,
+eng: "A boat travels 36 km downstream and 24 km upstream in a total of 6 hours. If the speed of the stream is 2 km/h, find the time taken for downstream and upstream journeys respectively.",
+hin: "एक नाव 36 किमी धारा की दिशा में तथा 24 किमी धारा के विपरीत कुल 6 घंटे में तय करती है। यदि धारा की गति 2 किमी/घंटा है, तो क्रमशः धारा की दिशा तथा धारा के विपरीत लगने वाला समय ज्ञात कीजिए।",
+optE: ["3.0 and 3.0","3.2 and 2.8","3.4 and 2.6","3.6 and 2.4"],
+optH: ["3.0 और 3.0","3.2 और 2.8","3.4 और 2.6","3.6 और 2.4"],
+ans: 0,
+solE: "Let the boat speed be x km/h. Using 36/(x+2)+24/(x−2)=6 gives x=10 km/h. Hence times are 36/12=3 hours and 24/8=3 hours.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। 36/(x+2)+24/(x−2)=6 से x=10 किमी/घंटा प्राप्त होता है। अतः दोनों यात्राओं में 3-3 घंटे लगते हैं।"
+},
+
+{
+id: 14,
+eng: "A boat takes 8 hours to row 72 km downstream and 12 hours to row the same distance upstream. Find the boat's speed in still water and the speed of the current respectively.",
+hin: "एक नाव 72 किमी धारा की दिशा में 8 घंटे तथा उसी दूरी को धारा के विपरीत 12 घंटे में तय करती है। क्रमशः स्थिर जल में नाव की गति तथा धारा की गति ज्ञात कीजिए।",
+optE: ["7.5 km/h and 1.5 km/h","8.5 km/h and 2.5 km/h","6.5 km/h and 0.5 km/h","9.5 km/h and 3.5 km/h"],
+optH: ["7.5 किमी/घंटा और 1.5 किमी/घंटा","8.5 किमी/घंटा और 2.5 किमी/घंटा","6.5 किमी/घंटा और 0.5 किमी/घंटा","9.5 किमी/घंटा और 3.5 किमी/घंटा"],
+ans: 0,
+solE: "Downstream speed = 72/8 = 9 km/h and upstream speed = 72/12 = 6 km/h. Boat speed = 7.5 km/h and current speed = 1.5 km/h.",
+solH: "धारा की दिशा में गति = 9 किमी/घंटा तथा धारा के विपरीत गति = 6 किमी/घंटा। अतः स्थिर जल में नाव की गति 7.5 किमी/घंटा तथा धारा की गति 1.5 किमी/घंटा होगी।"
+},
+
+{
+id: 15,
+eng: "Boat A, whose speed in still water is 10 km/h, goes downstream from city P to city Q in 3 hours. Boat B goes from city Q to city P in 5 hours. What is the time taken by Boat B to travel from city P to city Q if the speed of the stream is 5 km/h?",
+hin: "नाव A की स्थिर जल में गति 10 किमी/घंटा है। वह P से Q तक धारा की दिशा में 3 घंटे में जाती है। नाव B, Q से P तक धारा के विपरीत 5 घंटे में जाती है। यदि धारा की गति 5 किमी/घंटा है, तो नाव B को P से Q तक जाने में कितना समय लगेगा?",
+optE: ["49/15 hours","48/19 hours","45/19 hours","19/45 hours"],
+optH: ["49/15 घंटे","48/19 घंटे","45/19 घंटे","19/45 घंटे"],
+ans: 2,
+solE: "Distance PQ = (10+5)×3 = 45 km. Boat B's upstream speed = 45/5 = 9 km/h, so still-water speed = 14 km/h. Downstream speed = 19 km/h. Time = 45/19 hours.",
+solH: "PQ की दूरी = (10+5)×3 = 45 किमी। नाव B की धारा के विपरीत गति = 45/5 = 9 किमी/घंटा, अतः स्थिर जल में उसकी गति 14 किमी/घंटा होगी। धारा की दिशा में गति 19 किमी/घंटा होगी। समय = 45/19 घंटे।"
+},
+
+{
+id: 16,
+eng: "A boat can row 36 km downstream in the same time as it rows 24 km upstream. If the speed of the stream is 3 km/h, what is the speed of the boat in still water?",
+hin: "एक नाव 36 किमी धारा की दिशा में उतने ही समय में तय करती है जितने समय में 24 किमी धारा के विपरीत तय करती है। यदि धारा की गति 3 किमी/घंटा है, तो स्थिर जल में नाव की गति ज्ञात कीजिए।",
+optE: ["15 km/h","18 km/h","12 km/h","21 km/h"],
+optH: ["15 किमी/घंटा","18 किमी/घंटा","12 किमी/घंटा","21 किमी/घंटा"],
+ans: 0,
+solE: "Let the speed of the boat in still water be x km/h. Then 36/(x+3)=24/(x−3). Solving gives x=15 km/h.",
+solH: "मान लें स्थिर जल में नाव की गति x किमी/घंटा है। तब 36/(x+3)=24/(x−3)। हल करने पर x=15 किमी/घंटा प्राप्त होता है।"
+},
+{
+id: 17,
+eng: "A train travelling at 60 km/h crosses another train travelling in the opposite direction at 84 km/h in 30 seconds. What is the combined length of both the trains?",
+hin: "60 किमी/घंटा की गति से चल रही एक ट्रेन, 84 किमी/घंटा की गति से विपरीत दिशा में चल रही दूसरी ट्रेन को 30 सेकंड में पार करती है। दोनों ट्रेनों की कुल लंबाई कितनी है?",
+optE: ["1000 m","1300 m","1200 m","1100 m"],
+optH: ["1000 मीटर","1300 मीटर","1200 मीटर","1100 मीटर"],
+ans: 2,
+solE: "Relative speed = (60+84) km/h = 144 km/h = 40 m/s. Combined length = 40 × 30 = 1200 m.",
+solH: "सापेक्ष गति = (60+84)=144 किमी/घंटा = 40 मी/से। कुल लंबाई = 40 × 30 = 1200 मीटर।"
+},
+
+{
+id: 18,
+eng: "Two trains are moving in opposite directions at speeds of 110 km/h and 120 km/h. The length of one train is 450 m. They cross each other in 12 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 110 किमी/घंटा और 120 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 450 मीटर है। वे 12 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["316.67 m","318.7 m","317.34 m","314.28 m"],
+optH: ["316.67 मीटर","318.7 मीटर","317.34 मीटर","314.28 मीटर"],
+ans: 0,
+solE: "Relative speed = 230 km/h = 575/9 m/s. Total length = (575/9) × 12 = 766.67 m. Other train = 766.67 − 450 = 316.67 m.",
+solH: "सापेक्ष गति = 230 किमी/घंटा = 575/9 मी/से। कुल लंबाई = (575/9) × 12 = 766.67 मीटर। दूसरी ट्रेन की लंबाई = 766.67 − 450 = 316.67 मीटर।"
+},
+
+{
+id: 19,
+eng: "Two trains are moving in opposite directions at 140 km/h and 70 km/h. One train is 350 m long. They cross each other in 11 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 140 किमी/घंटा और 70 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 350 मीटर है। वे 11 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["293.51 m","291.67 m","288.08 m","289.34 m"],
+optH: ["293.51 मीटर","291.67 मीटर","288.08 मीटर","289.34 मीटर"],
+ans: 1,
+solE: "Relative speed = 210 km/h = 175/3 m/s. Total length = (175/3) × 11 = 641.67 m. Other train = 641.67 − 350 = 291.67 m.",
+solH: "सापेक्ष गति = 210 किमी/घंटा = 175/3 मी/से। कुल लंबाई = (175/3) × 11 = 641.67 मीटर। दूसरी ट्रेन की लंबाई = 641.67 − 350 = 291.67 मीटर।"
+},
+
+{
+id: 20,
+eng: "Train A is 150 m long and runs at 72 km/h. Train B is 120 m long and runs in the same direction at 54 km/h. How long will Train A take to completely overtake Train B?",
+hin: "ट्रेन A की लंबाई 150 मीटर है तथा उसकी गति 72 किमी/घंटा है। ट्रेन B की लंबाई 120 मीटर है तथा उसकी गति 54 किमी/घंटा है। ट्रेन A को ट्रेन B को पूरी तरह पार करने में कितना समय लगेगा?",
+optE: ["58 seconds","50 seconds","54 seconds","52 seconds"],
+optH: ["58 सेकंड","50 सेकंड","54 सेकंड","52 सेकंड"],
+ans: 2,
+solE: "Relative speed = 72−54 =18 km/h =5 m/s. Total length =150+120=270 m. Time =270/5=54 seconds.",
+solH: "सापेक्ष गति =72−54=18 किमी/घंटा =5 मी/से। कुल लंबाई =150+120=270 मीटर। समय =270/5=54 सेकंड।"
+},
+
+{
+id: 21,
+eng: "A train travels from P to Q at 144 km/h and returns at a slower speed. If the average speed for the entire journey is 126 km/h, find the return speed.",
+hin: "एक ट्रेन P से Q तक 144 किमी/घंटा की गति से जाती है तथा वापस कम गति से लौटती है। यदि पूरी यात्रा की औसत गति 126 किमी/घंटा है, तो वापसी की गति ज्ञात कीजिए।",
+optE: ["124 km/h","128 km/h","121 km/h","112 km/h"],
+optH: ["124 किमी/घंटा","128 किमी/घंटा","121 किमी/घंटा","112 किमी/घंटा"],
+ans: 3,
+solE: "Average speed = (2ab)/(a+b). Therefore 126 = (2×144×x)/(144+x). Solving gives x =112 km/h.",
+solH: "औसत गति = (2ab)/(a+b) होती है। अतः 126=(2×144×x)/(144+x)। हल करने पर x=112 किमी/घंटा प्राप्त होता है।"
+},
+
+{
+id: 22,
+eng: "Two trains are moving in opposite directions at 130 km/h and 70 km/h. One train is 130 m long. They cross each other in 14 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 130 किमी/घंटा और 70 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 130 मीटर है। वे 14 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["647.78 m","650.67 m","646.47 m","649.6 m"],
+optH: ["647.78 मीटर","650.67 मीटर","646.47 मीटर","649.6 मीटर"],
+ans: 0,
+solE: "Relative speed =200 km/h =500/9 m/s. Total length =(500/9)×14=777.78 m. Other train =777.78−130=647.78 m.",
+solH: "सापेक्ष गति =200 किमी/घंटा =500/9 मी/से। कुल लंबाई =(500/9)×14=777.78 मीटर। दूसरी ट्रेन =777.78−130=647.78 मीटर।"
+},
+
+{
+id: 23,
+eng: "Two trains move in opposite directions at 90 km/h and 70 km/h. One train is 480 m long. They cross each other in 27 seconds. Find the length of the other train.",
+hin: "दो ट्रेनें 90 किमी/घंटा और 70 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। एक ट्रेन की लंबाई 480 मीटर है। वे 27 सेकंड में एक-दूसरे को पार करती हैं। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["735 m","725 m","730 m","720 m"],
+optH: ["735 मीटर","725 मीटर","730 मीटर","720 मीटर"],
+ans: 3,
+solE: "Relative speed =160 km/h =400/9 m/s. Total length =(400/9)×27=1200 m. Other train =1200−480=720 m.",
+solH: "सापेक्ष गति =160 किमी/घंटा =400/9 मी/से। कुल लंबाई =(400/9)×27=1200 मीटर। दूसरी ट्रेन =1200−480=720 मीटर।"
+},
+
+{
+id: 24,
+eng: "A train of length 120 m travelling at 60 km/h crosses another train travelling in the same direction at 24 km/h in 30 seconds. Find the length of the other train.",
+hin: "120 मीटर लंबी एक ट्रेन 60 किमी/घंटा की गति से चल रही है। वह 24 किमी/घंटा की गति से उसी दिशा में चल रही दूसरी ट्रेन को 30 सेकंड में पार करती है। दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["250 m","200 m","225 m","180 m"],
+optH: ["250 मीटर","200 मीटर","225 मीटर","180 मीटर"],
+ans: 3,
+solE: "Relative speed =60−24=36 km/h =10 m/s. Total length =10×30=300 m. Other train =300−120=180 m.",
+solH: "सापेक्ष गति =60−24=36 किमी/घंटा =10 मी/से। कुल लंबाई =10×30=300 मीटर। दूसरी ट्रेन =300−120=180 मीटर।"
+},
+
+{
+id: 25,
+eng: "Two trains are running at 49 km/h and 59 km/h towards each other. Their lengths are 349 m and 371 m respectively. In how many seconds will they completely cross each other?",
+hin: "दो ट्रेनें 49 किमी/घंटा और 59 किमी/घंटा की गति से एक-दूसरे की ओर चल रही हैं। उनकी लंबाइयाँ क्रमशः 349 मीटर और 371 मीटर हैं। वे एक-दूसरे को पूरी तरह कितने सेकंड में पार करेंगी?",
+optE: ["42 seconds","30 seconds","24 seconds","34 seconds"],
+optH: ["42 सेकंड","30 सेकंड","24 सेकंड","34 सेकंड"],
+ans: 2,
+solE: "Relative speed =49+59=108 km/h =30 m/s. Total length =349+371=720 m. Time =720/30=24 seconds.",
+solH: "सापेक्ष गति =49+59=108 किमी/घंटा =30 मी/से। कुल लंबाई =349+371=720 मीटर। समय =720/30=24 सेकंड।"
+},
+
+{
+id: 26,
+eng: "Two trains running in opposite directions at 40 km/h and 52 km/h cross each other in 18 seconds. If one train is 250 m long, find the length of the other train.",
+hin: "दो ट्रेनें 40 किमी/घंटा और 52 किमी/घंटा की गति से विपरीत दिशाओं में चल रही हैं। वे 18 सेकंड में एक-दूसरे को पार करती हैं। यदि एक ट्रेन की लंबाई 250 मीटर है, तो दूसरी ट्रेन की लंबाई ज्ञात कीजिए।",
+optE: ["190 m","220 m","200 m","210 m"],
+optH: ["190 मीटर","220 मीटर","200 मीटर","210 मीटर"],
+ans: 3,
+solE: "Relative speed =(40+52)=92 km/h =230/9 m/s. Total length =(230/9)×18=460 m. Hence other train =460−250=210 m.",
+solH: "सापेक्ष गति =(40+52)=92 किमी/घंटा =230/9 मी/से। कुल लंबाई =(230/9)×18=460 मीटर। अतः दूसरी ट्रेन की लंबाई =460−250=210 मीटर।"
+},
+{
+id: 27,
+eng: "In a 2295 m circular race, Siddharth finishes one round in 85 seconds and Yash finishes one round in 45 seconds. If they run in opposite directions, how many different meeting points are there on the circumference of the track?",
+hin: "2295 मीटर की वृत्ताकार दौड़ में सिद्धार्थ एक चक्कर 85 सेकंड में तथा यश एक चक्कर 45 सेकंड में पूरा करता है। यदि दोनों विपरीत दिशाओं में दौड़ते हैं, तो ट्रैक की परिधि पर कुल कितने अलग-अलग मिलने के बिंदु होंगे?",
+optE: ["36","20","26","33"],
+optH: ["36","20","26","33"],
+ans: 2,
+solE: "The number of distinct meeting points on a circular track when two runners move in opposite directions is (T₁ + T₂) / GCD(T₁, T₂). Here, T₁ = 85 s and T₂ = 45 s. GCD(85,45) = 5. Therefore, distinct meeting points = (85 + 45)/5 = 130/5 = 26.",
+solH: "जब दो धावक वृत्ताकार ट्रैक पर विपरीत दिशा में दौड़ते हैं, तो अलग-अलग मिलने के बिंदुओं की संख्या = (T₁ + T₂)/GCD(T₁,T₂) होती है। यहाँ T₁ = 85 सेकंड तथा T₂ = 45 सेकंड हैं। GCD(85,45)=5। अतः मिलने के बिंदुओं की संख्या = (85+45)/5 = 130/5 = 26 होगी।"
+},
+
+{
+id: 28,
+eng: "In a circular race, two runners complete one round in 85 seconds and 45 seconds respectively. If they run in the same direction, how many different meeting points are there on the circumference of the track?",
+hin: "एक वृत्ताकार दौड़ में दो धावक क्रमशः 85 सेकंड और 45 सेकंड में एक चक्कर पूरा करते हैं। यदि दोनों एक ही दिशा में दौड़ते हैं, तो ट्रैक की परिधि पर कुल कितने अलग-अलग मिलने के बिंदु होंगे?",
+optE: ["26","39","17","9"],
+optH: ["26","39","17","9"],
+ans: 1,
+solE: "When two runners move in the same direction, the number of distinct meeting points is T₁ / GCD(T₁, T₂ − T₁) or equivalently the smaller period relation, which gives 39 distinct meeting points for T₁ = 85 s and T₂ = 45 s.",
+solH: "जब दो धावक एक ही दिशा में दौड़ते हैं, तो मिलने के अलग-अलग बिंदुओं की संख्या समयों के अंतर पर आधारित होती है। T₁ = 85 सेकंड तथा T₂ = 45 सेकंड के लिए गणना करने पर कुल 39 अलग-अलग मिलने के बिंदु प्राप्त होते हैं।"
+},
+{
+id: 29,
+eng: "A policeman sees a chain snatcher at a distance of 50 m. He starts chasing the chain snatcher, who is running at a speed of 2 m/s, while the policeman runs at a speed of 4 m/s. Find the distance covered by the chain snatcher before he is caught.",
+hin: "एक पुलिसकर्मी 50 मीटर की दूरी पर एक चेन स्नैचर को देखता है। वह उसका पीछा करना शुरू करता है। चेन स्नैचर की गति 2 मी/से तथा पुलिसकर्मी की गति 4 मी/से है। पकड़े जाने से पहले चेन स्नैचर द्वारा तय की गई दूरी ज्ञात कीजिए।",
+optE: ["25 m","50 m","75 m","100 m"],
+optH: ["25 मीटर","50 मीटर","75 मीटर","100 मीटर"],
+ans: 1,
+solE: "Initial distance = 50 m. Relative speed = 4 − 2 = 2 m/s. Time taken to catch = 50/2 = 25 s. Distance covered by the chain snatcher = 2 × 25 = 50 m.",
+solH: "प्रारम्भिक दूरी = 50 मीटर। सापेक्ष गति = 4 − 2 = 2 मी/से। पकड़ने में समय = 50/2 = 25 सेकंड। इस दौरान चेन स्नैचर द्वारा तय दूरी = 2 × 25 = 50 मीटर।"
+},
+
+{
+id: 30,
+eng: "A boy walking at a speed of 20 km/h reaches his school 30 minutes late. The next day he increases his speed by 4 km/h but is still 10 minutes late. Find the distance between his home and the school.",
+hin: "एक लड़का 20 किमी/घंटा की गति से चलने पर अपने विद्यालय 30 मिनट देर से पहुँचता है। अगली बार वह अपनी गति 4 किमी/घंटा बढ़ा देता है, फिर भी 10 मिनट देर से पहुँचता है। उसके घर और विद्यालय के बीच की दूरी ज्ञात कीजिए।",
+optE: ["30 km","36 km","40 km","48 km"],
+optH: ["30 किमी","36 किमी","40 किमी","48 किमी"],
+ans: 2,
+solE: "Let the distance be D km. Difference in travel times = 30 − 10 = 20 minutes = 1/3 hour. Therefore, D/20 − D/24 = 1/3. Solving gives D(1/120) = 1/3, hence D = 40 km.",
+solH: "मान लें दूरी D किमी है। दोनों यात्राओं के समय का अंतर = 30 − 10 = 20 मिनट = 1/3 घंटा। अतः D/20 − D/24 = 1/3। हल करने पर D/120 = 1/3, इसलिए D = 40 किमी।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 30 * 60; // 15 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. Rank & Percentile Engine
+            const N = 5000;
+            let M = Math.max(0, score);
+            const S = M / MAX_SCORE;
+            let P_raw = Math.pow(S, 2.2);
+
+            let percent, rank;
+            if (M >= 45) {
+                percent = 99.00 + ((M - 45) / 5) * 1.00;
+                rank = 50 - ((M - 45) / 5) * 49;
+            } else if (M >= 35) {
+                percent = 85 + ((M - 35) / 9) * 14;
+                rank = 500 - ((M - 35) / 9) * 450;
+            } else if (M >= 25) {
+                percent = 60 + ((M - 25) / 9) * 25;
+                rank = 2500 - ((M - 25) / 9) * 2000;
+            } else if (M >= 10) {
+                percent = 30 + ((M - 10) / 14) * 30;
+                rank = 4500 - ((M - 10) / 14) * 2000;
+            } else {
+                percent = ((M - 0) / 9) * 30;
+                rank = 5000 - ((M - 0) / 9) * 500;
+            }
+            
+            rank = Math.max(1, Math.round(rank));
+            percent = percent > 100 ? 100 : percent;
+
+            // 3. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percent.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+</body>
+</html>
