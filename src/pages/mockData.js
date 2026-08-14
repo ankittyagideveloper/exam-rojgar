@@ -516,7 +516,7 @@ export const mockData = {
               languages: ["English", "Hindi"],
               questions: "30",
               marks: "30",
-              duration: "10",
+              duration: "30",
               isSpecialMock: true,
               route: "/mock-test/Time",
             },
