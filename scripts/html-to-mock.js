@@ -41,7 +41,7 @@ function toPascalCase(routeName) {
 
 function extractRawData(html) {
   // Match the rawData array from the script
-  const rawDataMatch = html.match(/const\s+rawData\s*=\s*\[([\s\S]*?)^\];/m);
+  const rawDataMatch = html.match(/const\s+rawData\s*=\s*\[([\s\S]*?)^\s*\];/m);
   if (!rawDataMatch) {
     throw new Error("Could not find 'const rawData = [...]' in the HTML file.");
   }
