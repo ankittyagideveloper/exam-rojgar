@@ -129,7 +129,9 @@ const Header = () => {
             </>
           ) : (
             <SignInButton mode="modal">
-              <button>LogIn</button>
+              <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+                Log In
+              </button>
             </SignInButton>
           )}
         </div>

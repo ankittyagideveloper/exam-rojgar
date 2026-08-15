@@ -41,12 +41,12 @@ export default function VideoPlayer() {
       {/* Header */}
       <div className="px-4 md:px-10 py-6 ">
         <img
-          className=" w-60 object-contain dark:bg-[#fff] rounded-4xl"
+          className="w-60 object-contain dark:bg-[#fff] rounded-4xl"
           src="./live-classes.png"
         />
 
-        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-[black]  ml-1">
-          Discover our curated collection of amazing videos
+        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-gray-300 ml-1">
+          Watch strategy videos &amp; PYQ analysis for RRB NTPC / JE 2025
         </p>
       </div>
 

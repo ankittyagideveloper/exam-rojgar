@@ -95,40 +95,43 @@ function HomePage() {
         {/* Main Content */}
         <StickyBannerDemo />
         <main className="px-0 py-0 md:px-4 md:py-6 ">
-          <div className="lg:flex lg:items-center xl:flex-row justify-around">
+          <div className="lg:flex lg:items-center xl:flex-row justify-around gap-8">
             {/* Hero Section */}
-            {/* {currentLanguage === "en" ? (
-            <div className="hidden md:block mb-8 ">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
-                Crack your <span className="text-teal-600">goal</span>
-              </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-                with <span className="text-teal-600">ExamRojgar</span> Test
-                Series
-              </h3>
-              <p className="text-gray-600 md:text-2xl text-base leading-relaxed">
+            <div className="hidden lg:flex flex-col mb-8 max-w-sm px-4">
+              {currentLanguage === "en" ? (
+                <>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
+                    Crack your <span className="text-teal-600">goal</span>
+                  </h2>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                    with <span className="text-teal-600">Exam Rojgaar</span>
+                    <br />Test Series
+                  </h3>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                    <span className="text-teal-600">Exam Rojgaar</span>
+                  </h2>
+                  <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                    टेस्ट सीरीज़ के साथ <br />
+                    अपना <span className="text-teal-600">लक्ष्य</span> हासिल करें
+                  </h3>
+                </>
+              )}
+              <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed mb-6">
                 {t("tagLine")}
               </p>
+              <a
+                href="/online-test-series"
+                className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 w-fit"
+              >
+                <Play className="w-4 h-4" />
+                Start Free Test
+              </a>
             </div>
-          ) : (
-            <div className="hidden md:block mb-8 md:text-4xl ">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
-                <span className="md:text-4xl text-teal-600 ">ExamRojgar</span>
-              </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-                टेस्ट सीरीज़ के साथ <br />
-                अपना
-                <span className="md:text-4xl text-teal-600"> लक्ष्य</span> हासिल
-                करें
-              </h3>
-              <p className="md:text-2xl text-gray-600 text-base leading-relaxed">
-                {t("tagLine")}
-              </p>
-            </div>
-          )} */}
 
             {/* App Preview Card */}
-
             <Slider />
           </div>
 
