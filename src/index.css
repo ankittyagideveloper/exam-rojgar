@@ -135,3 +135,17 @@
 .scroller:hover .animate-scroll {
   animation-play-state: paused;
 }
+
+/* Faster scroll on small screens so fewer cards need to pass a narrow viewport */
+@media (max-width: 640px) {
+  .scroller {
+    --animation-duration: 25s;
+  }
+}
+
+/* Respect user preference — disable animation entirely */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll {
+    animation: none;
+  }
+}
