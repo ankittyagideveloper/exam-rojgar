@@ -6,8 +6,41 @@ import { useTranslation } from "react-i18next";
 import VideoPlayer from "../component/VideoPlayer";
 import MeetInstructor from "../component/MeetInstructor";
 import { Helmet } from "react-helmet-async";
-
 import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
+import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
+
+const testimonials = [
+  {
+    quote:
+      "Daily Target se History aur Polity ki preparation meri kaafi achhi hui hai. 😊 Maths mein bhi tests dene ki wajah se kaafi improvement feel hua hai. Overall, mujhe Daily Target se bahut fayda mila hai. Aur ek special mention aapke Polity ke YouTube lectures ka — they are just wow! ❤️ Maine Polity ko itna interesting aur easy kabhi nahi paya. Aapka padhane ka tareeka bahut hi simple aur effective hai. Thank you so much for guiding us and making our preparation easier. 😊🙏 Keep doing the amazing work!",
+    name: "Susmita",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Negative attempts bhi ab kaafi kam ho rahe hain aur dheere-dheere attempts increase kar pa raha hoon. GK/GS aur Maths ko ek saath routine mein follow karne se preparation ka burden bhi kaafi kam lag raha hai aur consistency bani hui hai. Bas ab hope hai ki isi direction mein mehnat karte rahein aur result bhi positive aaye. Thank you for the guidance, Sir! 🙏😊",
+    name: "Renu Pathak",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Saare resources ek hi jagah mil jaate hain, isliye preparation kaafi easy aur organised ho gayi hai. Pehle resources ke liye idhar-udhar bhagna padta tha, lekin ab sab kuch ek hi jagah mil jaata hai, jisse time bhi save hota hai aur preparation par focus karna bhi easy ho gaya hai. 😊🙏.",
+    name: "Abhishek",
+   title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Aapka guidance aur padhane ka tareeka bahut achha hai. Preparation ko kaafi easy aur organised bana diya hai. 🙏❤️",
+    name: "Mantasha khatoon",
+   title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "preparation mein kaafi improvement dekhne ko mil raha hai — attempts increase ho rahe hain, negative marking kam ho rahi hai, timely revision ho pa raha hai aur weak areas ka bhi proper analysis kar pa raha hoon. Overall preparation ab pehle se kaafi better aur structured lag rahi hai. 🙏😊",
+    name: "Sujoy Basak",
+   title: "Exam Rojgar 2026 Batch-1",
+  },
+];
 
 function HomePage() {
   const { t, i18n } = useTranslation();
@@ -177,7 +210,15 @@ function HomePage() {
         </div> */}
 
           <FeaturesRibbon />
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="left"
+            speed="slow"
+            pauseOnHover={true}
+            className="py-4"
+          />
           <VideoPlayer />
+
           {/* <MeetInstructor /> */}
           {/* Quick Actions */}
           {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">

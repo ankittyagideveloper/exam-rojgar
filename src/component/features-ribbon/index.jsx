@@ -239,10 +239,12 @@ export default function FeaturesRibbon() {
   return (
     <section
       aria-label="Feature menu"
-      //   className="mx-auto w-full max-w-6xl px-3 sm:px-4"
-      className="py-4 "
+      className="py-4"
     >
-      <div className="md:rounded-2xl bg-white shadow-none md:ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
+      <h2 className="text-center text-lg font-bold text-gray-800 dark:text-white mb-3 px-4">
+        Everything you need to crack Railway Exams
+      </h2>
+      <div className="md:rounded-2xl bg-white shadow-sm md:ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
         <ul
           role="list"
           className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 "
