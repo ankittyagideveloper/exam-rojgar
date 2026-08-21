@@ -67,6 +67,7 @@ import TimeMockTestPage from "./pages/TimeMockTestPage";
 import RevoltEconomicImpactPeasantMockTestPage from "./pages/RevoltEconomicImpactPeasantMockTestPage";
 import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTestMockTestPage";
 import MentorshipPage from "./pages/mentorship/Mentorship";
+import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtremistPhaseMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -306,16 +307,12 @@ const router = createBrowserRouter([
       },
 
       { path: "Time", element: <TimeMockTestPage /> },
-
-      {
-        path: "RevoltEconomicImpactPeasant",
-        element: <RevoltEconomicImpactPeasantMockTestPage />,
-      },
-
-      {
-        path: "hostory-full-revision-test",
-        element: <HostoryFullRevisionTestMockTestPage />,
-      },
+    
+      { path: "RevoltEconomicImpactPeasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
+    
+      { path: "hostory-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
+    
+      { path: "ModernHistoryExtremistPhase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
     ],
   },
   {
