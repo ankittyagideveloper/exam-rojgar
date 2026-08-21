@@ -62,7 +62,7 @@ const PLANS = [
       "Mentorship by Gopal Sir",
       "Subjects: GS / GK + Maths + Reasoning",
     ],
-    cta: <RazorpayButton id="pl_TS4RRuEjL9l1et" />,
+    cta: <RazorpayButton id="pl_TS4AN7R2A24QKQ" />,
     featured: true,
   },
 ];
@@ -302,11 +302,11 @@ function Hero() {
             <br />Mentorship Program
           </h1>
 
-          <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+          {/* <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
             Master frontend architecture, system design and the career strategy
             around them. Learn the engineering mindset directly from someone who
             hires and grows engineers for a living.
-          </p>
+          </p> */}
 
           <div className="mt-9 flex flex-wrap gap-3">
             <a
@@ -433,10 +433,10 @@ function Mission() {
       <h2 className="mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
         Why I mentor
       </h2>
-      <p className="mt-4 max-w-xl text-muted-foreground">
+      {/* <p className="mt-4 max-w-xl text-muted-foreground">
         I'm not building a course factory. I'm building a tight-knit network of
         engineers who raise each other's bar.
-      </p>
+      </p> */}
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {MISSION.map((m, i) => (
@@ -488,7 +488,7 @@ function Program() {
           Pick your depth
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Engineered for people serious about their careers. No bulk batches —
+          Target Batch is for people serious about their careers. No bulk batches —
           only 1:1 attention and deep structural growth.
         </p>
       </div>
@@ -549,9 +549,9 @@ function Program() {
         ))}
       </div>
 
-      <p className="mt-6 text-center font-mono text-xs text-muted-foreground">
+      {/* <p className="mt-6 text-center font-mono text-xs text-muted-foreground">
         * ₹50k upfront for the 3-month track, remaining ₹25k at the start of month two.
-      </p>
+      </p> */}
     </section>
   );
 }
@@ -932,9 +932,9 @@ function Why() {
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
           Why <span className="text-gradient">this</span> mentorship?
         </h2>
-        <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
+        {/* <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
           Not another course. A rewrite of your engineering identity.
-        </p>
+        </p> */}
       </div>
 
       <div className="mt-14 grid gap-5 md:grid-cols-3">
