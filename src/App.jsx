@@ -317,7 +317,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/mentor",
-    element: <AdminRoute><MentorshipPage /></AdminRoute>,
+    element: <MentorshipPage />,
   },
 ]);
 

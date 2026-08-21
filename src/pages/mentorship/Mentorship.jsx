@@ -5,180 +5,188 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../../../components/ui/accordion";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 // import mentorImg from "@/assets/mentor.jpg";
 
 
-// export const Route = createFileRoute("/")({
-//   head: () => ({
-//     meta: [
-//       { title: "Engineer Chirag — 1:1 Frontend & System Design Mentorship" },
-//       {
-//         name: "description",
-//         content:
-//           "Small-cohort 1:1 mentorship in frontend architecture, system design and interview strategy, led by an engineering manager with 10+ years in big tech.",
-//       },
-//       {
-//         property: "og:title",
-//         content: "Engineer Chirag — 1:1 Frontend & System Design Mentorship",
-//       },
-//       {
-//         property: "og:description",
-//         content:
-//           "Master frontend architecture, system design and career growth with focused 1:1 mentorship. Limited seats each cohort.",
-//       },
-//       { property: "og:type", content: "website" },
-//       { name: "twitter:card", content: "summary_large_image" },
-//     ],
-//   }),
-//   component: Landing,
-// });
+
 
 const NAV = [
-  { label: "Mission", href: "#mission" },
-  { label: "Program", href: "#program" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Overview", href: "#mission" },
+  { label: "What You Get", href: "#program" },
+  { label: "How It Works", href: "#process" },
   { label: "FAQs", href: "#faqs" },
 ];
 
 const MARQUEE = [
-  "Frontend Architecture",
-  "System Design",
-  "Node.js",
-  "Interview Strategy",
-  "Career Branding",
-  "Scale & Performance",
-  "React Mastery",
+  "RRB NTPC 2026",
+  "GS / GK",
+  "Mathematics",
+  "Reasoning",
+  "PYQs",
+  "Mock Tests",
+  "Doubt Sessions",
+  "Mentorship",
 ];
 
 const MISSION = [
   {
-    title: "Knowledge Sharing",
-    body: "My day job already pays the bills. This mentorship is how I hand back a decade of hard-won engineering judgement to people hungry for it.",
+    title: "Target-Based Preparation",
+    body: "Complete the RRB NTPC 2026 syllabus with clear targets and a structured preparation plan.",
   },
   {
-    title: "Hinglish Friendly",
-    body: "Language should never be the bottleneck. Complex ideas, explained in a way that actually lands for Indian engineers.",
+    title: "PYQ Focused",
+    body: "Understand the actual exam pattern through live discussion and practice of Previous Year Questions.",
   },
   {
-    title: "Engineering Mindset",
-    body: "Not just syntax fluency — structural clarity, problem-solving frameworks and a clear map of how careers actually compound.",
+    title: "Personal Guidance",
+    body: "Get regular doubt sessions and mentorship to identify mistakes, improve weak areas and stay on track.",
   },
 ];
 
 const PLANS = [
   {
-    name: "1 Month Mentorship",
+    name: "RRB NTPC 2026 Paid Batch",
     price: "₹200",
-    unit: "",
-    tag: "Interview Preparation",
+    unit: "one time",
+    tag: "Complete Preparation Program",
     blurb:
-      "Built for engineers with an interview loop on the calendar. Pattern recognition, structured prep and relentless feedback.",
+      "A focused preparation batch designed for the RRB NTPC 2026 exam with syllabus completion, PYQs, mock tests, doubt sessions and mentorship.",
     features: [
-      "Problem-solving approach (not just DSA)",
-      "Resume review & positioning",
-      "Communication & leadership framing",
-      "Real interview-style mock sessions",
-      "Actionable improvement plans",
-      "Structured weekly assignments",
+      "Target-based completion of syllabus for 2026",
+      "Live discussion of PYQs",
+      "Weekly doubt sessions",
+      "Practice sectional mock tests based on PYQs",
+      "Five full mock test paper series",
+      "Mentorship by Gopal Sir",
+      "Subjects: GS / GK + Maths + Reasoning",
     ],
-    cta: <RazorpayButton id ={"pl_TS4RRuEjL9l1et"}/>,
-    featured: false,
-  },
-  {
-    name: "3 Months Mentorship",
-    price: "500",
-    unit: "/ month",
-    tag: "Skill Building + Career Growth",
-    blurb:
-      "A deeper, transformative arc: long-term engineering growth, practical AI integration and genuinely scalable architecture.",
-    features: [
-      "Everything in the 1 Month plan",
-      "Practical AI skills & integrations",
-      "System design deep dives",
-      "Full-stack engineering mindset",
-      "End-to-end product ownership",
-      "Additional mock interviews",
-    ],
-    cta:  <RazorpayButton id ="pl_TSE7yBFpvy4BLA"/>,
+    cta: <RazorpayButton id="pl_TS4RRuEjL9l1et" />,
     featured: true,
   },
 ];
 
 const STEPS = [
-  { title: "Apply", body: "Share your background, current stack and the specific outcome you want." },
-  { title: "Review", body: "I personally read every application and resume before shortlisting." },
-  { title: "Discussion", body: "Shortlisted candidates get a short 1:1 call to align on expectations." },
-  { title: "Selection", body: "Final picks come down to commitment and seriousness about growth." },
+  {
+    title: "Join the Batch",
+    body: "Enroll in the RRB NTPC 2026 paid batch for just ₹200.",
+  },
+  {
+    title: "Follow the Targets",
+    body: "Complete the syllabus according to the planned targets and stay consistent with your preparation.",
+  },
+  {
+    title: "Practice & Analyse",
+    body: "Solve PYQs, sectional mocks and full-length mock tests to understand your preparation level.",
+  },
+  {
+    title: "Improve with Mentorship",
+    body: "Get weekly doubt sessions and mentorship from Gopal Sir to identify and improve your weak areas.",
+  },
 ];
 
 const WHY = [
   {
-    title: "Advanced Architecture",
-    body: "High-scale frontend systems and state management the way product companies actually run them in production — components, state machines, micro-frontends.",
-    wide: true,
-  },
-  { title: "Hinglish Support", body: "Hard concepts, simple and relatable delivery." },
-  { title: "Career Branding", body: "Sharper LinkedIn, resume and recruiter visibility." },
-  { title: "Execution Ability", body: "Learn to pick up any stack on your own, fast." },
-  {
-    title: "Growth Mindset",
-    body: "The mental models senior roles demand. Move from shipping features to owning architecture and technical direction.",
+    title: "Target-Based Syllabus Completion",
+    body: "Follow a structured preparation approach designed to help you complete the RRB NTPC 2026 syllabus on time.",
     wide: true,
   },
   {
-    title: "Interview Readiness",
-    body: "Mocks that mirror top-tier loops, with blunt feedback well before the real day.",
+    title: "Live PYQ Discussion",
+    body: "Discuss Previous Year Questions live and understand the concepts and patterns behind them.",
+  },
+  {
+    title: "Weekly Doubt Sessions",
+    body: "Get your doubts resolved regularly instead of letting difficult topics accumulate.",
+  },
+  {
+    title: "Sectional Mock Tests",
+    body: "Practice topic-wise and sectional tests based on PYQs prepared by the Exam Rojgaar team.",
+  },
+  {
+    title: "Five Full Mock Tests",
+    body: "Five full mock test papers based on the latest pattern and PYQs, available two months before the exam.",
     wide: true,
   },
-];
-
-const REVIEWS = [
   {
-    quote:
-      "The sessions reframed how I approach system design entirely. It's less about memorising patterns and more about reasoning through tradeoffs out loud.",
-    name: "Ankit Sharma",
-    role: "SDE @ Microsoft",
-    initials: "AS",
-  },
-  {
-    quote:
-      "The mock interviews were brutal in the best way. The feedback on performance optimisation is what got me through my senior loop.",
-    name: "Priya Patel",
-    role: "Frontend Engineer @ Amazon",
-    initials: "PP",
-  },
-  {
-    quote:
-      "I went from a feature developer to someone people ask for architecture reviews. That shift happened inside three months.",
-    name: "Rahul Verma",
-    role: "Senior SDE @ Flipkart",
-    initials: "RV",
+    title: "Mentorship by Gopal Sir",
+    body: "Get guidance based on your test performance and work on your weak areas before the actual examination.",
+    wide: true,
   },
 ];
 
 const FAQS = [
   {
-    q: "Why is the price relatively affordable for this quality?",
-    a: "Because mentoring isn't my income — it's the part of the week I look forward to. The fee exists to filter for seriousness and to keep cohorts small enough that everyone gets real attention.",
+    q: "What is the price of the RRB NTPC 2026 paid batch?",
+    a: "The batch fee is ₹200 only.",
   },
   {
-    q: "What is the 'negative habit' clause?",
-    a: "If you consistently skip sessions, ignore assignments or treat the mentorship as passive content, we part ways early and the remaining amount isn't charged. The seat goes to someone who will use it.",
+    q: "When does the batch start?",
+    a: "The RRB NTPC 2026 paid batch starts from 22nd August 2026.",
   },
   {
-    q: "Is this a job-guarantee program?",
-    a: "No. Nobody can honestly guarantee a job. What is guaranteed is preparation: architecture depth, interview reps and a clear plan. The outcome still depends on your execution.",
+    q: "Which subjects are covered?",
+    a: "The batch covers GS / GK, Mathematics and Reasoning.",
   },
   {
-    q: "Do I need any prerequisites?",
-    a: "Comfort with JavaScript and at least one framework, plus roughly a year of building real software. Absolute beginners will get more from fundamentals first.",
+    q: "Will there be PYQ discussion?",
+    a: "Yes. The batch includes live discussion of Previous Year Questions (PYQs).",
   },
   {
-    q: "How much time should I set aside each week?",
-    a: "Plan for 3–4 focused hours on the weekend plus a few hours across weekdays for assignments and follow-ups.",
+    q: "Will there be doubt sessions?",
+    a: "Yes. Weekly doubt sessions will be conducted.",
+  },
+  {
+    q: "Are mock tests included?",
+    a: "Yes. The batch includes sectional mock tests based on PYQs and five full mock test papers based on the latest pattern and PYQs.",
+  },
+  {
+    q: "When will the five full mock tests be available?",
+    a: "The five full mock test paper series will be available two months before the examination.",
+  },
+  {
+    q: "Who will provide the mentorship?",
+    a: "Mentorship will be provided by Gopal Sir, with guidance based on your test performance and areas that need improvement.",
+  },
+  {
+    q: "Is there a result-based refund?",
+    a: "Yes. As mentioned in the batch announcement, the batch amount will be refunded to eligible students who achieve the final result.",
   },
 ];
 
+const TESTIMONIALS = [
+  {
+    quote:
+      "Daily Target se History aur Polity ki preparation meri kaafi achhi hui hai. 😊 Maths mein bhi tests dene ki wajah se kaafi improvement feel hua hai. Overall, mujhe Daily Target se bahut fayda mila hai. Aur ek special mention aapke Polity ke YouTube lectures ka — they are just wow! ❤️ Maine Polity ko itna interesting aur easy kabhi nahi paya. Aapka padhane ka tareeka bahut hi simple aur effective hai. Thank you so much for guiding us and making our preparation easier. 😊🙏 Keep doing the amazing work!",
+    name: "Susmita",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Negative attempts bhi ab kaafi kam ho rahe hain aur dheere-dheere attempts increase kar pa raha hoon. GK/GS aur Maths ko ek saath routine mein follow karne se preparation ka burden bhi kaafi kam lag raha hai aur consistency bani hui hai. Bas ab hope hai ki isi direction mein mehnat karte rahein aur result bhi positive aaye. Thank you for the guidance, Sir! 🙏😊",
+    name: "Renu Pathak",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Saare resources ek hi jagah mil jaate hain, isliye preparation kaafi easy aur organised ho gayi hai. Pehle resources ke liye idhar-udhar bhagna padta tha, lekin ab sab kuch ek hi jagah mil jaata hai, jisse time bhi save hota hai aur preparation par focus karna bhi easy ho gaya hai. 😊🙏",
+    name: "Abhishek",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Aapka guidance aur padhane ka tareeka bahut achha hai. Preparation ko kaafi easy aur organised bana diya hai. 🙏❤️",
+    name: "Mantasha Khatoon",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:
+      "Preparation mein kaafi improvement dekhne ko mil raha hai — attempts increase ho rahe hain, negative marking kam ho rahi hai, timely revision ho pa raha hai aur weak areas ka bhi proper analysis kar pa raha hoon. Overall preparation ab pehle se kaafi better aur structured lag rahi hai. 🙏😊",
+    name: "Sujoy Basak",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+];
 const APPLY_URL = "#program";
 
 function CursorShadow() {
@@ -236,17 +244,20 @@ function Landing() {
 
 
 function Header() {
+ const { t } = useTranslation();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4">
-        <a href="#top" className="flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow">
-            CG
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight">
-            Engineer Chirag
-          </span>
-        </a>
+         <Link className="flex items-center gap-3" to="/">
+          <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+            <img src="/logo.png" alt="examrojgar-logo" className="grid size-10 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow" />
+          </div>
+          <div>
+            <span className="font-display text-lg font-semibold tracking-tight">
+              Exam Rojgaar
+           </span>
+          </div>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((item) => (
@@ -278,17 +289,17 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             <span className="size-1.5 rounded-full bg-emerald animate-pulse-dot" />
-            July 2026 Cohort
+            August 2026 Batch
             <span className="text-border">•</span>
             <span className="text-rose">Limited Seats</span>
           </div>
           
 
           <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-            Engineering
+            3 Months
             <br />
-            <span className="text-gradient">Excellence</span>
-            <br />& Scaling
+            <span className="text-gradient">RRB NTPC 2026 </span>
+            <br />Mentorship Program
           </h1>
 
           <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -314,7 +325,7 @@ function Hero() {
           </div>
         </div>
 
-        <CodeCard />
+        {/* <CodeCard /> */}
       </div>
     </section>
   );
@@ -380,9 +391,9 @@ function CodeCard() {
         <span className="size-2.5 rounded-full bg-emerald animate-pulse-dot" />
         <div>
           <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-            System Status
+            Chalo Selection
           </p>
-          <p className="font-mono text-sm font-semibold">Highly Scalable</p>
+          <p className="font-mono text-sm font-semibold">Pakka Kartey hai</p>
         </div>
       </div>
     </div>
@@ -443,7 +454,7 @@ function Mission() {
 
 function RazorpayButton({id}) {
   const containerRef = useRef(null);
-  debugger
+  
   useEffect(() => {
     const container = containerRef.current;
     if (!container || container.hasChildNodes()) return;
@@ -461,7 +472,8 @@ function RazorpayButton({id}) {
     };
   }, []);
 
-  return <form ref={containerRef}  />;
+  return <form ref={containerRef}  />
+
 }
 
 
@@ -519,16 +531,19 @@ function Program() {
               ))}
             </ul>
 
-            {/* <a
-              href={APPLY_URL}
+            {/* <button
+              onCLick={APPLY_URL}
               className={`mt-8 block rounded-full px-6 py-3.5 text-center text-sm font-semibold transition-transform hover:scale-[1.02] ${
                 plan.featured
                   ? "bg-accent text-accent-foreground"
                   : "bg-primary text-primary-foreground"
               }`}
-            >
-            </a> */}
-            {plan.cta} 
+            > */}
+            <div className="mt-10 w-full max-w-md">{plan.cta}</div>
+             
+            {/* </button> */}
+
+          
     
           </article>
         ))}
@@ -566,108 +581,349 @@ function Process() {
   );
 }
 
+// function Structure() {
+//   return (
+//     <section className="mx-auto max-w-6xl px-5 py-24">
+//       <div className="rounded-3xl glass-card p-8 sm:p-12">
+//         <SectionLabel>Program Structure</SectionLabel>
+//         <h2 className="mt-4 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
+//           Deep-work weekends, continuous weekday momentum
+//         </h2>
+
+//         <div className="mt-10 grid gap-6 md:grid-cols-2">
+//           <div className="rounded-2xl border border-border bg-surface-2 p-7">
+//             <h3 className="font-display text-xl font-semibold">Weekend Deep Dives</h3>
+//             <p className="mt-2 text-sm text-muted-foreground">
+//               3–4 hours of intensive focus on core engineering principles.
+//             </p>
+//             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+//               <li>• Saturday: individual connect sessions</li>
+//               <li>• Sunday: group mentorship & system design</li>
+//             </ul>
+//           </div>
+//           <div className="rounded-2xl border border-border bg-surface-2 p-7">
+//             <h3 className="font-display text-xl font-semibold">Weekday Momentum</h3>
+//             <p className="mt-2 text-sm text-muted-foreground">
+//               Always connected. Never stuck on one problem for days.
+//             </p>
+//             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+//               <li>• Direct 1:1 chat support</li>
+//               <li>• Assignment discussion & doubt solving</li>
+//               <li>• Continuous progress tracking</li>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// function Mentor() {
+//   return (
+//     <section className="mx-auto max-w-6xl px-5 py-24">
+//       <div className="grid items-center gap-12 lg:grid-cols-2">
+//         <div className="relative">
+//           <div className="overflow-hidden rounded-3xl glass-card">
+//             {/* <img
+//               src={mentorImg}
+//               alt="Chirag Goel, engineering manager and mentor"
+//               loading="lazy"
+//               width={912}
+//               height={1104}
+//               className="h-full w-full object-cover"
+//             /> */}
+//           </div>
+//           <div className="absolute -bottom-5 left-6 rounded-2xl glass-card px-5 py-4">
+//             <p className="font-display text-base font-semibold">Chirag Goel</p>
+//             <p className="font-mono text-xs text-muted-foreground">
+//               Engineering Manager
+//             </p>
+//           </div>
+//         </div>
+
+//         <div>
+//           <SectionLabel>The Mentor</SectionLabel>
+//           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+//             Expertise meets a{" "}
+//             <span className="text-gradient">passion for teaching</span>.
+//           </h2>
+
+//           <blockquote className="mt-8 border-l-2 border-accent pl-5 font-mono text-sm leading-7 text-muted-foreground">
+//             profession === engineer
+//             <br />
+//             love === teaching
+//             <br />
+//             passion === mentoring
+//           </blockquote>
+
+//           <p className="mt-7 leading-relaxed text-muted-foreground">
+//             I talk about frontend development, system design and interview
+//             preparation — helping students start careers and helping working
+//             engineers grow toward mastery. The more knowledge you pour out, the
+//             more comes back.
+//           </p>
+
+//           <div className="mt-9 flex gap-10">
+//             <div>
+//               <p className="font-display text-3xl font-extrabold text-gradient">10+ Yrs</p>
+//               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+//                 Experience
+//               </p>
+//             </div>
+//             <div>
+//               <p className="font-display text-3xl font-extrabold text-gradient">100k+</p>
+//               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+//                 Developers Taught
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// function Mentor() {
+//   return (
+//     <section className="mx-auto max-w-6xl px-5 py-24">
+//       <div className="grid items-center gap-12 lg:grid-cols-2">
+//         <div>
+//           <SectionLabel>The Mentor</SectionLabel>
+
+//           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+//             Guidance by{" "}
+//             <span className="text-gradient">Gopal Sir</span>
+//           </h2>
+
+//           <p className="mt-7 leading-relaxed text-muted-foreground">
+//             Get mentorship based on your test performance, identify your
+//             weak areas and work on them before the actual RRB NTPC
+//             examination.
+//           </p>
+
+//           <div className="mt-9 grid gap-4 sm:grid-cols-2">
+//             <div className="rounded-2xl glass-card p-5">
+//               <p className="font-display text-lg font-semibold">
+//                 Test Analysis
+//               </p>
+//               <p className="mt-2 text-sm text-muted-foreground">
+//                 Identify mistakes and areas that need improvement.
+//               </p>
+//             </div>
+
+//             <div className="rounded-2xl glass-card p-5">
+//               <p className="font-display text-lg font-semibold">
+//                 Personal Guidance
+//               </p>
+//               <p className="mt-2 text-sm text-muted-foreground">
+//                 Improve your preparation strategy before the exam.
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
 function Structure() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="rounded-3xl glass-card p-8 sm:p-12">
         <SectionLabel>Program Structure</SectionLabel>
-        <h2 className="mt-4 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          Deep-work weekends, continuous weekday momentum
+
+        <h2 className="mt-4 max-w-2xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          A structured approach to crack RRB NTPC 2026
         </h2>
 
+        <p className="mt-4 max-w-2xl text-muted-foreground">
+          Learn, practice, analyse and improve with a preparation plan
+          designed around the actual requirements of the RRB NTPC exam.
+        </p>
+
         <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {/* Preparation */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">Weekend Deep Dives</h3>
+            <h3 className="font-display text-xl font-semibold">
+              📚 Learn & Complete
+            </h3>
+
             <p className="mt-2 text-sm text-muted-foreground">
-              3–4 hours of intensive focus on core engineering principles.
+              Build your preparation with clear targets and complete the
+              required syllabus systematically.
             </p>
+
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Saturday: individual connect sessions</li>
-              <li>• Sunday: group mentorship & system design</li>
+              <li>• Target-based syllabus completion</li>
+              <li>• GS / GK + Maths + Reasoning</li>
+              <li>• Live discussion of PYQs</li>
             </ul>
           </div>
+
+          {/* Practice */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">Weekday Momentum</h3>
+            <h3 className="font-display text-xl font-semibold">
+              📝 Practice & Test
+            </h3>
+
             <p className="mt-2 text-sm text-muted-foreground">
-              Always connected. Never stuck on one problem for days.
+              Regular practice and mock tests to improve accuracy, speed
+              and exam readiness.
             </p>
+
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Direct 1:1 chat support</li>
-              <li>• Assignment discussion & doubt solving</li>
-              <li>• Continuous progress tracking</li>
+              <li>• Practice sectional mock tests</li>
+              <li>• Tests based on PYQs</li>
+              <li>• Five full mock test paper series</li>
             </ul>
+          </div>
+
+          {/* Doubt Solving */}
+          <div className="rounded-2xl border border-border bg-surface-2 p-7">
+            <h3 className="font-display text-xl font-semibold">
+              💡 Doubt Solving
+            </h3>
+
+            <p className="mt-2 text-sm text-muted-foreground">
+              Don't let difficult topics slow down your preparation. Get
+              your doubts resolved regularly.
+            </p>
+
+            <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+              <li>• Weekly doubt sessions</li>
+              <li>• Concept clarification</li>
+              <li>• Discussion of difficult questions</li>
+            </ul>
+          </div>
+
+          {/* Mentorship */}
+          <div className="rounded-2xl border border-border bg-surface-2 p-7">
+            <h3 className="font-display text-xl font-semibold">
+              🎯 Analyse & Improve
+            </h3>
+
+            <p className="mt-2 text-sm text-muted-foreground">
+              Understand your mistakes and work on your weak areas with
+              guidance from Gopal Sir.
+            </p>
+
+            <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
+              <li>• Test performance analysis</li>
+              <li>• Weak area identification</li>
+              <li>• Mentorship by Gopal Sir</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Mock Test Highlight */}
+        <div className="mt-6 rounded-2xl border border-accent/30 bg-accent/5 p-7">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-display text-xl font-semibold">
+                Five Full Mock Test Paper Series
+              </p>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                Full-length mock tests based on the latest exam pattern and
+                PYQs, available two months before the examination.
+              </p>
+            </div>
+
+            <span className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-xs font-semibold text-accent-foreground">
+            50+ MOCK TESTS
+            </span>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
 function Mentor() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="grid items-center gap-12 lg:grid-cols-2">
+        
+        {/* Mentor Image */}
         <div className="relative">
           <div className="overflow-hidden rounded-3xl glass-card">
-            {/* <img
-              src={mentorImg}
-              alt="Chirag Goel, engineering manager and mentor"
+            <img
+              src="/mentor.png"
+              alt="Gopal Sir - Exam Rojgaar Mentor"
               loading="lazy"
               width={912}
               height={1104}
               className="h-full w-full object-cover"
-            /> */}
+            />
           </div>
+
           <div className="absolute -bottom-5 left-6 rounded-2xl glass-card px-5 py-4">
-            <p className="font-display text-base font-semibold">Chirag Goel</p>
+            <p className="font-display text-base font-semibold">
+              Gopal Sir
+            </p>
             <p className="font-mono text-xs text-muted-foreground">
-              Engineering Manager
+              Exam Rojgaar Mentor
             </p>
           </div>
         </div>
 
+        {/* Mentor Content */}
         <div>
           <SectionLabel>The Mentor</SectionLabel>
+
           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Expertise meets a{" "}
-            <span className="text-gradient">passion for teaching</span>.
+            Guidance that makes your{" "}
+            <span className="text-gradient">
+              preparation better
+            </span>
+            .
           </h2>
 
           <blockquote className="mt-8 border-l-2 border-accent pl-5 font-mono text-sm leading-7 text-muted-foreground">
-            profession === engineer
+            target === clear
             <br />
-            love === teaching
+            preparation === consistent
             <br />
-            passion === mentoring
+            result === possible
           </blockquote>
 
           <p className="mt-7 leading-relaxed text-muted-foreground">
-            I talk about frontend development, system design and interview
-            preparation — helping students start careers and helping working
-            engineers grow toward mastery. The more knowledge you pour out, the
-            more comes back.
+            Gopal Sir focuses on making exam preparation simple, structured
+            and practical. Through regular guidance, test analysis and
+            mentorship, students can identify their weak areas, reduce
+            mistakes and improve their overall performance.
+          </p>
+
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            The goal is not just to study more, but to study with the right
+            strategy, analyse your performance and continuously improve before
+            the actual RRB NTPC examination.
           </p>
 
           <div className="mt-9 flex gap-10">
             <div>
-              <p className="font-display text-3xl font-extrabold text-gradient">10+ Yrs</p>
+              <p className="font-display text-3xl font-extrabold text-gradient">
+                Weekly
+              </p>
               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                Experience
+                Doubt Sessions
               </p>
             </div>
+
             <div>
-              <p className="font-display text-3xl font-extrabold text-gradient">100k+</p>
+              <p className="font-display text-3xl font-extrabold text-gradient">
+                1:1
+              </p>
               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                Developers Taught
+                Test Guidance
               </p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
 }
-
 function Why() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
@@ -698,29 +954,85 @@ function Why() {
   );
 }
 
+// function Reviews() {
+//   return (
+//     <section id="reviews" className="mx-auto max-w-6xl px-5 py-24">
+//       <div className="text-center">
+//         <SectionLabel>Testimonials</SectionLabel>
+//         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+//           What mentees say
+//         </h2>
+//       </div>
+
+//       <div className="mt-14 grid gap-5 md:grid-cols-3">
+//         {REVIEWS.map((r) => (
+//           <figure key={r.name} className="flex flex-col rounded-2xl glass-card p-7">
+//             <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
+//               “{r.quote}”
+//             </blockquote>
+//             <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+//               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary font-mono text-xs font-bold text-violet">
+//                 {r.initials}
+//               </span>
+//               <span>
+//                 <span className="block text-sm font-semibold">{r.name}</span>
+//                 <span className="block text-xs text-muted-foreground">{r.role}</span>
+//               </span>
+//             </figcaption>
+//           </figure>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
+
 function Reviews() {
   return (
     <section id="reviews" className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>Testimonials</SectionLabel>
+        <SectionLabel>Student Reviews</SectionLabel>
+
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          What mentees say
+          What our students say
         </h2>
+
+        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          Real feedback from students preparing with Exam Rojgaar.
+        </p>
       </div>
 
-      <div className="mt-14 grid gap-5 md:grid-cols-3">
-        {REVIEWS.map((r) => (
-          <figure key={r.name} className="flex flex-col rounded-2xl glass-card p-7">
+      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {TESTIMONIALS.map((testimonial) => (
+          <figure
+            key={testimonial.name}
+            className="flex flex-col rounded-2xl glass-card p-7"
+          >
+            <div className="mb-5 text-3xl text-violet">
+              "
+            </div>
+
             <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
-              “{r.quote}”
+              {testimonial.quote}
             </blockquote>
+
             <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary font-mono text-xs font-bold text-violet">
-                {r.initials}
+                {testimonial.name
+                  .split(" ")
+                  .map((word) => word[0])
+                  .join("")
+                  .slice(0, 2)
+                  .toUpperCase()}
               </span>
+
               <span>
-                <span className="block text-sm font-semibold">{r.name}</span>
-                <span className="block text-xs text-muted-foreground">{r.role}</span>
+                <span className="block text-sm font-semibold">
+                  {testimonial.name}
+                </span>
+
+                <span className="block text-xs text-muted-foreground">
+                  {testimonial.title}
+                </span>
               </span>
             </figcaption>
           </figure>
@@ -767,20 +1079,35 @@ function FinalCta() {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-28">
       <div className="relative overflow-hidden rounded-3xl glass-card px-8 py-16 text-center sm:px-16">
-        <div className="pointer-events-none absolute inset-0 aurora opacity-80" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute inset-0 aurora opacity-80"
+          aria-hidden="true"
+        />
+
         <div className="relative">
-          <h2 className="mx-auto max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            The next cohort is <span className="text-gradient">small on purpose</span>.
-          </h2>
-          <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
-            If you're ready to stop collecting tutorials and start engineering
-            systems, apply and let's talk.
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-violet">
+            Batch Starts 22nd August 2026
           </p>
+
+          <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
+            Start your{" "}
+            <span className="text-gradient">
+              RRB NTPC 2026
+            </span>{" "}
+            preparation today.
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
+            Join the Exam Rojgaar paid batch for just ₹200 and prepare with
+            structured targets, PYQs, mock tests, doubt sessions and
+            mentorship.
+          </p>
+
           <a
-            href={APPLY_URL}
+            href="#program"
             className="mt-9 inline-flex rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
           >
-            Apply for the July Cohort
+            Join Batch for ₹200
           </a>
         </div>
       </div>
@@ -792,9 +1119,16 @@ function Footer() {
   return (
     <footer className="relative border-t border-border/60 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 sm:flex-row">
-        <p className="font-mono text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Engineer Chirag. Built for engineers.
-        </p>
+        <div>
+          <p className="font-display text-sm font-semibold">
+            Exam Rojgaar
+          </p>
+
+          <p className="mt-1 font-mono text-xs text-muted-foreground">
+            Your Success, Our Goal
+          </p>
+        </div>
+
         <nav className="flex gap-6">
           {NAV.map((item) => (
             <a
@@ -806,6 +1140,10 @@ function Footer() {
             </a>
           ))}
         </nav>
+
+        <p className="font-mono text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Exam Rojgaar
+        </p>
       </div>
     </footer>
   );
