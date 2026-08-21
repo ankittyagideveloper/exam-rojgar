@@ -8,6 +8,21 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 // import mentorImg from "@/assets/mentor.jpg";
+import React from 'react';
+import './styles.css'
+
+export const YoutubeIcon = ({ size = 20 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    fill="currentColor"
+  >
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
 
 
 
@@ -17,6 +32,7 @@ const NAV = [
   { label: "What You Get", href: "#program" },
   { label: "How It Works", href: "#process" },
   { label: "FAQs", href: "#faqs" },
+  { label: "Youtube", href: "https://www.youtube.com/@ExamRojgaar", icon: <YoutubeIcon size={18} />, target: "_blank" },
 ];
 
 const MARQUEE = [
@@ -262,8 +278,11 @@ function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              target={item.target}
+              rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
+              {item.icon && <span className="text-[#FF0000]">{item.icon}</span>}
               {item.label}
             </a>
           ))}
@@ -479,51 +498,51 @@ function RazorpayButton({id}) {
 
 function Program() {
   return (
-    <section  className="mx-auto max-w-6xl px-5 py-24">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-5 sm:py-24">
       <div className="text-center">
         <SectionLabel>Target Series Tracks</SectionLabel>
-        <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+        <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           Pick your depth
         </h2>
-        <p id="program" className="mx-auto mt-4 max-w-xl text-muted-foreground">
+        <p id="program" className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
           Target Batch is for people serious about their careers. No bulk batches —
           only 1:1 attention and deep structural growth.
         </p>
       </div>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid gap-5 sm:mt-14 lg:grid-cols-2">
         {PLANS.map((plan) => (
           <article
             key={plan.name}
-            className={`relative rounded-3xl p-8 ${
+            className={`relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 ${
               plan.featured
                 ? "glass-card ring-1 ring-accent/60 shadow-glow"
                 : "glass-card"
             }`}
           >
             {plan.featured && (
-              <span className="absolute -top-3 right-8 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground whitespace-nowrap sm:left-auto sm:right-8 sm:translate-x-0">
                 Most Selected
               </span>
             )}
-            <h3 className="font-display text-2xl font-bold">{plan.name}</h3>
+            <h3 className="font-display text-xl font-bold leading-snug sm:text-2xl">{plan.name}</h3>
             <p className="mt-1 text-sm text-violet">{plan.tag}</p>
 
-            <p className="mt-6 flex items-baseline gap-1.5">
-              <span className="font-display text-4xl font-extrabold tracking-tight">
+            <p className="mt-5 flex items-baseline gap-1.5 sm:mt-6">
+              <span className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
                 {plan.price}
               </span>
               <span className="text-sm text-muted-foreground">{plan.unit}</span>
             </p>
 
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5">
               {plan.blurb}
             </p>
 
-            <ul className="mt-7 space-y-3">
+            <ul className="mt-6 space-y-3 sm:mt-7">
               {plan.features.map((f) => (
                 <li key={f} className="flex gap-3 text-sm">
-                  <span className="mt-0.5 text-emerald">✓</span>
+                  <span className="mt-0.5 shrink-0 text-emerald">✓</span>
                   <span className="text-muted-foreground">{f}</span>
                 </li>
               ))}
@@ -537,12 +556,10 @@ function Program() {
                   : "bg-primary text-primary-foreground"
               }`}
             > */}
-            <div className="mt-10 w-full max-w-md">{plan.cta}</div>
-             
+            <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>
+
             {/* </button> */}
 
-          
-    
           </article>
         ))}
       </div>

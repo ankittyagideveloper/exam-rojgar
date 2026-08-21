@@ -1,0 +1,213 @@
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system: dark "engineering console" aesthetic.
+ * Deep denim-black canvas, Denim / Matisse / Sorbus accents, Periwinkle highlights.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-code: var(--code);
+  --color-violet: var(--violet);
+  --color-cyan: var(--cyan);
+  --color-rose: var(--rose);
+  --color-emerald: var(--emerald);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --shadow-glow: 0 0 0 1px oklch(1 0 0 / 8%), 0 24px 70px -28px oklch(0.54 0.14 248 / 55%);
+  --shadow-lift: 0 20px 60px -30px oklch(0 0 0 / 85%);
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+}
+
+:root,
+.dark {
+  --radius: 0.9rem;
+  --background: oklch(0.14 0.02 248);
+  --foreground: oklch(0.95 0.005 248);
+  --card: oklch(0.18 0.025 248);
+  --card-foreground: oklch(0.95 0.005 248);
+  --popover: oklch(0.18 0.025 248);
+  --popover-foreground: oklch(0.95 0.005 248);
+  --primary: oklch(0.54 0.14 248);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.24 0.03 248);
+  --secondary-foreground: oklch(0.95 0.005 248);
+  --muted: oklch(0.24 0.03 248);
+  --muted-foreground: oklch(0.72 0.025 248);
+  --accent: oklch(0.48 0.11 247);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.63 0.23 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.54 0.14 248);
+
+  --surface: oklch(0.19 0.025 248 / 70%);
+  --surface-2: oklch(0.22 0.03 248 / 60%);
+  --code: oklch(0.11 0.025 248);
+  --violet: oklch(0.54 0.14 248);
+  --cyan: oklch(0.78 0.06 248);
+  --rose: oklch(0.72 0.18 53);
+  --emerald: oklch(0.51 0.11 246);
+
+  --chart-1: oklch(0.54 0.14 248);
+  --chart-2: oklch(0.48 0.11 247);
+  --chart-3: oklch(0.72 0.18 53);
+  --chart-4: oklch(0.78 0.06 248);
+  --chart-5: oklch(0.72 0.18 53);
+
+  --sidebar: oklch(0.16 0.02 248);
+  --sidebar-foreground: oklch(0.95 0.005 248);
+  --sidebar-primary: oklch(0.54 0.14 248);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.24 0.03 248);
+  --sidebar-accent-foreground: oklch(0.95 0.005 248);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.54 0.14 248);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: oklch(0.54 0.14 248 / 45%);
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    oklch(0.54 0.14 248) 0%,
+    oklch(0.72 0.18 53) 45%,
+    oklch(0.78 0.06 248) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@utility grid-canvas {
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility glass-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-lift);
+}
+
+@utility aurora {
+  background:
+    radial-gradient(60% 55% at 18% 12%, oklch(0.54 0.14 248 / 35%) 0%, transparent 65%),
+    radial-gradient(50% 50% at 85% 22%, oklch(0.48 0.11 247 / 28%) 0%, transparent 62%),
+    radial-gradient(60% 60% at 60% 95%, oklch(0.72 0.18 53 / 22%) 0%, transparent 68%);
+}
+
+@utility cursor-shadow {
+  background: radial-gradient(
+    circle 520px at var(--cursor-x, 50%) var(--cursor-y, 50%),
+    oklch(0.54 0.14 248 / 16%) 0%,
+    oklch(0.48 0.11 247 / 8%) 42%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 oklch(0.51 0.11 246 / 60%);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 8px oklch(0.51 0.11 246 / 0%);
+  }
+}

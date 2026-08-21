@@ -54,11 +54,11 @@ export default function LanguageSwitcher({ onChange }) {
         aria-label="Select language"
       >
         <Globe size={18} className="text-gray-600 dark:text-white" />
-        <span className="hidden text-sm sm:inline">{selectedLang.label}</span>
-        <span className="sm:hidden font-medium">{selectedLang.shortLabel}</span>
+        <span className="hidden text-sm sm:inline text-gray-700 dark:text-white">{selectedLang.label}</span>
+        <span className="sm:hidden font-medium text-gray-700 dark:text-white">{selectedLang.shortLabel}</span>
         <ChevronDown
           size={16}
-          className={`transition-transform ${open ? "rotate-180" : ""}`}
+          className={`text-gray-600 dark:text-white transition-transform ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -69,9 +69,9 @@ export default function LanguageSwitcher({ onChange }) {
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang)}
-              className={`flex items-center gap-3 w-full px-3 py-2 text-sm rounded-md transition ${
+              className={`flex items-center gap-3 w-full px-3 py-2 text-sm text-gray-800 rounded-md transition ${
                 selectedLang.code === lang.code
-                  ? "bg-blue-100 text-black font-semibold"
+                  ? "bg-blue-100 font-semibold"
                   : "hover:bg-gray-100"
               }`}
             >
