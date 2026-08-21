@@ -223,7 +223,7 @@ function Landing() {
       
       <Header />
 
-      <main className="relative">
+      <main className="relative pt-24">
         <Hero />
         <Marquee />
         <Mission />
@@ -246,17 +246,15 @@ function Landing() {
 function Header() {
  const { t } = useTranslation();
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4">
-         <Link className="flex items-center gap-3" to="/">
+    <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-white/20 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-white/10">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+        <Link className="flex items-center gap-3" to="/">
           <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
             <img src="/logo.png" alt="examrojgar-logo" className="grid size-10 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow" />
           </div>
-          <div>
-            <span className="font-display text-lg font-semibold tracking-tight">
-              Exam Rojgaar
-           </span>
-          </div>
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Exam Rojgaar
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -273,7 +271,7 @@ function Header() {
 
         <a
           href={APPLY_URL}
-          className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+          className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
         >
           Apply Now
         </a>
