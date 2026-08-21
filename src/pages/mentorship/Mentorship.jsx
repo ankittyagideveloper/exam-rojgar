@@ -27,7 +27,7 @@ const MARQUEE = [
   "PYQs",
   "Mock Tests",
   "Doubt Sessions",
-  "Mentorship",
+  "Target Series",
 ];
 
 const MISSION = [
@@ -41,7 +41,7 @@ const MISSION = [
   },
   {
     title: "Personal Guidance",
-    body: "Get regular doubt sessions and mentorship to identify mistakes, improve weak areas and stay on track.",
+    body: "Get regular doubt sessions and target-based guidance to identify mistakes, improve weak areas and stay on track.",
   },
 ];
 
@@ -52,14 +52,14 @@ const PLANS = [
     unit: "one time",
     tag: "Complete Preparation Program",
     blurb:
-      "A focused preparation batch designed for the RRB NTPC 2026 exam with syllabus completion, PYQs, mock tests, doubt sessions and mentorship.",
+      "A focused preparation batch designed for the RRB NTPC 2026 exam with syllabus completion, PYQs, mock tests, doubt sessions and target-based guidance.",
     features: [
       "Target-based completion of syllabus for 2026",
       "Live discussion of PYQs",
       "Weekly doubt sessions",
       "Practice sectional mock tests based on PYQs",
       "Five full mock test paper series",
-      "Mentorship by Gopal Sir",
+      "Target Series guidance by Gopal Sir",
       "Subjects: GS / GK + Maths + Reasoning",
     ],
     cta: <RazorpayButton id="pl_TS4AN7R2A24QKQ" />,
@@ -81,8 +81,8 @@ const STEPS = [
     body: "Solve PYQs, sectional mocks and full-length mock tests to understand your preparation level.",
   },
   {
-    title: "Improve with Mentorship",
-    body: "Get weekly doubt sessions and mentorship from Gopal Sir to identify and improve your weak areas.",
+    title: "Improve with Target Series",
+    body: "Get weekly doubt sessions and guidance from Gopal Sir to identify and improve your weak areas.",
   },
 ];
 
@@ -110,7 +110,7 @@ const WHY = [
     wide: true,
   },
   {
-    title: "Mentorship by Gopal Sir",
+    title: "Target Series Guidance by Gopal Sir",
     body: "Get guidance based on your test performance and work on your weak areas before the actual examination.",
     wide: true,
   },
@@ -146,8 +146,8 @@ const FAQS = [
     a: "The five full mock test paper series will be available two months before the examination.",
   },
   {
-    q: "Who will provide the mentorship?",
-    a: "Mentorship will be provided by Gopal Sir, with guidance based on your test performance and areas that need improvement.",
+    q: "Who will provide the guidance?",
+    a: "Guidance will be provided by Gopal Sir, with target-based feedback on your test performance and areas that need improvement.",
   },
   {
     q: "Is there a result-based refund?",
@@ -299,7 +299,7 @@ function Hero() {
             3 Months
             <br />
             <span className="text-gradient">RRB NTPC 2026 </span>
-            <br />Mentorship Program
+            <br />Target Series
           </h1>
 
           {/* <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -313,7 +313,7 @@ function Hero() {
               href="#program"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
             >
-              View Mentorship Tracks
+              View Target Series Tracks
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
@@ -481,13 +481,13 @@ function RazorpayButton({id}) {
 
 function Program() {
   return (
-    <section id="program" className="mx-auto max-w-6xl px-5 py-24">
+    <section  className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>Mentorship Tracks</SectionLabel>
+        <SectionLabel>Target Series Tracks</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
           Pick your depth
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+        <p id="program" className="mx-auto mt-4 max-w-xl text-muted-foreground">
           Target Batch is for people serious about their careers. No bulk batches —
           only 1:1 attention and deep structural growth.
         </p>
@@ -796,7 +796,7 @@ function Structure() {
             </ul>
           </div>
 
-          {/* Mentorship */}
+          {/* Target Series */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
             <h3 className="font-display text-xl font-semibold">
               🎯 Analyse & Improve
@@ -810,7 +810,7 @@ function Structure() {
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
               <li>• Test performance analysis</li>
               <li>• Weak area identification</li>
-              <li>• Mentorship by Gopal Sir</li>
+              <li>• Target Series guidance by Gopal Sir</li>
             </ul>
           </div>
         </div>
@@ -889,7 +889,7 @@ function Mentor() {
           <p className="mt-7 leading-relaxed text-muted-foreground">
             Gopal Sir focuses on making exam preparation simple, structured
             and practical. Through regular guidance, test analysis and
-            mentorship, students can identify their weak areas, reduce
+            target-based guidance, students can identify their weak areas, reduce
             mistakes and improve their overall performance.
           </p>
 
@@ -930,7 +930,7 @@ function Why() {
       <div className="text-center">
         <SectionLabel>The Difference</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Why <span className="text-gradient">this</span> mentorship?
+          Why <span className="text-gradient">this</span> Target Series?
         </h2>
         {/* <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
           Not another course. A rewrite of your engineering identity.
@@ -1100,7 +1100,7 @@ function FinalCta() {
           <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
             Join the Exam Rojgaar paid batch for just ₹200 and prepare with
             structured targets, PYQs, mock tests, doubt sessions and
-            mentorship.
+            target-based guidance.
           </p>
 
           <a
@@ -1150,9 +1150,9 @@ function Footer() {
 }
 
 
-const MentorshipPage =()=>{
+const TargetSeriesPage =()=>{
 
     return <Landing/>
 }
 
-export default MentorshipPage;
+export default TargetSeriesPage;

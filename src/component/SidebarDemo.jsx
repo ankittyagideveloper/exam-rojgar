@@ -19,8 +19,8 @@ import {
   IconUserFilled,
   IconBook,
   IconBookFilled,
-  IconUsers,
-  // IconUsersFilled,
+  IconTarget,
+  IconTargetArrow,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
@@ -137,15 +137,15 @@ export default function SidebarDemo({ children }) {
 
     {
       label: t("mentorBtn"),
-      href: "/mentor",
-      icon: isActive("/mentor") ? (
-        <IconUserFilled
+      href: "/target-series",
+      icon: isActive("/target-series") ? (
+        <IconTargetArrow
           className={`${
-            isActive("/mentor") ? "text-[#0ad0f4] fill-[#0ad0f4]" : ""
+            isActive("/target-series") ? "text-[#0ad0f4]" : ""
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
-        <IconUsers className="h-5 w-5 shrink-0 dark:text-neutral-200" />
+        <IconTarget className="h-5 w-5 shrink-0 dark:text-neutral-200" />
       ),
       role: ["user", "admin"],
     },

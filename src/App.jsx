@@ -66,7 +66,7 @@ import TimeSpeedDistanceBoatMockTestPage from "./pages/TimeSpeedDistanceBoatMock
 import TimeMockTestPage from "./pages/TimeMockTestPage";
 import RevoltEconomicImpactPeasantMockTestPage from "./pages/RevoltEconomicImpactPeasantMockTestPage";
 import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTestMockTestPage";
-import MentorshipPage from "./pages/mentorship/Mentorship";
+import TargetSeriesPage from "./pages/mentorship/Mentorship";
 import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtremistPhaseMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
@@ -316,8 +316,8 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/mentor",
-    element: <MentorshipPage />,
+    path: "/target-series",
+    element: <TargetSeriesPage />,
   },
 ]);
 
