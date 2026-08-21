@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, FileText, HelpCircle, FileDown, BookOpen } from "lucide-react";
+import { Home, FileText, HelpCircle, FileDown, BookOpen, Users } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
@@ -25,6 +25,7 @@ const BottomNavigation = () => {
       path: "/quiz-category",
     },
     { id: "pdfs", label: t(["pdfBtn"]), icon: FileDown, path: "/pdf-category" },
+    { id: "mentor", label: t("mentorBtn"), icon: Users, path: "/mentor" },
     // {
     //   id: "purchase",
     //   label: "My Purchase",

@@ -18,6 +18,7 @@
     "tests": "Test",
     "new": "NEW",
     "free": "FREE",
+    "mentorBtn": "Mentorship",
     "attemptedTests": "Attempted Tests",
     "adminPanel": "Admin Panel",
     "common": {

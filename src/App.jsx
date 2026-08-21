@@ -66,6 +66,7 @@ import TimeSpeedDistanceBoatMockTestPage from "./pages/TimeSpeedDistanceBoatMock
 import TimeMockTestPage from "./pages/TimeMockTestPage";
 import RevoltEconomicImpactPeasantMockTestPage from "./pages/RevoltEconomicImpactPeasantMockTestPage";
 import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTestMockTestPage";
+import MentorshipPage from "./pages/mentorship/Mentorship";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -139,7 +140,6 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-
       {
         path: "admin",
         element: (
@@ -272,39 +272,55 @@ const router = createBrowserRouter([
       { path: "compound-interest", element: <CompoundInterestMockTestPage /> },
 
       { path: "pipe-cistern", element: <PipeCisternMockTestPage /> },
-    
+
       { path: "Revision", element: <RevisionMockTestPage /> },
-    
+
       { path: "Revision-Test-3", element: <RevisionTest3MockTestPage /> },
-    
+
       { path: "Percentage", element: <PercentageMockTestPage /> },
-    
+
       { path: "Mughal", element: <MughalMockTestPage /> },
-    
+
       { path: "Ratio", element: <RatioMockTestPage /> },
-    
+
       { path: "Profit", element: <ProfitMockTestPage /> },
-    
-      { path: "VijayNagarAndBahmani", element: <VijayNagarAndBahmaniMockTestPage /> },
-    
+
+      {
+        path: "VijayNagarAndBahmani",
+        element: <VijayNagarAndBahmaniMockTestPage />,
+      },
+
       { path: "BhaktiAndSufi", element: <BhaktiAndSufiMockTestPage /> },
-    
+
       { path: "TimeAndWork", element: <TimeAndWorkMockTestPage /> },
-    
+
       { path: "Maratha", element: <MarathaMockTestPage /> },
-    
+
       { path: "Pipe", element: <PipeMockTestPage /> },
-    
+
       { path: "Advent", element: <AdventMockTestPage /> },
-    
-      { path: "TimeSpeedDistanceBoat", element: <TimeSpeedDistanceBoatMockTestPage /> },
-    
+
+      {
+        path: "TimeSpeedDistanceBoat",
+        element: <TimeSpeedDistanceBoatMockTestPage />,
+      },
+
       { path: "Time", element: <TimeMockTestPage /> },
-    
-      { path: "RevoltEconomicImpactPeasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
-    
-      { path: "hostory-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
+
+      {
+        path: "RevoltEconomicImpactPeasant",
+        element: <RevoltEconomicImpactPeasantMockTestPage />,
+      },
+
+      {
+        path: "hostory-full-revision-test",
+        element: <HostoryFullRevisionTestMockTestPage />,
+      },
     ],
+  },
+  {
+    path: "/mentor",
+    element: <AdminRoute><MentorshipPage /></AdminRoute>,
   },
 ]);
 
