@@ -72,7 +72,7 @@ export default function SidebarDemo({ children }) {
       icon: isActive("/target-series") ? (
         <IconTargetArrow
           className={`${
-            isActive("/target-series") ? "text-[#0ad0f4]" : ""
+            isActive("/target-series") ? "text-[#1272ba]" : ""
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (

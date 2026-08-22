@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 
 const queryClient = new QueryClient();
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>

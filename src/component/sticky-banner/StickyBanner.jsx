@@ -4,7 +4,7 @@ export function StickyBannerDemo() {
   return (
     <div className=" relative flex  w-full flex-col overflow-y-auto">
       <StickyBanner
-        className="bg-gradient-to-b from-blue-500 to-blue-600 "
+        className="bg-gradient-to-b from-[#1260ba] to-[#1272ba]"
         hideOnScroll
       >
         <p className="mx-0 max-w-[90%] text-white drop-shadow-md">

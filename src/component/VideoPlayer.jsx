@@ -37,7 +37,7 @@ const videos = [
 
 export default function VideoPlayer() {
   return (
-    <main className="min-h-screen  ">
+    <main className="min-h-96  ">
       {/* Header */}
       <div className="px-4 md:px-10 py-6 ">
         <img

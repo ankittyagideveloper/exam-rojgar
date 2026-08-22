@@ -124,7 +124,7 @@ function InstallPWAButton() {
       onClick={installApp}
       style={{
         padding: "10px 20px",
-        background: "#007bff",
+        background: "#1272ba",
         color: "#fff",
         border: "none",
         borderRadius: "8px",

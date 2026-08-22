@@ -5,7 +5,6 @@ import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 import { manifestForPlugIn } from "./manifest";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), VitePWA(manifestForPlugIn)],
   base: "/",

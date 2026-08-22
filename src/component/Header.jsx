@@ -51,8 +51,8 @@ function InstallPWAButton() {
     <button
       onClick={installApp}
       style={{
-        padding: "10px 20px",
-        background: "#007bff",
+        padding: "5px 10px",
+        background: "#1272ba",
         color: "#fff",
         border: "none",
         borderRadius: "8px",
@@ -98,9 +98,6 @@ const Header = () => {
             <h1 className="font-bold text-lg text-gray-800 dark:text-white">
               Exam Rojgaar
             </h1>
-            <p className="text-xs text-gray-600 dark:text-white">
-              {t("testSeries")}
-            </p>
           </div>
         </Link>
 
@@ -129,7 +126,7 @@ const Header = () => {
             </>
           ) : (
             <SignInButton mode="modal">
-              <button className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+              <button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
                 Log In
               </button>
             </SignInButton>
