@@ -232,7 +232,7 @@ function CursorShadow() {
 
 function Landing() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
+    <div className="mentorship-page relative min-h-screen overflow-x-hidden bg-background">
       <div className="pointer-events-none fixed inset-0 aurora" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 grid-canvas opacity-60" aria-hidden="true" />
       <CursorShadow />

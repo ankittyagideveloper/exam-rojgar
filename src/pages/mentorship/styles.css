@@ -1,77 +1,10 @@
-
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
 /*
+ * Mentorship page styles — scoped to .mentorship-page.
  * Design system: dark "engineering console" aesthetic.
  * Deep denim-black canvas, Denim / Matisse / Sorbus accents, Periwinkle highlights.
  */
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-code: var(--code);
-  --color-violet: var(--violet);
-  --color-cyan: var(--cyan);
-  --color-rose: var(--rose);
-  --color-emerald: var(--emerald);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-  --shadow-glow: 0 0 0 1px oklch(1 0 0 / 8%), 0 24px 70px -28px oklch(0.54 0.14 248 / 55%);
-  --shadow-lift: 0 20px 60px -30px oklch(0 0 0 / 85%);
-
-  --animate-marquee: marquee 32s linear infinite;
-  --animate-float: float 7s ease-in-out infinite;
-  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
-}
-
-:root,
-.dark {
+.mentorship-page {
   --radius: 0.9rem;
   --background: oklch(0.14 0.02 248);
   --foreground: oklch(0.95 0.005 248);
@@ -115,30 +48,45 @@
   --sidebar-accent-foreground: oklch(0.95 0.005 248);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.54 0.14 248);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --shadow-glow: 0 0 0 1px oklch(1 0 0 / 8%), 0 24px 70px -28px oklch(0.54 0.14 248 / 55%);
+  --shadow-lift: 0 20px 60px -30px oklch(0 0 0 / 85%);
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+
+  /* Base resets scoped to this page */
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  ::selection {
-    background: oklch(0.54 0.14 248 / 45%);
-  }
+.mentorship-page *,
+.mentorship-page *::before,
+.mentorship-page *::after {
+  border-color: var(--border);
 }
 
-@utility text-gradient {
+.mentorship-page ::selection {
+  background: oklch(0.54 0.14 248 / 45%);
+}
+
+/* Utilities */
+.mentorship-page .text-gradient {
   background-image: linear-gradient(
     100deg,
     oklch(0.54 0.14 248) 0%,
@@ -149,28 +97,28 @@
   color: transparent;
 }
 
-@utility grid-canvas {
+.mentorship-page .grid-canvas {
   background-image:
     linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
     linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
-@utility glass-card {
+.mentorship-page .glass-card {
   background: var(--surface);
   border: 1px solid var(--border);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow-lift);
 }
 
-@utility aurora {
+.mentorship-page .aurora {
   background:
     radial-gradient(60% 55% at 18% 12%, oklch(0.54 0.14 248 / 35%) 0%, transparent 65%),
     radial-gradient(50% 50% at 85% 22%, oklch(0.48 0.11 247 / 28%) 0%, transparent 62%),
     radial-gradient(60% 60% at 60% 95%, oklch(0.72 0.18 53 / 22%) 0%, transparent 68%);
 }
 
-@utility cursor-shadow {
+.mentorship-page .cursor-shadow {
   background: radial-gradient(
     circle 520px at var(--cursor-x, 50%) var(--cursor-y, 50%),
     oklch(0.54 0.14 248 / 16%) 0%,
@@ -180,7 +128,7 @@
   mix-blend-mode: screen;
 }
 
-
+/* Keyframe animations (global scope is fine — names are unique) */
 @keyframes marquee {
   from {
     transform: translateX(0);
