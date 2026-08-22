@@ -257,27 +257,37 @@ export const SidebarLink = ({ link, className, ...props }) => {
     return path === currMenu || path.startsWith(currMenu);
   };
   return (
-    <Link
-      onClick={() => setOpen(false)}
-      to={link.href}
-      className={cn(
-        ` ${
-          isActive(link.href) ? "bg-[#363940] text-white" : ""
-        } hover:bg-[#363940] gap-1 flex items-center justify-start gap-2  group/sidebar py-[10px] px-6 text-sm`,
-        className
+    <div className="relative overflow-hidden">
+      {link.isFeatured && (
+        <span
+          className="absolute top-[6px] -right-[22px] z-10 pointer-events-none rotate-45 bg-red-500 text-white text-[9px] font-bold tracking-widest px-6 py-[2px] shadow-md uppercase"
+          style={{ letterSpacing: "0.15em" }}
+        >
+          NEW
+        </span>
       )}
-      {...props}
-    >
-      {link.icon}
-      <motion.span
-        // animate={{
-        //   display: animate ? (open ? "inline-block" : "none") : "inline-block",
-        //   opacity: animate ? (open ? 1 : 0) : 1,
-        // }}
-        className=" dark:text-neutral-200     group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 text-sm"
+      <Link
+        onClick={() => setOpen(false)}
+        to={link.href}
+        className={cn(
+          ` ${
+            isActive(link.href) ? "bg-[#363940] text-white" : ""
+          } hover:bg-[#363940] gap-1 flex items-center justify-start gap-2  group/sidebar py-[10px] px-6 text-sm`,
+          className
+        )}
+        {...props}
       >
-        {link.label}
-      </motion.span>
-    </Link>
+        {link.icon}
+        <motion.span
+          // animate={{
+          //   display: animate ? (open ? "inline-block" : "none") : "inline-block",
+          //   opacity: animate ? (open ? 1 : 0) : 1,
+          // }}
+          className=" dark:text-neutral-200     group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 text-sm"
+        >
+          {link.label}
+        </motion.span>
+      </Link>
+    </div>
   );
 };

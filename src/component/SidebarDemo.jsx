@@ -67,6 +67,21 @@ export default function SidebarDemo({ children }) {
       role: ["user", "admin"],
     },
     {
+      label: t("mentorBtn"),
+      href: "/target-series",
+      icon: isActive("/target-series") ? (
+        <IconTargetArrow
+          className={`${
+            isActive("/target-series") ? "text-[#0ad0f4]" : ""
+          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconTarget className="h-5 w-5 shrink-0 dark:text-neutral-200" />
+      ),
+      isFeatured:true,
+      role: ["user", "admin"],
+    },
+    {
       label: t("coursesBtn"),
       href: "/learn",
       icon: isActive("/learn") ? (
@@ -131,21 +146,6 @@ export default function SidebarDemo({ children }) {
             isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
           } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
-      ),
-      role: ["user", "admin"],
-    },
-
-    {
-      label: t("mentorBtn"),
-      href: "/target-series",
-      icon: isActive("/target-series") ? (
-        <IconTargetArrow
-          className={`${
-            isActive("/target-series") ? "text-[#0ad0f4]" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconTarget className="h-5 w-5 shrink-0 dark:text-neutral-200" />
       ),
       role: ["user", "admin"],
     },
