@@ -575,7 +575,7 @@ function Process() {
   return (
     <section id="process" className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>ment Process</SectionLabel>
+        <SectionLabel>Process</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
           Low seats. High quality.
         </h2>

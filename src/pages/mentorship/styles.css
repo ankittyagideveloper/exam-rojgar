@@ -85,6 +85,18 @@
   background: oklch(0.54 0.14 248 / 45%);
 }
 
+.mentorship-page .animate-marquee {
+  animation: var(--animate-marquee);
+}
+
+.mentorship-page .animate-float {
+  animation: var(--animate-float);
+}
+
+.mentorship-page .animate-pulse-dot {
+  animation: var(--animate-pulse-dot);
+}
+
 /* Utilities */
 .mentorship-page .text-gradient {
   background-image: linear-gradient(
