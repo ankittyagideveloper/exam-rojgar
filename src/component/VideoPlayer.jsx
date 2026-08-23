@@ -1,3 +1,5 @@
+import { Link, useNavigate } from "react-router";
+import { YoutubeIcon } from "../pages/mentorship/Mentorship";
 import { VideoCard } from "./VideoCard";
 
 const videos = [
@@ -36,6 +38,7 @@ const videos = [
 ];
 
 export default function VideoPlayer() {
+  const navigate = useNavigate();
   return (
     <main className="min-h-96  ">
       {/* Header */}
@@ -62,6 +65,13 @@ export default function VideoPlayer() {
           ))}
         </div>
       </div>
+
+      <div className="flex justify-center my-2">
+        <Link target="_blank" to="https://www.youtube.com/@ExamRojgaar"  className="flex py-3  gap-2 bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+         <YoutubeIcon size={18} /> See More Youtube Videos 
+        </Link>
+      </div>
+
     </main>
   );
 }
