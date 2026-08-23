@@ -243,6 +243,7 @@ export default function RailwayMockTest({ mockData, onExit }) {
     if (!isReattempt) saveAttempt(r);
     setResult(r);
     setScreen("bouquet");
+    setShowConfirm(false)
     setTimeout(() => setScreen("telegram"), 1500);
   }, [STORAGE_KEY_PROGRESS, TOTAL_TIME, activeQuestions, answers, candidateName, focusScore, isMember, isReattempt, isSubmitted, markingScheme, timeLeft, timeSpent]); // eslint-disable-line
 
