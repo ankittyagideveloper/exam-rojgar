@@ -48,18 +48,8 @@ function InstallPWAButton() {
   if (!isReadyToInstall) return null;
 
   return (
-    <button
-      onClick={installApp}
-      style={{
-        padding: "5px 10px",
-        background: "#1272ba",
-        color: "#fff",
-        border: "none",
-        borderRadius: "8px",
-        cursor: "pointer",
-        display: "flex",
-      }}
-    >
+
+    <button onClick={installApp} className="gap-1 flex bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
       <Download />
       Install App
     </button>
@@ -86,9 +76,8 @@ const Header = () => {
 
       {/* Header */}
       <header
-        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
-          isAdmin ? "top-[30px]" : "top-0"
-        } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
+        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${isAdmin ? "top-[30px]" : "top-0"
+          } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
       >
         <Link className="flex items-center gap-3" to="/">
           <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
