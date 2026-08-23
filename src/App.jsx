@@ -69,6 +69,10 @@ import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTest
 import TargetSeriesPage from "./pages/mentorship/Mentorship";
 import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtremistPhaseMockTestPage";
 
+
+//! Todo: Fix it 
+import RailwayMockTestPage from "./pages/RailwayMockTestPage";
+
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
   window.location.replace(url);
@@ -313,6 +317,8 @@ const router = createBrowserRouter([
       { path: "hostory-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
     
       { path: "ModernHistoryExtremistPhase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
+      
+      {path : "dummy-test", element :<RailwayMockTestPage/>}
     ],
   },
   {
