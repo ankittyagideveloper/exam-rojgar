@@ -739,13 +739,15 @@ const MockTest = ({ testData, onComplete }) => {
                 className="absolute top-[-20px] left-[-20px] text-white opacity-10 transform -rotate-12"
                 size={120}
               />
-              <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">
+              {/* <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">
                 All India Rank
               </div>
               <div className="text-5xl font-black mb-2">
                 {results.rank.toLocaleString()}
-              </div>
-              <div className="text-blue-100 font-medium">Out of 5000 users</div>
+              </div> */}
+              {/* <div className="text-blue-100 font-medium">Out of 5000 users</div> */}
+              
+                <div className="text-blue-100 font-medium">{testData.category}</div>  
               <div className="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
                 <span className="text-sm font-semibold">Percentile:</span>
                 <span className="text-xl font-bold text-yellow-400">
