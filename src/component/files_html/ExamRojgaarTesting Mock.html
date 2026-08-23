@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS (Round 1 Challenge Series)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            overscroll-behavior-y: none;
+            user-select: none;
+        }
+ 
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+ 
+        /* Diamond Gold Premium Theme */
+        .gold-text {
+            background: linear-gradient(to right, #e6c27a, #fff3c7, #d4af37, #ffeba8, #c5a030);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            text-shadow: 0px 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #fff3c7 50%, #c5a030 100%);
+            color: #1e293b;
+            border: 1px solid #fff3c7;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(255,255,255,0.5);
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), inset 0 0 15px rgba(255,255,255,0.8);
+            transform: translateY(-2px);
+        }
+        .diamond-border {
+            border: 1px solid rgba(255, 243, 199, 0.3);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+        }
+        .bg-premium-dark {
+            background: radial-gradient(circle at top right, #1a1500 0%, #050505 40%, #000000 100%);
+            position: relative;
+        }
+        
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff, 0 0 20px #fcf6ba;
+            animation: twinkle 2s infinite ease-in-out alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* Palette Colors */
+        .btn-answered { background-color: #22c55e !important; color: white !important; border-color: #22c55e !important; }
+        .btn-not-answered { background-color: #ef4444 !important; color: white !important; border-color: #ef4444 !important; }
+        .btn-not-visited { background-color: #f1f5f9 !important; color: #475569 !important; border: 1px solid #cbd5e1 !important; }
+        .btn-marked { background-color: #8b5cf6 !important; color: white !important; border-color: #8b5cf6 !important; }
+        .btn-answered-marked { background-color: #8b5cf6 !important; color: white !important; position: relative; border-color: #8b5cf6 !important; }
+        .btn-answered-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px; width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+ 
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .pulse-red { animation: pulseRed 1s infinite; }
+        @keyframes pulseRed { 0% { background-color: #fee2e2; } 50% { background-color: #fca5a5; } 100% { background-color: #fee2e2; } }
+ 
+        .red-flash-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.4); z-index: 9999; pointer-events: none;
+            animation: flash 1s ease-out forwards;
+        }
+        @keyframes flash { 0% { opacity: 1; } 100% { opacity: 0; } }
+ 
+        .analysis-card-gold {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            box-shadow: 0 4px 25px -2px rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        .analysis-card-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.15);
+        }
+ 
+        .golden-dashboard-bg {
+            background-color: #fcfcf9;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-position: 0 0;
+        }
+ 
+        .sky-clouds-bg {
+            background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 50%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .sky-clouds-bg::before, .sky-clouds-bg::after {
+            content: ''; position: absolute; background: radial-gradient(circle, #ffffff 20%, transparent 70%); border-radius: 50%; opacity: 0.8;
+        }
+        .sky-clouds-bg::before { width: 600px; height: 300px; top: -100px; left: -100px; filter: blur(30px); }
+        .sky-clouds-bg::after { width: 800px; height: 400px; bottom: -150px; right: -200px; filter: blur(40px); }
+ 
+        input[type="radio"] { accent-color: #0ea5e9; width: 1.2rem; height: 1.2rem; cursor: pointer; }
+        .option-box { transition: all 0.2s ease; border: 2px solid transparent; }
+        .option-box:hover { background-color: #f0f9ff; }
+        .option-box.selected { border-color: #38bdf8; background-color: #f0f9ff; }
+        .glass-drag { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); }
+        
+        /* Filter Tabs */
+        .filter-tab { transition: all 0.3s; }
+        .filter-tab.active { background-color: #f59e0b; color: white; border-color: #d97706; box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.4); }
+ 
+        .leaderboard-row:nth-child(even) { background-color: rgba(248, 250, 252, 0.8); }
+        .leaderboard-row:hover { background-color: #fef3c7 !important; transition: background-color 0.2s ease; }
+        .highlight-user { background-color: #fffbeb !important; border-left: 4px solid #f59e0b; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+ 
+    <!-- OVERLAYS -->
+    <div id="countdown-overlay" class="fixed inset-0 bg-slate-900/95 z-[9999] flex flex-col items-center justify-center hidden">
+        <div id="countdown-number" class="text-8xl md:text-9xl font-bold gold-text animate-pulse">5</div>
+        <div class="text-amber-200 text-xl mt-4 tracking-widest uppercase">Get Ready</div>
+    </div>
+ 
+    <div id="drag-close-overlay" class="fixed inset-0 glass-drag z-[10000] hidden flex flex-col items-center justify-start pt-20 transition-opacity">
+        <div class="text-white text-xl font-bold mb-6 text-center px-4">Pull down completely to exit test</div>
+        <i class="fas fa-chevron-down text-4xl text-amber-400 mb-6 animate-bounce"></i>
+        <div class="w-64 h-2 bg-slate-700 rounded-full overflow-hidden shadow-inner">
+            <div id="drag-progress-bar" class="h-full bg-gradient-to-r from-red-500 to-rose-600 w-0 transition-all duration-75"></div>
+        </div>
+    </div>
+ 
+    <div id="behavior-alert" class="fixed top-10 left-1/2 transform -translate-x-1/2 bg-red-100/90 backdrop-blur-md border border-red-400 text-red-700 px-6 py-3 rounded-full shadow-2xl z-[9999] hidden font-semibold transition-opacity duration-300">
+        Message
+    </div>
+ 
+    <div id="red-flash" class="hidden"></div>
+ 
+    <!-- 1. HOME SCREEN -->
+    <div id="home-screen" class="min-h-screen bg-[#e4e9f0] flex flex-col font-sans text-[13px]">
+        <!-- Topmost Banner JAY SHREE RAM -->
+        <div class="bg-black text-center py-1 border-b border-gray-700 shadow-sm">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6c27a] via-[#ffeba8] to-[#c5a030] font-bold text-[16px] drop-shadow-md tracking-widest">
+                🚩 कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। 🚩
+            </span>
+        </div>
+ 
+        <!-- Railway Header -->
+        <div class="bg-[#1e5086] text-white flex justify-between items-center p-2 md:px-6 shadow-md border-b-[5px] border-[#3a78c4]">
+            <div class="flex items-center gap-3">
+                <div class="w-28 h-28 bg-white rounded-md flex items-center justify-center font-bold text-[#1e5086] border-2 border-[#e6c27a] shadow-inner text-xs text-center leading-tight">
+                    ExamRojgaar<br>Mocks
+                </div>
+                <div class="text-lg md:text-2xl font-bold tracking-wide uppercase">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            </div>
+            <div class="hidden md:flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[11px] text-gray-300">System Name:</div>
+                    <div class="font-bold text-sm">C001</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden p-2 gap-2">
+            <!-- Left Instructions Panel -->
+            <div class="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden">
+                <div class="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400">
+                    Instructions
+                </div>
+                <div class="p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px] custom-scrollbar">
+                    <h4 class="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
+                    
+                    <p class="font-bold mb-2"><u>General Instructions:</u></p>
+                    <ol class="list-decimal pl-5 space-y-3 mb-6">
+                        <li>Total duration of the examination is <b>13 minutes</b>.</li>
+                        <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                        <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:
+                            <ul class="list-none pl-2 mt-3 space-y-3 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#f1f5f9] border border-[#cbd5e1] rounded flex items-center justify-center font-bold shadow-sm text-gray-600">1</div> You have not visited the question yet.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#ef4444] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">3</div> You have not answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#22c55e] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">5</div> You have answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm">7</div> You have NOT answered the question, but have marked the question for review.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm relative">9<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div></div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
+                            </ul>
+                        </li>
+                        <li>You can click on the ">" arrow which appears to the left of question palette to collapse the question palette thereby maximizing the question window.</li>
+                    </ol>
+ 
+                    <p class="font-bold mb-2"><u>Navigating to a Question:</u></p>
+                    <ol class="list-decimal pl-5 space-y-2 mb-6" start="5">
+                        <li>To answer a question, do the following:
+                            <ul class="list-[lower-alpha] pl-5 mt-1 space-y-1">
+                                <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
+                                <li>Click on <b>Save & Next</b> to save your answer for the current question and then go to the next question.</li>
+                                <li>Click on <b>Mark for Review & Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+ 
+            <!-- Right Profile & Custom Options Panel -->
+            <div class="flex-[1.2] flex flex-col gap-2 min-w-[280px]">
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
+                    <div class="w-24 h-28 border-2 border-gray-400 bg-white flex items-center justify-center mb-4 shadow-inner overflow-hidden">
+                        <i class="fas fa-user text-5xl text-gray-300"></i>
+                    </div>
+                    <div class="w-full text-[13px] space-y-2">
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Paper Name:</span>
+                            <span class="text-right text-[#1e5086] font-bold truncate ml-2">Round 1 Challenge Series</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Subject:</span>
+                            <span class="text-right text-gray-800 font-bold truncate ml-2">Sectional Mock</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Duration:</span>
+                            <span class="text-right text-[#1e5086] font-bold">13 Mins</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Date:</span>
+                            <span class="text-right text-gray-800 font-bold" id="current-date-display"></span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex-1 flex flex-col">
+                    <div class="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-4">Candidate Details</div>
+                    
+                    <div class="space-y-4 flex-1">
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Enter Your Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="candidate-name" class="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]" placeholder="e.g. Rahul Kumar">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Are you a ExamRojgaar mock group member?</label>
+                            <div class="flex gap-6 text-[13px] mt-1 bg-white p-2 border border-gray-300">
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="Yes" class="accent-[#1e5086] w-3.5 h-3.5"> Yes</label>
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="No" checked class="accent-[#1e5086] w-3.5 h-3.5"> No</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="mt-4 space-y-2 border-t border-gray-400 pt-4">
+                        <button onclick="openHistoryDashboard()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            View Previous Attempts <i class="fas fa-history text-[#1e5086]"></i>
+                        </button>
+                        <button onclick="openSavedQuestionsModal()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            Saved Questions Section <i class="fas fa-bookmark text-[#1e5086]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Bottom Action Bar -->
+        <div class="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+            <div class="flex-1 w-full text-[13px]">
+                <div class="mb-2 flex items-center gap-2 bg-white inline-block p-1.5 border border-gray-300 shadow-sm rounded-sm">
+                    <span class="text-red-600 font-bold">Choose your default language:</span>
+                    <select id="default-lang-select" class="ml-2 border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold" onchange="setGlobalLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2 mt-1">
+                    <input type="checkbox" id="declaration-check" class="mt-1 w-4 h-4 cursor-pointer">
+                    <label for="declaration-check" class="text-gray-800 cursor-pointer font-medium leading-snug">
+                        I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree that in case of not adhering to the instructions, I will be disqualified.
+                    </label>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-center">
+                <button onclick="validateAndStart()" class="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded-[2px] text-[15px] shadow-sm whitespace-nowrap transition-colors w-full md:w-auto uppercase tracking-wide">
+                    I am ready to begin
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SAVED QUESTIONS MODAL -->
+    <div id="saved-questions-modal" class="hidden fixed inset-0 z-[10006] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-4 relative">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-bookmark mr-2 text-amber-400"></i> Saved Questions Repository</h2>
+                <div class="flex gap-4">
+                    <button onclick="clearAllSavedQuestions()" class="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition shadow-md"><i class="fas fa-trash-alt mr-1"></i> Clear All</button>
+                    <button onclick="closeSavedQuestionsModal()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="saved-questions-list" class="space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- HISTORY DASHBOARD MODAL -->
+    <div id="history-modal" class="hidden fixed inset-0 z-[10005] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-10">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-history mr-2"></i> Previous Attempts</h2>
+                <button onclick="closeHistoryDashboard()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-list" class="space-y-4"></div>
+        </div>
+    </div>
+ 
+    <!-- 2. MOCK TEST SCREEN -->
+    <!-- Fixed Mobile Height Issue: Changed h-screen to strictly use 100dvh or fallback 100vh with purely flex layout -->
+    <div id="mock-screen" class="hidden bg-white flex-col font-sans" style="height: 100dvh; height: 100vh;">
+        <!-- Header -->
+        <div class="h-[60px] shrink-0 bg-[#1e5086] text-white flex items-center justify-between px-2 md:px-6 shadow-md z-20 relative border-b-4 border-[#3a78c4]">
+            <div class="font-bold text-lg hidden md:block uppercase tracking-wide" id="mock-title-banner">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            
+            <div class="flex items-center justify-end w-full md:w-auto gap-2 md:gap-6">
+                <div class="flex items-center bg-[#3a78c4] rounded p-1 cursor-pointer hover:bg-[#4a88d4] transition" onclick="toggleMockLanguage()">
+                    <span id="mock-lang-label" class="text-xs md:text-sm px-2 md:px-3 py-1 font-semibold text-white whitespace-nowrap"><i class="fas fa-language mr-1"></i> Hindi | Eng</span>
+                </div>
+                <div id="timer-display" class="text-sm md:text-xl font-mono font-bold bg-slate-900/80 px-2 md:px-4 py-1.5 rounded border border-slate-500 flex items-center gap-1 md:gap-2 transition-colors text-[#e6c27a]">
+                    <i class="far fa-clock"></i> <span id="time-left">3:00</span>
+                </div>
+                <button onclick="confirmSubmit()" class="px-4 py-1.5 md:px-6 md:py-1.5 bg-[#5cb85c] hover:bg-[#4cae4c] border border-[#4cae4c] text-white rounded text-sm md:text-base font-bold transition shadow-sm uppercase">Submit</button>
+                <button onclick="toggleMobilePalette()" class="md:hidden text-white text-xl ml-1"><i class="fas fa-th"></i></button>
+            </div>
+        </div>
+ 
+        <!-- Body Flex Container -->
+        <div class="flex flex-1 overflow-hidden relative">
+            
+            <!-- Left Side (Questions Area) -->
+            <div class="flex-1 flex flex-col bg-slate-50 overflow-hidden relative">
+                <!-- Added pb-4 for standard padding, no longer need massive pb on mobile because footer is outside -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-8 bg-white m-2 md:m-4 rounded-xl shadow-sm border border-slate-200" id="question-container"></div>
+                
+                <!-- Desktop Bottom Action Bar -->
+                <div class="hidden md:flex h-[70px] shrink-0 bg-[#f8f9fa] border-t border-gray-300 items-center justify-between px-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-3">
+                        <button onclick="markForReviewAndNext()" class="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 transition shadow-sm text-sm">Mark for Review & Next</button>
+                        <button onclick="clearResponse()" class="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 transition shadow-sm text-sm">Clear Response</button>
+                    </div>
+                    <div class="flex gap-3">
+                        <button onclick="saveAndNext()" class="px-8 py-2 bg-[#3a78c4] hover:bg-[#2b68b4] border border-[#2b68b4] text-white rounded font-bold transition shadow-sm text-sm">Save & Next</button>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Right Side (Palette Panel) -->
+            <div id="palette-panel" class="w-[300px] bg-[#f8f9fa] border-l border-gray-300 flex flex-col absolute right-0 top-0 h-full transform translate-x-full md:relative md:translate-x-0 transition-transform duration-300 z-30 shadow-2xl md:shadow-none">
+                <div class="md:hidden flex justify-between items-center p-4 bg-[#1e5086] text-white">
+                    <span class="font-bold">Question Palette</span>
+                    <button onclick="toggleMobilePalette()"><i class="fas fa-times text-xl"></i></button>
+                </div>
+                
+                <div class="p-4 border-b border-gray-300 grid grid-cols-2 gap-3 text-[11px] font-medium text-gray-700 bg-[#e4e9f0]">
+                    <div class="flex items-center gap-2"><div class="w-6 h-6 rounded btn-answered text-center leading-6 text-white shadow-sm" id="count-answered">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="w-6 h-6 rounded btn-not-answered text-center leading-6 text-white shadow-sm" id="count-not-answered">1</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="w-6 h-6 rounded btn-not-visited text-center leading-6 shadow-sm" id="count-not-visited">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="w-6 h-6 rounded btn-marked text-center leading-6 text-white shadow-sm" id="count-marked">0</div> Marked</div>
+                    <div class="flex items-center gap-2 col-span-2"><div class="w-6 h-6 rounded btn-answered-marked text-center leading-6 text-white shadow-sm" id="count-answered-marked">0</div> Answered & Marked</div>
+                </div>
+                <div class="p-3 bg-[#3a78c4] text-white text-sm font-bold border-b border-gray-400" id="section-title">Section: Railway MOCK</div>
+                <div class="flex-1 overflow-y-auto p-4 bg-[#f8f9fa]">
+                    <div class="grid grid-cols-4 gap-3" id="palette-grid"></div>
+                </div>
+            </div>
+            
+            <!-- Mobile Palette Overlay -->
+            <div id="palette-overlay" onclick="toggleMobilePalette()" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-20 md:hidden transition-opacity"></div>
+        </div>
+ 
+        <!-- Mobile Bottom Action Bar (Fixed Structure) -->
+        <div class="md:hidden shrink-0 grid grid-cols-3 gap-2 bg-[#f8f9fa] border-t border-gray-300 p-2 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-10">
+             <button onclick="markForReviewAndNext()" class="px-1 py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700 shadow-sm leading-tight">Review & Next</button>
+             <button onclick="clearResponse()" class="px-1 py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700 shadow-sm leading-tight">Clear</button>
+             <button onclick="saveAndNext()" class="px-1 py-3 bg-[#3a78c4] hover:bg-[#2b68b4] text-white rounded text-sm font-bold shadow-sm leading-tight">Save & Next</button>
+        </div>
+    </div>
+ 
+    <!-- Confirm Modal -->
+    <div id="confirm-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[10000] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center transform scale-95 transition-transform duration-200 border border-slate-200">
+            <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner border border-amber-100">
+                <i class="fas fa-question-circle text-4xl text-amber-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">Submit Test?</h3>
+            <p class="text-slate-600 mb-8 font-medium">Are you sure you want to submit? Once submitted, you cannot change your answers.</p>
+            <div class="flex gap-4 justify-center">
+                <button onclick="closeConfirmModal()" class="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition w-full shadow-sm">Cancel</button>
+                <button onclick="executeSubmit()" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl transition w-full shadow-md flex items-center justify-center gap-2">
+                    <span id="confirm-btn-text">Yes, Submit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- 3. BOUQUET SCREEN -->
+    <div id="bouquet-screen" class="hidden fixed inset-0 z-[10001] sky-clouds-bg flex flex-col items-center justify-center fade-in">
+        <div class="relative mb-8 animate-[bounce_3s_infinite_ease-in-out]">
+            <div class="absolute inset-0 bg-yellow-400 blur-[70px] opacity-40 rounded-full"></div>
+            <div class="text-9xl drop-shadow-[0_10px_30px_rgba(250,204,21,0.5)] z-10 relative">💐</div>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-[#1e5086] text-center mb-4 px-4 tracking-wide drop-shadow-md leading-tight transition-opacity duration-1000">Thanks for attempting<br>this mock</h1>
+    </div>
+ 
+    <!-- 4. TELEGRAM GATE -->
+    <div id="telegram-gate-screen" class="hidden min-h-screen bg-slate-50 flex items-center justify-center p-4 z-[10002] relative">
+        <div class="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 text-center border-t-4 border-amber-500 fade-in analysis-card-gold">
+            <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fab fa-telegram-plane text-5xl text-amber-500"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">One Last Step!</h2>
+            <p class="text-slate-600 mb-6 font-medium">For detailed solutions, best approaches, and expert doubt solving by top mentors, join our Telegram channel.</p>
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="telegramClicked=true" class="block w-full py-4 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-900 font-bold rounded-xl transition shadow-lg mb-4 text-lg">
+                <i class="fab fa-telegram mr-2"></i> Join ExamRojgaar MOCK
+            </a>
+            <button onclick="proceedToResult()" class="text-slate-500 hover:text-amber-600 text-sm font-bold underline underline-offset-4 mt-2">I have joined, show my result</button>
+        </div>
+    </div>
+ 
+    <!-- 5. RESULT & ANALYSIS DASHBOARD -->
+    <div id="result-screen" class="hidden min-h-screen golden-dashboard-bg p-4 md:p-8 font-sans pb-20">
+        <div class="max-w-6xl mx-auto space-y-6 fade-in">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center bg-white/90 backdrop-blur p-6 rounded-2xl shadow-sm border border-amber-200/50">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-slate-800">Performance Dashboard</h1>
+                    <p class="text-amber-600 font-medium mt-1" id="res-mock-name">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS (Hard Challenge Series 1.0)</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex gap-4">
+                     <button onclick="window.location.reload()" class="px-6 py-3 bg-[#1e5086] text-white font-bold rounded-xl hover:bg-[#153a63] transition shadow-md"><i class="fas fa-home mr-2"></i> Home</button>
+                </div>
+            </div>
+ 
+            <div id="historical-motivation"></div>
+ 
+            <div id="mentor-feedback-box" class="bg-gradient-to-r from-amber-500 to-yellow-600 text-white p-6 rounded-2xl shadow-lg flex items-start gap-5">
+                <div class="text-4xl bg-white/20 p-3 rounded-xl backdrop-blur-sm"><i class="fas fa-user-tie"></i></div>
+                <div class="flex-1">
+                    <h3 class="text-lg font-bold mb-1 opacity-90 text-amber-50">Smart Insight Analysis</h3>
+                    <p id="mentor-feedback-text" class="text-lg font-semibold leading-snug"></p>
+                </div>
+            </div>
+ 
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="analysis-card-gold p-6 text-center">
+                    <div class="text-amber-700/70 text-sm font-bold uppercase mb-2 tracking-wider">Score</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-amber-600 drop-shadow-sm" id="res-score">0/50</div>
+                </div>
+                <div class="analysis-card-gold p-6 text-center">
+                    <div class="text-amber-700/70 text-sm font-bold uppercase mb-2 tracking-wider">Rank</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-slate-800 drop-shadow-sm" id="res-rank">-</div>
+                </div>
+                <div class="analysis-card-gold p-6 text-center">
+                    <div class="text-amber-700/70 text-sm font-bold uppercase mb-2 tracking-wider">Percentile</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-emerald-600 drop-shadow-sm" id="res-percentile">0%</div>
+                </div>
+                <div class="analysis-card-gold p-6 text-center">
+                    <div class="text-amber-700/70 text-sm font-bold uppercase mb-2 tracking-wider">Accuracy</div>
+                    <div class="text-4xl md:text-5xl font-extrabold text-amber-700 drop-shadow-sm" id="res-accuracy-txt">0%</div>
+                    <div class="w-full bg-amber-100 rounded-full h-1.5 mt-3 overflow-hidden">
+                        <div id="res-accuracy-bar" class="bg-gradient-to-r from-amber-400 to-yellow-500 h-1.5 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="analysis-card-gold p-6">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-amber-100/50 pb-4 mb-5"><i class="fas fa-chart-pie text-amber-500 mr-2"></i> Attempt Summary</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center"><span class="text-slate-600 font-medium">Total Questions</span> <span class="font-bold text-slate-800 bg-slate-50 px-3 py-1 rounded-lg" id="res-total-q">25</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-600 font-medium">Attempted</span> <span class="font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-lg border border-amber-100/50" id="res-attempted">0</span></div>
+                        <div class="flex justify-between items-center"><span class="text-emerald-600 font-medium">Correct (+2)</span> <span class="font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg" id="res-correct">0</span></div>
+                        <div class="flex justify-between items-center"><span class="text-rose-500 font-medium">Incorrect (-0.5)</span> <span class="font-bold text-rose-600 bg-rose-50 px-3 py-1 rounded-lg" id="res-incorrect">0</span></div>
+                        <div class="flex justify-between items-center"><span class="text-slate-500 font-medium">Skipped</span> <span class="font-bold text-slate-600 bg-slate-50 px-3 py-1 rounded-lg" id="res-skipped">0</span></div>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-amber-100/50 bg-amber-50/30 -mx-6 -mb-6 p-6 rounded-b-xl">
+                        <button id="btn-reattempt" onclick="startReattempt()" class="w-full hidden py-3 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white rounded-xl font-bold shadow-md transition-all transform hover:-translate-y-1">
+                            <i class="fas fa-redo-alt mr-2"></i> Reattempt Wrong Questions
+                        </button>
+                        <div class="text-sm font-bold mt-4 flex items-center justify-center gap-2" id="res-persona-label"></div>
+                    </div>
+                </div>
+ 
+                <div class="analysis-card-gold p-6">
+                    <h3 class="text-xl font-bold text-slate-800 border-b border-amber-100/50 pb-4 mb-5"><i class="fas fa-layer-group text-amber-500 mr-2"></i> Topic-wise Intelligence</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm text-slate-600">
+                            <thead class="bg-amber-50/50 text-amber-900 font-bold">
+                                <tr>
+                                    <th class="p-3 rounded-tl-lg">Topic</th>
+                                    <th class="p-3">Att/Tot</th>
+                                    <th class="p-3">Accuracy</th>
+                                    <th class="p-3 rounded-tr-lg">Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody id="topic-table-body" class="divide-y divide-amber-100/30"></tbody>
+                        </table>
+                    </div>
+                    <div class="mt-5 pt-5 border-t border-amber-100/50 space-y-3 text-sm bg-amber-50/30 -mx-6 -mb-6 p-6 rounded-b-xl">
+                        <div class="flex items-start gap-3"><i class="fas fa-arrow-up text-emerald-500 mt-1 text-lg"></i> <div><span class="font-bold text-slate-800 block">Strongest Area</span> <span id="res-strongest" class="text-slate-600 font-medium"></span></div></div>
+                        <div class="flex items-start gap-3"><i class="fas fa-arrow-down text-rose-500 mt-1 text-lg"></i> <div><span class="font-bold text-slate-800 block">Weakest Area</span> <span id="res-weakest" class="text-slate-600 font-medium"></span></div></div>
+                        <div class="flex items-start gap-3"><i class="fas fa-crosshairs text-amber-500 mt-1 text-lg"></i> <div><span class="font-bold text-slate-800 block">Priority Fix</span> <span id="res-priority" class="text-slate-600 font-medium"></span></div></div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- LEADERBOARD SECTION -->
+            <div id="leaderboard-section" class="hidden analysis-card-gold p-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center border-b border-amber-100/50 pb-5 mb-4">
+                    <h3 class="text-2xl font-bold text-[#1e5086]"><i class="fas fa-trophy text-amber-500 mr-2"></i> Leaderboard – Only for ExamRojgaar MOCK Group Members</h3>
+                </div>
+                <div class="overflow-x-auto custom-scrollbar">
+                    <table class="w-full text-left text-sm text-slate-700 min-w-[800px]">
+                        <thead class="bg-[#1e5086] text-white font-bold text-xs uppercase tracking-wider">
+                            <tr>
+                                <th class="p-4 rounded-tl-lg text-center w-16">Rank</th>
+                                <th class="p-4">Name</th>
+                                <th class="p-4 text-center">Marks</th>
+                                <th class="p-4 text-center"><i class="fas fa-check text-emerald-300"></i> Correct</th>
+                                <th class="p-4 text-center"><i class="fas fa-times text-rose-300"></i> Wrong</th>
+                                <th class="p-4 text-center"><i class="fas fa-minus text-slate-300"></i> Skipped</th>
+                                <th class="p-4 text-center">Accuracy</th>
+                                <th class="p-4 text-center">Time</th>
+                                <th class="p-4 rounded-tr-lg text-center">Percentile</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body" class="divide-y divide-slate-200">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+ 
+            <!-- Deep Question Review -->
+            <div class="analysis-card-gold p-6 mt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center border-b border-amber-100/50 pb-5 mb-4">
+                    <h3 class="text-xl font-bold text-slate-800"><i class="fas fa-search-plus text-amber-500 mr-2"></i> Deep Question-wise Review</h3>
+                    <div class="mt-4 md:mt-0 bg-amber-50 p-1 rounded-lg flex text-sm font-semibold border border-amber-200/50">
+                        <button onclick="setAnalysisLang('en')" id="btn-al-en" class="px-5 py-1.5 rounded-md bg-white shadow-sm text-amber-700 transition-all">English</button>
+                        <button onclick="setAnalysisLang('hi')" id="btn-al-hi" class="px-5 py-1.5 rounded-md text-slate-500 hover:text-amber-700 transition-all">हिंदी</button>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="flex gap-2 md:gap-4 mb-6 overflow-x-auto pb-2" id="review-tabs-container">
+                    <button onclick="filterReview('all')" id="tab-all" class="filter-tab active px-5 py-2 rounded-full border border-slate-300 text-slate-700 font-bold whitespace-nowrap bg-slate-100 shadow-sm">All (25)</button>
+                    <button onclick="filterReview('correct')" id="tab-correct" class="filter-tab px-5 py-2 rounded-full border border-slate-300 text-slate-700 font-bold whitespace-nowrap bg-slate-50">Correct (0)</button>
+                    <button onclick="filterReview('wrong')" id="tab-wrong" class="filter-tab px-5 py-2 rounded-full border border-slate-300 text-slate-700 font-bold whitespace-nowrap bg-slate-50">Wrong (0)</button>
+                    <button onclick="filterReview('skipped')" id="tab-skipped" class="filter-tab px-5 py-2 rounded-full border border-slate-300 text-slate-700 font-bold whitespace-nowrap bg-slate-50">Skipped (0)</button>
+                </div>
+ 
+                <div id="questions-review-container" class="space-y-4"></div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-amber-50/80 to-[#fffdf5] p-10 rounded-2xl border border-amber-200/60 text-center mt-8 shadow-[inset_0_2px_10px_rgba(212,175,55,0.05)]">
+                <h3 class="text-2xl font-bold text-amber-900 mb-3">Want to master this mindset?</h3>
+                <p class="text-slate-600 mb-8 font-medium max-w-2xl mx-auto">Join our Telegram group where top doubt solvers and expert mentors guide you daily to achieve selection.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-900 font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg">
+                    Join ExamRojgaar MOCK <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+ 
+        </div>
+    </div>
+ 
+    <script>
+        const CURRENT_MOCK_ID = "ExamRojgaar_Railway_009_HC";
+        const CURRENT_MOCK_NAME = "Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS (Hard Challenge Series 1.0)";
+ 
+        function buildSolution(adminSol, approach, steps, elimination, answerStr, tip) {
+            return `
+            <div class='space-y-4 text-sm mt-4'>
+                <div><div class='font-bold text-[#1e5086] text-base mb-1'><i class='fas fa-user-shield'></i> 👨‍💻 Solution by Admins</div><div class='text-slate-800 bg-blue-50 p-3 rounded-lg border border-blue-100 whitespace-pre-line font-medium text-[15px] leading-relaxed'>${adminSol}</div></div>
+                <div><div class='font-bold text-amber-600 text-base mb-1'><i class='fas fa-bolt'></i> ⚡ Best Exam Approach</div><div class='text-slate-700 font-medium'>${approach}</div></div>
+                <div><div class='font-bold text-emerald-600 text-base mb-1'><i class='fas fa-brain'></i> 🧠 Step-by-Step Solution</div><div class='whitespace-pre-line text-slate-700 bg-slate-50 p-3 rounded border border-slate-200'>${steps}</div></div>
+                ${elimination ? `<div><div class='font-bold text-purple-600 text-base mb-1'><i class='fas fa-bullseye'></i> 🎯 Smart Elimination</div><div class='text-slate-700'>${elimination}</div></div>` : ''}
+                <div class='font-bold text-lg text-slate-800 bg-slate-100 inline-block px-4 py-2 rounded-lg border border-slate-300'>🏁 Final Answer: ${answerStr}</div>
+                <div class='bg-gradient-to-r from-amber-50 to-yellow-50 p-3 rounded-lg border border-amber-300 mt-2 shadow-sm'><span class='font-bold text-amber-800'>📌 Quick Tip:</span> <span class='text-amber-900 font-medium'>${tip}</span></div>
+                <div class='text-xs text-slate-500 italic mt-3 pt-3 border-t border-slate-200'>🔚 If you are not satisfied with this solution, you can join the link below. There you will find expert doubt solvers and admins who will guide you with the best possible approach. <br><a href='https://t.me/ExamRojgaar' target='_blank' class='text-[#3a78c4] font-bold hover:underline inline-block mt-1'>Join ExamRojgaar MOCK</a></div>
+            </div>`;
+        }
+ 
+        const questionsData = [
+           {
+    topic: "Polity",
+    subtopic: "Constitutional Amendments",
+    diff: 2,
+
+    q_en: "Which Constitutional Amendment Act is widely known as the 'Mini-Constitution' of India due to the massive number of changes it brought?",
+
+    q_hi: "किस संविधान संशोधन अधिनियम को किए गए व्यापक परिवर्तनों के कारण भारत का 'लघु संविधान (Mini-Constitution)' कहा जाता है?",
+
+    options_en: [
+        "44th Constitutional Amendment Act",
+        "42nd Constitutional Amendment Act",
+        "24th Constitutional Amendment Act",
+        "36th Constitutional Amendment Act"
+    ],
+
+    options_hi: [
+        "44वाँ संविधान संशोधन अधिनियम",
+        "42वाँ संविधान संशोधन अधिनियम",
+        "24वाँ संविधान संशोधन अधिनियम",
+        "36वाँ संविधान संशोधन अधिनियम"
+    ],
+
+    correct: 1,
+
+    sol_en: buildSolution(
+        "The 42nd Constitutional Amendment Act, 1976, is known as the 'Mini-Constitution' because it introduced extensive changes to the Constitution, including amendments to the Preamble, Fundamental Rights, Directive Principles of State Policy, and the powers of Parliament and the Judiciary.",
+
+        "Recall the nickname 'Mini-Constitution' directly with the 42nd Constitutional Amendment. This is a frequently asked one-liner in competitive exams.",
+
+        "• 42nd Constitutional Amendment Act was enacted in 1976.\n• It made the largest number of changes to the Constitution.\n• It added the words Socialist, Secular and Integrity to the Preamble.\n• Therefore, it is known as the 'Mini-Constitution'.",
+
+        "44th Amendment reversed several provisions of the 42nd Amendment but it is NOT called the Mini-Constitution.",
+
+        "Option B (42nd Constitutional Amendment Act)",
+
+        "Remember: 42 = Mini-Constitution, 44 = Corrective Amendment."
+    ),
+
+    sol_hi: buildSolution(
+        "42वाँ संविधान संशोधन अधिनियम, 1976 को 'लघु संविधान (Mini-Constitution)' कहा जाता है क्योंकि इसने संविधान में सबसे व्यापक परिवर्तन किए। इसके अंतर्गत प्रस्तावना, मौलिक अधिकार, राज्य के नीति-निर्देशक तत्व तथा संसद एवं न्यायपालिका से संबंधित अनेक प्रावधानों में संशोधन किया गया।",
+
+        "केवल इतना याद रखें कि 'Mini-Constitution' = 42वाँ संविधान संशोधन। यह प्रतियोगी परीक्षाओं का अत्यंत महत्वपूर्ण तथ्य है।",
+
+        "• 42वाँ संविधान संशोधन 1976 में पारित हुआ।\n• इसने संविधान में सबसे अधिक संशोधन किए।\n• प्रस्तावना में 'समाजवादी', 'पंथनिरपेक्ष' एवं 'अखंडता' शब्द जोड़े गए।\n• इसलिए इसे 'लघु संविधान' कहा जाता है।",
+
+        "44वें संशोधन ने 42वें संशोधन के कई प्रावधानों में परिवर्तन किया, लेकिन उसे 'लघु संविधान' नहीं कहा जाता।",
+
+        "विकल्प B (42वाँ संविधान संशोधन अधिनियम)",
+
+        "याद रखें: 42 = Mini-Constitution, 44 = Corrective Amendment."
+    )
+},
+            {
+                topic: "Algebra", subtopic: "Identities", diff: 1,
+                q_en: "The sum of the cubes of the numbers 55, −30 and −25 is equal to:",
+                q_hi: "55, −30 और −25 संख्याओं के घनों का योग कितना होगा?",
+                options_en: ["132570", "132750", "123570", "123750"],
+                options_hi: ["132570", "132750", "123570", "123750"],
+                correct: 3, 
+                sol_en: buildSolution("If a+b+c=0, then a³+b³+c³ = 3abc. Here 55+(-30)+(-25)=0. So, 3×55×(-30)×(-25) = 123750.", "Check if sum of bases is 0.", "a = 55, b = -30, c = -25\na + b + c = 55 - 30 - 25 = 0\nTherefore, a³ + b³ + c³ = 3abc\n= 3 × 55 × (-30) × (-25)\n= 165 × 750 = 123750.", null, "Option D (123750)", "Never calculate cubes manually if you see a combination like this."),
+                sol_hi: buildSolution("यदि a+b+c=0 है, तो a³+b³+c³ = 3abc. यहाँ 55+(-30)+(-25)=0. इसलिए, 3×55×(-30)×(-25) = 123750.", "जांचें कि क्या आधारों का योग 0 है।", "a = 55, b = -30, c = -25\na + b + c = 55 - 30 - 25 = 0\nइसलिए, a³ + b³ + c³ = 3abc\n= 3 × 55 × (-30) × (-25)\n= 165 × 750 = 123750.", null, "Option D (123750)", "यदि आप इस तरह का संयोजन देखते हैं तो कभी भी मैन्युअल रूप से घनों की गणना न करें।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Simplification", diff: 1,
+                q_en: "Simplify:\n25 − 5.6 ÷ 7 + 1.6 × 0.5",
+                q_hi: "निम्नलिखित को सरल कीजिए:\n25 − 5.6 ÷ 7 + 1.6 × 0.5",
+                options_en: ["5.6", "23.4", "0", "25"],
+                options_hi: ["5.6", "23.4", "0", "25"],
+                correct: 3, 
+                sol_en: buildSolution("BODMAS: Division first, then multiplication. 5.6/7 = 0.8. 1.6×0.5 = 0.8. 25 - 0.8 + 0.8 = 25.", "Follow BODMAS strictly.", "25 - (5.6 ÷ 7) + (1.6 × 0.5)\n= 25 - 0.8 + 0.8\n= 25", null, "Option D (25)", "Cancel out identical terms with opposite signs to save time."),
+                sol_hi: buildSolution("BODMAS: पहले भाग, फिर गुणा। 5.6/7 = 0.8. 1.6×0.5 = 0.8. 25 - 0.8 + 0.8 = 25.", "BODMAS का सख्ती से पालन करें।", "25 - (5.6 ÷ 7) + (1.6 × 0.5)\n= 25 - 0.8 + 0.8\n= 25", null, "Option D (25)", "समय बचाने के लिए विपरीत चिह्नों वाले समान पदों को रद्द करें।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Average", diff: 1,
+                q_en: "The average of the first 62 even natural numbers is:",
+                q_hi: "पहली 62 सम प्राकृतिक संख्याओं का औसत क्या है?",
+                options_en: ["61", "63", "62", "64"],
+                options_hi: ["61", "63", "62", "64"],
+                correct: 1, 
+                sol_en: buildSolution("Average of first 'n' even natural numbers is (n+1). Here n=62, so average is 63.", "Use direct formula n+1.", "The first n even numbers are 2, 4, 6... 2n.\nSum = n(n+1). Average = n(n+1)/n = n+1.\nAverage = 62 + 1 = 63.", null, "Option B (63)", "Average of first 'n' odd numbers is 'n', and for even it is 'n+1'."),
+                sol_hi: buildSolution("पहली 'n' सम प्राकृतिक संख्याओं का औसत (n+1) होता है। यहाँ n=62 है, इसलिए औसत 63 है।", "सीधा सूत्र n+1 का उपयोग करें।", "पहली n सम संख्याएं 2, 4, 6... 2n हैं।\nयोग = n(n+1)। औसत = n(n+1)/n = n+1.\nऔसत = 62 + 1 = 63.", null, "Option B (63)", "पहली 'n' विषम संख्याओं का औसत 'n' होता है, और सम के लिए यह 'n+1' होता है।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Percentage", diff: 2,
+                q_en: "Girish scored 831 marks in an examination and was 72 marks short of 35% of maximum marks. In the same examination, his friend scored 774 marks. What is the percentage of marks scored by his friend?",
+                q_hi: "गिरीश ने एक परीक्षा में 831 अंक प्राप्त किए और यह अधिकतम अंकों के 35% से 72 अंक कम था। उसी परीक्षा में उसके मित्र ने 774 अंक प्राप्त किए। उसके मित्र द्वारा प्राप्त अंकों का प्रतिशत क्या है?",
+                options_en: ["28%", "34%", "30%", "32%"],
+                options_hi: ["28%", "34%", "30%", "32%"],
+                correct: 2, 
+                sol_en: buildSolution("35% of max marks = 831 + 72 = 903. Max marks = 903 / 0.35 = 2580. Friend's % = (774/2580)×100 = 30%.", "Equate 35% to passing marks, find total, then calculate friend's %.", "Let Max Marks be M.\n35% of M = 831 + 72 = 903\nM = (903 × 100) / 35 = 2580\nFriend's marks = 774\nPercentage = (774 / 2580) × 100 = 30%", null, "Option C (30%)", "Find 1% value first (903/35 = 25.8) to make mental calculation easier."),
+                sol_hi: buildSolution("अधिकतम अंकों का 35% = 831 + 72 = 903. अधिकतम अंक = 903 / 0.35 = 2580. मित्र का % = (774/2580)×100 = 30%.", "पासिंग मार्क्स के बराबर 35% करें, कुल ज्ञात करें, फिर मित्र के % की गणना करें।", "माना अधिकतम अंक M है।\nM का 35% = 831 + 72 = 903\nM = (903 × 100) / 35 = 2580\nमित्र के अंक = 774\nप्रतिशत = (774 / 2580) × 100 = 30%", null, "Option C (30%)", "मानसिक गणना को आसान बनाने के लिए पहले 1% मान (903/35 = 25.8) ज्ञात करें।")
+            },
+            {
+                topic: "Number System", subtopic: "HCF & LCM", diff: 3,
+                q_en: "The number of ordered pairs of positive integral solutions (a, b) such that the HCF of a and b is 28 and a + b = 868 is:",
+                q_hi: "ऐसे क्रमबद्ध युग्म (a, b) की संख्या ज्ञात कीजिए, जहाँ a और b धनात्मक पूर्णांक हैं, जिनका HCF 28 है तथा a + b = 868 है।",
+                options_en: ["20", "25", "15", "30"],
+                options_hi: ["20", "25", "15", "30"],
+                correct: 3, 
+                sol_en: buildSolution("Let numbers be 28x and 28y. 28(x+y)=868 => x+y=31. Since 31 is prime, all 15 pairs are coprime. Ordered pairs = 15×2=30.", "Set up equation with coprime multiples of HCF.", "Numbers are 28x and 28y (x, y are coprime).\n28x + 28y = 868 => x + y = 31.\nPossible pairs for (x, y): (1,30), (2,29)...(15,16). Total 15 pairs.\nSince ordered pairs (a,b) are asked, (1,30) and (30,1) are distinct.\nTotal ordered pairs = 15 × 2 = 30.", null, "Option D (30)", "Read carefully: 'ordered pairs' means (a,b) and (b,a) count as two."),
+                sol_hi: buildSolution("माना संख्याएँ 28x और 28y हैं। 28(x+y)=868 => x+y=31. चूंकि 31 अभाज्य है, सभी 15 जोड़े सह-अभाज्य हैं। क्रमित युग्म = 15×2=30.", "HCF के सह-अभाज्य गुणकों के साथ समीकरण सेट करें।", "संख्याएँ 28x और 28y हैं (x, y सह-अभाज्य हैं)।\n28x + 28y = 868 => x + y = 31.\n(x, y) के लिए संभावित जोड़े: (1,30), (2,29)...(15,16)। कुल 15 जोड़े।\nचूंकि क्रमबद्ध जोड़े (a,b) पूछे गए हैं, (1,30) और (30,1) अलग-अलग हैं।\nकुल क्रमबद्ध जोड़े = 15 × 2 = 30.", null, "Option D (30)", "ध्यान से पढ़ें: 'ordered pairs' (क्रमबद्ध जोड़े) का अर्थ है कि (a,b) और (b,a) दो के रूप में गिने जाते हैं।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Simple Interest", diff: 1,
+                q_en: "At what rate (in percentage, rounded off to two decimal place) per year will a sum of money 5 times itself in 15 years on simple interest?",
+                q_hi: "किस वार्षिक दर (प्रतिशत में, दो दशमलव स्थान तक) पर कोई राशि 15 वर्षों में साधारण ब्याज पर अपनी 5 गुना हो जाएगी?",
+                options_en: ["26.67", "53.34", "28.67", "24.67"],
+                options_hi: ["26.67", "53.34", "28.67", "24.67"],
+                correct: 0, 
+                sol_en: buildSolution("Amount = 5P, so SI = 4P. R = (SI × 100)/(P × T) = 400/15 = 26.67%.", "Use R = 100(n-1)/T.", "Let Principal = P.\nAmount = 5P, so Interest = 4P.\nRate = (Interest × 100) / (P × Time)\nR = (4P × 100) / (P × 15) = 400 / 15 = 26.666...%\nRounding off to two decimal places: 26.67%", null, "Option A (26.67)", "Formula: R = 100(n-1)/T. For n=5, it's 400/15."),
+                sol_hi: buildSolution("राशि = 5P, इसलिए SI = 4P. R = (SI × 100)/(P × T) = 400/15 = 26.67%.", "R = 100(n-1)/T का प्रयोग करें।", "माना मूलधन = P.\nमिश्रधन = 5P, इसलिए ब्याज = 4P.\nदर = (ब्याज × 100) / (मूलधन × समय)\nR = (4P × 100) / (P × 15) = 400 / 15 = 26.666...%\nदो दशमलव स्थानों तक पूर्णांकन: 26.67%", null, "Option A (26.67)", "सूत्र: R = 100(n-1)/T. n=5 के लिए, यह 400/15 है।")
+            },
+            {
+                topic: "Algebra", subtopic: "Linear Equations", diff: 3,
+                q_en: "How many solutions for given three unknowns are possible to satisfy all these equations?\n\n−3α + 2β − 5γ = −14\n2α − 3β + 4γ = 10\nα + β + γ = 4",
+                q_hi: "दिए गए तीन अज्ञातों के लिए कितने हल संभव हैं जो निम्नलिखित सभी समीकरणों को संतुष्ट करते हैं?\n\n−3α + 2β − 5γ = −14\n2α − 3β + 4γ = 10\nα + β + γ = 4",
+                options_en: ["Unique solution", "Infinite solutions", "No solution", "Two solutions"],
+                options_hi: ["अद्वितीय हल (Unique solution)", "अनंत हल (Infinite solutions)", "कोई हल नहीं (No solution)", "दो हल (Two solutions)"],
+                correct: 1, 
+                sol_en: buildSolution("Adding eq1 and eq2 gives (-α - β - γ = -4) => α + β + γ = 4, which is exactly eq3. System has infinite solutions.", "Check if one equation is a linear combination of others.", "Eq 1: -3α + 2β - 5γ = -14\nEq 2: 2α - 3β + 4γ = 10\nAdd Eq 1 and Eq 2:\n(-3α + 2α) + (2β - 3β) + (-5γ + 4γ) = -14 + 10\n-α - β - γ = -4\nα + β + γ = 4 (This is identical to Eq 3)\nSince the third plane is dependent on the first two, there are infinite solutions.", null, "Option B (Infinite solutions)", "In 3-variable equations, if sum/difference of two gives the third, it means dependent equations -> infinite solutions."),
+                sol_hi: buildSolution("eq1और eq2 को जोड़ने पर (-α - β - γ = -4) => α + β + γ = 4 प्राप्त होता है, जो ठीक eq3 है। सिस्टम के अनंत हल हैं।", "जांचें कि क्या एक समीकरण दूसरों का रैखिक संयोजन है।", "समीकरण 1: -3α + 2β - 5γ = -14\nसमीकरण 2: 2α - 3β + 4γ = 10\nसमीकरण 1 और समीकरण 2 जोड़ें:\n(-3α + 2α) + (2β - 3β) + (-5γ + 4γ) = -14 + 10\n-α - β - γ = -4\nα + β + γ = 4 (यह समीकरण 3 के समान है)\nचूंकि तीसरा समतल पहले दो पर निर्भर है, इसलिए अनंत हल हैं।", null, "Option B (अनंत हल / Infinite solutions)", "3-चर समीकरणों में, यदि दो का योग/अंतर तीसरा देता है, तो इसका अर्थ है निर्भर समीकरण -> अनंत हल।")
+            },
+            {
+                topic: "Geometry", subtopic: "Polygons", diff: 2,
+                q_en: "If the sum of all the external angles of a regular polygon is two-thirds of all its interior angles, then the number of sides of the polygon is equal to:",
+                q_hi: "यदि किसी समबहुभुज के सभी बाह्य कोणों का योग, उसके सभी आंतरिक कोणों के योग का दो-तिहाई है, तो उस बहुभुज की भुजाओं की संख्या क्या होगी?",
+                options_en: ["6", "7", "4", "5"],
+                options_hi: ["6", "7", "4", "5"],
+                correct: 3, 
+                sol_en: buildSolution("Sum of Ext = 360°. Sum of Int = (n-2)180°. 360 = (2/3)(n-2)180 => 3 = n-2 => n=5.", "Use sum of interior and exterior angles formula.", "Sum of all external angles = 360°.\nSum of all internal angles = (n - 2) × 180°.\nGiven: 360° = (2/3) × (n - 2) × 180°\n360° = 120° × (n - 2)\n3 = n - 2\nn = 5.", null, "Option D (5)", "For a single vertex, Int + Ext = 180. The sums are directly proportional."),
+                sol_hi: buildSolution("बाहरी का योग = 360°. आंतरिक का योग = (n-2)180°. 360 = (2/3)(n-2)180 => 3 = n-2 => n=5.", "आंतरिक और बाहरी कोणों के योग सूत्र का प्रयोग करें।", "सभी बाहरी कोणों का योग = 360°.\nसभी आंतरिक कोणों का योग = (n - 2) × 180°.\nदिया गया है: 360° = (2/3) × (n - 2) × 180°\n360° = 120° × (n - 2)\n3 = n - 2\nn = 5.", null, "Option D (5)", "एकल शीर्ष (vertex) के लिए, Int + Ext = 180. योग सीधे आनुपातिक हैं।")
+            },
+            {
+                topic: "Geometry", subtopic: "Triangles", diff: 1,
+                q_en: "In a triangle PQR, ∠QOR = 130°, where O is the in-centre of triangle PQR. The measure of ∠QPR is:",
+                q_hi: "त्रिभुज PQR में, ∠QOR = 130° है, जहाँ O त्रिभुज PQR का अंतःकेंद्र (in-centre) है। ∠QPR का मान ज्ञात कीजिए।",
+                options_en: ["70°", "80°", "60°", "50°"],
+                options_hi: ["70°", "80°", "60°", "50°"],
+                correct: 1, 
+                sol_en: buildSolution("Incenter angle QOR = 90° + P/2. 130° = 90° + P/2 => P/2 = 40° => P = 80°.", "Direct incenter formula.", "Angle at incenter = 90° + (Opposite Angle / 2)\n∠QOR = 90° + (∠QPR / 2)\n130° = 90° + (∠QPR / 2)\n40° = ∠QPR / 2\n∠QPR = 80°", null, "Option B (80°)", "Incenter formula: 90 + A/2. Circumcenter formula: 2A."),
+                sol_hi: buildSolution("अंतःकेंद्र कोण QOR = 90° + P/2. 130° = 90° + P/2 => P/2 = 40° => P = 80°.", "सीधा अंतःकेंद्र सूत्र।", "अंतःकेंद्र पर कोण = 90° + (विपरीत कोण / 2)\n∠QOR = 90° + (∠QPR / 2)\n130° = 90° + (∠QPR / 2)\n40° = ∠QPR / 2\n∠QPR = 80°", null, "Option B (80°)", "अंतःकेंद्र सूत्र: 90 + A/2. परिकेंद्र (Circumcenter) सूत्र: 2A.")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Speed & Distance", diff: 3,
+                q_en: "A boat goes 20,000 m upstream and 44,000 m downstream in 8 hours while it goes 15,000 m upstream and 22,000 m downstream in 5 hours. The speed of boat in still water is:",
+                q_hi: "एक नाव 20,000 मीटर धारा के विपरीत (upstream) और 44,000 मीटर धारा के साथ (downstream) 8 घंटे में तय करती है, जबकि 15,000 मीटर upstream और 22,000 मीटर downstream 5 घंटे में तय करती है। स्थिर जल में नाव की गति क्या है?",
+                options_en: ["2 1/9 m/s", "3 4/9 m/s", "3 2/9 m/s", "2 2/9 m/s"],
+                options_hi: ["2 1/9 m/s", "3 4/9 m/s", "3 2/9 m/s", "2 2/9 m/s"],
+                correct: 3, 
+                sol_en: buildSolution("Let U=upstream, D=downstream in km/hr. 20/U + 44/D = 8, 15/U + 22/D = 5. Solving gives U=5, D=11. Still water = (11+5)/2 = 8 km/h = 2 2/9 m/s.", "Convert to km and hours for simpler numbers, then solve the linear pair.", "Let upstream speed = U km/hr, downstream = D km/hr.\nEq 1: 20/U + 44/D = 8 => 5/U + 11/D = 2\nEq 2: 15/U + 22/D = 5\nMultiply Eq 1 by 2: 10/U + 22/D = 4.\nSubtract from Eq 2: 5/U = 1 => U = 5 km/hr.\nSubstitute U: 1 + 11/D = 2 => D = 11 km/hr.\nBoat speed = (D + U) / 2 = (11 + 5) / 2 = 8 km/hr.\nConvert to m/s: 8 × (5/18) = 20/9 = 2 2/9 m/s.", null, "Option D (2 2/9 m/s)", "Always convert units at the end. Working with smaller numbers (km/h) makes simultaneous equations easier."),
+                sol_hi: buildSolution("माना U=upstream, D=downstream (किमी/घंटा में). 20/U + 44/D = 8, 15/U + 22/D = 5.हल करने पर U=5, D=11. स्थिर जल = (11+5)/2 = 8 किमी/घंटा = 2 2/9 मी/से.", "सरल संख्याओं के लिए किमी और घंटों में परिवर्तित करें, फिर रैखिक युग्म को हल करें।", "माना धारा के विपरीत गति = U किमी/घंटा, धारा के अनुकूल = D किमी/घंटा।\nसमीकरण 1: 20/U + 44/D = 8 => 5/U + 11/D = 2\nसमीकरण 2: 15/U + 22/D = 5\nसमीकरण 1 को 2 से गुणा करें: 10/U + 22/D = 4.\nसमीकरण 2 से घटाएं: 5/U = 1 => U = 5 किमी/घंटा।\nU का मान रखें: 1 + 11/D = 2 => D = 11 किमी/घंटा।\nनाव की गति = (D + U) / 2 = (11 + 5) / 2 = 8 किमी/घंटा।\nमी/से में बदलें: 8 × (5/18) = 20/9 = 2 2/9 मी/से।", null, "Option D (2 2/9 m/s)", "इकाइयों को हमेशा अंत में बदलें। छोटी संख्याओं (किमी/घंटा) के साथ काम करने से युगपत समीकरण आसान हो जाते हैं।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Simplification", diff: 1,
+                q_en: "Solve:\n88 + 26 − 42 + (17 × 2) + 33 ÷ 3 − 14 = ?",
+                q_hi: "निम्नलिखित को हल कीजिए:\n88 + 26 − 42 + (17 × 2) + 33 ÷ 3 − 14 = ?",
+                options_en: ["122", "104", "112", "103"],
+                options_hi: ["122", "104", "112", "103"],
+                correct: 3, 
+                sol_en: buildSolution("BODMAS: 88 + 26 - 42 + 34 + 11 - 14 = 114 - 42 + 34 - 3 = 103.", "Strictly follow Brackets, Division, Multiplication, Addition, Subtraction.", "88 + 26 - 42 + (17 × 2) + 33 ÷ 3 - 14\n= 88 + 26 - 42 + 34 + 11 - 14\n= 114 - 42 + 34 + 11 - 14\n= 72 + 34 + 11 - 14\n= 106 + 11 - 14 = 103.", null, "Option D (103)", "Solve brackets and division simultaneously in mental math to save time."),
+                sol_hi: buildSolution("BODMAS: 88 + 26 - 42 + 34 + 11 - 14 = 114 - 42 + 34 - 3 = 103.", "BODMAS का सख्ती से पालन करें।", "88 + 26 - 42 + (17 × 2) + 33 ÷ 3 - 14\n= 88 + 26 - 42 + 34 + 11 - 14\n= 114 - 42 + 34 + 11 - 14\n= 72 + 34 + 11 - 14\n= 106 + 11 - 14 = 103.", null, "Option D (103)", "समय बचाने के लिए मानसिक गणित में कोष्ठक और भाग एक साथ हल करें।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Ratio", diff: 1,
+                q_en: "Four numbers are in the ratio 1 : 2 : 3 : 4. Their sum is 16. Calculate the sum of the first and fourth numbers.",
+                q_hi: "चार संख्याएँ 1 : 2 : 3 : 4 के अनुपात में हैं और उनका योग 16 है। पहली और चौथी संख्या का योग ज्ञात कीजिए।",
+                options_en: ["9", "10", "7", "8"],
+                options_hi: ["9", "10", "7", "8"],
+                correct: 3, 
+                sol_en: buildSolution("1x + 2x + 3x + 4x = 10x = 16. First + Fourth = 5x = 8.", "Find value of 1 unit and calculate required sum.", "Sum of ratio parts = 1 + 2 + 3 + 4 = 10 parts.\n10 parts = 16\n1 part = 1.6\nFirst and Fourth sum = 1 part + 4 parts = 5 parts.\n5 parts = 5 × 1.6 = 8.", null, "Option D (8)", "Observe that 1st+4th = 5 parts, which is exactly half of total 10 parts. 16/2 = 8. Solved in 2 seconds."),
+                sol_hi: buildSolution("1x + 2x + 3x + 4x = 10x = 16. पहली + चौथी = 5x = 8.", "1 इकाई का मान ज्ञात करें और आवश्यक योग की गणना करें।", "अनुपात भागों का योग = 1 + 2 + 3 + 4 = 10 भाग।\n10 भाग = 16\n1 भाग = 1.6\nपहला और चौथा योग = 1 भाग + 4 भाग = 5 भाग।\n5 भाग = 5 × 1.6 = 8.", null, "Option D (8)", "ध्यान दें कि पहली + चौथी = 5 भाग है, जो कुल 10 भागों का ठीक आधा है। 16/2 = 8. यह 2 सेकंड में हल हो गया।")
+            },
+            {
+                topic: "Number System", subtopic: "Fractions", diff: 1,
+                q_en: "Which of the following is smaller than 0.79?",
+                q_hi: "निम्नलिखित में से कौन 0.79 से छोटा है?",
+                options_en: ["0.81̅", "0.88̅", "0.77̅", "0.82̅"],
+                options_hi: ["0.81̅", "0.88̅", "0.77̅", "0.82̅"],
+                correct: 2, 
+                sol_en: buildSolution("0.81..., 0.88..., 0.77..., 0.82.... Only 0.777... is smaller than 0.79.", "Expand the recurring decimals mentally.", "0.81̅ = 0.818181...\n0.88̅ = 0.888888...\n0.77̅ = 0.777777...\n0.82̅ = 0.828282...\nClearly, 0.777... is the only number smaller than 0.79.", null, "Option C (0.77̅)", "Don't convert to p/q form. Just compare the first two decimal places."),
+                sol_hi: buildSolution("0.81..., 0.88..., 0.77..., 0.82.... केवल 0.777... ही 0.79 से छोटा है।", "मानसिक रूप से आवर्ती (recurring) दशमलवों का विस्तार करें।", "0.81̅ = 0.818181...\n0.88̅ = 0.888888...\n0.77̅ = 0.777777...\n0.82̅ = 0.828282...\nस्पष्ट रूप से, केवल 0.777... 0.79 से छोटी संख्या है।", null, "Option C (0.77̅)", "p/q रूप में न बदलें। केवल पहले दो दशमलव स्थानों की तुलना करें।")
+            },
+            {
+                topic: "Data Interpretation", subtopic: "Tables", diff: 1,
+                q_en: "The table below shows the number of customers in 8 shops:\nA → 100, B → 800, C → 200, D → 450, E → 500, F → 600, G → 750, H → 700\n\nWhat is the total number of customers in A, B, C and H?",
+                q_hi: "नीचे दी गई तालिका में 8 दुकानों में ग्राहकों की संख्या दर्शाई गई है:\nA → 100, B → 800, C → 200, D → 450, E → 500, F → 600, G → 750, H → 700\n\nA, B, C तथा H में ग्राहकों की कुल संख्या क्या है?",
+                options_en: ["1800", "1600", "1400", "1900"],
+                options_hi: ["1800", "1600", "1400", "1900"],
+                correct: 0, 
+                sol_en: buildSolution("Sum = 100 (A) + 800 (B) + 200 (C) + 700 (H) = 1800.", "Read values carefully and add.", "A = 100\nB = 800\nC = 200\nH = 700\nTotal = 100 + 800 + 200 + 700 = 1800.", null, "Option A (1800)", "Unit digits and tens digits are zero, just add 1+8+2+7 = 18 -> 1800."),
+                sol_hi: buildSolution("योग = 100 (A) + 800 (B) + 200 (C) + 700 (H) = 1800.", "मानों को ध्यान से पढ़ें और जोड़ें।", "A = 100\nB = 800\nC = 200\nH = 700\nकुल = 100 + 800 + 200 + 700 = 1800.", null, "Option A (1800)", "इकाई और दहाई के अंक शून्य हैं, बस 1+8+2+7 = 18 -> 1800 जोड़ें।")
+            },
+            {
+                topic: "Number System", subtopic: "Divisibility", diff: 1,
+                q_en: "What is the remainder when 5837 is divided by 11?",
+                q_hi: "5837 को 11 से विभाजित करने पर शेषफल क्या होगा?",
+                options_en: ["1", "3", "7", "9"],
+                options_hi: ["1", "3", "7", "9"],
+                correct: 2, 
+                sol_en: buildSolution("Sum of odd places = 7+8=15. Sum of even places = 3+5=8. Difference = 7. So remainder is 7.", "Use the divisibility rule of 11.", "Number: 5837\nSum of digits at odd places (from right) = 7 + 8 = 15.\nSum of digits at even places = 3 + 5 = 8.\nDifference = 15 - 8 = 7.\nSince 7 < 11, the remainder when divided by 11 is 7.", null, "Option C (7)", "Divisibility rule of 11 directly gives the remainder if the difference is positive and less than 11."),
+                sol_hi: buildSolution("विषम स्थानों का योग = 7+8=15. सम स्थानों का योग = 3+5=8. अंतर = 7. इसलिए शेषफल 7 है।", "11 के विभाज्यता नियम का प्रयोग करें।", "संख्या: 5837\nविषम स्थानों (दाएं से) के अंकों का योग = 7 + 8 = 15.\nसम स्थानों के अंकों का योग = 3 + 5 = 8.\nअंतर = 15 - 8 = 7.\nचूंकि 7 < 11 है, इसलिए 11 से भाग देने पर शेषफल 7 है।", null, "Option C (7)", "यदि अंतर सकारात्मक और 11 से कम है, तो 11 का विभाज्यता नियम सीधे शेषफल देता है।")
+            },
+            {
+                topic: "Geometry", subtopic: "Circles", diff: 2,
+                q_en: "A chord of length 20 cm makes an angle of 90° at the center of a circle. Find the radius of the circle and the distance of this chord from the center.",
+                q_hi: "एक जीवा (chord) जिसकी लंबाई 20 सेमी है, वृत्त के केंद्र पर 90° का कोण बनाती है। वृत्त की त्रिज्या तथा केंद्र से जीवा की दूरी ज्ञात कीजिए।",
+                options_en: ["12√2 cm, 16 cm", "10√2 cm, 8 cm", "7√2 cm, 12 cm", "10√2 cm, 10 cm"],
+                options_hi: ["12√2 cm, 16 cm", "10√2 cm, 8 cm", "7√2 cm, 12 cm", "10√2 cm, 10 cm"],
+                correct: 3, 
+                sol_en: buildSolution("Isosceles right triangle formed by radii and chord. r² + r² = 20² => 2r²=400 => r=10√2. Distance = r/√2 = 10.", "Use Pythagoras theorem on the triangle formed by the center and the chord.", "Chord subtends 90° at center. Let radius be r.\nIn right ∆AOB, OA² + OB² = AB²\nr² + r² = 20² => 2r² = 400 => r² = 200 => r = 10√2 cm.\nDistance from center to chord is the perpendicular bisector.\nIt forms a right ∆ with hyp = 10√2, base = 10. \nPerpendicular = √((10√2)² - 10²) = √(200 - 100) = 10 cm.", null, "Option D (10√2 cm, 10 cm)", "For 90° at center, radius = (Chord)/√2 and distance = (Chord)/2."),
+                sol_hi: buildSolution("त्रिज्याओं और जीवा द्वारा बना समद्विबाहु समकोण त्रिभुज। r² + r² = 20² => 2r²=400 => r=10√2. दूरी = r/√2 = 10.", "केंद्र और जीवा द्वारा बने त्रिभुज पर पाइथागोरस प्रमेय का प्रयोग करें।", "जीवा केंद्र पर 90° का कोण बनाती है। माना त्रिज्या r है।\nसमकोण ∆AOB में, OA² + OB² = AB²\nr² + r² = 20² => 2r² = 400 => r² = 200 => r = 10√2 सेमी।\nकेंद्र से जीवा की दूरी लंब समद्विभाजक है।\nयह एक समकोण ∆ बनाता है जिसका कर्ण = 10√2, आधार = 10 है।\nलंब = √((10√2)² - 10²) = √(200 - 100) = 10 सेमी।", null, "Option D (10√2 cm, 10 cm)", "केंद्र पर 90° के लिए, त्रिज्या = (जीवा)/√2 और दूरी = (जीवा)/2.")
+            },
+            {
+                topic: "Algebra", subtopic: "Surds", diff: 1,
+                q_en: "Simplify:\n(√8 + √50) / √18 = ?",
+                q_hi: "निम्नलिखित को सरल कीजिए:\n(√8 + √50) / √18 = ?",
+                options_en: ["5/3", "9/7", "7/3", "5/11"],
+                options_hi: ["5/3", "9/7", "7/3", "5/11"],
+                correct: 2, 
+                sol_en: buildSolution("√8 = 2√2, √50 = 5√2, √18 = 3√2. (2√2 + 5√2)/3√2 = 7√2 / 3√2 = 7/3.", "Simplify each surd into multiples of √2.", "√8 = √(4×2) = 2√2\n√50 = √(25×2) = 5√2\n√18 = √(9×2) = 3√2\nNumerator = 2√2 + 5√2 = 7√2\nExpression = 7√2 / 3√2 = 7 / 3.", null, "Option C (7/3)", "Always break down surds to their simplest prime factors."),
+                sol_hi: buildSolution("√8 = 2√2, √50 = 5√2, √18 = 3√2. (2√2 + 5√2)/3√2 = 7√2 / 3√2 = 7/3.", "प्रत्येक करणी (surd) को √2 के गुणजों में सरल करें।", "√8 = √(4×2) = 2√2\n√50 = √(25×2) = 5√2\n√18 = √(9×2) = 3√2\nअंश = 2√2 + 5√2 = 7√2\nव्यंजक = 7√2 / 3√2 = 7 / 3.", null, "Option C (7/3)", "करणियों (surds) को हमेशा उनके सरलतम अभाज्य गुणनखंडों में तोड़ें।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Profit & Loss", diff: 2,
+                q_en: "A shopkeeper fixes the marked price of an item 180% above its cost price. What percentage of discount on marked price should be allowed to gain 152%?",
+                q_hi: "एक दुकानदार किसी वस्तु का अंकित मूल्य (Marked Price) বাংলাকে उसकी लागत मूल्य से 180% अधिक रखता है। 152% का लाभ प्राप्त करने के लिए अंकित मूल्य पर कितने प्रतिशत छूट देनी चाहिए?",
+                options_en: ["8%", "9%", "7%", "10%"],
+                options_hi: ["8%", "9%", "7%", "10%"],
+                correct: 3, 
+                sol_en: buildSolution("CP=100, MP=280. For 152% profit, SP=252. Discount = 28. %Discount = (28/280)×100 = 10%.", "Assume CP=100 and find MP and SP.", "Let Cost Price (CP) = 100.\nMarked Price (MP) is 180% above CP => MP = 100 + 180 = 280.\nRequired Profit = 152%, so Selling Price (SP) = 100 + 152 = 252.\nDiscount = MP - SP = 280 - 252 = 28.\nDiscount % = (Discount / MP) × 100 = (28 / 280) × 100 = 10%.", null, "Option D (10%)", "Ratio method: MP/CP = 280/100, SP/CP = 252/100. Discount factor = 252/280 = 9/10, meaning 10% discount."),
+                sol_hi: buildSolution("CP=100, MP=280. 152% लाभ के लिए, SP=252. छूट = 28. %छूट = (28/280)×100 = 10%.", "मान लीजिए CP=100 और MP तथा SP ज्ञात करें।", "माना लागत मूल्य (CP) = 100.\nअंकित मूल्य (MP) CP से 180% अधिक है => MP = 100 + 180 = 280.\nआवश्यक लाभ = 152%, इसलिए विक्रय मूल्य (SP) = 100 + 152 = 252.\nछूट = MP - SP = 280 - 252 = 28.\nछूट % = (छूट / MP) × 100 = (28 / 280) × 100 = 10%.", null, "Option D (10%)", "अनुपात विधि: MP/CP = 280/100, SP/CP = 252/100. छूट गुणक = 252/280 = 9/10, जिसका अर्थ है 10% छूट।")
+            },
+            {
+                topic: "Mensuration", subtopic: "Cones", diff: 3,
+                q_en: "A right circular cone has the ratio of slant height to radius as 29 : 20. The volume of the cone is (24192/5)π cm³. Find the curved surface area (in cm²) of the cone.",
+                q_hi: "एक समवृत्तीय शंकु (right circular cone) की तिर्यक ऊँचाई (slant height) और त्रिज्या का अनुपात 29 : 20 है। शंकु का आयतन (volume) (24192/5)π सेमी³ है। शंकु का वक्र पृष्ठीय क्षेत्रफल (curved surface area) ज्ञात कीजिए।",
+                options_en: ["823.4π", "832.3π", "829.5π", "835.2π"],
+                options_hi: ["823.4π", "832.3π", "829.5π", "835.2π"],
+                correct: 3, 
+                sol_en: buildSolution("l=29x, r=20x => h=21x. V = (1/3)π(20x)²(21x) = 2800π x³. Equating gives x=1.2. CSA = π(20x)(29x) = 580π x² = 835.2π.", "Identify the Pythagorean triplet 20, 21, 29.", "Ratio of l:r = 29:20. Let l=29x, r=20x.\nHeight h = √(l² - r²) = √(841x² - 400x²) = √441x² = 21x.\nVolume = 1/3 π r² h = 1/3 × π × 400x² × 21x = 2800π x³.\nGiven Volume = (24192/5)π.\n2800x³ = 24192/5 => x³ = 24192 / 14000 = 216 / 125 => x = 6/5 = 1.2.\nCSA = π r l = π × 20(1.2) × 29(1.2) = π × 24 × 34.8 = 835.2π cm².", null, "Option D (835.2π)", "Knowing triplets (20, 21, 29) instantly gives height. Keep π as it is until the end."),
+                sol_hi: buildSolution("l=29x, r=20x => h=21x. V = (1/3)π(20x)²(21x) = 2800π x³.बराबर करने पर x=1.2. CSA = π(20x)(29x) = 580π x² = 835.2π.", "पाइथागोरियन त्रिक (triplet) 20, 21, 29 को पहचानें।", "l:r का अनुपात = 29:20. माना l=29x, r=20x.\nऊँचाई h = √(l² - r²) = √(841x² - 400x²) = √441x² = 21x.\nआयतन = 1/3 π r² h = 1/3 × π × 400x² × 21x = 2800π x³.\nदिया गया आयतन = (24192/5)π.\n2800x³ = 24192/5 => x³ = 24192 / 14000 = 216 / 125 => x = 6/5 = 1.2.\nCSA = π r l = π × 20(1.2) × 29(1.2) = π × 24 × 34.8 = 835.2π सेमी².", null, "Option D (835.2π)", "त्रिक (20, 21, 29) जानने से ऊँचाई तुरंत मिल जाती है। π को अंत तक वैसे ही रहने दें।")
+            },
+            {
+                topic: "Mensuration", subtopic: "Spheres", diff: 2,
+                q_en: "Find the volume (in cm³) of a sphere having a diameter of 37.8 cm, giving your answer correct to two decimal places.\nTake π = 22/7",
+                q_hi: "37.8 सेमी व्यास वाले गोले का आयतन (cm³ में) ज्ञात कीजिए। अपना उत्तर दो दशमलव स्थान तक दीजिए।\nπ = 22/7 लें",
+                options_en: ["28281.03", "28291.03", "28311.03", "28301.03"],
+                options_hi: ["28281.03", "28291.03", "28311.03", "28301.03"],
+                correct: 1, 
+                sol_en: buildSolution("r = 18.9. V = (4/3)×(22/7)×(18.9)³ = 88/21 × 6751.269 = 28291.03", "Use exact sphere volume formula.", "Diameter = 37.8 cm => Radius = 18.9 cm.\nVolume = (4/3) × π × r³\n= (4/3) × (22/7) × 18.9 × 18.9 × 18.9\n= 88/21 × 6751.269 = 88 × 321.489\n= 28291.032 cm³.", null, "Option B (28291.03)", "Digit sum (Digital Root) can help verify complex multiplication if options are tricky."),
+                sol_hi: buildSolution("r = 18.9. V = (4/3)×(22/7)×(18.9)³ = 88/21 × 6751.269 = 28291.03", "सटीक गोला आयतन सूत्र का उपयोग करें।", "व्यास = 37.8 सेमी => त्रिज्या = 18.9 सेमी।\nआयतन = (4/3) × π × r³\n= (4/3) × (22/7) × 18.9 × 18.9 × 18.9\n= 88/21 × 6751.269 = 88 × 321.489\n= 28291.032 सेमी³.", null, "Option B (28291.03)", "यदि विकल्प पेचीदा हैं, तो अंक योग (डिजिटल रूट) जटिल गुणा को सत्यापित करने में मदद कर सकता है।")
+            },
+            {
+                topic: "Geometry", subtopic: "Polygons", diff: 2,
+                q_en: "Find the area of a regular hexagon whose side measures 14√3 cm.",
+                q_hi: "उस सम षट्भुज (regular hexagon) का क्षेत्रफल ज्ञात कीजिए जिसकी भुजा 14√3 सेमी है。",
+                options_en: ["509√3 cm²", "294√3 cm²", "882√3 cm²", "441√3 cm²"],
+                options_hi: ["509√3 cm²", "294√3 cm²", "882√3 cm²", "441√3 cm²"],
+                correct: 2, 
+                sol_en: buildSolution("Area = 6 × (√3/4)a² = (3√3/2) × (14√3)² = (3√3/2) × 588 = 882√3.", "Hexagon area is 6 times the area of an equilateral triangle.", "Side a = 14√3 cm.\nArea of regular hexagon = 6 × (√3 / 4) × a² = (3√3 / 2) × a²\n= (3√3 / 2) × (14√3)²\n= (3√3 / 2) × 196 × 3\n= (3√3 / 2) × 588\n= 3√3 × 294 = 882√3 cm².", null, "Option C (882√3 cm²)", "A regular hexagon is made of 6 equilateral triangles. 6 × (√3/4) × a²."),
+                sol_hi: buildSolution("क्षेत्रफल = 6 × (√3/4)a² = (3√3/2) × (14√3)² = (3√3/2) × 588 = 882√3.", "षट्भुज का क्षेत्रफल समबाहु त्रिभुज के क्षेत्रफल का 6 गुना होता है।", "भुजा a = 14√3 सेमी।\nसम षट्भुज का क्षेत्रफल = 6 × (√3 / 4) × a² = (3√3 / 2) × a²\n= (3√3 / 2) × (14√3)²\n= (3√3 / 2) × 196 × 3\n= (3√3 / 2) × 588\n= 3√3 × 294 = 882√3 सेमी².", null, "Option C (882√3 cm²)", "एक सम षट्भुज 6 समबाहु त्रिभुजों से बना होता है। 6 × (√3/4) × a².")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Partnership", diff: 1,
+                q_en: "A and B invest in a business in the ratio 3 : 2. If they earn a total profit of ₹25,000, then how much profit does B receive?",
+                q_hi: "A और B एक व्यवसाय में 3 : 2 के अनुपात में निवेश करते हैं। यदि कुल लाभ ₹25,000 है, तो B को कितना लाभ मिलेगा?",
+                options_en: ["₹12,000", "₹5,000", "₹10,000", "₹15,000"],
+                options_hi: ["₹12,000", "₹5,000", "₹10,000", "₹15,000"],
+                correct: 2, 
+                sol_en: buildSolution("Total = 5 parts = 25000. B = 2 parts = 10000.", "Distribute profit in investment ratio.", "Investment Ratio A : B = 3 : 2.\nTotal Profit = 3 parts + 2 parts = 5 parts.\n5 parts = ₹25,000.\n1 part = ₹5,000.\nB's share = 2 parts = 2 × 5,000 = ₹10,000.", null, "Option C (₹10,000)", "Profit ratio is directly proportional to investment ratio when time is same."),
+                sol_hi: buildSolution("कुल = 5 भाग = 25000. B = 2 भाग = 10000.", "लाभ को निवेश अनुपात में वितरित करें।", "निवेश अनुपात A : B = 3 : 2.\nकुल लाभ = 3 भाग + 2 भाग = 5 भाग।\n5 भाग = ₹25,000.\n1 भाग = ₹5,000.\nB का हिस्सा = 2 भाग = 2 × 5,000 = ₹10,000.", null, "Option C (₹10,000)", "जब समय समान हो तो लाभ अनुपात सीधे निवेश अनुपात के समानुपाती होता है।")
+            },
+            {
+                topic: "Arithmetic", subtopic: "Time & Work", diff: 2,
+                q_en: "A and B complete a work in 21 days. If A alone can do it in 28 days, then B alone can do three-fourth of the same work in ______ days.",
+                q_hi: "A और B मिलकर 21 दिनों में एक कार्य पूरा करते हैं। यदि A अकेले इसे 28 दिनों में कर सकता है, तो B अकेले उसी कार्य का तीन-चौथाई (3/4) भाग कितने दिनों में करेगा?",
+                options_en: ["35", "56", "63", "49"],
+                options_hi: ["35", "56", "63", "49"],
+                correct: 2, 
+                sol_en: buildSolution("Total work = LCM(21,28) = 84. A+B eff = 4. A eff = 3. B eff = 1. B takes 84 days. 3/4th work takes 63 days.", "Use LCM method for efficiency.", "Let Total Work be LCM of 21 and 28 = 84 units.\nEfficiency of (A + B) = 84 / 21 = 4 units/day.\nEfficiency of A = 84 / 28 = 3 units/day.\nEfficiency of B = (A + B) - A = 4 - 3 = 1 unit/day.\nTime for B to do whole work = 84 / 1 = 84 days.\nTime to do 3/4th of work = 84 × (3/4) = 63 days.", null, "Option C (63)", "Always find the 1-day efficiency of each person to solve easily."),
+                sol_hi: buildSolution("कुल कार्य = LCM(21,28) = 84. A+B क्षमता = 4. A क्षमता = 3. B क्षमता = 1. B 84 दिन लेता है। 3/4 कार्य 63 दिन लेगा।", "क्षमता के लिए LCM विधि का उपयोग करें।", "माना कुल कार्य 21 और 28 का LCM = 84 इकाइयाँ हैं।\n(A + B) की क्षमता = 84 / 21 = 4 इकाई/दिन।\nA की क्षमता = 84 / 28 = 3 इकाई/दिन।\nB की क्षमता = (A + B) - A = 4 - 3 = 1 इकाई/दिन।\nB को पूरा कार्य करने में लगा समय = 84 / 1 = 84 दिन।\n3/4 कार्य करने में लगा समय = 84 × (3/4) = 63 दिन।", null, "Option C (63)", "आसानी से हल करने के लिए हमेशा प्रत्येक व्यक्ति की 1-दिन की क्षमता ज्ञात करें।")
+            },
+            {
+                topic: "Trigonometry", subtopic: "Identities", diff: 2,
+                q_en: "If cosec A = 5/4, then find the value of 4 cot A sec A + 3.",
+                q_hi: "यदि cosec A = 5/4 है, तो 4 cot A sec A + 3 का मान ज्ञात कीजिए।",
+                options_en: ["6", "8", "3", "5"],
+                options_hi: ["6", "8", "3", "5"],
+                correct: 1, 
+                sol_en: buildSolution("cosec A = 5/4 => Hyp=5, Opp=4, Adj=3. cot A = 3/4, sec A = 5/3. 4(3/4)(5/3) + 3 = 5 + 3 = 8.", "Draw a right triangle and assign sides using the given ratio.", "Given: cosec A = 5/4 = Hypotenuse / Perpendicular.\nBy Pythagorean triplet (3, 4, 5), Base = 3.\ncot A = Base / Perpendicular = 3/4.\nsec A = Hypotenuse / Base = 5/3.\nSubstitute in expression: 4 × (3/4) × (5/3) + 3\n= 4 × (15/12) + 3\n= 5 + 3 = 8.", null, "Option B (8)", "Identify standard triplets like 3-4-5 instantly to avoid Pythagoras calculation."),
+                sol_hi: buildSolution("cosec A = 5/4 => कर्ण=5, लंब=4, आधार=3. cot A = 3/4, sec A = 5/3. 4(3/4)(5/3) + 3 = 5 + 3 = 8.", "एक समकोण त्रिभुज बनाएं और दिए गए अनुपात का उपयोग करके भुजाएं निर्दिष्ट करें।", "दिया गया है: cosec A = 5/4 = कर्ण / लंब।\nपाइथागोरियन त्रिक (3, 4, 5) द्वारा, आधार = 3.\ncot A = आधार / लंब = 3/4.\nsec A = कर्ण / आधार = 5/3.\nव्यंजक में मान रखें: 4 × (3/4) × (5/3) + 3\n= 4 × (15/12) + 3\n= 5 + 3 = 8.", null, "Option B (8)", "पाइथागोरस गणना से बचने के लिए मानक त्रिक (जैसे 3-4-5) को तुरंत पहचानें।")
+            }
+        ];
+ 
+        let activeQuestions = [...questionsData];
+        let isReattemptMode = false;
+        let reviewFilterState = 'all';
+ 
+        const TOTAL_TIME = 3* 60; // 13 minutes
+        let state = {
+            lang: 'en',
+            alLang: 'en',
+            currentIndex: 0,
+            timeLeft: TOTAL_TIME,
+            timerInterval: null,
+            answers: {}, 
+            status: Array(questionsData.length).fill('not-visited'), 
+            timeSpent: Array(questionsData.length).fill(0),
+            focuRailwayore: 100,
+            hasStarted: false,
+            isSubmitted: false
+        };
+ 
+        // Behaviour Tracking
+        let tabSwitches = 0;
+        let idleTimer = null;
+        let recentClicks = 0;
+        let clickTimer = null;
+        let isHistoryMode = false;
+        let activeHistoryAttempt = null;
+ 
+        // Safer Storage Handlers to prevent script crash on incognito/privacy mode
+        const safeStorage = {
+            get: function(k) { try { return localStorage.getItem(k); } catch(e) { return null; } },
+            set: function(k, v) { try { localStorage.setItem(k, v); } catch(e) {} },
+            remove: function(k) { try { localStorage.removeItem(k); } catch(e) {} }
+        };
+ 
+        function getHistory() {
+            try {
+                let data = safeStorage.get('ExamRojgaar_history');
+                if (!data || data === "undefined" || data === "null") return [];
+                let parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch(e) {
+                return [];
+            }
+        }
+ 
+        function saveAttemptToStorage(marks, acc, c, w, s) {
+            if(isReattemptMode) return; 
+            let history = getHistory();
+            let attemptData = {
+                id: Date.now(),
+                mockId: CURRENT_MOCK_ID,
+                mockName: CURRENT_MOCK_NAME,
+                date: new Date().toLocaleString(),
+                marks: marks,
+                accuracy: acc,
+                correct: c,
+                wrong: w,
+                skipped: s,
+                timeTaken: TOTAL_TIME - state.timeLeft,
+                answers: state.answers,
+                timeSpent: state.timeSpent,
+                status: state.status,
+                focuRailwayore: state.focuRailwayore,
+                questions: activeQuestions 
+            };
+            history.push(attemptData);
+            try { 
+                safeStorage.set('ExamRojgaar_history', JSON.stringify(history)); 
+            } catch(e) { 
+                // Fallback for QuotaExceededError
+                history.shift(); 
+                safeStorage.set('ExamRojgaar_history', JSON.stringify(history)); 
+            }
+        }
+ 
+        function saveProgress() {
+            if (!state.isSubmitted && state.hasStarted && !isHistoryMode && !isReattemptMode) {
+                safeStorage.set('ExamRojgaar_progress', JSON.stringify({ state: state, mockId: CURRENT_MOCK_ID }));
+            }
+        }
+        function clearProgress() { safeStorage.remove('ExamRojgaar_progress'); }
+ 
+        // Saved Questions Logic
+        function getSavedQuestions() {
+            try {
+                let data = safeStorage.get('ExamRojgaar_saved_questions');
+                if (!data || data === "undefined" || data === "null") return [];
+                let parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch(e) {
+                return [];
+            }
+        }
+        
+        function toggleSaveQuestion() {
+            let saved = getSavedQuestions();
+            const currentQ = activeQuestions[state.currentIndex];
+            if (!currentQ) return;
+            const qIdx = saved.findIndex(q => q.q_en === currentQ.q_en);
+            
+            if (qIdx > -1) {
+                saved.splice(qIdx, 1);
+            } else {
+                saved.push(currentQ);
+            }
+            safeStorage.set('ExamRojgaar_saved_questions', JSON.stringify(saved));
+            renderQuestion();
+        }
+ 
+        function openSavedQuestionsModal() {
+            renderSavedQuestionsList();
+            document.getElementById('saved-questions-modal').classList.remove('hidden');
+        }
+ 
+        function closeSavedQuestionsModal() {
+            document.getElementById('saved-questions-modal').classList.add('hidden');
+        }
+ 
+        function clearAllSavedQuestions() {
+            if(confirm("Are you sure you want to clear all saved questions?")) {
+                safeStorage.remove('ExamRojgaar_saved_questions');
+                renderSavedQuestionsList();
+            }
+        }
+ 
+        function removeSavedQuestion(index) {
+            let saved = getSavedQuestions();
+            saved.splice(index, 1);
+            safeStorage.set('ExamRojgaar_saved_questions', JSON.stringify(saved));
+            renderSavedQuestionsList();
+        }
+ 
+        function renderSavedQuestionsList() {
+            let saved = getSavedQuestions();
+            let html = '';
+            if (saved.length === 0) {
+                html = `<div class="text-slate-400 text-center py-10 font-medium">No saved questions found. Star questions during the mock to save them here!</div>`;
+            } else {
+                saved.forEach((q, index) => {
+                    let opts = q.options_en || [];
+                    let optHtml = '';
+                    opts.forEach((o, i) => {
+                        let isAc = (q.correct == i);
+                        let bg = isAc ? 'bg-emerald-50 border-emerald-300 font-bold text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-700';
+                        optHtml += `<div class="p-3 mb-2 rounded border ${bg} text-sm">${String.fromCharCode(65+i)}) ${o} ${isAc ? ' <i class="fas fa-check ml-2"></i>' : ''}</div>`;
+                    });
+                    
+                    let solText = q.sol_en ? q.sol_en.replace(/<[^>]*>?/gm, '') : 'No solution provided.';
+ 
+                    html += `
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative mb-4">
+                        <button onclick="removeSavedQuestion(${index})" class="absolute top-4 right-4 text-slate-400 hover:text-rose-500 transition"><i class="fas fa-trash"></i> Remove</button>
+                        <div class="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest">${q.topic || 'Misc'} - ${q.subtopic || ''}</div>
+                        <div class="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">${q.q_en || ''}</div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">${optHtml}</div>
+                        <div class="mt-4 border-t border-slate-100 pt-4">
+                            <div class="text-sm text-slate-600 font-medium bg-slate-50 p-3 rounded leading-relaxed whitespace-pre-line border border-slate-100">
+                                <i class="fas fa-lightbulb text-amber-500 mr-2"></i><b>Solution Approach:</b><br>${solText}
+                            </div>
+                        </div>
+                    </div>`;
+                });
+            }
+            document.getElementById('saved-questions-list').innerHTML = html;
+        }
+ 
+        // Init - Using DOMContentLoaded instead of window.onload to prevent blank screen on slow networks
+        document.addEventListener('DOMContentLoaded', () => {
+            window.addEventListener('beforeunload', (e) => {
+                if (state.hasStarted && !state.isSubmitted && !isHistoryMode) { e.preventDefault(); e.returnValue = ''; }
+            });
+            setupFocusTracking();
+            setupDragToClose();
+            setGlobalLanguage('en');
+ 
+            const dateEl = document.getElementById('current-date-display');
+            if(dateEl) {
+                const d = new Date();
+                dateEl.innerText = `${d.getDate().toString().padStart(2, '0')}/${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getFullYear()}`;
+            }
+ 
+            let savedName = safeStorage.get('ExamRojgaar_candidate_name');
+            if(savedName && document.getElementById('candidate-name')) {
+                document.getElementById('candidate-name').value = savedName;
+            }
+            let savedMember = safeStorage.get('ExamRojgaar_member_status');
+            if(savedMember) {
+                let rb = document.querySelector(`input[name="is_member"][value="${savedMember}"]`);
+                if(rb) rb.checked = true;
+            }
+ 
+            let savedProgress = safeStorage.get('ExamRojgaar_progress');
+            if (savedProgress) {
+                try {
+                    let parsed = JSON.parse(savedProgress);
+                    if (parsed.mockId === CURRENT_MOCK_ID) {
+                        let btn = document.querySelector("button[onclick='validateAndStart()']");
+                        if(btn) btn.innerText = "RESUME INCOMPLETE MOCK";
+                    }
+                } catch(e) {}
+            }
+            
+            const countElem = document.getElementById('count-not-visited');
+            if(countElem) countElem.innerText = questionsData.length;
+        });
+ 
+        function setGlobalLanguage(l) {
+            state.lang = l;
+            const btnEn = document.getElementById('lang-btn-en');
+            const btnHi = document.getElementById('lang-btn-hi');
+            if(btnEn) btnEn.className = l === 'en' ? 'px-4 py-1 rounded-full bg-gradient-to-r from-amber-200 to-yellow-400 text-slate-900 transition-colors' : 'px-4 py-1 rounded-full text-amber-200 hover:text-white transition-colors';
+            if(btnHi) btnHi.className = l === 'hi' ? 'px-4 py-1 rounded-full bg-gradient-to-r from-amber-200 to-yellow-400 text-slate-900 transition-colors' : 'px-4 py-1 rounded-full text-amber-200 hover:text-white transition-colors';
+        }
+ 
+        function validateAndStart() {
+            const nameInput = document.getElementById('candidate-name');
+            const name = nameInput ? nameInput.value.trim() : 'Guest';
+            const checked = document.getElementById('declaration-check') ? document.getElementById('declaration-check').checked : true;
+            
+            if (nameInput && !name) { showBehaviorAlert("Please enter your Candidate Name to begin.", 2000); return; }
+            if (!checked) { showBehaviorAlert("Please check the box to accept terms and conditions.", 2500); return; }
+            
+            safeStorage.set('ExamRojgaar_candidate_name', name);
+            const memberRadio = document.querySelector('input[name="is_member"]:checked');
+            if(memberRadio) safeStorage.set('ExamRojgaar_member_status', memberRadio.value);
+            
+            startCountdown();
+        }
+ 
+        function startCountdown() {
+            let savedProgress = safeStorage.get('ExamRojgaar_progress');
+            if (savedProgress) {
+                try {
+                    let parsed = JSON.parse(savedProgress);
+                    if (parsed && parsed.mockId === CURRENT_MOCK_ID && parsed.state) {
+                        state = parsed.state;
+                        // Protect against corrupted arrays in state
+                        if (!Array.isArray(state.status)) state.status = Array(questionsData.length).fill('not-visited');
+                        if (!Array.isArray(state.timeSpent)) state.timeSpent = Array(questionsData.length).fill(0);
+                        if (typeof state.answers !== 'object' || state.answers === null) state.answers = {};
+                        
+                        isHistoryMode = false;
+                        activeQuestions = questionsData;
+                        document.getElementById('home-screen').classList.add('hidden');
+                        document.getElementById('mock-screen').classList.remove('hidden');
+                        if(state.timerInterval) clearInterval(state.timerInterval);
+                        renderPalette(); renderQuestion(); resumeTimer();
+                        return; 
+                    }
+                } catch(e) {
+                    safeStorage.remove('ExamRojgaar_progress');
+                }
+            }
+            document.getElementById('countdown-overlay').classList.remove('hidden');
+            let count = 5; document.getElementById('countdown-number').innerText = count;
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) document.getElementById('countdown-number').innerText = count;
+                else { clearInterval(intv); document.getElementById('countdown-overlay').classList.add('hidden'); startMock(); }
+            }, 1000);
+        }
+ 
+        function startMock() {
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('mock-screen').classList.remove('hidden');
+            state.hasStarted = true; isHistoryMode = false;
+            activeQuestions = questionsData;
+            state.status[0] = 'not-answered';
+            
+            renderPalette(); renderQuestion(); saveProgress(); resumeTimer();
+        }
+ 
+        function startReattempt() {
+            let wrongQs = [];
+            activeQuestions.forEach((q, idx) => {
+                if (state.answers[idx] !== q.correct && state.answers[idx] !== undefined) {
+                    wrongQs.push({...q});
+                }
+            });
+            if(wrongQs.length === 0) return;
+ 
+            wrongQs.sort(() => Math.random() - 0.5); // Shuffle
+            activeQuestions = wrongQs;
+            
+            state.answers = {};
+            state.status = Array(activeQuestions.length).fill('not-visited');
+            state.status[0] = 'not-answered';
+            state.timeSpent = Array(activeQuestions.length).fill(0);
+            state.timeLeft = activeQuestions.length * 60; // 1 min per wrong question
+            state.currentIndex = 0;
+            state.isSubmitted = false;
+            state.hasStarted = true;
+            isReattemptMode = true;
+ 
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('mock-screen').classList.remove('hidden');
+            document.getElementById('mock-title-banner').innerText = "Railway SECTIONAL MOCKS - REATTEMPT MODE";
+            document.getElementById('section-title').innerText = "Reattempting Mistakes";
+            
+            renderPalette(); renderQuestion(); resumeTimer();
+        }
+ 
+        function resumeTimer() {
+            state.timerInterval = setInterval(() => {
+                state.timeLeft--;
+                state.timeSpent[state.currentIndex]++;
+                updateTimerDisplay();
+                if (state.timeLeft % 5 === 0) saveProgress(); 
+                if(state.timeSpent[state.currentIndex] === 60 && !state.answers[state.currentIndex]) showBehaviorAlert("Please do fast", 1500);
+                if(state.timeSpent[state.currentIndex] === 90) showBehaviorAlert("Stay calm & read carefully", 3000);
+                if (state.timeLeft <= 0) { clearInterval(state.timerInterval); autoSubmit(); }
+            }, 1000);
+        }
+ 
+        function toggleMockLanguage() { state.lang = state.lang === 'en' ? 'hi' : 'en'; renderQuestion(); }
+ 
+        function updateTimerDisplay() {
+            const m = Math.floor(state.timeLeft / 60); const s = state.timeLeft % 60;
+            document.getElementById('time-left').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            if (state.timeLeft === 180) {
+                const rf = document.getElementById('red-flash'); rf.className = 'red-flash-overlay';
+                setTimeout(() => rf.className = 'hidden', 1000);
+                document.getElementById('timer-display').className = 'text-sm md:text-xl font-mono font-bold bg-slate-900/80 px-2 md:px-4 py-1.5 rounded border flex items-center gap-1 md:gap-2 transition-colors pulse-red border-red-500 text-red-500';
+            }
+        }
+ 
+        function renderQuestion() {
+            try {
+                if (!activeQuestions || !activeQuestions[state.currentIndex]) return;
+                const q = activeQuestions[state.currentIndex];
+                const qText = state.lang === 'en' ? q.q_en : q.q_hi;
+                const options = state.lang === 'en' ? q.options_en : q.options_hi;
+                const sel = state.answers[state.currentIndex];
+                
+                let saved = getSavedQuestions();
+                let isSaved = saved && Array.isArray(saved) ? saved.some(sq => sq && sq.q_en === q.q_en) : false;
+     
+                let html = `
+                    <div class="mb-4 flex justify-between items-center border-b pb-4 border-slate-200">
+                        <div class="flex items-center gap-4">
+                            <span class="font-bold text-lg text-[#1e5086] bg-blue-50 px-3 py-1 rounded-sm border border-blue-200">Question ${state.currentIndex + 1}</span>
+                            <span class="text-xs font-bold text-gray-500">Marks: <span class="text-green-600">+2</span>, <span class="text-red-500">-0.5</span></span>
+                        </div>
+                        <button onclick="toggleSaveQuestion()" class="px-3 py-1.5 text-sm rounded border shadow-sm flex items-center gap-2 font-medium transition ${isSaved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-gray-300 text-gray-600 hover:bg-gray-50'}">
+                            <i class="fa-star ${isSaved ? 'fas text-amber-500' : 'far text-gray-400'}"></i> ${isSaved ? 'Saved' : 'Save Question'}
+                        </button>
+                    </div>
+                    <div class="text-[15px] text-gray-800 mb-6 leading-relaxed font-semibold whitespace-pre-wrap">${qText}</div><div class="space-y-2">`;
+     
+                if(Array.isArray(options)) {
+                    options.forEach((opt, idx) => {
+                        const isSelected = sel == idx;
+                        html += `
+                            <label class="option-box ${isSelected ? 'selected border-[#3a78c4] bg-[#f0f9ff]' : 'border-gray-300 bg-white'} flex items-center p-3 rounded-md cursor-pointer border hover:border-[#3a78c4] transition-colors">
+                                <input type="radio" name="q_opt" value="${idx}" ${isSelected ? 'checked' : ''} class="mr-4 w-4 h-4 accent-[#1e5086]" onclick="selectOption(${idx})">
+                                <span class="text-gray-800 text-[14px]">${String.fromCharCode(65+idx)}) ${opt}</span>
+                            </label>`;
+                    });
+                }
+                html += `</div>`;
+                document.getElementById('question-container').innerHTML = html;
+            } catch (err) {
+                console.error("Render Question Error: ", err);
+                safeStorage.remove('ExamRojgaar_progress');
+                document.getElementById('question-container').innerHTML = `<div class="text-red-500 font-bold p-4 bg-red-50 border border-red-200 rounded">Failed to load question due to corrupted session data. Please refresh the page to restart the mock.</div>`;
+            }
+        }
+ 
+        function selectOption(idx) { state.answers[state.currentIndex] = idx; renderQuestion(); saveProgress(); }
+ 
+        function updateStatusOnNavigate(isReview) {
+            const hasAns = state.answers[state.currentIndex] !== undefined;
+            if (isReview) state.status[state.currentIndex] = hasAns ? 'answered-marked' : 'marked';
+            else {
+                if (state.status[state.currentIndex] !== 'marked' && state.status[state.currentIndex] !== 'answered-marked') state.status[state.currentIndex] = hasAns ? 'answered' : 'not-answered';
+                else if (!isReview && hasAns) state.status[state.currentIndex] = 'answered';
+            }
+            saveProgress();
+        }
+ 
+        function saveAndNext() { updateStatusOnNavigate(false); goNext(); }
+        function markForReviewAndNext() { updateStatusOnNavigate(true); goNext(); }
+        function clearResponse() { delete state.answers[state.currentIndex]; state.status[state.currentIndex] = 'not-answered'; renderQuestion(); renderPalette(); saveProgress(); }
+ 
+        function goNext() {
+            if (state.currentIndex < activeQuestions.length - 1) {
+                state.currentIndex++;
+                if (state.status[state.currentIndex] === 'not-visited') state.status[state.currentIndex] = 'not-answered';
+                renderQuestion(); renderPalette();
+            }
+        }
+ 
+        function goToQuestion(idx) {
+            updateStatusOnNavigate(false); state.currentIndex = idx;
+            if (state.status[idx] === 'not-visited') state.status[idx] = 'not-answered';
+            renderQuestion(); renderPalette();
+            if(window.innerWidth < 768) toggleMobilePalette();
+        }
+ 
+        function renderPalette() {
+            let counts = { 'answered':0, 'not-answered':0, 'not-visited':0, 'marked':0, 'answered-marked':0 };
+            let html = '';
+            state.status.forEach((st, idx) => {
+                if (counts[st] !== undefined) counts[st]++;
+                const isCurrent = state.currentIndex === idx;
+                let btnClass = `btn-${st}`;
+                let borderPulse = isCurrent ? 'ring-2 ring-offset-2 ring-[#3a78c4] scale-110 shadow-lg z-10' : 'shadow-sm';
+                html += `<button onclick="goToQuestion(${idx})" class="w-[38px] h-[35px] rounded-sm text-sm font-bold transition-all duration-200 ${btnClass} ${borderPulse}">${idx + 1}</button>`;
+            });
+            document.getElementById('palette-grid').innerHTML = html;
+            document.getElementById('count-answered').innerText = counts['answered'];
+            document.getElementById('count-not-answered').innerText = counts['not-answered'];
+            document.getElementById('count-not-visited').innerText = counts['not-visited'];
+            document.getElementById('count-marked').innerText = counts['marked'];
+            document.getElementById('count-answered-marked').innerText = counts['answered-marked'];
+        }
+ 
+        function toggleMobilePalette() {
+            const panel = document.getElementById('palette-panel'); const overlay = document.getElementById('palette-overlay');
+            if (panel.classList.contains('translate-x-full')) { panel.classList.remove('translate-x-full'); overlay.classList.remove('hidden'); } 
+            else { panel.classList.add('translate-x-full'); overlay.classList.add('hidden'); }
+        }
+ 
+        function setupFocusTracking() {
+            window.addEventListener('blur', () => {
+                if(state.hasStarted && !state.isSubmitted && !isHistoryMode) { tabSwitches++; state.focuRailwayore = Math.max(0, state.focuRailwayore - 10); showBehaviorAlert("Stay focused on the test", 2000); }
+            });
+            const resetIdle = () => {
+                clearTimeout(idleTimer);
+                if(state.hasStarted && !state.isSubmitted && !isHistoryMode) {
+                    idleTimer = setTimeout(() => { state.focuRailwayore = Math.max(0, state.focuRailwayore - 5); showBehaviorAlert("Focus on the question", 2000); }, 20000);
+                }
+            };
+            window.addEventListener('mousemove', resetIdle); window.addEventListener('click', resetIdle); window.addEventListener('keypress', resetIdle);
+            window.addEventListener('click', () => {
+                if(state.hasStarted && !state.isSubmitted && !isHistoryMode) {
+                    recentClicks++;
+                    if(recentClicks >= 4) { state.focuRailwayore = Math.max(0, state.focuRailwayore - 5); showBehaviorAlert("Stay calm & read carefully", 2000); }
+                    clearTimeout(clickTimer); clickTimer = setTimeout(() => { recentClicks = 0; }, 2000);
+                }
+            });
+        }
+ 
+        function setupDragToClose() {
+            let touchStartY = 0; let isDraggingDown = false;
+            const dragOverlay = document.getElementById('drag-close-overlay'); const dragProgress = document.getElementById('drag-progress-bar');
+            const mockScreen = document.getElementById('mock-screen'); const qContainer = document.getElementById('question-container');
+ 
+            mockScreen.addEventListener('touchstart', (e) => { if (qContainer.scrollTop === 0 && window.innerWidth < 768) { touchStartY = e.touches[0].clientY; isDraggingDown = true; } }, {passive: true});
+            mockScreen.addEventListener('touchmove', (e) => {
+                if (!isDraggingDown) return;
+                let deltaY = e.touches[0].clientY - touchStartY;
+                if (deltaY > 80) {
+                    dragOverlay.classList.remove('hidden');
+                    let progress = Math.min(((deltaY - 80) / (window.innerHeight * 0.8)) * 100, 100);
+                    dragProgress.style.width = `${progress}%`;
+                    if (progress >= 100) { isDraggingDown = false; dragOverlay.classList.add('hidden'); dragProgress.style.width = '0%'; confirmSubmit(); }
+                }
+            }, {passive: true});
+            mockScreen.addEventListener('touchend', () => { isDraggingDown = false; dragOverlay.classList.add('hidden'); dragProgress.style.width = '0%'; });
+        }
+ 
+        function showBehaviorAlert(msg, duration = 1500) {
+            const el = document.getElementById('behavior-alert'); el.innerText = msg; el.classList.remove('hidden');
+            setTimeout(() => el.classList.add('hidden'), duration);
+        }
+ 
+        function confirmSubmit() { document.getElementById('confirm-modal').classList.remove('hidden'); }
+        function closeConfirmModal() { document.getElementById('confirm-modal').classList.add('hidden'); }
+        function autoSubmit() { closeConfirmModal(); executeSubmit(true); }
+ 
+        let telegramClicked = false;
+        function executeSubmit(isAuto = false) {
+            if (state.isSubmitted) return; 
+            if(!isAuto) document.getElementById('confirm-btn-text').innerText = "Submitting...";
+            clearInterval(state.timerInterval); state.isSubmitted = true; updateStatusOnNavigate(false);
+            
+            clearProgress();
+            
+            // Generate Result
+            generateResult(false);
+ 
+            // Navigate to next screen
+            setTimeout(() => {
+                closeConfirmModal(); document.getElementById('mock-screen').classList.add('hidden');
+                const rf = document.getElementById('red-flash'); rf.className = 'red-flash-overlay';
+                setTimeout(() => {
+                    rf.className = 'hidden'; document.getElementById('bouquet-screen').classList.remove('hidden');
+                    setTimeout(() => { document.getElementById('bouquet-screen').classList.add('hidden'); document.getElementById('telegram-gate-screen').classList.remove('hidden'); }, 1);
+                }, 1);
+            }, 1);
+        }
+ 
+        function proceedToResult() {
+            if(!telegramClicked) alert("Please click the link to join ExamRojgaar MOCK first.");
+            document.getElementById('telegram-gate-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+        }
+ 
+        function openHistoryDashboard() {
+            let history = getHistory(); let listHtml = '';
+            if (history.length === 0) listHtml = `<div class="text-slate-400 text-center py-10 font-medium">No previous attempts found. Start a mock test!</div>`;
+            else {
+                [...history].reverse().forEach((attempt, index) => {
+                    let maxM = (attempt.questions ? attempt.questions.length : 13) * 2;
+                    listHtml += `
+                    <div class="bg-slate-700/50 border border-slate-600 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 hover:bg-slate-700 transition">
+                        <div><div class="text-amber-300 font-bold text-lg mb-1">${attempt.mockName || CURRENT_MOCK_NAME} <span class="text-sm font-normal text-amber-200/50">(Attempt #${history.length - index})</span></div><div class="text-slate-300 text-sm"><i class="far fa-calendar-alt"></i> ${attempt.date}</div></div>
+                        <div class="flex gap-6 text-center"><div><div class="text-xs text-slate-400 uppercase">Score</div><div class="text-xl font-bold text-sky-400">${attempt.marks}/${maxM}</div></div><div><div class="text-xs text-slate-400 uppercase">Accuracy</div><div class="text-xl font-bold text-emerald-400">${attempt.accuracy}%</div></div></div>
+                        <button onclick="loadHistoryAttempt(${attempt.id})" class="px-5 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition">View Analysis</button>
+                    </div>`;
+                });
+            }
+            document.getElementById('history-list').innerHTML = listHtml; document.getElementById('history-modal').classList.remove('hidden');
+        }
+        function closeHistoryDashboard() { document.getElementById('history-modal').classList.add('hidden'); }
+ 
+        function loadHistoryAttempt(id) {
+            let attempt = getHistory().find(a => a.id === id);
+            if(attempt) {
+                state.answers = attempt.answers; state.timeSpent = attempt.timeSpent; state.status = attempt.status; state.focuRailwayore = attempt.focuRailwayore || 100; state.timeLeft = TOTAL_TIME - attempt.timeTaken;
+                activeQuestions = attempt.questions || questionsData; activeHistoryAttempt = attempt; isHistoryMode = true; isReattemptMode = false;
+                closeHistoryDashboard(); document.getElementById('home-screen').classList.add('hidden'); document.getElementById('result-screen').classList.remove('hidden');
+                generateResult(true);
+            }
+        }
+ 
+        function calculateRankPercentile(marks) {
+            let maxMarks = activeQuestions.length * 2; const S = marks / maxMarks;
+            let percentile = 0; let rank = 1;
+            if (S >= 0.9) { percentile = 99 + (S - 0.9) * 10; rank = 50 - (S - 0.9) * 490; }
+            else if (S >= 0.7) { percentile = 85 + (S - 0.7) * 70; rank = 500 - (S - 0.7) * 2250; }
+            else if (S >= 0.5) { percentile = 60 + (S - 0.5) * 125; rank = 2500 - (S - 0.5) * 10000; }
+            else if (S >= 0.2) { percentile = 30 + (S - 0.2) * 100; rank = 4500 - (S - 0.2) * 6666; }
+            else { percentile = Math.max(0, S) * 150; rank = 5000 - Math.max(0, S) * 2500; }
+            return { pct: Math.min(100, Math.max(0, percentile)).toFixed(2), rank: Math.max(1, Math.round(rank)) };
+        }
+ 
+        function setAnalysisLang(l) {
+            state.alLang = l;
+            document.getElementById('btn-al-en').className = l === 'en' ? 'px-5 py-1.5 rounded-md bg-white shadow-sm text-amber-700 transition-all' : 'px-5 py-1.5 rounded-md text-slate-500 hover:text-amber-700 transition-all';
+            document.getElementById('btn-al-hi').className = l === 'hi' ? 'px-5 py-1.5 rounded-md bg-white shadow-sm text-amber-700 transition-all' : 'px-5 py-1.5 rounded-md text-slate-500 hover:text-amber-700 transition-all';
+            renderQuestionReview();
+        }
+ 
+        function filterReview(type) {
+            reviewFilterState = type;
+            document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active', 'bg-amber-500', 'text-white'));
+            document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.add('bg-slate-50', 'text-slate-700'));
+            
+            const activeBtn = document.getElementById(`tab-${type}`);
+            activeBtn.classList.remove('bg-slate-50', 'text-slate-700');
+            activeBtn.classList.add('active', 'bg-amber-500', 'text-white');
+            renderQuestionReview();
+        }
+ 
+        let topicsAnalysis = {};
+ 
+        function generateLeaderboardData(userMarks, userAcc, userTime, userC, userW, userS) {
+            let dummy = [
+                { name: "Vikash Kumar", marks: 50, c: 25, w: 0, s: 0, acc: 100, time: 640 },
+                { name: "Priya Sharma", marks: 47.5, c: 24, w: 1, s: 0, acc: 96, time: 710 },
+                { name: "Ravi Teja", marks: 45.5, c: 23, w: 1, s: 1, acc: 95.8, time: 690 },
+                { name: "Anjali Gupta", marks: 45, c: 23, w: 2, s: 0, acc: 92, time: 750 },
+                { name: "Sumit Yadav", marks: 42.5, c: 22, w: 3, s: 0, acc: 88, time: 730 },
+                { name: "Neha Singh", marks: 40, c: 21, w: 4, s: 0, acc: 84, time: 760 },
+                { name: "Rahul Verma", marks: 38.5, c: 20, w: 3, s: 2, acc: 86.9, time: 700 },
+                { name: "Kunal Das", marks: 35, c: 18, w: 2, s: 5, acc: 90, time: 650 },
+                { name: "Simran Kaur", marks: 31.5, c: 17, w: 9, s: 0, acc: 65.3, time: 770 },
+                { name: "Aman Jain", marks: 28, c: 15, w: 4, s: 6, acc: 78.9, time: 715 }
+            ];
+ 
+            const memberStatus = safeStorage.get('ExamRojgaar_member_status');
+            const candidateName = safeStorage.get('ExamRojgaar_candidate_name') || "You";
+ 
+            if (memberStatus === 'Yes' && !isReattemptMode) {
+                dummy.push({
+                    name: candidateName + " (You)",
+                    marks: userMarks,
+                    c: userC,
+                    w: userW,
+                    s: userS,
+                    acc: userAcc,
+                    time: userTime,
+                    isUser: true
+                });
+            }
+ 
+            dummy.sort((a, b) => b.marks - a.marks || a.time - b.time);
+            let finalLeaderboard = dummy.slice(0, 10);
+            
+            let lbHtml = '';
+            finalLeaderboard.forEach((player, index) => {
+                let rnk = index + 1;
+                let pct = calculateRankPercentile(player.marks).pct;
+                let mins = Math.floor(player.time / 60);
+                let secs = player.time % 60;
+                let timeStr = `${mins}m ${secs}s`;
+ 
+                let rowClass = player.isUser ? 'leaderboard-row highlight-user' : 'leaderboard-row';
+                let rankBadge = rnk === 1 ? '🥇' : (rnk === 2 ? '🥈' : (rnk === 3 ? '🥉' : rnk));
+ 
+                lbHtml += `
+                <tr class="${rowClass}">
+                    <td class="p-3 text-center font-bold text-slate-800 text-[15px]">${rankBadge}</td>
+                    <td class="p-3 font-semibold text-[#1e5086]">${player.name}</td>
+                    <td class="p-3 text-center font-bold text-amber-600">${player.marks}</td>
+                    <td class="p-3 text-center font-medium text-emerald-600">${player.c}</td>
+                    <td class="p-3 text-center font-medium text-rose-500">${player.w}</td>
+                    <td class="p-3 text-center font-medium text-slate-500">${player.s}</td>
+                    <td class="p-3 text-center font-bold text-slate-700">${player.acc}%</td>
+                    <td class="p-3 text-center font-mono text-sm">${timeStr}</td>
+                    <td class="p-3 text-center font-bold text-sky-600">${pct}%</td>
+                </tr>`;
+            });
+ 
+            document.getElementById('leaderboard-body').innerHTML = lbHtml;
+ 
+            if (!isReattemptMode) {
+                document.getElementById('leaderboard-section').classList.remove('hidden');
+            } else {
+                document.getElementById('leaderboard-section').classList.add('hidden');
+            }
+        }
+ 
+        function generateResult(isHistory = false) {
+            let correct = 0, wrong = 0, skipped = 0;
+            let fastWrong = 0, slowWrong = 0, slowCorrect = 0;
+            topicsAnalysis = {};
+ 
+            activeQuestions.forEach((q, idx) => {
+                let ans = state.answers[idx]; let isCorrect = (ans == q.correct);
+                if (ans === undefined) skipped++; else if (isCorrect) correct++; else wrong++;
+ 
+                let idealNum = q.diff === 1 ? 10 : (q.diff === 2 ? 25 : 30);
+                let t = state.timeSpent[idx] || 0;
+                if (ans !== undefined && !isCorrect && t <= idealNum) fastWrong++;
+                if (ans !== undefined && !isCorrect && t > idealNum) slowWrong++;
+                if (isCorrect && t > idealNum) slowCorrect++;
+ 
+                if(!topicsAnalysis[q.topic]) topicsAnalysis[q.topic] = { tot: 0, att: 0, cor: 0, time: 0 };
+                topicsAnalysis[q.topic].tot++; topicsAnalysis[q.topic].time += t;
+                if (ans !== undefined) topicsAnalysis[q.topic].att++;
+                if (isCorrect) topicsAnalysis[q.topic].cor++;
+            });
+ 
+            document.getElementById('tab-all').innerText = `All (${activeQuestions.length})`;
+            document.getElementById('tab-correct').innerText = `Correct (${correct})`;
+            document.getElementById('tab-wrong').innerText = `Wrong (${wrong})`;
+            document.getElementById('tab-skipped').innerText = `Skipped (${skipped})`;
+ 
+            if (wrong > 0 && !isReattemptMode) document.getElementById('btn-reattempt').classList.remove('hidden');
+            else document.getElementById('btn-reattempt').classList.add('hidden');
+ 
+            let maxMarks = activeQuestions.length * 2; let marks = (correct * 2) - (wrong * 0.5);
+            let acc = (correct + wrong) > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
+            let rp = calculateRankPercentile(marks);
+            let timeTakenSec = TOTAL_TIME - state.timeLeft;
+ 
+            document.getElementById('res-mock-name').innerText = (isHistory && activeHistoryAttempt) ? activeHistoryAttempt.mockName : (isReattemptMode ? "Railway SECTIONAL MOCKS - REATTEMPT" : CURRENT_MOCK_NAME);
+ 
+            let history = getHistory();
+            if (!isHistory && !isReattemptMode) {
+                let prevAttempt = history.length > 0 ? history[history.length - 1] : null;
+                saveAttemptToStorage(marks, acc, correct, wrong, skipped); 
+                
+                let motHtml = '';
+                if (prevAttempt) {
+                    let diffMarks = marks - prevAttempt.marks;
+                    let diffAcc = acc - prevAttempt.accuracy;
+                    if (diffMarks > 0) {
+                        motHtml = `<div class="bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 p-5 rounded-2xl shadow-sm flex items-center gap-4">
+                            <div class="bg-white p-2 rounded-full shadow-sm"><i class="fas fa-arrow-trend-up text-2xl text-emerald-500"></i></div>
+                            <div><div class="font-bold text-emerald-800 text-lg">Great Progress! <span class="text-sm bg-emerald-200 px-2 rounded ml-2">+${diffMarks} Marks</span></div><div class="text-emerald-700 font-medium text-sm mt-1">Accuracy improved by ${diffAcc > 0 ? '+'+diffAcc : diffAcc}%. Keep this momentum!</div></div>
+                        </div>`;
+                    } else if (diffMarks < 0) {
+                        motHtml = `<div class="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 p-5 rounded-2xl shadow-sm flex items-center gap-4">
+                            <div class="bg-white p-2 rounded-full shadow-sm"><i class="fas fa-fire text-2xl text-orange-500"></i></div>
+                            <div><div class="font-bold text-orange-800 text-lg">Keep Pushing! <span class="text-sm bg-orange-200 px-2 rounded ml-2">${diffMarks} Marks</span></div><div class="text-orange-700 font-medium text-sm mt-1">Score dropped slightly. Analyze your 'Fast & Wrong' mistakes below to bounce back!</div></div>
+                        </div>`;
+                    } else {
+                        motHtml = `<div class="bg-slate-100 border border-slate-300 p-4 rounded-xl text-slate-700 font-semibold flex items-center gap-3"><i class="fas fa-equals text-slate-500"></i> Score maintained. Let's push for a jump in the next mock!</div>`;
+                    }
+                }
+                document.getElementById('historical-motivation').innerHTML = motHtml;
+            } else if (isReattemptMode) {
+                document.getElementById('historical-motivation').innerHTML = `<div class="bg-rose-50 border border-rose-200 p-4 rounded-xl text-rose-700 font-semibold flex items-center gap-3"><i class="fas fa-redo text-rose-500"></i> Reattempt Analysis: Let's see if you fixed those concepts!</div>`;
+            } else {
+                document.getElementById('historical-motivation').innerHTML = `<div class="bg-slate-100 border border-slate-300 p-4 rounded-xl text-slate-700 font-semibold flex items-center gap-3"><i class="fas fa-history text-slate-500"></i> Viewing Past Attempt Analysis</div>`;
+            }
+ 
+            document.getElementById('res-score').innerText = `${marks}/${maxMarks}`;
+            document.getElementById('res-rank').innerText = rp.rank;
+            document.getElementById('res-percentile').innerText = `${rp.pct}%`;
+            document.getElementById('res-accuracy-txt').innerText = `${acc}%`;
+            setTimeout(() => { document.getElementById('res-accuracy-bar').style.width = `${acc}%`; }, 200);
+            document.getElementById('res-total-q').innerText = activeQuestions.length; document.getElementById('res-attempted').innerText = correct + wrong;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-incorrect').innerText = wrong;
+            document.getElementById('res-skipped').innerText = skipped;
+            
+            generateLeaderboardData(marks, acc, timeTakenSec, correct, wrong, skipped);
+            
+            let persona = "Balanced Performer";
+            if(acc > 90) persona = "Accuracy Master";
+            else if(correct+wrong > (activeQuestions.length * 0.8) && acc < 70) persona = "Risk Taker";
+            else if(timeTakenSec < 600 && acc > 80) persona = "Speed Player";
+            document.getElementById('res-persona-label').innerHTML = `Your Style: <span class="text-[#1e5086] bg-blue-50 px-2 py-1 rounded border border-blue-200">${persona}</span>`;
+ 
+            let tHtml = ''; let bestT = '', worstT = '', minAcc = 100, maxAcc = -1, worstTime = 0;
+            Object.keys(topicsAnalysis).forEach(k => {
+                let d = topicsAnalysis[k]; let tAcc = d.att > 0 ? Math.round((d.cor / d.att) * 100) : 0;
+                let verdict = tAcc > 80 ? '<span class="text-emerald-600 font-bold bg-emerald-50 px-2 py-1 rounded border border-emerald-200">Strong</span>' : (tAcc > 50 ? '<span class="text-amber-600 font-bold bg-amber-50 px-2 py-1 rounded border border-amber-200">Moderate</span>' : '<span class="text-rose-600 font-bold bg-rose-50 px-2 py-1 rounded border border-rose-200">Weak</span>');
+                tHtml += `<tr class="hover:bg-slate-50 transition-colors border-b border-amber-100/30"><td class="p-3 font-semibold text-slate-700">${k}</td><td class="p-3 font-medium">${d.att}/${d.tot}</td><td class="p-3 font-bold">${tAcc}%</td><td class="p-3">${verdict}</td></tr>`;
+                if(tAcc >= maxAcc && d.att > 0) { maxAcc = tAcc; bestT = k; } if(tAcc <= minAcc && d.att > 0) { minAcc = tAcc; worstT = k; }
+                if(tAcc < 50 && d.time > worstTime) { worstTime = d.time; worstT = k; }
+            });
+            document.getElementById('topic-table-body').innerHTML = tHtml;
+            document.getElementById('res-strongest').innerText = bestT || 'None';
+            document.getElementById('res-weakest').innerText = worstT || 'None'; document.getElementById('res-priority').innerText = `Focus first on ${worstT || 'unattempted topics'} to gain easy marks.`;
+ 
+            let mentorMsg = "";
+            if (fastWrong > 2) mentorMsg = `You lost marks mainly due to **${fastWrong} careless mistakes** (fast & wrong). Focus purely on accuracy before increasing speed. `;
+            else if (slowWrong > 1) mentorMsg = `You wasted precious time on **${slowWrong} questions** that you eventually got wrong. If you can't see the path in 30s, SKIP it! `;
+            else if (slowCorrect > 3) mentorMsg = `Your accuracy is fantastic, but you took too long on **${slowCorrect} questions**. Start learning short-tricks and unit-digit methods. `;
+            else if (skipped > (activeQuestions.length * 0.4)) mentorMsg = `You skipped a lot. Don't be afraid to hunt for the easy questions across the entire paper first. `;
+            else if (acc > 90) mentorMsg = `Outstanding performance! High accuracy with controlled speed. Keep this exact mindset for the real exam.`;
+            else mentorMsg = `Good attempt. Focus on balancing your speed and accuracy. Analyze the solutions thoroughly.`;
+            
+            document.getElementById('mentor-feedback-text').innerHTML = mentorMsg;
+            renderQuestionReview();
+        }
+ 
+        function toggleQCard(idx) { document.getElementById(`q-review-${idx}`).classList.toggle('hidden'); }
+ 
+        function renderQuestionReview() {
+            let html = '';
+            let saved = getSavedQuestions();
+            activeQuestions.forEach((q, idx) => {
+                let ans = state.answers[idx];
+                let isCorr = ans == q.correct;
+                let status = ans === undefined ? 'skipped' : (isCorr ? 'correct' : 'wrong');
+                let isSaved = saved && Array.isArray(saved) ? saved.some(sq => sq && sq.q_en === q.q_en) : false;
+                
+                if (reviewFilterState !== 'all' && status !== reviewFilterState) return;
+ 
+                let colorClass = status === 'correct' ? 'text-emerald-600 bg-emerald-50 border border-emerald-200' : (status === 'wrong' ? 'text-rose-600 bg-rose-50 border border-rose-200' : 'text-slate-600 bg-slate-100 border border-slate-300');
+                let displayStatus = status === 'correct' ? 'Correct' : (status === 'wrong' ? 'Incorrect' : 'Skipped');
+ 
+                let qText = state.alLang === 'en' ? q.q_en : q.q_hi;
+                let opts = state.alLang === 'en' ? q.options_en : q.options_hi;
+                let sol = state.alLang === 'en' ? q.sol_en : q.sol_hi;
+                
+                let idealNum = q.diff === 1 ? 10 : (q.diff === 2 ? 25 : 50);
+                let myTime = state.timeSpent[idx] || 0;
+                
+                let timeTag = "", timeTagClass = "";
+                if (ans !== undefined) {
+                    if (isCorr && myTime <= idealNum) { timeTag = "⚡ Quick & Correct"; timeTagClass = "bg-emerald-100 text-emerald-800 border border-emerald-300"; }
+                    else if (isCorr && myTime > idealNum) { timeTag = "🐢 Slow & Correct"; timeTagClass = "bg-amber-100 text-amber-800 border border-amber-300"; }
+                    else if (!isCorr && myTime <= idealNum) { timeTag = "🏃‍♂️ Fast & Wrong"; timeTagClass = "bg-rose-100 text-rose-800 border border-rose-300"; }
+                    else if (!isCorr && myTime > idealNum) { timeTag = "🐌 Slow & Wrong"; timeTagClass = "bg-purple-100 text-purple-800 border border-purple-300"; }
+                } else { timeTag = "⏭️ Skipped"; timeTagClass = "bg-slate-100 text-slate-700 border border-slate-300"; }
+ 
+                let optHtml = '';
+                if(Array.isArray(opts)) {
+                    opts.forEach((o, i) => {
+                        let isUser = (ans == i); let isAc = (q.correct == i); let bg = '';
+                        if(isUser && isAc) bg = 'bg-emerald-50 border-emerald-300 shadow-sm';
+                        else if(isUser && !isAc) bg = 'bg-rose-50 border-rose-300 shadow-sm';
+                        else if(isAc) bg = 'bg-emerald-50 border-emerald-300 border-dashed';
+                        else bg = 'bg-slate-50 border-slate-200';
+                        
+                        let badges = '';
+                        if(isUser) badges += '<span class="ml-2 text-xs font-bold text-slate-500">(Your Answer)</span>';
+                        if(isAc) badges += '<span class="ml-2 text-xs font-bold text-emerald-600"><i class="fas fa-check"></i> Correct</span>';
+     
+                        optHtml += `<div class="p-4 mb-3 rounded-lg border ${bg} text-sm font-medium text-slate-700 transition-colors">${String.fromCharCode(65+i)}) ${o} ${badges}</div>`;
+                    });
+                }
+ 
+                let solutionBlock = '';
+                if (status === 'correct') {
+                    solutionBlock = `<div class="text-emerald-700 font-medium text-sm bg-emerald-50 p-3 rounded-lg border border-emerald-200 mb-4"><i class="fas fa-check-circle"></i> Brilliant! You got this right. Click below if you want to verify your approach with the expert's method.</div>
+                    <button onclick="document.getElementById('sol-block-${idx}').classList.toggle('hidden')" class="text-[#3a78c4] text-sm font-bold underline mb-3">Show Expert Solution</button>
+                    <div id="sol-block-${idx}" class="hidden">${sol}</div>`;
+                } else {
+                    solutionBlock = `<div>${sol}</div>`;
+                }
+ 
+                html += `
+                    <div class="border border-gray-300 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition bg-white fade-in">
+                        <div class="bg-slate-50 p-5 cursor-pointer flex justify-between items-center hover:bg-slate-100 transition" onclick="toggleQCard(${idx})">
+                            <div class="flex items-center gap-4 flex-1">
+                                <div class="w-10 h-10 bg-white border border-[#3a78c4] text-[#1e5086] rounded-lg flex items-center justify-center font-bold shadow-sm shrink-0">Q${idx+1}</div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-slate-800 text-sm mb-1 flex items-center gap-2 flex-wrap">
+                                        ${q.topic} 
+                                        <span class="px-2 py-0.5 rounded text-xs ${colorClass}">${displayStatus}</span>
+                                        ${isSaved ? '<span class="px-2 py-0.5 rounded text-xs bg-amber-50 text-amber-700 border border-amber-200"><i class="fas fa-star text-amber-500"></i> Saved</span>' : ''}
+                                    </div>
+                                    <div class="text-xs text-slate-500 font-medium flex items-center gap-2 flex-wrap">Time: <span class="${myTime > idealNum ? 'text-rose-500' : 'text-emerald-600'} font-bold">${myTime}s</span> | Ideal: ${idealNum}s <span class="px-2 py-0.5 rounded-full text-[10px] uppercase font-bold ${timeTagClass}">${timeTag}</span></div>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down text-gray-500 bg-white p-2 rounded-full border shadow-sm"></i>
+                        </div>
+                        <div id="q-review-${idx}" class="hidden p-6 border-t border-gray-200 bg-white">
+                            <div class="mb-5 text-slate-800 font-semibold whitespace-pre-wrap text-[15px]">${qText}</div>
+                            <div class="mb-6">${optHtml}</div>
+                            ${solutionBlock}
+                        </div>
+                    </div>`;
+            });
+            
+            if (html === '') html = `<div class="text-center p-10 bg-slate-50 border border-slate-200 rounded-xl text-slate-500 font-medium"><i class="fas fa-folder-open text-3xl mb-3 block text-slate-300"></i> No questions found in this category.</div>`;
+            document.getElementById('questions-review-container').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
