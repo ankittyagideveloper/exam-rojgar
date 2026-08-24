@@ -341,7 +341,19 @@ function Hero() {
             </a>
           </div>
         </div>
-
+          
+         <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
+              <img
+                src="/profile-mentor.png"
+                alt="Gopal Sir - Exam Rojgaar Mentor"
+                loading="lazy"
+                width={912}
+                height={1104}
+                className="h-full w-full object-cover"
+              />
+              {/* circular shadow at bottom */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/60 blur-2xl" />
+            </div>
         {/* <CodeCard /> */}
       </div>
     </section>
@@ -862,7 +874,7 @@ function Mentor() {
         <div className="relative">
           <div className="overflow-hidden rounded-3xl glass-card">
             <img
-              src="/mentor.png"
+              src="/profile-mentor.png"
               alt="Gopal Sir - Exam Rojgaar Mentor"
               loading="lazy"
               width={912}
@@ -870,12 +882,17 @@ function Mentor() {
               className="h-full w-full object-cover"
             />
           </div>
+          {/* circular shadow at bottom */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/60 blur-2xl" />
 
           <div className="absolute -bottom-5 left-6 rounded-2xl glass-card px-5 py-4">
             <p className="font-display text-base font-semibold">
               Gopal Sir
             </p>
             <p className="font-mono text-xs text-muted-foreground">
+              SSE (Ministry of Railways)
+            </p>
+              <p className="font-mono text-xs text-muted-foreground">
               Exam Rojgaar Mentor
             </p>
           </div>

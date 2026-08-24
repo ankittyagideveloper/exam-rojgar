@@ -19,7 +19,7 @@ const testimonials = [
   {
     quote:
       "Negative attempts bhi ab kaafi kam ho rahe hain aur dheere-dheere attempts increase kar pa raha hoon. GK/GS aur Maths ko ek saath routine mein follow karne se preparation ka burden bhi kaafi kam lag raha hai aur consistency bani hui hai. Bas ab hope hai ki isi direction mein mehnat karte rahein aur result bhi positive aaye. Thank you for the guidance, Sir! 🙏😊",
-    name: "Renu Pathak",
+    name: "Ranu Pathak",
     title: "Exam Rojgar 2026 Batch-1",
   },
   {
