@@ -301,7 +301,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-20 md:pt-28">
+    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-10 md:pt-28">
       <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
