@@ -523,9 +523,9 @@ export const mockData = {
             {
               id: "hostory-full-revision-test-mock-test",
               image: "/rrb-ntpc.webp",
-              alt: "Hostory Full Revision Test Mock Test",
-              title: "Hostory Full Revision Test - Mock Test",
-              name: "Hostory Full Revision Test Mock",
+              alt: "History Full Revision Test Mock Test",
+              title: "History Full Revision Test - Mock Test",
+              name: "History Full Revision Test Mock",
               difficulty: "Hard",
               languages: ["English", "Hindi"],
               questions: "100",
