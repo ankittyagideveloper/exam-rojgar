@@ -1,6 +1,6 @@
 import React from "react";
 import MockTest from "../component/MockTest";
-import { AverageMockData } from "../data/AverageMockData";
+import { AverageMockData } from "../data/averageMockData";
 
 const AverageMockTestPage = () => {
   const handleComplete = (results) => {
