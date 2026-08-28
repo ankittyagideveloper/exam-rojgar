@@ -72,6 +72,9 @@ import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtrem
 
 //! Todo: Fix it 
 import RailwayMockTestPage from "./pages/RailwayMockTestPage";
+import PolityConstitutionAndPreambleAndSourcesMockTestPage from "./pages/PolityConstitutionAndPreambleAndSourcesMockTestPage";
+import ScheduleCitizenshipMockTestPage from "./pages/ScheduleCitizenshipMockTestPage";
+import ArithmeticSectionalTestMockTestPage from "./pages/ArithmeticSectionalTestMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -318,7 +321,15 @@ const router = createBrowserRouter([
     
       { path: "ModernHistoryExtremistPhase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
       
-      {path : "dummy-test", element :<RailwayMockTestPage/>}
+      {path : "dummy-test", element :<RailwayMockTestPage/>},
+    
+      { path: "PolityConstitutionAndPreambleAndSources", element: <PolityConstitutionAndPreambleAndSourcesMockTestPage /> },
+    
+      { path: "ScheduleCitizenship", element: <ScheduleCitizenshipMockTestPage /> },
+    
+      { path: "Average", element: <AverageMockTestPage /> },
+    
+      { path: "ArithmeticSectionalTest", element: <ArithmeticSectionalTestMockTestPage /> },
     ],
   },
   {
