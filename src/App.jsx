@@ -75,6 +75,9 @@ import RailwayMockTestPage from "./pages/RailwayMockTestPage";
 import PolityConstitutionAndPreambleAndSourcesMockTestPage from "./pages/PolityConstitutionAndPreambleAndSourcesMockTestPage";
 import ScheduleCitizenshipMockTestPage from "./pages/ScheduleCitizenshipMockTestPage";
 import ArithmeticSectionalTestMockTestPage from "./pages/ArithmeticSectionalTestMockTestPage";
+import FundamentalRightsAndDpSpMockTestPage from "./pages/FundamentalRightsAndDpSpMockTestPage";
+import ParliamentMockTestPage from "./pages/ParliamentMockTestPage";
+import AmendmentsMockTestPage from "./pages/AmendmentsMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -330,6 +333,12 @@ const router = createBrowserRouter([
       { path: "Average", element: <AverageMockTestPage /> },
     
       { path: "ArithmeticSectionalTest", element: <ArithmeticSectionalTestMockTestPage /> },
+    
+      { path: "FundamentalRightsAndDpSp", element: <FundamentalRightsAndDpSpMockTestPage /> },
+    
+      { path: "Parliament", element: <ParliamentMockTestPage /> },
+    
+      { path: "Amendments", element: <AmendmentsMockTestPage /> },
     ],
   },
   {

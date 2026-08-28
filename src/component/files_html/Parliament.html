@@ -1,0 +1,1452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="cinematic-bg w-full h-full overflow-y-auto text-white flex flex-col items-center py-10 px-4">
+        <div class="absolute top-4 left-4 text-xs font-semibold text-slate-400 tracking-wider">Trusted Resources</div>
+        
+        <div class="max-w-4xl w-full text-center mt-8 z-10 relative">
+            <h2 class="text-xl md:text-2xl text-brand-gold mb-2 font-head font-medium tracking-wide">Hi, Welcome to</h2>
+            <h1 class="text-4xl md:text-6xl font-head font-bold tracking-tight text-white drop-shadow-lg mb-2">
+                EXAM ROJGAAR MOCKS
+            </h1>
+            <p class="text-sm md:text-lg text-slate-300 font-medium mb-4">(कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
+मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.
+Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.)</p>
+            <p class="text-lg md:text-xl text-brand-accent font-semibold bg-brand-accent/10 inline-block px-4 py-1 rounded-full border border-brand-accent/30 mb-8">
+                Hard Challenge Sectional Mocks
+            </p>
+            
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-8 tracking-wide drop-shadow-md">
+                "Speed + Accuracy = Selection"
+            </h3>
+
+            <button onclick="startCountdown()" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 hover:-translate-y-1 animate-glow border border-blue-400 w-full md:w-auto">
+                I AM READY TO BEGIN
+            </button>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" class="block mt-6 text-slate-300 hover:text-brand-accent transition-colors underline decoration-brand-accent underline-offset-4 font-medium flex items-center justify-center gap-2 text-lg">
+                <i class="fab fa-telegram text-xl"></i> https://t.me/ExamRojgaar
+            </a>
+        </div>
+
+        <div class="max-w-5xl w-full mt-16 z-10 relative">
+            <div class="glass-card rounded-2xl p-8 border-t-4 border-t-brand-gold shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent"></div>
+                <h3 class="text-3xl font-head font-bold text-center mb-4 text-white">Elite Mentor Strategy</h3>
+                <blockquote class="text-center text-lg md:text-xl italic text-slate-300 mb-8 border-l-4 border-brand-accent pl-4 py-2 mx-auto max-w-3xl bg-slate-800/30 rounded-r">
+                    "If you are targeting all 25 questions, you are already making a mistake. Selection comes from solving the right <span class="text-brand-gold font-bold">20+ questions</span> — not all 25."
+                </blockquote>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-red text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-stopwatch"></i></div>
+                        <h4 class="text-xl font-bold mb-2">3–5 Sec Rule</h4>
+                        <p class="text-slate-300 text-sm">Can you see a direct formula or clear steps?<br>Is it solvable in &lt;30 sec?<br><span class="text-brand-red font-bold mt-2 inline-block">If NO → SKIP immediately.</span></p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-gold text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-ban"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Skip in Round 1</h4>
+                        <ul class="text-slate-300 text-sm list-disc pl-4 space-y-1">
+                            <li>Lengthy calculations</li>
+                            <li>Tricky language</li>
+                            <li>DI-heavy questions</li>
+                            <li>Entirely new patterns</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 hover:border-brand-accent transition-colors group">
+                        <div class="text-brand-green text-3xl mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
+                        <h4 class="text-xl font-bold mb-2">Target System</h4>
+                        <ul class="text-slate-300 text-sm space-y-1">
+                            <li>Total Qs: 25</li>
+                            <li>Time: <span class="text-brand-gold font-bold">13 Minutes</span></li>
+                            <li>Target Attempt: <span class="text-brand-gold font-bold">20+</span></li>
+                            <li>Target Accuracy: 100%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-6 mb-6">
+                    <h4 class="text-lg font-bold mb-3 flex items-center gap-2"><i class="fas fa-route text-brand-accent"></i> Round Strategy</h4>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <p><strong class="text-white">Round 1 (0–8 min):</strong> Hunt easy questions (Target 15–18)</p>
+                        <p><strong class="text-white">Round 2 (8–11 min):</strong> Attempt medium & marked questions</p>
+                        <p><strong class="text-white">Last 2 min:</strong> Smart guessing via elimination (No ego solving)</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 border-t border-slate-700 pt-6">
+                    <p class="text-sm md:text-base text-slate-300 mb-2">Want to master this mindset? Join our Telegram group where top doubt solvers and expert mentors guide you daily.</p>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-6 rounded-full transition-colors">
+                        <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES here
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">03:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+            <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                    <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                    <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">All India Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Out of 5000 users</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 3 * 60; // 5 minutes in seconds
+
+const rawData = [ 
+{
+id: 1,
+eng: "According to Article 100(3) of the Indian Constitution, what is the quorum required to constitute a meeting of either House of Parliament?",
+hin: "भारतीय संविधान के अनुच्छेद 100(3) के अनुसार संसद के किसी भी सदन की बैठक के लिए आवश्यक गणपूर्ति (Quorum) कितनी होती है?",
+optE: ["One-fourth of the total number of members of the House","One-tenth of the total number of members of the House","One-third of the total number of members present and voting","Fifty percent of the total sanctioned strength"],
+optH: ["सदन की कुल सदस्य संख्या का एक-चौथाई","सदन की कुल सदस्य संख्या का एक-दसवाँ भाग","उपस्थित एवं मतदान करने वाले सदस्यों का एक-तिहाई","कुल स्वीकृत सदस्य संख्या का 50%"],
+ans: 1,
+solE: "Article 100(3) provides that the quorum to constitute a meeting of either House of Parliament is one-tenth of the total number of members of the House.",
+solH: "अनुच्छेद 100(3) के अनुसार संसद के किसी भी सदन की बैठक के लिए आवश्यक गणपूर्ति सदन की कुल सदस्य संख्या का एक-दसवाँ भाग होती है।"
+},
+
+{
+id: 2,
+eng: "Which of the following statements is correct regarding the qualifications and minimum age required to become a Member of Parliament?",
+hin: "संसद का सदस्य बनने की योग्यता एवं न्यूनतम आयु के संबंध में निम्नलिखित में से कौन-सा कथन सही है?",
+optE: ["The minimum age for Lok Sabha is 30 years and for Rajya Sabha is 25 years","The minimum age for Lok Sabha is 25 years and for Rajya Sabha is 30 years","A person must be at least 35 years old for Rajya Sabha","The minimum age for both Houses is 25 years"],
+optH: ["लोकसभा के लिए न्यूनतम आयु 30 वर्ष तथा राज्यसभा के लिए 25 वर्ष है","लोकसभा के लिए न्यूनतम आयु 25 वर्ष तथा राज्यसभा के लिए 30 वर्ष है","राज्यसभा के लिए न्यूनतम आयु 35 वर्ष है","दोनों सदनों के लिए न्यूनतम आयु 25 वर्ष है"],
+ans: 1,
+solE: "A person must be at least 25 years old to contest the Lok Sabha and 30 years old for the Rajya Sabha.",
+solH: "लोकसभा का चुनाव लड़ने के लिए न्यूनतम आयु 25 वर्ष तथा राज्यसभा के लिए 30 वर्ष निर्धारित है।"
+},
+
+{
+id: 3,
+eng: "Which Article of the Constitution prescribes the special procedure for the passing of a Money Bill?",
+hin: "धन विधेयक (Money Bill) पारित करने की विशेष प्रक्रिया संविधान के किस अनुच्छेद में दी गई है?",
+optE: ["Article 109","Article 110","Article 112","Article 117"],
+optH: ["अनुच्छेद 109","अनुच्छेद 110","अनुच्छेद 112","अनुच्छेद 117"],
+ans: 0,
+solE: "Article 109 lays down the special legislative procedure for passing a Money Bill, while Article 110 defines a Money Bill.",
+solH: "अनुच्छेद 109 धन विधेयक पारित करने की विशेष प्रक्रिया बताता है, जबकि अनुच्छेद 110 धन विधेयक की परिभाषा देता है।"
+},
+
+{
+id: 4,
+eng: "A severe natural disaster strikes while Parliament is not in session, requiring immediate expenditure. From which fund can advances be made pending Parliamentary approval?",
+hin: "संसद का सत्र न होने के दौरान गंभीर प्राकृतिक आपदा आ जाती है और तत्काल धन की आवश्यकता होती है। संसद की स्वीकृति से पहले अग्रिम राशि किस निधि से दी जाती है?",
+optE: ["Public Account of India","Consolidated Fund of India","Contingency Fund of India","National Disaster Response Fund"],
+optH: ["भारत का लोक लेखा","भारत की संचित निधि","भारत की आकस्मिक निधि","राष्ट्रीय आपदा प्रतिक्रिया निधि"],
+ans: 2,
+solE: "The Contingency Fund of India is used to meet unforeseen expenditure pending authorization by Parliament.",
+solH: "संसद की स्वीकृति मिलने तक अप्रत्याशित व्यय की पूर्ति भारत की आकस्मिक निधि से की जाती है।"
+},
+
+{
+id: 5,
+eng: "According to Article 85(1) of the Constitution, what is the maximum gap permitted between two sessions of Parliament?",
+hin: "संविधान के अनुच्छेद 85(1) के अनुसार संसद के दो सत्रों के बीच अधिकतम कितना अंतर हो सकता है?",
+optE: ["Three months","Six months","Nine months","One year"],
+optH: ["तीन महीने","छह महीने","नौ महीने","एक वर्ष"],
+ans: 1,
+solE: "The Constitution mandates that not more than six months shall elapse between two sessions of Parliament.",
+solH: "संविधान के अनुसार संसद के दो सत्रों के बीच छह महीने से अधिक का अंतर नहीं होना चाहिए।"
+},
+
+{
+id: 6,
+eng: "Who has the authority to adjourn a sitting of the Lok Sabha?",
+hin: "लोकसभा की बैठक को स्थगित (Adjourn) करने का अधिकार किसके पास होता है?",
+optE: ["President of India","Prime Minister","Speaker of the Lok Sabha","Minister of Parliamentary Affairs"],
+optH: ["भारत के राष्ट्रपति","प्रधानमंत्री","लोकसभा अध्यक्ष","संसदीय कार्य मंत्री"],
+ans: 2,
+solE: "The Speaker of the Lok Sabha has the authority to adjourn or adjourn sine die the sittings of the House.",
+solH: "लोकसभा की बैठक को स्थगित या अनिश्चितकाल के लिए स्थगित करने का अधिकार लोकसभा अध्यक्ष के पास होता है।"
+},
+
+{
+id: 7,
+eng: "Who possesses the constitutional power to dissolve the Lok Sabha?",
+hin: "लोकसभा को भंग करने की संवैधानिक शक्ति किसके पास होती है?",
+optE: ["Speaker of the Lok Sabha","President of India","Prime Minister","Election Commission of India"],
+optH: ["लोकसभा अध्यक्ष","भारत के राष्ट्रपति","प्रधानमंत्री","भारत निर्वाचन आयोग"],
+ans: 1,
+solE: "The President of India dissolves the Lok Sabha under Article 85, generally on the advice of the Council of Ministers.",
+solH: "अनुच्छेद 85 के अंतर्गत राष्ट्रपति, सामान्यतः मंत्रिपरिषद की सलाह पर, लोकसभा को भंग करते हैं।"
+},
+
+{
+id: 8,
+eng: "Which of the following statements is correct regarding the Delimitation Commission of India?",
+hin: "भारत के परिसीमन आयोग (Delimitation Commission) के संबंध में निम्नलिखित में से कौन-सा कथन सही है?",
+optE: ["Its orders can be modified by the Supreme Court","It is a statutory body whose orders have the force of law and cannot be challenged in any court","It is constituted automatically every five years","It is headed by the President of India"],
+optH: ["इसके आदेशों में सर्वोच्च न्यायालय संशोधन कर सकता है","यह एक वैधानिक निकाय है जिसके आदेश कानून के समान प्रभाव रखते हैं तथा किसी न्यायालय में चुनौती नहीं दी जा सकती","यह प्रत्येक पाँच वर्ष में स्वतः गठित होता है","इसकी अध्यक्षता भारत के राष्ट्रपति करते हैं"],
+ans: 1,
+solE: "The Delimitation Commission is a statutory body. Its orders have the force of law and cannot be questioned in any court.",
+solH: "परिसीमन आयोग एक वैधानिक निकाय है। इसके आदेश कानून के समान प्रभाव रखते हैं तथा इन्हें किसी न्यायालय में चुनौती नहीं दी जा सकती।"
+},
+
+{
+id: 9,
+eng: "If a dispute arises regarding whether a Bill is a Money Bill or not, whose decision is final?",
+hin: "यदि किसी विधेयक के धन विधेयक (Money Bill) होने या न होने पर विवाद उत्पन्न हो जाए, तो अंतिम निर्णय किसका होता है?",
+optE: ["President of India","Finance Minister","Chairman of the Rajya Sabha","Speaker of the Lok Sabha"],
+optH: ["भारत के राष्ट्रपति","वित्त मंत्री","राज्यसभा के सभापति","लोकसभा अध्यक्ष"],
+ans: 3,
+solE: "Under Article 110(3), the decision of the Speaker of the Lok Sabha on whether a Bill is a Money Bill is final.",
+solH: "अनुच्छेद 110(3) के अनुसार किसी विधेयक के धन विधेयक होने या न होने पर लोकसभा अध्यक्ष का निर्णय अंतिम होता है।"
+},
+{
+id: 10,
+eng: "Which of the following best distinguishes a Financial Bill (Category-I) from a Money Bill?",
+hin: "निम्नलिखित में से कौन-सा कथन वित्तीय विधेयक (श्रेणी-I) और धन विधेयक (Money Bill) के बीच सही अंतर बताता है?",
+optE: [
+"A Money Bill requires the President's recommendation, whereas a Financial Bill (I) does not",
+"A Money Bill contains only matters specified in Article 110, whereas a Financial Bill (I) contains Article 110 matters along with other provisions",
+"A Financial Bill (I) can originate in either House, whereas a Money Bill originates only in the Rajya Sabha",
+"The Rajya Sabha can reject a Money Bill but cannot reject a Financial Bill (I)"
+],
+optH: [
+"धन विधेयक के लिए राष्ट्रपति की अनुशंसा आवश्यक होती है, जबकि वित्तीय विधेयक (I) के लिए नहीं",
+"धन विधेयक केवल अनुच्छेद 110 में वर्णित विषयों तक सीमित होता है, जबकि वित्तीय विधेयक (I) में अनुच्छेद 110 के विषयों के साथ अन्य सामान्य प्रावधान भी होते हैं",
+"वित्तीय विधेयक (I) किसी भी सदन में प्रस्तुत किया जा सकता है, जबकि धन विधेयक केवल राज्यसभा में प्रस्तुत होता है",
+"राज्यसभा धन विधेयक को अस्वीकार कर सकती है, जबकि वित्तीय विधेयक (I) को नहीं"
+],
+ans: 1,
+solE: "A Money Bill contains only matters listed in Article 110, whereas a Financial Bill (Category-I) includes Article 110 matters along with other legislative provisions.",
+solH: "धन विधेयक केवल अनुच्छेद 110 में वर्णित विषयों तक सीमित होता है, जबकि वित्तीय विधेयक (श्रेणी-I) में अनुच्छेद 110 के विषयों के साथ अन्य सामान्य विधायी प्रावधान भी शामिल होते हैं।"
+},
+
+{
+id: 11,
+eng: "All revenues received by the Union Government through taxes, duties and loans are credited to which fund?",
+hin: "संघ सरकार द्वारा करों, शुल्कों एवं ऋणों से प्राप्त सभी राजस्व किस निधि में जमा किए जाते हैं?",
+optE: [
+"Public Account of India",
+"Contingency Fund of India",
+"Consolidated Fund of India",
+"National Investment Fund"
+],
+optH: [
+"भारत का लोक लेखा",
+"भारत की आकस्मिक निधि",
+"भारत की संचित निधि",
+"राष्ट्रीय निवेश निधि"
+],
+ans: 2,
+solE: "All revenues received by the Government of India and all loans raised are credited to the Consolidated Fund of India under Article 266(1).",
+solH: "अनुच्छेद 266(1) के अनुसार भारत सरकार द्वारा प्राप्त सभी राजस्व एवं लिए गए ऋण भारत की संचित निधि में जमा किए जाते हैं।"
+},
+
+{
+id: 12,
+eng: "Which constitutional mechanism under Article 108 resolves a deadlock between the two Houses over an Ordinary Bill?",
+hin: "अनुच्छेद 108 के अंतर्गत साधारण विधेयक पर दोनों सदनों के बीच गतिरोध दूर करने के लिए कौन-सी संवैधानिक व्यवस्था है?",
+optE: [
+"A joint sitting of both Houses summoned by the President",
+"Immediate dissolution of the Lok Sabha",
+"An arbitration committee headed by the Chief Justice of India",
+"Automatic passage after the Lok Sabha passes it again"
+],
+optH: [
+"राष्ट्रपति द्वारा दोनों सदनों की संयुक्त बैठक बुलाना",
+"लोकसभा का तत्काल विघटन",
+"भारत के मुख्य न्यायाधीश की अध्यक्षता में मध्यस्थता समिति",
+"लोकसभा द्वारा पुनः पारित करने पर स्वतः पारित माना जाना"
+],
+ans: 0,
+solE: "Article 108 provides for a joint sitting of both Houses, summoned by the President, to resolve a legislative deadlock.",
+solH: "अनुच्छेद 108 के अनुसार विधायी गतिरोध की स्थिति में राष्ट्रपति दोनों सदनों की संयुक्त बैठक बुला सकते हैं।"
+},
+
+{
+id: 13,
+eng: "Money deposited in a Post Office Savings Account or invested in National Savings Certificates is credited to which account?",
+hin: "डाकघर बचत खाते या राष्ट्रीय बचत प्रमाणपत्र (NSC) में जमा धन सरकार के किस खाते में रखा जाता है?",
+optE: [
+"Consolidated Fund of India",
+"Public Account of India",
+"Contingency Fund of India",
+"Prime Minister's National Relief Fund"
+],
+optH: [
+"भारत की संचित निधि",
+"भारत का लोक लेखा",
+"भारत की आकस्मिक निधि",
+"प्रधानमंत्री राष्ट्रीय राहत कोष"
+],
+ans: 1,
+solE: "Small savings such as Post Office deposits and National Savings Certificates are credited to the Public Account of India.",
+solH: "डाकघर बचत एवं राष्ट्रीय बचत प्रमाणपत्र जैसी लघु बचतें भारत के लोक लेखा में जमा की जाती हैं।"
+},
+
+{
+id: 14,
+eng: "What is the constitutional term for the termination of a session of Parliament by an order of the President?",
+hin: "राष्ट्रपति के आदेश द्वारा संसद के किसी सत्र की समाप्ति को संवैधानिक रूप से क्या कहा जाता है?",
+optE: [
+"Adjournment",
+"Prorogation",
+"Dissolution",
+"Adjournment Sine Die"
+],
+optH: [
+"स्थगन",
+"सत्रावसान",
+"विघटन",
+"अनिश्चितकालीन स्थगन"
+],
+ans: 1,
+solE: "Prorogation refers to the termination of a session of Parliament by the President.",
+solH: "राष्ट्रपति द्वारा संसद के किसी सत्र की समाप्ति को सत्रावसान (Prorogation) कहा जाता है।"
+},
+
+{
+id: 15,
+eng: "Who presides over a joint sitting of the two Houses of Parliament?",
+hin: "संसद के दोनों सदनों की संयुक्त बैठक की अध्यक्षता कौन करता है?",
+optE: [
+"President of India",
+"Vice-President of India",
+"Speaker of the Lok Sabha",
+"Prime Minister of India"
+],
+optH: [
+"भारत के राष्ट्रपति",
+"भारत के उपराष्ट्रपति",
+"लोकसभा अध्यक्ष",
+"भारत के प्रधानमंत्री"
+],
+ans: 2,
+solE: "The Speaker of the Lok Sabha presides over a joint sitting of Parliament under Article 108.",
+solH: "अनुच्छेद 108 के अंतर्गत संसद की संयुक्त बैठक की अध्यक्षता लोकसभा अध्यक्ष करते हैं।"
+},
+
+{
+id: 16,
+eng: "Which power is exclusively vested in the Rajya Sabha under Article 312 of the Constitution?",
+hin: "संविधान के अनुच्छेद 312 के अंतर्गत निम्नलिखित में से कौन-सी शक्ति केवल राज्यसभा को प्राप्त है?",
+optE: [
+"To pass a no-confidence motion",
+"To authorize Parliament to create a new All India Service by a special resolution",
+"To introduce a Money Bill",
+"To approve National Emergency when Lok Sabha is dissolved"
+],
+optH: [
+"अविश्वास प्रस्ताव पारित करना",
+"विशेष प्रस्ताव द्वारा संसद को नई अखिल भारतीय सेवा बनाने का अधिकार देना",
+"धन विधेयक प्रस्तुत करना",
+"लोकसभा के विघटन की स्थिति में राष्ट्रीय आपातकाल को स्वीकृति देना"
+],
+ans: 1,
+solE: "Article 312 empowers the Rajya Sabha to authorize Parliament to create one or more new All India Services by a special majority.",
+solH: "अनुच्छेद 312 के अनुसार राज्यसभा विशेष बहुमत से प्रस्ताव पारित कर संसद को नई अखिल भारतीय सेवाएँ सृजित करने का अधिकार दे सकती है।"
+},
+
+{
+id: 17,
+eng: "If the Prime Minister loses a vote of confidence in the Lok Sabha, what happens to the Council of Ministers?",
+hin: "यदि प्रधानमंत्री लोकसभा में विश्वास मत हार जाते हैं, तो मंत्रिपरिषद का क्या होगा?",
+optE: [
+"Only the Prime Minister must resign",
+"The Council of Ministers is temporarily suspended",
+"The entire Council of Ministers must resign collectively",
+"The Rajya Sabha assumes executive functions"
+],
+optH: [
+"केवल प्रधानमंत्री को इस्तीफा देना होगा",
+"मंत्रिपरिषद अस्थायी रूप से निलंबित हो जाएगी",
+"पूरी मंत्रिपरिषद सामूहिक रूप से इस्तीफा देगी",
+"राज्यसभा कार्यपालिका का कार्य संभालेगी"
+],
+ans: 2,
+solE: "Under the principle of collective responsibility, the entire Council of Ministers must resign if it loses the confidence of the Lok Sabha.",
+solH: "सामूहिक उत्तरदायित्व के सिद्धांत के अनुसार यदि लोकसभा का विश्वास समाप्त हो जाए तो पूरी मंत्रिपरिषद को सामूहिक रूप से इस्तीफा देना पड़ता है।"
+},
+
+{
+id: 18,
+eng: "A Member of Parliament voluntarily gives up the membership of the political party on whose ticket he was elected. Under which Schedule can the member be disqualified?",
+hin: "यदि कोई सांसद अपने निर्वाचन के बाद स्वेच्छा से अपनी राजनीतिक दल की सदस्यता छोड़ देता है, तो उसे संविधान की किस अनुसूची के अंतर्गत अयोग्य ठहराया जा सकता है?",
+optE: [
+"Seventh Schedule",
+"Eighth Schedule",
+"Ninth Schedule",
+"Tenth Schedule"
+],
+optH: [
+"सातवीं अनुसूची",
+"आठवीं अनुसूची",
+"नौवीं अनुसूची",
+"दसवीं अनुसूची"
+],
+ans: 3,
+solE: "The Tenth Schedule, added by the 52nd Constitutional Amendment Act, contains the Anti-Defection provisions.",
+solH: "दसवीं अनुसूची, जिसे 52वें संविधान संशोधन अधिनियम द्वारा जोड़ा गया था, दल-बदल विरोधी प्रावधानों से संबंधित है।"
+},
+{
+id: 19,
+eng: "What is the maximum strength of the Lok Sabha as provided under the Constitution of India?",
+hin: "भारतीय संविधान के अनुसार लोकसभा की अधिकतम सदस्य संख्या कितनी हो सकती है?",
+optE: [
+"543",
+"545",
+"550",
+"552"
+],
+optH: [
+"543",
+"545",
+"550",
+"552"
+],
+ans: 3,
+solE: "Article 81 originally provided for a maximum strength of 552 members in the Lok Sabha (530 from States, 20 from Union Territories, and up to 2 Anglo-Indians by nomination, which has now been abolished).",
+solH: "अनुच्छेद 81 के अनुसार लोकसभा की अधिकतम सदस्य संख्या 552 हो सकती है (530 राज्य, 20 केंद्रशासित प्रदेश तथा पहले 2 एंग्लो-इंडियन नामित सदस्य, जिसका प्रावधान अब समाप्त हो चुका है)।"
+},
+
+{
+id: 20,
+eng: "Which of the following represents the correct sequence of the three regular sessions of the Indian Parliament in a calendar year?",
+hin: "एक कैलेंडर वर्ष में भारतीय संसद के तीन नियमित सत्रों का सही क्रम कौन-सा है?",
+optE: [
+"Winter Session → Monsoon Session → Budget Session",
+"Budget Session → Monsoon Session → Winter Session",
+"Summer Session → Monsoon Session → Winter Session",
+"Budget Session → Summer Session → Winter Session"
+],
+optH: [
+"शीतकालीन सत्र → मानसून सत्र → बजट सत्र",
+"बजट सत्र → मानसून सत्र → शीतकालीन सत्र",
+"ग्रीष्मकालीन सत्र → मानसून सत्र → शीतकालीन सत्र",
+"बजट सत्र → ग्रीष्मकालीन सत्र → शीतकालीन सत्र"
+],
+ans: 1,
+solE: "The three regular sessions of Parliament are Budget Session, Monsoon Session and Winter Session.",
+solH: "संसद के तीन नियमित सत्र क्रमशः बजट सत्र, मानसून सत्र तथा शीतकालीन सत्र होते हैं।"
+},
+
+{
+id: 21,
+eng: "What is the 'Zero Hour' in the Indian Parliamentary system?",
+hin: "भारतीय संसदीय प्रणाली में 'शून्यकाल (Zero Hour)' क्या है?",
+optE: [
+"The time reserved for voting on a Money Bill",
+"The period immediately after Question Hour during which members raise urgent matters without prior notice",
+"The final hour of the day's sitting before adjournment",
+"The hour during which the Prime Minister addresses the House"
+],
+optH: [
+"धन विधेयक पर मतदान के लिए निर्धारित समय",
+"प्रश्नकाल के तुरंत बाद का समय, जिसमें सदस्य बिना पूर्व सूचना के तात्कालिक विषय उठाते हैं",
+"दिन की कार्यवाही का अंतिम घंटा",
+"वह समय जब प्रधानमंत्री सदन को संबोधित करते हैं"
+],
+ans: 1,
+solE: "Zero Hour begins immediately after the Question Hour. During this period, Members raise urgent matters of public importance without prior notice.",
+solH: "शून्यकाल प्रश्नकाल समाप्त होने के तुरंत बाद प्रारम्भ होता है। इस दौरान सदस्य बिना पूर्व सूचना के जनमहत्त्व के तात्कालिक विषय उठाते हैं।"
+},
+
+{
+id: 22,
+eng: "What is the standard duration of the 'Question Hour' in the Indian Parliament?",
+hin: "भारतीय संसद में 'प्रश्नकाल (Question Hour)' की सामान्य अवधि कितनी होती है?",
+optE: [
+"30 minutes",
+"1 hour",
+"2 hours",
+"45 minutes"
+],
+optH: [
+"30 मिनट",
+"1 घंटा",
+"2 घंटे",
+"45 मिनट"
+],
+ans: 1,
+solE: "Question Hour is the first hour of a parliamentary sitting and normally lasts for one hour.",
+solH: "प्रश्नकाल संसद की बैठक का पहला घंटा होता है और इसकी सामान्य अवधि एक घंटा होती है।"
+},
+
+{
+id: 23,
+eng: "Under which Article of the Constitution is Parliament empowered to amend the Constitution?",
+hin: "संविधान के किस अनुच्छेद के अंतर्गत संसद को संविधान संशोधन की शक्ति प्राप्त है?",
+optE: [
+"Article 352",
+"Article 360",
+"Article 368",
+"Article 370"
+],
+optH: [
+"अनुच्छेद 352",
+"अनुच्छेद 360",
+"अनुच्छेद 368",
+"अनुच्छेद 370"
+],
+ans: 2,
+solE: "Article 368 lays down the procedure and power of Parliament to amend the Constitution.",
+solH: "अनुच्छेद 368 संसद को संविधान संशोधन की शक्ति प्रदान करता है तथा उसकी प्रक्रिया निर्धारित करता है।"
+},
+
+{
+id: 24,
+eng: "Who has the constitutional authority to prorogue a session of the Indian Parliament?",
+hin: "भारतीय संसद के किसी सत्र का सत्रावसान (Prorogation) करने का संवैधानिक अधिकार किसके पास है?",
+optE: [
+"The Speaker of the Lok Sabha",
+"The Prime Minister of India",
+"The President of India",
+"The Chairman of the Rajya Sabha"
+],
+optH: [
+"लोकसभा अध्यक्ष",
+"भारत के प्रधानमंत्री",
+"भारत के राष्ट्रपति",
+"राज्यसभा के सभापति"
+],
+ans: 2,
+solE: "Under Article 85, the President prorogues the Houses of Parliament after the advice of the Council of Ministers.",
+solH: "अनुच्छेद 85 के अनुसार राष्ट्रपति, मंत्रिपरिषद की सलाह पर संसद के सत्र का सत्रावसान करते हैं।"
+},
+
+{
+id: 25,
+eng: "Which of the following processes can apply to both the Lok Sabha and the permanent Rajya Sabha?",
+hin: "निम्नलिखित में से कौन-सी प्रक्रियाएँ लोकसभा तथा स्थायी राज्यसभा दोनों पर लागू होती हैं?",
+optE: [
+"Dissolution and Adjournment",
+"Prorogation and Dissolution",
+"Adjournment and Prorogation",
+"Dissolution only"
+],
+optH: [
+"विघटन तथा स्थगन",
+"सत्रावसान तथा विघटन",
+"स्थगन तथा सत्रावसान",
+"केवल विघटन"
+],
+ans: 2,
+solE: "Both Houses can be adjourned and prorogued. However, only the Lok Sabha can be dissolved, while the Rajya Sabha is a permanent House.",
+solH: "लोकसभा और राज्यसभा दोनों का स्थगन (Adjournment) तथा सत्रावसान (Prorogation) हो सकता है। किंतु केवल लोकसभा का विघटन (Dissolution) होता है, क्योंकि राज्यसभा एक स्थायी सदन है।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 3 * 60; // 3 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+		function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+			}, 500);
+		}
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. Rank & Percentile Engine
+            const N = 5000;
+            let M = Math.max(0, score);
+            const S = M / MAX_SCORE;
+            let P_raw = Math.pow(S, 2.2);
+
+            let percent, rank;
+            if (M >= 45) {
+                percent = 99.00 + ((M - 45) / 5) * 1.00;
+                rank = 50 - ((M - 45) / 5) * 49;
+            } else if (M >= 35) {
+                percent = 85 + ((M - 35) / 9) * 14;
+                rank = 500 - ((M - 35) / 9) * 450;
+            } else if (M >= 25) {
+                percent = 60 + ((M - 25) / 9) * 25;
+                rank = 2500 - ((M - 25) / 9) * 2000;
+            } else if (M >= 10) {
+                percent = 30 + ((M - 10) / 14) * 30;
+                rank = 4500 - ((M - 10) / 14) * 2000;
+            } else {
+                percent = ((M - 0) / 9) * 30;
+                rank = 5000 - ((M - 0) / 9) * 500;
+            }
+            
+            rank = Math.max(1, Math.round(rank));
+            percent = percent > 100 ? 100 : percent;
+
+            // 3. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percent.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+</body>
+</html>
