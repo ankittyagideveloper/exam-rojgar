@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -231,13 +231,15 @@ function CursorShadow() {
 }
 
 function Landing() {
+  const [dark, setDark] = useState(false);
+
   return (
-    <div className="mentorship-page relative min-h-screen overflow-x-hidden bg-background">
+    <div className={`mentorship-page${dark ? " dark" : ""} relative min-h-screen overflow-x-hidden bg-background`}>
       <div className="pointer-events-none fixed inset-0 aurora" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 grid-canvas opacity-60" aria-hidden="true" />
       <CursorShadow />
-      
-      <Header />
+
+      <Header dark={dark} onToggle={() => setDark((d) => !d)} />
 
       <main className="relative pt-24">
         <Hero />
@@ -259,13 +261,13 @@ function Landing() {
 }
 
 
-function Header() {
+function Header({ dark, onToggle }) {
  const { t } = useTranslation();
   return (
-    <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-white/20 bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.18)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-white/10">
+    <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link className="flex items-center gap-3" to="/">
-          <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-gray-100 border border-border rounded-full flex items-center justify-center">
             <img src="/logo.png" alt="examrojgar-logo" className="grid size-10 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow" />
           </div>
           <span className="font-display text-lg font-semibold tracking-tight">
@@ -288,12 +290,33 @@ function Header() {
           ))}
         </nav>
 
-        <a
-          href={APPLY_URL}
-          className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
-        >
-          Apply Now
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onToggle}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            {dark ? (
+              /* Sun icon */
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              </svg>
+            ) : (
+              /* Moon icon */
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            )}
+          </button>
+
+          <a
+            href={APPLY_URL}
+            className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+          >
+            Apply Now
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -352,7 +375,7 @@ function Hero() {
                 className="h-full w-full object-cover"
               />
               {/* circular shadow at bottom */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/60 blur-2xl" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
             </div>
         {/* <CodeCard /> */}
       </div>
@@ -883,7 +906,7 @@ function Mentor() {
             />
           </div>
           {/* circular shadow at bottom */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/60 blur-2xl" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
 
           <div className="absolute -bottom-5 left-6 rounded-2xl glass-card px-5 py-4">
             <p className="font-display text-base font-semibold">
