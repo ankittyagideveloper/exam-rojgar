@@ -10,6 +10,7 @@ import { Link, useLocation } from "react-router";
 // import mentorImg from "@/assets/mentor.jpg";
 import React from 'react';
 import './styles.css'
+import { useUser } from "@clerk/clerk-react";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -19,7 +20,7 @@ export const YoutubeIcon = ({ size = 20 }) => (
     height={size}
     fill="currentColor"
   >
-    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
   </svg>
 );
 
@@ -203,6 +204,8 @@ const TESTIMONIALS = [
     title: "Exam Rojgar 2026 Batch-1",
   },
 ];
+
+const TARGET_SERIES = "/online-test-series/rrb/rrb-ntpc"
 const APPLY_URL = "#program";
 
 function CursorShadow() {
@@ -233,7 +236,8 @@ function CursorShadow() {
 function Landing() {
   const [dark, setDark] = useState(false);
   const { hash } = useLocation();
-
+  const { user } = useUser();
+  const isPaid = user?.publicMetadata?.roles?.includes("premium");
   useEffect(() => {
     if (!hash) return;
     const id = hash.replace("#", "");
@@ -244,20 +248,19 @@ function Landing() {
     }, 100);
     return () => clearTimeout(timer);
   }, [hash]);
-
   return (
     <div className={`mentorship-page${dark ? " dark" : ""} relative min-h-screen overflow-x-hidden bg-background`}>
       <div className="pointer-events-none fixed inset-0 aurora" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 grid-canvas opacity-60" aria-hidden="true" />
       <CursorShadow />
 
-      <Header dark={dark} onToggle={() => setDark((d) => !d)} />
+      <Header dark={dark} onToggle={() => setDark((d) => !d)} isPaid={isPaid} />
 
       <main className="relative pt-24">
         <Hero />
         <Marquee />
         <Mission />
-        <Program />
+        <Program isPaid={isPaid} />
         <Process />
         <Structure />
         <Mentor />
@@ -273,8 +276,9 @@ function Landing() {
 }
 
 
-function Header({ dark, onToggle }) {
- const { t } = useTranslation();
+function Header({ dark, onToggle, isPaid }) {
+  const { t } = useTranslation();
+
   return (
     <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
@@ -311,23 +315,32 @@ function Header({ dark, onToggle }) {
             {dark ? (
               /* Sun icon */
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="4"/>
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
               </svg>
             ) : (
               /* Moon icon */
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
             )}
           </button>
+          {isPaid ?
+            <Link
+              to={TARGET_SERIES}
+              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+            >
+              Target Series
+            </Link>
+            :
+            <a
+              href={APPLY_URL}
+              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+            >
+              Apply Now
+            </a>
+          }
 
-          <a
-            href={APPLY_URL}
-            className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
-          >
-            Apply Now
-          </a>
         </div>
       </div>
     </header>
@@ -345,7 +358,7 @@ function Hero() {
             <span className="text-border">•</span>
             <span className="text-rose">Limited Seats</span>
           </div>
-          
+
 
           <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
             3 Months
@@ -376,19 +389,19 @@ function Hero() {
             </a>
           </div>
         </div>
-          
-         <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
-              <img
-                src="/profile-mentor.png"
-                alt="Gopal Sir - Exam Rojgaar Mentor"
-                loading="lazy"
-                width={912}
-                height={1104}
-                className="h-full w-full object-cover"
-              />
-              {/* circular shadow at bottom */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
-            </div>
+
+        <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
+          <img
+            src="/profile-mentor.png"
+            alt="Gopal Sir - Exam Rojgaar Mentor"
+            loading="lazy"
+            width={912}
+            height={1104}
+            className="h-full w-full object-cover"
+          />
+          {/* circular shadow at bottom */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
+        </div>
         {/* <CodeCard /> */}
       </div>
     </section>
@@ -516,9 +529,9 @@ function Mission() {
 }
 
 
-function RazorpayButton({id}) {
+function RazorpayButton({ id }) {
   const containerRef = useRef(null);
-  
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container || container.hasChildNodes()) return;
@@ -536,14 +549,14 @@ function RazorpayButton({id}) {
     };
   }, []);
 
-  return <form ref={containerRef}  />
+  return <form ref={containerRef} />
 
 }
 
 
 
 
-function Program() {
+function Program({ isPaid }) {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-5 sm:py-24">
       <div className="text-center">
@@ -561,11 +574,10 @@ function Program() {
         {PLANS.map((plan) => (
           <article
             key={plan.name}
-            className={`relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 ${
-              plan.featured
-                ? "glass-card ring-1 ring-accent/60 shadow-glow"
-                : "glass-card"
-            }`}
+            className={`relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 ${plan.featured
+              ? "glass-card ring-1 ring-accent/60 shadow-glow"
+              : "glass-card"
+              }`}
           >
             {plan.featured && (
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground whitespace-nowrap sm:left-auto sm:right-8 sm:translate-x-0">
@@ -603,7 +615,12 @@ function Program() {
                   : "bg-primary text-primary-foreground"
               }`}
             > */}
-            <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>
+            {isPaid ? <Link
+              to={TARGET_SERIES}
+              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+            >
+              Target Series
+            </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>}
 
             {/* </button> */}
 
@@ -892,7 +909,7 @@ function Structure() {
             </div>
 
             <span className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-xs font-semibold text-accent-foreground">
-            50+ MOCK TESTS
+              50+ MOCK TESTS
             </span>
           </div>
         </div>
@@ -904,7 +921,7 @@ function Mentor() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="grid items-center gap-12 lg:grid-cols-2">
-        
+
         {/* Mentor Image */}
         <div className="relative">
           <div className="overflow-hidden rounded-3xl glass-card">
@@ -927,7 +944,7 @@ function Mentor() {
             <p className="font-mono text-xs text-muted-foreground">
               SSE (Ministry of Railways)
             </p>
-              <p className="font-mono text-xs text-muted-foreground">
+            <p className="font-mono text-xs text-muted-foreground">
               Exam Rojgaar Mentor
             </p>
           </div>
@@ -1217,9 +1234,9 @@ function Footer() {
 }
 
 
-const TargetSeriesPage =()=>{
+const TargetSeriesPage = () => {
 
-    return <Landing/>
+  return <Landing />
 }
 
 export default TargetSeriesPage;
