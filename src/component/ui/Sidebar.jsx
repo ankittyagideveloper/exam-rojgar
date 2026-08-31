@@ -159,7 +159,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     setOpen(false);
   };
 
-  const isAdmin = user?.publicMetadata?.roles.includes("admin");
+  const isAdmin = user?.publicMetadata?.roles?.includes("admin");
   return (
     <>
       <div

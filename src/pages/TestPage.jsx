@@ -12,7 +12,7 @@ const TestPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isPaid = user?.publicMetadata?.roles.includes("premium");
+  const isPaid = user?.publicMetadata?.roles?.includes("premium");
 
   const pathSegments = location.pathname
     .replace("/online-test-series", "")

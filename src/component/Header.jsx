@@ -58,7 +58,7 @@ function InstallPWAButton() {
 
 const Header = () => {
   const { user, isSignedIn } = useUser();
-  const isAdmin = user?.publicMetadata?.roles.includes("admin");
+  const isAdmin = user?.publicMetadata?.roles?.includes("admin");
   const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
     useContext(ThemeContext);
   const {
