@@ -1,13 +1,13 @@
 export const PolityConstitutionAndPreambleAndSourcesMockData = {
-  "paperName": "Round 1 Challenge Series",
+  "paperName": "Constitution & PreambleAndSources",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "category": "Hard Challenge Sectional Mocks",
+  "category": "Easy",
   "duration": 3,
   "marksCorrect": 2,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
-  "storageKey": "ExamRojgaar_demo_percentage",
+  "storageKey": "ExamRojgaar_PolityConstitutionAndPreambleAndSourcesMockData",
   "questions": [
     {
       "id": 1,
