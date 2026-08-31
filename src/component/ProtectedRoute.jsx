@@ -1,8 +1,13 @@
 import { useUser, SignIn } from "@clerk/clerk-react";
 import { Navigate } from "react-router";
 
-export default function ProtectedRoute({ children }) {
-  const { isSignedIn, user } = useUser();
+export default function ProtectedRoute({ children, requirePremium = false }) {
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  // Wait for Clerk to initialise before making any auth decision
+  if (!isLoaded) {
+    return null;
+  }
 
   // If user is not logged in → Show Clerk's SignIn form
   if (!isSignedIn) {
@@ -15,13 +20,18 @@ export default function ProtectedRoute({ children }) {
     );
   }
 
-  // If user is logged in → Show protected content
+  // If premium is required, check the user's roles metadata
+  if (requirePremium && !user?.publicMetadata?.roles?.includes("premium")) {
+    return <Navigate to="/target-series#program" replace />;
+  }
+
+  // If user is logged in (and premium when required) → Show protected content
   return children;
 }
 
 export function AdminRoute({ children }) {
-  const { isSignedIn, user } = useUser();
-  const isAdmin = user?.publicMetadata?.role === "admin";
+  const { user } = useUser();
+  const isAdmin = user?.publicMetadata?.roles?.includes("admin");
 
   if (!user || !isAdmin) {
     // Check if logged in AND is admin

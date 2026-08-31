@@ -93,7 +93,7 @@ const Quiz = () => {
   };
 
   console.log(attemptMap);
-  const isAdmin = user?.publicMetadata?.role === "admin";
+  const isAdmin = user?.publicMetadata?.roles.includes("admin");
 
   const saveRegistrationToFirestore = async ({
     db,

@@ -68,6 +68,7 @@ import RevoltEconomicImpactPeasantMockTestPage from "./pages/RevoltEconomicImpac
 import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTestMockTestPage";
 import TargetSeriesPage from "./pages/mentorship/Mentorship";
 import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtremistPhaseMockTestPage";
+import TestSeriesDemoPage from "./pages/TestSeriesDemoPage";
 
 
 //! Todo: Fix it 
@@ -239,7 +240,7 @@ const router = createBrowserRouter([
   {
     path: "/mock-test",
     element: (
-      <ProtectedRoute>
+      <ProtectedRoute requirePremium>
         <TestLayout />
       </ProtectedRoute>
     ),
@@ -330,6 +331,7 @@ const router = createBrowserRouter([
       { path: "Average", element: <AverageMockTestPage /> },
     
       { path: "ArithmeticSectionalTest", element: <ArithmeticSectionalTestMockTestPage /> },
+      { path: "test-series-demo", element: <TestSeriesDemoPage /> },
     ],
   },
   {

@@ -38,7 +38,7 @@ import { useMediaQuery } from "react-responsive";
 export default function SidebarDemo({ children }) {
   const { user, isSignedIn } = useUser();
 
-  const isAdmin = user?.publicMetadata?.role === "admin" ? "admin" : "user";
+  const isAdmin = user?.publicMetadata?.roles.includes("admin") ? "admin" : "user";
   const location = useLocation();
   const path = location.pathname;
   const { t } = useTranslation();

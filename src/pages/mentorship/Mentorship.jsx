@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "../../../components/ui/accordion";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 // import mentorImg from "@/assets/mentor.jpg";
 import React from 'react';
 import './styles.css'
@@ -232,6 +232,18 @@ function CursorShadow() {
 
 function Landing() {
   const [dark, setDark] = useState(false);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.replace("#", "");
+    // Defer scroll until after the full render pass settles
+    const timer = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [hash]);
 
   return (
     <div className={`mentorship-page${dark ? " dark" : ""} relative min-h-screen overflow-x-hidden bg-background`}>

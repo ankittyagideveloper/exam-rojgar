@@ -8,7 +8,12 @@ import { QuizCard } from "../component/QuizCard";
 import { useUser } from "@clerk/clerk-react";
 
 const TestPage = () => {
+  const { user } = useUser();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const isPaid = user?.publicMetadata?.roles.includes("premium");
+
   const pathSegments = location.pathname
     .replace("/online-test-series", "")
     .replace("/quiz-category", "")
@@ -29,8 +34,6 @@ const TestPage = () => {
   }
 
   const isRoot = pathSegments.length === 0;
-
-  const navigate = useNavigate();
   // const categories = [
   //   {
   //     id: "test1",
@@ -61,7 +64,6 @@ const TestPage = () => {
   //     title: "PRACTICE TEST",
   //   },
   // ];
-
   const handleTest = (id) => {
     navigate(`/all-test/${id}`);
   };
@@ -198,6 +200,7 @@ const TestPage = () => {
               userCount="45.8k"
               isFree={true}
               isNewInterface={true}
+              isPaid ={isPaid}
               onStartClick={() => {
                 if (test.isSpecialMock && test.route) {
                   navigate(test.route);

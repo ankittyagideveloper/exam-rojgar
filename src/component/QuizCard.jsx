@@ -1,5 +1,7 @@
 "use client";
 
+import { useNavigate } from "react-router";
+
 export function QuizCard({
   title,
   date,
@@ -12,6 +14,7 @@ export function QuizCard({
   isNewInterface = false,
   onStartClick,
   attemptStatus,
+  isPaid = false
 }) {
   const formatLanguages = (langs) => {
     if (langs.length <= 2) {
@@ -22,6 +25,7 @@ export function QuizCard({
     return `${displayed.join(", ")} + ${remaining} More`;
   };
   const isSubmitted = attemptStatus === "SUBMITTED";
+  const navigate = useNavigate()
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
       {/* Mobile Layout */}
@@ -46,7 +50,12 @@ export function QuizCard({
             {title}
           </h3>
           <div className="flex flex-col gap-1">
-            <button
+            {!isPaid ? <button
+              onClick={() => navigate('/target-series#program')}
+              className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
+            >
+              🔒 Locked
+            </button> : <button
               disabled={attemptStatus === "SUBMITTED"}
               onClick={onStartClick}
               className={`${
@@ -58,7 +67,7 @@ export function QuizCard({
                 : attemptStatus === "SUBMITTED"
                 ? "SUBMITTED"
                 : "Start Now"}
-            </button>
+            </button>}
             {attemptStatus === "SUBMITTED" && (
               <button
                 onClick={onStartClick}
@@ -137,7 +146,13 @@ export function QuizCard({
           {/* Start Button */}
           <div className="ml-6">
             <div className="flex flex-col gap-1">
-              <button
+              {!isPaid ? <button
+                  onClick={() => navigate('/target-series#program')}
+                  className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
+                >
+                  🔒 Locked
+                </button>
+                : <button
                 disabled={attemptStatus === "SUBMITTED"}
                 onClick={onStartClick}
                 className={`${
@@ -149,7 +164,7 @@ export function QuizCard({
                   : attemptStatus === "SUBMITTED"
                   ? "SUBMITTED"
                   : "Start Now"}
-              </button>
+              </button>}
               {attemptStatus === "SUBMITTED" && (
                 <button
                   onClick={() => onStartClick(true)}
