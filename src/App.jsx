@@ -76,6 +76,10 @@ import RailwayMockTestPage from "./pages/RailwayMockTestPage";
 import PolityConstitutionAndPreambleAndSourcesMockTestPage from "./pages/PolityConstitutionAndPreambleAndSourcesMockTestPage";
 import ScheduleCitizenshipMockTestPage from "./pages/ScheduleCitizenshipMockTestPage";
 import ArithmeticSectionalTestMockTestPage from "./pages/ArithmeticSectionalTestMockTestPage";
+import FundamentalRightsAndDpSpMockTestPage from "./pages/FundamentalRightsAndDpSpMockTestPage";
+import ParliamentMockTestPage from "./pages/ParliamentMockTestPage";
+import AmendmentsMockTestPage from "./pages/AmendmentsMockTestPage";
+import MathsMockTestPage from "./pages/MathsMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -315,23 +319,33 @@ const router = createBrowserRouter([
       },
 
       { path: "Time", element: <TimeMockTestPage /> },
-    
+
       { path: "RevoltEconomicImpactPeasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
-    
+
       { path: "hostory-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
-    
+
       { path: "ModernHistoryExtremistPhase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
-      
-      {path : "dummy-test", element :<RailwayMockTestPage/>},
-    
+
+      { path: "dummy-test", element: <RailwayMockTestPage /> },
+
       { path: "PolityConstitutionAndPreambleAndSources", element: <PolityConstitutionAndPreambleAndSourcesMockTestPage /> },
-    
+
       { path: "ScheduleCitizenship", element: <ScheduleCitizenshipMockTestPage /> },
-    
+
       { path: "Average", element: <AverageMockTestPage /> },
-    
+
       { path: "ArithmeticSectionalTest", element: <ArithmeticSectionalTestMockTestPage /> },
+
       { path: "test-series-demo", element: <TestSeriesDemoPage /> },
+
+
+      { path: "FundamentalRightsAndDpSp", element: <FundamentalRightsAndDpSpMockTestPage /> },
+
+      { path: "Parliament", element: <ParliamentMockTestPage /> },
+
+      { path: "Amendments", element: <AmendmentsMockTestPage /> },
+
+      { path: "Maths", element: <MathsMockTestPage /> }
     ],
   },
   {
