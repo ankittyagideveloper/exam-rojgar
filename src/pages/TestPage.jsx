@@ -8,7 +8,7 @@ import { QuizCard } from "../component/QuizCard";
 import { useUser } from "@clerk/clerk-react";
 
 const TestPage = () => {
-  
+
   const { user } = useUser();
   const location = useLocation();
   const navigate = useNavigate();
@@ -121,7 +121,7 @@ const TestPage = () => {
                   studentCount={100}
                   title={cat.title}
                   progress={0}
-                  total={Object?.keys(cat?.subcategories ??{})?.length}
+                  total={Object?.keys(cat?.subcategories ?? {})?.length}
                   percentage={1}
                   onGoToTest={() => {
                     navigate(`/online-test-series/${cat.slug}`);
@@ -201,7 +201,7 @@ const TestPage = () => {
               userCount="45.8k"
               isFree={true}
               isNewInterface={true}
-              isPaid ={isPaid}
+              isPaid={isPaid}
               onStartClick={() => {
                 if (test.isSpecialMock && test.route) {
                   navigate(test.route);
@@ -211,6 +211,40 @@ const TestPage = () => {
               }}
             />
           ))}
+        {!isRoot && current?.tests?.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col items-center justify-center min-h-[60vh] px-4 py-16 text-center"
+          >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground mb-4 leading-tight">
+              Coming{" "}
+              <span className="text-primary">Soon</span>
+            </h1>
+
+            <p className="max-w-md sm:max-w-lg text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
+              We&apos;re hard at work preparing exciting tests for this section.
+              Stay tuned — they&apos;ll be live very soon!
+            </p>
+
+            <div className="flex items-center gap-3">
+              {[0, 1, 2].map((i) => (
+                <motion.span
+                  key={i}
+                  className="block w-3 h-3 rounded-full bg-primary"
+                  animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{
+                    duration: 1.2,
+                    repeat: Infinity,
+                    delay: i * 0.3,
+                    ease: "easeInOut",
+                  }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
       </div>
     </>
   );

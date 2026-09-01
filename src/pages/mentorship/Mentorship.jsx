@@ -328,14 +328,14 @@ function Header({ dark, onToggle, isPaid }) {
           {isPaid ?
             <Link
               to={TARGET_SERIES}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="rounded-full bg-primary/90 px-3 py-2 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:px-5 sm:py-2.5 sm:text-sm whitespace-nowrap"
             >
               Target Series
             </Link>
             :
             <a
               href={APPLY_URL}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="rounded-full bg-primary/90 px-3 py-2 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:px-5 sm:py-2.5 sm:text-sm whitespace-nowrap"
             >
               Apply Now
             </a>
@@ -617,7 +617,7 @@ function Program({ isPaid }) {
             > */}
             {isPaid ? <Link
               to={TARGET_SERIES}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
             >
               Target Series
             </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>}

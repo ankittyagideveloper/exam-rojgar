@@ -21,6 +21,7 @@ const Quiz = () => {
   const [attemptMap, setAttemptMap] = useState({});
   const [openRegistaration, setOpenRegistration] = useState(false);
   const [selectedTest, setSelectedTest] = useState(null);
+  const isPaid = user?.publicMetadata?.roles?.includes("premium");
 
   useEffect(() => {
     // Wait until user is loaded, tests are loaded, and we have tests
@@ -155,6 +156,7 @@ const Quiz = () => {
               isNewInterface={true}
               onStartClick={(islastAttempt) => handleTest(test, islastAttempt)}
               attemptStatus={attemptMap[test.id]?.status || "NOT_STARTED"}
+              isPaid={isPaid}
             />
           ))}
       </div>
