@@ -8,6 +8,7 @@ import { QuizCard } from "../component/QuizCard";
 import { useUser } from "@clerk/clerk-react";
 
 const TestPage = () => {
+  
   const { user } = useUser();
   const location = useLocation();
   const navigate = useNavigate();
@@ -120,7 +121,7 @@ const TestPage = () => {
                   studentCount={100}
                   title={cat.title}
                   progress={0}
-                  total={1}
+                  total={Object?.keys(cat?.subcategories ??{})?.length}
                   percentage={1}
                   onGoToTest={() => {
                     navigate(`/online-test-series/${cat.slug}`);
@@ -173,7 +174,7 @@ const TestPage = () => {
                 studentCount={100}
                 title={sub.title}
                 progress={0}
-                total={1}
+                total={Object?.keys(sub?.subcategories ?? sub?.tests ?? {})?.length}
                 percentage={1}
                 onGoToTest={() => {
                   navigate(
