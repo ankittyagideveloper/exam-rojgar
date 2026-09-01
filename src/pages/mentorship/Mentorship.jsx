@@ -281,12 +281,12 @@ function Header({ dark, onToggle, isPaid }) {
 
   return (
     <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link className="flex items-center gap-3" to="/">
-          <div className="w-12 h-12 bg-gray-100 border border-border rounded-full flex items-center justify-center">
-            <img src="/logo.png" alt="examrojgar-logo" className="grid size-10 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow" />
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:h-16 sm:px-5">
+        <Link className="flex items-center gap-2 sm:gap-3 min-w-0" to="/">
+          <div className="w-9 h-9 shrink-0 bg-gray-100 border border-border rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+            <img src="/logo.png" alt="examrojgar-logo" className="grid size-8 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow sm:size-10" />
           </div>
-          <span className="font-display text-lg font-semibold tracking-tight">
+          <span className="font-display text-sm font-semibold tracking-tight sm:text-lg">
             Exam Rojgaar
           </span>
         </Link>
@@ -306,11 +306,11 @@ function Header({ dark, onToggle, isPaid }) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={onToggle}
             aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
           >
             {dark ? (
               /* Sun icon */
@@ -328,19 +328,18 @@ function Header({ dark, onToggle, isPaid }) {
           {isPaid ?
             <Link
               to={TARGET_SERIES}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
             >
               Target Series
             </Link>
             :
             <a
               href={APPLY_URL}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
             >
               Apply Now
             </a>
           }
-
         </div>
       </div>
     </header>
@@ -617,11 +616,10 @@ function Program({ isPaid }) {
             > */}
             {isPaid ? <Link
               to={TARGET_SERIES}
-              className="rounded-full bg-primary/90 px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md"
+              className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
             >
               Target Series
-            </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>
-            }
+            </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>}
 
             {/* </button> */}
 
