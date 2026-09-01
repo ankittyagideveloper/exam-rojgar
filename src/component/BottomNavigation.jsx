@@ -11,14 +11,15 @@ const BottomNavigation = () => {
 
   const navItems = [
     { id: "home", label: t("homeBtn"), icon: Home, path: "/home" },
-        { id: "mentor", label: t("mentorBtn"), icon: Target, path: "/target-series", isfeatured: true },
-    { id: "courses", label: t("coursesBtn"), icon: BookOpen, path: "/learn" },
     {
       id: "test",
       label: t("testBtn"),
       icon: FileText,
       path: "/online-test-series",
     },
+    { id: "mentor", label: t("mentorBtn"), icon: Target, path: "/target-series", isfeatured: true },
+    { id: "courses", label: t("coursesBtn"), icon: BookOpen, path: "/learn" },
+
     {
       id: "quiz",
       label: t("quizBtn"),
@@ -59,9 +60,8 @@ const BottomNavigation = () => {
                     <Icon size={22} color="white" />
                   </div>
                   <span
-                    className={`text-[10px] xs:text-xs font-semibold mt-1 ${
-                      active ? "text-[#2279be]" : "text-[#1a5fa0]"
-                    } dark:text-blue-400`}
+                    className={`text-[10px] xs:text-xs font-semibold mt-1 ${active ? "text-[#2279be]" : "text-[#1a5fa0]"
+                      } dark:text-blue-400`}
                   >
                     {item.label}
                   </span>
@@ -72,11 +72,10 @@ const BottomNavigation = () => {
             return (
               <Link to={item.path} key={item.id}>
                 <button
-                  className={`cursor-pointer flex flex-col items-center py-2 px-2 xs:px-3 rounded-lg transition-colors ${
-                    active
+                  className={`cursor-pointer flex flex-col items-center py-2 px-2 xs:px-3 rounded-lg transition-colors ${active
                       ? "text-[#2279be]"
                       : "text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
-                  }`}
+                    }`}
                 >
                   <Icon
                     size={22}
@@ -84,9 +83,8 @@ const BottomNavigation = () => {
                     className="mb-1"
                   />
                   <span
-                    className={`text-[10px] xs:text-xs font-medium leading-tight ${
-                      active ? "text-[#2279be]" : "text-gray-500 dark:text-gray-400"
-                    }`}
+                    className={`text-[10px] xs:text-xs font-medium leading-tight ${active ? "text-[#2279be]" : "text-gray-500 dark:text-gray-400"
+                      }`}
                   >
                     {item.label}
                   </span>

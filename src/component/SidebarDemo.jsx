@@ -57,45 +57,11 @@ export default function SidebarDemo({ children }) {
       href: "/home",
       icon: isActive("/home") ? (
         <IconHomeFilled
-          className={`${
-            isActive("/home") ? "text-[#0ad0f4] fill-[#0ad0f4]" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/home") ? "text-[#0ad0f4] fill-[#0ad0f4]" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconHome className="h-5 w-5 shrink-0 dark:text-neutral-200 " />
-      ),
-      role: ["user", "admin"],
-    },
-    {
-      label: t("mentorBtn"),
-      href: "/target-series",
-      icon: isActive("/target-series") ? (
-        <IconTargetArrow
-          className={`${
-            isActive("/target-series") ? "text-[#1272ba]" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconTarget className="h-5 w-5 shrink-0 dark:text-neutral-200" />
-      ),
-      isFeatured:true,
-      role: ["user", "admin"],
-    },
-    {
-      label: t("coursesBtn"),
-      href: "/learn",
-      icon: isActive("/learn") ? (
-        <IconBookFilled
-          className={`${
-            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
-      ) : (
-        <IconBook
-          className={`${
-            isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
-        />
       ),
       role: ["user", "admin"],
     },
@@ -104,12 +70,41 @@ export default function SidebarDemo({ children }) {
       href: "/online-test-series",
       icon: isActive("/online-test-series") ? (
         <IconClipboardFilled
-          className={`${
-            isActive("/online-test-series") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/online-test-series") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconClipboard className={"h-5 w-5 shrink-0 dark:text-neutral-200"} />
+      ),
+      role: ["user", "admin"],
+    },
+    {
+      label: t("mentorBtn"),
+      href: "/target-series",
+      icon: isActive("/target-series") ? (
+        <IconTargetArrow
+          className={`${isActive("/target-series") ? "text-[#1272ba]" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconTarget className="h-5 w-5 shrink-0 dark:text-neutral-200" />
+      ),
+      isFeatured: true,
+      role: ["user", "admin"],
+    },
+    {
+      label: t("coursesBtn"),
+      href: "/learn",
+      icon: isActive("/learn") ? (
+        <IconBookFilled
+          className={`${isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconBook
+          className={`${isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
       ),
       role: ["user", "admin"],
     },
@@ -118,15 +113,13 @@ export default function SidebarDemo({ children }) {
       href: "/quiz-category",
       icon: isActive("/quiz-category") ? (
         <IconHelpHexagonFilled
-          className={`${
-            isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconHelpHexagon
-          className={`${
-            isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
       role: ["user", "admin"],
@@ -136,15 +129,13 @@ export default function SidebarDemo({ children }) {
       href: "/pdf-category",
       icon: isActive("/pdf-category") ? (
         <IconFileTextFilled
-          className={`${
-            isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconFileText
-          className={`${
-            isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
       role: ["user", "admin"],
@@ -154,15 +145,13 @@ export default function SidebarDemo({ children }) {
       href: "/admin/tests",
       icon: isActive("/admin-panel") ? (
         <IconUserFilled
-          className={`${
-            isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconUser
-          className={`${
-            isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
       role: ["admin"],
@@ -172,15 +161,13 @@ export default function SidebarDemo({ children }) {
       href: "/attempted-tests",
       icon: isActive("/attempted-tests") ? (
         <IconSquareCheckFilled
-          className={`${
-            isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconSquareCheck
-          className={`${
-            isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
-          } h-5 w-5 shrink-0 dark:text-neutral-200`}
+          className={`${isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
       role: ["admin", "user"],
@@ -207,9 +194,8 @@ export default function SidebarDemo({ children }) {
       <Sidebar open={open} setOpen={setOpen} animate={true}>
         <SidebarBody className="justify-between gap-10 bg-[#1b1b1b] text-[#86a1ae]">
           <div
-            className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto ${
-              isAdmin ? "mt-[30px]" : ""
-            }`}
+            className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto ${isAdmin ? "mt-[30px]" : ""
+              }`}
           >
             <div className="mt-12 md:mt-8 flex flex-col  pt-3">
               {links
