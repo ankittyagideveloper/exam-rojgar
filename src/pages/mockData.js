@@ -459,7 +459,22 @@ export const mockData = {
                   name: "Basic Concepts",
                   slug: "basic-concepts",
                   description: "Basic Geography Concepts",
-                  tests: [],
+                  tests: [
+                    {
+                      id: "geography-basics-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Geography Basics Test 1 Mock Test",
+                      title: "Geography Basics Test 1 - Mock Test",
+                      name: "Geography Basics Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/geography-basics-test-1",
+                    },
+                  ],
                 },
                 "indian-geography": {
                   id: "indian-geography",
