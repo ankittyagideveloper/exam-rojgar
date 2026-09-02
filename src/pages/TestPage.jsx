@@ -224,8 +224,7 @@ const TestPage = () => {
             </h1>
 
             <p className="max-w-md sm:max-w-lg text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
-              We&apos;re hard at work preparing exciting tests for this section.
-              Stay tuned — they&apos;ll be live very soon!
+              Tests for this section are being crafted carefully. It may take some time — but they&apos;ll be worth the wait.
             </p>
 
             <div className="flex items-center gap-3">

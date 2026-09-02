@@ -441,7 +441,6 @@ export const mockData = {
                   tests: [],
                 },
               },
-              tests: [],
             },
             "geography": {
               id: "tests",
@@ -498,7 +497,6 @@ export const mockData = {
                   ],
                 },
               },
-              tests: [],
             },
             "science": {
               id: "tests",
@@ -540,7 +538,6 @@ export const mockData = {
                   tests: [],
                 },
               },
-              tests: [],
             },
             "maths": {
               id: "tests",
