@@ -346,7 +346,7 @@ const router = createBrowserRouter([
 
       { path: "Amendments", element: <AmendmentsMockTestPage /> },
 
-      { path: "Maths", element: <MathsMockTestPage /> }
+      { path: "Maths", element: <MathsMockTestPage /> },
     
       { path: "geography-basics-test-1", element: <GeographyBasicsTest1MockTestPage /> },
     ],

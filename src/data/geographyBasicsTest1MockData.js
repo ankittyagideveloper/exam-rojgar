@@ -1,5 +1,5 @@
 export const geographyBasicsTest1MockData = {
-  "paperName": "Round 1 Challenge Series",
+  "paperName": "Geography Basic Mock Test-1",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
   "subject": "Geography Basics",
