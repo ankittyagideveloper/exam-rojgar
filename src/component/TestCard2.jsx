@@ -46,7 +46,7 @@ export default function TestCard2(props) {
         onClick={onGoToTest}
         className="cursor-pointer w-full bg-cyan-400 hover:bg-cyan-500 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
       >
-        {progress === total
+        {total===0 ? "Coming Soon.." :progress === total
           ? "Completed!"
           : progress === 0
           ? "Start Test Series"
