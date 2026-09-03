@@ -1149,9 +1149,8 @@ export const courseMockData = [
     title: "Advance Maths — RRB NTPC & RRB JE",
     description:
       "Master Geometry, Mensuration & more from RRB NTPC & RRB JE PYQs. Perfect for beginners and revision.",
-    thumbnail:
-      "https://i.ytimg.com/vi/EaTwYxmEcJs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDDu-d9NQziCPIpQF8xdvsPzUc3Lg",
-    thumbnailAlt: "RRB NTPC Foundation Course thumbnail",
+    thumbnail: "/advance-maths-thumbnail.svg",
+    thumbnailAlt: "Advance Maths – RRB NTPC & RRB JE course thumbnail",
     category: "Railway Exams",
     level: "Advance",
     slug: "rrb-ntpc-advance-maths",
