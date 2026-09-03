@@ -140,7 +140,7 @@ const FAQS = [
   },
   {
     q: "When does the batch start?",
-    a: "The RRB NTPC 2026 paid batch starts from 22nd August 2026.",
+    a: "The RRB NTPC 2026 paid batch starts from 15 September 2026.",
   },
   {
     q: "Which subjects are covered?",
@@ -353,7 +353,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             <span className="size-1.5 rounded-full bg-emerald animate-pulse-dot" />
-            August 2026 Batch
+            September 2026 Batch
             <span className="text-border">•</span>
             <span className="text-rose">Limited Seats</span>
           </div>
@@ -1169,7 +1169,7 @@ function FinalCta() {
 
         <div className="relative">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-violet">
-            Batch Starts 22nd August 2026
+            Batch Starts 15th September 2026
           </p>
 
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
