@@ -54,7 +54,7 @@ function LearnPage() {
                 to={`/learn/${course.slug}`}
                 className="group block"
               >
-                <article className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer">
+                <article className="mb-15 overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer">
                   <div className="aspect-[16/9] w-full overflow-hidden bg-gray-200">
                     <img
                       src={course.thumbnail}

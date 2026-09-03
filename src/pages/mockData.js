@@ -1149,7 +1149,7 @@ export const courseMockData = [
     title: "Advance Maths — RRB NTPC & RRB JE",
     description:
       "Master Geometry, Mensuration & more from RRB NTPC & RRB JE PYQs. Perfect for beginners and revision.",
-    thumbnail: "/advance-maths-thumbnail.svg",
+    thumbnail: "/advance-maths.png",
     thumbnailAlt: "Advance Maths – RRB NTPC & RRB JE course thumbnail",
     category: "Railway Exams",
     level: "Advance",
