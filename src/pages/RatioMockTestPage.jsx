@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { RatioMockData } from "../data/RatioMockData";
+import TestSeries from "../component/TestSeries";
 
 const RatioMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const RatioMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={RatioMockData} onComplete={handleComplete} />
+      <TestSeries testData={RatioMockData} onComplete={handleComplete} />
     </div>
   );
 };

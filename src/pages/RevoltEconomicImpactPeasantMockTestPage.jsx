@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { RevoltEconomicImpactPeasantMockData } from "../data/RevoltEconomicImpactPeasantMockData";
+import TestSeries from "../component/TestSeries";
 
 const RevoltEconomicImpactPeasantMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const RevoltEconomicImpactPeasantMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={RevoltEconomicImpactPeasantMockData} onComplete={handleComplete} />
+      <TestSeries testData={RevoltEconomicImpactPeasantMockData} onComplete={handleComplete} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { MughalMockData } from "../data/MughalMockData";
+import TestSeries from "../component/TestSeries";
 
 const MughalMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const MughalMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={MughalMockData} onComplete={handleComplete} />
+      <TestSeries testData={MughalMockData} onComplete={handleComplete} />
     </div>
   );
 };

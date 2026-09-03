@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { ArithmeticSectionalTestMockData } from "../data/ArithmeticSectionalTestMockData";
+import TestSeries from "../component/TestSeries";
 
 const ArithmeticSectionalTestMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const ArithmeticSectionalTestMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={ArithmeticSectionalTestMockData} onComplete={handleComplete} />
+      <TestSeries testData={ArithmeticSectionalTestMockData} onComplete={handleComplete} />
     </div>
   );
 };

@@ -1,8 +1,14 @@
 export const PercentageMockData = {
+  "paperName": "Percentage Mock Test",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "category": "Hard Challenge Sectional Mocks",
+  "subject": "Quantitative Aptitude",
+  "category": "Sectional Mocks",
   "duration": 20,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_PercentageMockData",
   "questions": [
     {
       "id": 1,

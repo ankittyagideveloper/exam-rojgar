@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { ModernHistoryExtremistPhaseMockData } from "../data/ModernHistoryExtremistPhaseMockData";
+import TestSeries from "../component/TestSeries";
 
 const ModernHistoryExtremistPhaseMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const ModernHistoryExtremistPhaseMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={ModernHistoryExtremistPhaseMockData} onComplete={handleComplete} />
+      <TestSeries testData={ModernHistoryExtremistPhaseMockData} onComplete={handleComplete} />
     </div>
   );
 };

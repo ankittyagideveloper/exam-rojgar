@@ -1,10 +1,15 @@
 export const buddhismMockData = {
-  title: "EXAM ROJGAAR MOCKS",
-  subtitle:
-    "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  category: "Buddhism - Ancient History",
-  duration: 3, // minutes
-  questions: [
+  "paperName": "Buddhism Mock Test",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+  "subject": "Ancient History",
+  "category": "Sectional Mocks",
+  "duration": 3,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_buddhismMockData",
+  "questions": [
     {
       id: 1,
       eng: "Which symbol is associated with the birth event of Buddha's life?",

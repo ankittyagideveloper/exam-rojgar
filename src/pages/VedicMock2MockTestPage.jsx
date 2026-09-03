@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { vedicMock2MockData } from "../data/vedicMock2MockData";
+import TestSeries from "../component/TestSeries";
 
 const VedicMock2MockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const VedicMock2MockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={vedicMock2MockData} onComplete={handleComplete} />
+      <TestSeries testData={vedicMock2MockData} onComplete={handleComplete} />
     </div>
   );
 };

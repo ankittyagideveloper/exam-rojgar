@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { AmendmentsMockData } from "../data/AmendmentsMockData";
+import TestSeries from "../component/TestSeries";
 
 const AmendmentsMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const AmendmentsMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={AmendmentsMockData} onComplete={handleComplete} />
+      <TestSeries testData={AmendmentsMockData} onComplete={handleComplete} />
     </div>
   );
 };

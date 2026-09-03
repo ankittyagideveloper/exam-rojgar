@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { hostoryFullRevisionTestMockData } from "../data/hostoryFullRevisionTestMockData";
+import TestSeries from "../component/TestSeries";
 
 const HostoryFullRevisionTestMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const HostoryFullRevisionTestMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={hostoryFullRevisionTestMockData} onComplete={handleComplete} />
+      <TestSeries testData={hostoryFullRevisionTestMockData} onComplete={handleComplete} />
     </div>
   );
 };

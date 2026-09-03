@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { MarathaMockData } from "../data/MarathaMockData";
+import TestSeries from "../component/TestSeries";
 
 const MarathaMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const MarathaMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={MarathaMockData} onComplete={handleComplete} />
+      <TestSeries testData={MarathaMockData} onComplete={handleComplete} />
     </div>
   );
 };

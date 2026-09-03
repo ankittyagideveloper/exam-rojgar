@@ -1,8 +1,14 @@
 export const RevisionTest3MockData = {
+  "paperName": "Revision Test 3",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "category": "Hard Challenge Sectional Mocks",
+  "subject": "General Studies",
+  "category": "Mock Test Series",
   "duration": 80,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_RevisionTest3MockData",
   "questions": [
     {
       "id": 1,

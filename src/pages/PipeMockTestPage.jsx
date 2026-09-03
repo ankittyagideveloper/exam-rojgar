@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { PipeMockData } from "../data/PipeMockData";
+import TestSeries from "../component/TestSeries";
 
 const PipeMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const PipeMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={PipeMockData} onComplete={handleComplete} />
+      <TestSeries testData={PipeMockData} onComplete={handleComplete} />
     </div>
   );
 };

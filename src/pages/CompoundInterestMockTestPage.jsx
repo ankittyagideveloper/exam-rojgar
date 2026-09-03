@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { compoundInterestMockData } from "../data/compoundInterestMockData";
+import TestSeries from "../component/TestSeries";
 
 const CompoundInterestMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const CompoundInterestMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={compoundInterestMockData} onComplete={handleComplete} />
+      <TestSeries testData={compoundInterestMockData} onComplete={handleComplete} />
     </div>
   );
 };

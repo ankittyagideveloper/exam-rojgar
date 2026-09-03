@@ -1,9 +1,15 @@
 export const revisionTest2MockData = {
-  title: "EXAM ROJGAAR MOCKS",
-  subtitle: "Latest Pattern Railway Sectional Mock - Revision Test 2 Batch 1",
-  category: "RRB NTPC Mock Test Series",
-  duration: 80, // minutes (for full 100 questions test)
-  questions: [
+  "paperName": "RRB NTPC Revision Test 2",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "Latest Pattern Railway Sectional Mock - Revision Test 2 Batch 1",
+  "subject": "General Studies",
+  "category": "Mock Test Series",
+  "duration": 80,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_revisionTest2MockData",
+  "questions": [
     {
       id: 1,
       eng: "Sangeeta and Hemlata invest in a business in the ratio 1 : 3. If the total profit is ₹2568, then what is the difference between the profits of Sangeeta and Hemlata?",

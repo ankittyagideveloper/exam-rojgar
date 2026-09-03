@@ -1,10 +1,15 @@
 export const harappaMockData = {
-  title: "EXAM ROJGAAR MOCKS",
-  subtitle:
-    "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  category: "Ancient History - Harappa Mock Test",
-  duration: 10, // minutes
-  questions: [
+  "paperName": "Harappan Civilisation Mock Test",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+  "subject": "Ancient History",
+  "category": "Sectional Mocks",
+  "duration": 10,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_harappaMockData",
+  "questions": [
     {
       id: 1,
       eng: "Harappa site is located near which river?",

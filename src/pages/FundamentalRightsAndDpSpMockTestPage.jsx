@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { FundamentalRightsAndDpSpMockData } from "../data/FundamentalRightsAndDpSpMockData";
+import TestSeries from "../component/TestSeries";
 
 const FundamentalRightsAndDpSpMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const FundamentalRightsAndDpSpMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={FundamentalRightsAndDpSpMockData} onComplete={handleComplete} />
+      <TestSeries testData={FundamentalRightsAndDpSpMockData} onComplete={handleComplete} />
     </div>
   );
 };

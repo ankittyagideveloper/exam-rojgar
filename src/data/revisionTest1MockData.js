@@ -1,9 +1,15 @@
 export const revisionTest1MockData = {
-  title: "EXAM ROJGAAR MOCKS",
-  subtitle: "Latest Pattern Railway Sectional Mock - Revision Test 1 Batch 1",
-  category: "RRB NTPC Mock Test Series",
-  duration: 80, // minutes (for full 100 questions test)
-  questions: [
+  "paperName": "RRB NTPC Revision Test 1",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "Latest Pattern Railway Sectional Mock - Revision Test 1 Batch 1",
+  "subject": "General Studies",
+  "category": "Mock Test Series",
+  "duration": 80,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_revisionTest1MockData",
+  "questions": [
     {
       id: 1,
       eng: "A sum of money becomes four times in 20 years at simple interest. Find the rate of interest.",

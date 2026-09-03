@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { AverageMockData } from "../data/averageMockData";
+import TestSeries from "../component/TestSeries";
 
 const AverageMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const AverageMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={AverageMockData} onComplete={handleComplete} />
+      <TestSeries testData={AverageMockData} onComplete={handleComplete} />
     </div>
   );
 };

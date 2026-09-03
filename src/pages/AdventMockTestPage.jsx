@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { AdventMockData } from "../data/AdventMockData";
+import TestSeries from "../component/TestSeries";
 
 const AdventMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const AdventMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={AdventMockData} onComplete={handleComplete} />
+      <TestSeries testData={AdventMockData} onComplete={handleComplete} />
     </div>
   );
 };

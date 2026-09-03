@@ -1,10 +1,15 @@
 export const mixtureAlligationMockData = {
-  title: "EXAM ROJGAAR MOCKS",
-  subtitle:
-    "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  category: "Mixture & Alligation - Quantitative Aptitude",
-  duration: 10, // minutes
-  questions: [
+  "paperName": "Mixture & Alligation Mock Test",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+  "subject": "Quantitative Aptitude",
+  "category": "Sectional Mocks",
+  "duration": 10,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_mixtureAlligationMockData",
+  "questions": [
     {
       id: 1,
       eng: "In what proportion must wheat at ₹6.20 per kg be mixed with wheat at ₹7.20 per kg so that the mixture be worth ₹6.50 per kg?",

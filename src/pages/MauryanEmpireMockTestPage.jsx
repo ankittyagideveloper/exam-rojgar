@@ -1,16 +1,15 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { mauryanEmpireMockData } from "../data/mauryanEmpireMockData";
+import TestSeries from "../component/TestSeries";
 
 const MauryanEmpireMockTestPage = () => {
   const handleComplete = (results) => {
     console.log("Test completed with results:", results);
-    // You can save results to database here
   };
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={mauryanEmpireMockData} onComplete={handleComplete} />
+      <TestSeries testData={mauryanEmpireMockData} onComplete={handleComplete} />
     </div>
   );
 };

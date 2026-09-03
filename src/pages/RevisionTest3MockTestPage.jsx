@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { RevisionTest3MockData } from "../data/RevisionTest3MockData";
+import TestSeries from "../component/TestSeries";
 
 const RevisionTest3MockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const RevisionTest3MockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={RevisionTest3MockData} onComplete={handleComplete} />
+      <TestSeries testData={RevisionTest3MockData} onComplete={handleComplete} />
     </div>
   );
 };

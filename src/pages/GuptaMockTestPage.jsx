@@ -1,16 +1,15 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { guptaMockData } from "../data/guptaMockData";
+import TestSeries from "../component/TestSeries";
 
 const GuptaMockTestPage = () => {
   const handleComplete = (results) => {
     console.log("Test completed with results:", results);
-    // You can save results to database here
   };
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={guptaMockData} onComplete={handleComplete} />
+      <TestSeries testData={guptaMockData} onComplete={handleComplete} />
     </div>
   );
 };

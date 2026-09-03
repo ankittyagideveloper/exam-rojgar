@@ -1,6 +1,6 @@
 import React from "react";
-import MockTest from "../component/MockTest";
 import { BhaktiAndSufiMockData } from "../data/BhaktiAndSufiMockData";
+import TestSeries from "../component/TestSeries";
 
 const BhaktiAndSufiMockTestPage = () => {
   const handleComplete = (results) => {
@@ -9,7 +9,7 @@ const BhaktiAndSufiMockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <MockTest testData={BhaktiAndSufiMockData} onComplete={handleComplete} />
+      <TestSeries testData={BhaktiAndSufiMockData} onComplete={handleComplete} />
     </div>
   );
 };
