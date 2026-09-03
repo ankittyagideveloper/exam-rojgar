@@ -114,7 +114,7 @@ function VideoPlayerPage() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
-              to="/purchase"
+              to="/target-series#program"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#2C7873] px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-[#245d59]"
             >
               Upgrade to Premium
