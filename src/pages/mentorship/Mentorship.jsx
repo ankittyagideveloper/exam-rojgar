@@ -65,7 +65,7 @@ const MISSION = [
 const PLANS = [
   {
     name: "RRB NTPC 2026 Paid Batch",
-    price: "₹200",
+    price: "₹399",
     unit: "one time",
     tag: "Complete Preparation Program",
     blurb:
@@ -87,7 +87,7 @@ const PLANS = [
 const STEPS = [
   {
     title: "Join the Batch",
-    body: "Enroll in the RRB NTPC 2026 paid batch for just ₹200.",
+    body: "Enroll in the RRB NTPC 2026 paid batch for just ₹399.",
   },
   {
     title: "Follow the Targets",
@@ -136,7 +136,7 @@ const WHY = [
 const FAQS = [
   {
     q: "What is the price of the RRB NTPC 2026 paid batch?",
-    a: "The batch fee is ₹200 only.",
+    a: "The batch fee is ₹399 only.",
   },
   {
     q: "When does the batch start?",
@@ -1181,7 +1181,7 @@ function FinalCta() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
-            Join the Exam Rojgaar paid batch for just ₹200 and prepare with
+            Join the Exam Rojgaar paid batch for just ₹399 and prepare with
             structured targets, PYQs, mock tests, doubt sessions and
             target-based guidance.
           </p>
@@ -1190,7 +1190,7 @@ function FinalCta() {
             href="#program"
             className="mt-9 inline-flex rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
           >
-            Join Batch for ₹200
+            Join Batch for ₹399
           </a>
         </div>
       </div>
