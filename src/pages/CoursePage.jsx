@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useUser } from "@clerk/clerk-react";
 import { courseMockData } from "./mockData";
 import { useVideoProgress } from "../hooks/useVideoProgress";
 import { Progress } from "../../components/ui/progress";
@@ -11,11 +12,13 @@ import {
   IconPlayerPlay,
   IconArrowLeft,
   IconRefresh,
+  IconLock,
 } from "@tabler/icons-react";
 
 function CoursePage() {
   const { courseName } = useParams();
   const navigate = useNavigate();
+  const { user } = useUser();
   const [expandedSeasons, setExpandedSeasons] = useState({ "season-1": true });
 
   // Find course by slug
@@ -106,8 +109,14 @@ function CoursePage() {
     }
   };
 
-  // Handle video card click
-  const handleVideoClick = (videoId) => {
+  const isPaid = user?.publicMetadata?.roles?.includes("premium");
+
+  // Handle video card click — block non-premium users
+  const handleVideoClick = (videoId, index) => {
+    if (!isPaid && index > 0) {
+      navigate("/target-series#program");
+      return;
+    }
     navigate(`/learn/${course.slug}/${videoId}`);
   };
 
@@ -262,7 +271,9 @@ function CoursePage() {
 
           {/* Seasons */}
           <div className="space-y-4">
-            {course.seasons?.map((season) => (
+            {(() => {
+              let flatIndex = 0;
+              return course.seasons?.map((season) => (
               <div
                 key={season.id}
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
@@ -299,28 +310,56 @@ function CoursePage() {
                   <div className="border-t border-gray-200 bg-gray-50">
                     {season.videos.map((video) => {
                       const isCompleted = checkVideoCompleted(video.id);
+                      const currentIndex = flatIndex++;
+                      const isLocked = !isPaid && currentIndex > 0;
 
                       return (
                         <button
                           key={video.id}
-                          onClick={() => handleVideoClick(video.id)}
-                          className="group flex w-full items-start gap-4 border-b border-gray-200 p-5 text-left transition-colors hover:bg-white last:border-b-0"
+                          onClick={() => handleVideoClick(video.id, currentIndex)}
+                          className={`group flex w-full items-start gap-4 border-b border-gray-200 p-5 text-left transition-colors last:border-b-0 ${
+                            isLocked
+                              ? "opacity-70 cursor-pointer hover:bg-amber-50"
+                              : "hover:bg-white"
+                          }`}
                         >
                           {/* Video Icon */}
                           <div className="flex-shrink-0">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-200 text-gray-600 transition-colors group-hover:bg-[#2C7873] group-hover:text-white">
-                              <IconPlayerPlay className="h-6 w-6" />
+                            <div
+                              className={`flex h-12 w-12 items-center justify-center rounded-lg transition-colors ${
+                                isLocked
+                                  ? "bg-amber-100 text-amber-600 group-hover:bg-amber-200"
+                                  : "bg-gray-200 text-gray-600 group-hover:bg-[#2C7873] group-hover:text-white"
+                              }`}
+                            >
+                              {isLocked ? (
+                                <IconLock className="h-6 w-6" />
+                              ) : (
+                                <IconPlayerPlay className="h-6 w-6" />
+                              )}
                             </div>
                           </div>
 
                           {/* Video Info */}
                           <div className="flex-1 min-w-0">
                             <div className="mb-2 flex items-start justify-between gap-3">
-                              <h4 className="text-base font-semibold text-gray-900 group-hover:text-[#2C7873] transition-colors">
+                              <h4
+                                className={`text-base font-semibold transition-colors ${
+                                  isLocked
+                                    ? "text-gray-500 group-hover:text-amber-700"
+                                    : "text-gray-900 group-hover:text-[#2C7873]"
+                                }`}
+                              >
                                 {video.episodeNumber} | {video.title}
                               </h4>
-                              {isCompleted && (
-                                <IconCircleCheck className="h-6 w-6 flex-shrink-0 text-green-600" />
+                              {isLocked ? (
+                                <span className="flex-shrink-0 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
+                                  Premium
+                                </span>
+                              ) : (
+                                isCompleted && (
+                                  <IconCircleCheck className="h-6 w-6 flex-shrink-0 text-green-600" />
+                                )
                               )}
                             </div>
                             <p className="text-sm leading-relaxed text-gray-600">
@@ -338,7 +377,8 @@ function CoursePage() {
                   </div>
                 )}
               </div>
-            ))}
+            ));
+            })()}
           </div>
         </div>
       </div>

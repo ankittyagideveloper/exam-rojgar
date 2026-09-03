@@ -1144,6 +1144,77 @@ export const courseMockData = [
       // },
     ],
   },
+  {
+    id: "rrb-ntpc-advance-maths",
+    title: "Advance Maths — RRB NTPC & RRB JE",
+    description:
+      "Master Geometry, Mensuration & more from RRB NTPC & RRB JE PYQs. Perfect for beginners and revision.",
+    thumbnail:
+      "https://i.ytimg.com/vi/EaTwYxmEcJs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDDu-d9NQziCPIpQF8xdvsPzUc3Lg",
+    thumbnailAlt: "RRB NTPC Foundation Course thumbnail",
+    category: "Railway Exams",
+    level: "Advance",
+    slug: "rrb-ntpc-advance-maths",
+    fullDescription:
+      "After analysing PYQ of RRB NTPC for Graduate and Undergraduate these lectures are RAMBAN for beginners and Veterans.Aaplog bahot ache se padhiye inko and concepts ko acha kijiye apne.",
+    seasons: [
+      {
+        id: "season-1",
+        title: "Advance Maths",
+        videos: [
+          {
+            id: "Lesson-01",
+            episodeNumber: "Lesson-01",
+            title: "Geometry Basics|Lines and Angles|Advance Maths|RRB NTPC|RRB JE|",
+            description:
+              "Understand the fundamentals of Geometry — Lines, Angles, and their properties with concept clarity for RRB NTPC & RRB JE exams.",
+
+            youtubeId: "yII3k1LVADA",
+            duration: "11:31",
+          },
+          {
+            id: "Lesson-02",
+            episodeNumber: "Lesson-02",
+            title: "Advance Maths|Triangles|RRB JE|RRB NTPC|RRB|Railway|SSC",
+            description:
+              "Deep dive into Triangles — types, properties, congruence, and similarity rules essential for Railway & SSC exams.",
+
+            youtubeId: "hX5LkkcJmc4",
+            duration: "19:31",
+          },
+          {
+            id: "Lesson-03",
+            episodeNumber: "Lesson-03",
+            title:
+              "Mensuration|Advance Maths|RRB NTPC|RRB JE|SSC",
+            description:
+              "Learn Mensuration formulas for 2D and 3D shapes — areas, perimeters, volumes — with exam-focused shortcuts for RRB NTPC, RRB JE & SSC.",
+            youtubeId: "f1SinVfhdAw",
+            duration: "08:16",
+          },
+          {
+            id: "Lesson-04",
+            episodeNumber: "Lesson-04",
+            title: "Advance Maths|Quadrilateral|RRB NTPC|SSC|RRB JE|RRB ALP ",
+            description:
+              "Understand Quadrilaterals — squares, rectangles, parallelograms, rhombus, and trapeziums — with key properties and problem-solving techniques.",
+            youtubeId: "c4C8xTDb0Hc",
+            duration: "12:24",
+          },
+          {
+            id: "Lesson-05",
+            episodeNumber: "Lesson-05",
+            title: "Advance Maths|Polygon|RRB NTPC|RRB JE|RRB ALP",
+            description:
+              "Explore Polygons — interior/exterior angles, diagonals, and regular polygon properties important for RRB NTPC, RRB JE & RRB ALP.",
+
+            youtubeId: "eZhqnVa1ubQ",
+            duration: "05:04",
+          }
+        ],
+      },
+    ],
+  },
   // {
   //   id: "course-rrc-group-d-complete",
   //   title: "RRC Group D Complete Course",
