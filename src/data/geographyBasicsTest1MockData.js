@@ -4,7 +4,7 @@ export const geographyBasicsTest1MockData = {
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
   "subject": "Geography Basics",
   "category": "Geography Basics",
-  "duration": 20,
+  "duration": 10,
   "marksCorrect": 2,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
