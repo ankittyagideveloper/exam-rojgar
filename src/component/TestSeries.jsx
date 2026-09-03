@@ -1,3 +1,4 @@
+import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 
 /**
@@ -74,6 +75,14 @@ function paletteClass(status, active) {
 
 // ─── main component ───────────────────────────────────────────────────────────
 const TestSeries = ({ testData }) => {
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  if (!isLoaded || !isSignedIn) {
+    return <p>Loading...</p>;
+  }
+
+  // Grab the profile image URL
+  const profileImageUrl = user.imageUrl;
   const {
     title = "Railway Sectional Mock",
     paperName = "Round 1 Challenge Series",
@@ -553,7 +562,7 @@ const TestSeries = ({ testData }) => {
               {/* Info card */}
               <div className="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
                 <div className="w-20 h-24 border-2 border-gray-400 bg-white flex items-center justify-center mb-3 text-gray-300 text-5xl shadow-inner overflow-hidden">
-                  👤
+                 <img src={profileImageUrl} alt='user-profile'/>
                 </div>
                 <div className="w-full text-[13px] space-y-2">
                   {[
@@ -582,7 +591,7 @@ const TestSeries = ({ testData }) => {
                       type="text"
                       value={candidateName}
                       onChange={(e) => setCandidateName(e.target.value)}
-                      placeholder="e.g. Rahul Kumar"
+                      placeholder="e.g. Ankit Tyagi"
                       className="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]"
                     />
                   </div>
