@@ -43,7 +43,7 @@ function VideoPlayerPage() {
           </h1>
           {/* <Link
             to="/learn"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#2C7873] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#1272ba] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
           >
             <IconArrowLeft className="h-5 w-5" />
             Back to Courses
@@ -76,7 +76,7 @@ function VideoPlayerPage() {
           </h1>
           <Link
             to={`/learn/${courseName}`}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#2C7873] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#1272ba] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
           >
             <IconArrowLeft className="h-5 w-5" />
             Back to Course
@@ -115,7 +115,7 @@ function VideoPlayerPage() {
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/target-series#program"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#2C7873] px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-[#245d59]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1272ba] px-6 py-3 font-semibold text-white shadow-md transition-all hover:bg-[#245d59]"
             >
               Upgrade to Premium
             </Link>
@@ -140,7 +140,7 @@ function VideoPlayerPage() {
   const handleNext = () => {
     if (nextVideo) {
       if (!isPaid && currentFlatIndex + 1 > 0) {
-        navigate("/purchase");
+        navigate("/target-series#program");
         return;
       }
       navigate(`/learn/${courseName}/${nextVideo.id}`);
@@ -174,7 +174,7 @@ function VideoPlayerPage() {
             <div className="flex items-center justify-between">
               <Link
                 to={`/learn/${courseName}`}
-                className="inline-flex items-center gap-2 text-gray-600 hover:text-[#2C7873] transition-colors"
+                className="inline-flex items-center gap-2 text-gray-600 hover:text-[#1272ba] transition-colors"
               >
                 <IconArrowLeft className="h-5 w-5" />
                 <span className="hidden sm:inline">Back to Course</span>
@@ -229,7 +229,7 @@ function VideoPlayerPage() {
                             <div
                               className={`group mb-2 flex items-start gap-3 rounded-lg p-3 transition-colors ${
                                 video.id === videoId
-                                  ? "bg-[#2C7873]/10 border border-[#2C7873]/30"
+                                  ? "bg-[#]/10 border border-[#1272ba]/30"
                                   : isVideoLocked
                                   ? "opacity-60 hover:bg-amber-50 cursor-pointer"
                                   : "hover:bg-gray-50"
@@ -251,7 +251,7 @@ function VideoPlayerPage() {
                                   }
                                 >
                                   {videoCompleted ? (
-                                    <IconCircleCheck className="h-5 w-5 text-green-600" />
+                                    <IconCircleCheck className="h-5 w-5 text-[#1272ba]" />
                                   ) : (
                                     <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
                                   )}
@@ -261,7 +261,7 @@ function VideoPlayerPage() {
                               {/* Title — Link for free, upgrade redirect for locked */}
                               {isVideoLocked ? (
                                 <Link
-                                  to="/purchase"
+                                  to="/target-series#program"
                                   className="flex-1 min-w-0"
                                 >
                                   <p className="text-sm font-medium text-gray-500 group-hover:text-amber-700">
@@ -284,7 +284,7 @@ function VideoPlayerPage() {
                                   <p
                                     className={`text-sm font-medium ${
                                       video.id === videoId
-                                        ? "text-[#2C7873]"
+                                        ? "text-[#1272ba]"
                                         : "text-gray-700 group-hover:text-gray-900"
                                     }`}
                                   >

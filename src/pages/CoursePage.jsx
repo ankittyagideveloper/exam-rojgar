@@ -74,7 +74,7 @@ function CoursePage() {
           </p>
           <Link
             to="/learn"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#2C7873] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#11272ba] px-6 py-3 text-white hover:bg-[#245d59] transition-colors shadow-sm"
           >
             <IconArrowLeft className="h-5 w-5" />
             Back to Courses
@@ -136,7 +136,7 @@ function CoursePage() {
           <div className="mx-auto max-w-7xl px-4 py-4 md:px-6 lg:px-8">
             <Link
               to="/learn"
-              className="inline-flex items-center gap-2 text-gray-600 hover:text-[#2C7873] transition-colors"
+              className="inline-flex items-center gap-2 text-gray-600 hover:text-[#1272ba] transition-colors"
             >
               <IconArrowLeft className="h-5 w-5" />
               <span>Back to Courses</span>
@@ -149,13 +149,13 @@ function CoursePage() {
           <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8">
             {/* Progress Bar Section */}
             {progressStats.total > 0 && (
-              <div className="mb-8 rounded-2xl border border-gray-200 bg-gradient-to-r from-[#2C7873]/5 to-blue-50 p-6 shadow-sm">
+              <div className="mb-8 rounded-2xl border border-gray-200 bg-gradient-to-r from-[#1272ba]/5 to-blue-50 p-6 shadow-sm">
                 <div className="mb-3 flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-gray-900">
                     Your Progress
                   </h3>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-[#2C7873]">
+                    <span className="text-2xl font-bold text-[#1272ba]">
                       {progressStats.percentage}%
                     </span>
                     {progressStats.completed > 0 && (
@@ -185,7 +185,7 @@ function CoursePage() {
                   className="h-3 bg-gray-200"
                 />
                 <p className="mt-3 text-sm text-gray-600">
-                  <span className="font-semibold text-[#2C7873]">
+                  <span className="font-semibold text-[#1272ba]">
                     {progressStats.completed}
                   </span>{" "}
                   of{" "}
@@ -211,13 +211,13 @@ function CoursePage() {
                       <>
                         <button
                           onClick={handleContinueLearning}
-                          className="w-full rounded-xl bg-[#2C7873] px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#245d59] hover:shadow-xl"
+                          className="w-full rounded-xl bg-[#1272ba] cursor-pointer px-6 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-[#1260ba] hover:shadow-xl"
                         >
                           Continue Learning
                         </button>
                         <button
                           onClick={handleStartLearning}
-                          className="w-full rounded-xl bg-white border-2 border-[#2C7873] px-6 py-3 text-base font-semibold text-[#2C7873] shadow-sm transition-all hover:bg-[#2C7873]/5"
+                          className=" cursor-pointer w-full rounded-xl bg-white border-2 border-[#1272ba] px-6 py-3 text-base font-semibold text-[#1272ba] shadow-sm transition-all hover:bg-[#1260ba]/5"
                         >
                           Start from Beginning
                         </button>
@@ -225,7 +225,7 @@ function CoursePage() {
                     ) : (
                       <button
                         onClick={handleStartLearning}
-                        className="w-full rounded-xl bg-[#2C7873] px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#245d59] hover:shadow-xl"
+                        className="w-full rounded-xl bg-[#1272ba] px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#245d59] hover:shadow-xl"
                       >
                         Start Learning
                       </button>
@@ -263,7 +263,7 @@ function CoursePage() {
 
         {/* Course Content Section */}
         <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8">
-          <div className="mb-6 border-l-4 border-[#2C7873] pl-4">
+          <div className="mb-6 border-l-4 border-[#1272ba] pl-4">
             <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
               Course Content
             </h2>
@@ -284,7 +284,7 @@ function CoursePage() {
                   className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2C7873] text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1272ba] text-white">
                       <span className="text-lg font-bold">
                         {season.id.split("-")[1]}
                       </span>
@@ -329,7 +329,7 @@ function CoursePage() {
                               className={`flex h-12 w-12 items-center justify-center rounded-lg transition-colors ${
                                 isLocked
                                   ? "bg-amber-100 text-amber-600 group-hover:bg-amber-200"
-                                  : "bg-gray-200 text-gray-600 group-hover:bg-[#2C7873] group-hover:text-white"
+                                  : "bg-gray-200 text-gray-600 group-hover:bg-[#1272ba] group-hover:text-white"
                               }`}
                             >
                               {isLocked ? (
@@ -347,7 +347,7 @@ function CoursePage() {
                                 className={`text-base font-semibold transition-colors ${
                                   isLocked
                                     ? "text-gray-500 group-hover:text-amber-700"
-                                    : "text-gray-900 group-hover:text-[#2C7873]"
+                                    : "text-gray-900 group-hover:text-[#1272ba]"
                                 }`}
                               >
                                 {video.episodeNumber} | {video.title}
@@ -358,7 +358,7 @@ function CoursePage() {
                                 </span>
                               ) : (
                                 isCompleted && (
-                                  <IconCircleCheck className="h-6 w-6 flex-shrink-0 text-green-600" />
+                                  <IconCircleCheck className="h-6 w-6 flex-shrink-0 text-[#1272ba]" />
                                 )
                               )}
                             </div>

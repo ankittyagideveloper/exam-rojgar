@@ -7,7 +7,7 @@ const TestCard = ({ image, alt, title, onClick }) => {
     <div
       onClick={onClick}
       className={`relative rounded-xl overflow-hidden transition-all duration-300 cursor-pointer border ${
-        isHovered ? "shadow-lg scale-105 bg-[#2C7873]" : "shadow-sm bg-white"
+        isHovered ? "shadow-lg scale-105 bg-[#1272ba]" : "shadow-sm bg-white"
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

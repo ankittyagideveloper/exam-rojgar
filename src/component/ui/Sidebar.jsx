@@ -200,7 +200,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               </>
             ) : (
               <SignInButton mode="modal">
-                <button>LogIn</button>
+                <button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">LogIn</button>
               </SignInButton>
             )}
           </div>

@@ -40,6 +40,33 @@ const testimonials = [
     name: "Sujoy Basak",
    title: "Exam Rojgar 2026 Batch-1",
   },
+  {
+    quote:
+      "Thank you sir for your mentorship...apki wajah se daily target to complete hote hain aur confidence bhi boost hota hain..aur topic wise test bhi bahot achhe hote h to revise bhi achha ho jata hain.. aur apke youtube ke topicwise videos me explanation bhi achha hota hain..so sahi direction me preparation ho rahi hain..bahot improvement aya hain meri preparationme so thanku so much again for all support...🙏😊",
+    name: "Bhumika Patel",
+   title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:"Mujhe consistency maintain karne mein bohot problem hota tha ab usme thoda bohot sudhaar aya h apke wajah se. Although me utna jyada consistent nhi hoon but fir bhi jitna ho paya uska credit sirf apko jata h. Gk mera bohot kamjor tha pr ab thoda thoda Confidence build ho rha h. Apka woh orientation class se bohot help mila. Thank you for always helping us when we needed.",
+    name: "Kaushik",
+   title: "Exam Rojgar 2026 Batch-3",
+  },
+  {
+    quote:"Aapka target batch achha hai,daily targets se samjh aata hai ki roj kya padhna hai aur syllabus time par cover ho rha hai. Thank you sir for your support 🙏",
+    name: "S Divya",
+   title: "Exam Rojgar 2026 Batch-3",
+  },
+  {
+    quote:"Sir, your Target Series batch is very helpful for my NTPC preparation. My preparation is much better now, and I feel confident. Thank you so much for your support!",
+    name: "Susmita",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+  {
+    quote:"Sir aapke mentorship se meri preparation ko proper direction mili hai...Daily targets se consistency bani rehti hai aur next day tests se preparation ka analysis karne mein help milti hai aapke videos aur mentorship calls bhi kaafi helpful hain...Overall preparation pehle se kaafi organised lag rahi hai 😊...Thank you so much Sir for your constant guidance and support🙏❤️",
+    name: "Koushiki Gupta",
+    title: "Exam Rojgar 2026 Batch-1",
+  },
+
 ];
 
 function HomePage() {
