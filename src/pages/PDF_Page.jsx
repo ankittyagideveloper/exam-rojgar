@@ -76,12 +76,12 @@ export default function PDF_Page() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Free Study PDFs for Competitive Exams | Exam Rojgaar" />
         <meta property="og:description" content="Download free PDFs for RRB, SSC and Banking exam preparation – aptitude books, GK notes and official notifications." />
-        <meta property="og:image" content="https://www.examrojgaar.com/slide-1.webp" />
+        <meta property="og:image" content="https://www.examrojgaar.com/apple-touch-icon.png" />
         <meta property="og:url" content="https://www.examrojgaar.com/pdf-category" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Free Study PDFs | Exam Rojgaar" />
         <meta name="twitter:description" content="Download free PDFs for RRB, SSC and Banking exams." />
-        <meta name="twitter:image" content="https://www.examrojgaar.com/slide-1.webp" />
+        <meta name="twitter:image" content="https://www.examrojgaar.com/apple-touch-icon.png" />
       </Helmet>
 
       <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">
