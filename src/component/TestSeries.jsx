@@ -131,9 +131,12 @@ const TestSeries = ({ testData }) => {
 
   // ── history modal ──
   const [showHistory, setShowHistory] = useState(false);
-  const [historyList, setHistoryList] = useState([]);
+  const [historyList, setHistoryList] = useState(() => readStorage(HISTORY_KEY));
   const [isHistoryMode, setIsHistoryMode] = useState(false);
   const [historyAttempt, setHistoryAttempt] = useState(null);
+
+  // ── current attempt number ──
+  const [currentAttemptNumber, setCurrentAttemptNumber] = useState(1);
 
   // ── saved questions modal ──
   const [showSaved, setShowSaved] = useState(false);
@@ -348,8 +351,11 @@ const TestSeries = ({ testData }) => {
     if (isHistoryMode) return;
     const st = stateSnapshot || userState;
     const r = calcResults(st);
+    const attemptNum = historyList.length + 1;
+    setCurrentAttemptNumber(attemptNum);
     const attempt = {
       id: Date.now(),
+      attemptNumber: attemptNum,
       mockName: paperName,
       subject,
       candidateName: candidateName.trim() || "Aspirant",
@@ -898,6 +904,7 @@ const TestSeries = ({ testData }) => {
               <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                   {[
+                    ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber, "border-blue-500"],
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
                     ["Subject", isHistoryMode && historyAttempt ? historyAttempt.subject : subject, "border-indigo-500"],
                     ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant", "border-emerald-500"],
