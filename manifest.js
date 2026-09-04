@@ -44,6 +44,7 @@ export const manifestForPlugIn = {
     skipWaiting: true,
     maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
     globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+    navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/],
   },
   devOptions: {
     enabled: true,

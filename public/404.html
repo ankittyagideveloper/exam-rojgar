@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
     <script>
-      // GitHub Pages SPA Redirect
-      const redirectTo =
-        window.location.pathname +
-        window.location.search +
-        window.location.hash;
-      window.location.replace("/?redirect=" + encodeURIComponent(redirectTo));
+      // GitHub Pages SPA Redirect — skip static file extensions
+      var path = window.location.pathname;
+      var staticExt = /\.(xml|txt|json|ico|png|jpg|jpeg|webp|svg|webmanifest|js|css|map|woff|woff2|ttf|eot)$/i;
+      if (!staticExt.test(path)) {
+        var redirectTo = path + window.location.search + window.location.hash;
+        window.location.replace("/?redirect=" + encodeURIComponent(redirectTo));
+      }
     </script>
   </head>
   <body></body>
