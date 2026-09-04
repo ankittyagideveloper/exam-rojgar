@@ -40,6 +40,11 @@ function HomePage() {
           name="description"
           content="Prepare for Railway exams with Exam Rojgaar. Practice RRB NTPC, JE, ALP & Group D mock tests, previous year questions, detailed analysis and smart preparation tools."
         />
+        <meta
+          name="keywords"
+          content="rrb ntpc mock test, rrb ntpc test series 2025, railway mock test online, rrc group d test series, rrb ntpc free test, exam rojgaar, railway exam preparation, rrb ntpc practice test"
+        />
+        <link rel="canonical" href="https://examrojgaar.com/home" />
 
         {/* Icons */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />

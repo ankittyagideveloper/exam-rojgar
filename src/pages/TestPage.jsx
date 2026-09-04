@@ -8,6 +8,178 @@ import TestCard2 from "../component/TestCard2";
 import { QuizCard } from "../component/QuizCard";
 import { useUser } from "@clerk/clerk-react";
 
+// SEO metadata map: keyed by the joined path after /online-test-series/
+const PAGE_SEO = {
+  "": {
+    title: "Online Mock Test Series for RRB NTPC, SSC, RRC Group D | Exam Rojgaar",
+    description:
+      "Free & premium online mock test series for RRB NTPC, RRC Group D and SSC exams. Practise topic-wise tests, full-length mocks and PYQs on Exam Rojgaar.",
+    keywords:
+      "rrb ntpc mock test, rrb ntpc test series, online test series railway, rrc group d mock test, ssc mock test, exam rojgaar test series",
+    h1: "Online Test Series",
+  },
+  "rrb": {
+    title: "RRB Mock Test Series – NTPC, JE, ALP & Group D | Exam Rojgaar",
+    description:
+      "Attempt RRB mock tests for NTPC, JE, ALP and Group D on Exam Rojgaar. Free topic-wise and full-length tests with detailed analysis.",
+    keywords:
+      "rrb mock test, rrb ntpc test series, railway mock test, rrb je mock test, rrb alp mock test",
+    h1: "RRB Mock Test Series",
+  },
+  "rrb/rrb-ntpc": {
+    title: "RRB NTPC Mock Test Series 2025 – Free Online Tests | Exam Rojgaar",
+    description:
+      "Prepare for RRB NTPC 2025 with free online mock tests. Topic-wise tests covering History, Polity, Geography, Maths, Science and Current Affairs on Exam Rojgaar.",
+    keywords:
+      "rrb ntpc mock test 2025, rrb ntpc test series, rrb ntpc online test, rrb ntpc free mock test, railway ntpc mock test, rrb ntpc practice test",
+    h1: "RRB NTPC Mock Test Series 2025",
+  },
+  "rrb/rrb-ntpc/history": {
+    title: "RRB NTPC History Mock Tests – Ancient, Medieval & Modern | Exam Rojgaar",
+    description:
+      "Practice RRB NTPC History mock tests covering Ancient, Medieval and Modern Indian History. Topic-wise tests with detailed explanations.",
+    keywords:
+      "rrb ntpc history mock test, railway ntpc history test, ancient history mock test rrb, medieval history rrb ntpc",
+    h1: "RRB NTPC History Mock Tests",
+  },
+  "rrb/rrb-ntpc/history/ancient-history": {
+    title: "RRB NTPC Ancient History Mock Tests – Harappa, Mauryan, Gupta | Exam Rojgaar",
+    description:
+      "Free Ancient History mock tests for RRB NTPC. Covers Harappa, Vedic Age, Mahajanapadas, Buddhism, Jainism, Mauryan Empire, Gupta Empire and Sangam Period.",
+    keywords:
+      "rrb ntpc ancient history mock test, harappa mock test, mauryan empire test, gupta empire mock test, buddhism jainism mock test rrb",
+    h1: "RRB NTPC Ancient History Mock Tests",
+  },
+  "rrb/rrb-ntpc/history/medieval-history": {
+    title: "RRB NTPC Medieval History Mock Tests – Delhi Sultanate, Mughal, Maratha | Exam Rojgaar",
+    description:
+      "Practice Medieval History mock tests for RRB NTPC. Covers Delhi Sultanate, Vijayanagar, Mughal Empire, Bhakti & Sufi movements and Maratha Empire.",
+    keywords:
+      "rrb ntpc medieval history mock test, delhi sultanate mock test, mughal empire test rrb, maratha mock test railway ntpc",
+    h1: "RRB NTPC Medieval History Mock Tests",
+  },
+  "rrb/rrb-ntpc/history/modern-history": {
+    title: "RRB NTPC Modern History Mock Tests – Advent of Europeans, 1857 Revolt | Exam Rojgaar",
+    description:
+      "Free Modern History mock tests for RRB NTPC. Covers advent of Europeans, 1857 Revolt, economic impact, peasant movements and the extremist phase.",
+    keywords:
+      "rrb ntpc modern history mock test, 1857 revolt mock test, modern history railway exam, extremist phase test rrb ntpc",
+    h1: "RRB NTPC Modern History Mock Tests",
+  },
+  "rrb/rrb-ntpc/polity": {
+    title: "RRB NTPC Polity Mock Tests – Constitution, Parliament, Fundamental Rights | Exam Rojgaar",
+    description:
+      "Topic-wise Polity mock tests for RRB NTPC. Covers Indian Constitution, Preamble, Fundamental Rights, DPSP, Parliament, Schedules and Citizenship.",
+    keywords:
+      "rrb ntpc polity mock test, indian constitution test rrb, fundamental rights mock test, parliament mock test railway",
+    h1: "RRB NTPC Polity Mock Tests",
+  },
+  "rrb/rrb-ntpc/polity/constitution": {
+    title: "RRB NTPC Constitution Mock Tests – Preamble, FR, DPSP, Amendments | Exam Rojgaar",
+    description:
+      "Practice Indian Constitution mock tests for RRB NTPC. Covers Preamble, Sources, Fundamental Rights, DPSP, Schedules, Citizenship and Constitutional Amendments.",
+    keywords:
+      "constitution mock test rrb ntpc, preamble test railway, fundamental rights dpsp test, amendments mock test rrb",
+    h1: "RRB NTPC Constitution Mock Tests",
+  },
+  "rrb/rrb-ntpc/polity/centre": {
+    title: "RRB NTPC Parliament Mock Tests – Centre Government | Exam Rojgaar",
+    description:
+      "Practice Parliament and Central Government mock tests for RRB NTPC preparation on Exam Rojgaar.",
+    keywords:
+      "parliament mock test rrb ntpc, central government test railway, lok sabha rajya sabha test rrb",
+    h1: "RRB NTPC Parliament & Centre Mock Tests",
+  },
+  "rrb/rrb-ntpc/geography": {
+    title: "RRB NTPC Geography Mock Tests – Indian & World Geography | Exam Rojgaar",
+    description:
+      "Free Geography mock tests for RRB NTPC. Covers basic concepts, Indian Geography, physical features and Environment & Ecology.",
+    keywords:
+      "rrb ntpc geography mock test, indian geography test railway, environment ecology mock test rrb ntpc",
+    h1: "RRB NTPC Geography Mock Tests",
+  },
+  "rrb/rrb-ntpc/geography/basic-concepts": {
+    title: "RRB NTPC Geography Basics Mock Test | Exam Rojgaar",
+    description:
+      "Attempt Geography Basics mock tests for RRB NTPC preparation. Covers fundamental geography concepts with detailed explanations.",
+    keywords:
+      "geography basics mock test rrb ntpc, basic geography test railway exam",
+    h1: "RRB NTPC Geography Basics Mock Tests",
+  },
+  "rrb/rrb-ntpc/geography/environment": {
+    title: "RRB NTPC Environment & Ecology Mock Tests | Exam Rojgaar",
+    description:
+      "Free Environment and Ecology mock tests for RRB NTPC. Practice GS questions on environment, biodiversity and ecology.",
+    keywords:
+      "environment ecology mock test rrb ntpc, environment quiz railway exam, ecology test rrb",
+    h1: "RRB NTPC Environment & Ecology Mock Tests",
+  },
+  "rrb/rrb-ntpc/science": {
+    title: "RRB NTPC Science Mock Tests – Physics, Chemistry, Biology | Exam Rojgaar",
+    description:
+      "Topic-wise Science mock tests for RRB NTPC. Covers Physics, Chemistry and Biology concepts and previous year questions.",
+    keywords:
+      "rrb ntpc science mock test, physics chemistry biology test railway, general science rrb ntpc",
+    h1: "RRB NTPC Science Mock Tests",
+  },
+  "rrb/rrb-ntpc/maths": {
+    title: "RRB NTPC Maths Mock Tests – Arithmetic, Quantitative Aptitude | Exam Rojgaar",
+    description:
+      "Free Maths mock tests for RRB NTPC. Covers Profit & Loss, Percentage, Ratio, Average, HCF LCM, Time & Work, Pipe & Cistern and Speed Distance.",
+    keywords:
+      "rrb ntpc maths mock test, quantitative aptitude test railway, arithmetic mock test rrb ntpc, percentage ratio mock test railway",
+    h1: "RRB NTPC Maths Mock Tests",
+  },
+  "rrb/rrb-ntpc/maths/arithmetic": {
+    title: "RRB NTPC Arithmetic Mock Tests – Profit Loss, Percentage, Ratio, Average | Exam Rojgaar",
+    description:
+      "Practice Arithmetic mock tests for RRB NTPC. Covers Profit & Loss, Discount, Percentage, Ratio, Average, Mixture, HCF LCM, Time & Work, Pipe & Cistern.",
+    keywords:
+      "arithmetic mock test rrb ntpc, profit loss test railway, percentage mock test rrb, ratio proportion test, hcf lcm mock test, time and work test rrb",
+    h1: "RRB NTPC Arithmetic Mock Tests",
+  },
+  "rrb/rrb-ntpc/economy": {
+    title: "RRB NTPC Economy Mock Tests – Banking, Taxation, World Economy | Exam Rojgaar",
+    description:
+      "Economy mock tests for RRB NTPC covering basic economic concepts, banking & taxation and world economy questions.",
+    keywords:
+      "rrb ntpc economy mock test, banking taxation test railway, world economy test rrb ntpc",
+    h1: "RRB NTPC Economy Mock Tests",
+  },
+  "rrb/rrb-ntpc/computer": {
+    title: "RRB NTPC Computer Mock Tests | Exam Rojgaar",
+    description:
+      "Computer awareness mock tests for RRB NTPC preparation. Practice basic computer concepts and IT questions on Exam Rojgaar.",
+    keywords:
+      "rrb ntpc computer mock test, computer awareness test railway, basic computer test rrb ntpc",
+    h1: "RRB NTPC Computer Mock Tests",
+  },
+  "rrb/rrb-ntpc/current-affairs": {
+    title: "RRB NTPC Current Affairs Mock Tests – Military Exercises & GK | Exam Rojgaar",
+    description:
+      "Current Affairs and GK mock tests for RRB NTPC. Covers military exercises, national and international events for railway exam preparation.",
+    keywords:
+      "rrb ntpc current affairs mock test, gk test railway exam, military exercises test rrb ntpc, current affairs railway 2025",
+    h1: "RRB NTPC Current Affairs Mock Tests",
+  },
+  "rrc": {
+    title: "RRC Mock Test Series – Group D | Exam Rojgaar",
+    description:
+      "Attempt RRC Group D mock tests on Exam Rojgaar. Practice with previous year questions and topic-wise tests for Railway Group D preparation.",
+    keywords:
+      "rrc group d mock test, railway group d test series, rrc mock test online, group d railway exam practice",
+    h1: "RRC Mock Test Series",
+  },
+  "rrc/rrc-group-d": {
+    title: "RRC Group D Mock Tests 2025 – Free Online Tests | Exam Rojgaar",
+    description:
+      "Free RRC Group D mock tests and previous year question papers on Exam Rojgaar. Covers General Science, Physics and all Group D exam topics.",
+    keywords:
+      "rrc group d mock test 2025, railway group d test series, rrc group d online test, group d free mock test",
+    h1: "RRC Group D Mock Tests",
+  },
+};
+
 const TestPage = () => {
 
   const { user } = useUser();
@@ -36,6 +208,14 @@ const TestPage = () => {
   }
 
   const isRoot = pathSegments.length === 0;
+  const pathKey = pathSegments.join("/");
+  const seo = PAGE_SEO[pathKey] ?? {
+    title: `${current?.title ?? "Test Series"} Mock Tests | Exam Rojgaar`,
+    description: `Practice ${current?.title ?? ""} mock tests for RRB NTPC and Railway exams on Exam Rojgaar.`,
+    keywords: `${current?.title?.toLowerCase() ?? ""} mock test, railway exam, rrb ntpc test series`,
+    h1: current?.title ?? "Mock Test Series",
+  };
+  const canonicalPath = isRoot ? "/online-test-series" : `/online-test-series/${pathKey}`;
   // const categories = [
   //   {
   //     id: "test1",
@@ -73,16 +253,66 @@ const TestPage = () => {
   return (
     <>
       <Helmet>
-        <title>Online Test Series – RRB, SSC & Banking Exams | Exam Rojgaar</title>
-        <meta
-          name="description"
-          content="Attempt free and premium online mock test series for RRB NTPC, JE, SSC CGL, and Banking exams. Track your score and rank on Exam Rojgaar."
-        />
-        <link rel="canonical" href="https://examrojgaar.com/online-test-series" />
-        <meta property="og:title" content="Online Test Series – RRB, SSC & Banking | Exam Rojgaar" />
-        <meta property="og:description" content="Free & premium mock tests for RRB NTPC, JE, SSC and Banking. Start practising now." />
-        <meta property="og:url" content="https://examrojgaar.com/online-test-series" />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+        <link rel="canonical" href={`https://examrojgaar.com${canonicalPath}`} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={`https://examrojgaar.com${canonicalPath}`} />
+        <meta property="og:type" content="website" />
+        {/* FAQ schema for the RRB NTPC hub — boosts rich results for "rrb ntpc tests" queries */}
+        {pathKey === "rrb/rrb-ntpc" && (
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the RRB NTPC exam pattern 2025?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "RRB NTPC 2025 has two stages: CBT-1 (100 questions, 90 minutes) covering General Awareness, Mathematics and General Intelligence & Reasoning, and CBT-2 (120 questions, 90 minutes) covering the same sections with higher difficulty. ExamRojgaar provides free topic-wise mock tests for both stages."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the RRB NTPC mock tests on Exam Rojgaar free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Exam Rojgaar offers free topic-wise mock tests for RRB NTPC covering History, Polity, Geography, Maths, Science and Current Affairs. Premium full-length tests are also available."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which subjects are covered in RRB NTPC mock tests?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Exam Rojgaar covers all RRB NTPC subjects: General Awareness (History, Polity, Geography, Economy, Science, Current Affairs) and Mathematics (Arithmetic — Profit & Loss, Percentage, Ratio, Average, HCF LCM, Time & Work, Pipe & Cistern)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many mock tests are available for RRB NTPC on Exam Rojgaar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Exam Rojgaar has 40+ topic-wise mock tests and sectional tests for RRB NTPC, including tests for Ancient History, Medieval History, Modern History, Indian Polity, Geography, Arithmetic and Current Affairs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a bilingual (Hindi + English) option for RRB NTPC tests?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, all RRB NTPC mock tests on Exam Rojgaar are available in both Hindi and English, matching the actual RRB NTPC exam pattern."
+                }
+              }
+            ]
+          })}</script>
+        )}
       </Helmet>
+      {/* Visible H1 for Google — visually styled but semantically present */}
+      <h1 className="sr-only">{seo.h1}</h1>
       <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 ">
         {/* {categories.map((test, index) => (
         <TestCard

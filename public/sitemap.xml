@@ -1,112 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Core pages -->
   <url>
     <loc>https://www.examrojgaar.com/</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.examrojgaar.com/home</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Test Series hub — most important ranking page -->
   <url>
     <loc>https://www.examrojgaar.com/online-test-series</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
   </url>
 
+  <!-- RRB category hub -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+
+  <!-- RRB NTPC hub — primary target for "rrb ntpc tests" -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- RRB NTPC History -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/history</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/ancient-history</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/medieval-history</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/modern-history</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- RRB NTPC Polity -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity/constitution</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity/centre</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- RRB NTPC Geography -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography/basic-concepts</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography/environment</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- RRB NTPC Science -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/science</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- RRB NTPC Maths -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/maths</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/maths/arithmetic</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- RRB NTPC Economy -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/economy</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- RRB NTPC Computer -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/computer</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- RRB NTPC Current Affairs -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrb/rrb-ntpc/current-affairs</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+
+  <!-- RRC Group D -->
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrc</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/online-test-series/rrc/rrc-group-d</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Other core pages -->
   <url>
     <loc>https://www.examrojgaar.com/quiz-category</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.examrojgaar.com/pdf-category</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
 
   <url>
     <loc>https://www.examrojgaar.com/learn</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
 
+  <!-- Individual mock test pages -->
   <url>
     <loc>https://www.examrojgaar.com/mock-test/harappa</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/buddhism</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/jainism</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/mahajanpad</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
-  <url>
-    <loc>https://www.examrojgaar.com/mock-test/sangam</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/mauryan-empire</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/gupta</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
+  <url>
+    <loc>https://www.examrojgaar.com/mock-test/sangam</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
   <url>
     <loc>https://www.examrojgaar.com/mock-test/delhi-sultanate</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
+  <url>
+    <loc>https://www.examrojgaar.com/mock-test/mughal</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.examrojgaar.com/mock-test/maratha</loc>
+    <lastmod>2025-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
   <url>
     <loc>https://www.examrojgaar.com/mock-test/hcf-lcm</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/environment-quiz</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/geography-basics-test-1</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
-
   <url>
     <loc>https://www.examrojgaar.com/mock-test/military-exercise-test-1</loc>
+    <lastmod>2025-08-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.65</priority>
   </url>
 
 </urlset>
