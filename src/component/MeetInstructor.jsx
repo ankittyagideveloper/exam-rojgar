@@ -9,7 +9,7 @@ const instructor = {
     youtube: "https://www.youtube.com/@ExamRojgaar/streams",
     linkedin: "#",
     twitter: "#",
-    website: "https://www.examrojgaar.com",
+    website: "https://examrojgaar.com",
   },
 };
 

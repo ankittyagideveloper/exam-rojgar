@@ -137,10 +137,10 @@ const Quiz = () => {
           name="description"
           content="Attempt live mock tests and practice quizzes for RRB NTPC, SSC and Banking exams. Free and premium test series with instant results on Exam Rojgaar."
         />
-        <link rel="canonical" href="https://www.examrojgaar.com/quiz-category" />
+        <link rel="canonical" href="https://examrojgaar.com/quiz-category" />
         <meta property="og:title" content="Quiz Category – Mock Tests | Exam Rojgaar" />
         <meta property="og:description" content="Live mock tests and practice quizzes for competitive exam preparation." />
-        <meta property="og:url" content="https://www.examrojgaar.com/quiz-category" />
+        <meta property="og:url" content="https://examrojgaar.com/quiz-category" />
       </Helmet>
       {openRegistaration && (
         <RegistrationModal

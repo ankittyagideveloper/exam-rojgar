@@ -59,9 +59,9 @@ function HomePage() {
         />
         <meta
           property="og:image"
-          content="https://www.examrojgaar.com/android-chrome-512x512.png"
+          content="https://examrojgaar.com/android-chrome-512x512.png"
         />
-        <meta property="og:url" content="https://www.examrojgaar.com" />
+        <meta property="og:url" content="https://examrojgaar.com" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -75,7 +75,7 @@ function HomePage() {
         />
         <meta
           name="twitter:image"
-          content="https://www.examrojgaar.com/android-chrome-512x512.png"
+          content="https://examrojgaar.com/android-chrome-512x512.png"
         />
       </Helmet>
 

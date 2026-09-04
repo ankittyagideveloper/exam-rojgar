@@ -30,7 +30,7 @@ const AttemptedTests = () => {
         name="description"
         content="View all your attempted mock tests on Exam Rojgaar. Track scores, review answers and monitor your exam preparation progress."
       />
-      <link rel="canonical" href="https://www.examrojgaar.com/attempted-tests" />
+      <link rel="canonical" href="https://examrojgaar.com/attempted-tests" />
       <meta name="robots" content="noindex, nofollow" />
     </Helmet>
   );
