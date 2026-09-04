@@ -12,6 +12,7 @@ import React from 'react';
 import './styles.css'
 import { useUser } from "@clerk/clerk-react";
 import { testimonials } from "@/constants";
+import BottomNavigation from "@/component/BottomNavigation";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -863,7 +864,10 @@ function Footer() {
 
 
 const TargetSeriesPage = () => {
-  return <Landing />
+  return <>
+    <Landing />
+    <BottomNavigation />
+  </>
 }
 
 export default TargetSeriesPage;
