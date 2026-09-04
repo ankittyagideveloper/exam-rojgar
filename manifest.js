@@ -37,7 +37,6 @@ export const manifestForPlugIn = {
     display: "standalone",
     scope: "/",
     start_url: "/",
-    orientation: "portrait",
   },
   workbox: {
     clientsClaim: true,
