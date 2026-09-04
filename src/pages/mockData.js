@@ -1034,7 +1034,7 @@ export const courseMockData = [
     description:
       "Build strong fundamentals for RRB NTPC with concept-focused lessons, practice support, and structured preparation guidance.",
     thumbnail:
-      "https://i.ytimg.com/vi/EaTwYxmEcJs/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDDu-d9NQziCPIpQF8xdvsPzUc3Lg",
+      "/computer-course.png",
     thumbnailAlt: "RRB NTPC Foundation Course thumbnail",
     category: "Railway Exams",
     level: "Beginner",
@@ -1164,6 +1164,36 @@ export const courseMockData = [
           {
             id: "Lesson-01",
             episodeNumber: "Lesson-01",
+            title: "Advance Maths|RRB NTPC|RRB JE|TRIGONOMETRY Lecture 1",
+            description:
+              "Master the basics of Trigonometry — ratios, identities, and standard angle values in this first lecture, tailored for RRB NTPC & RRB JE exams.",
+
+            youtubeId: "sURK0MdK1-g",
+            duration: "10:47",
+          },
+          {
+            id: "Lesson-02",
+            episodeNumber: "Lesson-02",
+            title: "Advance Maths|RRB NTPC|RRB JE|TRIGONOMETRY Lecture 2",
+            description:
+              "Continue building your Trigonometry skills — explore advanced identities, formulas, and problem-solving techniques for RRB NTPC & RRB JE exams.",
+
+            youtubeId: "FNv4ih21zZg",
+            duration: "09:38",
+          },
+          {
+            id: "Lesson-03",
+            episodeNumber: "Lesson-03",
+            title: "Height and Distance From Basics|RRBNTPC|RRBJE|Advance Maths ",
+            description:
+              "Learn Height and Distance from scratch — understand angles of elevation and depression with real-world problem solving for RRB NTPC & RRB JE exams.",
+
+            youtubeId: "mSP8rAxtYok",
+            duration: "10:44",
+          },
+          {
+            id: "Lesson-04",
+            episodeNumber: "Lesson-04",
             title: "Geometry Basics|Lines and Angles|Advance Maths|RRB NTPC|RRB JE|",
             description:
               "Understand the fundamentals of Geometry — Lines, Angles, and their properties with concept clarity for RRB NTPC & RRB JE exams.",
@@ -1172,8 +1202,8 @@ export const courseMockData = [
             duration: "11:31",
           },
           {
-            id: "Lesson-02",
-            episodeNumber: "Lesson-02",
+            id: "Lesson-05",
+            episodeNumber: "Lesson-05",
             title: "Advance Maths|Triangles|RRB JE|RRB NTPC|RRB|Railway|SSC",
             description:
               "Deep dive into Triangles — types, properties, congruence, and similarity rules essential for Railway & SSC exams.",
@@ -1182,8 +1212,8 @@ export const courseMockData = [
             duration: "19:31",
           },
           {
-            id: "Lesson-03",
-            episodeNumber: "Lesson-03",
+            id: "Lesson-06",
+            episodeNumber: "Lesson-06",
             title:
               "Mensuration|Advance Maths|RRB NTPC|RRB JE|SSC",
             description:
@@ -1192,8 +1222,8 @@ export const courseMockData = [
             duration: "08:16",
           },
           {
-            id: "Lesson-04",
-            episodeNumber: "Lesson-04",
+            id: "Lesson-07",
+            episodeNumber: "Lesson-07",
             title: "Advance Maths|Quadrilateral|RRB NTPC|SSC|RRB JE|RRB ALP ",
             description:
               "Understand Quadrilaterals — squares, rectangles, parallelograms, rhombus, and trapeziums — with key properties and problem-solving techniques.",
@@ -1201,8 +1231,8 @@ export const courseMockData = [
             duration: "12:24",
           },
           {
-            id: "Lesson-05",
-            episodeNumber: "Lesson-05",
+            id: "Lesson-08",
+            episodeNumber: "Lesson-08",
             title: "Advance Maths|Polygon|RRB NTPC|RRB JE|RRB ALP",
             description:
               "Explore Polygons — interior/exterior angles, diagonals, and regular polygon properties important for RRB NTPC, RRB JE & RRB ALP.",
