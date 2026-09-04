@@ -84,6 +84,238 @@
         "no": "No"
       },
       "lastQuestionConfirm": "You have reached the last question of the exam. Do you want to go to the first question?"
+    },
+    "mentorship": {
+      "nav": {
+        "overview": "Overview",
+        "whatYouGet": "What You Get",
+        "howItWorks": "How It Works",
+        "faqs": "FAQs"
+      },
+      "header": {
+        "targetSeries": "Target Series",
+        "applyNow": "Apply Now"
+      },
+      "hero": {
+        "batchLabel": "September 2026 Batch",
+        "limitedSeats": "Limited Seats",
+        "title1": "3 Months",
+        "title2": "RRB NTPC 2026",
+        "title3": "Target Series",
+        "ctaPrimary": "View Target Series Tracks",
+        "ctaSecondary": "1:1 Personal Advice"
+      },
+      "mission": {
+        "label": "My Mission",
+        "heading": "Why I mentor",
+        "cards": [
+          {
+            "title": "Target-Based Preparation",
+            "body": "Complete the RRB NTPC 2026 syllabus with clear targets and a structured preparation plan."
+          },
+          {
+            "title": "PYQ Focused",
+            "body": "Understand the actual exam pattern through live discussion and practice of Previous Year Questions."
+          },
+          {
+            "title": "Personal Guidance",
+            "body": "Get regular doubt sessions and target-based guidance to identify mistakes, improve weak areas and stay on track."
+          }
+        ]
+      },
+      "program": {
+        "label": "Target Series Tracks",
+        "heading": "Pick your depth",
+        "subheading": "Target Batch is for people serious about their careers. No bulk batches — only 1:1 attention and deep structural growth.",
+        "mostSelected": "Most Selected",
+        "plan": {
+          "name": "RRB NTPC 2026 Paid Batch",
+          "unit": "one time",
+          "tag": "Complete Preparation Program",
+          "blurb": "A focused preparation batch designed for the RRB NTPC 2026 exam with syllabus completion, PYQs, mock tests, doubt sessions and target-based guidance.",
+          "features": [
+            "Target-based completion of syllabus for 2026",
+            "Live discussion of PYQs",
+            "Weekly doubt sessions",
+            "Practice sectional mock tests based on PYQs",
+            "Five full mock test paper series",
+            "Target Series guidance by Gopal Sir",
+            "Subjects: GS / GK + Maths + Reasoning"
+          ]
+        }
+      },
+      "process": {
+        "label": "Process",
+        "heading": "Low seats. High quality.",
+        "steps": [
+          {
+            "title": "Join the Batch",
+            "body": "Enroll in the RRB NTPC 2026 paid batch for just ₹399."
+          },
+          {
+            "title": "Follow the Targets",
+            "body": "Complete the syllabus according to the planned targets and stay consistent with your preparation."
+          },
+          {
+            "title": "Practice & Analyse",
+            "body": "Solve PYQs, sectional mocks and full-length mock tests to understand your preparation level."
+          },
+          {
+            "title": "Improve with Target Series",
+            "body": "Get weekly doubt sessions and guidance from Gopal Sir to identify and improve your weak areas."
+          }
+        ]
+      },
+      "structure": {
+        "label": "Program Structure",
+        "heading": "A structured approach to crack RRB NTPC 2026",
+        "subheading": "Learn, practice, analyse and improve with a preparation plan designed around the actual requirements of the RRB NTPC exam.",
+        "learnComplete": {
+          "title": "📚 Learn & Complete",
+          "body": "Build your preparation with clear targets and complete the required syllabus systematically.",
+          "items": [
+            "Target-based syllabus completion",
+            "GS / GK + Maths + Reasoning",
+            "Live discussion of PYQs"
+          ]
+        },
+        "practiceTest": {
+          "title": "📝 Practice & Test",
+          "body": "Regular practice and mock tests to improve accuracy, speed and exam readiness.",
+          "items": [
+            "Practice sectional mock tests",
+            "Tests based on PYQs",
+            "Five full mock test paper series"
+          ]
+        },
+        "doubtSolving": {
+          "title": "💡 Doubt Solving",
+          "body": "Don't let difficult topics slow down your preparation. Get your doubts resolved regularly.",
+          "items": [
+            "Weekly doubt sessions",
+            "Concept clarification",
+            "Discussion of difficult questions"
+          ]
+        },
+        "analyseImprove": {
+          "title": "🎯 Analyse & Improve",
+          "body": "Understand your mistakes and work on your weak areas with guidance from Gopal Sir.",
+          "items": [
+            "Test performance analysis",
+            "Weak area identification",
+            "Target Series guidance by Gopal Sir"
+          ]
+        },
+        "mockHighlight": {
+          "title": "Five Full Mock Test Paper Series",
+          "body": "Full-length mock tests based on the latest exam pattern and PYQs, available two months before the examination.",
+          "badge": "50+ MOCK TESTS"
+        }
+      },
+      "mentor": {
+        "label": "The Mentor",
+        "heading1": "Guidance that makes your",
+        "heading2": "preparation better",
+        "bio1": "Gopal Sir focuses on making exam preparation simple, structured and practical. Through regular guidance, test analysis and target-based guidance, students can identify their weak areas, reduce mistakes and improve their overall performance.",
+        "bio2": "The goal is not just to study more, but to study with the right strategy, analyse your performance and continuously improve before the actual RRB NTPC examination.",
+        "stat1Label": "Doubt Sessions",
+        "stat1Value": "Weekly",
+        "stat2Label": "Test Guidance",
+        "stat2Value": "1:1",
+        "designation1": "SSE (Ministry of Railways)",
+        "designation2": "Exam Rojgaar Mentor"
+      },
+      "why": {
+        "label": "The Difference",
+        "heading1": "Why",
+        "heading2": "this",
+        "heading3": "Target Series?",
+        "cards": [
+          {
+            "title": "Target-Based Syllabus Completion",
+            "body": "Follow a structured preparation approach designed to help you complete the RRB NTPC 2026 syllabus on time."
+          },
+          {
+            "title": "Live PYQ Discussion",
+            "body": "Discuss Previous Year Questions live and understand the concepts and patterns behind them."
+          },
+          {
+            "title": "Weekly Doubt Sessions",
+            "body": "Get your doubts resolved regularly instead of letting difficult topics accumulate."
+          },
+          {
+            "title": "Sectional Mock Tests",
+            "body": "Practice topic-wise and sectional tests based on PYQs prepared by the Exam Rojgaar team."
+          },
+          {
+            "title": "Five Full Mock Tests",
+            "body": "Five full mock test papers based on the latest pattern and PYQs, available two months before the exam."
+          },
+          {
+            "title": "Target Series Guidance by Gopal Sir",
+            "body": "Get guidance based on your test performance and work on your weak areas before the actual examination."
+          }
+        ]
+      },
+      "reviews": {
+        "label": "Student Reviews",
+        "heading": "What our students say",
+        "subheading": "Real feedback from students preparing with Exam Rojgaar."
+      },
+      "faqs": {
+        "label": "FAQs",
+        "heading": "Frequently asked questions",
+        "subheading": "Everything worth knowing before you apply.",
+        "items": [
+          {
+            "q": "What is the price of the RRB NTPC 2026 paid batch?",
+            "a": "The batch fee is ₹399 only."
+          },
+          {
+            "q": "When does the batch start?",
+            "a": "The RRB NTPC 2026 paid batch starts from 15 September 2026."
+          },
+          {
+            "q": "Which subjects are covered?",
+            "a": "The batch covers GS / GK, Mathematics and Reasoning."
+          },
+          {
+            "q": "Will there be PYQ discussion?",
+            "a": "Yes. The batch includes live discussion of Previous Year Questions (PYQs)."
+          },
+          {
+            "q": "Will there be doubt sessions?",
+            "a": "Yes. Weekly doubt sessions will be conducted."
+          },
+          {
+            "q": "Are mock tests included?",
+            "a": "Yes. The batch includes sectional mock tests based on PYQs and five full mock test papers based on the latest pattern and PYQs."
+          },
+          {
+            "q": "When will the five full mock tests be available?",
+            "a": "The five full mock test paper series will be available two months before the examination."
+          },
+          {
+            "q": "Who will provide the guidance?",
+            "a": "Guidance will be provided by Gopal Sir, with target-based feedback on your test performance and areas that need improvement."
+          },
+          {
+            "q": "Is there a result-based refund?",
+            "a": "Yes. As mentioned in the batch announcement, the batch amount will be refunded to eligible students who achieve the final result."
+          }
+        ]
+      },
+      "finalCta": {
+        "batchStart": "Batch Starts 15th September 2026",
+        "heading1": "Start your",
+        "heading2": "RRB NTPC 2026",
+        "heading3": "preparation today.",
+        "body": "Join the Exam Rojgaar paid batch for just ₹399 and prepare with structured targets, PYQs, mock tests, doubt sessions and target-based guidance.",
+        "cta": "Join Batch for ₹399"
+      },
+      "footer": {
+        "tagline": "Your Success, Our Goal"
+      }
     }
   }
 }

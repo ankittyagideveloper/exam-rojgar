@@ -11,6 +11,7 @@ import { Link, useLocation } from "react-router";
 import React from 'react';
 import './styles.css'
 import { useUser } from "@clerk/clerk-react";
+import { testimonials } from "@/constants";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -24,189 +25,28 @@ export const YoutubeIcon = ({ size = 20 }) => (
   </svg>
 );
 
-
-
-
-
-const NAV = [
-  { label: "Overview", href: "#mission" },
-  { label: "What You Get", href: "#program" },
-  { label: "How It Works", href: "#process" },
-  { label: "FAQs", href: "#faqs" },
-  { label: "Youtube", href: "https://www.youtube.com/@ExamRojgaar", icon: <YoutubeIcon size={18} />, target: "_blank" },
-];
-
-const MARQUEE = [
-  "RRB NTPC 2026",
-  "GS / GK",
-  "Mathematics",
-  "Reasoning",
-  "PYQs",
-  "Mock Tests",
-  "Doubt Sessions",
-  "Target Series",
-];
-
-const MISSION = [
-  {
-    title: "Target-Based Preparation",
-    body: "Complete the RRB NTPC 2026 syllabus with clear targets and a structured preparation plan.",
-  },
-  {
-    title: "PYQ Focused",
-    body: "Understand the actual exam pattern through live discussion and practice of Previous Year Questions.",
-  },
-  {
-    title: "Personal Guidance",
-    body: "Get regular doubt sessions and target-based guidance to identify mistakes, improve weak areas and stay on track.",
-  },
-];
-
-const PLANS = [
-  {
-    name: "RRB NTPC 2026 Paid Batch",
-    price: "₹399",
-    unit: "one time",
-    tag: "Complete Preparation Program",
-    blurb:
-      "A focused preparation batch designed for the RRB NTPC 2026 exam with syllabus completion, PYQs, mock tests, doubt sessions and target-based guidance.",
-    features: [
-      "Target-based completion of syllabus for 2026",
-      "Live discussion of PYQs",
-      "Weekly doubt sessions",
-      "Practice sectional mock tests based on PYQs",
-      "Five full mock test paper series",
-      "Target Series guidance by Gopal Sir",
-      "Subjects: GS / GK + Maths + Reasoning",
-    ],
-    cta: <RazorpayButton id="pl_TS4AN7R2A24QKQ" />,
-    featured: true,
-  },
-];
-
-const STEPS = [
-  {
-    title: "Join the Batch",
-    body: "Enroll in the RRB NTPC 2026 paid batch for just ₹399.",
-  },
-  {
-    title: "Follow the Targets",
-    body: "Complete the syllabus according to the planned targets and stay consistent with your preparation.",
-  },
-  {
-    title: "Practice & Analyse",
-    body: "Solve PYQs, sectional mocks and full-length mock tests to understand your preparation level.",
-  },
-  {
-    title: "Improve with Target Series",
-    body: "Get weekly doubt sessions and guidance from Gopal Sir to identify and improve your weak areas.",
-  },
-];
-
-const WHY = [
-  {
-    title: "Target-Based Syllabus Completion",
-    body: "Follow a structured preparation approach designed to help you complete the RRB NTPC 2026 syllabus on time.",
-    wide: true,
-  },
-  {
-    title: "Live PYQ Discussion",
-    body: "Discuss Previous Year Questions live and understand the concepts and patterns behind them.",
-  },
-  {
-    title: "Weekly Doubt Sessions",
-    body: "Get your doubts resolved regularly instead of letting difficult topics accumulate.",
-  },
-  {
-    title: "Sectional Mock Tests",
-    body: "Practice topic-wise and sectional tests based on PYQs prepared by the Exam Rojgaar team.",
-  },
-  {
-    title: "Five Full Mock Tests",
-    body: "Five full mock test papers based on the latest pattern and PYQs, available two months before the exam.",
-    wide: true,
-  },
-  {
-    title: "Target Series Guidance by Gopal Sir",
-    body: "Get guidance based on your test performance and work on your weak areas before the actual examination.",
-    wide: true,
-  },
-];
-
-const FAQS = [
-  {
-    q: "What is the price of the RRB NTPC 2026 paid batch?",
-    a: "The batch fee is ₹399 only.",
-  },
-  {
-    q: "When does the batch start?",
-    a: "The RRB NTPC 2026 paid batch starts from 15 September 2026.",
-  },
-  {
-    q: "Which subjects are covered?",
-    a: "The batch covers GS / GK, Mathematics and Reasoning.",
-  },
-  {
-    q: "Will there be PYQ discussion?",
-    a: "Yes. The batch includes live discussion of Previous Year Questions (PYQs).",
-  },
-  {
-    q: "Will there be doubt sessions?",
-    a: "Yes. Weekly doubt sessions will be conducted.",
-  },
-  {
-    q: "Are mock tests included?",
-    a: "Yes. The batch includes sectional mock tests based on PYQs and five full mock test papers based on the latest pattern and PYQs.",
-  },
-  {
-    q: "When will the five full mock tests be available?",
-    a: "The five full mock test paper series will be available two months before the examination.",
-  },
-  {
-    q: "Who will provide the guidance?",
-    a: "Guidance will be provided by Gopal Sir, with target-based feedback on your test performance and areas that need improvement.",
-  },
-  {
-    q: "Is there a result-based refund?",
-    a: "Yes. As mentioned in the batch announcement, the batch amount will be refunded to eligible students who achieve the final result.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Daily Target se History aur Polity ki preparation meri kaafi achhi hui hai. 😊 Maths mein bhi tests dene ki wajah se kaafi improvement feel hua hai. Overall, mujhe Daily Target se bahut fayda mila hai. Aur ek special mention aapke Polity ke YouTube lectures ka — they are just wow! ❤️ Maine Polity ko itna interesting aur easy kabhi nahi paya. Aapka padhane ka tareeka bahut hi simple aur effective hai. Thank you so much for guiding us and making our preparation easier. 😊🙏 Keep doing the amazing work!",
-    name: "Susmita",
-    title: "Exam Rojgar 2026 Batch-1",
-  },
-  {
-    quote:
-      "Negative attempts bhi ab kaafi kam ho rahe hain aur dheere-dheere attempts increase kar pa raha hoon. GK/GS aur Maths ko ek saath routine mein follow karne se preparation ka burden bhi kaafi kam lag raha hai aur consistency bani hui hai. Bas ab hope hai ki isi direction mein mehnat karte rahein aur result bhi positive aaye. Thank you for the guidance, Sir! 🙏😊",
-    name: "Renu Pathak",
-    title: "Exam Rojgar 2026 Batch-1",
-  },
-  {
-    quote:
-      "Saare resources ek hi jagah mil jaate hain, isliye preparation kaafi easy aur organised ho gayi hai. Pehle resources ke liye idhar-udhar bhagna padta tha, lekin ab sab kuch ek hi jagah mil jaata hai, jisse time bhi save hota hai aur preparation par focus karna bhi easy ho gaya hai. 😊🙏",
-    name: "Abhishek",
-    title: "Exam Rojgar 2026 Batch-1",
-  },
-  {
-    quote:
-      "Aapka guidance aur padhane ka tareeka bahut achha hai. Preparation ko kaafi easy aur organised bana diya hai. 🙏❤️",
-    name: "Mantasha Khatoon",
-    title: "Exam Rojgar 2026 Batch-1",
-  },
-  {
-    quote:
-      "Preparation mein kaafi improvement dekhne ko mil raha hai — attempts increase ho rahe hain, negative marking kam ho rahi hai, timely revision ho pa raha hai aur weak areas ka bhi proper analysis kar pa raha hoon. Overall preparation ab pehle se kaafi better aur structured lag rahi hai. 🙏😊",
-    name: "Sujoy Basak",
-    title: "Exam Rojgar 2026 Batch-1",
-  },
-];
-
-const TARGET_SERIES = "/online-test-series/rrb/rrb-ntpc"
+const TARGET_SERIES = "/online-test-series/rrb/rrb-ntpc";
 const APPLY_URL = "#program";
+
+function LanguageSwitcher() {
+  const { i18n } = useTranslation();
+  const current = i18n.language;
+
+  const toggle = () => {
+    i18n.changeLanguage(current === "en" ? "hi" : "en");
+  };
+
+  return (
+    <button
+      onClick={toggle}
+      aria-label="Switch language"
+      className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 font-mono text-xs font-bold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
+      title={current === "en" ? "Switch to Hindi" : "English पर स्विच करें"}
+    >
+      {current === "en" ? "अ" : "A"}
+    </button>
+  );
+}
 
 function CursorShadow() {
   const ref = useRef(null);
@@ -279,6 +119,14 @@ function Landing() {
 function Header({ dark, onToggle, isPaid }) {
   const { t } = useTranslation();
 
+  const NAV = [
+    { label: t("mentorship.nav.overview"), href: "#mission" },
+    { label: t("mentorship.nav.whatYouGet"), href: "#program" },
+    { label: t("mentorship.nav.howItWorks"), href: "#process" },
+    { label: t("mentorship.nav.faqs"), href: "#faqs" },
+    { label: "Youtube", href: "https://www.youtube.com/@ExamRojgaar", icon: <YoutubeIcon size={18} />, target: "_blank" },
+  ];
+
   return (
     <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:h-16 sm:px-5">
@@ -307,6 +155,7 @@ function Header({ dark, onToggle, isPaid }) {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher />
           <button
             onClick={onToggle}
             aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
@@ -330,14 +179,14 @@ function Header({ dark, onToggle, isPaid }) {
               to={TARGET_SERIES}
               className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              Target Series
+              {t("mentorship.header.targetSeries")}
             </Link>
             :
             <a
               href={APPLY_URL}
               className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              Apply Now
+              {t("mentorship.header.applyNow")}
             </a>
           }
         </div>
@@ -347,44 +196,38 @@ function Header({ dark, onToggle, isPaid }) {
 }
 
 function Hero() {
+  const { t } = useTranslation();
   return (
     <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-10 md:pt-18">
       <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             <span className="size-1.5 rounded-full bg-emerald animate-pulse-dot" />
-            September 2026 Batch
+            {t("mentorship.hero.batchLabel")}
             <span className="text-border">•</span>
-            <span className="text-rose">Limited Seats</span>
+            <span className="text-rose">{t("mentorship.hero.limitedSeats")}</span>
           </div>
 
-
           <h1 className="mt-8 font-display text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-            3 Months
+            {t("mentorship.hero.title1")}
             <br />
-            <span className="text-gradient">RRB NTPC 2026 </span>
-            <br />Target Series
+            <span className="text-gradient">{t("mentorship.hero.title2")} </span>
+            <br />{t("mentorship.hero.title3")}
           </h1>
-
-          {/* <p className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Master frontend architecture, system design and the career strategy
-            around them. Learn the engineering mindset directly from someone who
-            hires and grows engineers for a living.
-          </p> */}
 
           <div className="mt-9 flex flex-wrap gap-3">
             <a
               href="#program"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
             >
-              View Target Series Tracks
+              {t("mentorship.hero.ctaPrimary")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
             <a
               href="#faqs"
               className="inline-flex items-center rounded-full border border-border bg-surface-2 px-7 py-3.5 text-sm font-semibold transition-colors hover:bg-secondary"
             >
-              1:1 Personal Advice
+              {t("mentorship.hero.ctaSecondary")}
             </a>
           </div>
         </div>
@@ -401,7 +244,6 @@ function Hero() {
           {/* circular shadow at bottom */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
         </div>
-        {/* <CodeCard /> */}
       </div>
     </section>
   );
@@ -477,6 +319,16 @@ function CodeCard() {
 }
 
 function Marquee() {
+  const MARQUEE = [
+    "RRB NTPC 2026",
+    "GS / GK",
+    "Mathematics",
+    "Reasoning",
+    "PYQs",
+    "Mock Tests",
+    "Doubt Sessions",
+    "Target Series",
+  ];
   const items = [...MARQUEE, ...MARQUEE];
   return (
     <div className="relative overflow-hidden border-y border-border/60 py-6">
@@ -503,20 +355,18 @@ function SectionLabel({ children }) {
 }
 
 function Mission() {
+  const { t } = useTranslation();
+  const cards = t("mentorship.mission.cards", { returnObjects: true });
   return (
     <section id="mission" className="mx-auto max-w-6xl px-5 py-24">
-      <SectionLabel>My Mission</SectionLabel>
+      <SectionLabel>{t("mentorship.mission.label")}</SectionLabel>
       <h2 className="mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
-        Why I mentor
+        {t("mentorship.mission.heading")}
       </h2>
-      {/* <p className="mt-4 max-w-xl text-muted-foreground">
-        I'm not building a course factory. I'm building a tight-knit network of
-        engineers who raise each other's bar.
-      </p> */}
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {MISSION.map((m, i) => (
-          <article key={m.title} className="rounded-2xl glass-card p-7">
+        {cards.map((m, i) => (
+          <article key={i} className="rounded-2xl glass-card p-7">
             <span className="font-mono text-xs text-violet">0{i + 1}</span>
             <h3 className="mt-4 font-display text-xl font-semibold">{m.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{m.body}</p>
@@ -556,97 +406,77 @@ function RazorpayButton({ id }) {
 
 
 function Program({ isPaid }) {
+  const { t } = useTranslation();
+  const features = t("mentorship.program.plan.features", { returnObjects: true });
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-5 sm:py-24">
       <div className="text-center">
-        <SectionLabel>Target Series Tracks</SectionLabel>
+        <SectionLabel>{t("mentorship.program.label")}</SectionLabel>
         <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Pick your depth
+          {t("mentorship.program.heading")}
         </h2>
         <p id="program" className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground sm:text-base">
-          Target Batch is for people serious about their careers. No bulk batches —
-          only 1:1 attention and deep structural growth.
+          {t("mentorship.program.subheading")}
         </p>
       </div>
 
       <div className="mt-10 grid gap-5 sm:mt-14 lg:grid-cols-2">
-        {PLANS.map((plan) => (
-          <article
-            key={plan.name}
-            className={`relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 ${plan.featured
-              ? "glass-card ring-1 ring-accent/60 shadow-glow"
-              : "glass-card"
-              }`}
+        <article className="relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 glass-card ring-1 ring-accent/60 shadow-glow">
+          <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground whitespace-nowrap sm:left-auto sm:right-8 sm:translate-x-0">
+            {t("mentorship.program.mostSelected")}
+          </span>
+          <h3 className="font-display text-xl font-bold leading-snug sm:text-2xl">
+            {t("mentorship.program.plan.name")}
+          </h3>
+          <p className="mt-1 text-sm text-violet">{t("mentorship.program.plan.tag")}</p>
+
+          <p className="mt-5 flex items-baseline gap-1.5 sm:mt-6">
+            <span className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              ₹399
+            </span>
+            <span className="text-sm text-muted-foreground">{t("mentorship.program.plan.unit")}</span>
+          </p>
+
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5">
+            {t("mentorship.program.plan.blurb")}
+          </p>
+
+          <ul className="mt-6 space-y-3 sm:mt-7">
+            {features.map((f, i) => (
+              <li key={i} className="flex gap-3 text-sm">
+                <span className="mt-0.5 shrink-0 text-emerald">✓</span>
+                <span className="text-muted-foreground">{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          {isPaid ? <Link
+            to={TARGET_SERIES}
+            className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
           >
-            {plan.featured && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground whitespace-nowrap sm:left-auto sm:right-8 sm:translate-x-0">
-                Most Selected
-              </span>
-            )}
-            <h3 className="font-display text-xl font-bold leading-snug sm:text-2xl">{plan.name}</h3>
-            <p className="mt-1 text-sm text-violet">{plan.tag}</p>
-
-            <p className="mt-5 flex items-baseline gap-1.5 sm:mt-6">
-              <span className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                {plan.price}
-              </span>
-              <span className="text-sm text-muted-foreground">{plan.unit}</span>
-            </p>
-
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5">
-              {plan.blurb}
-            </p>
-
-            <ul className="mt-6 space-y-3 sm:mt-7">
-              {plan.features.map((f) => (
-                <li key={f} className="flex gap-3 text-sm">
-                  <span className="mt-0.5 shrink-0 text-emerald">✓</span>
-                  <span className="text-muted-foreground">{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* <button
-              onCLick={APPLY_URL}
-              className={`mt-8 block rounded-full px-6 py-3.5 text-center text-sm font-semibold transition-transform hover:scale-[1.02] ${
-                plan.featured
-                  ? "bg-accent text-accent-foreground"
-                  : "bg-primary text-primary-foreground"
-              }`}
-            > */}
-            {isPaid ? <Link
-              to={TARGET_SERIES}
-              className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
-            >
-              Target Series
-            </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md">{plan.cta}</div>}
-
-            {/* </button> */}
-
-          </article>
-        ))}
+            {t("mentorship.header.targetSeries")}
+          </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md"><RazorpayButton id="pl_TS4AN7R2A24QKQ" /></div>}
+        </article>
       </div>
-
-      {/* <p className="mt-6 text-center font-mono text-xs text-muted-foreground">
-        * ₹50k upfront for the 3-month track, remaining ₹25k at the start of month two.
-      </p> */}
     </section>
   );
 }
 
 function Process() {
+  const { t } = useTranslation();
+  const steps = t("mentorship.process.steps", { returnObjects: true });
   return (
     <section id="process" className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>Process</SectionLabel>
+        <SectionLabel>{t("mentorship.process.label")}</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Low seats. High quality.
+          {t("mentorship.process.heading")}
         </h2>
       </div>
 
       <ol className="mt-14 grid gap-5 md:grid-cols-4">
-        {STEPS.map((s, i) => (
-          <li key={s.title} className="relative rounded-2xl glass-card p-6">
+        {steps.map((s, i) => (
+          <li key={i} className="relative rounded-2xl glass-card p-6">
             <span className="grid size-10 place-items-center rounded-xl bg-secondary font-mono text-sm font-bold text-violet">
               {i + 1}
             </span>
@@ -659,236 +489,61 @@ function Process() {
   );
 }
 
-// function Structure() {
-//   return (
-//     <section className="mx-auto max-w-6xl px-5 py-24">
-//       <div className="rounded-3xl glass-card p-8 sm:p-12">
-//         <SectionLabel>Program Structure</SectionLabel>
-//         <h2 className="mt-4 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-//           Deep-work weekends, continuous weekday momentum
-//         </h2>
-
-//         <div className="mt-10 grid gap-6 md:grid-cols-2">
-//           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-//             <h3 className="font-display text-xl font-semibold">Weekend Deep Dives</h3>
-//             <p className="mt-2 text-sm text-muted-foreground">
-//               3–4 hours of intensive focus on core engineering principles.
-//             </p>
-//             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-//               <li>• Saturday: individual connect sessions</li>
-//               <li>• Sunday: group mentorship & system design</li>
-//             </ul>
-//           </div>
-//           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-//             <h3 className="font-display text-xl font-semibold">Weekday Momentum</h3>
-//             <p className="mt-2 text-sm text-muted-foreground">
-//               Always connected. Never stuck on one problem for days.
-//             </p>
-//             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-//               <li>• Direct 1:1 chat support</li>
-//               <li>• Assignment discussion & doubt solving</li>
-//               <li>• Continuous progress tracking</li>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// function Mentor() {
-//   return (
-//     <section className="mx-auto max-w-6xl px-5 py-24">
-//       <div className="grid items-center gap-12 lg:grid-cols-2">
-//         <div className="relative">
-//           <div className="overflow-hidden rounded-3xl glass-card">
-//             {/* <img
-//               src={mentorImg}
-//               alt="Chirag Goel, engineering manager and mentor"
-//               loading="lazy"
-//               width={912}
-//               height={1104}
-//               className="h-full w-full object-cover"
-//             /> */}
-//           </div>
-//           <div className="absolute -bottom-5 left-6 rounded-2xl glass-card px-5 py-4">
-//             <p className="font-display text-base font-semibold">Chirag Goel</p>
-//             <p className="font-mono text-xs text-muted-foreground">
-//               Engineering Manager
-//             </p>
-//           </div>
-//         </div>
-
-//         <div>
-//           <SectionLabel>The Mentor</SectionLabel>
-//           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-//             Expertise meets a{" "}
-//             <span className="text-gradient">passion for teaching</span>.
-//           </h2>
-
-//           <blockquote className="mt-8 border-l-2 border-accent pl-5 font-mono text-sm leading-7 text-muted-foreground">
-//             profession === engineer
-//             <br />
-//             love === teaching
-//             <br />
-//             passion === mentoring
-//           </blockquote>
-
-//           <p className="mt-7 leading-relaxed text-muted-foreground">
-//             I talk about frontend development, system design and interview
-//             preparation — helping students start careers and helping working
-//             engineers grow toward mastery. The more knowledge you pour out, the
-//             more comes back.
-//           </p>
-
-//           <div className="mt-9 flex gap-10">
-//             <div>
-//               <p className="font-display text-3xl font-extrabold text-gradient">10+ Yrs</p>
-//               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-//                 Experience
-//               </p>
-//             </div>
-//             <div>
-//               <p className="font-display text-3xl font-extrabold text-gradient">100k+</p>
-//               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-//                 Developers Taught
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// function Mentor() {
-//   return (
-//     <section className="mx-auto max-w-6xl px-5 py-24">
-//       <div className="grid items-center gap-12 lg:grid-cols-2">
-//         <div>
-//           <SectionLabel>The Mentor</SectionLabel>
-
-//           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-//             Guidance by{" "}
-//             <span className="text-gradient">Gopal Sir</span>
-//           </h2>
-
-//           <p className="mt-7 leading-relaxed text-muted-foreground">
-//             Get mentorship based on your test performance, identify your
-//             weak areas and work on them before the actual RRB NTPC
-//             examination.
-//           </p>
-
-//           <div className="mt-9 grid gap-4 sm:grid-cols-2">
-//             <div className="rounded-2xl glass-card p-5">
-//               <p className="font-display text-lg font-semibold">
-//                 Test Analysis
-//               </p>
-//               <p className="mt-2 text-sm text-muted-foreground">
-//                 Identify mistakes and areas that need improvement.
-//               </p>
-//             </div>
-
-//             <div className="rounded-2xl glass-card p-5">
-//               <p className="font-display text-lg font-semibold">
-//                 Personal Guidance
-//               </p>
-//               <p className="mt-2 text-sm text-muted-foreground">
-//                 Improve your preparation strategy before the exam.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 function Structure() {
+  const { t } = useTranslation();
+  const lc = t("mentorship.structure.learnComplete", { returnObjects: true });
+  const pt = t("mentorship.structure.practiceTest", { returnObjects: true });
+  const ds = t("mentorship.structure.doubtSolving", { returnObjects: true });
+  const ai = t("mentorship.structure.analyseImprove", { returnObjects: true });
+  const mh = t("mentorship.structure.mockHighlight", { returnObjects: true });
+
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="rounded-3xl glass-card p-8 sm:p-12">
-        <SectionLabel>Program Structure</SectionLabel>
+        <SectionLabel>{t("mentorship.structure.label")}</SectionLabel>
 
         <h2 className="mt-4 max-w-2xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          A structured approach to crack RRB NTPC 2026
+          {t("mentorship.structure.heading")}
         </h2>
 
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Learn, practice, analyse and improve with a preparation plan
-          designed around the actual requirements of the RRB NTPC exam.
+          {t("mentorship.structure.subheading")}
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {/* Preparation */}
+          {/* Learn & Complete */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">
-              📚 Learn & Complete
-            </h3>
-
-            <p className="mt-2 text-sm text-muted-foreground">
-              Build your preparation with clear targets and complete the
-              required syllabus systematically.
-            </p>
-
+            <h3 className="font-display text-xl font-semibold">{lc.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{lc.body}</p>
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Target-based syllabus completion</li>
-              <li>• GS / GK + Maths + Reasoning</li>
-              <li>• Live discussion of PYQs</li>
+              {lc.items.map((item, i) => <li key={i}>• {item}</li>)}
             </ul>
           </div>
 
-          {/* Practice */}
+          {/* Practice & Test */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">
-              📝 Practice & Test
-            </h3>
-
-            <p className="mt-2 text-sm text-muted-foreground">
-              Regular practice and mock tests to improve accuracy, speed
-              and exam readiness.
-            </p>
-
+            <h3 className="font-display text-xl font-semibold">{pt.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{pt.body}</p>
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Practice sectional mock tests</li>
-              <li>• Tests based on PYQs</li>
-              <li>• Five full mock test paper series</li>
+              {pt.items.map((item, i) => <li key={i}>• {item}</li>)}
             </ul>
           </div>
 
           {/* Doubt Solving */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">
-              💡 Doubt Solving
-            </h3>
-
-            <p className="mt-2 text-sm text-muted-foreground">
-              Don't let difficult topics slow down your preparation. Get
-              your doubts resolved regularly.
-            </p>
-
+            <h3 className="font-display text-xl font-semibold">{ds.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{ds.body}</p>
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Weekly doubt sessions</li>
-              <li>• Concept clarification</li>
-              <li>• Discussion of difficult questions</li>
+              {ds.items.map((item, i) => <li key={i}>• {item}</li>)}
             </ul>
           </div>
 
-          {/* Target Series */}
+          {/* Analyse & Improve */}
           <div className="rounded-2xl border border-border bg-surface-2 p-7">
-            <h3 className="font-display text-xl font-semibold">
-              🎯 Analyse & Improve
-            </h3>
-
-            <p className="mt-2 text-sm text-muted-foreground">
-              Understand your mistakes and work on your weak areas with
-              guidance from Gopal Sir.
-            </p>
-
+            <h3 className="font-display text-xl font-semibold">{ai.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{ai.body}</p>
             <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-              <li>• Test performance analysis</li>
-              <li>• Weak area identification</li>
-              <li>• Target Series guidance by Gopal Sir</li>
+              {ai.items.map((item, i) => <li key={i}>• {item}</li>)}
             </ul>
           </div>
         </div>
@@ -897,18 +552,11 @@ function Structure() {
         <div className="mt-6 rounded-2xl border border-accent/30 bg-accent/5 p-7">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="font-display text-xl font-semibold">
-                Five Full Mock Test Paper Series
-              </p>
-
-              <p className="mt-2 text-sm text-muted-foreground">
-                Full-length mock tests based on the latest exam pattern and
-                PYQs, available two months before the examination.
-              </p>
+              <p className="font-display text-xl font-semibold">{mh.title}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{mh.body}</p>
             </div>
-
             <span className="shrink-0 rounded-full bg-accent px-4 py-2 font-mono text-xs font-semibold text-accent-foreground">
-              50+ MOCK TESTS
+              {mh.badge}
             </span>
           </div>
         </div>
@@ -916,7 +564,9 @@ function Structure() {
     </section>
   );
 }
+
 function Mentor() {
+  const { t } = useTranslation();
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -941,22 +591,22 @@ function Mentor() {
               Gopal Sir
             </p>
             <p className="font-mono text-xs text-muted-foreground">
-              SSE (Ministry of Railways)
+              {t("mentorship.mentor.designation1")}
             </p>
             <p className="font-mono text-xs text-muted-foreground">
-              Exam Rojgaar Mentor
+              {t("mentorship.mentor.designation2")}
             </p>
           </div>
         </div>
 
         {/* Mentor Content */}
         <div>
-          <SectionLabel>The Mentor</SectionLabel>
+          <SectionLabel>{t("mentorship.mentor.label")}</SectionLabel>
 
           <h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-            Guidance that makes your{" "}
+            {t("mentorship.mentor.heading1")}{" "}
             <span className="text-gradient">
-              preparation better
+              {t("mentorship.mentor.heading2")}
             </span>
             .
           </h2>
@@ -970,34 +620,29 @@ function Mentor() {
           </blockquote>
 
           <p className="mt-7 leading-relaxed text-muted-foreground">
-            Gopal Sir focuses on making exam preparation simple, structured
-            and practical. Through regular guidance, test analysis and
-            target-based guidance, students can identify their weak areas, reduce
-            mistakes and improve their overall performance.
+            {t("mentorship.mentor.bio1")}
           </p>
 
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            The goal is not just to study more, but to study with the right
-            strategy, analyse your performance and continuously improve before
-            the actual RRB NTPC examination.
+            {t("mentorship.mentor.bio2")}
           </p>
 
           <div className="mt-9 flex gap-10">
             <div>
               <p className="font-display text-3xl font-extrabold text-gradient">
-                Weekly
+                {t("mentorship.mentor.stat1Value")}
               </p>
               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                Doubt Sessions
+                {t("mentorship.mentor.stat1Label")}
               </p>
             </div>
 
             <div>
               <p className="font-display text-3xl font-extrabold text-gradient">
-                1:1
+                {t("mentorship.mentor.stat2Value")}
               </p>
               <p className="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                Test Guidance
+                {t("mentorship.mentor.stat2Label")}
               </p>
             </div>
           </div>
@@ -1007,24 +652,26 @@ function Mentor() {
     </section>
   );
 }
+
 function Why() {
+  const { t } = useTranslation();
+  const cards = t("mentorship.why.cards", { returnObjects: true });
+  // wide pattern: indices 0, 4, 5 are wide (matching original WHY array)
+  const wideIndices = new Set([0, 4, 5]);
   return (
     <section className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>The Difference</SectionLabel>
+        <SectionLabel>{t("mentorship.why.label")}</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Why <span className="text-gradient">this</span> Target Series?
+          {t("mentorship.why.heading1")} <span className="text-gradient">{t("mentorship.why.heading2")}</span> {t("mentorship.why.heading3")}
         </h2>
-        {/* <p className="mx-auto mt-4 max-w-lg text-muted-foreground">
-          Not another course. A rewrite of your engineering identity.
-        </p> */}
       </div>
 
       <div className="mt-14 grid gap-5 md:grid-cols-3">
-        {WHY.map((item) => (
+        {cards.map((item, i) => (
           <article
-            key={item.title}
-            className={`rounded-2xl glass-card p-7 ${item.wide ? "md:col-span-2" : ""}`}
+            key={i}
+            className={`rounded-2xl glass-card p-7 ${wideIndices.has(i) ? "md:col-span-2" : ""}`}
           >
             <h3 className="font-display text-xl font-semibold">{item.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -1037,55 +684,26 @@ function Why() {
   );
 }
 
-// function Reviews() {
-//   return (
-//     <section id="reviews" className="mx-auto max-w-6xl px-5 py-24">
-//       <div className="text-center">
-//         <SectionLabel>Testimonials</SectionLabel>
-//         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-//           What mentees say
-//         </h2>
-//       </div>
 
-//       <div className="mt-14 grid gap-5 md:grid-cols-3">
-//         {REVIEWS.map((r) => (
-//           <figure key={r.name} className="flex flex-col rounded-2xl glass-card p-7">
-//             <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
-//               “{r.quote}”
-//             </blockquote>
-//             <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-//               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary font-mono text-xs font-bold text-violet">
-//                 {r.initials}
-//               </span>
-//               <span>
-//                 <span className="block text-sm font-semibold">{r.name}</span>
-//                 <span className="block text-xs text-muted-foreground">{r.role}</span>
-//               </span>
-//             </figcaption>
-//           </figure>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
 
 function Reviews() {
+  const { t } = useTranslation();
   return (
     <section id="reviews" className="mx-auto max-w-6xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>Student Reviews</SectionLabel>
+        <SectionLabel>{t("mentorship.reviews.label")}</SectionLabel>
 
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          What our students say
+          {t("mentorship.reviews.heading")}
         </h2>
 
         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-          Real feedback from students preparing with Exam Rojgaar.
+          {t("mentorship.reviews.subheading")}
         </p>
       </div>
 
       <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {TESTIMONIALS.map((testimonial) => (
+        {testimonials.map((testimonial) => (
           <figure
             key={testimonial.name}
             className="flex flex-col rounded-2xl glass-card p-7"
@@ -1126,22 +744,24 @@ function Reviews() {
 }
 
 function Faqs() {
+  const { t } = useTranslation();
+  const items = t("mentorship.faqs.items", { returnObjects: true });
   return (
     <section id="faqs" className="mx-auto max-w-3xl px-5 py-24">
       <div className="text-center">
-        <SectionLabel>FAQs</SectionLabel>
+        <SectionLabel>{t("mentorship.faqs.label")}</SectionLabel>
         <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
-          Frequently asked questions
+          {t("mentorship.faqs.heading")}
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Everything worth knowing before you apply.
+          {t("mentorship.faqs.subheading")}
         </p>
       </div>
 
       <Accordion type="single" collapsible className="mt-12 space-y-3">
-        {FAQS.map((f, i) => (
+        {items.map((f, i) => (
           <AccordionItem
-            key={f.q}
+            key={i}
             value={`item-${i}`}
             className="rounded-2xl glass-card border-b-0 px-6"
           >
@@ -1159,6 +779,7 @@ function Faqs() {
 }
 
 function FinalCta() {
+  const { t } = useTranslation();
   return (
     <section className="mx-auto max-w-6xl px-5 pb-28">
       <div className="relative overflow-hidden rounded-3xl glass-card px-8 py-16 text-center sm:px-16">
@@ -1169,28 +790,26 @@ function FinalCta() {
 
         <div className="relative">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-violet">
-            Batch Starts 15th September 2026
+            {t("mentorship.finalCta.batchStart")}
           </p>
 
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
-            Start your{" "}
+            {t("mentorship.finalCta.heading1")}{" "}
             <span className="text-gradient">
-              RRB NTPC 2026
+              {t("mentorship.finalCta.heading2")}
             </span>{" "}
-            preparation today.
+            {t("mentorship.finalCta.heading3")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-lg text-muted-foreground">
-            Join the Exam Rojgaar paid batch for just ₹399 and prepare with
-            structured targets, PYQs, mock tests, doubt sessions and
-            target-based guidance.
+            {t("mentorship.finalCta.body")}
           </p>
 
           <a
             href="#program"
             className="mt-9 inline-flex rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
           >
-            Join Batch for ₹399
+            {t("mentorship.finalCta.cta")}
           </a>
         </div>
       </div>
@@ -1199,6 +818,16 @@ function FinalCta() {
 }
 
 function Footer() {
+  const { t } = useTranslation();
+
+  const NAV = [
+    { label: t("mentorship.nav.overview"), href: "#mission" },
+    { label: t("mentorship.nav.whatYouGet"), href: "#program" },
+    { label: t("mentorship.nav.howItWorks"), href: "#process" },
+    { label: t("mentorship.nav.faqs"), href: "#faqs" },
+    { label: "Youtube", href: "https://www.youtube.com/@ExamRojgaar", icon: <YoutubeIcon size={18} />, target: "_blank" },
+  ];
+
   return (
     <footer className="relative border-t border-border/60 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 sm:flex-row">
@@ -1208,7 +837,7 @@ function Footer() {
           </p>
 
           <p className="mt-1 font-mono text-xs text-muted-foreground">
-            Your Success, Our Goal
+            {t("mentorship.footer.tagline")}
           </p>
         </div>
 
@@ -1234,7 +863,6 @@ function Footer() {
 
 
 const TargetSeriesPage = () => {
-
   return <Landing />
 }
 
