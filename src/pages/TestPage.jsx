@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import TestCard from "../component/TestCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { mockData } from "./mockData";
@@ -71,6 +72,17 @@ const TestPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Online Test Series – RRB, SSC & Banking Exams | Exam Rojgaar</title>
+        <meta
+          name="description"
+          content="Attempt free and premium online mock test series for RRB NTPC, JE, SSC CGL, and Banking exams. Track your score and rank on Exam Rojgaar."
+        />
+        <link rel="canonical" href="https://www.examrojgaar.com/online-test-series" />
+        <meta property="og:title" content="Online Test Series – RRB, SSC & Banking | Exam Rojgaar" />
+        <meta property="og:description" content="Free & premium mock tests for RRB NTPC, JE, SSC and Banking. Start practising now." />
+        <meta property="og:url" content="https://www.examrojgaar.com/online-test-series" />
+      </Helmet>
       <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 ">
         {/* {categories.map((test, index) => (
         <TestCard

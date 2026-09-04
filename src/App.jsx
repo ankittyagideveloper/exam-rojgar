@@ -288,69 +288,69 @@ const router = createBrowserRouter([
 
       { path: "pipe-cistern", element: <PipeCisternMockTestPage /> },
 
-      { path: "Revision", element: <RevisionMockTestPage /> },
+      { path: "revision", element: <RevisionMockTestPage /> },
 
-      { path: "Revision-Test-3", element: <RevisionTest3MockTestPage /> },
+      { path: "revision-test-3", element: <RevisionTest3MockTestPage /> },
 
-      { path: "Percentage", element: <PercentageMockTestPage /> },
+      { path: "percentage", element: <PercentageMockTestPage /> },
 
-      { path: "Mughal", element: <MughalMockTestPage /> },
+      { path: "mughal", element: <MughalMockTestPage /> },
 
-      { path: "Ratio", element: <RatioMockTestPage /> },
+      { path: "ratio", element: <RatioMockTestPage /> },
 
-      { path: "Profit", element: <ProfitMockTestPage /> },
+      { path: "profit", element: <ProfitMockTestPage /> },
 
       {
-        path: "VijayNagarAndBahmani",
+        path: "vijay-nagar-and-bahmani",
         element: <VijayNagarAndBahmaniMockTestPage />,
       },
 
-      { path: "BhaktiAndSufi", element: <BhaktiAndSufiMockTestPage /> },
+      { path: "bhakti-and-sufi", element: <BhaktiAndSufiMockTestPage /> },
 
-      { path: "TimeAndWork", element: <TimeAndWorkMockTestPage /> },
+      { path: "time-and-work", element: <TimeAndWorkMockTestPage /> },
 
-      { path: "Maratha", element: <MarathaMockTestPage /> },
+      { path: "maratha", element: <MarathaMockTestPage /> },
 
-      { path: "Pipe", element: <PipeMockTestPage /> },
+      { path: "pipe", element: <PipeMockTestPage /> },
 
-      { path: "Advent", element: <AdventMockTestPage /> },
+      { path: "advent", element: <AdventMockTestPage /> },
 
       {
-        path: "TimeSpeedDistanceBoat",
+        path: "time-speed-distance-boat",
         element: <TimeSpeedDistanceBoatMockTestPage />,
       },
 
-      { path: "Time", element: <TimeMockTestPage /> },
+      { path: "time", element: <TimeMockTestPage /> },
 
-      { path: "RevoltEconomicImpactPeasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
+      { path: "revolt-economic-impact-peasant", element: <RevoltEconomicImpactPeasantMockTestPage /> },
 
-      { path: "hostory-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
+      { path: "history-full-revision-test", element: <HostoryFullRevisionTestMockTestPage /> },
 
-      { path: "ModernHistoryExtremistPhase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
+      { path: "modern-history-extremist-phase", element: <ModernHistoryExtremistPhaseMockTestPage /> },
 
       { path: "dummy-test", element: <RailwayMockTestPage /> },
 
-      { path: "PolityConstitutionAndPreambleAndSources", element: <PolityConstitutionAndPreambleAndSourcesMockTestPage /> },
+      { path: "polity-constitution-and-preamble-and-sources", element: <PolityConstitutionAndPreambleAndSourcesMockTestPage /> },
 
-      { path: "ScheduleCitizenship", element: <ScheduleCitizenshipMockTestPage /> },
+      { path: "schedule-citizenship", element: <ScheduleCitizenshipMockTestPage /> },
 
-      { path: "Average", element: <AverageMockTestPage /> },
+      { path: "average", element: <AverageMockTestPage /> },
 
-      { path: "ArithmeticSectionalTest", element: <ArithmeticSectionalTestMockTestPage /> },
+      { path: "arithmetic-sectional-test", element: <ArithmeticSectionalTestMockTestPage /> },
 
       { path: "test-series-demo", element: <TestSeriesDemoPage /> },
 
 
-      { path: "FundamentalRightsAndDpSp", element: <FundamentalRightsAndDpSpMockTestPage /> },
+      { path: "fundamental-rights-and-dp-sp", element: <FundamentalRightsAndDpSpMockTestPage /> },
 
-      { path: "Parliament", element: <ParliamentMockTestPage /> },
+      { path: "parliament", element: <ParliamentMockTestPage /> },
 
-      { path: "Amendments", element: <AmendmentsMockTestPage /> },
+      { path: "amendments", element: <AmendmentsMockTestPage /> },
 
-      { path: "Maths", element: <MathsMockTestPage /> },
-    
+      { path: "maths", element: <MathsMockTestPage /> },
+
       { path: "geography-basics-test-1", element: <GeographyBasicsTest1MockTestPage /> },
-    
+
       { path: "military-exercise-test-1", element: <MilitaryExerciseTest1MockTestPage /> },
     ],
   },

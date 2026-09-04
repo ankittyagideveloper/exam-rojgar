@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { QuizCard } from "../component/QuizCard";
 import { doc, getFirestore, serverTimestamp, setDoc } from "firebase/firestore";
 import { app } from "../../firebase";
@@ -130,6 +131,17 @@ const Quiz = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Quiz Category – Live Mock Tests & Practice Sets | Exam Rojgaar</title>
+        <meta
+          name="description"
+          content="Attempt live mock tests and practice quizzes for RRB NTPC, SSC and Banking exams. Free and premium test series with instant results on Exam Rojgaar."
+        />
+        <link rel="canonical" href="https://www.examrojgaar.com/quiz-category" />
+        <meta property="og:title" content="Quiz Category – Mock Tests | Exam Rojgaar" />
+        <meta property="og:description" content="Live mock tests and practice quizzes for competitive exam preparation." />
+        <meta property="og:url" content="https://www.examrojgaar.com/quiz-category" />
+      </Helmet>
       {openRegistaration && (
         <RegistrationModal
           isOpen={openRegistaration}

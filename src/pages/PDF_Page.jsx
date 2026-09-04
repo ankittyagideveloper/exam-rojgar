@@ -67,40 +67,21 @@ export default function PDF_Page() {
   return (
     <>
       <Helmet>
-        {/* Basic SEO */}
-        <title>PDF Page - Exam Rojgaar</title>
+        <title>Free Study PDFs – Aptitude, GK & Exam Notes | Exam Rojgaar</title>
         <meta
           name="description"
-          content="Access comprehensive study materials by subject"
+          content="Download free study PDFs for RRB NTPC, SSC and Banking exams. Includes R.S. Aggarwal Quantitative Aptitude, official notifications and more."
         />
-
-        {/* Open Graph (Facebook, LinkedIn, WhatsApp) */}
+        <link rel="canonical" href="https://www.examrojgaar.com/pdf-category" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Exam Rojgaar PDF Page" />
-        <meta
-          property="og:description"
-          content="Access comprehensive study materials for competitive exams."
-        />
-        <meta
-          property="og:image"
-          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.1/android-chrome-512x512.png" // <-- Put your actual logo URL
-        />
-        <meta
-          property="og:url"
-          content="https://examrojgaar.netlify.app/pdf-category"
-        />
-
-        {/* Twitter Cards */}
+        <meta property="og:title" content="Free Study PDFs for Competitive Exams | Exam Rojgaar" />
+        <meta property="og:description" content="Download free PDFs for RRB, SSC and Banking exam preparation – aptitude books, GK notes and official notifications." />
+        <meta property="og:image" content="https://www.examrojgaar.com/slide-1.webp" />
+        <meta property="og:url" content="https://www.examrojgaar.com/pdf-category" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Exam Rojgaar PDF Page" />
-        <meta
-          name="twitter:description"
-          content="Access comprehensive study materials for competitive exams."
-        />
-        <meta
-          name="twitter:image"
-          content="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.0/logo.png" // <-- Same or another image
-        />
+        <meta name="twitter:title" content="Free Study PDFs | Exam Rojgaar" />
+        <meta name="twitter:description" content="Download free PDFs for RRB, SSC and Banking exams." />
+        <meta name="twitter:image" content="https://www.examrojgaar.com/slide-1.webp" />
       </Helmet>
 
       <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">

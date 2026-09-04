@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { Helmet } from "react-helmet-async";
 import { useUser } from "@clerk/clerk-react";
 import { useUserAttempts } from "../hooks/QueryData";
 import {
@@ -20,7 +21,19 @@ import {
 
 const AttemptedTests = () => {
   const { user } = useUser();
+
   const userId = user?.id;
+  const helmet = (
+    <Helmet>
+      <title>My Test Attempts – Track Your Progress | Exam Rojgaar</title>
+      <meta
+        name="description"
+        content="View all your attempted mock tests on Exam Rojgaar. Track scores, review answers and monitor your exam preparation progress."
+      />
+      <link rel="canonical" href="https://www.examrojgaar.com/attempted-tests" />
+      <meta name="robots" content="noindex, nofollow" />
+    </Helmet>
+  );
   const navigate = useNavigate();
 
   const { data: attempts = [], isLoading, error } = useUserAttempts(userId);
@@ -91,78 +104,90 @@ const AttemptedTests = () => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading your attempts...</p>
+      <>
+        {helmet}
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Loading your attempts...</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
   if (error) {
     return (
-      <div className="max-w-6xl mx-auto p-6">
-        <Card className="border-red-200 bg-red-50">
-          <CardContent className="pt-6">
-            <p className="text-red-800">
-              Error loading attempts: {error.message}
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+      <>
+        {helmet}
+        <div className="max-w-6xl mx-auto p-6">
+          <Card className="border-red-200 bg-red-50">
+            <CardContent className="pt-6">
+              <p className="text-red-800">
+                Error loading attempts: {error.message}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </>
     );
   }
 
   if (!attempts.length) {
     return (
-      <div className="max-w-6xl mx-auto p-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Your Attempts</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center py-12">
-            <p className="text-muted-foreground mb-4">
-              You haven't attempted any tests yet.
-            </p>
-            <Button onClick={() => navigate("/quiz-category")}>
-              Start a Test
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+      <>
+        {helmet}
+        <div className="max-w-6xl mx-auto p-6">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-2xl">Your Attempts</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center py-12">
+              <p className="text-muted-foreground mb-4">
+                You haven't attempted any tests yet.
+              </p>
+              <Button onClick={() => navigate("/quiz-category")}>
+                Start a Test
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </>
     );
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-2 md:p-6">
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-2xl md:text-3xl">
-            Your Test Attempts
-          </CardTitle>
-          <p className="text-sm text-muted-foreground mt-2">
-            Showing {uniqueAttempts.length} test
-            {uniqueAttempts.length !== 1 ? "s" : ""}
-          </p>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {uniqueAttempts.map((attempt) => (
-              <AttemptCard
-                key={attempt.id}
-                attempt={attempt}
-                getStatusBadge={getStatusBadge}
-                getScorePercentage={getScorePercentage}
-                formatDate={formatDate}
-                formatDuration={formatDuration}
-                navigate={navigate}
-              />
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <>
+      {helmet}
+      <div className="max-w-6xl mx-auto p-2 md:p-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl md:text-3xl">
+              Your Test Attempts
+            </CardTitle>
+            <p className="text-sm text-muted-foreground mt-2">
+              Showing {uniqueAttempts.length} test
+              {uniqueAttempts.length !== 1 ? "s" : ""}
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {uniqueAttempts.map((attempt) => (
+                <AttemptCard
+                  key={attempt.id}
+                  attempt={attempt}
+                  getStatusBadge={getStatusBadge}
+                  getScorePercentage={getScorePercentage}
+                  formatDate={formatDate}
+                  formatDuration={formatDuration}
+                  navigate={navigate}
+                />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 };
 
