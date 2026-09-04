@@ -187,7 +187,7 @@ function HomePage() {
                 className="inline-flex items-center justify-center gap-2 bg-[#1272ba] hover:bg-[#1260ba] text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 w-fit"
               >
                 <Play className="w-4 h-4" />
-                Start Free Test
+                Start Test Series
               </a>
             </div>
 
