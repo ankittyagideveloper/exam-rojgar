@@ -16,6 +16,7 @@ const SEGMENT_LABELS = {
   "rrb":"RRB",
   "rrb-ntpc":"RRB NTPC",
   "rrc":"RRC",
+  "rrc-group-d":"RRC Group D",
   "quiz-category": "Quiz",
   "pdf-category": "PDFs",
   "attempted-tests": "Attempted Tests",
