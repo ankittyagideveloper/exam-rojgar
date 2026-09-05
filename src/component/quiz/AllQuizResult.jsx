@@ -19,7 +19,7 @@ import {
   Download,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+
 import { getAllSubmissions } from "../../utils/firestoreHelpers";
 import { useAttemptData, useQuizData } from "../../hooks/QueryData";
 import { getFirestore } from "firebase/firestore";
@@ -223,18 +223,18 @@ const AllQuizResult = () => {
           <CardTitle className="text-2xl font-bold text-center">
             Quiz Results
           </CardTitle>
-          <Button
+          <button
             className="w-48 md:flex items-center gap-2 justify-center no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 hidden "
             onClick={downloadPDF}
           >
             <Download /> Download PDF
-          </Button>
-          <Button
+          </button>
+          <button
             className="no-print bg-blue-600 text-white px-4 py-2 rounded absolute right-6 md:hidden block"
             onClick={downloadPDF}
           >
             <Download />
-          </Button>
+          </button>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="text-center">
@@ -265,7 +265,7 @@ const AllQuizResult = () => {
           <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
             <div className="relative text-center p-4 bg-orange-50 rounded-lg border border-orange-200 shadow-sm">
               {/* Refresh icon (top-right) */}
-              <Button
+              <button
                 onClick={loadRanks}
                 className="absolute top-3 right-3 text-orange-600 hover:text-orange-700 hover:cursor-pointer"
                 title="Refresh Rank"
@@ -275,7 +275,7 @@ const AllQuizResult = () => {
                     refreshing ? "animate-spin" : ""
                   }`}
                 />
-              </Button>
+              </button>
 
               {/* Trophy */}
               <Trophy className="w-8 h-8 text-orange-600 mx-auto mb-2" />
@@ -420,9 +420,9 @@ const AllQuizResult = () => {
           </div>
 
           <div className="text-center">
-            <Button onClick={() => navigate("/quiz-category")} size="lg">
+            <button onClick={() => navigate("/quiz-category")} size="lg">
               Back
-            </Button>
+            </button>
           </div>
         </CardContent>
       </Card>
