@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 export function ConfirmationModal({ isOpen, message, onConfirm, onCancel }) {
   const { t } = useTranslation();

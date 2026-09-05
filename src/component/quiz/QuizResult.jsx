@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 const QuizResult = ({ results, userAnswers }) => {
   const { categoryId } = useParams();
   const quizData = questions[categoryId] || [];

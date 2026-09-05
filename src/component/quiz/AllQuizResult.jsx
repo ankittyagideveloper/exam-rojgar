@@ -19,7 +19,7 @@ import {
   Download,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { getAllSubmissions } from "../../utils/firestoreHelpers";
 import { useAttemptData, useQuizData } from "../../hooks/QueryData";
 import { getFirestore } from "firebase/firestore";
