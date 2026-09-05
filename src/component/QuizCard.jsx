@@ -149,7 +149,7 @@ export function QuizCard({
             <div className="flex flex-col gap-1">
               {!isPaid ? <Button
                   onClick={() => navigate('/target-series#program')}
-                  className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
+                  className="cursor-pointer bg-[#FF7E08] hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
                 >
                   🔒 Locked
                 </Button>

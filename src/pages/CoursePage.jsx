@@ -14,7 +14,6 @@ import {
   IconRefresh,
   IconLock,
 } from "@tabler/icons-react";
-import { Button } from "@/components/ui";
 
 function CoursePage() {
   const { courseName } = useParams();
@@ -85,7 +84,7 @@ function CoursePage() {
     );
   }
 
-  // Get first video for "Start Learning" Button
+  // Get first video for "Start Learning" button
   const firstVideo = course.seasons?.[0]?.videos?.[0];
 
   // Toggle season expansion
@@ -96,14 +95,14 @@ function CoursePage() {
     }));
   };
 
-  // Handle Start Learning Button click
+  // Handle Start Learning button click
   const handleStartLearning = () => {
     if (firstVideo) {
       navigate(`/learn/${course.slug}/${firstVideo.id}`);
     }
   };
 
-  // Handle Continue Learning Button click
+  // Handle Continue Learning button click
   const handleContinueLearning = () => {
     if (lastWatchedVideoId) {
       navigate(`/learn/${course.slug}/${lastWatchedVideoId}`);
@@ -160,7 +159,7 @@ function CoursePage() {
                       {progressStats.percentage}%
                     </span>
                     {progressStats.completed > 0 && (
-                      <Button
+                      <button
                         onClick={handleResetProgress}
                         className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
                           showResetConfirm
@@ -177,7 +176,7 @@ function CoursePage() {
                         <span>
                           {showResetConfirm ? "Confirm Reset?" : "Reset"}
                         </span>
-                      </Button>
+                      </button>
                     )}
                   </div>
                 </div>
@@ -197,7 +196,7 @@ function CoursePage() {
             )}
 
             <div className="grid gap-8 lg:grid-cols-[400px_1fr]">
-              {/* Left: Course Thumbnail with Start Learning Button */}
+              {/* Left: Course Thumbnail with Start Learning button */}
               <div className="relative">
                 <div className="aspect-video w-full overflow-hidden rounded-2xl bg-gray-200 shadow-md">
                   <img
@@ -210,26 +209,26 @@ function CoursePage() {
                   <div className="mt-4 space-y-3">
                     {lastWatchedVideoId ? (
                       <>
-                        <Button
+                        <button
                           onClick={handleContinueLearning}
                           className="w-full rounded-xl bg-[#1272ba] cursor-pointer px-6 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-[#1260ba] hover:shadow-xl"
                         >
                           Continue Learning
-                        </Button>
-                        <Button
+                        </button>
+                        <button
                           onClick={handleStartLearning}
                           className=" cursor-pointer w-full rounded-xl bg-white border-2 border-[#1272ba] px-6 py-3 text-base font-semibold text-[#1272ba] shadow-sm transition-all hover:bg-[#1260ba]/5"
                         >
                           Start from Beginning
-                        </Button>
+                        </button>
                       </>
                     ) : (
-                      <Button
+                      <button
                         onClick={handleStartLearning}
                         className="w-full rounded-xl bg-[#1272ba] px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#245d59] hover:shadow-xl"
                       >
                         Start Learning
-                      </Button>
+                      </button>
                     )}
                   </div>
                 )}
@@ -280,7 +279,7 @@ function CoursePage() {
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
               >
                 {/* Season Header */}
-                <Button
+                <button
                   onClick={() => toggleSeason(season.id)}
                   className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-gray-50"
                 >
@@ -304,7 +303,7 @@ function CoursePage() {
                   ) : (
                     <IconChevronDown className="h-6 w-6 text-gray-600" />
                   )}
-                </Button>
+                </button>
 
                 {/* Video Cards */}
                 {expandedSeasons[season.id] && (
@@ -315,7 +314,7 @@ function CoursePage() {
                       const isLocked = !isPaid && currentIndex > 0;
 
                       return (
-                        <Button
+                        <button
                           key={video.id}
                           onClick={() => handleVideoClick(video.id, currentIndex)}
                           className={`group flex w-full items-start gap-4 border-b border-gray-200 p-5 text-left transition-colors last:border-b-0 ${
@@ -372,7 +371,7 @@ function CoursePage() {
                               </p>
                             )}
                           </div>
-                        </Button>
+                        </button>
                       );
                     })}
                   </div>
