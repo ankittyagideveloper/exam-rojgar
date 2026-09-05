@@ -936,7 +936,22 @@ export const mockData = {
               name: "Revision Test",
               slug: "revision-test",
               description: "Revision tests for RRB NTPC exam preparation",
-              tests: [],
+              tests: [
+                    {
+                      id: "revision-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Revision Test 1 Mock Test",
+                      title: "Revision Test 1 - Mock Test",
+                      name: "Revision Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "100",
+                      marks: "100",
+                      duration: "60",
+                      isSpecialMock: true,
+                      route: "/mock-test/revision-test-1",
+                    },
+                  ],
             },
 
           },
