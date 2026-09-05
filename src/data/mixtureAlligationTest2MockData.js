@@ -1,14 +1,14 @@
 export const mixtureAlligationTest2MockData = {
-  "paperName": "Geography Challenge Series",
+  "paperName": "Mixture Alligation Mock Test 2",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "subject": "Monsoon Climatology Oceanography",
-  "category": "Monsoon Climatology Oceanography",
+  "subject": "Mixture Alligation(Arithmetic)",
+  "category": "Arithmetic",
   "duration": 20,
   "marksCorrect": 2,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
-  "storageKey": "ExamRojgaar_history",
+  "storageKey": "ExamRojgaar_mixtureAlligationTest2MockData",
   "questions": [
     {
       "id": 1,
