@@ -31,7 +31,6 @@ import "../App.css";
 
 import { Download, FileText } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { Button } from "@/components/ui";
 
 const pdfCategories = [
   {
@@ -105,7 +104,7 @@ export default function PDF_Page() {
                 key={categoryIndex}
                 className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <Button
+                <button
                   onClick={() => toggleExpand(categoryIndex)}
                   className="w-full p-6 flex items-center justify-between  transition-colors"
                 >
@@ -124,7 +123,7 @@ export default function PDF_Page() {
                   >
                     ▼
                   </span>
-                </Button>
+                </button>
 
                 {expanded[categoryIndex] && (
                   <div className="border-t border-slate-200 p-4 space-y-2">
