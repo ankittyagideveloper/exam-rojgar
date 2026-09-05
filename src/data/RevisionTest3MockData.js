@@ -6,7 +6,7 @@ export const RevisionTest3MockData = {
   "category": "Mock Test Series",
   "duration": 80,
   "marksCorrect": 1,
-  "marksWrong": 0.5,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_RevisionTest3MockData",
   "questions": [

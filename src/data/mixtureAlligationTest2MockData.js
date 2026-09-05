@@ -6,7 +6,7 @@ export const mixtureAlligationTest2MockData = {
   "category": "Arithmetic",
   "duration": 20,
   "marksCorrect": 1,
-  "marksWrong": 0.5,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_mixtureAlligationTest2MockData",
   "questions": [

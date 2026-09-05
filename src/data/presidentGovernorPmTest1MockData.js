@@ -6,7 +6,7 @@ export const presidentGovernorPmTest1MockData = {
   "category": "Polity (Centre)",
   "duration": 20,
   "marksCorrect": 1,
-  "marksWrong": 0.5,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_presidentGovernorPmTest1MockData",
   "questions": [

@@ -6,7 +6,7 @@ export const vedicMock2MockData = {
   "category": "Sectional Mocks",
   "duration": 10,
   "marksCorrect": 1,
-  "marksWrong": 0.5,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_vedicMock2MockData",
   "questions": [

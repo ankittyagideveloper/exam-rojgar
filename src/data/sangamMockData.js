@@ -6,7 +6,7 @@ export const sangamMockData = {
   "category": "Sectional Mocks",
   "duration": 3,
   "marksCorrect": 1,
-  "marksWrong": 0.5,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_sangamMockData",
   "questions": [
