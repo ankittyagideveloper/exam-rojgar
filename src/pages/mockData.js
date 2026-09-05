@@ -798,6 +798,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/arithmetic-sectional-test",
                     },
+                  
+                    {
+                      id: "mixture-alligation-test-2-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Mixture Alligation Test 2 Mock Test",
+                      title: "Mixture Alligation Test 2 - Mock Test",
+                      name: "Mixture Alligation Test 2 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "40",
+                      marks: "40",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/mixture-alligation-test-2",
+                    },
                   ],
                 },
                 "advanced": {
@@ -903,6 +918,16 @@ export const mockData = {
                       route: "/mock-test/military-exercise-test-1",
                     },
                   ],
+            },
+            "full-length-test": {
+              id: "full-length-test",
+              image: "/rrb-ntpc.webp",
+              alt: "RRB NTPC Full Length Test",
+              title: "Full Length Test (FLT)",
+              name: "Full Length Test",
+              slug: "full-length-test",
+              description: "Full length mock tests for RRB NTPC exam preparation",
+              tests: [],
             },
 
           },
