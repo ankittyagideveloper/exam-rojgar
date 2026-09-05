@@ -928,6 +928,16 @@ export const mockData = {
               description: "Full length mock tests for RRB NTPC exam preparation",
               tests: [],
             },
+            "revision-test": {
+              id: "revision-test",
+              image: "/rrb-ntpc.webp",
+              alt: "RRB NTPC Revision Test",
+              title: "Revision Test",
+              name: "Revision Test",
+              slug: "revision-test",
+              description: "Revision tests for RRB NTPC exam preparation",
+              tests: [],
+            },
 
           },
 
