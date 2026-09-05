@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Card, CardHeader } from "../../../components/ui/card";
-import { Badge } from "../../../components/ui/badge";
+import { Card, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Clock } from "lucide-react";
 import { useAttemptData } from "../../hooks/QueryData";
 import i18next from "i18next";

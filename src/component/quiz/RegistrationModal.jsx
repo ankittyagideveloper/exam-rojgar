@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { Button } from "@/components/ui";
 const today = new Date();
 const minAdultDate = new Date(
   today.getFullYear() - 18,
@@ -130,19 +131,19 @@ export default function RegistrationModal({
           </div>
 
           <div className="flex justify-end gap-3 mt-6">
-            <button
+            <Button
               onClick={onClose}
               className="px-4 py-2 rounded border"
               type="button"
             >
               {t("registerationModal.cancel")}
-            </button>
-            <button
+            </Button>
+            <Button
               type="submit"
               className="px-4 py-2 bg-blue-600 text-white rounded"
             >
               {t("registerationModal.continue")}
-            </button>
+            </Button>
           </div>
         </Form>
       </Formik>

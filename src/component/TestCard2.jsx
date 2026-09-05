@@ -1,3 +1,5 @@
+import { Button } from "../components/ui";
+
 export default function TestCard2(props) {
   const { icon, studentCount, title, progress, total, percentage, onGoToTest } =
     props;
@@ -37,21 +39,21 @@ export default function TestCard2(props) {
 
       <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
         <div
-          className="bg-cyan-400 h-2 rounded-full transition-all duration-300 ease-out"
+          className="bg-[#1272ba] h-2 rounded-full transition-all duration-300 ease-out"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
 
-      <button
+      <Button
         onClick={onGoToTest}
-        className="cursor-pointer w-full bg-cyan-400 hover:bg-cyan-500 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+        className="cursor-pointer w-full  text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#1272ba] focus:ring-offset-2"
       >
         {total===0 ? "Coming Soon.." :progress === total
           ? "Completed!"
           : progress === 0
           ? "Start Test Series"
           : "Continue Tests"}
-      </button>
+      </Button>
     </div>
   );
 }

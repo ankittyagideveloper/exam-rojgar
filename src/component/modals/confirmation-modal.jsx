@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../../../components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 export function ConfirmationModal({ isOpen, message, onConfirm, onCancel }) {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ export function ConfirmationModal({ isOpen, message, onConfirm, onCancel }) {
 
           <Button
             onClick={onConfirm}
-            className="bg-[#006AB7] hover:bg-cyan-600 text-white px-6 cursor-pointer"
+            className=" text-white px-6 cursor-pointer"
           >
             {t("confirmationModal.buttons.yes")}
           </Button>

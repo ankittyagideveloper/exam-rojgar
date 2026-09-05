@@ -3,8 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchTestById } from '../../utils/firestoreHelpers';
 import { getFirestore } from 'firebase/firestore';
 import { app } from '../../../firebase';
-import { LoaderOne } from '../../components/ui/loader';
-import { Card, CardContent } from '../../../components/ui/card';
+import { LoaderOne } from '@/components/ui/loader';
+import { Card, CardContent } from '@/components/ui/card';
 
 const db = getFirestore(app);
 

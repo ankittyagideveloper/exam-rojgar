@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useUser } from "@clerk/clerk-react";
 import { courseMockData } from "./mockData";
 import { useVideoProgress } from "../hooks/useVideoProgress";
-import { Progress } from "../../components/ui/progress";
+import { Progress } from "@/components/ui/progress";
 import {
   IconChevronDown,
   IconChevronUp,
@@ -14,6 +14,7 @@ import {
   IconRefresh,
   IconLock,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui";
 
 function CoursePage() {
   const { courseName } = useParams();
@@ -84,7 +85,7 @@ function CoursePage() {
     );
   }
 
-  // Get first video for "Start Learning" button
+  // Get first video for "Start Learning" Button
   const firstVideo = course.seasons?.[0]?.videos?.[0];
 
   // Toggle season expansion
@@ -95,14 +96,14 @@ function CoursePage() {
     }));
   };
 
-  // Handle Start Learning button click
+  // Handle Start Learning Button click
   const handleStartLearning = () => {
     if (firstVideo) {
       navigate(`/learn/${course.slug}/${firstVideo.id}`);
     }
   };
 
-  // Handle Continue Learning button click
+  // Handle Continue Learning Button click
   const handleContinueLearning = () => {
     if (lastWatchedVideoId) {
       navigate(`/learn/${course.slug}/${lastWatchedVideoId}`);
@@ -159,7 +160,7 @@ function CoursePage() {
                       {progressStats.percentage}%
                     </span>
                     {progressStats.completed > 0 && (
-                      <button
+                      <Button
                         onClick={handleResetProgress}
                         className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all ${
                           showResetConfirm
@@ -176,7 +177,7 @@ function CoursePage() {
                         <span>
                           {showResetConfirm ? "Confirm Reset?" : "Reset"}
                         </span>
-                      </button>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -209,26 +210,26 @@ function CoursePage() {
                   <div className="mt-4 space-y-3">
                     {lastWatchedVideoId ? (
                       <>
-                        <button
+                        <Button
                           onClick={handleContinueLearning}
                           className="w-full rounded-xl bg-[#1272ba] cursor-pointer px-6 py-4 text-lg font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-[#1260ba] hover:shadow-xl"
                         >
                           Continue Learning
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                           onClick={handleStartLearning}
                           className=" cursor-pointer w-full rounded-xl bg-white border-2 border-[#1272ba] px-6 py-3 text-base font-semibold text-[#1272ba] shadow-sm transition-all hover:bg-[#1260ba]/5"
                         >
                           Start from Beginning
-                        </button>
+                        </Button>
                       </>
                     ) : (
-                      <button
+                      <Button
                         onClick={handleStartLearning}
                         className="w-full rounded-xl bg-[#1272ba] px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#245d59] hover:shadow-xl"
                       >
                         Start Learning
-                      </button>
+                      </Button>
                     )}
                   </div>
                 )}
@@ -279,7 +280,7 @@ function CoursePage() {
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
               >
                 {/* Season Header */}
-                <button
+                <Button
                   onClick={() => toggleSeason(season.id)}
                   className="flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-gray-50"
                 >
@@ -303,7 +304,7 @@ function CoursePage() {
                   ) : (
                     <IconChevronDown className="h-6 w-6 text-gray-600" />
                   )}
-                </button>
+                </Button>
 
                 {/* Video Cards */}
                 {expandedSeasons[season.id] && (
@@ -314,7 +315,7 @@ function CoursePage() {
                       const isLocked = !isPaid && currentIndex > 0;
 
                       return (
-                        <button
+                        <Button
                           key={video.id}
                           onClick={() => handleVideoClick(video.id, currentIndex)}
                           className={`group flex w-full items-start gap-4 border-b border-gray-200 p-5 text-left transition-colors last:border-b-0 ${
@@ -371,7 +372,7 @@ function CoursePage() {
                               </p>
                             )}
                           </div>
-                        </button>
+                        </Button>
                       );
                     })}
                   </div>

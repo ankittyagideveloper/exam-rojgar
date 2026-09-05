@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTests } from "./hooks/useTests";
 import TestForm from "./components/TestForm";
 import TestsTable from "./components/TestsTable";
+import { Button } from "@/components/ui";
 
 /**
  * TestsListPage - Lists all tests with ability to create new ones
@@ -55,12 +56,12 @@ export default function TestsListPage() {
     <div className="min-h-screen px-1 bg-gray-100 md:py-8 md:px-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Admin Panel – Test Series</h1>
-        <button
+        <Button
           onClick={() => navigate("/admin/question-bank")}
           className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
         >
           Manage Question Bank
-        </button>
+        </Button>
       </div>
 
       {error && (

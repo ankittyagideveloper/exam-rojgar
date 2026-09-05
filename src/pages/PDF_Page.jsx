@@ -31,6 +31,7 @@ import "../App.css";
 
 import { Download, FileText } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Button } from "@/components/ui";
 
 const pdfCategories = [
   {
@@ -84,7 +85,7 @@ export default function PDF_Page() {
         <meta name="twitter:image" content="https://examrojgaar.com/apple-touch-icon.png" />
       </Helmet>
 
-      <section className="bg-gradient-to-br from-[#0ad0f4] to-blue-800 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#1272ba] to-blue-800 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance">
@@ -104,13 +105,13 @@ export default function PDF_Page() {
                 key={categoryIndex}
                 className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <button
+                <Button
                   onClick={() => toggleExpand(categoryIndex)}
                   className="w-full p-6 flex items-center justify-between  transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <FileText className="text-[#0ad0f4]" size={20} />
+                      <FileText className="text-[#1272ba]" size={20} />
                     </div>
                     <h3 className="font-semibold text-slate-900 text-left">
                       {category.subject}
@@ -123,7 +124,7 @@ export default function PDF_Page() {
                   >
                     ▼
                   </span>
-                </button>
+                </Button>
 
                 {expanded[categoryIndex] && (
                   <div className="border-t border-slate-200 p-4 space-y-2">
@@ -134,12 +135,12 @@ export default function PDF_Page() {
                         href={paper.link}
                         className="flex items-center justify-between p-3 bg-slate-50 rounded-lg  transition-colors group"
                       >
-                        <span className="text-sm text-slate-700 group-hover:text-[#0ad0f4] transition-colors">
+                        <span className="text-sm text-slate-700 group-hover:text-[#1272ba] transition-colors">
                           {paper.year} {paper.paper}
                         </span>
                         <Download
                           size={16}
-                          className="text-slate-400 group-hover:text-[#0ad0f4] transition-colors"
+                          className="text-slate-400 group-hover:text-[#1272ba] transition-colors"
                         />
                       </a>
                     ))}

@@ -1,5 +1,7 @@
 import { MessageCircle, Send, Phone } from "lucide-react";
 import { Link } from "react-router";
+import { Button } from "@/components/ui";
+
 const Footer = () => {
   const footerLinks = [
     "About Us",
@@ -65,9 +67,9 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
           {footerLinks.map((link, index) => (
             <div key={index} className="text-center">
-              <button className="text-white hover:text-[#FFD700] transition-colors text-sm font-medium">
+              <Button className="text-white hover:text-[#FFD700] transition-colors text-sm font-medium">
                 {link}
-              </button>
+              </Button>
             </div>
           ))}
         </div>

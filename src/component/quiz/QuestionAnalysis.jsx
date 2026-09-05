@@ -4,11 +4,12 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
+} from "@/components/ui/card";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { useParams } from "react-router";
 import questions from "./Quiz-question.json";
-import { Progress } from "../../../components/ui/progress";
+import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui";
 
 const QuestionAnalysis = ({
   results,
@@ -71,7 +72,7 @@ const QuestionAnalysis = ({
               const status = answer?.status || "not-viewed";
 
               return (
-                <button
+                <Button
                   key={index}
                   onClick={() => handleQuestionNavigation(index)}
                   className={`w-8 h-8 text-xs font-medium rounded border-2 transition-colors ${
@@ -87,7 +88,7 @@ const QuestionAnalysis = ({
                   }`}
                 >
                   {index + 1}
-                </button>
+                </Button>
               );
             })}
           </div>

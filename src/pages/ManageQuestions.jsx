@@ -1,6 +1,7 @@
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { app } from "../../firebase";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui";
 
 export function ManageQuestions({ testId }) {
   const db = getFirestore(app);
@@ -69,12 +70,12 @@ export function ManageQuestions({ testId }) {
         ))}
       </select>
 
-      <button
+      <Button
         onClick={addQuestion}
         className="bg-green-600 text-white px-4 py-2 rounded"
       >
         Add Question
-      </button>
+      </Button>
 
       <ul className="mt-4 list-disc ml-5">
         {questions.map((q) => (

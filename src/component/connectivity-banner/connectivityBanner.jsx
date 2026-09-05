@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Wifi, WifiOff, X } from "lucide-react";
+import { Button } from "@/components/ui";
 
 export function ConnectivityBanner() {
   const [isOnline, setIsOnline] = useState(true);
@@ -44,13 +45,13 @@ export function ConnectivityBanner() {
         <span className="text-xs font-medium tracking-wide">
           No internet connection
         </span>
-        <button
+        <Button
           onClick={() => setDismissOffline(true)}
           className="ml-auto flex-shrink-0 hover:opacity-70 transition-opacity"
           aria-label="Dismiss"
         >
           <X className="w-4 h-4" />
-        </button>
+        </Button>
       </div>
     );
   }

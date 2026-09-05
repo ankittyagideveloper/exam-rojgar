@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "../../../components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 export function TestSubmissionModal({
   isOpen,
@@ -81,13 +81,13 @@ export function TestSubmissionModal({
         <div className="px-6 py-4 border-t border-gray-200 flex justify-end gap-3">
           <Button
             onClick={onClose}
-            className="cursor-pointer bg-[#006AB7] hover:bg-cyan-600 text-white px-6"
+            className="cursor-pointer   text-white px-6"
           >
             {t("testSubmissionModal.buttons.close")}
           </Button>
           <Button
             onClick={onSubmit}
-            className="bg-[#006AB7] cursor-pointer hover:bg-cyan-600 text-white px-6"
+            className=" cursor-pointer  text-white px-6"
           >
             {t("testSubmissionModal.buttons.submit")}
           </Button>

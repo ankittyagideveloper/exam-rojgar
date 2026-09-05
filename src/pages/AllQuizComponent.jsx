@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent, CardHeader } from "../../components/ui/card";
-import { Badge } from "../../components/ui/badge";
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Clock } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import AllQuizAnalysis from "../component/quiz/AllQuizAnalysis";
-import { LoaderOne } from "../components/ui/loader";
+import { LoaderOne } from "@/components/ui/loader";
 import { useAttemptData, useQuizData } from "../hooks/QueryData";
 import {
   doc,
@@ -466,7 +466,7 @@ const AllQuizComponent = () => {
                   {getBilingualOptions(currentQuestionData)?.map(
                     (option, index) => {
                       return (
-                        <button
+                        <Button
                           key={index}
                           onClick={() => handleOptionSelect(index)}
                           className={`w-full text-left p-4 rounded-lg border transition-colors ${
@@ -479,7 +479,7 @@ const AllQuizComponent = () => {
                             {String.fromCharCode(65 + index)}.
                           </span>
                           {option}
-                        </button>
+                        </Button>
                       );
                     },
                   )}

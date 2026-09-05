@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Button } from "../../../components/ui/button";
+import { Button } from "@/components/ui/Button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
-import { Badge } from "../../../components/ui/badge";
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { useParams } from "react-router-dom";
 import questions from "./Quiz-question.json";
@@ -292,7 +292,7 @@ export default function QuizComponent() {
                 <div className="space-y-2">
                   {currentQuestionData.options.map((option, index) => {
                     return (
-                      <button
+                      <Button
                         key={index}
                         onClick={() => handleOptionSelect(index + 1)}
                         className={`w-full text-left p-4 rounded-lg border transition-colors ${
@@ -305,7 +305,7 @@ export default function QuizComponent() {
                           {String.fromCharCode(65 + index)}.
                         </span>
                         {option}
-                      </button>
+                      </Button>
                     );
                   })}
                 </div>

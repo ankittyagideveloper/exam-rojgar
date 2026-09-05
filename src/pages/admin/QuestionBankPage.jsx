@@ -9,6 +9,7 @@ import {
 import EditQuestionModal from "./components/EditQuestionModal";
 import { app } from "../../../firebase";
 import { getFirestore } from "firebase/firestore";
+import { Button } from "@/components/ui";
 
 export default function QuestionBankPage() {
   const db = getFirestore(app);
@@ -176,20 +177,20 @@ export default function QuestionBankPage() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button
+          <Button
             type="submit"
             className="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
           >
             Search
-          </button>
+          </Button>
           {isSearching && (
-            <button
-              type="button"
+            <Button
+              type="Button"
               onClick={clearSearch}
               className="px-4 py-2 bg-gray-200 text-gray-700 font-medium rounded-md hover:bg-gray-300 transition-colors"
             >
               Clear
-            </button>
+            </Button>
           )}
         </form>
       </div> */}
@@ -260,12 +261,12 @@ export default function QuestionBankPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <button
+                      <Button
                         onClick={() => handleEditClick(q.id)}
                         className="text-blue-600 hover:text-blue-900 bg-blue-50 px-3 py-1 rounded hover:bg-blue-100 transition-colors"
                       >
                         Edit
-                      </button>
+                      </Button>
                     </td>
                   </tr>
                 ))}
@@ -277,13 +278,13 @@ export default function QuestionBankPage() {
         {/* Load More */}
         {hasMore && !loading && questions.length > 0 && (
           <div className="p-4 border-t border-gray-200 text-center">
-            <button
+            <Button
               onClick={() => loadQuestions(false)}
               disabled={loadingMore}
               className="text-blue-600 hover:text-blue-800 font-medium disabled:opacity-50"
             >
               {loadingMore ? "Loading more..." : "Load More Questions"}
-            </button>
+            </Button>
           </div>
         )}
       </div>

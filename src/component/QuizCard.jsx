@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui";
 import { useNavigate } from "react-router";
 
 export function QuizCard({
@@ -50,31 +51,31 @@ export function QuizCard({
             {title}
           </h3>
           <div className="flex flex-col gap-1">
-            {!isPaid ? <button
+            {!isPaid ? <Button
               onClick={() => navigate('/target-series#program')}
               className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
             >
               🔒 Locked
-            </button> : <button
+            </Button> : <Button
               disabled={attemptStatus === "SUBMITTED"}
               onClick={onStartClick}
               className={`${
                 isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-              } cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+              } cursor-pointer bg-[#1272ba] hover:bg-[#1260ba] text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
             >
               {attemptStatus === "IN_PROGRESS"
                 ? "Resume"
                 : attemptStatus === "SUBMITTED"
                 ? "SUBMITTED"
                 : "Start Now"}
-            </button>}
+            </Button>}
             {attemptStatus === "SUBMITTED" && (
-              <button
+              <Button
                 onClick={onStartClick}
-                className={`cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                className={`cursor-pointer  text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
               >
                 Last Attempt
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -146,32 +147,32 @@ export function QuizCard({
           {/* Start Button */}
           <div className="ml-6">
             <div className="flex flex-col gap-1">
-              {!isPaid ? <button
+              {!isPaid ? <Button
                   onClick={() => navigate('/target-series#program')}
                   className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
                 >
                   🔒 Locked
-                </button>
-                : <button
+                </Button>
+                : <Button
                 disabled={attemptStatus === "SUBMITTED"}
                 onClick={onStartClick}
                 className={`${
                   isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-                } cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                } cursor-pointer text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
               >
                 {attemptStatus === "IN_PROGRESS"
                   ? "Resume"
                   : attemptStatus === "SUBMITTED"
                   ? "SUBMITTED"
                   : "Start Now"}
-              </button>}
+              </Button>}
               {attemptStatus === "SUBMITTED" && (
-                <button
+                <Button
                   onClick={() => onStartClick(true)}
-                  className={`cursor-pointer bg-cyan-400 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                  className={`cursor-pointer  text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
                 >
                   Last Attempt
-                </button>
+                </Button>
               )}
             </div>
           </div>

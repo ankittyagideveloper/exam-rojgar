@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../../components/ui/accordion";
+} from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
 // import mentorImg from "@/assets/mentor.jpg";
@@ -13,6 +13,7 @@ import './styles.css'
 import { useUser } from "@clerk/clerk-react";
 import { testimonials } from "@/constants";
 import BottomNavigation from "@/component/BottomNavigation";
+import { Button } from "@/components/ui";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -38,14 +39,14 @@ function LanguageSwitcher() {
   };
 
   return (
-    <button
+    <Button
       onClick={toggle}
       aria-label="Switch language"
       className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 font-mono text-xs font-bold text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
       title={current === "en" ? "Switch to Hindi" : "English पर स्विच करें"}
     >
       {current === "en" ? "अ" : "A"}
-    </button>
+    </Button>
   );
 }
 
@@ -157,7 +158,7 @@ function Header({ dark, onToggle, isPaid }) {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <LanguageSwitcher />
-          <button
+          <Button
             onClick={onToggle}
             aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
             className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
@@ -174,7 +175,7 @@ function Header({ dark, onToggle, isPaid }) {
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
               </svg>
             )}
-          </button>
+          </Button>
           {isPaid ?
             <Link
               to={TARGET_SERIES}

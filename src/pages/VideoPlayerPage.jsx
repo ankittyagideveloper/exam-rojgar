@@ -14,6 +14,7 @@ import {
   IconCircle,
   IconLock,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui";
 
 function VideoPlayerPage() {
   const { courseName, videoId } = useParams();
@@ -241,7 +242,7 @@ function VideoPlayerPage() {
                                   <IconLock className="h-5 w-5 text-amber-500" />
                                 </div>
                               ) : (
-                                <button
+                                <Button
                                   onClick={handleToggleCompletion}
                                   className="flex-shrink-0 pt-1 hover:scale-110 transition-transform"
                                   title={
@@ -255,7 +256,7 @@ function VideoPlayerPage() {
                                   ) : (
                                     <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
                                   )}
-                                </button>
+                                </Button>
                               )}
 
                               {/* Title — Link for free, upgrade redirect for locked */}

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { Button } from "@/components/ui";
 
 // ─── Safe localStorage wrapper ──────────────────────────────────────────────
 const safeStorage = {
@@ -467,14 +468,14 @@ export default function RailwayMockTest({ mockData, onExit }) {
                   </div>
                 </div>
                 <div className="mt-4 space-y-2 border-t border-gray-400 pt-4">
-                  <button onClick={() => { setHistory(getHistory()); setShowHistoryModal(true); }}
+                  <Button onClick={() => { setHistory(getHistory()); setShowHistoryModal(true); }}
                     className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold flex justify-between items-center">
                     View Previous Attempts <span className="text-[#1e5086]">🕐</span>
-                  </button>
-                  <button onClick={() => { setSavedQuestions(getSavedQuestions()); setShowSavedModal(true); }}
+                  </Button>
+                  <Button onClick={() => { setSavedQuestions(getSavedQuestions()); setShowSavedModal(true); }}
                     className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold flex justify-between items-center">
                     Saved Questions <span className="text-[#1e5086]">🔖</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -498,10 +499,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
                 </label>
               </div>
             </div>
-            <button onClick={validateAndStart}
+            <Button onClick={validateAndStart}
               className="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded text-[15px] shadow-sm uppercase tracking-wide w-full md:w-auto">
               {safeStorage.get(STORAGE_KEY_PROGRESS) ? "Resume Mock" : "I am ready to begin"}
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -513,16 +514,16 @@ export default function RailwayMockTest({ mockData, onExit }) {
           <div className="h-[60px] shrink-0 bg-[#1e5086] text-white flex items-center justify-between px-2 md:px-6 shadow-md border-b-4 border-[#3a78c4]">
             <div className="font-bold text-lg hidden md:block uppercase tracking-wide">{isReattempt ? "REATTEMPT MODE" : title}</div>
             <div className="flex items-center justify-end w-full md:w-auto gap-2 md:gap-4">
-              <button onClick={() => setLang((l) => l === "en" ? "hi" : "en")}
+              <Button onClick={() => setLang((l) => l === "en" ? "hi" : "en")}
                 className="flex items-center bg-[#3a78c4] rounded p-1 cursor-pointer hover:bg-[#4a88d4] text-xs md:text-sm px-2 md:px-3 py-1 font-semibold whitespace-nowrap">
                 🌐 {lang === "en" ? "Hindi" : "English"}
-              </button>
+              </Button>
               <div className={`text-sm md:text-xl font-mono font-bold px-2 md:px-4 py-1.5 rounded border flex items-center gap-1 md:gap-2 transition-colors ${timeLeft <= 180 ? "bg-red-50 border-red-500 text-red-500 animate-pulse" : "bg-slate-900/80 border-slate-500 text-[#e6c27a]"}`}>
                 ⏰ {formatTime(timeLeft)}
               </div>
-              <button onClick={() => setShowConfirm(true)}
-                className="px-4 py-1.5 md:px-6 bg-[#5cb85c] hover:bg-[#4cae4c] border border-[#4cae4c] text-white rounded text-sm font-bold uppercase">Submit</button>
-              <button onClick={() => setShowPalette((p) => !p)} className="md:hidden text-white text-xl ml-1">⊞</button>
+              <Button onClick={() => setShowConfirm(true)}
+                className="px-4 py-1.5 md:px-6 bg-[#5cb85c] hover:bg-[#4cae4c] border border-[#4cae4c] text-white rounded text-sm font-bold uppercase">Submit</Button>
+              <Button onClick={() => setShowPalette((p) => !p)} className="md:hidden text-white text-xl ml-1">⊞</Button>
             </div>
           </div>
 
@@ -540,10 +541,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
                       Marks: <span className="text-green-600">+{markingScheme.correct}</span>, <span className="text-red-500">{markingScheme.wrong}</span>
                     </span>
                   </div>
-                  <button onClick={() => toggleSave(currentQ)}
+                  <Button onClick={() => toggleSave(currentQ)}
                     className={`px-3 py-1.5 text-sm rounded border shadow-sm flex items-center gap-2 font-medium transition ${isQuestionSaved(currentQ) ? "bg-amber-50 border-amber-300 text-amber-700" : "bg-white border-gray-300 text-gray-600 hover:bg-gray-50"}`}>
                     {isQuestionSaved(currentQ) ? "⭐ Saved" : "☆ Save"}
-                  </button>
+                  </Button>
                 </div>
 
                 {/* Question text */}
@@ -570,10 +571,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
               {/* Desktop action bar */}
               <div className="hidden md:flex h-[70px] shrink-0 bg-[#f8f9fa] border-t border-gray-300 items-center justify-between px-6">
                 <div className="flex gap-3">
-                  <button onClick={() => goNext(true)} className="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 text-sm">Mark for Review &amp; Next</button>
-                  <button onClick={clearResponse}      className="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 text-sm">Clear Response</button>
+                  <Button onClick={() => goNext(true)} className="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 text-sm">Mark for Review &amp; Next</Button>
+                  <Button onClick={clearResponse}      className="px-6 py-2 bg-white border border-gray-400 rounded font-semibold text-gray-700 hover:bg-gray-100 text-sm">Clear Response</Button>
                 </div>
-                <button onClick={() => goNext(false)} className="px-8 py-2 bg-[#3a78c4] hover:bg-[#2b68b4] text-white rounded font-bold text-sm">Save &amp; Next</button>
+                <Button onClick={() => goNext(false)} className="px-8 py-2 bg-[#3a78c4] hover:bg-[#2b68b4] text-white rounded font-bold text-sm">Save &amp; Next</Button>
               </div>
             </div>
 
@@ -581,7 +582,7 @@ export default function RailwayMockTest({ mockData, onExit }) {
             <div className={`w-[280px] bg-[#f8f9fa] border-l border-gray-300 flex flex-col absolute right-0 top-0 h-full z-30 shadow-2xl md:shadow-none transition-transform duration-300 ${showPalette ? "translate-x-0" : "translate-x-full"} md:relative md:translate-x-0`}>
               <div className="md:hidden flex justify-between items-center p-4 bg-[#1e5086] text-white">
                 <span className="font-bold">Question Palette</span>
-                <button onClick={() => setShowPalette(false)}>✕</button>
+                <Button onClick={() => setShowPalette(false)}>✕</Button>
               </div>
               {/* Counts */}
               <div className="p-3 border-b border-gray-300 grid grid-cols-2 gap-2 text-[11px] font-medium text-gray-700 bg-[#e4e9f0]">
@@ -600,10 +601,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
               <div className="flex-1 overflow-y-auto p-3">
                 <div className="grid grid-cols-5 gap-2">
                   {statusArr.map((s, idx) => (
-                    <button key={idx} onClick={() => goToQuestion(idx)}
+                    <Button key={idx} onClick={() => goToQuestion(idx)}
                       className={`w-9 h-8 rounded text-xs font-bold transition-all ${STATUS_STYLES[s]} ${currentIndex === idx ? "ring-2 ring-[#3a78c4] ring-offset-1 scale-110 shadow-lg" : ""}`}>
                       {idx + 1}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
@@ -615,9 +616,9 @@ export default function RailwayMockTest({ mockData, onExit }) {
 
           {/* Mobile action bar */}
           <div className="md:hidden shrink-0 grid grid-cols-3 gap-2 bg-[#f8f9fa] border-t border-gray-300 p-2">
-            <button onClick={() => goNext(true)}  className="py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700 leading-tight">Review &amp; Next</button>
-            <button onClick={clearResponse}       className="py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700">Clear</button>
-            <button onClick={() => goNext(false)} className="py-3 bg-[#3a78c4] text-white rounded text-sm font-bold">Save &amp; Next</button>
+            <Button onClick={() => goNext(true)}  className="py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700 leading-tight">Review &amp; Next</Button>
+            <Button onClick={clearResponse}       className="py-3 bg-white border border-gray-400 rounded text-xs font-bold text-gray-700">Clear</Button>
+            <Button onClick={() => goNext(false)} className="py-3 bg-[#3a78c4] text-white rounded text-sm font-bold">Save &amp; Next</Button>
           </div>
         </div>
       )}
@@ -642,10 +643,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
               className="block w-full py-4 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-900 font-bold rounded-xl mb-4 text-lg">
               Join ExamRojgaar MOCK
             </a>
-            <button onClick={() => { if (!telegramClicked) { alert("Please click the link to join first."); return; } setScreen("result"); }}
+            <Button onClick={() => { if (!telegramClicked) { alert("Please click the link to join first."); return; } setScreen("result"); }}
               className="text-slate-500 hover:text-amber-600 text-sm font-bold underline underline-offset-4">
               I have joined, show my result
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -660,10 +661,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
                 <h1 className="text-2xl md:text-3xl font-bold text-slate-800">Performance Dashboard</h1>
                 <p className="text-amber-600 font-medium mt-1">{title}</p>
               </div>
-              <button onClick={onExit || (() => window.location.reload())}
+              <Button onClick={onExit || (() => window.location.reload())}
                 className="mt-4 md:mt-0 px-6 py-3 bg-[#1e5086] text-white font-bold rounded-xl hover:bg-[#153a63]">
                 🏠 Home
-              </button>
+              </Button>
             </div>
 
             {/* Mentor feedback */}
@@ -704,9 +705,9 @@ export default function RailwayMockTest({ mockData, onExit }) {
                   <span className="text-[#1e5086] bg-blue-50 px-2 py-1 rounded border border-blue-200 font-bold text-sm">{result.persona}</span>
                 </div>
                 {result.wrong > 0 && !isReattempt && (
-                  <button onClick={startReattempt} className="mt-4 w-full py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-xl font-bold shadow-md hover:-translate-y-1 transition-transform">
+                  <Button onClick={startReattempt} className="mt-4 w-full py-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-xl font-bold shadow-md hover:-translate-y-1 transition-transform">
                     🔄 Reattempt Wrong Questions
-                  </button>
+                  </Button>
                 )}
               </div>
 
@@ -735,20 +736,20 @@ export default function RailwayMockTest({ mockData, onExit }) {
                 <h3 className="text-xl font-bold text-slate-800">🔍 Deep Question Review</h3>
                 <div className="mt-4 md:mt-0 flex gap-2">
                   {["en", "hi"].map((l) => (
-                    <button key={l} onClick={() => setAnalysisLang(l)}
+                    <Button key={l} onClick={() => setAnalysisLang(l)}
                       className={`px-4 py-1.5 rounded text-sm font-semibold transition ${analysisLang === l ? "bg-amber-400 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
                       {l === "en" ? "English" : "हिंदी"}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>
               {/* Filters */}
               <div className="flex gap-2 mb-4 overflow-x-auto pb-1">
                 {["all", "correct", "wrong", "skipped"].map((f) => (
-                  <button key={f} onClick={() => setReviewFilter(f)}
+                  <Button key={f} onClick={() => setReviewFilter(f)}
                     className={`px-4 py-1.5 rounded-full border text-sm font-bold whitespace-nowrap transition ${reviewFilter === f ? "bg-amber-500 text-white border-amber-500" : "bg-slate-50 text-slate-700 border-slate-300 hover:bg-slate-100"}`}>
                     {f.charAt(0).toUpperCase() + f.slice(1)} ({f === "all" ? activeQuestions.length : f === "correct" ? result.correct : f === "wrong" ? result.wrong : result.skipped})
-                  </button>
+                  </Button>
                 ))}
               </div>
               <div className="space-y-3">
@@ -799,10 +800,10 @@ export default function RailwayMockTest({ mockData, onExit }) {
                           {status === "correct"
                             ? <div>
                                 <div className="text-emerald-700 font-medium text-sm bg-emerald-50 p-3 rounded-lg border border-emerald-200 mb-3">✅ You got this right! Verify your approach below.</div>
-                                <button onClick={() => setExpandedCards((p) => ({ ...p, [`sol_${idx}`]: !p[`sol_${idx}`] }))}
+                                <Button onClick={() => setExpandedCards((p) => ({ ...p, [`sol_${idx}`]: !p[`sol_${idx}`] }))}
                                   className="text-[#3a78c4] text-sm font-bold underline mb-2">
                                   {expandedCards[`sol_${idx}`] ? "Hide Solution" : "Show Expert Solution"}
-                                </button>
+                                </Button>
                                 {expandedCards[`sol_${idx}`] && <SolutionBlock sol={sol} />}
                               </div>
                             : <SolutionBlock sol={sol} />}
@@ -835,8 +836,8 @@ export default function RailwayMockTest({ mockData, onExit }) {
             <h3 className="text-2xl font-bold text-slate-800 mb-3">Submit Test?</h3>
             <p className="text-slate-600 mb-8 font-medium">Once submitted, you cannot change your answers.</p>
             <div className="flex gap-4 justify-center">
-              <button onClick={() => setShowConfirm(false)} className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl w-full">Cancel</button>
-              <button onClick={() => doSubmit()} className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl w-full">Yes, Submit</button>
+              <Button onClick={() => setShowConfirm(false)} className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl w-full">Cancel</Button>
+              <Button onClick={() => doSubmit()} className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl w-full">Yes, Submit</Button>
             </div>
           </div>
         </div>
@@ -848,7 +849,7 @@ export default function RailwayMockTest({ mockData, onExit }) {
           <div className="max-w-3xl mx-auto bg-slate-800 rounded-2xl p-6 md:p-10 shadow-2xl mt-10 border border-slate-600">
             <div className="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
               <h2 className="text-2xl font-bold text-amber-300">🕐 Previous Attempts</h2>
-              <button onClick={() => setShowHistoryModal(false)} className="text-slate-400 hover:text-white text-3xl">✕</button>
+              <Button onClick={() => setShowHistoryModal(false)} className="text-slate-400 hover:text-white text-3xl">✕</Button>
             </div>
             <div className="space-y-4">
               {history.length === 0
@@ -878,11 +879,11 @@ export default function RailwayMockTest({ mockData, onExit }) {
             <div className="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
               <h2 className="text-2xl font-bold text-amber-300">🔖 Saved Questions</h2>
               <div className="flex gap-4">
-                <button onClick={() => { safeStorage.remove(STORAGE_KEY_SAVED); setSavedQuestions([]); }}
+                <Button onClick={() => { safeStorage.remove(STORAGE_KEY_SAVED); setSavedQuestions([]); }}
                   className="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold">
                   🗑 Clear All
-                </button>
-                <button onClick={() => setShowSavedModal(false)} className="text-slate-400 hover:text-white text-3xl">✕</button>
+                </Button>
+                <Button onClick={() => setShowSavedModal(false)} className="text-slate-400 hover:text-white text-3xl">✕</Button>
               </div>
             </div>
             <div className="space-y-6">
@@ -890,8 +891,8 @@ export default function RailwayMockTest({ mockData, onExit }) {
                 ? <div className="text-slate-400 text-center py-10">No saved questions. Star questions during the mock!</div>
                 : savedQuestions.map((q, i) => (
                     <div key={i} className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative">
-                      <button onClick={() => { const updated = savedQuestions.filter((_, j) => j !== i); setSavedQuestions(updated); safeStorage.set(STORAGE_KEY_SAVED, JSON.stringify(updated)); }}
-                        className="absolute top-4 right-4 text-slate-400 hover:text-rose-500 text-sm">🗑 Remove</button>
+                      <Button onClick={() => { const updated = savedQuestions.filter((_, j) => j !== i); setSavedQuestions(updated); safeStorage.set(STORAGE_KEY_SAVED, JSON.stringify(updated)); }}
+                        className="absolute top-4 right-4 text-slate-400 hover:text-rose-500 text-sm">🗑 Remove</Button>
                       <div className="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest">{q.topic} — {q.subtopic}</div>
                       <div className="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">{q.q_en}</div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

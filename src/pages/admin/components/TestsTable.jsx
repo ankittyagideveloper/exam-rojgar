@@ -1,19 +1,19 @@
-import { Button } from "../../../../components/ui/button";
+import { Button } from "@/components/ui/Button";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../../components/ui/card";
+} from "@/components/ui/card";
 import { LoaderOne } from "../../../components/ui/loader";
 
 /**
  * TestsTable Component
  * @param {Object} props
  * @param {Array} props.tests - Array of test objects
- * @param {Function} props.onEdit - Callback when edit button is clicked
- * @param {Function} props.onDelete - Callback when delete button is clicked
- * @param {Function} props.onView - Callback when view button is clicked
+ * @param {Function} props.onEdit - Callback when edit Button is clicked
+ * @param {Function} props.onDelete - Callback when delete Button is clicked
+ * @param {Function} props.onView - Callback when view Button is clicked
  * @param {boolean} props.isLoading - Loading state
  */
 export default function TestsTable({

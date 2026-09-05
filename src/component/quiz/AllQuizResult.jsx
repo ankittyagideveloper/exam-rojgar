@@ -5,7 +5,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
+} from "@/components/ui/card";
 import {
   Clock,
   Star,
@@ -18,8 +18,8 @@ import {
   Clock1,
   Download,
 } from "lucide-react";
-import { Badge } from "../../../components/ui/badge";
-import { Button } from "../../../components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/Button";
 import { getAllSubmissions } from "../../utils/firestoreHelpers";
 import { useAttemptData, useQuizData } from "../../hooks/QueryData";
 import { getFirestore } from "firebase/firestore";
@@ -265,7 +265,7 @@ const AllQuizResult = () => {
           <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
             <div className="relative text-center p-4 bg-orange-50 rounded-lg border border-orange-200 shadow-sm">
               {/* Refresh icon (top-right) */}
-              <button
+              <Button
                 onClick={loadRanks}
                 className="absolute top-3 right-3 text-orange-600 hover:text-orange-700 hover:cursor-pointer"
                 title="Refresh Rank"
@@ -275,7 +275,7 @@ const AllQuizResult = () => {
                     refreshing ? "animate-spin" : ""
                   }`}
                 />
-              </button>
+              </Button>
 
               {/* Trophy */}
               <Trophy className="w-8 h-8 text-orange-600 mx-auto mb-2" />

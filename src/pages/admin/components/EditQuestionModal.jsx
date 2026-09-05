@@ -6,6 +6,7 @@ import {
   deleteQuestionImage,
   createImagePreview,
 } from "../../../utils/storageHelpers";
+import { Button } from "@/components/ui";
 
 export default function EditQuestionModal({
   question,
@@ -184,12 +185,12 @@ export default function EditQuestionModal({
       <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-xl font-bold">Edit Question</h2>
-          <button
+          <Button
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
           >
             &times;
-          </button>
+          </Button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-4 space-y-4">
@@ -323,9 +324,9 @@ export default function EditQuestionModal({
               className="hidden"
             />
 
-            {/* Upload button or preview */}
+            {/* Upload Button or preview */}
             {!imagePreview && !formData.imageUrl ? (
-              <button
+              <Button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 disabled={isUploadingImage}
@@ -369,7 +370,7 @@ export default function EditQuestionModal({
                     Click to Upload Image
                   </span>
                 )}
-              </button>
+              </Button>
             ) : (
               <div className="relative inline-block">
                 <img
@@ -377,7 +378,7 @@ export default function EditQuestionModal({
                   alt="Question preview"
                   className="max-w-full max-h-64 rounded-md border border-gray-300 shadow-sm"
                 />
-                <button
+                <Button
                   type="button"
                   onClick={handleRemoveImage}
                   disabled={isUploadingImage}
@@ -397,7 +398,7 @@ export default function EditQuestionModal({
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                </button>
+                </Button>
               </div>
             )}
 
@@ -453,15 +454,15 @@ export default function EditQuestionModal({
           </div>
 
           <div className="flex justify-end gap-3 pt-4 border-t mt-4">
-            <button
+            <Button
               type="button"
               onClick={onClose}
               className="px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200"
               disabled={isSaving || isUploadingImage}
             >
               Cancel
-            </button>
-            <button
+            </Button>
+            <Button
               type="submit"
               className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isSaving || isUploadingImage}
@@ -471,7 +472,7 @@ export default function EditQuestionModal({
                 : isSaving
                   ? "Saving..."
                   : "Save Changes"}
-            </button>
+            </Button>
           </div>
         </form>
       </div>

@@ -57,7 +57,7 @@ export default function SidebarDemo({ children }) {
       href: "/home",
       icon: isActive("/home") ? (
         <IconHomeFilled
-          className={`${isActive("/home") ? "text-[#0ad0f4] fill-[#0ad0f4]" : ""
+          className={`${isActive("/home") ? "text-[#1272ba] fill-[#1272ba]" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
@@ -70,7 +70,7 @@ export default function SidebarDemo({ children }) {
       href: "/online-test-series",
       icon: isActive("/online-test-series") ? (
         <IconClipboardFilled
-          className={`${isActive("/online-test-series") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/online-test-series") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
@@ -97,12 +97,12 @@ export default function SidebarDemo({ children }) {
       href: "/learn",
       icon: isActive("/learn") ? (
         <IconBookFilled
-          className={`${isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/learn") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconBook
-          className={`${isActive("/learn") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/learn") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
@@ -113,12 +113,12 @@ export default function SidebarDemo({ children }) {
       href: "/quiz-category",
       icon: isActive("/quiz-category") ? (
         <IconHelpHexagonFilled
-          className={`${isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/quiz-category") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconHelpHexagon
-          className={`${isActive("/quiz-category") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/quiz-category") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
@@ -129,12 +129,12 @@ export default function SidebarDemo({ children }) {
       href: "/pdf-category",
       icon: isActive("/pdf-category") ? (
         <IconFileTextFilled
-          className={`${isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/pdf-category") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconFileText
-          className={`${isActive("/pdf-category") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/pdf-category") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
@@ -145,12 +145,12 @@ export default function SidebarDemo({ children }) {
       href: "/admin/tests",
       icon: isActive("/admin-panel") ? (
         <IconUserFilled
-          className={`${isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/admin-panel") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconUser
-          className={`${isActive("/admin-panel") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/admin-panel") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
@@ -161,12 +161,12 @@ export default function SidebarDemo({ children }) {
       href: "/attempted-tests",
       icon: isActive("/attempted-tests") ? (
         <IconSquareCheckFilled
-          className={`${isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/attempted-tests") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ) : (
         <IconSquareCheck
-          className={`${isActive("/attempted-tests") ? "text-[#0ad0f4] fill-red" : ""
+          className={`${isActive("/attempted-tests") ? "text-[#1272ba] fill-red" : ""
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
@@ -205,14 +205,14 @@ export default function SidebarDemo({ children }) {
                 ))}
               {/* {isSignedIn ? (
                 <SignOutButton className="md:hidden text-left cursor-pointer px-6">
-                  <button>{t("logOutBtn")}</button>
+                  <Button>{t("logOutBtn")}</Button>
                 </SignOutButton>
               ) : (
                 <SignInButton
                   className="text-left cursor-pointer px-6"
                   mode="modal"
                 >
-                  <button>{t("logInBtn")}</button>
+                  <Button>{t("logInBtn")}</Button>
                 </SignInButton>
               )} */}
             </div>

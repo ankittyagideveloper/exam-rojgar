@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../language-switcher";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
 import { Logo } from "../SidebarDemo";
+import { Button } from "@/components/ui";
 
 const SidebarContext = createContext(undefined);
 
@@ -120,7 +121,7 @@ function InstallPWAButton() {
   if (!isReadyToInstall) return null;
 
   return (
-    <button
+    <Button
       onClick={installApp}
       style={{
         padding: "10px 20px",
@@ -133,7 +134,7 @@ function InstallPWAButton() {
       }}
     >
       <Download />
-    </button>
+    </Button>
   );
 }
 export const MobileSidebar = ({ className, children, ...props }) => {
@@ -200,7 +201,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               </>
             ) : (
               <SignInButton mode="modal">
-                <button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">LogIn</button>
+                <Button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">LogIn</Button>
               </SignInButton>
             )}
           </div>

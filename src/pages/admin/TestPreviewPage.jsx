@@ -6,8 +6,8 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
-import { LoaderOne } from "../../components/ui/loader";
+} from "@/components/ui/card";
+import { LoaderOne } from "@/components/ui/loader";
 import { useTranslation } from "react-i18next";
 
 /**

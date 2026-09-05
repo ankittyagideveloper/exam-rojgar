@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import LanguageSwitcher from "./language-switcher";
 import { ThemeContext } from "../context/ThemeContext.jsx";
 import { Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui";
 
 function InstallPWAButton() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -49,10 +50,10 @@ function InstallPWAButton() {
 
   return (
 
-    <button onClick={installApp} className="gap-1 flex bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+    <Button onClick={installApp} className="gap-1 flex bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
       <Download />
       Install App
-    </button>
+    </Button>
   );
 }
 
@@ -115,9 +116,9 @@ const Header = () => {
             </>
           ) : (
             <SignInButton mode="modal">
-              <button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+              <Button className=" cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
                 Log In
-              </button>
+              </Button>
             </SignInButton>
           )}
         </div>

@@ -8,6 +8,7 @@ import {
   IconChevronLeft,
   IconChevronRight,
 } from "@tabler/icons-react";
+import { Button } from "@/components/ui";
 
 const MockTest = ({ testData, onComplete }) => {
   // Screen states
@@ -341,12 +342,12 @@ const MockTest = ({ testData, onComplete }) => {
           "Speed + Accuracy = Selection"
         </h3>
 
-        <button
+        <Button
           onClick={startCountdown}
           className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-4 px-10 rounded-lg text-xl md:text-2xl shadow-xl transition-all transform hover:scale-105 w-full md:w-auto"
         >
           I AM READY TO BEGIN
-        </button>
+        </Button>
       </div>
 
       <div className="max-w-5xl w-full mt-16 z-10">
@@ -453,12 +454,12 @@ const MockTest = ({ testData, onComplete }) => {
               <IconClock className="text-blue-500" size={20} />
               <span>{formatTime(timeLeft)}</span>
             </div>
-            <button
+            <Button
               onClick={requestSubmit}
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors text-xs md:text-base"
             >
               SUBMIT
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -477,12 +478,12 @@ const MockTest = ({ testData, onComplete }) => {
                 <span className="text-xs font-semibold text-gray-600 hidden sm:inline">
                   Marks: +1.0, -0.33
                 </span>
-                <button
+                <Button
                   onClick={() => setShowMobilePalette(!showMobilePalette)}
                   className="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs"
                 >
                   <span>☰</span> Palette
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -529,26 +530,26 @@ const MockTest = ({ testData, onComplete }) => {
             {/* Action Buttons */}
             <div className="bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
               <div className="flex gap-2 w-full sm:w-auto">
-                <button
+                <Button
                   onClick={markForReview}
                   className="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors"
                 >
                   Mark Review
-                </button>
-                <button
+                </Button>
+                <Button
                   onClick={clearResponse}
                   className="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors"
                 >
                   Clear
-                </button>
+                </Button>
               </div>
 
-              <button
+              <Button
                 onClick={saveAndNext}
                 className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors uppercase"
               >
                 Save & Next
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -560,12 +561,12 @@ const MockTest = ({ testData, onComplete }) => {
           >
             <div className="p-3 bg-blue-600 text-white font-bold flex justify-between items-center">
               <span>Question Palette</span>
-              <button
+              <Button
                 className="md:hidden text-white"
                 onClick={() => setShowMobilePalette(false)}
               >
                 <IconX size={24} />
-              </button>
+              </Button>
             </div>
 
             <div className="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 bg-gray-50">
@@ -593,7 +594,7 @@ const MockTest = ({ testData, onComplete }) => {
               </div>
               <div className="grid grid-cols-5 gap-3">
                 {userState.map((state, idx) => (
-                  <button
+                  <Button
                     key={idx}
                     onClick={() => jumpToQuestion(idx)}
                     className={getPaletteButtonClass(
@@ -605,7 +606,7 @@ const MockTest = ({ testData, onComplete }) => {
                     {state.status === 4 && (
                       <div className="absolute bottom-0.5 right-0.5 w-2 h-2 bg-green-500 rounded-full border border-white" />
                     )}
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>
@@ -646,18 +647,18 @@ const MockTest = ({ testData, onComplete }) => {
                 </div>
 
                 <div className="flex justify-end gap-3">
-                  <button
+                  <Button
                     onClick={() => setShowSubmitPopup(false)}
                     className="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
                   >
                     Cancel
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={executeSubmit}
                     className="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors"
                   >
                     Yes, Submit
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -803,7 +804,7 @@ const MockTest = ({ testData, onComplete }) => {
               </h3>
               <div className="flex gap-2">
                 {["all", "correct", "wrong", "skipped"].map((filter) => (
-                  <button
+                  <Button
                     key={filter}
                     onClick={() => setAnalysisFilter(filter)}
                     className={`px-3 py-1 rounded text-sm font-semibold ${
@@ -813,7 +814,7 @@ const MockTest = ({ testData, onComplete }) => {
                     }`}
                   >
                     {filter.charAt(0).toUpperCase() + filter.slice(1)}
-                  </button>
+                  </Button>
                 ))}
               </div>
             </div>

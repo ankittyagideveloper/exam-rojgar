@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import { Button } from "../components/ui";
 
 /**
  * TestSeries — Railway CBT-style mock test component
@@ -60,7 +61,7 @@ function writeStorage(key, value) {
   try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* silent */ }
 }
 
-// ─── palette button class ────────────────────────────────────────────────────
+// ─── palette Button class ────────────────────────────────────────────────────
 function paletteClass(status, active) {
   const base =
     "w-10 h-10 flex items-center justify-center font-semibold text-sm cursor-pointer transition-all relative select-none ";
@@ -614,12 +615,12 @@ const TestSeries = ({ testData }) => {
                   </div>
                 </div>
                 <div className="mt-3 space-y-2 border-t border-gray-400 pt-3">
-                  <button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
+                  <Button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
                     View Previous Attempts <span className="text-[#1e5086]">📋</span>
-                  </button>
-                  <button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
+                  </Button>
+                  <Button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
                     Saved Questions Section <span className="text-[#1e5086]">🔖</span>
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -647,12 +648,12 @@ const TestSeries = ({ testData }) => {
               </div>
             </div>
             <div className="w-full md:w-auto text-center shrink-0">
-              <button
+              <Button
                 onClick={validateAndStart}
                 className="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 text-[15px] shadow-sm transition-colors w-full md:w-auto uppercase tracking-wide rounded-sm"
               >
                 I am ready to begin
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -700,12 +701,12 @@ const TestSeries = ({ testData }) => {
                   <span>⏱</span>
                   <span>{formatTime(timeLeft)}</span>
                 </div>
-                <button
+                <Button
                   onClick={() => setShowSubmitPopup(true)}
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors text-xs md:text-base shrink-0"
                 >
                   SUBMIT
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -718,20 +719,20 @@ const TestSeries = ({ testData }) => {
                     Q. <span className="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">{currentQIndex + 1}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button
+                    <Button
                       onClick={toggleSaveQuestion}
                       className={`px-2 py-1.5 text-xs rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? "bg-amber-50 border-amber-300 text-amber-700" : "bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300"}`}
                     >
                       <span>{saved ? "★" : "☆"}</span>
                       <span className="hidden sm:inline">{saved ? "Saved" : "Save Question"}</span>
-                    </button>
+                    </Button>
                     <span className="text-xs font-semibold text-gray-600 hidden sm:inline">+{marksCorrect}, -{marksWrong}</span>
-                    <button
+                    <Button
                       onClick={() => setShowMobilePalette(true)}
                       className="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-2 py-1 rounded bg-blue-50 text-xs shadow-sm"
                     >
                       ⊞ Palette
-                    </button>
+                    </Button>
                   </div>
                 </div>
 
@@ -762,16 +763,16 @@ const TestSeries = ({ testData }) => {
                 {/* Action bar */}
                 <div className="w-full bg-white border-t border-gray-300 p-2 md:p-3 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
                   <div className="flex gap-2 w-full sm:w-auto">
-                    <button onClick={markForReview} className="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
+                    <Button onClick={markForReview} className="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
                       Mark Review
-                    </button>
-                    <button onClick={clearResponse} className="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
+                    </Button>
+                    <Button onClick={clearResponse} className="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
                       Clear
-                    </button>
+                    </Button>
                   </div>
-                  <button onClick={saveAndNext} className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors uppercase">
+                  <Button onClick={saveAndNext} className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors uppercase">
                     Save &amp; Next
-                  </button>
+                  </Button>
                 </div>
               </div>
 
@@ -787,7 +788,7 @@ const TestSeries = ({ testData }) => {
               >
                 <div className="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
                   <span className="text-sm truncate">{candidateName || "Aspirant"}</span>
-                  <button className="md:hidden text-white text-xl px-1" onClick={() => setShowMobilePalette(false)}>✕</button>
+                  <Button className="md:hidden text-white text-xl px-1" onClick={() => setShowMobilePalette(false)}>✕</Button>
                 </div>
 
                 {/* Legend */}
@@ -810,7 +811,7 @@ const TestSeries = ({ testData }) => {
                   <div className="font-bold text-gray-700 mb-2 border-b pb-1 text-xs uppercase">{category}</div>
                   <div className="grid grid-cols-5 gap-2">
                     {userState.map((s, idx) => (
-                      <button
+                      <Button
                         key={idx}
                         onClick={() => jumpToQuestion(idx)}
                         className={paletteClass(s.status, idx === currentQIndex)}
@@ -819,7 +820,7 @@ const TestSeries = ({ testData }) => {
                         {s.status === STATUS.ANS_MARKED && (
                           <div className="absolute bottom-0.5 right-0.5 w-2 h-2 bg-green-400 rounded-full border border-white" />
                         )}
-                      </button>
+                      </Button>
                     ))}
                   </div>
                 </div>
@@ -850,8 +851,8 @@ const TestSeries = ({ testData }) => {
                         </div>
                       </div>
                       <div className="flex justify-end gap-3">
-                        <button onClick={() => setShowSubmitPopup(false)} className="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
-                        <button onClick={() => finalizeTest()} className="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors">Yes, Submit</button>
+                        <Button onClick={() => setShowSubmitPopup(false)} className="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</Button>
+                        <Button onClick={() => finalizeTest()} className="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors">Yes, Submit</Button>
                       </div>
                     </div>
                   </div>
@@ -888,9 +889,9 @@ const TestSeries = ({ testData }) => {
                 </div>
                 <div className="flex gap-2 flex-wrap">
                   {isHistoryMode && (
-                    <button onClick={returnFromHistory} className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded text-sm font-semibold transition-colors">
+                    <Button onClick={returnFromHistory} className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded text-sm font-semibold transition-colors">
                       ← Back to Home
-                    </button>
+                    </Button>
                   )}
                   <a href={telegramLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-slate-700 border border-slate-600 px-3 py-1.5 rounded text-sm font-semibold hover:bg-slate-600 transition-colors">
                     Join ER-UPDATES
@@ -975,13 +976,13 @@ const TestSeries = ({ testData }) => {
                   <h3 className="text-xl font-bold text-slate-800">Detailed Question Analysis</h3>
                   <div className="flex gap-2 flex-wrap">
                     {["all", "correct", "wrong", "skipped"].map((f) => (
-                      <button
+                      <Button
                         key={f}
                         onClick={() => setAnalysisFilter(f)}
                         className={`px-3 py-1 rounded text-sm font-semibold ${analysisFilter === f ? "bg-blue-600 text-white" : "bg-white border border-slate-300 text-slate-600 hover:bg-slate-50"}`}
                       >
                         {f.charAt(0).toUpperCase() + f.slice(1)}
-                      </button>
+                      </Button>
                     ))}
                   </div>
                 </div>
@@ -1081,7 +1082,7 @@ const TestSeries = ({ testData }) => {
           <div className="max-w-4xl mx-auto bg-slate-800 rounded-2xl p-5 md:p-8 shadow-2xl mt-6 relative border border-slate-600">
             <div className="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
               <h2 className="text-xl font-bold text-amber-300">📋 Previous Attempts</h2>
-              <button onClick={() => setShowHistory(false)} className="text-slate-400 hover:text-white text-2xl">✕</button>
+              <Button onClick={() => setShowHistory(false)} className="text-slate-400 hover:text-white text-2xl">✕</Button>
             </div>
             <div className="space-y-4">
               {historyList.length === 0
@@ -1096,7 +1097,7 @@ const TestSeries = ({ testData }) => {
                       <div><div className="text-xs text-slate-400 uppercase">Score</div><div className="text-lg font-bold text-sky-400">{a.marks}</div></div>
                       <div><div className="text-xs text-slate-400 uppercase">Accuracy</div><div className="text-lg font-bold text-emerald-400">{a.accuracy}%</div></div>
                     </div>
-                    <button onClick={() => loadHistoryAttempt(a.id)} className="px-4 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition text-sm font-semibold">View Analysis</button>
+                    <Button onClick={() => loadHistoryAttempt(a.id)} className="px-4 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition text-sm font-semibold">View Analysis</Button>
                   </div>
                 ))}
             </div>
@@ -1112,9 +1113,9 @@ const TestSeries = ({ testData }) => {
               <h2 className="text-xl font-bold text-amber-300">🔖 Saved Questions Repository</h2>
               <div className="flex gap-3">
                 {savedList.length > 0 && (
-                  <button onClick={clearAllSaved} className="text-sm px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition">🗑 Clear All</button>
+                  <Button onClick={clearAllSaved} className="text-sm px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition">🗑 Clear All</Button>
                 )}
-                <button onClick={() => setShowSaved(false)} className="text-slate-400 hover:text-white text-2xl">✕</button>
+                <Button onClick={() => setShowSaved(false)} className="text-slate-400 hover:text-white text-2xl">✕</Button>
               </div>
             </div>
             <div className="space-y-5">
@@ -1122,7 +1123,7 @@ const TestSeries = ({ testData }) => {
                 ? <div className="text-slate-400 text-center py-12 font-medium">No saved questions. Click ☆ during the mock to save questions here.</div>
                 : savedList.map((q, index) => (
                   <div key={q.id} className="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative">
-                    <button onClick={() => removeSavedQuestion(index)} className="absolute top-3 right-3 text-slate-400 hover:text-rose-500 transition text-sm font-medium">🗑 Remove</button>
+                    <Button onClick={() => removeSavedQuestion(index)} className="absolute top-3 right-3 text-slate-400 hover:text-rose-500 transition text-sm font-medium">🗑 Remove</Button>
                     <div className="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest">Saved Question {index + 1}</div>
                     <div className="text-slate-800 font-semibold mb-3 text-sm whitespace-pre-wrap pr-16">{q.eng}</div>
                     {q.hin && <div className="text-slate-600 text-sm mb-3 whitespace-pre-wrap"><strong>Hindi:</strong> {q.hin}</div>}

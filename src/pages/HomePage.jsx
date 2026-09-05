@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import { testimonials } from "@/constants";
+import { Link } from "react-router";
 
 
 function HomePage() {
@@ -129,13 +130,13 @@ function HomePage() {
               <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed mb-6">
                 {t("tagLine")}
               </p>
-              <a
-                href="/online-test-series"
+              <Link
+                to="/online-test-series"
                 className="inline-flex items-center justify-center gap-2 bg-[#1272ba] hover:bg-[#1260ba] text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 w-fit"
               >
                 <Play className="w-4 h-4" />
                 Start Test Series
-              </a>
+              </Link>
             </div>
 
             {/* App Preview Card */}
@@ -223,13 +224,13 @@ function HomePage() {
                 color: "bg-purple-600",
               },
             ].map((action, index) => (
-              <button
+              <Button
                 key={index}
                 className={`w-full ${action.color} text-white rounded-xl p-4 text-left hover:opacity-90 transition-opacity`}
               >
                 <div className="font-semibold">{action.title}</div>
                 <div className="text-sm opacity-90">{action.subtitle}</div>
-              </button>
+              </Button>
             ))}
           </div>
         </div> */}
@@ -242,7 +243,7 @@ function HomePage() {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
             return (
-              <button
+              <Button
                 key={item.id}
                 onClick={() => {
                   setActiveTab(item.id);
@@ -265,7 +266,7 @@ function HomePage() {
                 >
                   {item.label}
                 </span>
-              </button>
+              </Button>
             );
           })}
         </div>

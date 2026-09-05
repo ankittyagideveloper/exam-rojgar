@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertTriangle, Home, ArrowLeft, RefreshCcw } from "lucide-react";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const ErrorPage = ({
   code = "Opp!",
