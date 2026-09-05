@@ -8,6 +8,7 @@ import SidebarDemo from "./SidebarDemo";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
 import { useClerk, useAuth } from "@clerk/clerk-react";
+import AppBreadcrumb from "./AppBreadcrumb";
 
 const Layout = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,6 +44,7 @@ const Layout = () => {
         <SidebarDemo>
           <Header />
           <main className=" lg:mt-14">
+            <AppBreadcrumb />
             <Outlet />
           </main>
           {isVisible && (
