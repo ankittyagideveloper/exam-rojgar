@@ -361,6 +361,8 @@ const router = createBrowserRouter([
       { path: "state-legislature-panchayati-raj-test-1", element: <StateLegislaturePanchayatiRajTest1MockTestPage /> },
     
       { path: "mixture-alligation-test-2", element: <MixtureAlligationTest2MockTestPage /> },
+
+      { path: "revision-test-1-mock-test", element: <RevisionTest1MockTestPage /> },
     ],
   },
   {
