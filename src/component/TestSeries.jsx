@@ -851,7 +851,7 @@ const TestSeries = ({ testData }) => {
                         </div>
                       </div>
                       <div className="flex justify-end gap-3">
-                        <Button onClick={() => setShowSubmitPopup(false)} className="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</Button>
+                        <Button onClick={() => setShowSubmitPopup(false)}>Cancel</Button>
                         <Button onClick={() => finalizeTest()} className="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors">Yes, Submit</Button>
                       </div>
                     </div>
