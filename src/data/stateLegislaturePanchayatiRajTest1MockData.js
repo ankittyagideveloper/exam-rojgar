@@ -1,9 +1,9 @@
 export const stateLegislaturePanchayatiRajTest1MockData = {
-  "paperName": "state Legislature PanchayatiRaj Test MockData",
+  "paperName": "State Legislature PanchayatiRaj Test MockData",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "subject": "Polity State",
-  "category": "Polity State",
+  "subject": "Polity (State)",
+  "category": "Polity (State)",
   "duration": 15,
   "marksCorrect": 2,
   "marksWrong": 0.5,
