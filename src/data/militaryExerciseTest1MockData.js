@@ -5,7 +5,7 @@ export const militaryExerciseTest1MockData = {
   "subject": "Military Exercises",
   "category": "Current Affairs",
   "duration": 10,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_militaryExerciseTest1MockData",

@@ -5,7 +5,7 @@ export const hostoryFullRevisionTestMockData = {
   "subject": "Ancient History",
   "category": "Mock Test Series",
   "duration": 60,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_hostoryFullRevisionTestMockData",

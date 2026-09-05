@@ -5,7 +5,7 @@ export const stateLegislaturePanchayatiRajTest1MockData = {
   "subject": "Polity (State)",
   "category": "Polity (State)",
   "duration": 15,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_stateLegislaturePanchayatiRajTest1MockData",

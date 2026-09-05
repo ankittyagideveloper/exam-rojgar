@@ -5,7 +5,7 @@ export const revisionTest1MockData = {
   "subject": "Revision Test",
   "category": "Revision Test",
   "duration": 60,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_revisionTest1MockData",

@@ -5,7 +5,7 @@ export const MathsMockData = {
   "subject": "Quantitative Aptitude",
   "category": "Mock Test Series",
   "duration": 90,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_MathsMockData",

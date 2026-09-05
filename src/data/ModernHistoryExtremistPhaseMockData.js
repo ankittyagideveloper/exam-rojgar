@@ -5,7 +5,7 @@ export const ModernHistoryExtremistPhaseMockData = {
   "subject": "Modern History",
   "category": "Sectional Mocks",
   "duration": 5,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_ModernHistoryExtremistPhaseMockData",

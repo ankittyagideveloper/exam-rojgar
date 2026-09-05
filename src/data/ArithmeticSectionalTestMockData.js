@@ -5,7 +5,7 @@ export const ArithmeticSectionalTestMockData = {
   "subject": "Quantitative Aptitude",
   "category": "Sectional Mocks",
   "duration": 15,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_ArithmeticSectionalTestMockData",

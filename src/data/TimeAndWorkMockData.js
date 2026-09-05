@@ -5,7 +5,7 @@ export const TimeAndWorkMockData = {
   "subject": "Quantitative Aptitude",
   "category": "Sectional Mocks",
   "duration": 20,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_TimeAndWorkMockData",

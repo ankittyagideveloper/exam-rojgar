@@ -5,7 +5,7 @@ export const geographyBasicsTest1MockData = {
   "subject": "Geography Basics",
   "category": "Geography Basics",
   "duration": 10,
-  "marksCorrect": 2,
+  "marksCorrect": 1,
   "marksWrong": 0.5,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_geographyBasicsTest1MockData",
