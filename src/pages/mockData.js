@@ -455,7 +455,7 @@ export const mockData = {
                   description: "State Government and Administration",
                   tests: [
                     {
-                      id: "state-legislature-panchayati-raj-test-1",
+                      id: "state-legislature-panchayati-raj-mock-test",
                       image: "/rrb-ntpc.webp",
                       alt: "State Legislature Panchayati Raj Mock Test",
                       title: "State Legislature Panchayati Raj - Mock Test",
