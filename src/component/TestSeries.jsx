@@ -905,7 +905,7 @@ const TestSeries = ({ testData }) => {
               <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                   {[
-                    ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber, "border-blue-500"],
+
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
                     ["Subject", isHistoryMode && historyAttempt ? historyAttempt.subject : subject, "border-indigo-500"],
                     ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant", "border-emerald-500"],
@@ -944,7 +944,7 @@ const TestSeries = ({ testData }) => {
                   ["Final Score", `${r.score} / ${MAX_SCORE}`, "text-slate-800 text-2xl md:text-3xl"],
                   ["Attempted", `${r.attempted} / ${TOTAL}`, "text-blue-600 text-2xl md:text-3xl"],
                   ["Correct / Wrong", null, "text-2xl"],
-                  ["Accuracy", `${r.accuracy}%`, "text-yellow-500 text-2xl md:text-3xl"],
+                  ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber,  "text-yellow-500 text-2xl md:text-3xl"],
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center">
                     <div className="text-slate-500 text-xs font-semibold mb-1">{item[0]}</div>
