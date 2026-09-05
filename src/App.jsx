@@ -82,6 +82,8 @@ import AmendmentsMockTestPage from "./pages/AmendmentsMockTestPage";
 import MathsMockTestPage from "./pages/MathsMockTestPage";
 import GeographyBasicsTest1MockTestPage from "./pages/GeographyBasicsTest1MockTestPage";
 import MilitaryExerciseTest1MockTestPage from "./pages/MilitaryExerciseTest1MockTestPage";
+import PresidentGovernorPmTest1MockTestPage from "./pages/PresidentGovernorPmTest1MockTestPage";
+import StateLefislaturePanchayatiRajTest1MockTestPage from "./pages/StateLegislaturePanchayatiRajTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -352,6 +354,10 @@ const router = createBrowserRouter([
       { path: "geography-basics-test-1", element: <GeographyBasicsTest1MockTestPage /> },
 
       { path: "military-exercise-test-1", element: <MilitaryExerciseTest1MockTestPage /> },
+    
+      { path: "president-governor-pm-test-1", element: <PresidentGovernorPmTest1MockTestPage /> },
+    
+      { path: "state-lefislature-panchayati-raj-test-1", element: <StateLefislaturePanchayatiRajTest1MockTestPage /> },
     ],
   },
   {
