@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/card";
 import { Clock, Star, CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
-import { Button } from "@/components/ui";
 
 const AllQuizAnalysis = ({
   quizData,
@@ -70,7 +69,7 @@ const AllQuizAnalysis = ({
               const status = answer?.status || "not-viewed";
 
               return (
-                <Button
+                <button
                   key={index}
                   onClick={() => handleQuestionNavigation(index)}
                   className={`w-8 h-8 text-xs font-medium rounded border-2 transition-colors ${
@@ -86,7 +85,7 @@ const AllQuizAnalysis = ({
                   }`}
                 >
                   {index + 1}
-                </Button>
+                </button>
               );
             })}
           </div>

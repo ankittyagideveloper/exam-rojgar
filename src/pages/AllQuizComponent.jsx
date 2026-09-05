@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock } from "lucide-react";
@@ -20,6 +19,7 @@ import QuizHeader from "../component/quiz/QuizHeader";
 import { ConfirmationModal } from "../component/modals/confirmation-modal";
 import { TestSubmissionModal } from "../component/modals/test-submission-modal";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui";
 
 const db = getFirestore(app);
 const AllQuizComponent = () => {
@@ -466,7 +466,7 @@ const AllQuizComponent = () => {
                   {getBilingualOptions(currentQuestionData)?.map(
                     (option, index) => {
                       return (
-                        <Button
+                        <button
                           key={index}
                           onClick={() => handleOptionSelect(index)}
                           className={`w-full text-left p-4 rounded-lg border transition-colors ${
@@ -479,14 +479,14 @@ const AllQuizComponent = () => {
                             {String.fromCharCode(65 + index)}.
                           </span>
                           {option}
-                        </Button>
+                        </button>
                       );
                     },
                   )}
                 </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Action buttons */}
               <div className="flex gap-2 md:gap-4 pt-4 justify-between md:justify-center pointer">
                 <Button
                   onClick={handleMarkAndNext}
