@@ -203,7 +203,7 @@ export default function FeaturesRibbon() {
       bgColor: "bg-red-100",
     },
     {
-      label: t("testSeries  "),
+      label: t("testSeries"),
       icon: "clipboard",
       bgColor: "bg-green-100",
       badge: t("new"),
