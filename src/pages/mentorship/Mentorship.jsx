@@ -202,7 +202,7 @@ function Header({ dark, onToggle, isPaid }) {
 function Hero() {
   const { t } = useTranslation();
   return (
-    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-2 md:pt-18">
+    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-2 md:pt-1">
     
       <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
@@ -217,7 +217,8 @@ function Hero() {
             {t("mentorship.hero.title1")}
             <br />
             <span className="text-gradient">{t("mentorship.hero.title2")} </span>
-            <br />{t("mentorship.hero.title3")}
+            <br />
+           <p className="pt-3">{t("mentorship.hero.title3")}</p>
           </h1>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -236,6 +237,7 @@ function Hero() {
             </a>
           </div>
         </div>
+
 
         <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
           <img
