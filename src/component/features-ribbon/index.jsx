@@ -203,10 +203,10 @@ export default function FeaturesRibbon() {
       bgColor: "bg-red-100",
     },
     {
-      label: t("liveTest"),
+      label: t("testSeries  "),
       icon: "clipboard",
       bgColor: "bg-green-100",
-      badge: t("free"),
+      badge: t("new"),
       href: "/online-test-series",
       isLive: true,
     },

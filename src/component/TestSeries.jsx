@@ -1,6 +1,8 @@
 import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "../components/ui";
+import { CalculateDuration } from "../constants/common.constant";
+import { Link } from "react-router";
 
 /**
  * TestSeries — Railway CBT-style mock test component
@@ -89,7 +91,7 @@ const TestSeries = ({ testData }) => {
     paperName = "Round 1 Challenge Series",
     subject = "Sectional Mock",
     category = "Quantitative Aptitude",
-    duration = 20,
+    duration: rawDuration,
     marksCorrect = 1,
     marksWrong = 0.33,
     telegramLink = "https://t.me/ExamRojgaar",
@@ -97,9 +99,11 @@ const TestSeries = ({ testData }) => {
     questions = [],
   } = testData || {};
 
+  const TOTAL = questions.length;
+  const duration = CalculateDuration(TOTAL, subject) || rawDuration || 20;
+
   const HISTORY_KEY = `${storageKey}_history`;
   const SAVED_KEY = `${storageKey}_saved`;
-  const TOTAL = questions.length;
   const MAX_SCORE = TOTAL * marksCorrect;
   const TEST_SECONDS = duration * 60;
 
@@ -502,9 +506,9 @@ const TestSeries = ({ testData }) => {
           <div className="bg-[#1e5086] text-white flex justify-between items-center px-3 md:px-6 py-2 shadow-md border-b-4 border-[#3a78c4] shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-14 h-14 md:w-20 md:h-20 bg-white rounded flex items-center justify-center font-bold text-[#1e5086] border-2 border-yellow-400 text-[9px] md:text-xs text-center leading-tight p-1 shrink-0">
-                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+                <Link to="/home" className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
                   <img src="/logo.png" alt="examrojgar-logo" />
-                </div>
+                </Link>
               </div>
               <div className="text-sm md:text-xl font-bold tracking-wide uppercase leading-snug">
                 {title}
@@ -905,7 +909,6 @@ const TestSeries = ({ testData }) => {
               <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                   {[
-
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
                     ["Subject", isHistoryMode && historyAttempt ? historyAttempt.subject : subject, "border-indigo-500"],
                     ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant", "border-emerald-500"],
@@ -929,12 +932,19 @@ const TestSeries = ({ testData }) => {
                 </div>
                 <div className="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-5 text-white flex flex-col justify-center items-center text-center relative overflow-hidden">
                   <span className="absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 -rotate-12">🏆</span>
-                  <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">{category}</div>
+                  <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">{isHistoryMode && historyAttempt ? historyAttempt.subject : subject}</div>
+                  <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
+                    <span className="text-sm font-semibold">Candidate Name</span>
+                    <span className="text-sm font-bold text-yellow-300">{ isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant"}</span>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
+                    <span className="text-sm font-semibold">Paper Name</span>
+                    <span className="text-sm font-bold text-yellow-300">{ isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName}</span>
+                  </div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Percentile</span>
-                    <span className="text-xl font-bold text-yellow-300">{r.accuracy}%</span>
+                    <span className="text-sm font-bold text-yellow-300">{r.accuracy}%</span>
                   </div>
-                  <div className="mt-2 text-blue-200 text-xs">Accuracy score</div>
                 </div>
               </div>
 

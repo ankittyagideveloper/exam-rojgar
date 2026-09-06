@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -51,7 +52,7 @@ function getLabel(segment) {
 // Pages where breadcrumb should not render
 const HIDDEN_PATHS = ["/home", "/"];
 
-export default function AppBreadcrumb() {
+export default function AppBreadcrumb({ className }) {
   const { pathname } = useLocation();
 
   if (HIDDEN_PATHS.includes(pathname)) return null;
@@ -68,7 +69,7 @@ export default function AppBreadcrumb() {
   ];
 
   return (
-    <div className="px-4 py-2 border-b border-[#DFE4E8] dark:border-[#262626] bg-white dark:bg-neutral-900">
+    <div className={cn("px-4 py-2 border-b border-[#DFE4E8] dark:border-[#262626] bg-white dark:bg-neutral-900", className)}>
       <Breadcrumb>
         <BreadcrumbList>
           {crumbs.map((crumb, i) => {

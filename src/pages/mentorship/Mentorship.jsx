@@ -14,6 +14,7 @@ import { useUser } from "@clerk/clerk-react";
 import { testimonials } from "@/constants";
 import BottomNavigation from "@/component/BottomNavigation";
 import { Button } from "@/components/ui";
+import AppBreadcrumb from "@/component/AppBreadcrumb";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -99,6 +100,7 @@ function Landing() {
       <Header dark={dark} onToggle={() => setDark((d) => !d)} isPaid={isPaid} />
 
       <main className="relative pt-24">
+        <AppBreadcrumb className="relative border-none mx-auto max-w-6xl px-5 bg-transparent dark:bg-transparent"/>
         <Hero />
         <Marquee />
         <Mission />
@@ -200,7 +202,8 @@ function Header({ dark, onToggle, isPaid }) {
 function Hero() {
   const { t } = useTranslation();
   return (
-    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-10 md:pt-18">
+    <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-2 md:pt-18">
+    
       <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
