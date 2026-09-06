@@ -1,7 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "../components/ui";
-import { CalculateDuration } from "../constants/common.constant";
 import { Link } from "react-router";
 
 /**
@@ -100,7 +99,7 @@ const TestSeries = ({ testData }) => {
   } = testData || {};
 
   const TOTAL = questions.length;
-  const duration = CalculateDuration(TOTAL, subject) || rawDuration || 20;
+  const duration = rawDuration || 20;
 
   const HISTORY_KEY = `${storageKey}_history`;
   const SAVED_KEY = `${storageKey}_saved`;
