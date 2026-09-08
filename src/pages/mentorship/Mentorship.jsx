@@ -15,6 +15,7 @@ import { testimonials } from "@/constants";
 import BottomNavigation from "@/component/BottomNavigation";
 import { Button } from "@/components/ui";
 import AppBreadcrumb from "@/component/AppBreadcrumb";
+import TelegramChatBot from "@/component/TelegramChatBot";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -872,6 +873,7 @@ function Footer() {
 const TargetSeriesPage = () => {
   return <>
     <Landing />
+    <TelegramChatBot/>
     <BottomNavigation />
   </>
 }
