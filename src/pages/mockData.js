@@ -931,6 +931,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/military-exercise-test-1",
                     },
+                  
+                    {
+                      id: "important-days-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Important Days Test 1 Mock Test",
+                      title: "Important Days Test 1 - Mock Test",
+                      name: "Important Days Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "3",
+                      isSpecialMock: true,
+                      route: "/mock-test/important-days-test-1",
+                    },
                   ],
             },
             "full-length-test": {

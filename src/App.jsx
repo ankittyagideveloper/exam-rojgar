@@ -87,6 +87,7 @@ import StateLegislaturePanchayatiRajTest1MockTestPage from "./pages/StateLegisla
 import MixtureAlligationTest2MockTestPage from "./pages/MixtureAlligationTest2MockTestPage";
 import LineAnglesTest1MockTestPage from "./pages/LineAnglesTest1MockTestPage";
 import Cbt2UgTest1MockTestPage from "./pages/Cbt2UgTest1MockTestPage";
+import ImportantDaysTest1MockTestPage from "./pages/ImportantDaysTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -369,6 +370,8 @@ const router = createBrowserRouter([
       { path: "line-angles-test-1", element: <LineAnglesTest1MockTestPage /> },
     
       { path: "cbt2-ug-test-1", element: <Cbt2UgTest1MockTestPage /> },
+    
+      { path: "important-days-test-1", element: <ImportantDaysTest1MockTestPage /> },
     ],
   },
   {

@@ -16,6 +16,7 @@ import BottomNavigation from "@/component/BottomNavigation";
 import { Button } from "@/components/ui";
 import AppBreadcrumb from "@/component/AppBreadcrumb";
 import TelegramChatBot from "@/component/TelegramChatBot";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -101,7 +102,7 @@ function Landing() {
       <Header dark={dark} onToggle={() => setDark((d) => !d)} isPaid={isPaid} />
 
       <main className="relative pt-24">
-        <AppBreadcrumb className="relative border-none mx-auto max-w-6xl px-5 bg-transparent dark:bg-transparent"/>
+        <AppBreadcrumb className="relative border-none mx-auto max-w-6xl px-5 bg-transparent dark:bg-transparent" />
         <Hero />
         <Marquee />
         <Mission />
@@ -204,7 +205,7 @@ function Hero() {
   const { t } = useTranslation();
   return (
     <section id="top" className="relative mx-auto max-w-6xl px-5 pb-24 pt-2 md:pt-1">
-    
+
       <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-surface px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -219,7 +220,7 @@ function Hero() {
             <br />
             <span className="text-gradient">{t("mentorship.hero.title2")} </span>
             <br />
-           <p className="pt-3">{t("mentorship.hero.title3")}</p>
+            <p className="pt-3">{t("mentorship.hero.title3")}</p>
           </h1>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -450,12 +451,18 @@ function Program({ isPaid }) {
           </p>
 
           <ul className="mt-6 space-y-3 sm:mt-7">
-            {features.map((f, i) => (
-              <li key={i} className="flex gap-3 text-sm">
-                <span className="mt-0.5 shrink-0 text-emerald">✓</span>
-                <span className="text-muted-foreground">{f}</span>
-              </li>
-            ))}
+            {features.map((f, i) => {
+              const isHighlighted = f.startsWith("<b>") || f.startsWith("<B>");
+              return (
+                <li key={i} className="flex gap-3 text-sm">
+                  <span className="mt-0.5 shrink-0 text-emerald">✓</span>
+                  <span
+                    className={isHighlighted ? "font-semibold text-foreground" : "text-muted-foreground"}
+                    dangerouslySetInnerHTML={{ __html: f }}
+                  />
+                </li>
+              );
+            })}
           </ul>
 
           {isPaid ? <Link
@@ -710,43 +717,13 @@ function Reviews() {
         </p>
       </div>
 
-      <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((testimonial) => (
-          <figure
-            key={testimonial.name}
-            className="flex flex-col rounded-2xl glass-card p-7"
-          >
-            <div className="mb-5 text-3xl text-violet">
-              "
-            </div>
-
-            <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
-              {testimonial.quote}
-            </blockquote>
-
-            <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary font-mono text-xs font-bold text-violet">
-                {testimonial.name
-                  .split(" ")
-                  .map((word) => word[0])
-                  .join("")
-                  .slice(0, 2)
-                  .toUpperCase()}
-              </span>
-
-              <span>
-                <span className="block text-sm font-semibold">
-                  {testimonial.name}
-                </span>
-
-                <span className="block text-xs text-muted-foreground">
-                  {testimonial.title}
-                </span>
-              </span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="left"
+        speed="slow"
+        pauseOnHover={true}
+        className="py-4"
+      />
     </section>
   );
 }
@@ -873,7 +850,7 @@ function Footer() {
 const TargetSeriesPage = () => {
   return <>
     <Landing />
-    <TelegramChatBot/>
+    <TelegramChatBot />
     <BottomNavigation />
   </>
 }

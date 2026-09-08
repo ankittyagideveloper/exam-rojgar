@@ -180,6 +180,17 @@ const PAGE_SEO = {
   },
 };
 
+const countTotalTests = (node) => {
+  if (!node) return 0;
+  let count = Array.isArray(node.tests) ? node.tests.length : 0;
+  if (node.subcategories && typeof node.subcategories === "object") {
+    for (const sub of Object.values(node.subcategories)) {
+      count += countTotalTests(sub);
+    }
+  }
+  return count;
+};
+
 const TestPage = () => {
 
   const { user } = useUser();
@@ -363,7 +374,7 @@ const TestPage = () => {
                   studentCount={100}
                   title={cat.title}
                   progress={0}
-                  total={Object?.keys(cat?.subcategories ?? {})?.length}
+                  total={countTotalTests(cat)}
                   percentage={1}
                   onGoToTest={() => {
                     navigate(`/online-test-series/${cat.slug}`);
@@ -416,7 +427,7 @@ const TestPage = () => {
                 studentCount={100}
                 title={sub.title}
                 progress={0}
-                total={Object?.keys(sub?.subcategories ?? sub?.tests ?? {})?.length}
+                total={countTotalTests(sub)}
                 percentage={1}
                 onGoToTest={() => {
                   navigate(

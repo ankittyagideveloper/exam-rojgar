@@ -29,10 +29,13 @@ export default function TestCard2(props) {
       <h3 className="text-gray-800 dark:text-white font-semibold text-base leading-tight mb-4 min-h-10">
         {title}
       </h3>
-
+      
       <div className="flex items-center justify-between mb-2 text-gray-600">
-        <span className="text-xs font-medium">
+        {/* <span className="text-xs font-medium">      
           {progress}/{total}
+        </span> */}
+            <span className="text-xs font-medium">
+          {total} {total === 1 ? "Test" : "Tests"}
         </span>
         <span className="text-xs font-medium">{percentage}%</span>
       </div>
