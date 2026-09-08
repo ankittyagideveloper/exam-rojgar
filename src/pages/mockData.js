@@ -822,7 +822,22 @@ export const mockData = {
                   name: "Advanced",
                   slug: "advanced",
                   description: "Advanced Mathematics",
-                  tests: [],
+                  tests: [
+                    {
+                      id: "line-angles-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Line Angles Test 1 Mock Test",
+                      title: "Line Angles Test 1 - Mock Test",
+                      name: "Line Angles Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "20",
+                      marks: "20",
+                      duration: "12",
+                      isSpecialMock: true,
+                      route: "/mock-test/line-angles-test-1",
+                    },
+                  ],
                 },
               },
               tests: [
