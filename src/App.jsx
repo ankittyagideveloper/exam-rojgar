@@ -85,6 +85,7 @@ import MilitaryExerciseTest1MockTestPage from "./pages/MilitaryExerciseTest1Mock
 import PresidentGovernorPmTest1MockTestPage from "./pages/PresidentGovernorPmTest1MockTestPage";
 import StateLegislaturePanchayatiRajTest1MockTestPage from "./pages/StateLegislaturePanchayatiRajTest1MockTestPage";
 import MixtureAlligationTest2MockTestPage from "./pages/MixtureAlligationTest2MockTestPage";
+import Cbt2UgTest1MockTestPage from "./pages/Cbt2UgTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -363,6 +364,8 @@ const router = createBrowserRouter([
       { path: "mixture-alligation-test-2", element: <MixtureAlligationTest2MockTestPage /> },
 
       { path: "revision-test-1-mock-test", element: <RevisionTest1MockTestPage /> },
+    
+      { path: "cbt2-ug-test-1", element: <Cbt2UgTest1MockTestPage /> },
     ],
   },
   {
