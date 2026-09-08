@@ -10,6 +10,7 @@ import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import { testimonials } from "@/constants";
 import { Link } from "react-router";
+import TelegramChatBot from "../component/TelegramChatBot";
 
 
 function HomePage() {
@@ -101,7 +102,7 @@ function HomePage() {
         </SignedIn>
       </header> */}
         {/* Main Content */}
-        <StickyBannerDemo />
+        {/* <StickyBannerDemo /> */}
         <main className="px-0 py-0 md:px-4 md:py-6 ">
           <div className="lg:flex lg:items-center xl:flex-row justify-around gap-8">
             {/* Hero Section */}
@@ -271,6 +272,9 @@ function HomePage() {
           })}
         </div>
       </nav> */}
+
+        {/* Telegram Chatbot floating widget */}
+        <TelegramChatBot />
       </div>
     </>
   );
