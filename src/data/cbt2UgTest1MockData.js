@@ -5,10 +5,10 @@ export const cbt2UgTest1MockData = {
   "subject": "RRB NTPC CBT-2 UG",
   "category": "RRB NTPC CBT-2 UG",
   "duration": 90,
-  "marksCorrect": 2,
-  "marksWrong": 0.5,
+  "marksCorrect": 1,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
-  "storageKey": "ExamRojgaar_CBT2_UG_TEST1",
+  "storageKey": "ExamRojgaar_cbt2UgTest1MockData",
   "questions": [
     {
       "id": 1,
