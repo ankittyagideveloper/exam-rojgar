@@ -160,7 +160,7 @@ export const mockData = {
                       duration: "13",
                       isSpecialMock: true,
                       route: "/mock-test/sangam",
-                    },
+                    }
                   ],
                 },
                 "medieval-history": {
@@ -326,7 +326,7 @@ export const mockData = {
                   duration: "5",
                   isSpecialMock: true,
                   route: "/mock-test/history-full-revision-test",
-                },
+                }
               ],
             },
             "polity": {
@@ -941,7 +941,21 @@ export const mockData = {
               name: "Full Length Test",
               slug: "full-length-test",
               description: "Full length mock tests for RRB NTPC exam preparation",
-              tests: [],
+              tests: [
+                {
+                      id: "cbt2-ug-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Cbt2 Ug Test 1 Mock Test",
+                      title: "Cbt2 Ug Test 1 - Mock Test",
+                      name: "Cbt2 Ug Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "120",
+                      marks: "120",
+                      duration: "90",
+                      isSpecialMock: true,
+                      route: "/mock-test/cbt2-ug-test-1",
+                },],
             },
             "revision-test": {
               id: "revision-test",
