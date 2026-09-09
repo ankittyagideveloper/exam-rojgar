@@ -514,7 +514,22 @@ export const mockData = {
                   name: "Indian Geography",
                   slug: "indian-geography",
                   description: "Indian Geography and Physical Features",
-                  tests: [],
+                  tests: [ 
+                     {
+                      id: "TransportationSystem-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "TransportationSystem Mock Test",
+                      title: "TransportationSystem - Mock Test",
+                      name: "TransportationSystem Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "20",
+                      marks: "20",
+                      duration: "10",
+                      isSpecialMock: true,
+                      route: "/mock-test/TransportationSystem",
+                    },
+                  ],
                 },
                 "environment": {
                   id: "environment",
@@ -977,20 +992,7 @@ export const mockData = {
                   route: "/mock-test/important-days-test-1",
                 },
               
-                    {
-                      id: "TransportationSystem-mock-test",
-                      image: "/rrb-ntpc.webp",
-                      alt: "TransportationSystem Mock Test",
-                      title: "TransportationSystem - Mock Test",
-                      name: "TransportationSystem Mock",
-                      difficulty: "Hard",
-                      languages: ["English", "Hindi"],
-                      questions: "20",
-                      marks: "20",
-                      duration: "10",
-                      isSpecialMock: true,
-                      route: "/mock-test/TransportationSystem",
-                    },
+                   
                   
                     {
                       id: "Sports-mock-test",
