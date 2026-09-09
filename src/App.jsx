@@ -90,6 +90,8 @@ import Cbt2UgTest1MockTestPage from "./pages/Cbt2UgTest1MockTestPage";
 import ImportantDaysTest1MockTestPage from "./pages/ImportantDaysTest1MockTestPage";
 import TrigonometryMockTestPage from "./pages/TrigonometryMockTestPage";
 import HeightMockTestPage from "./pages/HeightMockTestPage";
+import TransportationSystemMockTestPage from "./pages/TransportationSystemMockTestPage";
+import SportsMockTestPage from "./pages/SportsMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -378,6 +380,10 @@ const router = createBrowserRouter([
       { path: "Trigonometry", element: <TrigonometryMockTestPage /> },
     
       { path: "Height", element: <HeightMockTestPage /> },
+    
+      { path: "TransportationSystem", element: <TransportationSystemMockTestPage /> },
+    
+      { path: "Sports", element: <SportsMockTestPage /> },
     ],
   },
   {
