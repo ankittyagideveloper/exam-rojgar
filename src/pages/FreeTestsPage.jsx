@@ -79,7 +79,7 @@ const FreeTestsPage = () => {
       </div> */}
 
       {/* Breadcrumb (non-root) */}
-      {!isRoot && (
+      {/* {!isRoot && (
         <nav className="px-5 mb-2 flex items-center gap-1 text-xs text-gray-400">
           <button
             onClick={() => navigate("/free-tests")}
@@ -102,7 +102,7 @@ const FreeTestsPage = () => {
             );
           })}
         </nav>
-      )}
+      )} */}
 
       {/* Category / Subcategory cards */}
       {(isRoot || current?.subcategories) && (
