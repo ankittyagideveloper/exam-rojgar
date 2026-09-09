@@ -89,6 +89,10 @@ import MixtureAlligationTest2MockTestPage from "./pages/MixtureAlligationTest2Mo
 import LineAnglesTest1MockTestPage from "./pages/LineAnglesTest1MockTestPage";
 import Cbt2UgTest1MockTestPage from "./pages/Cbt2UgTest1MockTestPage";
 import ImportantDaysTest1MockTestPage from "./pages/ImportantDaysTest1MockTestPage";
+import TrigonometryMockTestPage from "./pages/TrigonometryMockTestPage";
+import HeightMockTestPage from "./pages/HeightMockTestPage";
+import TransportationSystemMockTestPage from "./pages/TransportationSystemMockTestPage";
+import SportsMockTestPage from "./pages/SportsMockTestPage";
 import CurrentAffairsPyqTest1MockTestPage from "./pages/CurrentAffairsPyqTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
@@ -382,8 +386,15 @@ const router = createBrowserRouter([
       { path: "cbt2-ug-test-1", element: <Cbt2UgTest1MockTestPage /> },
 
       { path: "important-days-test-1", element: <ImportantDaysTest1MockTestPage /> },
+    
+      { path: "Trigonometry", element: <TrigonometryMockTestPage /> },
+    
+      { path: "Height", element: <HeightMockTestPage /> },
+    
+      { path: "TransportationSystem", element: <TransportationSystemMockTestPage /> },
+    
+      { path: "Sports", element: <SportsMockTestPage /> },
 
-      { path: "current-affairs-pyq-test-1", element: <CurrentAffairsPyqTest1MockTestPage /> },
     ],
   },
   {
