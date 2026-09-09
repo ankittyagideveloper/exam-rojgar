@@ -69,6 +69,7 @@ import HostoryFullRevisionTestMockTestPage from "./pages/HostoryFullRevisionTest
 import TargetSeriesPage from "./pages/mentorship/Mentorship";
 import ModernHistoryExtremistPhaseMockTestPage from "./pages/ModernHistoryExtremistPhaseMockTestPage";
 import TestSeriesDemoPage from "./pages/TestSeriesDemoPage";
+import FreeTestsPage from "./pages/FreeTestsPage";
 
 
 //! Todo: Fix it 
@@ -88,6 +89,7 @@ import MixtureAlligationTest2MockTestPage from "./pages/MixtureAlligationTest2Mo
 import LineAnglesTest1MockTestPage from "./pages/LineAnglesTest1MockTestPage";
 import Cbt2UgTest1MockTestPage from "./pages/Cbt2UgTest1MockTestPage";
 import ImportantDaysTest1MockTestPage from "./pages/ImportantDaysTest1MockTestPage";
+import CurrentAffairsPyqTest1MockTestPage from "./pages/CurrentAffairsPyqTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -138,6 +140,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <Quiz />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "free-tests/*",
+        element: (
+          <ProtectedRoute>
+            <FreeTestsPage />
           </ProtectedRoute>
         ),
       },
@@ -358,20 +368,33 @@ const router = createBrowserRouter([
       { path: "geography-basics-test-1", element: <GeographyBasicsTest1MockTestPage /> },
 
       { path: "military-exercise-test-1", element: <MilitaryExerciseTest1MockTestPage /> },
-    
+
       { path: "president-governor-pm-test-1", element: <PresidentGovernorPmTest1MockTestPage /> },
-    
+
       { path: "state-legislature-panchayati-raj-test-1", element: <StateLegislaturePanchayatiRajTest1MockTestPage /> },
-    
+
       { path: "mixture-alligation-test-2", element: <MixtureAlligationTest2MockTestPage /> },
 
       { path: "revision-test-1-mock-test", element: <RevisionTest1MockTestPage /> },
-    
+
       { path: "line-angles-test-1", element: <LineAnglesTest1MockTestPage /> },
-    
+
       { path: "cbt2-ug-test-1", element: <Cbt2UgTest1MockTestPage /> },
-    
+
       { path: "important-days-test-1", element: <ImportantDaysTest1MockTestPage /> },
+
+      { path: "current-affairs-pyq-test-1", element: <CurrentAffairsPyqTest1MockTestPage /> },
+    ],
+  },
+  {
+    path: "/free-mock-test",
+    element: (
+      <ProtectedRoute>
+        <TestLayout />
+      </ProtectedRoute>
+    ),
+    children: [
+      { path: "current-affairs-pyq-2026-test-1", element: <CurrentAffairsPyqTest1MockTestPage /> },
     ],
   },
   {

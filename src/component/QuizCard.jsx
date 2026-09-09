@@ -33,11 +33,14 @@ export function QuizCard({
       <div className="md:hidden">
         {/* Badges */}
         <div className="flex gap-2 mb-3">
-          {isFree && (
-            <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
-              FREE
+            <span className={`${
+              isFree
+                ? 'bg-green-500 text-white'
+                : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
+            } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
+              {isFree ? 'FREE' : '⭐ Premium'}
             </span>
-          )}
+          
           {isNewInterface && (
             <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
               NEW INTERFACE
@@ -98,11 +101,13 @@ export function QuizCard({
           <div className="flex-1">
             {/* Badges */}
             <div className="flex gap-2 mb-3">
-              {isFree && (
-                <span className="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                  FREE
-                </span>
-              )}
+              <span className={`${
+                isFree
+                  ? 'bg-green-500 text-white'
+                  : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
+              } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
+                {isFree ? 'FREE' : '⭐ Premium'}
+              </span>
               {isNewInterface && (
                 <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
                   NEW INTERFACE

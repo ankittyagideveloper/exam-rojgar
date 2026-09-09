@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, FileText, HelpCircle, FileDown, BookOpen, Target } from "lucide-react";
+import { Home, FileText, HelpCircle, FileDown, BookOpen, Target, Flame } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
@@ -19,12 +19,18 @@ const BottomNavigation = () => {
     },
     { id: "mentor", label: t("mentorBtn"), icon: Target, path: "/target-series", isfeatured: true },
     { id: "courses", label: t("coursesBtn"), icon: BookOpen, path: "/learn" },
-
     {
       id: "quiz",
       label: t("quizBtn"),
       icon: HelpCircle,
       path: "/quiz-category",
+    },
+    {
+      id: "free-tests",
+      label: t("freeTestsBtn"),
+      icon: Flame,
+      path: "/free-tests",
+      isnew: true,
     },
     // { id: "pdfs", label: t(["pdfBtn"]), icon: FileDown, path: "/pdf-category" },
 
@@ -70,7 +76,12 @@ const BottomNavigation = () => {
             }
 
             return (
-              <Link to={item.path} key={item.id}>
+              <Link to={item.path} key={item.id} className="relative">
+                {item.isnew && !active && (
+                  <span className="absolute -top-0.5 -right-1 z-10 bg-green-500 text-white text-[8px] font-bold px-1 py-0.5 rounded-full leading-none uppercase">
+                    New
+                  </span>
+                )}
                 <button
                   className={`cursor-pointer flex flex-col items-center py-2 px-2 xs:px-3 rounded-lg transition-colors ${active
                       ? "text-[#2279be]"
@@ -79,11 +90,11 @@ const BottomNavigation = () => {
                 >
                   <Icon
                     size={22}
-                    color={active ? "#2279be" : "#6a7282"}
+                    color={active ? "#2279be" : item.isnew ? "#16a34a" : "#6a7282"}
                     className="mb-1"
                   />
                   <span
-                    className={`text-[10px] xs:text-xs font-medium leading-tight ${active ? "text-[#2279be]" : "text-gray-500 dark:text-gray-400"
+                    className={`text-[10px] xs:text-xs font-medium leading-tight ${active ? "text-[#2279be]" : item.isnew ? "text-green-600 dark:text-green-400" : "text-gray-500 dark:text-gray-400"
                       }`}
                   >
                     {item.label}

@@ -21,6 +21,8 @@ import {
   IconBookFilled,
   IconTarget,
   IconTargetArrow,
+  IconFlame,
+  IconFlameFilled,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "./utils/utils";
@@ -122,6 +124,20 @@ export default function SidebarDemo({ children }) {
             } h-5 w-5 shrink-0 dark:text-neutral-200`}
         />
       ),
+      role: ["user", "admin"],
+    },
+    {
+      label: t("freeTestsBtn"),
+      href: "/free-tests",
+      icon: isActive("/free-tests") ? (
+        <IconFlameFilled
+          className={`${isActive("/free-tests") ? "text-green-500" : ""
+            } h-5 w-5 shrink-0 dark:text-neutral-200`}
+        />
+      ) : (
+        <IconFlame className="h-5 w-5 shrink-0 dark:text-neutral-200" />
+      ),
+      isFeatured: true,
       role: ["user", "admin"],
     },
     {
