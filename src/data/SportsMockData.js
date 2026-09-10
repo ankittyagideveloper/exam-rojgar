@@ -1,14 +1,14 @@
 export const SportsMockData = {
-  "paperName": "Current affairs",
+  "paperName": "Sports Day Current affairs",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
   "subject": "Sports",
-  "category": "Sports",
+  "category": "Current Affairs",
   "duration": 6,
-  "marksCorrect": 2,
-  "marksWrong": 0.5,
+  "marksCorrect": 1,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
-  "storageKey": "ExamRojgaar_history",
+  "storageKey": "ExamRojgaar_SportsMockData",
   "questions": [
     {
       "id": 1,

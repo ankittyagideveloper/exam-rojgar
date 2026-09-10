@@ -164,7 +164,7 @@ const Quiz = () => {
               }
               duration={test.durationMinutes}
               languages={test.languages ?? []}
-              isFree={true}
+              isFree={false}
               isNewInterface={true}
               onStartClick={(islastAttempt) => handleTest(test, islastAttempt)}
               attemptStatus={attemptMap[test.id]?.status || "NOT_STARTED"}

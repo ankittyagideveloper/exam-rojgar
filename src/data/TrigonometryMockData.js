@@ -1,14 +1,14 @@
 export const TrigonometryMockData = {
-  "paperName": "Mock Test",
+  "paperName": "Trigonometry",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "subject": "General Studies",
-  "category": "General Studies",
+  "subject": "Advance Maths",
+  "category": "Advance Maths",
   "duration": 20,
-  "marksCorrect": 2,
-  "marksWrong": 0.5,
+  "marksCorrect": 1,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
-  "storageKey": "ExamRojgaar_Trigonometry",
+  "storageKey": "ExamRojgaar_TrigonometryMockData",
   "questions": [
     {
       "id": 1,

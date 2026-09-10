@@ -452,7 +452,7 @@ const TestPage = () => {
               duration={test.duration}
               languages={test.languages ?? []}
               userCount="45.8k"
-              isFree={true}
+              isFree={false}
               isNewInterface={true}
               isPaid={isPaid}
               onStartClick={() => {
