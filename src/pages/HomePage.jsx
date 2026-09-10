@@ -109,26 +109,26 @@ function HomePage() {
             <div className="hidden lg:flex flex-col mb-8 max-w-sm  px-4">
               {currentLanguage === "en" ? (
                 <>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-2">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-black mb-2">
                     Crack your <span className="text-[#1272ba]">goal</span>
                   </h2>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-black mb-4">
                     with <span className="text-[#1272ba]">Exam Rojgaar</span>
                     <br />Test Series
                   </h3>
                 </>
               ) : (
                 <>
-                  <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                  <h2 className="text-3xl font-bold text-gray-800 dark:text-black mb-2">
                     <span className="text-[#1272ba]">Exam Rojgaar</span>
                   </h2>
-                  <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
+                  <h3 className="text-3xl font-bold text-gray-800 dark:text-black mb-4">
                     टेस्ट सीरीज़ के साथ <br />
                     अपना <span className="text-[#1272ba]">लक्ष्य</span> हासिल करें
                   </h3>
                 </>
               )}
-              <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed mb-6">
+              <p className="text-gray-600  text-base leading-relaxed mb-6 dark:text-black">
                 {t("tagLine")}
               </p>
               <Link
@@ -189,7 +189,7 @@ function HomePage() {
           
           <VideoPlayer />
 
-          <div className="px-4 md:px-10 text-xl md:text-4xl  text-black dark:text-white">
+          <div className="px-4 md:px-10 text-xl md:text-4xl  text-black dark:text-black">
             See what our <br class="inline-block md:hidden"/>students tell
             about us 💕
           </div>
