@@ -16,6 +16,7 @@ document.body.appendChild(toastContainer);
 const toastRoot = createRoot(toastContainer);
 
 registerSW({
+  immediate: true,
   onNeedRefresh(updateSW) {
     const dismiss = () => toastRoot.render(null);
     toastRoot.render(
