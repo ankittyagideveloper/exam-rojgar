@@ -231,7 +231,7 @@ function main() {
   const dataFileName = `${camel}MockData.js`;
   const pageComponentName = `${pascal}MockTestPage`;
   const pageFileName = `${pageComponentName}.jsx`;
-  const storageKey = htmlStorageKey || `ExamRojgaar_${camel}`;
+  const storageKey = htmlStorageKey || `ExamRojgaar_${pageComponentName}`;
 
   console.log(`\n📄 HTML file  : ${args[0]}`);
   console.log(`🔗 Route name : ${routeName}`);
