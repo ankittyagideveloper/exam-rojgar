@@ -21,7 +21,11 @@ registerSW({
     const dismiss = () => toastRoot.render(null);
     toastRoot.render(
       <UpdateToast
-        onUpdate={() => updateSW(true)}
+        onUpdate={() => {
+          dismiss();
+          updateSW(true);
+          window.location.reload();
+        }}
         onDismiss={dismiss}
       />
     );
