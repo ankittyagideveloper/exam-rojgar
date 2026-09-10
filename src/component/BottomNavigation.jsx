@@ -20,12 +20,6 @@ const BottomNavigation = () => {
     { id: "mentor", label: t("mentorBtn"), icon: Target, path: "/target-series", isfeatured: true },
     { id: "courses", label: t("coursesBtn"), icon: BookOpen, path: "/learn" },
     {
-      id: "quiz",
-      label: t("quizBtn"),
-      icon: HelpCircle,
-      path: "/quiz-category",
-    },
-    {
       id: "free-tests",
       label: t("freeTestsBtn"),
       icon: Flame,
