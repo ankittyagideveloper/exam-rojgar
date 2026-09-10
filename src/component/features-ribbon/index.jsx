@@ -232,7 +232,7 @@ export default function FeaturesRibbon() {
     {
       label: t("gk_ca"),
       icon: "article",
-      href: "/online-test-series/rrb/rrb-ntpc",
+      href: "/free-tests/current-affairs",
       bgColor: "bg-blue-100",
     },
   ];
