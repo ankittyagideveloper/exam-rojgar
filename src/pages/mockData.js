@@ -269,7 +269,7 @@ export const mockData = {
                       marks: "30",
                       duration: "3",
                       isSpecialMock: true,
-                      route: "/mock-test/rajput-and-triPartite",
+                      route: "/mock-test/MedievalHistoryRajputAndTriPartite",
                     },
                   ],
                 },

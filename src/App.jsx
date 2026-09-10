@@ -395,7 +395,7 @@ const router = createBrowserRouter([
       { path: "TransportationSystem", element: <TransportationSystemMockTestPage /> },
     
       { path: "Sports", element: <SportsMockTestPage /> },
-      { path: "rajput-and-triPartite", element: <MedievalHistoryRajputAndTriPartiteMockTestPage /> },
+      { path: "MedievalHistoryRajputAndTriPartite", element: <MedievalHistoryRajputAndTriPartiteMockTestPage /> },
     ],
   },
   {
