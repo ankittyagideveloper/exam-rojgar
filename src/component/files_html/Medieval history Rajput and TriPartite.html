@@ -1,0 +1,2172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+
+        /* Previous Attempts modal styling from Source.html */
+        .diamond-border {
+            border: 1px solid rgba(255, 243, 199, 0.3);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+        }
+        .fade-in { animation: fadeInHistory 0.4s ease-in-out; }
+        @keyframes fadeInHistory { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+        /* Compact real-test viewport: slightly smaller framed exam area on desktop */
+        @media (min-width: 768px) {
+            #mock-screen {
+                width: 96vw !important;
+                height: 88vh !important;
+                margin: auto !important;
+                border: 1px solid #b8c2cc;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+                border-radius: 2px;
+            }
+            #mock-screen > div:first-child {
+                padding-top: 6px !important;
+                padding-bottom: 6px !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto {
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+        }
+        /* Keep the question viewport compact so long questions/options scroll inside the pane */
+        @media (min-width: 768px) {
+            #mock-screen .flex-1.overflow-y-auto {
+                min-height: 0 !important;
+                overflow-y: auto !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto::-webkit-scrollbar {
+                width: 8px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #mock-screen {
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="min-h-screen bg-[#e4e9f0] flex flex-col font-sans text-[13px]">
+        <!-- Topmost Banner JAY SHREE RAM -->
+        <div class="bg-black text-center py-1 border-b border-gray-700 shadow-sm">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6c27a] via-[#ffeba8] to-[#c5a030] font-bold text-[16px] drop-shadow-md tracking-widest">
+                🚩 कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। 🚩
+            </span>
+        </div>
+ 
+        <!-- Railway Header -->
+        <div class="bg-[#1e5086] text-white flex justify-between items-center p-2 md:px-6 shadow-md border-b-[5px] border-[#3a78c4]">
+            <div class="flex items-center gap-3">
+                <div class="w-28 h-28 bg-white rounded-md flex items-center justify-center font-bold text-[#1e5086] border-2 border-[#e6c27a] shadow-inner text-xs text-center leading-tight">
+                    ExamRojgaar<br>Mocks
+                </div>
+                <div class="text-lg md:text-2xl font-bold tracking-wide uppercase">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            </div>
+            <div class="hidden md:flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[11px] text-gray-300">System Name:</div>
+                    <div class="font-bold text-sm">C001</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden p-2 gap-2">
+            <!-- Left Instructions Panel -->
+            <div class="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden">
+                <div class="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400">
+                    Instructions
+                </div>
+                <div class="p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px] custom-scrollbar">
+                    <h4 class="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
+                    
+                    <p class="font-bold mb-2"><u>General Instructions:</u></p>
+                    <ol class="list-decimal pl-5 space-y-3 mb-6">
+                        <li>Total duration of the examination is <b>03 minutes</b>.</li>
+                        <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                        <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:
+                            <ul class="list-none pl-2 mt-3 space-y-3 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#f1f5f9] border border-[#cbd5e1] rounded flex items-center justify-center font-bold shadow-sm text-gray-600">1</div> You have not visited the question yet.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#ef4444] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">3</div> You have not answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#22c55e] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">5</div> You have answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm">7</div> You have NOT answered the question, but have marked the question for review.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm relative">9<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div></div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
+                            </ul>
+                        </li>
+                        <li>You can click on the ">" arrow which appears to the left of question palette to collapse the question palette thereby maximizing the question window.</li>
+                    </ol>
+ 
+                    <p class="font-bold mb-2"><u>Navigating to a Question:</u></p>
+                    <ol class="list-decimal pl-5 space-y-2 mb-6" start="5">
+                        <li>To answer a question, do the following:
+                            <ul class="list-[lower-alpha] pl-5 mt-1 space-y-1">
+                                <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
+                                <li>Click on <b>Save & Next</b> to save your answer for the current question and then go to the next question.</li>
+                                <li>Click on <b>Mark for Review & Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+ 
+            <!-- Right Profile & Custom Options Panel -->
+            <div class="flex-[1.2] flex flex-col gap-2 min-w-[280px] overflow-auto">
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
+                    <div class="w-24 h-28 border-2 border-gray-400 bg-white flex items-center justify-center mb-4 shadow-inner overflow-hidden">
+                        <i class="fas fa-user text-5xl text-gray-300"></i>
+                    </div>
+                    <div class="w-full text-[13px] space-y-2">
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Paper Name:</span>
+                            <span class="text-right text-[#1e5086] font-bold truncate ml-2" id="paper-name-display">History</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Subject:</span>
+                            <span class="text-right text-gray-800 font-bold truncate ml-2" id="subject-display">Medieval History</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Duration:</span>
+                            <span class="text-right text-[#1e5086] font-bold">12 Mins</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Date:</span>
+                            <span class="text-right text-gray-800 font-bold" id="current-date-display"></span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex-1 flex flex-col">
+                    <div class="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-4">Candidate Details</div>
+                    
+                    <div class="space-y-4 flex-1">
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Enter Your Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="candidate-name" class="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]" placeholder="e.g. Ankit Tyagi">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Are you a ExamRojgaar mock group member?</label>
+                            <div class="flex gap-6 text-[13px] mt-1 bg-white p-2 border border-gray-300">
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="Yes" class="accent-[#1e5086] w-3.5 h-3.5"> Yes</label>
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="No" checked class="accent-[#1e5086] w-3.5 h-3.5"> No</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="mt-4 space-y-2 border-t border-gray-400 pt-4">
+                        <button onclick="openHistoryDashboard()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            View Previous Attempts <i class="fas fa-history text-[#1e5086]"></i>
+                        </button>
+                        <button onclick="openSavedQuestionsModal()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            Saved Questions Section <i class="fas fa-bookmark text-[#1e5086]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Bottom Action Bar -->
+        <div class="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+            <div class="flex-1 w-full text-[13px]">
+                <div class="mb-2 flex items-center gap-2 bg-white inline-block p-1.5 border border-gray-300 shadow-sm rounded-sm">
+                    <span class="text-red-600 font-bold">Choose your default language:</span>
+                    <select id="default-lang-select" class="ml-2 border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold" onchange="setGlobalLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2 mt-1">
+                    <input type="checkbox" id="declaration-check" class="mt-1 w-4 h-4 cursor-pointer">
+                    <label for="declaration-check" class="text-gray-800 cursor-pointer font-medium leading-snug">
+                        I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree that in case of not adhering to the instructions, I will be disqualified.
+                    </label>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-center">
+                <button onclick="validateAndStart()" class="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded-[2px] text-[15px] shadow-sm whitespace-nowrap transition-colors w-full md:w-auto uppercase tracking-wide">
+                    I am ready to begin
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SAVED QUESTIONS MODAL -->
+    <div id="saved-questions-modal" class="hidden fixed inset-0 z-[10006] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-4 relative">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-bookmark mr-2 text-amber-400"></i> Saved Questions Repository</h2>
+                <div class="flex gap-4">
+                    <button onclick="clearAllSavedQuestions()" class="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition shadow-md"><i class="fas fa-trash-alt mr-1"></i> Clear All</button>
+                    <button onclick="closeSavedQuestionsModal()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="saved-questions-list" class="space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- HISTORY DASHBOARD MODAL -->
+    <div id="history-modal" class="hidden fixed inset-0 z-[10005] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-10">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-history mr-2"></i> Previous Attempts</h2>
+                <button onclick="closeHistoryDashboard()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-list" class="space-y-4"></div>
+        </div>
+    </div>
+ 
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">03:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <button id="save-question-btn" onclick="toggleSaveQuestion()" class="px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300">
+                            <i id="save-question-icon" class="far fa-star text-gray-400"></i> <span id="save-question-label">Save Question</span>
+                        </button>
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +2.0, -0.5</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="history-result-back" onclick="returnFromHistory()" class="hidden px-4 py-2 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded-lg text-sm font-semibold transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Home
+                    </button>
+                    <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                        <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                        <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <!-- Test Details: displayed above Mentor Review -->
+                <div id="result-attempt-details" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-5 mb-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="border-l-4 border-blue-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Paper Name</div>
+                            <div id="res-paper-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Subject</div>
+                            <div id="res-subject" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-emerald-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Candidate Name</div>
+                            <div id="res-candidate-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Date</div>
+                            <div id="res-date" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">Student Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Rank among <span id="res-participant-count">--</span> students</div>
+                    <div class="text-[11px] text-blue-200/80 mt-1">Based on best recorded score per student on this device</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 3 * 60; // 10 minutes in seconds
+
+const rawData = [
+  {
+    "id": 1,
+    "eng": "Who is regarded as the founder of the Gurjara-Pratihara dynasty?",
+    "hin": "गुर्जर-प्रतिहार वंश का संस्थापक किसे माना जाता है?",
+    "optE": [
+      "Nagabhata I",
+      "Mihir Bhoja",
+      "Vatsaraja",
+      "Mahendrapala I"
+    ],
+    "optH": [
+      "नागभट्ट प्रथम",
+      "मिहिर भोज",
+      "वत्सराज",
+      "महेन्द्रपाल प्रथम"
+    ],
+    "ans": 0,
+    "solE": "Nagabhata I is regarded as the founder of the Gurjara-Pratihara dynasty. He successfully resisted Arab invasions in western India.",
+    "solH": "नागभट्ट प्रथम को गुर्जर-प्रतिहार वंश का संस्थापक माना जाता है। उसने पश्चिमी भारत में अरब आक्रमणों का सफलतापूर्वक प्रतिरोध किया।"
+  },
+  {
+    "id": 2,
+    "eng": "Who was the most famous ruler of the Gurjara-Pratihara dynasty?",
+    "hin": "गुर्जर-प्रतिहार वंश का सबसे प्रसिद्ध शासक कौन था?",
+    "optE": [
+      "Nagabhata I",
+      "Mihir Bhoja",
+      "Rajyapala",
+      "Devapala"
+    ],
+    "optH": [
+      "नागभट्ट प्रथम",
+      "मिहिर भोज",
+      "राज्यपाल",
+      "देवपाल"
+    ],
+    "ans": 1,
+    "solE": "Mihir Bhoja, also known as Bhoja I, was one of the greatest rulers of the Gurjara-Pratihara dynasty. He assumed the title Adivaraha.",
+    "solH": "मिहिर भोज, जिसे भोज प्रथम भी कहा जाता है, गुर्जर-प्रतिहार वंश के महानतम शासकों में से एक था। उसने आदिवराह की उपाधि धारण की।"
+  },
+  {
+    "id": 3,
+    "eng": "Which ruler of the Gurjara-Pratihara dynasty assumed the title 'Adivaraha'?",
+    "hin": "गुर्जर-प्रतिहार वंश के किस शासक ने 'आदिवराह' की उपाधि धारण की?",
+    "optE": [
+      "Nagabhata I",
+      "Vatsaraja",
+      "Mihir Bhoja",
+      "Mahendrapala I"
+    ],
+    "optH": [
+      "नागभट्ट प्रथम",
+      "वत्सराज",
+      "मिहिर भोज",
+      "महेन्द्रपाल प्रथम"
+    ],
+    "ans": 2,
+    "solE": "Mihir Bhoja assumed the title Adivaraha. His coins also contain representations associated with Varaha.",
+    "solH": "मिहिर भोज ने आदिवराह की उपाधि धारण की। उसके सिक्कों पर वराह से संबंधित चित्र भी मिलते हैं।"
+  },
+  {
+    "id": 4,
+    "eng": "Which city became the capital of the Gurjara-Pratiharas under Nagabhata II?",
+    "hin": "नागभट्ट द्वितीय के शासन में गुर्जर-प्रतिहारों की राजधानी कौन-सी बनी?",
+    "optE": [
+      "Kannauj",
+      "Ujjain",
+      "Ajmer",
+      "Delhi"
+    ],
+    "optH": [
+      "कन्नौज",
+      "उज्जैन",
+      "अजमेर",
+      "दिल्ली"
+    ],
+    "ans": 0,
+    "solE": "Nagabhata II captured Kannauj and made it an important political centre of the Gurjara-Pratiharas.",
+    "solH": "नागभट्ट द्वितीय ने कन्नौज पर अधिकार किया और इसे गुर्जर-प्रतिहारों का महत्वपूर्ण राजनीतिक केंद्र बनाया।"
+  },
+  {
+    "id": 5,
+    "eng": "The tripartite struggle for Kannauj was mainly fought among which three powers?",
+    "hin": "कन्नौज के लिए त्रिपक्षीय संघर्ष मुख्य रूप से किन तीन शक्तियों के बीच हुआ था?",
+    "optE": [
+      "Cholas, Cheras and Pandyas",
+      "Palas, Pratiharas and Rashtrakutas",
+      "Chalukyas, Cholas and Pallavas",
+      "Chandelas, Chauhans and Paramaras"
+    ],
+    "optH": [
+      "चोल, चेर और पांड्य",
+      "पाल, प्रतिहार और राष्ट्रकूट",
+      "चालुक्य, चोल और पल्लव",
+      "चंदेल, चौहान और परमार"
+    ],
+    "ans": 1,
+    "solE": "The tripartite struggle for Kannauj was fought mainly among the Palas of Bengal, Gurjara-Pratiharas of western India and Rashtrakutas of the Deccan.",
+    "solH": "कन्नौज के लिए त्रिपक्षीय संघर्ष मुख्य रूप से बंगाल के पाल, पश्चिमी भारत के गुर्जर-प्रतिहार और दक्कन के राष्ट्रकूटों के बीच हुआ।"
+  },
+  {
+    "id": 6,
+    "eng": "Who founded the Chandela dynasty of Jejakabhukti?",
+    "hin": "जेजाकभुक्ति के चंदेल वंश की स्थापना किसने की?",
+    "optE": [
+      "Nannuka",
+      "Yashovarman",
+      "Dhanga",
+      "Vidyadhara"
+    ],
+    "optH": [
+      "नन्नुक",
+      "यशोवर्मन",
+      "धंग",
+      "विद्याधर"
+    ],
+    "ans": 0,
+    "solE": "Nannuka, also known as Nannuk Chandela, is regarded as the founder of the Chandela dynasty of Jejakabhukti.",
+    "solH": "नन्नुक, जिसे नन्नुक चंदेल भी कहा जाता है, जेजाकभुक्ति के चंदेल वंश का संस्थापक माना जाता है।"
+  },
+  {
+    "id": 7,
+    "eng": "Which ruler of the Chandelas is associated with the construction of several temples at Khajuraho?",
+    "hin": "चंदेल वंश के किस शासक के समय खजुराहो में कई मंदिरों के निर्माण से संबंधित गतिविधियाँ हुईं?",
+    "optE": [
+      "Dhanga",
+      "Nannuka",
+      "Harsha",
+      "Paramardi"
+    ],
+    "optH": [
+      "धंग",
+      "नन्नुक",
+      "हर्ष",
+      "परमर्दिदेव"
+    ],
+    "ans": 0,
+    "solE": "Dhanga was an important Chandela ruler and is associated with the development of the Khajuraho temple complex.",
+    "solH": "धंग एक महत्वपूर्ण चंदेल शासक था और खजुराहो मंदिर परिसर के विकास से उसका संबंध माना जाता है।"
+  },
+  {
+    "id": 8,
+    "eng": "The famous Kandariya Mahadeva Temple is located at which place?",
+    "hin": "प्रसिद्ध कंदरिया महादेव मंदिर कहाँ स्थित है?",
+    "optE": [
+      "Khajuraho",
+      "Konark",
+      "Mount Abu",
+      "Chittorgarh"
+    ],
+    "optH": [
+      "खजुराहो",
+      "कोणार्क",
+      "माउंट आबू",
+      "चित्तौड़गढ़"
+    ],
+    "ans": 0,
+    "solE": "The Kandariya Mahadeva Temple is one of the most famous temples of the Khajuraho group, built under the Chandela rulers.",
+    "solH": "कंदरिया महादेव मंदिर खजुराहो समूह के सबसे प्रसिद्ध मंदिरों में से एक है, जिसका निर्माण चंदेल शासकों के काल में हुआ।"
+  },
+  {
+    "id": 9,
+    "eng": "Who was the famous Chandela ruler who faced Mahmud of Ghazni?",
+    "hin": "मह्मूद गजनवी का सामना करने वाला प्रसिद्ध चंदेल शासक कौन था?",
+    "optE": [
+      "Vidyadhara",
+      "Dhanga",
+      "Nannuka",
+      "Paramardi"
+    ],
+    "optH": [
+      "विद्याधर",
+      "धंग",
+      "नन्नुक",
+      "परमर्दिदेव"
+    ],
+    "ans": 0,
+    "solE": "Vidyadhara was a powerful Chandela ruler who faced Mahmud of Ghazni.",
+    "solH": "विद्याधर एक शक्तिशाली चंदेल शासक था जिसने महमूद गजनवी का सामना किया था।"
+  },
+  {
+    "id": 10,
+    "eng": "Who was the ruler of the Chahamanas (Chauhans) who fought against Muhammad Ghori in the First Battle of Tarain?",
+    "hin": "चाहमान (चौहान) वंश का वह शासक कौन था जिसने तराइन के प्रथम युद्ध में मुहम्मद गोरी से युद्ध किया?",
+    "optE": [
+      "Prithviraja III",
+      "Vigraharaja IV",
+      "Ajayaraja",
+      "Simharaja"
+    ],
+    "optH": [
+      "पृथ्वीराज तृतीय",
+      "विग्रहराज चतुर्थ",
+      "अजयराज",
+      "सिंहराज"
+    ],
+    "ans": 0,
+    "solE": "Prithviraja III, popularly known as Prithviraj Chauhan, defeated Muhammad Ghori in the First Battle of Tarain in 1191 CE.",
+    "solH": "पृथ्वीराज तृतीय, जिन्हें लोकप्रिय रूप से पृथ्वीराज चौहान कहा जाता है, ने 1191 ई. में तराइन के प्रथम युद्ध में मुहम्मद गोरी को हराया था।"
+  },
+  {
+    "id": 11,
+    "eng": "The Second Battle of Tarain (1192 CE) was fought between Prithviraja III and whom?",
+    "hin": "तराइन का द्वितीय युद्ध (1192 ई.) पृथ्वीराज तृतीय और किसके बीच लड़ा गया था?",
+    "optE": [
+      "Mahmud of Ghazni",
+      "Muhammad Ghori",
+      "Qutb-ud-din Aibak",
+      "Iltutmish"
+    ],
+    "optH": [
+      "महमूद गजनवी",
+      "मुहम्मद गोरी",
+      "कुतुबुद्दीन ऐबक",
+      "इल्तुतमिश"
+    ],
+    "ans": 1,
+    "solE": "The Second Battle of Tarain was fought in 1192 CE between Prithviraja III and Muhammad Ghori. Muhammad Ghori won the battle.",
+    "solH": "तराइन का द्वितीय युद्ध 1192 ई. में पृथ्वीराज तृतीय और मुहम्मद गोरी के बीच हुआ। इस युद्ध में मुहम्मद गोरी विजयी हुआ।"
+  },
+  {
+    "id": 12,
+    "eng": "Who wrote the famous medieval literary work 'Prithviraj Raso'?",
+    "hin": "प्रसिद्ध मध्यकालीन साहित्यिक ग्रंथ 'पृथ्वीराज रासो' की रचना किसने की?",
+    "optE": [
+      "Kalhana",
+      "Chand Bardai",
+      "Banabhatta",
+      "Jayadeva"
+    ],
+    "optH": [
+      "कल्हण",
+      "चंद बरदाई",
+      "बाणभट्ट",
+      "जयदेव"
+    ],
+    "ans": 1,
+    "solE": "Prithviraj Raso is traditionally attributed to Chand Bardai, who is described as the court poet of Prithviraja III.",
+    "solH": "पृथ्वीराज रासो की रचना परंपरागत रूप से चंद बरदाई को दी जाती है, जिन्हें पृथ्वीराज तृतीय का दरबारी कवि माना जाता है।"
+  },
+  {
+    "id": 13,
+    "eng": "Which Rajput dynasty ruled from Ajmer and Delhi and is associated with Prithviraja III?",
+    "hin": "किस राजपूत वंश ने अजमेर और दिल्ली से शासन किया तथा जिसका संबंध पृथ्वीराज तृतीय से है?",
+    "optE": [
+      "Chahamanas",
+      "Paramaras",
+      "Chandelas",
+      "Guhilas"
+    ],
+    "optH": [
+      "चाहमान",
+      "परमार",
+      "चंदेल",
+      "गुहिल"
+    ],
+    "ans": 0,
+    "solE": "The Chahamanas, commonly called Chauhans, ruled important territories including Ajmer and Delhi. Prithviraja III was their most famous ruler.",
+    "solH": "चाहमान, जिन्हें सामान्यतः चौहान कहा जाता है, ने अजमेर और दिल्ली सहित महत्वपूर्ण क्षेत्रों पर शासन किया। पृथ्वीराज तृतीय उनका सबसे प्रसिद्ध शासक था।"
+  },
+  {
+    "id": 14,
+    "eng": "Who founded the Paramara dynasty of Malwa?",
+    "hin": "मालवा के परमार वंश की स्थापना किसने की?",
+    "optE": [
+      "Bhoja",
+      "Upendra",
+      "Munja",
+      "Vakpati"
+    ],
+    "optH": [
+      "भोज",
+      "उपेन्द्र",
+      "मुंज",
+      "वाक्पति"
+    ],
+    "ans": 1,
+    "solE": "Upendra, also known as Krishnaraja, is traditionally regarded as the founder of the Paramara dynasty of Malwa.",
+    "solH": "उपेन्द्र, जिन्हें कृष्णराज भी कहा जाता है, को परंपरागत रूप से मालवा के परमार वंश का संस्थापक माना जाता है।"
+  },
+  {
+    "id": 15,
+    "eng": "Who was the most famous ruler of the Paramara dynasty of Malwa?",
+    "hin": "मालवा के परमार वंश का सबसे प्रसिद्ध शासक कौन था?",
+    "optE": [
+      "Bhoja",
+      "Upendra",
+      "Sindhuraja",
+      "Mahipala"
+    ],
+    "optH": [
+      "भोज",
+      "उपेन्द्र",
+      "सिंधुराज",
+      "महिपाल"
+    ],
+    "ans": 0,
+    "solE": "King Bhoja was the most famous ruler of the Paramara dynasty. He was known as a patron of learning, literature and architecture.",
+    "solH": "राजा भोज परमार वंश का सबसे प्रसिद्ध शासक था। वह शिक्षा, साहित्य और स्थापत्य कला के संरक्षक के रूप में प्रसिद्ध था।"
+  },
+  {
+    "id": 16,
+    "eng": "Which city was the capital of the Paramara kingdom under Raja Bhoja?",
+    "hin": "राजा भोज के समय परमार राज्य की राजधानी कौन-सी थी?",
+    "optE": [
+      "Dhar",
+      "Ajmer",
+      "Kannauj",
+      "Anhilwara"
+    ],
+    "optH": [
+      "धार",
+      "अजमेर",
+      "कन्नौज",
+      "अन्हिलवाड़ा"
+    ],
+    "ans": 0,
+    "solE": "Dhar was the capital of the Paramaras of Malwa and became an important centre of learning under Raja Bhoja.",
+    "solH": "धार मालवा के परमारों की राजधानी थी और राजा भोज के समय यह शिक्षा का महत्वपूर्ण केंद्र बन गया।"
+  },
+  {
+    "id": 17,
+    "eng": "Which of the following books is traditionally associated with Raja Bhoja?",
+    "hin": "निम्नलिखित में से कौन-सा ग्रंथ परंपरागत रूप से राजा भोज से संबंधित है?",
+    "optE": [
+      "Rajatarangini",
+      "Samarangana Sutradhara",
+      "Prithviraj Raso",
+      "Rajendra Charita"
+    ],
+    "optH": [
+      "राजतरंगिणी",
+      "समरांगण सूत्रधार",
+      "पृथ्वीराज रासो",
+      "राजेन्द्र चरित"
+    ],
+    "ans": 1,
+    "solE": "Samarangana Sutradhara is traditionally attributed to Raja Bhoja and deals with architecture and related subjects.",
+    "solH": "समरांगण सूत्रधार की रचना परंपरागत रूप से राजा भोज को दी जाती है और इसमें स्थापत्य तथा संबंधित विषयों का वर्णन है।"
+  },
+  {
+    "id": 18,
+    "eng": "Who founded the Solanki (Chaulukya) dynasty of Gujarat?",
+    "hin": "गुजरात के सोलंकी (चालुक्य) वंश की स्थापना किसने की?",
+    "optE": [
+      "Mularaja I",
+      "Siddharaja Jayasimha",
+      "Kumarapala",
+      "Bhima I"
+    ],
+    "optH": [
+      "मूलराज प्रथम",
+      "सिद्धराज जयसिंह",
+      "कुमारपाल",
+      "भीम प्रथम"
+    ],
+    "ans": 0,
+    "solE": "Mularaja I is regarded as the founder of the Chaulukya or Solanki dynasty of Gujarat.",
+    "solH": "मूलराज प्रथम को गुजरात के चालुक्य या सोलंकी वंश का संस्थापक माना जाता है।"
+  },
+  {
+    "id": 19,
+    "eng": "What was the capital of the Solanki rulers of Gujarat?",
+    "hin": "गुजरात के सोलंकी शासकों की राजधानी क्या थी?",
+    "optE": [
+      "Anhilwara",
+      "Dhar",
+      "Ajmer",
+      "Chittor"
+    ],
+    "optH": [
+      "अन्हिलवाड़ा",
+      "धार",
+      "अजमेर",
+      "चित्तौड़"
+    ],
+    "ans": 0,
+    "solE": "Anhilwara, also known as Patan, was the capital of the Solanki (Chaulukya) rulers of Gujarat.",
+    "solH": "अन्हिलवाड़ा, जिसे पाटण भी कहा जाता है, गुजरात के सोलंकी (चालुक्य) शासकों की राजधानी थी।"
+  },
+  {
+    "id": 20,
+    "eng": "Which Rajput ruler is associated with the construction of the Sun Temple at Modhera?",
+    "hin": "मोढेरा के सूर्य मंदिर के निर्माण से किस राजपूत शासक का संबंध है?",
+    "optE": [
+      "Siddharaja Jayasimha",
+      "Bhima I",
+      "Kumarapala",
+      "Mularaja I"
+    ],
+    "optH": [
+      "सिद्धराज जयसिंह",
+      "भीम प्रथम",
+      "कुमारपाल",
+      "मूलराज प्रथम"
+    ],
+    "ans": 1,
+    "solE": "The famous Sun Temple at Modhera in Gujarat was built during the reign of Bhima I of the Solanki dynasty.",
+    "solH": "गुजरात का प्रसिद्ध मोढेरा सूर्य मंदिर सोलंकी वंश के शासक भीम प्रथम के शासनकाल में बनवाया गया था।"
+  },
+  {
+    "id": 21,
+    "eng": "Which Rajput dynasty is associated with the Dilwara Jain Temples at Mount Abu?",
+    "hin": "माउंट आबू के दिलवाड़ा जैन मंदिरों का संबंध किस राजपूत वंश से माना जाता है?",
+    "optE": [
+      "Chaulukyas of Gujarat",
+      "Chandelas",
+      "Chahamanas",
+      "Guhilas"
+    ],
+    "optH": [
+      "गुजरात के चालुक्य",
+      "चंदेल",
+      "चाहमान",
+      "गुहिल"
+    ],
+    "ans": 0,
+    "solE": "The Dilwara Jain Temples were built during the period of the Chaulukyas (Solankis) of Gujarat and their feudatories.",
+    "solH": "दिलवाड़ा जैन मंदिरों का निर्माण गुजरात के चालुक्य (सोलंकी) शासकों और उनके सामंतों के काल में हुआ।"
+  },
+  {
+    "id": 22,
+    "eng": "Who is regarded as the founder of the Guhila dynasty of Mewar?",
+    "hin": "मेवाड़ के गुहिल वंश का संस्थापक किसे माना जाता है?",
+    "optE": [
+      "Bappa Rawal",
+      "Rana Kumbha",
+      "Rana Sanga",
+      "Rana Pratap"
+    ],
+    "optH": [
+      "बप्पा रावल",
+      "राणा कुंभा",
+      "राणा सांगा",
+      "राणा प्रताप"
+    ],
+    "ans": 0,
+    "solE": "Bappa Rawal is traditionally regarded as the founder or early prominent ruler of the Guhila dynasty of Mewar.",
+    "solH": "बप्पा रावल को परंपरागत रूप से मेवाड़ के गुहिल वंश का संस्थापक या प्रारंभिक प्रमुख शासक माना जाता है।"
+  },
+  {
+    "id": 23,
+    "eng": "Which Rajput ruler built the Vijay Stambha at Chittorgarh?",
+    "hin": "चित्तौड़गढ़ में विजय स्तंभ का निर्माण किस राजपूत शासक ने करवाया?",
+    "optE": [
+      "Rana Sanga",
+      "Rana Kumbha",
+      "Rana Pratap",
+      "Bappa Rawal"
+    ],
+    "optH": [
+      "राणा सांगा",
+      "राणा कुंभा",
+      "राणा प्रताप",
+      "बप्पा रावल"
+    ],
+    "ans": 1,
+    "solE": "Rana Kumbha built the Vijay Stambha at Chittorgarh to commemorate his victory over Mahmud Khilji of Malwa.",
+    "solH": "राणा कुंभा ने मालवा के महमूद खिलजी पर विजय की स्मृति में चित्तौड़गढ़ में विजय स्तंभ का निर्माण करवाया।"
+  },
+  {
+    "id": 24,
+    "eng": "Which Rajput ruler built the Kirti Stambha at Chittorgarh?",
+    "hin": "चित्तौड़गढ़ में कीर्ति स्तंभ का निर्माण किसके द्वारा करवाया गया था?",
+    "optE": [
+      "Rana Kumbha",
+      "Jija Bhagerwala",
+      "Rana Sanga",
+      "Rana Pratap"
+    ],
+    "optH": [
+      "राणा कुंभा",
+      "जीजा भगेरवाला",
+      "राणा सांगा",
+      "राणा प्रताप"
+    ],
+    "ans": 1,
+    "solE": "The Kirti Stambha at Chittorgarh was built by a Jain merchant named Jija Bhagerwala and is dedicated to Adinatha.",
+    "solH": "चित्तौड़गढ़ का कीर्ति स्तंभ जैन व्यापारी जीजा भगेरवाला ने बनवाया था और यह प्रथम तीर्थंकर आदिनाथ को समर्पित है।"
+  },
+  {
+    "id": 25,
+    "eng": "Which Rajput ruler is associated with the Battle of Khanwa fought against Babur in 1527?",
+    "hin": "1527 में बाबर के विरुद्ध खानवा के युद्ध से किस राजपूत शासक का संबंध है?",
+    "optE": [
+      "Rana Kumbha",
+      "Rana Sanga",
+      "Rana Pratap",
+      "Rana Udai Singh"
+    ],
+    "optH": [
+      "राणा कुंभा",
+      "राणा सांगा",
+      "राणा प्रताप",
+      "राणा उदय सिंह"
+    ],
+    "ans": 1,
+    "solE": "Rana Sanga, the ruler of Mewar, led the Rajput confederacy against Babur in the Battle of Khanwa in 1527.",
+    "solH": "मेवाड़ के शासक राणा सांगा ने 1527 के खानवा युद्ध में बाबर के विरुद्ध राजपूत संघ का नेतृत्व किया था।"
+  },
+  {
+    "id": 26,
+    "eng": "Arrange the following Rajput dynasties in chronological order according to their establishment: 1. Chahamanas 2. Chandelas 3. Paramaras 4. Solankis",
+    "hin": "स्थापना के आधार पर निम्नलिखित राजपूत वंशों को कालानुक्रमिक क्रम में व्यवस्थित कीजिए: 1. चाहमान 2. चंदेल 3. परमार 4. सोलंकी",
+    "optE": [
+      "Chahamanas → Chandelas → Paramaras → Solankis",
+      "Chandelas → Chahamanas → Paramaras → Solankis",
+      "Paramaras → Chahamanas → Chandelas → Solankis",
+      "Solankis → Paramaras → Chandelas → Chahamanas"
+    ],
+    "optH": [
+      "चाहमान → चंदेल → परमार → सोलंकी",
+      "चंदेल → चाहमान → परमार → सोलंकी",
+      "परमार → चाहमान → चंदेल → सोलंकी",
+      "सोलंकी → परमार → चंदेल → चाहमान"
+    ],
+    "ans": 0,
+    "solE": "The commonly accepted sequence is Chahamanas, Chandelas, Paramaras and Solankis. Early dates of these dynasties can overlap, but this sequence is used in standard medieval-history classifications.",
+    "solH": "सामान्यतः स्वीकृत क्रम चाहमान, चंदेल, परमार और सोलंकी है। इन वंशों की प्रारंभिक तिथियों में कुछ ओवरलैप मिलता है, लेकिन मध्यकालीन इतिहास में यह क्रम प्रचलित है।"
+  },
+  {
+    "id": 27,
+    "eng": "Which Rajput dynasty is most closely associated with the city of Khajuraho?",
+    "hin": "किस राजपूत वंश का संबंध खजुराहो नगर से सबसे अधिक है?",
+    "optE": [
+      "Chandelas",
+      "Chahamanas",
+      "Paramaras",
+      "Guhilas"
+    ],
+    "optH": [
+      "चंदेल",
+      "चाहमान",
+      "परमार",
+      "गुहिल"
+    ],
+    "ans": 0,
+    "solE": "Khajuraho was an important centre of the Chandela rulers, who built numerous temples there.",
+    "solH": "खजुराहो चंदेल शासकों का एक महत्वपूर्ण केंद्र था, जिन्होंने यहाँ अनेक मंदिरों का निर्माण करवाया।"
+  },
+  {
+    "id": 28,
+    "eng": "Which Rajput dynasty is associated with the city of Dhar and the famous ruler Raja Bhoja?",
+    "hin": "धार नगर और प्रसिद्ध शासक राजा भोज का संबंध किस राजपूत वंश से है?",
+    "optE": [
+      "Paramaras",
+      "Chandelas",
+      "Chahamanas",
+      "Solankis"
+    ],
+    "optH": [
+      "परमार",
+      "चंदेल",
+      "चाहमान",
+      "सोलंकी"
+    ],
+    "ans": 0,
+    "solE": "The Paramaras ruled Malwa from Dhar. Raja Bhoja was their most famous ruler.",
+    "solH": "परमारों ने धार से मालवा पर शासन किया। राजा भोज उनका सबसे प्रसिद्ध शासक था।"
+  },
+  {
+    "id": 29,
+    "eng": "Which of the following pairs is correctly matched?",
+    "hin": "निम्नलिखित में से कौन-सा युग्म सही सुमेलित है?",
+    "optE": [
+      "Chandelas — Khajuraho",
+      "Paramaras — Ajmer",
+      "Chahamanas — Dhar",
+      "Solankis — Kannauj"
+    ],
+    "optH": [
+      "चंदेल — खजुराहो",
+      "परमार — अजमेर",
+      "चाहमान — धार",
+      "सोलंकी — कन्नौज"
+    ],
+    "ans": 0,
+    "solE": "The Chandelas are correctly associated with Khajuraho. Dhar was associated with the Paramaras, Ajmer with the Chahamanas and Anhilwara with the Solankis.",
+    "solH": "चंदेलों का सही संबंध खजुराहो से है। धार परमारों, अजमेर चाहमानों और अन्हिलवाड़ा सोलंकियों से संबंधित था।"
+  },
+  {
+    "id": 30,
+    "eng": "Which of the following sets contains only Rajput dynasties of early medieval India?",
+    "hin": "निम्नलिखित में से किस समूह में केवल प्रारंभिक मध्यकालीन भारत के राजपूत वंश शामिल हैं?",
+    "optE": [
+      "Chandelas, Chahamanas, Paramaras",
+      "Palas, Rashtrakutas, Cholas",
+      "Cholas, Pandyas, Cheras",
+      "Palas, Senas, Rashtrakutas"
+    ],
+    "optH": [
+      "चंदेल, चाहमान, परमार",
+      "पाल, राष्ट्रकूट, चोल",
+      "चोल, पांड्य, चेर",
+      "पाल, सेन, राष्ट्रकूट"
+    ],
+    "ans": 0,
+    "solE": "Chandelas, Chahamanas and Paramaras are commonly classified among the important Rajput dynasties of early medieval northern and central India.",
+    "solH": "चंदेल, चाहमान और परमार प्रारंभिक मध्यकालीन उत्तर एवं मध्य भारत के प्रमुख राजपूत वंशों में गिने जाते हैं।"
+  }
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 3 * 60; // 20 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+
+        // Previous Attempts / History (same localStorage approach as Source.html)
+        let isHistoryMode = false;
+        let activeHistoryAttempt = null;
+        const HISTORY_STORAGE_KEY = 'ExamRojgaar_history';
+        const TEST_DURATION_SECONDS = 3 * 60;
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Starting-page compatibility helpers (copied UI only; the existing mock engine remains unchanged).
+        function validateAndStart() {
+            const nameInput = document.getElementById('candidate-name');
+            const declaration = document.getElementById('declaration-check');
+            const name = nameInput ? nameInput.value.trim() : '';
+            if (nameInput && !name) {
+                alert('Please enter your Candidate Name to begin.');
+                nameInput.focus();
+                return;
+            }
+            if (declaration && !declaration.checked) {
+                alert('Please read and accept the declaration before beginning.');
+                return;
+            }
+            startCountdown();
+        }
+
+        // ==================== PREVIOUS ATTEMPTS ====================
+        function getHistory() {
+            try {
+                const data = localStorage.getItem(HISTORY_STORAGE_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveAttemptToStorage() {
+            if (isHistoryMode) return;
+
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+            userState.forEach((st, idx) => {
+                if (st.selectedOption !== null) {
+                    attempted++;
+                    if (st.selectedOption === rawData[idx].ans) correct++;
+                    else wrong++;
+                }
+            });
+
+            const marks = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? Number(((correct / attempted) * 100).toFixed(1)) : 0;
+            const nameEl = document.getElementById('candidate-name');
+
+            const attempt = {
+                id: Date.now(),
+                mockId: 'target-railway-sectional',
+                mockName: (document.getElementById('paper-name-display') || {}).textContent?.trim() || 'Round 1 Challenge Series',
+                subject: (document.getElementById('subject-display') || {}).textContent?.trim() || 'Sectional Mock',
+                candidateName: nameEl ? nameEl.value.trim() : '',
+                date: (document.getElementById('current-date-display') || {}).textContent?.trim() || new Date().toLocaleDateString('en-GB'),
+                marks: Number(marks.toFixed(2)),
+                accuracy: accuracy,
+                correct: correct,
+                wrong: wrong,
+                skipped: rawData.length - attempted,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                answers: JSON.parse(JSON.stringify(userState)),
+                questions: rawData
+            };
+
+            try {
+                const history = getHistory();
+                history.push(attempt);
+                localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
+            } catch (e) {
+                // Keep the test working even if browser storage is unavailable/full.
+            }
+        }
+
+        function openHistoryDashboard() {
+            const history = getHistory();
+            const list = document.getElementById('history-list');
+            if (!list) return;
+
+            if (history.length === 0) {
+                list.innerHTML = `<div class="text-slate-400 text-center py-10 font-medium">No previous attempts found. Start a mock test!</div>`;
+            } else {
+                let html = '';
+                [...history].reverse().forEach((attempt, index) => {
+                    const maxMarks = rawData.length;
+                    const score = Number(attempt.marks || 0).toFixed(2);
+                    const accuracy = Number(attempt.accuracy || 0).toFixed(1);
+                    html += `
+                    <div class="bg-slate-700/50 border border-slate-600 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 hover:bg-slate-700 transition">
+                        <div class="text-center md:text-left">
+                            <div class="text-amber-300 font-bold text-lg mb-1">${escapeHistoryText(attempt.mockName || 'Round 1 Challenge Series')} <span class="text-sm font-normal text-amber-200/50">(Attempt #${history.length - index})</span></div>
+                            <div class="text-slate-300 text-sm"><i class="far fa-user"></i> ${escapeHistoryText(attempt.candidateName || 'Aspirant')} &nbsp; <i class="far fa-calendar-alt"></i> ${escapeHistoryText(attempt.date || '')}</div>
+                        </div>
+                        <div class="flex gap-6 text-center">
+                            <div><div class="text-xs text-slate-400 uppercase">Score</div><div class="text-xl font-bold text-sky-400">${score}/${maxMarks}</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Accuracy</div><div class="text-xl font-bold text-emerald-400">${accuracy}%</div></div>
+                        </div>
+                        <button onclick="loadHistoryAttempt(${Number(attempt.id)})" class="px-5 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition">View Analysis</button>
+                    </div>`;
+                });
+                list.innerHTML = html;
+            }
+            document.getElementById('history-modal').classList.remove('hidden');
+        }
+
+        function escapeHistoryText(value) {
+            return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+        }
+
+        function closeHistoryDashboard() {
+            document.getElementById('history-modal').classList.add('hidden');
+        }
+
+        function loadHistoryAttempt(id) {
+            const attempt = getHistory().find(a => Number(a.id) === Number(id));
+            if (!attempt) return;
+
+            activeHistoryAttempt = attempt;
+            isHistoryMode = true;
+            mockStarted = false;
+            mockSubmitted = true;
+            currentQIndex = 0;
+            timeLeft = Math.max(0, TEST_DURATION_SECONDS - Number(attempt.timeTaken || 0));
+
+            // Support both the current Target history format and the Source-style answer map.
+            if (Array.isArray(attempt.answers)) {
+                userState = attempt.answers.map(st => ({
+                    status: Number(st.status || 0),
+                    selectedOption: st.selectedOption === null || st.selectedOption === undefined ? null : Number(st.selectedOption),
+                    timeSpent: Number(st.timeSpent || 0)
+                }));
+            } else {
+                userState = Array(rawData.length).fill().map(() => ({ status: 0, selectedOption: null, timeSpent: 0 }));
+            }
+
+            while (userState.length < rawData.length) userState.push({ status: 0, selectedOption: null, timeSpent: 0 });
+            if (userState.length > rawData.length) userState = userState.slice(0, rawData.length);
+
+            closeHistoryDashboard();
+            switchScreen('result-screen');
+            generateResultDashboard();
+
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.remove('hidden');
+        }
+
+        function returnFromHistory() {
+            isHistoryMode = false;
+            activeHistoryAttempt = null;
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.add('hidden');
+            switchScreen('home-screen');
+        }
+
+        // ==================== SAVED QUESTIONS ====================
+        const SAVED_QUESTIONS_KEY = 'ExamRojgaar_saved_questions';
+
+        function getSavedQuestions() {
+            try {
+                const data = localStorage.getItem(SAVED_QUESTIONS_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveSavedQuestions(list) {
+            try {
+                localStorage.setItem(SAVED_QUESTIONS_KEY, JSON.stringify(list));
+            } catch (e) {
+                // Keep the mock usable if browser storage is unavailable/full.
+            }
+        }
+
+        function isQuestionSaved(question) {
+            if (!question) return false;
+            return getSavedQuestions().some(q => String(q.id) === String(question.id));
+        }
+
+        function toggleSaveQuestion() {
+            const currentQ = rawData[currentQIndex];
+            if (!currentQ) return;
+
+            const saved = getSavedQuestions();
+            const index = saved.findIndex(q => String(q.id) === String(currentQ.id));
+
+            if (index >= 0) {
+                saved.splice(index, 1);
+            } else {
+                // Store a copy so later test-state changes cannot corrupt saved questions.
+                saved.push(JSON.parse(JSON.stringify(currentQ)));
+            }
+
+            saveSavedQuestions(saved);
+            renderQuestion();
+        }
+
+        function openSavedQuestionsModal() {
+            renderSavedQuestionsList();
+            document.getElementById('saved-questions-modal').classList.remove('hidden');
+        }
+
+        function closeSavedQuestionsModal() {
+            document.getElementById('saved-questions-modal').classList.add('hidden');
+        }
+
+        function clearAllSavedQuestions() {
+            if (getSavedQuestions().length === 0) return;
+            if (confirm('Are you sure you want to clear all saved questions?')) {
+                try { localStorage.removeItem(SAVED_QUESTIONS_KEY); } catch (e) {}
+                renderSavedQuestionsList();
+                renderQuestion();
+            }
+        }
+
+        function removeSavedQuestion(index) {
+            const saved = getSavedQuestions();
+            if (index < 0 || index >= saved.length) return;
+            saved.splice(index, 1);
+            saveSavedQuestions(saved);
+            renderSavedQuestionsList();
+            renderQuestion();
+        }
+
+        function escapeSavedText(value) {
+            return String(value ?? '').replace(/[&<>\"']/g, ch => ({
+                '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;'
+            }[ch]));
+        }
+
+        function renderSavedQuestionsList() {
+            const container = document.getElementById('saved-questions-list');
+            if (!container) return;
+
+            const saved = getSavedQuestions();
+            if (saved.length === 0) {
+                container.innerHTML = `
+                    <div class="text-slate-400 text-center py-12 font-medium">
+                        <i class="far fa-star text-4xl mb-4 block text-slate-500"></i>
+                        No saved questions found.<br>
+                        <span class="text-sm">Click <b>Save Question</b> (★) while attempting the mock to save questions here.</span>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            saved.forEach((q, index) => {
+                const opts = Array.isArray(q.optE) ? q.optE : [];
+                const correct = Number(q.ans);
+                let optionsHtml = '';
+
+                opts.forEach((opt, i) => {
+                    const isCorrect = i === correct;
+                    optionsHtml += `
+                        <div class="p-3 mb-2 rounded border ${isCorrect ? 'bg-emerald-50 border-emerald-300 font-bold text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-700'} text-sm">
+                            ${String.fromCharCode(65 + i)}) ${escapeSavedText(opt)} ${isCorrect ? '<i class=\"fas fa-check ml-2\"></i>' : ''}
+                        </div>`;
+                });
+
+                const solution = escapeSavedText(q.solE || 'No solution provided.');
+                const hindiQuestion = q.hin ? escapeSavedText(q.hin) : '';
+
+                html += `
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative mb-4">
+                        <button onclick="removeSavedQuestion(${index})" class="absolute top-4 right-4 text-slate-400 hover:text-rose-500 transition font-medium text-sm">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <div class="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest pr-20">Saved Question ${index + 1}</div>
+                        <div class="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">${escapeSavedText(q.eng || '')}</div>
+                        ${hindiQuestion ? `<div class="text-slate-600 text-sm mb-4 whitespace-pre-wrap"><b>Hindi:</b> ${hindiQuestion}</div>` : ''}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">${optionsHtml}</div>
+                        <div class="mt-4 border-t border-slate-100 pt-4">
+                            <div class="text-sm text-slate-600 font-medium bg-slate-50 p-3 rounded leading-relaxed whitespace-pre-line border border-slate-100">
+                                <i class="fas fa-lightbulb text-amber-500 mr-2"></i><b>Solution:</b><br>${solution}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+
+            // Update Save Question button from persistent browser storage.
+            const saveBtn = document.getElementById('save-question-btn');
+            const saveIcon = document.getElementById('save-question-icon');
+            const saveLabel = document.getElementById('save-question-label');
+            const saved = isQuestionSaved(q);
+            if (saveBtn && saveIcon && saveLabel) {
+                saveBtn.className = `px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300'}`;
+                saveIcon.className = saved ? 'fas fa-star text-amber-500' : 'far fa-star text-gray-400';
+                saveLabel.innerText = saved ? 'Saved' : 'Save Question';
+            }
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION → open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+                    // Store this completed attempt so it appears under "Previous Attempts".
+                    saveAttemptToStorage();
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            const historyBack = document.getElementById('history-result-back');
+            if (historyBack) historyBack.classList.toggle('hidden', !isHistoryMode);
+
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. REAL LEADERBOARD RANK ENGINE
+            // Ranking is calculated from the attempts stored in this browser.
+            // For a true cross-device/all-student rank, replace getHistory() with a shared
+            // database/API (e.g. Supabase/Firebase). This engine deliberately does NOT use
+            // a fake fixed population such as 5,000 users.
+            const currentCandidateEl = document.getElementById('candidate-name');
+            const currentCandidate = (isHistoryMode && activeHistoryAttempt)
+                ? String(activeHistoryAttempt.candidateName || '').trim()
+                : (currentCandidateEl ? String(currentCandidateEl.value || '').trim() : '');
+
+            const currentAttempt = {
+                id: isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now(),
+                candidateName: currentCandidate || ('Student #' + (isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now())),
+                marks: Number(score.toFixed(2)),
+                accuracy: Number(accuracy),
+                correct: correct,
+                wrong: wrong,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                date: new Date().toISOString()
+            };
+
+            function getLeaderboardEntries() {
+                const history = getHistory();
+                const entries = history.map(a => ({
+                    id: a.id,
+                    candidateName: String(a.candidateName || '').trim(),
+                    marks: Number(a.marks || 0),
+                    accuracy: Number(a.accuracy || 0),
+                    correct: Number(a.correct || 0),
+                    wrong: Number(a.wrong || 0),
+                    timeTaken: Number(a.timeTaken || TEST_DURATION_SECONDS),
+                    date: a.date || ''
+                }));
+
+                // Ensure the attempt being displayed is present even if it has not been saved.
+                if (!entries.some(e => String(e.id) === String(currentAttempt.id))) entries.push(currentAttempt);
+
+                // One leaderboard position per student: if the same named student has multiple
+                // attempts, only their BEST attempt is counted. Blank names are treated as unique.
+                const bestByStudent = new Map();
+                entries.forEach((e, i) => {
+                    const key = e.candidateName
+                        ? 'name:' + e.candidateName.toLowerCase().replace(/\s+/g, ' ')
+                        : 'attempt:' + String(e.id || i);
+                    const old = bestByStudent.get(key);
+                    const better = !old ||
+                        e.marks > old.marks ||
+                        (e.marks === old.marks && e.accuracy > old.accuracy) ||
+                        (e.marks === old.marks && e.accuracy === old.accuracy && e.timeTaken < old.timeTaken);
+                    if (better) bestByStudent.set(key, e);
+                });
+
+                return Array.from(bestByStudent.values()).sort((a,b) => {
+                    if (b.marks !== a.marks) return b.marks - a.marks;
+                    if (b.correct !== a.correct) return b.correct - a.correct;
+                    if (b.accuracy !== a.accuracy) return b.accuracy - a.accuracy;
+                    if (a.timeTaken !== b.timeTaken) return a.timeTaken - b.timeTaken;
+                    return String(a.date).localeCompare(String(b.date));
+                });
+            }
+
+            const leaderboard = getLeaderboardEntries();
+            const targetEntry = (isHistoryMode && activeHistoryAttempt)
+                ? leaderboard.find(e => {
+                    const n1 = String(e.candidateName || '').trim().toLowerCase();
+                    const n2 = String(activeHistoryAttempt.candidateName || '').trim().toLowerCase();
+                    return n1 && n1 === n2;
+                }) || currentAttempt
+                : currentAttempt;
+
+            // Competition rank: students with a higher score occupy earlier positions.
+            // Equal scores receive the same rank (1, 1, 3), which is the standard exam convention.
+            const rank = 1 + leaderboard.filter(e => Number(e.marks) > Number(targetEntry.marks)).length;
+
+            // Percentile = percentage of students scoring below this student's score.
+            const lowerCount = leaderboard.filter(e => Number(e.marks) < Number(targetEntry.marks)).length;
+            const percentile = leaderboard.length <= 1
+                ? 100
+                : Math.max(0, Math.min(100, (lowerCount / (leaderboard.length - 1)) * 100));
+
+            // 3. Update result identity/details from the starting page
+            const paperEl = document.getElementById('paper-name-display');
+            const subjectEl = document.getElementById('subject-display');
+            const startDateEl = document.getElementById('current-date-display');
+            const resultCandidate = isHistoryMode && activeHistoryAttempt
+                ? (activeHistoryAttempt.candidateName || '')
+                : ((document.getElementById('candidate-name') || {}).value || '');
+            document.getElementById('res-paper-name').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.mockName ? activeHistoryAttempt.mockName : (paperEl ? paperEl.textContent.trim() : 'Round 1 Challenge Series');
+            document.getElementById('res-subject').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.subject ? activeHistoryAttempt.subject : (subjectEl ? subjectEl.textContent.trim() : 'Sectional Mock');
+            document.getElementById('res-candidate-name').innerText = resultCandidate.trim() || 'Aspirant';
+            document.getElementById('res-date').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.date ? activeHistoryAttempt.date : (startDateEl ? startDateEl.textContent.trim() : new Date().toLocaleDateString('en-GB'));
+
+            // 4. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            const participantEl = document.getElementById('res-participant-count');
+            if (participantEl) participantEl.innerText = leaderboard.length.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percentile.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const el = document.getElementById('current-date-display');
+            if (el) {
+                const d = new Date();
+                el.textContent = String(d.getDate()).padStart(2, '0') + '/' +
+                    String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -92,6 +92,7 @@ import TrigonometryMockTestPage from "./pages/TrigonometryMockTestPage";
 import HeightMockTestPage from "./pages/HeightMockTestPage";
 import TransportationSystemMockTestPage from "./pages/TransportationSystemMockTestPage";
 import SportsMockTestPage from "./pages/SportsMockTestPage";
+import MedievalHistoryRajputAndTriPartiteMockTestPage from "./pages/MedievalHistoryRajputAndTriPartiteMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -384,6 +385,8 @@ const router = createBrowserRouter([
       { path: "TransportationSystem", element: <TransportationSystemMockTestPage /> },
     
       { path: "Sports", element: <SportsMockTestPage /> },
+    
+      { path: "MedievalHistoryRajputAndTriPartite", element: <MedievalHistoryRajputAndTriPartiteMockTestPage /> },
     ],
   },
   {

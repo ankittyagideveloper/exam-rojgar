@@ -256,6 +256,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/maratha",
                     },
+                  
+                    {
+                      id: "MedievalHistoryRajputAndTriPartite-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "MedievalHistoryRajputAndTriPartite Mock Test",
+                      title: "Rajput And TriPartite - Mock Test",
+                      name: "MedievalHistoryRajputAndTriPartite Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "3",
+                      isSpecialMock: true,
+                      route: "/mock-test/MedievalHistoryRajputAndTriPartite",
+                    },
                   ],
                 },
                 "modern-history": {
