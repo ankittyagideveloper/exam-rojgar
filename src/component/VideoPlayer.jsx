@@ -48,7 +48,7 @@ export default function VideoPlayer() {
           src="./live-classes.png"
         />
 
-        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-gray-300 ml-1">
+        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-black ml-1">
           Watch strategy videos &amp; PYQ analysis for RRB NTPC / JE 2025
         </p>
       </div>
