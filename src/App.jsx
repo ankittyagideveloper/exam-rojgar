@@ -95,6 +95,7 @@ import TransportationSystemMockTestPage from "./pages/TransportationSystemMockTe
 import SportsMockTestPage from "./pages/SportsMockTestPage";
 import MedievalHistoryRajputAndTriPartiteMockTestPage from "./pages/MedievalHistoryRajputAndTriPartiteMockTestPage";
 import CurrentAffairsPyqTest1MockTestPage from "./pages/CurrentAffairsPyqTest1MockTestPage";
+import TrianglesTest1MockTestPage from "./pages/TrianglesTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -396,6 +397,8 @@ const router = createBrowserRouter([
     
       { path: "Sports", element: <SportsMockTestPage /> },
       { path: "MedievalHistoryRajputAndTriPartite", element: <MedievalHistoryRajputAndTriPartiteMockTestPage /> },
+    
+      { path: "triangles-test-1", element: <TrianglesTest1MockTestPage /> },
     ],
   },
   {
