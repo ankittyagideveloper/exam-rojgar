@@ -24,7 +24,6 @@ registerSW({
         onUpdate={() => {
           dismiss();
           updateSW(true);
-          window.location.reload();
         }}
         onDismiss={dismiss}
       />
