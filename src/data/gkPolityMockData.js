@@ -1,0 +1,2014 @@
+export const gkPolityTest1MockData = {
+    "paperName": "GK POLITY TOP 100 QS. ",
+    "title": "EXAM ROJGAAR MOCKS",
+    "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+    "subject": "Polity",
+    "category": "GK POLITY TOP 100 QS. ",
+    "duration": 120,
+    "marksCorrect": 2,
+    "marksWrong": 0.25,
+    "telegramLink": "https://t.me/ExamRojgaar",
+    "storageKey": "ExamRojgaar_gkPolityTest1MockData",
+    "questions": [
+        {
+            "id": 1,
+            "eng": "India's first genome-edited (GE) rice varieties were developed by",
+            "hin": "",
+            "optE": [
+                "DBT",
+                "ICAR",
+                "CSIR",
+                "ICMR"
+            ],
+            "optH": [
+                "DBT",
+                "ICAR",
+                "CSIR",
+                "ICMR"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 2,
+            "eng": "In which year was the Competition Act passed by the Parliament in India?",
+            "hin": "",
+            "optE": [
+                "1998",
+                "2004",
+                "2000",
+                "2002"
+            ],
+            "optH": [
+                "1998",
+                "2004",
+                "2000",
+                "2002"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 3,
+            "eng": "Consider the following statements: \n 1. Inter-State Council was established in 1990 on the recommendation of Sarkaria Commission. \n 2. It is a constitutional body under Article 263. \n 3. It has powers to enforce compliance among States. \n Which of the above is/are correct?",
+            "hin": "",
+            "optE": [
+                "1 and 2 only",
+                "2 and 3 only",
+                "1 and 3 only",
+                "1, 2 and 3"
+            ],
+            "optH": [
+                "केवल 1 और 2",
+                "केवल 2 और 3",
+                "केवल 1 और 3",
+                "1, 2 और 3"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 4,
+            "eng": "What is the total number of sections in Bharatiya Nagrik Suraksha Sanhita (BNSS), 2023?",
+            "hin": "",
+            "optE": [
+                "531",
+                "558",
+                "258",
+                "333"
+            ],
+            "optH": [
+                "531",
+                "558",
+                "258",
+                "333"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 5,
+            "eng": "The Age of Consent Act 1891 raised the minimum marital age for girls from:",
+            "hin": "",
+            "optE": [
+                "10 to 11 years",
+                "10 to 12 years",
+                "10 to 13 years",
+                "10 to 14 years"
+            ],
+            "optH": [
+                "10 से 11 वर्ष",
+                "10 से 12 वर्ष",
+                "10 से 13 वर्ष",
+                "10 से 14 वर्ष"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 6,
+            "eng": "Which of the following writ is issued by a higher court (High Court or Supreme Court) when a lower court has considered a case going beyond its jurisdiction?",
+            "hin": "",
+            "optE": [
+                "Habeas corpus",
+                "Prohibition",
+                "certiorari",
+                "Quo-warranto"
+            ],
+            "optH": [
+                "बंदी प्रत्यक्षीकरण",
+                "निषेध आदेश",
+                "उत्प्रेषण",
+                "अधिकार पृच्छा"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 7,
+            "eng": "Article 370, which granted special status to Jammu and Kashmir, was abrogated by which constitutional mechanism?",
+            "hin": "",
+            "optE": [
+                "Presidential Order under Article 370(3)",
+                "Amendment by Parliament under Article 368",
+                "Ordinance by the President",
+                "Order under Article 356"
+            ],
+            "optH": [
+                "अनुच्छेद 370(3) के तहत राष्ट्रपति के आदेश",
+                "अनुच्छेद 368 के तहत संसद द्वारा संशोधन",
+                "राष्ट्रपति द्वारा अध्यादेश",
+                "अनुच्छेद 356 के तहत आदेश"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 8,
+            "eng": "What is the minimum age to become a member of Rajya Sabha?",
+            "hin": "",
+            "optE": [
+                "25",
+                "30",
+                "35",
+                "21"
+            ],
+            "optH": [
+                "25",
+                "30",
+                "35",
+                "21"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 9,
+            "eng": "Which of the following is a benefit of Organ-on-Chip (OoC) technology?",
+            "hin": "",
+            "optE": [
+                "Genome sequencing",
+                "Crime investigation",
+                "Accurate drug testing",
+                "Gene transfer"
+            ],
+            "optH": [
+                "जीनोम अनुक्रमण",
+                "अपराध जांच",
+                "सटीक दवा परीक्षण",
+                "जीन स्थानांतरण"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 10,
+            "eng": "The Bharatiya Nyaya Samhita (BNS), 2023, consolidates and amends provisions related to which branch of law?",
+            "hin": "",
+            "optE": [
+                "Civil Procedure Law",
+                "Criminal Substantive Law",
+                "Evidence Law",
+                "Contract Law"
+            ],
+            "optH": [
+                "नागरिक प्रक्रिया कानून",
+                "आपराधिक मूल कानून",
+                "साक्ष्य कानून",
+                "अनुबंध कानून"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 11,
+            "eng": "By which of the following amendment act of the Indian constitution voting age was reduced from 21 years to 18 years?",
+            "hin": "",
+            "optE": [
+                "61st Amendment act, 1989",
+                "62nd Amendment act, 1989",
+                "63rd Amendment act, 1989",
+                "64th Amendment act, 1990"
+            ],
+            "optH": [
+                "61 वां संशोधन अधिनियम , 1989",
+                "62 वां संशोधन अधिनियम , 1989",
+                "63 वां संशोधन अधिनियम , 1989",
+                "64 वां संशोधन अधिनियम , 1990"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 12,
+            "eng": "Which All-India Service is allotted to State cadres but controlled jointly by Centre and State?",
+            "hin": "",
+            "optE": [
+                "IAS",
+                "DSC",
+                "State PCS",
+                "Indian Post"
+            ],
+            "optH": [
+                "IAS",
+                "DSC",
+                "राज्य PCS",
+                "भारतीय डाक"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 13,
+            "eng": "Who can dissolve the House of the People of India before its term ends?",
+            "hin": "",
+            "optE": [
+                "President on Prime minister's advice",
+                "Speaker of the House of the People",
+                "Chief Justice of India",
+                "Election Commission"
+            ],
+            "optH": [
+                "प्रधानमंत्री की सलाह पर राष्ट्रपति",
+                "लोकसभा अध्यक्ष",
+                "भारत के मुख्य न्यायमूर्ति",
+                "निर्वाचन आयोग"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 14,
+            "eng": "Which Indian state has become the first to implement the Uniform Civil Code (UCC)?",
+            "hin": "",
+            "optE": [
+                "Uttarakhand",
+                "Goa",
+                "Maharashtra",
+                "Gujarat"
+            ],
+            "optH": [
+                "उत्तराखंड",
+                "गोवा",
+                "महाराष्ट्र",
+                "गुजरात"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 15,
+            "eng": "How many members can the President of India nominate to the Rajya Sabha?",
+            "hin": "",
+            "optE": [
+                "10",
+                "12",
+                "14",
+                "15"
+            ],
+            "optH": [
+                "10",
+                "12",
+                "14",
+                "15"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 16,
+            "eng": "Which authority decides whether a Bill is a Money Bill?",
+            "hin": "",
+            "optE": [
+                "Finance Minister",
+                "President",
+                "Speaker of Lok Sabha",
+                "Comptroller & Auditor General"
+            ],
+            "optH": [
+                "वित्त मंत्री",
+                "राष्ट्रपति",
+                "लोकसभा अध्यक्ष",
+                "नियंत्रक - महालेखापरीक्षक"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 17,
+            "eng": "For how many years does the President of India hold office?",
+            "hin": "",
+            "optE": [
+                "3 years",
+                "4 years",
+                "5 years",
+                "6 years"
+            ],
+            "optH": [
+                "3 वर्ष",
+                "4 वर्ष",
+                "5 वर्ष",
+                "6 वर्ष"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 18,
+            "eng": "What is the primary objective of a Uniform Civil Code (UCC) in India?",
+            "hin": "",
+            "optE": [
+                "To establish a common criminal law for all citizens.",
+                "To unify direct and indirect tax laws.",
+                "To provide a common set of personal laws for all citizens, irrespective of religion.",
+                "To standardize administrative procedures across all states."
+            ],
+            "optH": [
+                "सभी नागरिकों के लिए एक समान आपराधिक कानून स्थापित करना।",
+                "प्रत्यक्ष और अप्रत्यक्ष कर कानूनों को एकीकृत करना।",
+                "धर्म की परवाह किए बिना सभी नागरिकों के लिए व्यक्तिगत कानूनों का एक समान सेट प्रदान करना।",
+                "सभी राज्यों में प्रशासनिक प्रक्रियाओं को मानकीकृत करना।"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 19,
+            "eng": "A Bill passed by the Indian State Legislature is sent to the Governor under:",
+            "hin": "",
+            "optE": [
+                "Article 200",
+                "Article 201",
+                "Article 202",
+                "Article 203"
+            ],
+            "optH": [
+                "अनुच्छेद 200",
+                "अनुच्छेद 201",
+                "अनुच्छेद 202",
+                "अनुच्छेद 203"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 20,
+            "eng": "Which of the following statements is correct regarding the parts of Indian constitution? I. Part VIII is related with the Union territories. II. Part IX is related with the Co-Operative Societies.",
+            "hin": "",
+            "optE": [
+                "Only I",
+                "Only II",
+                "Both I and II",
+                "Neither I Nor II"
+            ],
+            "optH": [
+                "358",
+                "558",
+                "258",
+                "458"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 21,
+            "eng": "Which of the following words is mentioned in the preamble of the Indian constitution regarding 'Justice'?",
+            "hin": "",
+            "optE": [
+                "Secular",
+                "Socialist",
+                "Sovereign",
+                "Economic"
+            ],
+            "optH": [
+                "केवल I",
+                "केवल II",
+                "I और II दोनों",
+                "न तो I और न ही II"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 22,
+            "eng": "What subject does Article 77 of the Indian Constitution pertain to?",
+            "hin": "",
+            "optE": [
+                "Rights of ministers in Parliament",
+                "Duties of prime minister",
+                "Conduct of business of the Government of India",
+                "Council of Ministers to aid and advise President"
+            ],
+            "optH": [
+                "1/12",
+                "1/3",
+                "1/2",
+                "1/6"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 23,
+            "eng": "Which of the following amendment act of the Indian constitution replaced the term \"internal disturbance\" with \"armed rebellion\" in [respect of national emergency]?",
+            "hin": "",
+            "optE": [
+                "41st Amendment act, 1976",
+                "44th Amendment act, 1978",
+                "42nd Amendment act, 1976",
+                "43rd Amendment act, 1977"
+            ],
+            "optH": [
+                "पंथनिरपेक्ष",
+                "समाजवादी",
+                "संपूर्ण प्रभुत्व - संपन्न",
+                "आर्थिकसही"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b\n Set 2",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 24,
+            "eng": "GenomeIndia Project was initiated by",
+            "hin": "",
+            "optE": [
+                "CSIR",
+                "ICMR",
+                "DBT",
+                "NITI Aayog"
+            ],
+            "optH": [
+                "संसद में मंत्रियों के अधिकार",
+                "प्रधान मंत्री के कर्तव्य",
+                "भारत सरकार के कार्य का संचालन",
+                "राष्ट्रपति को सहायता और सलाह देने के लिए मंत्रि - परिषद्"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 25,
+            "eng": "Which Constitutional Amendment Act is often referred to as the \"Mini-Constitution\" due to the extensive changes it introduced to the Indian Constitution?",
+            "hin": "",
+            "optE": [
+                "44th Amendment Act, 1978",
+                "52nd Amendment Act, 1985",
+                "42nd Amendment Act, 1976",
+                "86th Amendment Act, 2002"
+            ],
+            "optH": [
+                "41 वां संशोधन अधिनियम , 1976",
+                "44 वां संशोधन अधिनियम , 1978",
+                "42 वां संशोधन अधिनियम , 1976",
+                "43 वां संशोधन अधिनियम , 1977"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 26,
+            "eng": "The Bharatiya Nagarik Suraksha Sanhita (BNSS) allows for trials to proceed in the absence of the accused in certain circumstances. This provision applies specifically to:",
+            "hin": "",
+            "optE": [
+                "Any accused person who fails to appear.",
+                "Only foreign nationals.",
+                "Proclaimed offenders who abscond.",
+                "Accused persons who are gravely ill."
+            ],
+            "optH": [
+                "CSIR",
+                "ICMR",
+                "DBT",
+                "नीति आयोग"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 27,
+            "eng": "The Indian Evidence Act, 1872 has been replaced by which law?",
+            "hin": "",
+            "optE": [
+                "Bharatiya Nyaya Sanhita (BNS), 2023",
+                "Bharatiya Nagrik Suraksha Sanhita (BNSS), 2023",
+                "Bharatiya Sakshya Adhiniyam (BSA), 2023",
+                "Nyaya Danda Adhiniyam, 2023"
+            ],
+            "optH": [
+                "44 वां संशोधन अधिनियम , 1978",
+                "52 वां संशोधन अधिनियम , 1985",
+                "42 वां संशोधन अधिनियम , 1976",
+                "86 वां संशोधन अधिनियम , 2002"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 28,
+            "eng": "As per Article 279A of the Indian Constitution, the GST Council's decisions require what kind of majority of the weighted votes of the members present and voting?",
+            "hin": "",
+            "optE": [
+                "Simple majority",
+                "Three-fourths majority",
+                "Two-thirds majority",
+                "Half majority"
+            ],
+            "optH": [
+                "कोई भी आरोपी व्यक्ति जो उपस्थित होने में विफल रहता है।",
+                "केवल विदेशी नागरिक।",
+                "फरार घोषित अपराधी।",
+                "आरोपी व्यक्ति जो गंभीर रूप से बीमार हैं।"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 29,
+            "eng": "Article 126 of the Indian Constitution mentions",
+            "hin": "",
+            "optE": [
+                "Appointment of ad hoc Judges",
+                "Appointment of acting Chief Justice of India",
+                "Supreme Court to be a court of record",
+                "Seat of Supreme Court"
+            ],
+            "optH": [
+                "भारतीय न्याय संहिता (BNS), 2023",
+                "भारतीय नागरिक सुरक्षा संहिता (BNSS), 2023",
+                "भारतीय साक्ष्य अधिनियम ( BSA ), 2023",
+                "न्याय दंड अधिनियम , 2023"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 30,
+            "eng": "What is the maximum detention period a Magistrate can authorize under Bharatiya Nagarik Suraksha Sanhita (BNSS), 2023, for offences punishable with less than 10 years, before default bail applies?",
+            "hin": "",
+            "optE": [
+                "15 days",
+                "30 days",
+                "60 days",
+                "90 days"
+            ],
+            "optH": [
+                "साधारण बहुमत",
+                "तीन - चौथाई बहुमत",
+                "दो - तिहाई बहुमत",
+                "आधा बहुमत"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 31,
+            "eng": "Who among the following holds office during the pleasure of the President of India?",
+            "hin": "",
+            "optE": [
+                "Comptroller and Auditor General of India",
+                "Attorney general of India",
+                "Chief justice of India",
+                "Chief Election commissioner of India"
+            ],
+            "optH": [
+                "तदर्थ न्यायाधीशों की नियुक्ति",
+                "भारत के कार्यकारी मुख्य न्यायमूर्ति की नियुक्ति",
+                "उच्चतम न्यायालय का अभिलेख न्यायालय होना",
+                "उच्चतम न्यायालय का स्थान"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 32,
+            "eng": "RNA silencing reduces gene expression by",
+            "hin": "",
+            "optE": [
+                "Increasing transcription",
+                "Deleting DNA",
+                "Suppressing transcription or degrading RNA",
+                "Adding foreign DNA"
+            ],
+            "optH": [
+                "अनुच्छेद 74",
+                "अनुच्छेद 85",
+                "अनुच्छेद 93",
+                "अनुच्छेद 100"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 33,
+            "eng": "Which of the following veto powers is not available to the President of India?",
+            "hin": "",
+            "optE": [
+                "Absolute Veto",
+                "Pocket Veto",
+                "Qualified Veto",
+                "Suspensive Veto"
+            ],
+            "optH": [
+                "15 दिन",
+                "30 दिन",
+                "60 दिन",
+                "90 दिन"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 34,
+            "eng": "What was the primary objective of the Ring-Fencing Policy adopted by the British in India during the 18th century?",
+            "hin": "",
+            "optE": [
+                "To expand British territory by annexing Indian states.",
+                "To economically exploit coastal trading companies.",
+                "To create buffer states to defend British territories.",
+                "To impose direct rule over all princely territories."
+            ],
+            "optH": [
+                "भारत के नियंत्रक - महालेखापरीक्षक",
+                "भारत के महान्यायवादी",
+                "भारत के मुख्य न्यायमूर्ति",
+                "भारत के मुख्य निर्वाचन आयुक्त"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 35,
+            "eng": "Which committee recommended a three-tier Panchayati Raj structure in the Indian constitution?",
+            "hin": "",
+            "optE": [
+                "Ashok Mehta Committee",
+                "Balwant Rai Mehta Committee",
+                "GVK Rao Committee",
+                "L M Singhvi Committee"
+            ],
+            "optH": [
+                "प्रतिलेखन बढ़ाकर",
+                "डीएनए (DN को हटाकर",
+                "प्रतिलेखन को दबाकर या आरएनए को नष्ट करके",
+                "विदेशी डीएनए जोड़कर"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 36,
+            "eng": "The Parliament of India can legislate on a state subject if:",
+            "hin": "",
+            "optE": [
+                "The President issues an ordinance",
+                "Council of state passes a resolution by 2/3 majority of the members present",
+                "Lok Sabha passes a resolution by simple majority",
+                "Rajya Sabha passes a resolution by simple majority"
+            ],
+            "optH": [
+                "पूर्ण वीटो",
+                "पॉकेट वीटो",
+                "विशेषित वीटो",
+                "निलंबनकारी वीटो"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 37,
+            "eng": "Which Article enables the President to establish an Inter-State Council?",
+            "hin": "",
+            "optE": [
+                "Article 263",
+                "Article 264",
+                "Article 312",
+                "Article 262"
+            ],
+            "optH": [
+                "भारतीय राज्यों पर कब्ज़ा करके ब्रिटिश क्षेत्र का विस्तार करना।",
+                "तटीय व्यापारिक कंपनियों का आर्थिक शोषण करना।",
+                "ब्रिटिश क्षेत्रों की रक्षा के लिए बफर राज्य बनाना।",
+                "सभी रियासतों पर सीधा शासन थोपना।"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 38,
+            "eng": "Which type of bill cannot originate in the State Legislative Council of an Indian state?\n I. Money Bill \n II. Ordinary Bill",
+            "hin": "",
+            "optE": [
+                "Only I",
+                "Only II",
+                "Both I and II",
+                "Neither I nor II"
+            ],
+            "optH": [
+                "अशोक मेहता समिति",
+                "बलवंत राय मेहता समिति",
+                "जी . वी . के . राव समिति",
+                "एल . एम . सिंघवी समिति"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 39,
+            "eng": "Which of the following pair regarding the parts of the Indian constitution is NOT correctly matched?",
+            "hin": "",
+            "optE": [
+                "Fundamental Right - Part III",
+                "Panchayat - Part IX",
+                "Elections - Part XVII",
+                "Services Under the Union and the States - Part XIV"
+            ],
+            "optH": [
+                "राष्ट्रपति अध्यादेश जारी करता है",
+                "राज्य परिषद उपस्थित सदस्यों के 2/3 बहुमत से प्रस्ताव पारित करती है",
+                "लोकसभा साधारण बहुमत से प्रस्ताव पारित करती है",
+                "राज्यसभा साधारण बहुमत से प्रस्ताव पारित करती है"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 40,
+            "eng": "What does the BSA, 2023 provide about secondary evidence (like photocopies or scanned documents)?",
+            "hin": "",
+            "optE": [
+                "It is always preferred over primary evidence.",
+                "It is admissible only if the original is lost, destroyed, or unavailable for valid reasons.",
+                "It must be printed in color only.",
+                "It cannot be used in criminal cases."
+            ],
+            "optH": [
+                "अनुच्छेद 263",
+                "अनुच्छेद 264",
+                "अनुच्छेद 312",
+                "अनुच्छेद 262"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 41,
+            "eng": "Who was the constitutional advisor to the Constituent assembly of India?",
+            "hin": "",
+            "optE": [
+                "B.N. Rau",
+                "Dr. Rajendra Prasad",
+                "Dr. B.R. Ambedkar",
+                "Pandit Jawaharlal Nehru"
+            ],
+            "optH": [
+                "केवल I",
+                "केवल II",
+                "I और II दोनों",
+                "न तो I और न ही II"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 42,
+            "eng": "Which of the following article of the Indian constitution states that there shall be a Vice-President of India?",
+            "hin": "",
+            "optE": [
+                "Article 62",
+                "Article 63",
+                "Article 68",
+                "Article 65"
+            ],
+            "optH": [
+                "मूल अधिकार - भाग 3",
+                "पंचायत - भाग 9",
+                "निर्वाचन - भाग 17",
+                "राज्यों और संघ के अधीन सेवाएँ - भाग 14"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 43,
+            "eng": "The Bharatiya Sakshya Adhiniyam, 2023 has been enacted to replace which previous law?",
+            "hin": "",
+            "optE": [
+                "Indian Penal Code",
+                "Contract Act, 1872",
+                "Consumer Protection Act",
+                "Indian Evidence Act, 1872"
+            ],
+            "optH": [
+                "इसे हमेशा प्राथमिक साक्ष्य पर प्राथमिकता दी जाती है।",
+                "यह केवल तभी स्वीकार्य है जब मूल दस्तावेज़ खो गया हो , नष्ट हो गया हो , या वैध कारणों से अनुपलब्ध हो।",
+                "इसे केवल रंगीन प्रिंट किया जाना चाहिए।",
+                "इसका उपयोग आपराधिक मामलों में नहीं किया जा सकता है।"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 44,
+            "eng": "Which of the following is a Fundamental Duty mentioned in the Indian Constitution?",
+            "hin": "",
+            "optE": [
+                "To value the rich heritage of our composite culture",
+                "To not indulge in corrupt practices",
+                "To help accident victims",
+                "To respect freedom of speech of others"
+            ],
+            "optH": [
+                "बी . एन . राउ",
+                "डॉ . राजेंद्र प्रसाद",
+                "डॉ . बी . आर . अम्बेडकर",
+                "पंडित जवाहरलाल नहरू"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 45,
+            "eng": "Which of the following features of the Indian Constitution is borrowed from Canada?",
+            "hin": "",
+            "optE": [
+                "Advisory jurisdiction of the Supreme court",
+                "Rule of Law",
+                "Impeachment of the President",
+                "Fundamental duties"
+            ],
+            "optH": [
+                "अनुच्छेद 62",
+                "अनुच्छेद 63",
+                "अनुच्छेद 68",
+                "अनुच्छेद 65"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 46,
+            "eng": "What change did the Regulating Act bring to the post of the Governor of Bengal?",
+            "hin": "",
+            "optE": [
+                "He was required to report directly to the British Crown.",
+                "He was reduced to a ceremonial position.",
+                "His role was elevated to Governor-General with a council of four members.",
+                "He was transferred to the Madras Presidency."
+            ],
+            "optH": [
+                "भारतीय दंड संहिता",
+                "अनुबंध अधिनियम , 1872",
+                "उपभोक्ता संरक्षण अधिनियम",
+                "भारतीय साक्ष्य अधिनियम , 1872"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 47,
+            "eng": "Which of the following features of the Indian Constitution is NOT borrowed from Australia?",
+            "hin": "",
+            "optE": [
+                "Concept of Concurrent list",
+                "Joint sitting of the two houses",
+                "Freedom of trade and commerce",
+                "Election of members of the Rajya Sabha"
+            ],
+            "optH": [
+                "हमारी सामासिक संस्कृति की गौरवशाली परंपरा का महत्व समझना",
+                "भ्रष्ट आचरण में लिप्त न होना",
+                "दुर्घटना पीड़ितों की मदद करना",
+                "दूसरे की वाक् स्वांतंत्र्य का आदर करना"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d\n SET 3",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 48,
+            "eng": "DRR Dhan 100 Kamala was developed by targeting which gene?",
+            "hin": "",
+            "optE": [
+                "F-box",
+                "CKX2",
+                "Cas9",
+                "SNP"
+            ],
+            "optH": [
+                "उच्चतम न्यायालय का सलाहकार क्षेत्राधिकार",
+                "कानून का शासन",
+                "राष्ट्रपति पर महाभियोग",
+                "मूल कर्तव्य"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 49,
+            "eng": "_______ was commissioned into the Indian Navy in July 1985 and was Vice Chief of Naval Staff and Flag Officer Commanding-in-Chief of the Western Naval Command.",
+            "hin": "",
+            "optE": [
+                "Admiral Karambir Singh",
+                "Admiral Sunil Lanba",
+                "Admiral R. Hari Kumar",
+                "Admiral Dinesh K. Tripathi"
+            ],
+            "optH": [
+                "उन्हें सीधे ब्रिटिश क्राउन को रिपोर्ट करने की आवश्यकता थी।",
+                "उन्हें एक औपचारिक पद तक सीमित कर दिया गया।",
+                "उनकी भूमिका को चार सदस्यों की परिषद के साथ गवर्नर - जनरल के रूप में उन्नत किया गया था।",
+                "उन्हें मद्रास प्रेसीडेंसी में स्थानांतरित कर दिया गया था।"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 50,
+            "eng": "Who introduced the law that abolished the practice of Sati in British India in 1829?",
+            "hin": "",
+            "optE": [
+                "Lord Dalhousie",
+                "Lord Curzon",
+                "Lord William Bentinck",
+                "Lord Canning"
+            ],
+            "optH": [
+                "समवर्ती सूची की अवधारणा",
+                "दोनों सदनों की संयुक्त बैठक",
+                "व्यापार और वाणिज्य की स्वतंत्रता",
+                "राज्य सभा के सदस्यों का निर्वाचन"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 51,
+            "eng": "The main objective of the \"Pitt's India Act\" of 1784 was to:",
+            "hin": "",
+            "optE": [
+                "Transfer all powers of the East India Company to the British Crown.",
+                "Establish a dual system of control over the East India Company's affairs by the British government.",
+                "Grant greater autonomy to the Indian rulers in their internal affairs.",
+                "Introduce the first budget for British India in the British Parliament."
+            ],
+            "optH": [
+                "F- बॉक्स",
+                "CKX2",
+                "Cas9",
+                "SNP"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 52,
+            "eng": "Which Article empowers the Parliament to create laws on State List subjects under national interest?",
+            "hin": "",
+            "optE": [
+                "Article 249",
+                "Article 253",
+                "Article 248",
+                "Article 254"
+            ],
+            "optH": [
+                "एडमिरल करमबीर सिंह",
+                "एडमिरल सुनील लांबा",
+                "एडमिरल आर . हरि कुमार",
+                "एडमिरल दिनेश के . त्रिपाठी"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 53,
+            "eng": "In Bharatiya Nagarik Suraksha Samhita (BNSS), which court may grant default bail after time limit lapses?",
+            "hin": "",
+            "optE": [
+                "District Court",
+                "Magistrate",
+                "High Court",
+                "Gram Nyayalaya"
+            ],
+            "optH": [
+                "लॉर्ड डलहौजी",
+                "लॉर्ड कर्जन",
+                "लॉर्ड विलियम बेंटिक",
+                "लॉर्ड कैनिंग"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 54,
+            "eng": "Which of the following offenses has been newly and clearly defined under the Bharatiya Nyaya Sanhita (BNS), 2023?",
+            "hin": "",
+            "optE": [
+                "Mob lynching",
+                "Defamation",
+                "Theft",
+                "Cheating"
+            ],
+            "optH": [
+                "ईस्ट इंडिया कंपनी की सभी शक्तियाँ ब्रिटिश क्राउन को हस्तांतरित करना।",
+                "ब्रिटिश सरकार द्वारा ईस्ट इंडिया कंपनी के मामलों पर नियंत्रण की दोहरी प्रणाली स्थापित करना।",
+                "भारतीय शासकों को उनके आंतरिक मामलों में ज्यादा स्वायत्तता प्रदान करना।",
+                "ब्रिटिश संसद में ब्रिटिश भारत के लिए पहला बजट पेश करना।"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 55,
+            "eng": "Which of the following pairs (Governor-General - Policy followed) is correctly matched?",
+            "hin": "",
+            "optE": [
+                "Lord Hastings - Anti-expansionist policy",
+                "Marquis of Hastings - Followed fiscal conservatism",
+                "Lord Wellesley - Pursued imperialist conquests",
+                "Henry Dundas - Opposed Charter renewal"
+            ],
+            "optH": [
+                "अनुच्छेद 249",
+                "अनुच्छेद 253",
+                "अनुच्छेद 248",
+                "अनुच्छेद 254"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 56,
+            "eng": "Fill in the blanks: Grants-in-Aid to States are provided under Article ____.",
+            "hin": "",
+            "optE": [
+                "275",
+                "280",
+                "265",
+                "110"
+            ],
+            "optH": [
+                "जिला न्यायालय",
+                "मजिस्ट्रेट",
+                "उच्च न्यायालय",
+                "ग्राम न्यायालय"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 57,
+            "eng": "How many crimes under Bharatiya Nyaya Sanhita, 2023 now include increased imprisonment terms?",
+            "hin": "",
+            "optE": [
+                "33",
+                "43",
+                "63",
+                "13"
+            ],
+            "optH": [
+                "भीड़ द्वारा हत्या",
+                "मानहानि",
+                "चोरी",
+                "बेईमानी करना"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 58,
+            "eng": "Pangenome refers to",
+            "hin": "",
+            "optE": [
+                "DNA of a single individual",
+                "Genome of extinct species",
+                "Collection of genome sequences of many individuals of same species",
+                "Modified DNA"
+            ],
+            "optH": [
+                "लॉर्ड हेस्टिंग्स - विस्तार विरोधी नीति",
+                "मार्क्विज ऑफ हेस्टिंग्स - राजकोषीय रूढ़िवाद का पालन किया",
+                "लॉर्ड वेलेजली - साम्राज्यवादी विजय का अनुसरण किया",
+                "हेनरी डंडास - चार्टर नवीनीकरण का विरोध किया"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 59,
+            "eng": "Which major legal framework does the Bharatiya Sakshya Adhiniyam, 2023, seek to align with in recognizing electronic evidence?",
+            "hin": "",
+            "optE": [
+                "The Information Technology Act, 2000",
+                "The Indian Evidence Act, 1872",
+                "The National Investigation Agency Act, 2008",
+                "The Protection of Women from Domestic Violence Act, 2005"
+            ],
+            "optH": [
+                "275",
+                "280",
+                "265",
+                "110"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 60,
+            "eng": "Which of the following statements regarding Article 270 are correct? \n 1. Article 270 governs the sharing of taxes between the Union and States, including proceeds from GST.\n 2. After the 101st Constitutional Amendment, Article 270 includes provisions for distributing revenue from Union taxes and GST.\n 3. The GST Compensation Cess is also shared between the Union and States under Article 270.",
+            "hin": "",
+            "optE": [
+                "1 and 3 only",
+                "1 Only",
+                "1 & 2 only",
+                "2 & 3 only"
+            ],
+            "optH": [
+                "33",
+                "43",
+                "63",
+                "13"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 61,
+            "eng": "Which of the following subjects falls under the Concurrent List in the Indian Constitution?",
+            "hin": "",
+            "optE": [
+                "Police",
+                "Criminal matters",
+                "Radio and television",
+                "Foreign affairs"
+            ],
+            "optH": [
+                "एकल व्यक्ति का डीएनए",
+                "विलुप्त प्रजातियों का जीनोम",
+                "एक ही प्रजाति के कई व्यक्तियों के जीनोम अनुक्रमों का संग्रह",
+                "संशोधित डीएनए"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 62,
+            "eng": "Fill in the blanks: The collective responsibility clause for State CoMs appears in Article _______",
+            "hin": "",
+            "optE": [
+                "164",
+                "163",
+                "154",
+                "169"
+            ],
+            "optH": [
+                "सूचना प्रौद्योगिकी अधिनियम , 2000",
+                "भारतीय साक्ष्य अधिनियम , 1872",
+                "राष्ट्रीय जांच एजेंसी अधिनियम , 2008",
+                "घरेलू हिंसा से महिलाओं का संरक्षण अधिनियम , 2005"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 63,
+            "eng": "By which Constitutional Amendment was education transferred to the Concurrent List?",
+            "hin": "",
+            "optE": [
+                "42nd",
+                "24th",
+                "44th",
+                "61st"
+            ],
+            "optH": [
+                "केवल 1 और 3",
+                "केवल 1",
+                "केवल 1 और 2",
+                "केवल 2 और 3"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 64,
+            "eng": "The Contingency Fund of an Indian State is held by _____ .",
+            "hin": "",
+            "optE": [
+                "Chief Minister",
+                "Finance Minister",
+                "Governor",
+                "State Legislature Speaker"
+            ],
+            "optH": [
+                "पुलिस",
+                "दंड के मामले ( आपराधिक मामले )",
+                "रेडियो और टेलीविजन",
+                "विदेश कार्य"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 65,
+            "eng": "Which of the following changes has Bharatiya Nagarik Suraksha Samhita (BNSS) brought to criminal procedure?",
+            "hin": "",
+            "optE": [
+                "Replaced all IPC sections",
+                "Video-recorded confessions",
+                "Presumption of guilt",
+                "Scrapping of all bail rights"
+            ],
+            "optH": [
+                "164",
+                "163",
+                "154",
+                "169"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 66,
+            "eng": "What was the function of the Board of Control established by Pitt's India Act?",
+            "hin": "",
+            "optE": [
+                "To manage only military operations in India.",
+                "To oversee taxation and local revenue.",
+                "To control civil and military affairs in British India.",
+                "To regulate trade between India and China."
+            ],
+            "optH": [
+                "42 वां",
+                "24 वां",
+                "44 वां",
+                "61 वां"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 67,
+            "eng": "Which article of the Indian Constitution mentions that \"There shall be a High Court for each State\"?",
+            "hin": "",
+            "optE": [
+                "Article 124",
+                "Article 214",
+                "Article 226",
+                "Article 32"
+            ],
+            "optH": [
+                "मुख्यमंत्री",
+                "वित्त मंत्री",
+                "राज्यपाल",
+                "राज्य विधानमंडल अध्यक्ष"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 68,
+            "eng": "Fill in the blank: The Factory Act 1881 primarily regulated _______.",
+            "hin": "",
+            "optE": [
+                "working hours of women and children",
+                "industrial pollution and working conditions",
+                "night shifts hours for men only",
+                "minimum wage for women and children"
+            ],
+            "optH": [
+                "सभी IPC अनुभागों को बदल दिया",
+                "वीडियो - रिकॉर्ड किए गए कबूलनामे",
+                "अपराध की धारणा",
+                "सभी जमानत अधिकारों को समाप्त करना"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 69,
+            "eng": "What makes the Goa Civil Code distinct from other personal laws in India?",
+            "hin": "",
+            "optE": [
+                "It applies only to the Hindu community in Goa.",
+                "It is a uniform civil code that applies to all communities regardless of religion.",
+                "It is based on British common law.",
+                "It allows separate personal laws for different religions."
+            ],
+            "optH": [
+                "भारत में केवल सैन्य अभियानों का प्रबंधन करना।",
+                "कराधान और स्थानीय राजस्व की निगरानी करना।",
+                "ब्रिटिश भारत में नागरिक और सैन्य मामलों को नियंत्रित करना।",
+                "भारत और चीन के बीच व्यापार को विनियमित करना।"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 70,
+            "eng": "Who decides whether a bill is a Money Bill or not?",
+            "hin": "",
+            "optE": [
+                "President",
+                "Speaker of the House of the People",
+                "Prime Minister",
+                "Finance Minister"
+            ],
+            "optH": [
+                "अनुच्छेद 124",
+                "अनुच्छेद 214",
+                "अनुच्छेद 226",
+                "अनुच्छेद 32"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 71,
+            "eng": "Consider the following statements: 1. Inter-State Council is a constitutional body under Article 263. 2. Its recommendations are binding on the Union and States. Which of the above statements is/are correct?",
+            "hin": "",
+            "optE": [
+                "Only 1",
+                "Only 2",
+                "Both 1 and 2",
+                "Neither 1 nor 2"
+            ],
+            "optH": [
+                "महिलाओं और बच्चों के काम के घंटे",
+                "औद्योगिक प्रदूषण और काम की स्थिति",
+                "केवल पुरुषों के लिए रात की पाली के घंटे",
+                "महिलाओं और बच्चों के लिए न्यूनतम वेतन"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 72,
+            "eng": "Which Article provides the President with the power to declare Financial Emergency?",
+            "hin": "",
+            "optE": [
+                "Article 352",
+                "Article 356",
+                "Article 360",
+                "Article 365"
+            ],
+            "optH": [
+                "यह गोवा में केवल हिंदू समुदाय पर लागू होता है।",
+                "यह एक समान नागरिक संहिता है जो धर्म की परवाह किए बिना सभी समुदायों पर लागू होती है।",
+                "यह ब्रिटिश आम कानून पर आधारित है।",
+                "यह विभिन्न धर्मों के लिए अलग - अलग व्यक्तिगत कानूनों की अनुमति देता है।"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c\n SET 4",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 73,
+            "eng": "Gene Drive Technology primarily aims to",
+            "hin": "",
+            "optE": [
+                "Increase crop yield",
+                "Modify Mendelian inheritance",
+                "Create GM crops",
+                "Identify criminals"
+            ],
+            "optH": [
+                "राष्ट्रपति",
+                "लोकसभा अध्यक्ष",
+                "प्रधानमंत्री",
+                "वित्त मंत्री"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 74,
+            "eng": "The Union List in Schedule VII deals solely with matters of national importance like defence and foreign affairs. Which list does this describe?",
+            "hin": "",
+            "optE": [
+                "Union",
+                "State",
+                "Concurrent",
+                "Residuary"
+            ],
+            "optH": [
+                "केवल 1",
+                "केवल 2",
+                "1 और 2 दोनों",
+                "न तो 1 और न ही 2"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 75,
+            "eng": "The \"Lahore Resolution\" passed by the Muslim League in 1940 demanded:",
+            "hin": "",
+            "optE": [
+                "Complete integration of all princely states with British India.",
+                "The creation of a separate state for Muslims in the northwestern and eastern parts of India.",
+                "Equal representation for Muslims in all legislative bodies.",
+                "The continuation of a united India with enhanced safeguards for minority rights."
+            ],
+            "optH": [
+                "अनुच्छेद 352",
+                "अनुच्छेद 356",
+                "अनुच्छेद 360",
+                "अनुच्छेद 365"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 76,
+            "eng": "Under Article 262 of the Indian Constitution, which of the following interpretations most accurately reflects Parliament's authority regarding inter-State water disputes?",
+            "hin": "",
+            "optE": [
+                "Legislate on river navigation but not bar SC jurisdiction.",
+                "Set up tribunals for water disputes and bar SC review.",
+                "Abolish State-level water bodies permanently.",
+                "Mandate ISC mediation before court action."
+            ],
+            "optH": [
+                "फसल की उपज बढ़ाना",
+                "मेंडेलियन अनुवांशिकता में संशोधन करना",
+                "अनुवांशिक रूप से संशोधित (GM) फसलें बनाना",
+                "अपराधियों की पहचान करना"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 77,
+            "eng": "Under the Bharatiya Sakshya Adhiniyam, 2023, what is required for digital evidence to be presented in court?",
+            "hin": "",
+            "optE": [
+                "It must be presented in hard copy form only.",
+                "It must come from a reliable, government-approved platform.",
+                "It must be accompanied by a valid digital signature.",
+                "It must be verified by a government official before submission."
+            ],
+            "optH": [
+                "केवल 2",
+                "केवल 1",
+                "केवल 3",
+                "1, 2 और 3"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 78,
+            "eng": "Which article of the Indian constitution is related with the Special address by the Governor?",
+            "hin": "",
+            "optE": [
+                "Article 175",
+                "Article 176",
+                "Article 177",
+                "Article 178"
+            ],
+            "optH": [
+                "संघ",
+                "राज्य",
+                "समवर्ती",
+                "अवशिष्ट"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 79,
+            "eng": "Consider the following statements: \n 1. Article 131 provides exclusive original jurisdiction to High Courts in federal disputes. \n 2. The Supreme Court can adjudicate disputes between States under Article 131. \n Which of the statements given above is/are correct?",
+            "hin": "",
+            "optE": [
+                "Only 1",
+                "Only 2",
+                "Both 1 and 2",
+                "Neither 1 nor 2"
+            ],
+            "optH": [
+                "सभी रियासतों का ब्रिटिश भारत में पूर्ण एकीकरण।",
+                "भारत के उत्तर - पश्चिमी और पूर्वी भागों में मुसलमानों के लिए एक अलग राज्य का निर्माण।",
+                "सभी विधायी निकायों में मुसलमानों के लिए समान प्रतिनिधित्व।",
+                "अल्पसंख्यकों के अधिकारों के लिए उन्नत सुरक्षा उपायों के साथ एकीकृत भारत की निरंतरता।"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 80,
+            "eng": "What was the role of the India Council established by the Government of India Act, 1858?",
+            "hin": "",
+            "optE": [
+                "To control trade with India",
+                "To advise the Secretary of State",
+                "To represent Indian opinion in Britain",
+                "To review court judgments"
+            ],
+            "optH": [
+                "नदी नेविगेशन पर कानून बना सकता है लेकिन SC के अधिकार क्षेत्र को नहीं रोक सकता।",
+                "जल विवादों के लिए ट्रिब्यूनल स्थापित करना और SC की समीक्षा को रोकना।",
+                "राज्य - स्तरीय जल निकायों को स्थायी रूप से समाप्त करना।",
+                "अदालत की कार्रवाई से पहले ISC मध्यस्थता को अनिवार्य करना।"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 81,
+            "eng": "Which of the following is NOT the aim to establish the Directive Principles of State Policy?",
+            "hin": "",
+            "optE": [
+                "Welfare state",
+                "Economic democracy",
+                "Social democracy",
+                "Political democracy"
+            ],
+            "optH": [
+                "इसे केवल हार्ड कॉपी के रूप में प्रस्तुत किया जाना चाहिए।",
+                "यह एक विश्वसनीय , सरकार द्वारा अनुमोदित मंच से आना चाहिए।",
+                "इसके साथ एक वैध डिजिटल हस्ताक्षर होना चाहिए।",
+                "प्रस्तुत करने से पहले इसे एक सरकारी अधिकारी द्वारा सत्यापित किया जाना चाहिए।"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 82,
+            "eng": "Fill in the blanks: The Sarkaria Commission (Centre-State Relations) was set up in the year _______",
+            "hin": "",
+            "optE": [
+                "1983",
+                "1990",
+                "1992",
+                "2000"
+            ],
+            "optH": [
+                "अनुच्छेद 175",
+                "अनुच्छेद 176",
+                "अनुच्छेद 177",
+                "अनुच्छेद 178"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 83,
+            "eng": "Fill in the blanks: The Parliament can create a new All-India Service by a resolution in the _____",
+            "hin": "",
+            "optE": [
+                "Rajya Sabha",
+                "Lok Sabha",
+                "State Assemblies",
+                "GST Council"
+            ],
+            "optH": [
+                "केवल 1",
+                "केवल 2",
+                "1 और 2 दोनों",
+                "न तो 1 और न ही 2"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 84,
+            "eng": "The International Court of Justice is located at _____",
+            "hin": "",
+            "optE": [
+                "Hague",
+                "New York",
+                "Beijing",
+                "Paris"
+            ],
+            "optH": [
+                "भारत के साथ व्यापार को नियंत्रित करना",
+                "राज्य सचिव को सलाह देना",
+                "ब्रिटेन में भारतीय राय का प्रतिनिधित्व करना",
+                "अदालती फैसलों की समीक्षा करना"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 85,
+            "eng": "Under Article 352, what legislative consequence follows a Proclamation of National Emergency in India?",
+            "hin": "",
+            "optE": [
+                "States retain exclusive control over the State List.",
+                "Parliament can legislate on any matter in the State List.",
+                "Rajya Sabha's approval is required for all State Bills.",
+                "President dissolves all State Legislative Assemblies."
+            ],
+            "optH": [
+                "कल्याणकारी राज्य",
+                "आर्थिक लोकतंत्र",
+                "सामाजिक लोकतंत्र",
+                "राजनीतिक लोकतंत्र"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 86,
+            "eng": "For how long a person can serve as a minister without being a member of either House of Parliament of India?",
+            "hin": "",
+            "optE": [
+                "6 consecutive months",
+                "3 consecutive months",
+                "12 consecutive months",
+                "2 consecutive month"
+            ],
+            "optH": [
+                "1983",
+                "1990",
+                "1992",
+                "2000"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 87,
+            "eng": "Arrange the following events in chronological order: \n a. Eastern Zonal Council meeting 2022 \n b. States Reorganisation Act passed \n c. First Central Zonal Council meeting",
+            "hin": "",
+            "optE": [
+                "b-c-a",
+                "c-b-a",
+                "a-b-c",
+                "b-a-c"
+            ],
+            "optH": [
+                "राज्य सभा",
+                "लोक सभा",
+                "राज्य विधानसभाओं",
+                "जीएसटी परिषद"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 88,
+            "eng": "Fill in the blanks: A Bill that \"imposes a new tax\" is categorised at the Centre as a _____",
+            "hin": "",
+            "optE": [
+                "Money Bill.",
+                "Ordinary",
+                "Private",
+                "Constitutional"
+            ],
+            "optH": [
+                "हेग",
+                "न्यूयॉर्क",
+                "बीजिंग",
+                "पेरिस"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 89,
+            "eng": "Which of the following features of the Indian Constitution is borrowed from United States of America?",
+            "hin": "",
+            "optE": [
+                "Fundamental Rights",
+                "Centrifugal form of federalism where the centre is stronger than the states",
+                "Concept of Concurrent list",
+                "Single citizenship"
+            ],
+            "optH": [
+                "गृह विभाग और सैन्य बोर्ड",
+                "संसद और क्राउन काउंसिल",
+                "बोर्ड ऑफ कंट्रोल और कोर्ट ऑफ डायरेक्टर्स",
+                "गवर्नर जनरल की परिषद और प्रिवी काउंसिल"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 90,
+            "eng": "Which of the following pairs (Educational Event - Key Outcome/Initiative) is correctly matched?",
+            "hin": "",
+            "optE": [
+                "Charter Act, 1813 - Allocated funds for promotion of education.",
+                "Macaulay's Minute, 1835 - Emphasized traditional Sanskrit learning.",
+                "Serampore Mission - Promoted technical education for elite Indians.",
+                "Orientalist-Anglicist Debate - Resolved by Charter Act, 1833."
+            ],
+            "optH": [
+                "राज्य राज्य सूची पर विशेष नियंत्रण बनाए रखते हैं।",
+                "संसद राज्य सूची के किसी भी मामले पर कानून बना सकती है।",
+                "सभी राज्य विधेयकों के लिए राज्यसभा की मंजूरी आवश्यक है।",
+                "राष्ट्रपति सभी राज्य विधानसभाओं को भंग कर देता है।"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: a",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 91,
+            "eng": "Which law replaced the Indian Penal Code (IPC), 1860?",
+            "hin": "",
+            "optE": [
+                "Uniform Civil Code",
+                "Bharatiya Sakshya Adhiniyam",
+                "Bharatiya Nyaya Sanhita",
+                "Bharatiya Nagarik Suraksha Sanhita"
+            ],
+            "optH": [
+                "निरंतर 6 मास",
+                "निरंतर 3 मास",
+                "निरंतर 12 मास",
+                "निरंतर 2 मास"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 92,
+            "eng": "Which of the following is NOT a Fundamental Duty mentioned in the Indian Constitution?",
+            "hin": "",
+            "optE": [
+                "To respect ideals of the constitution",
+                "To respect the National Flag",
+                "To respect the National Anthem",
+                "Separation of judiciary from executive"
+            ],
+            "optH": [
+                "b-c-a",
+                "c-b-a",
+                "a-b-c",
+                "b-a-c"
+            ],
+            "ans": 4,
+            "solE": "Correct Answer: d",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 93,
+            "eng": "Which of the following statements is/are correct? \n 1. If a State law on a Concurrent List subject is reserved for the President and receives assent, it overrides the existing Union law on the same subject in that state. \n 2. Parliament can later nullify such a State law by passing another law on the same subject.",
+            "hin": "",
+            "optE": [
+                "Only 1",
+                "Only 2",
+                "Both 1 and 2",
+                "Neither 1 nor 2"
+            ],
+            "optH": [
+                "धन विधेयक",
+                "साधारण",
+                "निजी",
+                "संवैधानिक"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 94,
+            "eng": "Which of the following was removed from the list of Fundamental Rights?",
+            "hin": "",
+            "optE": [
+                "Right to Equality",
+                "Right to Property",
+                "Right to Freedom",
+                "Right against Exploitation"
+            ],
+            "optH": [
+                "मूल अधिकार",
+                "संघवाद का केन्द्रापसारक रूप जहां केंद्र राज्यों की तुलना में अधिक मजबूत होता है",
+                "समवर्ती सूची की अवधारणा",
+                "एकल नागरिकता"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 95,
+            "eng": "Which part of the Indian Constitution includes the Directive Principle regarding a Uniform Civil Code?",
+            "hin": "",
+            "optE": [
+                "Part III (Fundamental Rights)",
+                "Part IV (Directive Principles of State Policy)",
+                "Part V (The Union)",
+                "Part VI (The States)"
+            ],
+            "optH": [
+                "चार्टर अधिनियम , 1813 - शिक्षा को बढ़ावा देने के लिए धन आवंटित किया।",
+                "मैकाले का मिनट , 1835 - पारंपरिक संस्कृत शिक्षा पर जोर दिया।",
+                "सेरामपुर मिशन - कुलीन भारतीयों के लिए तकनीकी शिक्षा को बढ़ावा दिया।",
+                "प्राच्यविद् - आंग्लविद् बहस - चार्टर अधिनियम , 1833 द्वारा हल किया गया।"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : a"
+        },
+        {
+            "id": 96,
+            "eng": "How many sections does the Bharatiya Nyaya Sanhita (BNS), 2023 contain?",
+            "hin": "",
+            "optE": [
+                "358",
+                "558",
+                "258",
+                "458"
+            ],
+            "optH": [
+                "समान नागरिक संहिता",
+                "भारतीय साक्ष्य अधिनियम",
+                "भारतीय न्याय संहिता",
+                "भारतीय नागरिक सुरक्षा संहिता"
+            ],
+            "ans": 1,
+            "solE": "Correct Answer: 1",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 97,
+            "eng": "Members of the Legislative Council of an Indian state as nearly as may be, shall be elected by electorates consisting of ______ members of municipalities, district boards and such other local authorities in the State as Parliament may by law specify.",
+            "hin": "",
+            "optE": [
+                "1/12",
+                "1/3",
+                "1/2",
+                "1/6"
+            ],
+            "optH": [
+                "संविधान के आदर्शों का आदर करना",
+                "राष्ट्र ध्वज का आदर करना",
+                "राष्ट्रगान का आदर करना",
+                "कार्यपालिका से न्यायपालिका का पृथक्करण"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : d"
+        },
+        {
+            "id": 98,
+            "eng": "Which article of the Indian Constitution deals with sessions of Parliament?",
+            "hin": "",
+            "optE": [
+                "Article 74",
+                "Article 85",
+                "Article 93",
+                "Article 100"
+            ],
+            "optH": [
+                "केवल 1",
+                "केवल 2",
+                "1 और 2 दोनों",
+                "न तो 1 और न ही 2"
+            ],
+            "ans": 2,
+            "solE": "Correct Answer: b",
+            "solH": "सही उत्तर : c"
+        },
+        {
+            "id": 99,
+            "eng": "Consider the following statements:\n 1. Article 246A grants exclusive power to Parliament to make laws on GST.\n 2. States have no legislative power over intra-state GST.\n 3. GST Council is a constitutional body under Article 279A.\n Which of the above statements is/are correct?",
+            "hin": "",
+            "optE": [
+                "2 only",
+                "3 only",
+                "1 only",
+                "1,2 and 3"
+            ],
+            "optH": [
+                "समानता का अधिकार",
+                "संपत्ति का अधिकार",
+                "स्वतंत्रता का अधिकार",
+                "शोषण के खिलाफ अधिकार"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: c",
+            "solH": "सही उत्तर : b"
+        },
+        {
+            "id": 100,
+            "eng": "Which administrative bodies were abolished after the enactment of the Government of India Act, 1858?",
+            "hin": "",
+            "optE": [
+                "Home Department and Military Board",
+                "Parliament and Crown's Council",
+                "Board of Control and Court of Directors",
+                "Governor General's Council and Privy Council"
+            ],
+            "optH": [
+                "भाग III ( मौलिक अधिकार )",
+                "भाग IV ( राज्य नीति के निर्देशक सिद्धांत )",
+                "भाग V ( संघ )",
+                "भाग VI ( राज्य )"
+            ],
+            "ans": 3,
+            "solE": "Correct Answer: 3",
+            "solH": "सही उत्तर : b"
+        }
+    ]
+};

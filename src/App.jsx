@@ -98,6 +98,7 @@ import CurrentAffairsPyqTest1MockTestPage from "./pages/CurrentAffairsPyqTest1Mo
 import TrianglesTest1MockTestPage from "./pages/TrianglesTest1MockTestPage";
 import RegulatingMockTestPage from "./pages/RegulatingMockTestPage";
 import ConstitutionalBodiesMockTestPage from "./pages/ConstitutionalBodiesMockTestPage";
+import GkPolityTest1MockTestPage from "./pages/GkPolityTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -390,16 +391,16 @@ const router = createBrowserRouter([
       { path: "cbt2-ug-test-1", element: <Cbt2UgTest1MockTestPage /> },
 
       { path: "important-days-test-1", element: <ImportantDaysTest1MockTestPage /> },
-    
+
       { path: "Trigonometry", element: <TrigonometryMockTestPage /> },
-    
+
       { path: "Height", element: <HeightMockTestPage /> },
-    
+
       { path: "TransportationSystem", element: <TransportationSystemMockTestPage /> },
-    
+
       { path: "Sports", element: <SportsMockTestPage /> },
       { path: "MedievalHistoryRajputAndTriPartite", element: <MedievalHistoryRajputAndTriPartiteMockTestPage /> },
-    
+
       { path: "triangles-test-1", element: <TrianglesTest1MockTestPage /> },
       { path: "Regulating", element: <RegulatingMockTestPage /> },
     
@@ -415,6 +416,7 @@ const router = createBrowserRouter([
     ),
     children: [
       { path: "current-affairs-pyq-2026-test-1", element: <CurrentAffairsPyqTest1MockTestPage /> },
+      { path: "gk-polity-test-1", element: <GkPolityTest1MockTestPage /> },
     ],
   },
   {

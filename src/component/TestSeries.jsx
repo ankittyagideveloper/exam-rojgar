@@ -2,6 +2,10 @@ import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "../components/ui";
 import { Link } from "react-router";
+import { useFullscreen } from "../hooks/useFullScreen";
+import {
+  IconMaximize, IconMinimize
+} from "@tabler/icons-react";
 
 /**
  * TestSeries — Railway CBT-style mock test component
@@ -78,6 +82,7 @@ function paletteClass(status, active) {
 // ─── main component ───────────────────────────────────────────────────────────
 const TestSeries = ({ testData }) => {
   const { isLoaded, isSignedIn, user } = useUser();
+  const { isFullScreen, toggleFullscreen } = useFullscreen();
 
   if (!isLoaded || !isSignedIn) {
     return <p>Loading...</p>;
@@ -105,7 +110,6 @@ const TestSeries = ({ testData }) => {
   const SAVED_KEY = `${storageKey}_saved`;
   const MAX_SCORE = TOTAL * marksCorrect;
   const TEST_SECONDS = duration * 60;
-
   // ── screens ──
   const [screen, setScreen] = useState(SCREENS.HOME);
   const [countdown, setCountdown] = useState(5);
@@ -572,7 +576,7 @@ const TestSeries = ({ testData }) => {
               {/* Info card */}
               <div className="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
                 <div className="w-20 h-24 border-2 border-gray-400 bg-white flex items-center justify-center mb-3 text-gray-300 text-5xl shadow-inner overflow-hidden">
-                 <img src={profileImageUrl} alt='user-profile'/>
+                  <img src={profileImageUrl} alt='user-profile' />
                 </div>
                 <div className="w-full text-[13px] space-y-2">
                   {[
@@ -699,6 +703,9 @@ const TestSeries = ({ testData }) => {
                     <option value="eng">English</option>
                     <option value="hin">Hindi</option>
                   </select>
+                  <button className="hidden md:block border-none bg-none 	pointer text-inherit px-2" onClick={toggleFullscreen}>
+                    {isFullScreen ?  <IconMinimize />:<IconMaximize />}
+                  </button>
                 </div>
                 <div className={`border px-2 md:px-4 py-1 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold justify-center min-w-[80px] ${timerDanger ? "bg-red-100 border-red-500 text-red-600" : "bg-gray-100 border-gray-300 text-slate-700"}`}>
                   <span>⏱</span>
@@ -934,11 +941,11 @@ const TestSeries = ({ testData }) => {
                   <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">{isHistoryMode && historyAttempt ? historyAttempt.subject : subject}</div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Candidate Name</span>
-                    <span className="text-sm font-bold text-yellow-300">{ isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant"}</span>
+                    <span className="text-sm font-bold text-yellow-300">{isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant"}</span>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Paper Name</span>
-                    <span className="text-sm font-bold text-yellow-300">{ isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName}</span>
+                    <span className="text-sm font-bold text-yellow-300">{isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName}</span>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Percentile</span>
@@ -953,7 +960,7 @@ const TestSeries = ({ testData }) => {
                   ["Final Score", `${r.score} / ${MAX_SCORE}`, "text-slate-800 text-2xl md:text-3xl"],
                   ["Attempted", `${r.attempted} / ${TOTAL}`, "text-blue-600 text-2xl md:text-3xl"],
                   ["Correct / Wrong", null, "text-2xl"],
-                  ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber,  "text-yellow-500 text-2xl md:text-3xl"],
+                  ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber, "text-yellow-500 text-2xl md:text-3xl"],
                 ].map((item, i) => (
                   <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center">
                     <div className="text-slate-500 text-xs font-semibold mb-1">{item[0]}</div>
