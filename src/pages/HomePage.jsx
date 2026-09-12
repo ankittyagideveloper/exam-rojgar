@@ -91,6 +91,9 @@ function HomePage() {
         style={{
           backgroundImage: "url('/hero-background.svg')",
           backgroundRepeat: "no-repeat",
+          backgroundPosition:"center",
+          backgroundSize: "cover",
+          minHeight:"100vh"
         }}
       >
         {/* <header>

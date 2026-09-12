@@ -59,150 +59,46 @@ const Slider = () => {
   }, []);
 
   return (
-    <BackgroundGradient className="md:rounded-[22px]  p-1 sm:p-2 bg-white">
-      <div className="w-full  h-full  rounded">
+    <BackgroundGradient
+      containerClassName="w-full max-w-[760px] mx-auto"
+      className="rounded-[22px] overflow-hidden bg-white dark:bg-zinc-900"
+    >
+      <div className="w-full rounded-[20px] overflow-hidden">
         <Swiper
-          spaceBetween={30}
+          spaceBetween={0}
           centeredSlides={true}
           autoplay={{
-            delay: 3000,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,
+            dynamicBullets: true,
           }}
-          speed={1200}
-          // navigation={true}
+          speed={800}
           modules={[Autoplay, Pagination, Navigation]}
-          className="w-full  h-48 md:h-90 lg:h-90 md:w-[725px]  md:rounded-2xl  mt-0 border-2 border-[#84CAFF]"
+          className="w-full rounded-[20px] [&_.swiper-pagination-bullet]:bg-white [&_.swiper-pagination-bullet-active]:bg-[#1272ba] [&_.swiper-pagination-bullet]:opacity-70 [&_.swiper-pagination-bullet-active]:opacity-100"
         >
-          {/* Common slide styles applied via Tailwind */}
-          {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <img
-            src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.5/banner-1.gif"
-            alt="slide-1"
-            className="w-full h-64 lg:h-full md:h-full object-cover lg:object-fill "
-          />
-        </SwiperSlide> */}
-
-          {/* <SwiperSlide className=" md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/online-test-series/rrc/rrc-group-d">
-            <img
-              src="/rrc-group-D.png"
-              alt="slide-1"
-              className="w-full h-64 lg:h-full md:h-full object-cover lg:object-fill "
-            />
-          </Link>
-        </SwiperSlide>
-
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/online-test-series">
-            <img
-              src="/govt-exam.png"
-              alt="slide-1"
-              className="w-full h-64 lg:h-full md:h-full  object-cover lg:object-fill "
-            />
-          </Link>
-        </SwiperSlide> */}
-          {/* <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/online-test-series/rrb/rrb-ntpc">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-0.mp4"
-              className="w-full h-auto"
-            />
-          </Link>
-        </SwiperSlide>
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/online-test-series/rrb/rrb-ntpc">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.3/banner-1.mp4"
-              className="w-full h-auto"
-            />
-          </Link>
-        </SwiperSlide>
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/online-test-series/rrb/rrb-ntpc">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.1.2/banner-2.mp4"
-              className="w-full h-auto"
-            />
-          </Link>
-        </SwiperSlide>
-        <SwiperSlide className="md:w-[725px] z-0 flex justify-center items-center text-center bg-gray-700">
-          <Link to="/pdf-category">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="https://cdn.jsdelivr.net/gh/ankittyagideveloper/first-cdn-test@v1.0.9/banner-3.mp4"
-              className="w-full h-auto"
-            />
-          </Link>
-        </SwiperSlide> */}
-          {/* <SwiperSlide className="flex justify-center items-center text-center bg-gray-700">
-          <img
-            src="/slide-3.jpg"
-            alt="slide-3"
-            className="w-full h-64 object-cover rounded-lg"
-          />
-        </SwiperSlide> */}
-          {/* <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 2
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 3
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 4
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 5
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 6
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 7
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 8
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center items-center text-center text-lg bg-gray-700 text-white">
-          Slide 9
-        </SwiperSlide> */}
-
-          {SLIDES.map((slide, index) => (
-            <SwiperSlide
-              key={index}
-              className="md:w-[725px] flex justify-center items-center bg-gray-700"
-            >
-              <Link to={slide.to}>
-                {videoSources[index] && (
+          {SLIDES.map((slide, index) => {
+            const videoSrc = videoSources[index] || slide.url;
+            return (
+              <SwiperSlide
+                key={index}
+                className="w-full flex justify-center items-center bg-black/5"
+              >
+                <Link to={slide.to} className="block w-full h-full">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    src={videoSources[index]}
-                    className="w-full h-auto"
+                    src={videoSrc}
+                    className="w-full h-auto aspect-[16/9] object-cover rounded-[20px] block"
                   />
-                )}
-              </Link>
-            </SwiperSlide>
-          ))}
+                </Link>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </BackgroundGradient>
