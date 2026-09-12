@@ -27,7 +27,7 @@ export function VideoCard({ title, embedUrl }) {
       </div>
 
       {/* Video Title */}
-      <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 dark:text-[#fff]">
+      <h3 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 dark:text-black">
         {title}
       </h3>
     </div>

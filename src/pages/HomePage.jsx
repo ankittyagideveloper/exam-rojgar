@@ -11,6 +11,7 @@ import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import { testimonials } from "@/constants";
 import { Link } from "react-router";
 import TelegramChatBot from "../component/TelegramChatBot";
+import SpotlightPreview from "../components/ui/spotlight-demo";
 
 
 function HomePage() {
@@ -86,14 +87,9 @@ function HomePage() {
         />
       </Helmet>
 
+      <SpotlightPreview>
       <div
-        className="min-h-screen bg-gray-100 pb-20"
-        style={{
-          minHeight: "100vh",
-          backgroundImage: "url('/hero-background.svg')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "auto",
-        }}
+        className="min-h-screen pb-20"
       >
         {/* <header>
         <SignedOut>
@@ -278,6 +274,7 @@ function HomePage() {
         {/* Telegram Chatbot floating widget */}
         <TelegramChatBot />
       </div>
+      </SpotlightPreview>
     </>
   );
 }
