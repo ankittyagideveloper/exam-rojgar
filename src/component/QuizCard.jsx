@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui";
 import { useNavigate } from "react-router";
+import { ShareTest } from "../components/ui/shareTest";
 
 export function QuizCard({
   title,
@@ -15,7 +16,7 @@ export function QuizCard({
   isNewInterface = false,
   onStartClick,
   attemptStatus,
-  isPaid = false
+  isPaid = false,
 }) {
   const formatLanguages = (langs) => {
     if (langs.length <= 2) {
@@ -27,20 +28,29 @@ export function QuizCard({
   };
   const isSubmitted = attemptStatus === "SUBMITTED";
   const navigate = useNavigate()
+
+  const shareText = `📝 Attempt the test "${title}" on ExamRojgaar!\n\n🚆 Test your preparation and improve your score.\n👉 ${window.location.href}`;
+
+
+
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
+      {/* Share buttons — top-right corner */}
+      <div className="absolute top-2 right-2">
+        <ShareTest testTitle={title} testUrl={window.location.href} />
+      </div>
+
       {/* Mobile Layout */}
       <div className="md:hidden">
         {/* Badges */}
         <div className="flex gap-2 mb-3">
-            <span className={`${
-              isFree
-                ? 'bg-green-500 text-white'
-                : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
+          <span className={`${isFree
+            ? 'bg-green-500 text-white'
+            : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
             } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
-              {isFree ? 'FREE' : '⭐ Premium'}
-            </span>
-          
+            {isFree ? 'FREE' : '⭐ Premium'}
+          </span>
+
           {isNewInterface && (
             <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
               NEW INTERFACE
@@ -62,15 +72,14 @@ export function QuizCard({
             </Button> : <Button
               disabled={attemptStatus === "SUBMITTED"}
               onClick={onStartClick}
-              className={`${
-                isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-              } cursor-pointer bg-[#1272ba] hover:bg-[#1260ba] text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+              className={`${isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
+                } cursor-pointer bg-[#1272ba] hover:bg-[#1260ba] text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
             >
               {attemptStatus === "IN_PROGRESS"
                 ? "Resume"
                 : attemptStatus === "SUBMITTED"
-                ? "SUBMITTED"
-                : "Start Now"}
+                  ? "SUBMITTED"
+                  : "Start Now"}
             </Button>}
             {attemptStatus === "SUBMITTED" && (
               <Button
@@ -101,11 +110,10 @@ export function QuizCard({
           <div className="flex-1">
             {/* Badges */}
             <div className="flex gap-2 mb-3">
-              <span className={`${
-                isFree
-                  ? 'bg-green-500 text-white'
-                  : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
-              } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
+              <span className={`${isFree
+                ? 'bg-green-500 text-white'
+                : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
+                } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
                 {isFree ? 'FREE' : '⭐ Premium'}
               </span>
               {isNewInterface && (
@@ -148,29 +156,28 @@ export function QuizCard({
               {formatLanguages(languages)}
             </div> */}
           </div>
-
+           
           {/* Start Button */}
           <div className="ml-6">
             <div className="flex flex-col gap-1">
               {!isPaid ? <Button
-                  onClick={() => navigate('/target-series#program')}
-                  className="cursor-pointer bg-[#FF7E08] hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
-                >
-                  🔒 Locked
-                </Button>
-                : <Button
-                disabled={attemptStatus === "SUBMITTED"}
-                onClick={onStartClick}
-                className={`${
-                  isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-                } cursor-pointer text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                onClick={() => navigate('/target-series#program')}
+                className="cursor-pointer bg-[#FF7E08] hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
               >
-                {attemptStatus === "IN_PROGRESS"
-                  ? "Resume"
-                  : attemptStatus === "SUBMITTED"
-                  ? "SUBMITTED"
-                  : "Start Now"}
-              </Button>}
+                🔒 Locked
+              </Button>
+                : <Button
+                  disabled={attemptStatus === "SUBMITTED"}
+                  onClick={onStartClick}
+                  className={`${isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
+                    } cursor-pointer text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                >
+                  {attemptStatus === "IN_PROGRESS"
+                    ? "Resume"
+                    : attemptStatus === "SUBMITTED"
+                      ? "SUBMITTED"
+                      : "Start Now"}
+                </Button>}
               {attemptStatus === "SUBMITTED" && (
                 <Button
                   onClick={() => onStartClick(true)}
@@ -180,6 +187,7 @@ export function QuizCard({
                 </Button>
               )}
             </div>
+            
           </div>
         </div>
       </div>
