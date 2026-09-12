@@ -268,65 +268,71 @@ const TestPage = () => {
         <meta name="description" content={seo.description} />
         <meta name="keywords" content={seo.keywords} />
         <link rel="canonical" href={`https://examrojgaar.com${canonicalPath}`} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
-        <meta
-          property="og:image"
-          content="https://examrojgaar.com/apple-touch-icon.png"
-        />
+        <meta property="og:image" content="https://examrojgaar.com/logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content={`https://examrojgaar.com${canonicalPath}`} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content="https://examrojgaar.com/logo.png"/>
         <meta property="og:type" content="website" />
-        {/* FAQ schema for the RRB NTPC hub — boosts rich results for "rrb ntpc tests" queries */}
-        {pathKey === "rrb/rrb-ntpc" && (
-          <script type="application/ld+json">{JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is the RRB NTPC exam pattern 2025?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "RRB NTPC 2025 has two stages: CBT-1 (100 questions, 90 minutes) covering General Awareness, Mathematics and General Intelligence & Reasoning, and CBT-2 (120 questions, 90 minutes) covering the same sections with higher difficulty. ExamRojgaar provides free topic-wise mock tests for both stages."
+          {/* FAQ schema for the RRB NTPC hub — boosts rich results for "rrb ntpc tests" queries */}
+          {pathKey === "rrb/rrb-ntpc" && (
+            <script type="application/ld+json">{JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is the RRB NTPC exam pattern 2025?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RRB NTPC 2025 has two stages: CBT-1 (100 questions, 90 minutes) covering General Awareness, Mathematics and General Intelligence & Reasoning, and CBT-2 (120 questions, 90 minutes) covering the same sections with higher difficulty. ExamRojgaar provides free topic-wise mock tests for both stages."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Are the RRB NTPC mock tests on Exam Rojgaar free?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Exam Rojgaar offers free topic-wise mock tests for RRB NTPC covering History, Polity, Geography, Maths, Science and Current Affairs. Premium full-length tests are also available."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which subjects are covered in RRB NTPC mock tests?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Exam Rojgaar covers all RRB NTPC subjects: General Awareness (History, Polity, Geography, Economy, Science, Current Affairs) and Mathematics (Arithmetic — Profit & Loss, Percentage, Ratio, Average, HCF LCM, Time & Work, Pipe & Cistern)."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How many mock tests are available for RRB NTPC on Exam Rojgaar?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Exam Rojgaar has 40+ topic-wise mock tests and sectional tests for RRB NTPC, including tests for Ancient History, Medieval History, Modern History, Indian Polity, Geography, Arithmetic and Current Affairs."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is there a bilingual (Hindi + English) option for RRB NTPC tests?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all RRB NTPC mock tests on Exam Rojgaar are available in both Hindi and English, matching the actual RRB NTPC exam pattern."
+                  }
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "Are the RRB NTPC mock tests on Exam Rojgaar free?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, Exam Rojgaar offers free topic-wise mock tests for RRB NTPC covering History, Polity, Geography, Maths, Science and Current Affairs. Premium full-length tests are also available."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Which subjects are covered in RRB NTPC mock tests?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Exam Rojgaar covers all RRB NTPC subjects: General Awareness (History, Polity, Geography, Economy, Science, Current Affairs) and Mathematics (Arithmetic — Profit & Loss, Percentage, Ratio, Average, HCF LCM, Time & Work, Pipe & Cistern)."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How many mock tests are available for RRB NTPC on Exam Rojgaar?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Exam Rojgaar has 40+ topic-wise mock tests and sectional tests for RRB NTPC, including tests for Ancient History, Medieval History, Modern History, Indian Polity, Geography, Arithmetic and Current Affairs."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is there a bilingual (Hindi + English) option for RRB NTPC tests?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, all RRB NTPC mock tests on Exam Rojgaar are available in both Hindi and English, matching the actual RRB NTPC exam pattern."
-                }
-              }
-            ]
-          })}</script>
-        )}
+              ]
+            })}</script>
+          )}
       </Helmet>
       {/* Visible H1 for Google — visually styled but semantically present */}
       <h1 className="sr-only">{seo.h1}</h1>
