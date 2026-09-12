@@ -5,8 +5,8 @@ export const ConstitutionalBodiesMockData = {
   "subject": "Polity",
   "category": "Polity",
   "duration": 4,
-  "marksCorrect": 2,
-  "marksWrong": 0.5,
+  "marksCorrect": 1,
+  "marksWrong": 0.33,
   "telegramLink": "https://t.me/ExamRojgaar",
   "storageKey": "ExamRojgaar_ConstitutionalBodies",
   "questions": [
