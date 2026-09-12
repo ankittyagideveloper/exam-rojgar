@@ -12,7 +12,7 @@ const shareText = `🚆 Attempt "${testTitle}" on Exam Rojgaar!
 
 
     const handleWhatsAppShare = () => {
-        const text = encodeURIComponent(`${shareText}\n👉 ${testUrl}`);
+        const text = encodeURIComponent(shareText);
         window.open(`https://wa.me/?text=${text}`, "_blank");
     };
 

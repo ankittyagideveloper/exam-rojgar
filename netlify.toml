@@ -1,6 +1,16 @@
-  publish = "dist" # Ensure this points to your build folder
-  command = "npm run build" # Adjust this if your build command is different
- [[redirects]]
-  from = "/*"
-  to = "/index.html"
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
   status = 200
+
+[[edge_functions]]
+  path     = "/mock-test/*"
+  function = "og-inject"
+
+[[edge_functions]]
+  path     = "/free-mock-test/*"
+  function = "og-inject"
