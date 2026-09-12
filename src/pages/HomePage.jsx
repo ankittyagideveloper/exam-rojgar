@@ -89,11 +89,10 @@ function HomePage() {
       <div
         className="min-h-screen bg-gray-100 pb-20"
         style={{
+          minHeight: "100vh",
           backgroundImage: "url('/hero-background.svg')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition:"center",
-          backgroundSize: "cover",
-          minHeight:"100vh"
+          backgroundRepeat: "repeat",
+          backgroundSize: "auto",
         }}
       >
         {/* <header>
@@ -109,29 +108,29 @@ function HomePage() {
         <main className="px-0 py-0 md:px-4 md:py-6 ">
           <div className="lg:flex lg:items-center xl:flex-row justify-around gap-8">
             {/* Hero Section */}
-            <div className="hidden lg:flex flex-col mb-8 max-w-sm  px-4">
+            <div className="hidden lg:flex flex-col mb-8 max-w-sm  xl:max-w-3xl px-4">
               {currentLanguage === "en" ? (
                 <>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-black mb-2">
+                  <h2 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-2">
                     Crack your <span className="text-[#1272ba]">goal</span>
                   </h2>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-black mb-4">
+                  <h3 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-4">
                     with <span className="text-[#1272ba]">Exam Rojgaar</span>
                     <br />Test Series
                   </h3>
                 </>
               ) : (
                 <>
-                  <h2 className="text-3xl font-bold text-gray-800 dark:text-black mb-2">
+                  <h2 className="text-3xl xl:text-4xl  2xl:text-6xl font-bold text-gray-800 dark:text-black mb-2">
                     <span className="text-[#1272ba]">Exam Rojgaar</span>
                   </h2>
-                  <h3 className="text-3xl font-bold text-gray-800 dark:text-black mb-4">
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-4">
                     टेस्ट सीरीज़ के साथ <br />
                     अपना <span className="text-[#1272ba]">लक्ष्य</span> हासिल करें
                   </h3>
                 </>
               )}
-              <p className="text-gray-600  text-base leading-relaxed mb-6 dark:text-black">
+              <p className="text-gray-600 md:text-3xl xl:text-xl 2xl:text-3xl text-base leading-relaxed mb-6 dark:text-black">
                 {t("tagLine")}
               </p>
               <Link
@@ -189,11 +188,11 @@ function HomePage() {
         </div> */}
 
           <FeaturesRibbon />
-          
+
           <VideoPlayer />
 
           <div className="px-4 md:px-10 text-xl md:text-4xl  text-black dark:text-black">
-            See what our <br class="inline-block md:hidden"/>students tell
+            See what our <br class="inline-block md:hidden" />students tell
             about us 💕
           </div>
           <InfiniteMovingCards
