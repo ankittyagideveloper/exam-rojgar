@@ -270,6 +270,12 @@ const TestPage = () => {
         <link rel="canonical" href={`https://examrojgaar.com${canonicalPath}`} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
+        <meta
+          property="og:image"
+          content="https://examrojgaar.com/apple-touch-icon.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content={`https://examrojgaar.com${canonicalPath}`} />
         <meta property="og:type" content="website" />
         {/* FAQ schema for the RRB NTPC hub — boosts rich results for "rrb ntpc tests" queries */}
