@@ -58,7 +58,7 @@ export default function SidebarDemo({ children }) {
             } h-6 w-6 shrink-0 dark:text-neutral-200`}
         />
       ) : (
-        <IconHome className="h-6 w-6 shrink-0 dark:text-neutral-200 " />
+        <IconHome  className="shrink-0 dark:text-neutral-200 " />
       ),
       role: ["user", "admin"],
     },
@@ -211,7 +211,7 @@ export default function SidebarDemo({ children }) {
                 className="cursor-pointer flex items-center justify-center w-9 h-9 rounded-md text-[#86a1ae] hover:bg-[#363940] hover:text-white transition-colors duration-200"
                 aria-label={desktopCollapsed ? "Expand sidebar" : "Collapse sidebar"}
               >
-                <IconMenu2 className="w-6 h-6" />
+                <IconMenu2 size={24} />
               </button>
              {!desktopCollapsed && <Logo/>}
             </div>
@@ -254,7 +254,7 @@ export const LogoIcon = () => {
 
 const Dashboard = ({ children }) => {
   return (
-    <div className="flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]">
+    <div className="mt-15 lg:mt-0 flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]">
       {children}
     </div>
   );

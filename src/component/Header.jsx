@@ -72,7 +72,7 @@ const Header = () => {
 
       {/* Header */}
       <header
-        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
+        className={`fixed hidden h-[60px]  border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
           isAdmin ? "top-[30px]" : "top-0"
         } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
         style={{ width: "calc(100% - 60px)" }}
