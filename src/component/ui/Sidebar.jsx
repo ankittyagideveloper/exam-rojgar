@@ -2,22 +2,18 @@
 import { cn } from "../utils/utils";
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconMenu2, IconX, IconUserCircle } from "@tabler/icons-react";
-import { href, Link, useLocation } from "react-router-dom";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import { Link, useLocation } from "react-router-dom";
 import {
-  SignIn,
   SignedIn,
-  SignedOut,
   SignInButton,
   UserButton,
   useUser,
-  SignOutButton,
 } from "@clerk/react-router";
-import { Download, Moon, Sun, User } from "lucide-react";
+import { Download, Moon, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../language-switcher";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
-import { Logo } from "../SidebarDemo";
 import { Button } from "@/components/ui";
 
 const SidebarContext = createContext(undefined);
@@ -35,22 +31,49 @@ export const SidebarProvider = ({
   open: openProp,
   setOpen: setOpenProp,
   animate = true,
+  desktopCollapsed: desktopCollapsedProp,
+  setDesktopCollapsed: setDesktopCollapsedProp,
 }) => {
   const [openState, setOpenState] = useState(false);
+  const [desktopCollapsedState, setDesktopCollapsedState] = useState(false);
 
   const open = openProp !== undefined ? openProp : openState;
   const setOpen = setOpenProp !== undefined ? setOpenProp : setOpenState;
 
+  const desktopCollapsed =
+    desktopCollapsedProp !== undefined
+      ? desktopCollapsedProp
+      : desktopCollapsedState;
+  const setDesktopCollapsed =
+    setDesktopCollapsedProp !== undefined
+      ? setDesktopCollapsedProp
+      : setDesktopCollapsedState;
+
   return (
-    <SidebarContext.Provider value={{ open, setOpen, animate: animate }}>
+    <SidebarContext.Provider
+      value={{ open, setOpen, animate, desktopCollapsed, setDesktopCollapsed }}
+    >
       {children}
     </SidebarContext.Provider>
   );
 };
 
-export const Sidebar = ({ children, open, setOpen, animate }) => {
+export const Sidebar = ({
+  children,
+  open,
+  setOpen,
+  animate,
+  desktopCollapsed,
+  setDesktopCollapsed,
+}) => {
   return (
-    <SidebarProvider open={open} setOpen={setOpen} animate={animate}>
+    <SidebarProvider
+      open={open}
+      setOpen={setOpen}
+      animate={animate}
+      desktopCollapsed={desktopCollapsed}
+      setDesktopCollapsed={setDesktopCollapsed}
+    >
       {children}
     </SidebarProvider>
   );
@@ -66,54 +89,49 @@ export const SidebarBody = (props) => {
 };
 
 export const DesktopSidebar = ({ className, children, ...props }) => {
-  const { open, setOpen, animate } = useSidebar();
+  const { desktopCollapsed } = useSidebar();
   return (
-    <>
+    /* Outer shell — always 60px, always visible, never clips */
+    <div
+      className="hidden lg:flex fixed top-0 left-0 h-screen z-[60]"
+      style={{ width: "60px" }}
+    >
+      {/* Inner panel — expands to full width over the page */}
       <motion.div
         className={cn(
-          "h-full py-4 hidden w-[16vw]  lg:flex lg:flex-col bg-neutral-100 dark:bg-neutral-800  shrink-0",
+          "flex flex-col h-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden absolute top-0 left-0",
           className
         )}
-        // animate={{
-        //   width: animate ? (open ? "250px" : "60px") : "200px",
-        // }}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(true)}
+        initial={false}
+        animate={{ width: desktopCollapsed ? "60px" : "16vw" }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
         {...props}
       >
         {children}
       </motion.div>
-    </>
+    </div>
   );
 };
+
 function InstallPWAButton() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [isReadyToInstall, setIsReadyToInstall] = useState(false);
 
   useEffect(() => {
     const handler = (e) => {
-      // Prevent automatic browser prompt
       e.preventDefault();
       setDeferredPrompt(e);
       setIsReadyToInstall(true);
     };
-
     window.addEventListener("beforeinstallprompt", handler);
-
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
   const installApp = async () => {
     if (!deferredPrompt) return;
-
-    // Show the install prompt
     deferredPrompt.prompt();
-
-    // Wait for user choice
     const { outcome } = await deferredPrompt.userChoice;
     console.log("Install prompt outcome:", outcome);
-
-    // Clear prompt
     setDeferredPrompt(null);
     setIsReadyToInstall(false);
   };
@@ -137,6 +155,7 @@ function InstallPWAButton() {
     </Button>
   );
 }
+
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -146,45 +165,42 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     i18n: { changeLanguage, language },
   } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(language);
+
   const handleLanguageChange = () => {
     const newLanguage = currentLanguage === "en" ? "hi" : "en";
     setCurrentLanguage(newLanguage);
     changeLanguage(newLanguage);
   };
 
-  const closeSidebar = () => {
-    setOpen(!open);
-  };
-
-  const handleBackdropClick = () => {
-    setOpen(false);
-  };
+  const closeSidebar = () => setOpen(!open);
+  const handleBackdropClick = () => setOpen(false);
 
   const isAdmin = user?.publicMetadata?.roles?.includes("admin");
+
   return (
     <>
       <div
         className={cn(
           `${
             isAdmin ? "mt-[30px]" : ""
-          } h-[60px]  flex flex-row  lg:hidden  items-center justify-between  bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
+          } h-[60px] flex flex-row lg:hidden items-center justify-between bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
         )}
         {...props}
       >
-        <div className="flex items-center justify-between z-20 w-full h-16 px-5 ">
-          <div className="flex flex-row gap-2 items-center ">
+        <div className="flex items-center justify-between z-20 w-full h-16 px-5">
+          <div className="flex flex-row gap-2 items-center">
             <IconMenu2
-              className="text-neutral-800 dark:text-neutral-200"
+              className="text-neutral-800 dark:text-neutral-200 cursor-pointer"
               onClick={() => setOpen(!open)}
             />
-            <Link to="/" className="rounded-full  h-10 w-10">
+            <Link to="/" className="rounded-full h-10 w-10">
               <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
             </Link>
           </div>
           <div className="flex items-center gap-1">
             <button
               onClick={toggleDarkMode}
-              className=" cursor-pointer flex items-center justify-center w-10 h-10  dark:bg-gray-700  transition-all duration-200"
+              className="cursor-pointer flex items-center justify-center w-10 h-10 dark:bg-gray-700 transition-all duration-200"
               aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
             >
               {darkMode ? (
@@ -196,12 +212,12 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             <LanguageSwitcher onChange={handleLanguageChange} />
             <InstallPWAButton />
             {isSignedIn ? (
-              <>
-                <UserButton />
-              </>
+              <UserButton />
             ) : (
               <SignInButton mode="modal">
-                <Button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">LogIn</Button>
+                <Button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+                  LogIn
+                </Button>
               </SignInButton>
             )}
           </div>
@@ -209,7 +225,6 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         <AnimatePresence>
           {open && (
             <>
-              {/* Backdrop overlay - closes sidebar on click */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -218,23 +233,19 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 className="fixed inset-0 bg-black/50 z-[998]"
                 onClick={handleBackdropClick}
               />
-              {/* Sidebar */}
               <motion.div
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 0 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   `${isAdmin ? "mt-[30px]" : ""}
-                  fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white  flex flex-col justify-between z-[999]`,
+                  fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white flex flex-col justify-between z-[999]`,
                   className
                 )}
               >
                 <div
-                  className="cursor-pointer text-4xl absolute left-5 top-3 z-50   flex items-center gap-2"
+                  className="cursor-pointer text-4xl absolute left-5 top-3 z-50 flex items-center gap-2"
                   onClick={closeSidebar}
                 >
                   <IconX className="text-4xl" />
@@ -250,16 +261,46 @@ export const MobileSidebar = ({ className, children, ...props }) => {
   );
 };
 
+export const Logo = () => {
+  const { setOpen, desktopCollapsed } = useSidebar();
+  return (
+    <Link
+      onClick={() => setOpen(false)}
+      to="/"
+      className="relative z-20 flex items-center space-x-2 py-1 text-md font-normal text-black"
+    >
+      <div className="rounded-full h-8 w-8 shrink-0">
+        <img
+          src="/examrojgar-logo-s.png"
+          alt="examrojgar-logo-s"
+          className="h-8 w-10 object-contain rounded"
+        />
+      </div>
+      {!desktopCollapsed && (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-lg font-medium whitespace-pre text-white"
+        >
+          Exam Rojgaar
+        </motion.span>
+      )}
+    </Link>
+  );
+};
+
 export const SidebarLink = ({ link, className, ...props }) => {
   const location = useLocation();
   const path = location.pathname;
-  const { open, animate, setOpen } = useSidebar();
-  const isActive = (currMenu, label) => {
+  const { setOpen, desktopCollapsed } = useSidebar();
+
+  const isActive = (currMenu) => {
     return path === currMenu || path.startsWith(currMenu);
   };
+
   return (
     <div className="relative overflow-hidden">
-      {link.isFeatured && (
+      {link.isFeatured && !desktopCollapsed && (
         <span
           className="absolute top-[6px] -right-[22px] z-10 pointer-events-none rotate-45 bg-red-500 text-white text-[9px] font-bold tracking-widest px-6 py-[2px] shadow-md uppercase"
           style={{ letterSpacing: "0.15em" }}
@@ -270,24 +311,28 @@ export const SidebarLink = ({ link, className, ...props }) => {
       <Link
         onClick={() => setOpen(false)}
         to={link.href}
+        title={desktopCollapsed ? link.label : undefined}
         className={cn(
-          ` ${
+          `${
             isActive(link.href) ? "bg-[#363940] text-white" : ""
-          } hover:bg-[#363940] gap-1 flex items-center justify-start gap-2  group/sidebar py-[10px] px-6 text-sm`,
+          } hover:bg-[#363940] flex items-center group/sidebar py-3 text-base transition-colors duration-150`,
+          desktopCollapsed ? "justify-center px-0" : "justify-start gap-3 px-6",
           className
         )}
         {...props}
       >
-        {link.icon}
-        <motion.span
-          // animate={{
-          //   display: animate ? (open ? "inline-block" : "none") : "inline-block",
-          //   opacity: animate ? (open ? 1 : 0) : 1,
-          // }}
-          className=" dark:text-neutral-200     group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 text-sm"
-        >
-          {link.label}
-        </motion.span>
+        <span className="shrink-0">{link.icon}</span>
+        {!desktopCollapsed && (
+          <motion.span
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: "auto" }}
+            exit={{ opacity: 0, width: 0 }}
+            transition={{ duration: 0.2 }}
+            className="dark:text-neutral-200 group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0 text-base overflow-hidden"
+          >
+            {link.label}
+          </motion.span>
+        )}
       </Link>
     </div>
   );

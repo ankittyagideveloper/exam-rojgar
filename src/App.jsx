@@ -1,5 +1,6 @@
 import "./App.css";
 import Layout from "./component/Layout";
+import SidebarDemo from "./component/SidebarDemo";
 import HomePage from "./pages/HomePage";
 import {
   createBrowserRouter,
@@ -421,7 +422,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/target-series",
-    element: <TargetSeriesPage />,
+    element: (
+      <SidebarDemo>
+        <TargetSeriesPage />
+      </SidebarDemo>
+    ),
   },
 ]);
 

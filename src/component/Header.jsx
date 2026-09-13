@@ -4,8 +4,7 @@ import {
   UserButton,
   useUser,
 } from "@clerk/clerk-react";
-import { IconUserCircle } from "@tabler/icons-react";
-import { Download, Menu } from "lucide-react";
+import { Download } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ function InstallPWAButton() {
 
   useEffect(() => {
     const handler = (e) => {
-      // Prevent automatic browser prompt
       e.preventDefault();
       setDeferredPrompt(e);
       setIsReadyToInstall(true);
@@ -34,14 +32,11 @@ function InstallPWAButton() {
   const installApp = async () => {
     if (!deferredPrompt) return;
 
-    // Show the install prompt
     deferredPrompt.prompt();
 
-    // Wait for user choice
     const { outcome } = await deferredPrompt.userChoice;
     console.log("Install prompt outcome:", outcome);
 
-    // Clear prompt
     setDeferredPrompt(null);
     setIsReadyToInstall(false);
   };
@@ -49,7 +44,6 @@ function InstallPWAButton() {
   if (!isReadyToInstall) return null;
 
   return (
-
     <Button onClick={installApp} className="gap-1 flex bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
       <Download />
       Install App
@@ -66,30 +60,35 @@ const Header = () => {
     t,
     i18n: { changeLanguage, language },
   } = useTranslation();
+
   return (
     <>
       {/* Admin Banner */}
       {isAdmin && (
-        <div className="fixed top-0 left-0 w-full h-[30px]   bg-gradient-to-r from-purple-700 to-indigo-700 text-white text-xs font-semibold py-1 text-center shadow-md z-[999999]">
+        <div className="fixed top-0 left-0 w-full h-[30px] bg-gradient-to-r from-purple-700 to-indigo-700 text-white text-xs font-semibold py-1 text-center shadow-md z-[999999]">
           Admin Panel — Full Access
         </div>
       )}
 
       {/* Header */}
       <header
-        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${isAdmin ? "top-[30px]" : "top-0"
-          } left-0 bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between w-full dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
+        className={`hidden h-[60px] absolute border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
+          isAdmin ? "top-[30px]" : "top-0"
+        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
+        style={{ width: "calc(100% - 60px)" }}
       >
-        <Link className="flex items-center gap-3" to="/">
-          <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-            <img src="/logo.png" alt="examrojgar-logo" />
-          </div>
-          <div>
-            <h1 className="font-bold text-lg text-gray-800 dark:text-white">
-              Exam Rojgaar
-            </h1>
-          </div>
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link className="flex items-center gap-3" to="/">
+            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+              <img src="/logo.png" alt="examrojgar-logo" />
+            </div>
+            <div>
+              <h1 className="font-bold text-lg text-gray-800 dark:text-white">
+                Exam Rojgaar
+              </h1>
+            </div>
+          </Link>
+        </div>
 
         <div className="flex gap-2 items-center">
           <button
@@ -116,7 +115,7 @@ const Header = () => {
             </>
           ) : (
             <SignInButton mode="modal">
-              <Button className=" cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
+              <Button className="cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
                 Log In
               </Button>
             </SignInButton>
