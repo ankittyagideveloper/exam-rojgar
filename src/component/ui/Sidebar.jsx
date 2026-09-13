@@ -17,6 +17,7 @@ import { ThemeContext } from "../../context/ThemeContext.jsx";
 import { Button } from "@/components/ui";
 
 const SidebarContext = createContext(undefined);
+const MobileDrawerContext = createContext(false);
 
 export const useSidebar = () => {
   const context = useContext(SidebarContext);
@@ -240,18 +241,38 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   `${isAdmin ? "mt-[30px]" : ""}
-                  fixed h-full w-[66vw] inset-0 bg-[#1B1B1B] text-white flex flex-col justify-between z-[999]`,
+                  fixed h-full w-[75vw] max-w-[300px] inset-0 bg-[#1B1B1B] text-white flex flex-col z-[999]`,
                   className
                 )}
               >
-                <div
-                  className="cursor-pointer text-4xl absolute left-5 top-3 z-50 flex items-center gap-2"
-                  onClick={closeSidebar}
-                >
-                  <IconX className="text-4xl" />
-                  <Logo />
+                {/* Drawer header — close button + logo */}
+                <div className="flex items-center gap-3 px-4 h-[60px] shrink-0 border-b border-[#363940]">
+                  <button
+                    className="cursor-pointer flex items-center justify-center w-9 h-9 rounded-md text-[#86a1ae] hover:bg-[#363940] hover:text-white transition-colors duration-200"
+                    onClick={closeSidebar}
+                    aria-label="Close sidebar"
+                  >
+                    <IconX className="w-6 h-6" />
+                  </button>
+                  <MobileDrawerContext.Provider value={true}>
+                    <Logo />
+                  </MobileDrawerContext.Provider>
                 </div>
-                {children}
+                {/* Nav links — scrollable */}
+                <div className="flex-1 overflow-y-auto overflow-x-hidden">
+                  <MobileDrawerContext.Provider value={true}>
+                    {children}
+                  </MobileDrawerContext.Provider>
+                </div>
+                {/* User profile — pinned to bottom */}
+                {isSignedIn && (
+                  <div className="shrink-0 flex items-center gap-3 px-5 py-4 border-t border-[#363940]">
+                    <UserButton />
+                    {user && (
+                      <p className="text-sm text-[#86a1ae] truncate">{user?.fullName}</p>
+                    )}
+                  </div>
+                )}
               </motion.div>
             </>
           )}
@@ -263,6 +284,11 @@ export const MobileSidebar = ({ className, children, ...props }) => {
 
 export const Logo = () => {
   const { setOpen, desktopCollapsed } = useSidebar();
+  const isMobileDrawer = useContext(MobileDrawerContext);
+
+  // Show the app name in the mobile drawer or when desktop is expanded
+  const showName = isMobileDrawer || !desktopCollapsed;
+
   return (
     <Link
       onClick={() => setOpen(false)}
@@ -276,7 +302,7 @@ export const Logo = () => {
           className="h-8 w-10 object-contain rounded"
         />
       </div>
-      {!desktopCollapsed && (
+      {showName && (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -293,6 +319,10 @@ export const SidebarLink = ({ link, className, ...props }) => {
   const location = useLocation();
   const path = location.pathname;
   const { setOpen, desktopCollapsed } = useSidebar();
+  const isMobileDrawer = useContext(MobileDrawerContext);
+
+  // On mobile drawer, always show labels; on desktop follow desktopCollapsed
+  const showLabel = isMobileDrawer || !desktopCollapsed;
 
   const isActive = (currMenu) => {
     return path === currMenu || path.startsWith(currMenu);
@@ -300,7 +330,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
 
   return (
     <div className="relative overflow-hidden">
-      {link.isFeatured && !desktopCollapsed && (
+      {link.isFeatured && showLabel && (
         <span
           className="absolute top-[6px] -right-[22px] z-10 pointer-events-none rotate-45 bg-red-500 text-white text-[9px] font-bold tracking-widest px-6 py-[2px] shadow-md uppercase"
           style={{ letterSpacing: "0.15em" }}
@@ -311,18 +341,18 @@ export const SidebarLink = ({ link, className, ...props }) => {
       <Link
         onClick={() => setOpen(false)}
         to={link.href}
-        title={desktopCollapsed ? link.label : undefined}
+        title={!showLabel ? link.label : undefined}
         className={cn(
           `${
             isActive(link.href) ? "bg-[#363940] text-white" : ""
           } hover:bg-[#363940] flex items-center group/sidebar py-3 text-base transition-colors duration-150`,
-          desktopCollapsed ? "justify-center px-0" : "justify-start gap-3 px-6",
+          showLabel ? "justify-start gap-3 px-6" : "justify-center px-0",
           className
         )}
         {...props}
       >
         <span className="shrink-0">{link.icon}</span>
-        {!desktopCollapsed && (
+        {showLabel && (
           <motion.span
             initial={{ opacity: 0, width: 0 }}
             animate={{ opacity: 1, width: "auto" }}

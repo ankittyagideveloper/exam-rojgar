@@ -197,14 +197,13 @@ export default function SidebarDemo({ children }) {
       setDesktopCollapsed={setDesktopCollapsed}
     >
       <div className="flex w-full flex-1 flex-col min-h-screen bg-gray-100 dark:bg-neutral-800">
-        <SidebarBody onBlur={()=>setDesktopCollapsed(true)} className="justify-between gap-10 bg-[#1b1b1b] text-[#86a1ae]">
+        <SidebarBody onBlur={()=>setDesktopCollapsed(true)} className="justify-between bg-[#1b1b1b] text-[#86a1ae]">
           <div
-            className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto ${isAdmin === "admin" ? "mt-[30px]" : ""
-              }`}
+            className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto`}
           >
             {/* Hamburger toggle — desktop only, top of sidebar */}
             <div className={cn(
-              "hidden lg:flex items-center gap-2  h-[60px] shrink-0",
+              "hidden lg:flex items-center gap-2 h-[60px] shrink-0",
               desktopCollapsed ? "justify-center px-0" : "px-4"
             )}>
               <button
@@ -224,12 +223,13 @@ export default function SidebarDemo({ children }) {
                 ))}
             </div>
           </div>
-          <div className={cn("flex items-center gap-4", desktopCollapsed ? "justify-center px-0" : "px-6")}>
+          {/* Desktop-only user profile at bottom of sidebar */}
+          <div className={cn("hidden lg:flex items-center gap-4", desktopCollapsed ? "justify-center px-0" : "px-6")}>
             <SignedIn>
               <UserButton />
             </SignedIn>
             {user && !desktopCollapsed && (
-              <p className="font-normal text-2xl md:text-sm">
+              <p className="font-normal text-sm truncate">
                 {user?.fullName}
               </p>
             )}
