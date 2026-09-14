@@ -47,7 +47,7 @@ function HomePage() {
           name="keywords"
           content="rrb ntpc mock test, rrb ntpc test series 2025, railway mock test online, rrc group d test series, rrb ntpc free test, exam rojgaar, railway exam preparation, rrb ntpc practice test"
         />
-        <link rel="canonical" href="https://examrojgaar.com/home" />
+        <link rel="canonical" href="https://examrojgaar.com/" />
 
         {/* Icons */}
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
@@ -69,7 +69,7 @@ function HomePage() {
           property="og:image"
           content="https://examrojgaar.com/android-chrome-512x512.png"
         />
-        <meta property="og:url" content="https://examrojgaar.com" />
+        <meta property="og:url" content="https://examrojgaar.com/" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

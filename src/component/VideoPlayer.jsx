@@ -46,6 +46,7 @@ export default function VideoPlayer() {
         <img
           className="w-60 object-contain dark:bg-[#fff] rounded-4xl"
           src="./live-classes.png"
+          alt="Live Classes – Exam Rojgaar"
         />
 
         <p className="text-gray-600 text-lg mt-3 font-bold dark:text-black ml-1">
