@@ -9,13 +9,6 @@
     <priority>1</priority>
   </url>
 
-  <url>
-    <loc>https://examrojgaar.com/home</loc>
-    <lastmod>2025-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
     <!-- Free Tests hub — most important ranking page -->
   <url>
     <loc>https://examrojgaar.com/free-tests</loc>
@@ -26,7 +19,7 @@
 
     <!-- Target Series hub — most important ranking page -->
   <url>
-    <loc>hhttps://examrojgaar.com/target-series</loc>
+    <loc>https://examrojgaar.com/target-series</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -59,7 +52,7 @@
   <!-- RRB category hub -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,25 +61,25 @@
   <!-- RRB NTPC History -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/history</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/ancient-history</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/medieval-history</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/history/modern-history</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -94,19 +87,19 @@
   <!-- RRB NTPC Polity -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity/constitution</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/polity/centre</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -114,19 +107,19 @@
   <!-- RRB NTPC Geography -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography/basic-concepts</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/geography/environment</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -134,7 +127,7 @@
   <!-- RRB NTPC Science -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/science</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -142,13 +135,13 @@
   <!-- RRB NTPC Maths -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/maths</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/maths/arithmetic</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -156,7 +149,7 @@
   <!-- RRB NTPC Economy -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/economy</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -164,7 +157,7 @@
   <!-- RRB NTPC Computer -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/computer</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -172,7 +165,7 @@
   <!-- RRB NTPC Current Affairs -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrb/rrb-ntpc/current-affairs</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.82</priority>
   </url>
@@ -180,32 +173,15 @@
   <!-- RRC Group D -->
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrc</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://examrojgaar.com/online-test-series/rrc/rrc-group-d</loc>
-    <lastmod>2025-08-15</lastmod>
+    <lastmod>2025-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
-
-  <!-- Other core pages -->
-  <url>
-    <loc>https://examrojgaar.com/quiz-category</loc>
-    <lastmod>2025-08-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://examrojgaar.com/pdf-category</loc>
-    <lastmod>2025-08-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-
 
 </urlset>
