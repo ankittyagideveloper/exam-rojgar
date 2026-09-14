@@ -352,6 +352,22 @@ export const mockData = {
               name: "Appendix II",
               slug: "polity",
               description: "Mechanical engineering concepts",
+              tests: [
+                {
+                      id: "RevisionTestPolityFull-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "RevisionTestPolityFull Mock Test",
+                      title: "RevisionTestPolityFull - Mock Test",
+                      name: "RevisionTestPolityFull Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "100",
+                      marks: "100",
+                      duration: "60",
+                      isSpecialMock: true,
+                      route: "/mock-test/RevisionTestPolityFull",
+                },
+              ],
               subcategories: {
                 "constitution": {
                   id: "constitution",
@@ -432,7 +448,7 @@ export const mockData = {
                       duration: "4",
                       isSpecialMock: true,
                       route: "/mock-test/Regulating",
-                    },
+                    }
                   ],
                 },
                 "centre": {
@@ -1092,7 +1108,8 @@ export const mockData = {
                   duration: "90",
                   isSpecialMock: true,
                   route: "/mock-test/cbt2-ug-test-1",
-                },],
+                },
+              ],
             },
             "revision-test": {
               id: "revision-test",
