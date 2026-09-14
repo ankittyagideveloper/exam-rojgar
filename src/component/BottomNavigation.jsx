@@ -41,7 +41,7 @@ const BottomNavigation = () => {
   };
   return (
     <>
-      <nav className="block lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 px-2 py-1 dark:bg-[#121212] dark:border-gray-800">
+      <nav className="block pb-2 lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 px-2 py-1 dark:bg-[#121212] dark:border-gray-800">
         <div className="flex justify-around items-end max-w-lg mx-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -49,7 +49,7 @@ const BottomNavigation = () => {
 
             if (item.isfeatured) {
               return (
-                <Link to={item.path} key={item.id} className="flex flex-col items-center -mt-4">
+                <Link to={item.path} key={item.id} className="pb-2 flex flex-col items-center -mt-4">
                   <div
                     className={`flex flex-col items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all
                       ${active

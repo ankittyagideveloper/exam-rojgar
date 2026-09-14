@@ -66,7 +66,10 @@ function toHumanTitle(routeName) {
 // ─── HTML extractors ─────────────────────────────────────────────────────────
 
 function extractRawData(html) {
-  const rawDataMatch = html.match(/const\s+rawData\s*=\s*\[([\s\S]*?)^\s*\];/m);
+
+  // Match `const rawData = [...]` where `[` may be on the next line and the
+  // closing `]` may be followed by one or more semicolons (e.g. `}];;`).
+  const rawDataMatch = html.match(/const\s+rawData\s*=\s*\n?\s*\[([\s\S]*?)\];/);
   if (!rawDataMatch) {
     throw new Error("Could not find 'const rawData = [...]' in the HTML file.");
   }

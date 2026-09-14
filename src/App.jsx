@@ -101,6 +101,7 @@ import RegulatingMockTestPage from "./pages/RegulatingMockTestPage";
 import ConstitutionalBodiesMockTestPage from "./pages/ConstitutionalBodiesMockTestPage";
 import GkPolityTest1MockTestPage from "./pages/GkPolityTest1MockTestPage";
 import RevisionTestPolityFullMockTestPage from "./pages/RevisionTestPolityFullMockTestPage";
+import GeographyFullTest1MockTestPage from "./pages/GeographyFullTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -409,6 +410,8 @@ const router = createBrowserRouter([
       { path: "ConstitutionalBodies", element: <ConstitutionalBodiesMockTestPage /> },
     
       { path: "RevisionTestPolityFull", element: <RevisionTestPolityFullMockTestPage /> },
+    
+      { path: "geography-full-test-1", element: <GeographyFullTest1MockTestPage /> },
     ],
   },
   {
