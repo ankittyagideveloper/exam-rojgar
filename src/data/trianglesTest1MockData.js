@@ -506,7 +506,7 @@ export const trianglesTest1MockData = {
         "130°",
         "100°"
       ],
-      "ans": 0,
+      "ans": 1,
       "solE": "I is the incentre. ∠AIB = 90° + ∠C/2. Here C = 180° − 80° − 60° = 40°. Hence ∠AIB = 90° + 20° = 110°. Therefore the correct option should be 110°.",
       "solH": "I अंतःकेंद्र है। ∠AIB = 90° + ∠C/2। यहाँ C = 180° − 80° − 60° = 40°। अतः ∠AIB = 90° + 20° = 110°। इसलिए सही विकल्प 110° है।"
     },
