@@ -433,6 +433,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/Regulating",
                     },
+                  
+                    {
+                      id: "RevisionTestPolityFull-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "RevisionTestPolityFull Mock Test",
+                      title: "RevisionTestPolityFull - Mock Test",
+                      name: "RevisionTestPolityFull Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "100",
+                      marks: "100",
+                      duration: "60",
+                      isSpecialMock: true,
+                      route: "/mock-test/RevisionTestPolityFull",
+                    },
                   ],
                 },
                 "centre": {
