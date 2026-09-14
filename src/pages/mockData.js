@@ -256,7 +256,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/maratha",
                     },
-                  
+
                     {
                       id: "MedievalHistoryRajputAndTriPartite-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -354,18 +354,18 @@ export const mockData = {
               description: "Mechanical engineering concepts",
               tests: [
                 {
-                      id: "RevisionTestPolityFull-mock-test",
-                      image: "/rrb-ntpc.webp",
-                      alt: "RevisionTestPolityFull Mock Test",
-                      title: "RevisionTestPolityFull - Mock Test",
-                      name: "RevisionTestPolityFull Mock",
-                      difficulty: "Hard",
-                      languages: ["English", "Hindi"],
-                      questions: "100",
-                      marks: "100",
-                      duration: "60",
-                      isSpecialMock: true,
-                      route: "/mock-test/RevisionTestPolityFull",
+                  id: "RevisionTestPolityFull-mock-test",
+                  image: "/rrb-ntpc.webp",
+                  alt: "RevisionTestPolityFull Mock Test",
+                  title: "RevisionTestPolityFull - Mock Test",
+                  name: "RevisionTestPolityFull Mock",
+                  difficulty: "Hard",
+                  languages: ["English", "Hindi"],
+                  questions: "100",
+                  marks: "100",
+                  duration: "60",
+                  isSpecialMock: true,
+                  route: "/mock-test/RevisionTestPolityFull",
                 },
               ],
               subcategories: {
@@ -434,7 +434,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/amendments",
                     },
-                  
+
                     {
                       id: "Regulating-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -489,7 +489,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/president-governor-pm-test-1",
                     },
-                  
+
                     {
                       id: "ConstitutionalBodies-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -575,8 +575,8 @@ export const mockData = {
                   name: "Indian Geography",
                   slug: "indian-geography",
                   description: "Indian Geography and Physical Features",
-                  tests: [ 
-                     {
+                  tests: [
+                    {
                       id: "TransportationSystem-mock-test",
                       image: "/rrb-ntpc.webp",
                       alt: "TransportationSystem Mock Test",
@@ -618,6 +618,22 @@ export const mockData = {
                   ],
                 },
               },
+              tests: [
+                {
+                  id: "geography-full-test-1-mock-test",
+                  image: "/rrb-ntpc.webp",
+                  alt: "Geography Full Test 1 Mock Test",
+                  title: "Geography Full Test 1 - Mock Test",
+                  name: "Geography Full Test 1 Mock",
+                  difficulty: "Hard",
+                  languages: ["English", "Hindi"],
+                  questions: "120",
+                  marks: "120",
+                  duration: "60",
+                  isSpecialMock: true,
+                  route: "/mock-test/geography-full-test-1",
+                },
+              ]
             },
             "science": {
               id: "tests",
@@ -659,22 +675,6 @@ export const mockData = {
                   tests: [],
                 },
               },
-              tests:[
-                         {
-                      id: "geography-full-test-1-mock-test",
-                      image: "/rrb-ntpc.webp",
-                      alt: "Geography Full Test 1 Mock Test",
-                      title: "Geography Full Test 1 - Mock Test",
-                      name: "Geography Full Test 1 Mock",
-                      difficulty: "Hard",
-                      languages: ["English", "Hindi"],
-                      questions: "120",
-                      marks: "120",
-                      duration: "60",
-                      isSpecialMock: true,
-                      route: "/mock-test/geography-full-test-1",
-                    },
-              ]
             },
             "maths": {
               id: "tests",
@@ -929,7 +929,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/line-angles-test-1",
                     },
-                  
+
                     {
                       id: "Trigonometry-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -944,7 +944,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/Trigonometry",
                     },
-                  
+
                     {
                       id: "Height-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -959,7 +959,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/Height",
                     },
-                  
+
                     {
                       id: "triangles-test-1-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -974,7 +974,7 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/triangles-test-1",
                     },
-                  
+
                     {
                       id: "AdvanceMathsMensuration-mock-test",
                       image: "/rrb-ntpc.webp",
@@ -1098,24 +1098,24 @@ export const mockData = {
                   isSpecialMock: true,
                   route: "/mock-test/important-days-test-1",
                 },
-              
-                   
-                  
-                    {
-                      id: "Sports-mock-test",
-                      image: "/rrb-ntpc.webp",
-                      alt: "Sports Mock Test",
-                      title: "Sports - Mock Test",
-                      name: "Sports Mock",
-                      difficulty: "Hard",
-                      languages: ["English", "Hindi"],
-                      questions: "30",
-                      marks: "30",
-                      duration: "6",
-                      isSpecialMock: true,
-                      route: "/mock-test/Sports",
-                    },
-                  ],
+
+
+
+                {
+                  id: "Sports-mock-test",
+                  image: "/rrb-ntpc.webp",
+                  alt: "Sports Mock Test",
+                  title: "Sports - Mock Test",
+                  name: "Sports Mock",
+                  difficulty: "Hard",
+                  languages: ["English", "Hindi"],
+                  questions: "30",
+                  marks: "30",
+                  duration: "6",
+                  isSpecialMock: true,
+                  route: "/mock-test/Sports",
+                },
+              ],
             },
             "full-length-test": {
               id: "full-length-test",
