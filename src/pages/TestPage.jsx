@@ -467,6 +467,7 @@ const TestPage = () => {
               isFree={false}
               isNewInterface={true}
               isPaid={isPaid}
+              testUrl={test.isSpecialMock && test.route}
               onStartClick={() => {
                 if (test.isSpecialMock && test.route) {
                   navigate(test.route);

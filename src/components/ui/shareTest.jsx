@@ -1,15 +1,14 @@
 import { Send } from "lucide-react";
 
 export const ShareTest = ({ testTitle, testUrl }) => {
-const shareText = `🚆 Attempt "${testTitle}" on Exam Rojgaar!
+const shareText = `Attempt "${testTitle}" on Exam Rojgaar!
 
-📝 Test yourself, check your preparation, and improve your score.
+Test yourself, check your preparation, and improve your score.
 
-👉 Attempt the test: ${testUrl}
+Attempt the test: ${testUrl}
 
-🎯 Practice more. Score better.
-🌐 https://www.examrojgaar.com`;
-
+Practice more. Score better.
+https://www.examrojgaar.com`;
 
     const handleWhatsAppShare = () => {
         const text = encodeURIComponent(shareText);

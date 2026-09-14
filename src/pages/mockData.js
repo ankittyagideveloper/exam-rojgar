@@ -565,21 +565,6 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/geography-basics-test-1",
                     },
-                  
-                    {
-                      id: "geography-full-test-1-mock-test",
-                      image: "/rrb-ntpc.webp",
-                      alt: "Geography Full Test 1 Mock Test",
-                      title: "Geography Full Test 1 - Mock Test",
-                      name: "Geography Full Test 1 Mock",
-                      difficulty: "Hard",
-                      languages: ["English", "Hindi"],
-                      questions: "120",
-                      marks: "120",
-                      duration: "60",
-                      isSpecialMock: true,
-                      route: "/mock-test/geography-full-test-1",
-                    },
                   ],
                 },
                 "indian-geography": {
@@ -674,6 +659,22 @@ export const mockData = {
                   tests: [],
                 },
               },
+              tests:[
+                         {
+                      id: "geography-full-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Geography Full Test 1 Mock Test",
+                      title: "Geography Full Test 1 - Mock Test",
+                      name: "Geography Full Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "120",
+                      marks: "120",
+                      duration: "60",
+                      isSpecialMock: true,
+                      route: "/mock-test/geography-full-test-1",
+                    },
+              ]
             },
             "maths": {
               id: "tests",

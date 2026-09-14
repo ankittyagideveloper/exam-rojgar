@@ -17,6 +17,7 @@ export function QuizCard({
   onStartClick,
   attemptStatus,
   isPaid = false,
+  testUrl
 }) {
   const formatLanguages = (langs) => {
     if (langs.length <= 2) {
@@ -29,15 +30,12 @@ export function QuizCard({
   const isSubmitted = attemptStatus === "SUBMITTED";
   const navigate = useNavigate()
 
-  const shareText = `📝 Attempt the test "${title}" on ExamRojgaar!\n\n🚆 Test your preparation and improve your score.\n👉 ${window.location.href}`;
-
-
-
+  
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
       {/* Share buttons — top-right corner */}
       <div className="absolute top-2 right-2">
-        <ShareTest testTitle={title} testUrl={window.location.href} />
+        <ShareTest testTitle={title} testUrl={`https://examrojgaar.com${testUrl}` ?? window.location.href} />
       </div>
 
       {/* Mobile Layout */}
