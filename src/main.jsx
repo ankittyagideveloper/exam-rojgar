@@ -8,7 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { registerSW } from "virtual:pwa-register";
-import { UpdateToast } from "./component/UpdateToast.jsx";
+import { UpdateToast } from "./component/UpdateToast";
 
 // Defer SW registration until the page is idle so it doesn't compete
 // with the critical rendering path (LCP).
@@ -19,15 +19,15 @@ function setupSW() {
   document.body.appendChild(toastContainer);
   toastRoot = createRoot(toastContainer);
 
-  registerSW({
+  const updateSW = registerSW({
     immediate: true,
-    onNeedRefresh(updateSW) {
+    onNeedRefresh() {
       const dismiss = () => toastRoot.render(null);
       toastRoot.render(
         <UpdateToast
           onUpdate={() => {
             dismiss();
-            updateSW(true).then(() => window.location.reload());
+            updateSW()
           }}
           onDismiss={dismiss}
         />
