@@ -20,7 +20,7 @@ const videos = [
   },
   {
     id: 4,
-    title: "RRB NTPC/JE PYQ 2025 Analysis Part-2|Exam Pattern Explained ",
+    title: "RRB NTPC/JE PYQ 2025 Analysis Part-2| Exam Pattern Explained ",
     embedUrl: "https://www.youtube.com/embed/mxCzlHBSv5E?si=cLX9ONBWMSmKW6yp",
   },
 
@@ -32,7 +32,7 @@ const videos = [
   {
     id: 6,
     title:
-      "RRB NTPC Post Preference|RRB NTPC New Vacancy 2025|Railway NTPC Post Details",
+      "RRB NTPC Post Preference| RRB NTPC New Vacancy 2025| Railway NTPC Post Details",
     embedUrl: "https://www.youtube.com/embed/uiYrHbePLBY?si=6H2m2lx26KOxYZRo",
   },
 ];
