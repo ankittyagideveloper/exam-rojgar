@@ -187,7 +187,7 @@ function HomePage() {
 
           <VideoPlayer />
 
-          <div className="px-4 md:px-10 text-xl md:text-4xl  text-black dark:text-black">
+          <div className="px-4 md:px-10 text-xl md:text-4xl  text-black dark:text-white">
             See what our <br class="inline-block md:hidden" />students tell
             about us 💕
           </div>
