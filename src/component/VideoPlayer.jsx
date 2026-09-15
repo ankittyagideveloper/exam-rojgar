@@ -5,12 +5,12 @@ import { VideoCard } from "./VideoCard";
 const videos = [
   {
     id: 1,
-    title: "RRB NTPC/JE की स्मार्ट तैयारी कैसे करें ।Topper's Best Strategy",
+    title: "RRB NTPC/JE की स्मार्ट तैयारी कैसे करें । Topper's Best Strategy",
     embedUrl: "https://www.youtube.com/embed/PK9HRVN0we4?si=p-dvQbSk3OESSlOD",
   },
   {
     id: 2,
-    title: "RRB NTPC Zone Selection।किस जोन से फॉर्म भरें??",
+    title: "RRB NTPC Zone Selection। किस जोन से फॉर्म भरें??",
     embedUrl: "https://www.youtube.com/embed/v6d6ZIZtmQc?si=sCmmxkYcScASpiDw",
   },
   {
@@ -49,7 +49,7 @@ export default function VideoPlayer() {
           alt="Live Classes – Exam Rojgaar"
         />
 
-        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-black ml-1">
+        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-white ml-1">
           Watch strategy videos &amp; PYQ analysis for RRB NTPC / JE 2025
         </p>
       </div>
