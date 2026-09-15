@@ -25,13 +25,13 @@ const Layout = () => {
   const { openSignIn } = useClerk();
   const { isSignedIn } = useAuth();
 
-  useEffect(() => {
-    if (!isSignedIn) {
-      openSignIn();
-    }
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, [isSignedIn, openSignIn]);
+  // useEffect(() => {
+  //   if (!isSignedIn) {
+  //     openSignIn();
+  //   }
+  //   window.addEventListener("scroll", toggleVisibility);
+  //   return () => window.removeEventListener("scroll", toggleVisibility);
+  // }, [isSignedIn, openSignIn]);
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

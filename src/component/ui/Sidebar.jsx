@@ -104,7 +104,7 @@ export const DesktopSidebar = ({ className, children, ...props }) => {
           className
         )}
         initial={false}
-        animate={{ width: desktopCollapsed ? "60px" : "16vw" }}
+        animate={{ width: desktopCollapsed ? "60px" : "22vw" }}
         transition={{ duration: 0.25, ease: "easeInOut" }}
         {...props}
       >
