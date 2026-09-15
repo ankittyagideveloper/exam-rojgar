@@ -8,6 +8,12 @@ export function UpdateToast({ onUpdate, onDismiss }) {
         A new version is available. close the app to update now.
       </span>
       <button
+        onClick={onUpdate}
+        className="flex-shrink-0 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap"
+      >
+        Update now
+      </button>
+      <button
         onClick={onDismiss}
         className="flex-shrink-0 hover:opacity-70 transition-opacity ml-1"
         aria-label="Dismiss"

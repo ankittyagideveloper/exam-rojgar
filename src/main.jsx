@@ -10,27 +10,40 @@ import { store } from "./store/store";
 import { registerSW } from "virtual:pwa-register";
 import { UpdateToast } from "./component/UpdateToast.jsx";
 
-// Show an update toast when a new SW version is waiting
-const toastContainer = document.createElement("div");
-document.body.appendChild(toastContainer);
-const toastRoot = createRoot(toastContainer);
+// Defer SW registration until the page is idle so it doesn't compete
+// with the critical rendering path (LCP).
+let toastRoot = null;
 
-registerSW({
-  immediate: true,
-  onNeedRefresh(updateSW) {
-    const dismiss = () => toastRoot.render(null);
-    toastRoot.render(
-      <UpdateToast
-        onUpdate={() => {
-          dismiss();
-          updateSW(true);
-        }}
-        onDismiss={dismiss}
-      />
-    );
-  },
-  onOfflineReady() {},
-});
+function setupSW() {
+  const toastContainer = document.createElement("div");
+  document.body.appendChild(toastContainer);
+  toastRoot = createRoot(toastContainer);
+
+  registerSW({
+    immediate: false,
+    onNeedRefresh(updateSW) {
+      const dismiss = () => toastRoot.render(null);
+      toastRoot.render(
+        <UpdateToast
+          onUpdate={() => {
+            dismiss();
+            updateSW(true).then(() => window.location.reload());
+          }}
+          onDismiss={dismiss}
+        />
+      );
+    },
+    onOfflineReady() {},
+  });
+}
+
+if (typeof requestIdleCallback !== "undefined") {
+  requestIdleCallback(setupSW, { timeout: 5000 });
+} else {
+  window.addEventListener("load", () => setTimeout(setupSW, 3000), {
+    once: true,
+  });
+}
 
 const queryClient = new QueryClient();
 
