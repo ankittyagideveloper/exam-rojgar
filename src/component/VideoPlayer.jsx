@@ -5,7 +5,7 @@ import { VideoCard } from "./VideoCard";
 const videos = [
   {
     id: 1,
-    title: "RRB NTPC/JE की स्मार्ट तैयारी कैसे करें ।Topper's Best Strateg",
+    title: "RRB NTPC/JE की स्मार्ट तैयारी कैसे करें ।Topper's Best Strategy",
     embedUrl: "https://www.youtube.com/embed/PK9HRVN0we4?si=p-dvQbSk3OESSlOD",
   },
   {
