@@ -182,9 +182,8 @@ export const MobileSidebar = ({ className, children, ...props }) => {
     <>
       <div
         className={cn(
-          `${
-            isAdmin ? "mt-[30px]" : ""
-          } fixed z-50 h-[60px] flex flex-row lg:hidden items-center justify-between bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
+          `${isAdmin ? "mt-[30px]" : ""
+          } fixed z-999 h-[60px] flex flex-row lg:hidden items-center justify-between bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
         )}
         {...props}
       >
@@ -212,15 +211,10 @@ export const MobileSidebar = ({ className, children, ...props }) => {
             </button>
             <LanguageSwitcher onChange={handleLanguageChange} />
             <InstallPWAButton />
-            {isSignedIn ? (
+            {isSignedIn && (
               <UserButton />
-            ) : (
-              <SignInButton mode="modal">
-                <Button className="bg-[#1272ba] hover:bg-[#1260ba] cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
-                  LogIn
-                </Button>
-              </SignInButton>
-            )}
+            )
+            }
           </div>
         </div>
         <AnimatePresence>
@@ -231,7 +225,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/50 z-[998]"
+                className="fixed inset-0 bg-black/50 z-998"
                 onClick={handleBackdropClick}
               />
               <motion.div
@@ -241,12 +235,15 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   `${isAdmin ? "mt-[30px]" : ""}
-                  fixed h-full w-[75vw] max-w-[300px] inset-0 bg-[#1B1B1B] text-white flex flex-col z-[999]`,
+                  fixed h-full w-full  inset-0 bg-[#1B1B1B] text-white flex flex-col z-999`,
                   className
                 )}
               >
                 {/* Drawer header — close button + logo */}
-                <div className="flex items-center gap-3 px-4 h-[60px] shrink-0 border-b border-[#363940]">
+                <div className="flex items-center justify-between gap-3 px-4 h-[60px] shrink-0 border-b border-[#363940]">
+                  <MobileDrawerContext.Provider value={true}>
+                    <Logo />
+                  </MobileDrawerContext.Provider>
                   <button
                     className="cursor-pointer flex items-center justify-center w-9 h-9 rounded-md text-[#86a1ae] hover:bg-[#363940] hover:text-white transition-colors duration-200"
                     onClick={closeSidebar}
@@ -254,25 +251,34 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                   >
                     <IconX className="w-6 h-6" />
                   </button>
-                  <MobileDrawerContext.Provider value={true}>
-                    <Logo />
-                  </MobileDrawerContext.Provider>
                 </div>
                 {/* Nav links — scrollable */}
                 <div className="flex-1 overflow-y-auto overflow-x-hidden">
                   <MobileDrawerContext.Provider value={true}>
                     {children}
+                    {/* User profile — pinned to bottom */}
+
                   </MobileDrawerContext.Provider>
                 </div>
                 {/* User profile — pinned to bottom */}
-                {isSignedIn && (
-                  <div className="shrink-0 flex items-center gap-3 px-5 py-4 border-t border-[#363940]">
-                    <UserButton />
-                    {user && (
-                      <p className="text-sm text-[#86a1ae] truncate">{user?.fullName}</p>
-                    )}
-                  </div>
-                )}
+                <div className="mb-3.5 mx-6">
+    {isSignedIn ? (
+                    <div className="shrink-0 flex items-center gap-3 px-5 py-4 border-t border-[#363940]">
+                      <UserButton />
+                      {user && (
+                        <p className="text-sm text-[#86a1ae] truncate">{user?.fullName}</p>
+                      )}
+                    </div>
+                  ) :
+                    <SignInButton mode="modal">
+                      <Button className="w-full my-3 flex justify-center items-center">
+                        Login/Register
+                      </Button>
+                    </SignInButton>
+                  }
+                </div>
+            
+                
               </motion.div>
             </>
           )}
@@ -343,8 +349,7 @@ export const SidebarLink = ({ link, className, ...props }) => {
         to={link.href}
         title={!showLabel ? link.label : undefined}
         className={cn(
-          `${
-            isActive(link.href) ? "bg-[#363940] text-white" : ""
+          `${isActive(link.href) ? "bg-[#363940] text-white" : ""
           } hover:bg-[#363940] flex items-center group/sidebar py-3 text-base transition-colors duration-150`,
           showLabel ? "justify-start gap-3 px-6" : "justify-center px-0",
           className

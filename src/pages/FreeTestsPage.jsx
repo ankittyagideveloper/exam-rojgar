@@ -166,6 +166,7 @@ const FreeTestsPage = () => {
                 isNewInterface={true}
                 isPaid={true}
                 onStartClick={() => handleTestClick(test)}
+                testUrl={test.route}
               />
             ))
           )}
