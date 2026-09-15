@@ -20,7 +20,7 @@ function setupSW() {
   toastRoot = createRoot(toastContainer);
 
   registerSW({
-    immediate: false,
+    immediate: true,
     onNeedRefresh(updateSW) {
       const dismiss = () => toastRoot.render(null);
       toastRoot.render(
