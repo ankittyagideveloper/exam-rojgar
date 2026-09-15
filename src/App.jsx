@@ -1,4 +1,5 @@
 import "./App.css";
+import { UpdateToast } from "./component/UpdateToast";
 import Layout from "./component/Layout";
 import SidebarDemo from "./component/SidebarDemo";
 import HomePage from "./pages/HomePage";
@@ -450,6 +451,7 @@ function App() {
         <ThemeProvider>
           <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
             <RouterProvider router={router} />
+            <UpdateToast />
           </ClerkProvider>
         </ThemeProvider>
       </HelmetProvider>

@@ -1,6 +1,13 @@
 import { RefreshCw, X } from "lucide-react";
+import { useRegisterSW } from 'virtual:pwa-register/react'
 
-export function UpdateToast({ onUpdate, onDismiss }) {
+export function UpdateToast() {
+    const {
+    needRefresh: [needRefresh, setNeedRefresh],
+    updateServiceWorker,
+  } = useRegisterSW();
+
+    if (!needRefresh) return null
   return (
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[999] flex items-center gap-3 bg-neutral-900 text-neutral-100 px-5 py-3 rounded-lg shadow-lg border border-neutral-700 animate-in fade-in slide-in-from-bottom-2 duration-300 max-w-sm w-[calc(100%-2rem)]">
       <RefreshCw className="w-4 h-4 flex-shrink-0 text-blue-400" />
@@ -8,13 +15,13 @@ export function UpdateToast({ onUpdate, onDismiss }) {
         A new version is available. close the app to update now.
       </span>
       <button
-        onClick={onUpdate}
+        onClick={() => updateServiceWorker(true)}
         className="flex-shrink-0 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap"
       >
         Update now
       </button>
       <button
-        onClick={onDismiss}
+        onClick={() => setNeedRefresh(false)}
         className="flex-shrink-0 hover:opacity-70 transition-opacity ml-1"
         aria-label="Dismiss"
       >
