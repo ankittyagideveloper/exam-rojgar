@@ -565,6 +565,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/geography-basics-test-1",
                     },
+                  
+                    {
+                      id: "UniverseLatitudeAndLongitude-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "UniverseLatitudeAndLongitude Mock Test",
+                      title: "UniverseLatitudeAndLongitude - Mock Test",
+                      name: "UniverseLatitudeAndLongitude Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "36",
+                      marks: "36",
+                      duration: "12",
+                      isSpecialMock: true,
+                      route: "/mock-test/UniverseLatitudeAndLongitude",
+                    },
                   ],
                 },
                 "indian-geography": {
