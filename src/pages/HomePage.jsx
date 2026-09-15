@@ -107,26 +107,26 @@ function HomePage() {
             <div className="hidden lg:flex flex-col mb-8 max-w-sm  xl:max-w-3xl px-4">
               {currentLanguage === "en" ? (
                 <>
-                  <h2 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-2">
+                  <h2 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-2">
                     Crack your <span className="text-[#1272ba]">goal</span>
                   </h2>
-                  <h3 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-4">
+                  <h3 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-4">
                     with <span className="text-[#1272ba]">Exam Rojgaar</span>
                     <br />Test Series
                   </h3>
                 </>
               ) : (
                 <>
-                  <h2 className="text-3xl xl:text-4xl  2xl:text-6xl font-bold text-gray-800 dark:text-black mb-2">
+                  <h2 className="text-3xl xl:text-4xl  2xl:text-6xl font-bold text-gray-800 dark:text-white mb-2">
                     <span className="text-[#1272ba]">Exam Rojgaar</span>
                   </h2>
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-black mb-4">
+                  <h3 className="text-3xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-4">
                     टेस्ट सीरीज़ के साथ <br />
                     अपना <span className="text-[#1272ba]">लक्ष्य</span> हासिल करें
                   </h3>
                 </>
               )}
-              <p className="text-gray-600 md:text-3xl xl:text-xl 2xl:text-3xl text-base leading-relaxed mb-6 dark:text-black">
+              <p className="text-gray-600 md:text-3xl xl:text-xl 2xl:text-3xl text-base leading-relaxed mb-6 dark:text-white">
                 {t("tagLine")}
               </p>
               <Link
