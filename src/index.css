@@ -119,36 +119,6 @@
   }
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-50%));
-  }
-}
-
-.animate-scroll {
-  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
-}
-
-.scroller:hover .animate-scroll {
-  animation-play-state: paused;
-}
-
-/* Faster scroll on small screens so fewer cards need to pass a narrow viewport */
-@media (max-width: 640px) {
-  .scroller {
-    --animation-duration: 25s;
-  }
-}
-
-/* Respect user preference — disable animation entirely */
-@media (prefers-reduced-motion: reduce) {
-  .animate-scroll {
-    animation: none;
-  }
-}
 
 /* Spotlight beam animation */
 @keyframes spotlight {

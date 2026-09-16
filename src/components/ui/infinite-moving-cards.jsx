@@ -1,97 +1,92 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
-  speed = "fast",
+  speed = "slow",
   pauseOnHover = true,
-  className
+  className,
 }) => {
   const containerRef = useRef(null);
   const scrollerRef = useRef(null);
+  const rafRef = useRef(null);
 
-  // drag state
+  // mutable state shared between rAF loop and event handlers — no re-renders needed
+  const pos = useRef(0);           // current translateX in px (always negative or 0)
+  const halfWidth = useRef(0);     // width of one full set of cards (scroll resets here)
+  const isPaused = useRef(false);  // hover pause
   const isDragging = useRef(false);
   const dragStartX = useRef(0);
-  const scrollStartLeft = useRef(0);
-  const dragMoved = useRef(false);
+  const posAtDragStart = useRef(0);
+
+  const PX_PER_SECOND = speed === "fast" ? 120 : speed === "normal" ? 70 : 40;
+  const DIR = direction === "left" ? -1 : 1;
 
   useEffect(() => {
-    addAnimation();
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    // duplicate items for seamless loop
+    const origChildren = Array.from(scroller.children);
+    origChildren.forEach((child) => {
+      scroller.appendChild(child.cloneNode(true));
+    });
+
+    // measure after clones are in the DOM
+    halfWidth.current = scroller.scrollWidth / 2;
+
+    let lastTime = null;
+
+    const tick = (timestamp) => {
+      if (lastTime !== null && !isDragging.current && !isPaused.current) {
+        const dt = (timestamp - lastTime) / 1000; // seconds
+        pos.current += DIR * PX_PER_SECOND * dt;
+
+        // wrap: keep pos within [-halfWidth, 0]
+        if (pos.current <= -halfWidth.current) pos.current += halfWidth.current;
+        if (pos.current > 0) pos.current -= halfWidth.current;
+      }
+      lastTime = timestamp;
+      scroller.style.transform = `translateX(${pos.current}px)`;
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const [start, setStart] = useState(false);
 
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-  const getDirection = () => {
-    if (containerRef.current) {
-      if (direction === "left") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
-      } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
-      }
-    }
-  };
-  const getSpeed = () => {
-    if (containerRef.current) {
-      if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
-      } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
-      } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
-      }
-    }
-  };
-
-  // ── drag / swipe helpers ──────────────────────────────────────────────────
-  const pauseAnimation = () => {
-    if (scrollerRef.current) scrollerRef.current.style.animationPlayState = "paused";
-  };
-  const resumeAnimation = () => {
-    if (scrollerRef.current) scrollerRef.current.style.animationPlayState = "running";
-  };
-
+  // ── pointer handlers (on the outer container) ─────────────────────────────
   const onPointerDown = (e) => {
     isDragging.current = true;
-    dragMoved.current = false;
-    dragStartX.current = e.clientX ?? e.touches?.[0]?.clientX;
-    scrollStartLeft.current = containerRef.current?.scrollLeft ?? 0;
-    pauseAnimation();
-    e.currentTarget.setPointerCapture?.(e.pointerId);
+    dragStartX.current = e.clientX;
+    posAtDragStart.current = pos.current;
+    e.currentTarget.setPointerCapture(e.pointerId);
   };
 
   const onPointerMove = (e) => {
     if (!isDragging.current) return;
-    const clientX = e.clientX ?? e.touches?.[0]?.clientX;
-    const dx = clientX - dragStartX.current;
-    if (Math.abs(dx) > 3) dragMoved.current = true;
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = scrollStartLeft.current - dx;
+    const dx = e.clientX - dragStartX.current;
+    let next = posAtDragStart.current + dx;
+
+    // wrap while dragging so the loop stays seamless
+    const hw = halfWidth.current;
+    if (hw > 0) {
+      next = ((next % hw) - hw) % hw; // always in (-hw, 0]
+      if (next > 0) next -= hw;
     }
+    pos.current = next;
   };
 
   const onPointerUp = () => {
     isDragging.current = false;
-    resumeAnimation();
   };
+
+  const onMouseEnter = () => { if (pauseOnHover) isPaused.current = true; };
+  const onMouseLeave = () => { isPaused.current = false; isDragging.current = false; };
 
   const AVATAR_COLORS = [
     "#006AB7", "#FF7D07", "#db2777", "#d97706",
@@ -105,28 +100,27 @@ export const InfiniteMovingCards = ({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerLeave={onPointerUp}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       className={cn(
-        "scroller relative z-10 w-full overflow-x-auto cursor-grab active:cursor-grabbing select-none",
-        /* tighter fade on mobile, wider on desktop so cards aren't clipped */
+        "relative z-10 w-full overflow-hidden cursor-grab active:cursor-grabbing select-none",
         "[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]",
         "md:[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]",
-        /* hide scrollbar visually */
-        "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         className
-      )}>
+      )}
+    >
       <ul
         ref={scrollerRef}
-        className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-3 py-4 md:gap-5",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
+        style={{ willChange: "transform" }}
+        className="flex w-max min-w-full shrink-0 flex-nowrap gap-3 py-4 md:gap-5"
+      >
         {items.map((item, idx) => (
           <li
             className="relative flex flex-col w-[260px] max-w-full shrink-0 rounded-2xl border border-blue-100 bg-white px-4 py-5 shadow-sm md:w-[340px] md:px-7 md:py-6 lg:w-[420px] dark:border-blue-800 dark:bg-[#0f2320]"
-            key={item.name}>
+            key={item.name}
+          >
             <blockquote className="flex flex-col flex-1">
-              {/*  accent bar */}
+              {/* accent bar */}
               <div className="absolute top-0 left-0 h-1 w-12 rounded-t-2xl bg-[#1272ba] md:w-16" />
               {/* quote mark */}
               <span className="absolute top-3 right-4 text-3xl font-serif leading-none text-[#1272ba] select-none md:top-4 md:right-6 md:text-4xl dark:text-[#1272ba]">
@@ -136,7 +130,8 @@ export const InfiniteMovingCards = ({
                 {/* avatar circle */}
                 <div
                   className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white md:h-9 md:w-9 md:text-sm"
-                  style={{ backgroundColor: AVATAR_COLORS[idx % AVATAR_COLORS.length] }}>
+                  style={{ backgroundColor: AVATAR_COLORS[idx % AVATAR_COLORS.length] }}
+                >
                   {item.name.charAt(0)}
                 </div>
                 <span className="flex flex-col gap-0.5">
