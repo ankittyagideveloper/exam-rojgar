@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -10,13 +10,20 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className
 }) => {
-  const containerRef = React.useRef(null);
-  const scrollerRef = React.useRef(null);
+  const containerRef = useRef(null);
+  const scrollerRef = useRef(null);
+
+  // drag state
+  const isDragging = useRef(false);
+  const dragStartX = useRef(0);
+  const scrollStartLeft = useRef(0);
+  const dragMoved = useRef(false);
 
   useEffect(() => {
     addAnimation();
   }, []);
   const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -53,6 +60,39 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
+  // ── drag / swipe helpers ──────────────────────────────────────────────────
+  const pauseAnimation = () => {
+    if (scrollerRef.current) scrollerRef.current.style.animationPlayState = "paused";
+  };
+  const resumeAnimation = () => {
+    if (scrollerRef.current) scrollerRef.current.style.animationPlayState = "running";
+  };
+
+  const onPointerDown = (e) => {
+    isDragging.current = true;
+    dragMoved.current = false;
+    dragStartX.current = e.clientX ?? e.touches?.[0]?.clientX;
+    scrollStartLeft.current = containerRef.current?.scrollLeft ?? 0;
+    pauseAnimation();
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  };
+
+  const onPointerMove = (e) => {
+    if (!isDragging.current) return;
+    const clientX = e.clientX ?? e.touches?.[0]?.clientX;
+    const dx = clientX - dragStartX.current;
+    if (Math.abs(dx) > 3) dragMoved.current = true;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollStartLeft.current - dx;
+    }
+  };
+
+  const onPointerUp = () => {
+    isDragging.current = false;
+    resumeAnimation();
+  };
+
   const AVATAR_COLORS = [
     "#006AB7", "#FF7D07", "#db2777", "#d97706",
     "#059669", "#dc2626", "#0891b2", "#65a30d",
@@ -61,18 +101,25 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerLeave={onPointerUp}
       className={cn(
-        "scroller relative z-10 w-full overflow-hidden",
+        "scroller relative z-10 w-full overflow-x-auto cursor-grab active:cursor-grabbing select-none",
         /* tighter fade on mobile, wider on desktop so cards aren't clipped */
         "[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]",
         "md:[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]",
+        /* hide scrollbar visually */
+        "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         className
       )}>
       <ul
         ref={scrollerRef}
         className={cn(
           "flex w-max min-w-full shrink-0 flex-nowrap gap-3 py-4 md:gap-5",
-          start && "animate-scroll"
+          start && "animate-scroll",
+          pauseOnHover && "hover:[animation-play-state:paused]"
         )}>
         {items.map((item, idx) => (
           <li

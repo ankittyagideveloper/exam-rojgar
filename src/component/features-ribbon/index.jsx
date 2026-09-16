@@ -241,9 +241,13 @@ export default function FeaturesRibbon() {
       aria-label="Feature menu"
       className="py-4"
     >
-      <h2 className="text-center text-lg  text-gray-800 dark:text-white mb-3 px-4">
-        Everything you need to crack Railway Exams
-      </h2>
+      <div className="mb-4 flex items-center gap-3 px-4">
+        <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
+        <h2 className="shrink-0 text-center text-lg font-bold text-slate-800 dark:text-white sm:text-xl">
+          Crack Railway Exams with Confidence
+        </h2>
+        <span className="h-px flex-1 bg-slate-200 dark:bg-slate-700" />
+      </div>
       <div className="md:rounded-2xl bg-white shadow-sm md:ring-1 ring-slate-200 dark:bg-[#121212] dark:text-white">
         <ul
           role="list"
