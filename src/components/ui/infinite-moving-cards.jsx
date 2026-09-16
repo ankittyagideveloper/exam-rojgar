@@ -65,10 +65,12 @@ export const InfiniteMovingCards = ({
     dragStartX.current = e.clientX;
     posAtDragStart.current = pos.current;
     e.currentTarget.setPointerCapture(e.pointerId);
+    e.preventDefault(); // prevent mobile long-press / text-select interference
   };
 
   const onPointerMove = (e) => {
     if (!isDragging.current) return;
+    e.preventDefault(); // prevent page scroll hijacking the drag on mobile
     const dx = e.clientX - dragStartX.current;
     let next = posAtDragStart.current + dx;
 
@@ -102,6 +104,7 @@ export const InfiniteMovingCards = ({
       onPointerLeave={onPointerUp}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      style={{ touchAction: "pan-y" }}
       className={cn(
         "relative z-10 w-full overflow-hidden cursor-grab active:cursor-grabbing select-none",
         "[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]",
