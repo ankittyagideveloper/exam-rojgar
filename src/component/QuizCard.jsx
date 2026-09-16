@@ -132,7 +132,7 @@ export function QuizCard({
 
             <div className="flex flex-col gap-1.5">
               {!isPaid ? (
-                <LockedButton onClick={() => navigate("/target-series#program")} />
+                <LockedButton desktop onClick={() => navigate("/target-series#program")} />
               ) : (
                 <Button
                   disabled={isSubmitted}
@@ -196,11 +196,11 @@ function Divider() {
   return <span className="text-gray-200 dark:text-gray-700 select-none">|</span>;
 }
 
-function LockedButton({ onClick }) {
+function LockedButton({ onClick, desktop = false }) {
   return (
     <Button
       onClick={onClick}
-      className="cursor-pointer bg-gradient-to-r from-[#FF7E08] to-amber-500 hover:from-[#e56e00] hover:to-amber-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap shadow-sm shadow-orange-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7E08] dark:focus:ring-offset-[#1e1e1e]"
+      className={`cursor-pointer bg-[#FF7E08] hover:bg-[#e56e00] text-white text-sm font-semibold ${desktop ? "px-5" : "px-4"} py-2 rounded-lg transition-all duration-200 whitespace-nowrap shadow-sm shadow-orange-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7E08] dark:focus:ring-offset-[#1e1e1e]`}
     >
       🔒 Unlock
     </Button>
