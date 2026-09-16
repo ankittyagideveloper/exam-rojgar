@@ -19,70 +19,72 @@ export function QuizCard({
   isPaid = false,
   testUrl
 }) {
-  const formatLanguages = (langs) => {
-    if (langs.length <= 2) {
-      return langs.join(", ");
-    }
-    const displayed = langs.slice(0, 2);
-    const remaining = langs.length - 2;
-    return `${displayed.join(", ")} + ${remaining} More`;
-  };
   const isSubmitted = attemptStatus === "SUBMITTED";
-  const navigate = useNavigate()
+  const isInProgress = attemptStatus === "IN_PROGRESS";
+  const navigate = useNavigate();
 
-  
+  const statusLabel = isInProgress ? "Resume" : isSubmitted ? "Submitted" : "Start Now";
+
+  const startBtnClass = isSubmitted
+    ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+    : isInProgress
+    ? "bg-[#FF7E08] hover:bg-[#e56e00] text-white shadow-sm shadow-orange-200"
+    : "bg-[#1272ba] hover:bg-[#0f62a0] text-white shadow-sm shadow-blue-200";
+
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-3 transition-shadow relative mt-1">
-      {/* Share buttons — top-right corner */}
-      <div className="absolute top-2 right-2">
-        <ShareTest testTitle={title} testUrl={`https://examrojgaar.com${testUrl}` ?? window.location.href} />
-      </div>
+    <div
+      className="bg-white dark:bg-[#1e1e1e] rounded-xl border border-gray-100 dark:border-[#2e2e2e] hover:border-[#1272ba]/40 hover:shadow-lg hover:shadow-[#1272ba]/10 dark:hover:border-[#1272ba]/50 dark:hover:shadow-[#1272ba]/5 focus-within:border-[#1272ba]/40 focus-within:shadow-lg focus-within:shadow-[#1272ba]/10 dark:focus-within:border-[#1272ba]/50 transition-all duration-200 relative overflow-hidden group outline-none"
+    >
 
-      {/* Mobile Layout */}
-      <div className="md:hidden">
-        {/* Badges */}
-        <div className="flex gap-2 mb-3">
-          <span className={`${isFree
-            ? 'bg-green-500 text-white'
-            : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
-            } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
-            {isFree ? 'FREE' : '⭐ Premium'}
-          </span>
+      {/* Left accent bar */}
+      <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-l-xl ${isFree ? "bg-green-500" : "bg-gradient-to-b from-[#1272ba] to-[#0f62a0]"}`} />
 
-          {isNewInterface && (
-            <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
-              NEW INTERFACE
-            </span>
-          )}
-        </div>
+      <div className="pl-4 pr-3 py-3 md:py-3.5">
 
-        {/* Title and Button */}
-        <div className="flex justify-between items-start gap-3 mb-3">
-          <h3 className="text-sm font-medium text-gray-900 leading-tight flex-1">
+        {/* ── MOBILE LAYOUT ── */}
+        <div className="md:hidden">
+          {/* Top row: badges + share */}
+          <div className="flex items-center justify-between mb-2.5">
+            <div className="flex gap-1.5">
+              <Badge free={isFree} />
+              {isNewInterface && <NewBadge />}
+            </div>
+            <ShareTest
+              testTitle={title}
+              testUrl={`https://examrojgaar.com${testUrl}` ?? window.location.href}
+            />
+          </div>
+
+          {/* Title */}
+          <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100 leading-snug mb-2.5 pr-1">
             {title}
           </h3>
-          <div className="flex flex-col gap-1">
-            {!isPaid ? <Button
-              onClick={() => navigate('/target-series#program')}
-              className="cursor-pointer bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
-            >
-              🔒 Locked
-            </Button> : <Button
-              disabled={attemptStatus === "SUBMITTED"}
-              onClick={onStartClick}
-              className={`${isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-                } cursor-pointer bg-[#1272ba] hover:bg-[#1260ba] text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
-            >
-              {attemptStatus === "IN_PROGRESS"
-                ? "Resume"
-                : attemptStatus === "SUBMITTED"
-                  ? "SUBMITTED"
-                  : "Start Now"}
-            </Button>}
-            {attemptStatus === "SUBMITTED" && (
+
+          {/* Meta pills */}
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            <MetaPill icon="❓" label={`${questions} Qs`} />
+            <MetaPill icon="📋" label={`${marks} Marks`} />
+            <MetaPill icon="⏱" label={`${duration} Min`} />
+          </div>
+
+          {/* Action buttons */}
+          <div className="flex gap-2">
+            {!isPaid ? (
+              <LockedButton onClick={() => navigate("/target-series#program")} />
+            ) : (
+              <Button
+                disabled={isSubmitted}
+                onClick={onStartClick}
+                className={`flex-1 cursor-pointer text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1272ba] dark:focus:ring-offset-[#1e1e1e] ${startBtnClass}`}
+              >
+                {isInProgress && <span className="mr-1.5">▶</span>}
+                {statusLabel}
+              </Button>
+            )}
+            {isSubmitted && (
               <Button
                 onClick={onStartClick}
-                className={`cursor-pointer  text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                className="flex-1 cursor-pointer text-sm font-medium px-4 py-2 rounded-lg border border-[#1272ba] text-[#1272ba] hover:bg-[#1272ba]/5 transition-all duration-200 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1272ba] dark:focus:ring-offset-[#1e1e1e]"
               >
                 Last Attempt
               </Button>
@@ -90,105 +92,117 @@ export function QuizCard({
           </div>
         </div>
 
-        {/* Quiz Details */}
-        <div className="text-xs text-gray-500 mb-3">
-          {questions} Questions | {marks} Marks | {duration} Mins.
-        </div>
+        {/* ── DESKTOP LAYOUT ── */}
+        <div className="hidden md:flex items-center gap-4">
 
-        {/* Languages */}
-        {/* <div className="flex items-center text-xs text-cyan-500">
-          <span className="mr-1">🏳️</span>
-          {formatLanguages(languages)}
-        </div> */}
-      </div>
-
-      {/* Desktop Layout */}
-      <div className="hidden md:block">
-        <div className="flex items-center justify-between">
-          <div className="flex-1">
+          {/* Left: info block */}
+          <div className="flex-1 min-w-0">
             {/* Badges */}
-            <div className="flex gap-2 mb-3">
-              <span className={`${isFree
-                ? 'bg-green-500 text-white'
-                : 'bg-gradient-to-r from-yellow-400 to-amber-500 text-white shadow-sm'
-                } text-xs font-semibold px-2 py-1 rounded flex items-center gap-1`}>
-                {isFree ? 'FREE' : '⭐ Premium'}
-              </span>
-              {isNewInterface && (
-                <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                  NEW INTERFACE
+            <div className="flex items-center gap-1.5 mb-2">
+              <Badge free={isFree} />
+              {isNewInterface && <NewBadge />}
+              {userCount && (
+                <span className="ml-1 text-xs text-gray-400 dark:text-gray-500 flex items-center gap-0.5">
+                  <span className="text-yellow-400">⭐</span> {userCount} users
                 </span>
               )}
             </div>
 
-            {/* Title and User Count */}
-            <div className="flex items-center gap-3 mb-3">
-              <h4 className="text-sm font-medium text-gray-900">{title}</h4>
-              {userCount && (
-                <div className="flex items-center text-sm text-gray-500">
-                  <span className="text-yellow-400 mr-1">⭐</span>
-                  {userCount} Users
-                </div>
-              )}
-            </div>
+            {/* Title */}
+            <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100 leading-snug mb-2 truncate pr-2">
+              {title}
+            </h4>
 
-            {/* Quiz Details */}
-            <div className="flex items-center gap-2 text-xs text-gray-500 mb-3 ">
-              <div className="flex items-center gap-1">
-                <span className="text-gray-400 p-1">❓</span>
-                {questions} Questions
-              </div>
-              <div className="flex items-center gap-1 ">
-                <span className="text-gray-400 p-1">📋</span>
-                {marks} Marks
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-gray-400 p-1">⏱️</span>
-                {duration} Mins
-              </div>
+            {/* Meta pills */}
+            <div className="flex items-center gap-2">
+              <MetaPill icon="❓" label={`${questions} Questions`} />
+              <Divider />
+              <MetaPill icon="📋" label={`${marks} Marks`} />
+              <Divider />
+              <MetaPill icon="⏱" label={`${duration} Mins`} />
             </div>
-
-            {/* Languages */}
-            {/* <div className="flex items-center text-sm text-cyan-500">
-              <span className="mr-2">🏳️</span>
-              {formatLanguages(languages)}
-            </div> */}
           </div>
-           
-          {/* Start Button */}
-          <div className="ml-6">
-            <div className="flex flex-col gap-1">
-              {!isPaid ? <Button
-                onClick={() => navigate('/target-series#program')}
-                className="cursor-pointer bg-[#FF7E08] hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors whitespace-nowrap flex items-center gap-1"
-              >
-                🔒 Locked
-              </Button>
-                : <Button
-                  disabled={attemptStatus === "SUBMITTED"}
+
+          {/* Right: share + buttons */}
+          <div className="flex items-center gap-2 shrink-0">
+            <ShareTest
+              testTitle={title}
+              testUrl={`https://examrojgaar.com${testUrl}` ?? window.location.href}
+            />
+
+            <div className="flex flex-col gap-1.5">
+              {!isPaid ? (
+                <LockedButton onClick={() => navigate("/target-series#program")} />
+              ) : (
+                <Button
+                  disabled={isSubmitted}
                   onClick={onStartClick}
-                  className={`${isSubmitted ? " bg-gray-300 hover:bg-gray-300" : ""
-                    } cursor-pointer text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                  className={`cursor-pointer text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-200 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1272ba] dark:focus:ring-offset-[#1e1e1e] ${startBtnClass}`}
                 >
-                  {attemptStatus === "IN_PROGRESS"
-                    ? "Resume"
-                    : attemptStatus === "SUBMITTED"
-                      ? "SUBMITTED"
-                      : "Start Now"}
-                </Button>}
-              {attemptStatus === "SUBMITTED" && (
+                  {isInProgress && <span className="mr-1.5">▶</span>}
+                  {statusLabel}
+                </Button>
+              )}
+              {isSubmitted && (
                 <Button
                   onClick={() => onStartClick(true)}
-                  className={`cursor-pointer  text-white text-sm font-medium px-4 py-2 rounded transition-colors whitespace-nowrap`}
+                  className="cursor-pointer text-xs font-medium px-5 py-1.5 rounded-lg border border-[#1272ba]/40 text-[#1272ba] hover:bg-[#1272ba]/5 transition-all duration-200 bg-transparent whitespace-nowrap text-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1272ba] dark:focus:ring-offset-[#1e1e1e]"
                 >
-                  Last Attempt
+                  View Last Attempt
                 </Button>
               )}
             </div>
-            
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+/* ── Small reusable pieces ── */
+
+function Badge({ free }) {
+  return (
+    <span
+      className={`inline-flex items-center gap-0.5 text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide ${
+        free
+          ? "bg-green-50 text-green-700 border border-green-200"
+          : "bg-amber-50 text-amber-700 border border-amber-200"
+      }`}
+    >
+      {free ? "✓ FREE" : "⭐ PREMIUM"}
+    </span>
+  );
+}
+
+function NewBadge() {
+  return (
+    <span className="inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1272ba]/10 text-[#1272ba] border border-[#1272ba]/20 tracking-wide">
+      NEW
+    </span>
+  );
+}
+
+function MetaPill({ icon, label }) {
+  return (
+    <span className="inline-flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+      <span className="text-[11px]">{icon}</span>
+      {label}
+    </span>
+  );
+}
+
+function Divider() {
+  return <span className="text-gray-200 dark:text-gray-700 select-none">|</span>;
+}
+
+function LockedButton({ onClick }) {
+  return (
+    <Button
+      onClick={onClick}
+      className="cursor-pointer bg-gradient-to-r from-[#FF7E08] to-amber-500 hover:from-[#e56e00] hover:to-amber-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap shadow-sm shadow-orange-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7E08] dark:focus:ring-offset-[#1e1e1e]"
+    >
+      🔒 Unlock
+    </Button>
   );
 }

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import { useState, useEffect } from "react";
 import { MoveUp } from "lucide-react";
-import Header from "./Header";
+import  { Header,HeaderModernised } from "./Header";
 import BottomNavigation from "./BottomNavigation";
 import Footer from "./Footer";
 import SidebarDemo from "./SidebarDemo";
@@ -42,9 +42,16 @@ const Layout = () => {
   return (
     <>
       <div className="min-h-screen bg-background">
+        {/* Skip-navigation link — only visible on keyboard focus */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-1/2 focus:-translate-x-1/2 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#1272BA] focus:text-white focus:text-sm focus:font-semibold focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <SidebarDemo>
           <Header />
-          <main className=" lg:mt-14">
+          <main id="main-content" className=" lg:mt-14" tabIndex={-1}>
             <AppBreadcrumb />
             <Outlet />
           </main>

@@ -12,6 +12,7 @@ import LanguageSwitcher from "./language-switcher";
 import { ThemeContext } from "../context/ThemeContext.jsx";
 import { Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui";
+import { YoutubeIcon } from "../pages/mentorship/Mentorship";
 
 function InstallPWAButton() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -51,7 +52,87 @@ function InstallPWAButton() {
   );
 }
 
-const Header = () => {
+export function HeaderModernised({ dark, onToggle, isPaid }) {
+  const { t } = useTranslation();
+
+  const NAV = [
+    { label: t("mentorship.nav.overview"), href: "#mission" },
+    { label: t("mentorship.nav.whatYouGet"), href: "#program" },
+    { label: t("mentorship.nav.howItWorks"), href: "#process" },
+    { label: t("mentorship.nav.faqs"), href: "#faqs" },
+    { label: "Youtube", href: "https://www.youtube.com/@ExamRojgaar", icon: <YoutubeIcon size={18} />, target: "_blank" },
+  ];
+
+  return (
+    <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:h-16 sm:px-5">
+        <Link className="flex items-center gap-2 sm:gap-3 min-w-0" to="/">
+          <div className="w-9 h-9 shrink-0 bg-gray-100 border border-border rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+            <img src="/logo.png" alt="examrojgar-logo" className="grid size-8 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow sm:size-10" />
+          </div>
+          <span className="font-display text-sm font-semibold tracking-tight sm:text-lg">
+            Exam Rojgaar
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex">
+          {NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              target={item.target}
+              rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+              className="flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {item.icon && <span className="text-[#FF0000]">{item.icon}</span>}
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher />
+          <Button
+            onClick={onToggle}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
+          >
+            {dark ? (
+              /* Sun icon */
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+            ) : (
+              /* Moon icon */
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            )}
+          </Button>
+          {/* {isPaid ?
+            <Link
+              to={TARGET_SERIES}
+              className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
+            >
+              {t("mentorship.header.targetSeries")}
+            </Link>
+            :
+            <a
+              href={APPLY_URL}
+              className="rounded-full bg-primary/90 px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md whitespace-nowrap sm:px-5 sm:py-2.5 sm:text-sm"
+            >
+              {t("mentorship.header.applyNow")}
+            </a>
+          } */}
+        </div>
+      </div>
+    </header>
+  );
+}
+
+
+export const Header = () => {
   const { user, isSignedIn } = useUser();
   const isAdmin = user?.publicMetadata?.roles?.includes("admin");
   const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
@@ -69,6 +150,7 @@ const Header = () => {
           Admin Panel — Full Access
         </div>
       )}
+
 
       {/* Header */}
       <header
@@ -122,8 +204,8 @@ const Header = () => {
           )}
         </div>
       </header>
+      
     </>
   );
 };
 
-export default Header;

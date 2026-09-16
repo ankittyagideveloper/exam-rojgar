@@ -436,9 +436,9 @@ const router = createBrowserRouter([
   {
     path: "/target-series",
     element: (
-      <SidebarDemo>
+      
         <TargetSeriesPage />
-      </SidebarDemo>
+  
     ),
   },
 ]);
