@@ -42,14 +42,12 @@ export default function VideoPlayer() {
   return (
     <main className="min-h-96  ">
       {/* Header */}
-      <div className="px-4 md:px-10 py-6 ">
-        <img
-          className="w-60 object-contain dark:bg-[#fff] rounded-4xl"
-          src="./live-classes.png"
-          alt="Live Classes – Exam Rojgaar"
-        />
-
-        <p className="text-gray-600 text-lg mt-3 font-bold dark:text-white ml-1">
+      <div className="px-4 md:px-10 py-6">
+        <h2 className="text-3xl font-extrabold tracking-tight">
+          <span className="text-red-500">Recent</span>{" "}
+          <span className="text-[#1272ba]">Live Classes</span>
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mt-2 ml-0.5">
           Watch strategy videos &amp; PYQ analysis for RRB NTPC / JE 2025
         </p>
       </div>
