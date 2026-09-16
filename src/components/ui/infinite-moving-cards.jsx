@@ -138,7 +138,7 @@ export const InfiniteMovingCards = ({
                   {item.name.charAt(0)}
                 </div>
                 <span className="flex flex-col gap-0.5">
-                  <span className="text-xs font-semibold text-[#1272ba] md:text-sm dark:text-[#1272ba]">
+                  <span className="text-xs font-semibold text-[#1272ba] md:text-sm dark:text-white">
                     {item.name}
                   </span>
                   <span className="text-[11px] text-gray-500 md:text-xs dark:text-gray-400">
