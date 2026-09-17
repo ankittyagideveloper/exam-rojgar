@@ -370,7 +370,6 @@ export const freeTestsData = {
       title: "Current Affairs",
       description: "GK, Sports, Important Days & Military Exercises",
       tests: [
-<<<<<<< Updated upstream
         {
           id: "current-affairs-pyq-2026-test-1-mock-test",
           image: "/rrb-ntpc.webp",
@@ -398,21 +397,6 @@ export const freeTestsData = {
         //  duration: "120",
         //  isSpecialMock: true,
         //  route: "/free-mock-test/gk-polity-test-1",
-=======
-        //{
-        //  id: "current-affairs-pyq-2026-test-1-mock-test",
-        //  image: "/rrb-ntpc.webp",
-        //  alt: "Current Affairs Pyq Test 1 Mock Test",
-        // title: "Current Affairs Free PYQ 2026 Mock Test",
-        // name: "Current Affairs Pyq Test 1 Mock",
-        // difficulty: "Hard",
-        // languages: ["English", "Hindi"],
-        //  questions: "351",
-        //  marks: "351",
-        //  duration: "120",
-        //  isSpecialMock: true,
-        //  route: "/free-mock-test/current-affairs-pyq-2026-test-1",
->>>>>>> Stashed changes
         //},
       ],
     },
