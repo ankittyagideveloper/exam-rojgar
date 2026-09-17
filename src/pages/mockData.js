@@ -1071,7 +1071,18 @@ export const mockData = {
                       route: "/mock-test/EconomicsGDPGNPBasics1",
                     },
                   
-                    {
+                    
+                  ],
+                },
+                "banking-and-taxation": {
+                  id: "banking-and-taxation",
+                  image: "/rrb-ntpc.webp",
+                  alt: "Banking and Taxation",
+                  title: "Banking and Taxation",
+                  name: "Banking and Taxation",
+                  slug: "banking-and-taxation",
+                  description: "Banking System, Monetary Policy and Taxation",
+                  tests: [{
                       id: "RRBNTPCEconomyLecture2Inflation-mock-test",
                       image: "/rrb-ntpc.webp",
                       alt: "RRBNTPCEconomyLecture2Inflation Mock Test",
@@ -1114,18 +1125,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/RRBNTPCEconomyLecture4Taxation",
-                    },
-                  ],
-                },
-                "banking-and-taxation": {
-                  id: "banking-and-taxation",
-                  image: "/rrb-ntpc.webp",
-                  alt: "Banking and Taxation",
-                  title: "Banking and Taxation",
-                  name: "Banking and Taxation",
-                  slug: "banking-and-taxation",
-                  description: "Banking System, Monetary Policy and Taxation",
-                  tests: [],
+                    },],
                 },
                 "world-economy": {
                   id: "world-economy",
