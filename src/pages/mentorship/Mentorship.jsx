@@ -17,6 +17,8 @@ import { Button } from "@/components/ui";
 import AppBreadcrumb from "@/component/AppBreadcrumb";
 import TelegramChatBot from "@/component/TelegramChatBot";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { useContext } from "react";
+import { ThemeContext } from "@/context/ThemeContext";
 
 export const YoutubeIcon = ({ size = 20 }) => (
   <svg
@@ -79,7 +81,9 @@ function CursorShadow() {
 }
 
 function Landing() {
-  const [dark, setDark] = useState(false);
+   const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+      useContext(ThemeContext);
+
   const { hash } = useLocation();
   const { user } = useUser();
   const isPaid = user?.publicMetadata?.roles?.includes("premium");
@@ -94,12 +98,12 @@ function Landing() {
     return () => clearTimeout(timer);
   }, [hash]);
   return (
-    <div className={`mentorship-page${dark ? " dark" : ""} relative min-h-screen overflow-x-hidden bg-background`}>
+    <div className={`mentorship-page${darkMode ? " dark" : ""} relative min-h-screen overflow-x-hidden bg-background`}>
       <div className="pointer-events-none fixed inset-0 aurora" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 grid-canvas opacity-60" aria-hidden="true" />
       <CursorShadow />
 
-      <Header dark={dark} onToggle={() => setDark((d) => !d)} isPaid={isPaid} />
+      <Header dark={darkMode} onToggle={toggleDarkMode} isPaid={isPaid} />
 
       <main className="relative pt-24">
         <AppBreadcrumb className="relative border-none mx-auto max-w-6xl px-5 bg-transparent dark:bg-transparent" />
@@ -122,8 +126,10 @@ function Landing() {
 }
 
 
-function Header({ dark, onToggle, isPaid }) {
+function Header({  onToggle, isPaid }) {
   const { t } = useTranslation();
+    const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+      useContext(ThemeContext);
 
   const NAV = [
     { label: t("mentorship.nav.overview"), href: "#mission" },
@@ -164,10 +170,10 @@ function Header({ dark, onToggle, isPaid }) {
           <LanguageSwitcher />
           <Button
             onClick={onToggle}
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:h-9 sm:w-9"
           >
-            {dark ? (
+            {darkMode ? (
               /* Sun icon */
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="4" />
