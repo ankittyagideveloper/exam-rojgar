@@ -1032,7 +1032,7 @@ export const mockData = {
               name: "Appendix II",
               slug: "economy",
               description: "Economics concepts and questions",
-              test: [{
+              tests: [{
                       id: "EconomyFullTest-mock-test",
                       image: "/rrb-ntpc.webp",
                       alt: "EconomyFullTest Mock Test",
