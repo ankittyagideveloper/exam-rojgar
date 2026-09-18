@@ -105,6 +105,11 @@ import RevisionTestPolityFullMockTestPage from "./pages/RevisionTestPolityFullMo
 import GeographyFullTest1MockTestPage from "./pages/GeographyFullTest1MockTestPage";
 import AdvanceMathsMensurationMockTestPage from "./pages/AdvanceMathsMensurationMockTestPage";
 import UniverseLatitudeAndLongitudeMockTestPage from "./pages/UniverseLatitudeAndLongitudeMockTestPage";
+import EconomicsGDPGNPBasics1MockTestPage from "./pages/EconomicsGDPGNPBasics1MockTestPage";
+import RRBNTPCEconomyLecture2InflationMockTestPage from "./pages/RRBNTPCEconomyLecture2InflationMockTestPage";
+import RRBNTPCEconomyLecture3MonetaryPolicyMockTestPage from "./pages/RRBNTPCEconomyLecture3MonetaryPolicyMockTestPage";
+import RRBNTPCEconomyLecture4TaxationMockTestPage from "./pages/RRBNTPCEconomyLecture4TaxationMockTestPage";
+import EconomyFullTestMockTestPage from "./pages/EconomyFullTestMockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -419,6 +424,16 @@ const router = createBrowserRouter([
       { path: "AdvanceMathsMensuration", element: <AdvanceMathsMensurationMockTestPage /> },
     
       { path: "UniverseLatitudeAndLongitude", element: <UniverseLatitudeAndLongitudeMockTestPage /> },
+    
+      { path: "EconomicsGDPGNPBasics1", element: <EconomicsGDPGNPBasics1MockTestPage /> },
+    
+      { path: "RRBNTPCEconomyLecture2Inflation", element: <RRBNTPCEconomyLecture2InflationMockTestPage /> },
+    
+      { path: "RRBNTPCEconomyLecture3MonetaryPolicy", element: <RRBNTPCEconomyLecture3MonetaryPolicyMockTestPage /> },
+    
+      { path: "RRBNTPCEconomyLecture4Taxation", element: <RRBNTPCEconomyLecture4TaxationMockTestPage /> },
+    
+      { path: "EconomyFullTest", element: <EconomyFullTestMockTestPage /> },
     ],
   },
   {
