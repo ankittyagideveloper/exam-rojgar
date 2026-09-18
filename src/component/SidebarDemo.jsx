@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink, Logo } from "./ui/Sidebar";
 import {
   IconArrowLeft,

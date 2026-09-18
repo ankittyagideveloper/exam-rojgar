@@ -87,14 +87,18 @@ const Slider = () => {
                 className="w-full flex justify-center items-center bg-black/5"
               >
                 <Link to={slide.to} className="block w-full h-full">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    src={videoSrc}
-                    className="w-full h-auto aspect-[16/9] object-cover rounded-[20px] block"
-                  />
+                   <video
+                     autoPlay
+                     loop
+                     muted
+                     playsInline
+                     src={videoSrc}
+                     // First slide is the LCP candidate — hint the browser to load
+                     // it at high priority and begin buffering immediately.
+                     preload={index === 0 ? "auto" : "none"}
+                     fetchPriority={index === 0 ? "high" : "low"}
+                     className="w-full h-auto aspect-[16/9] object-cover rounded-[20px] block"
+                   />
                 </Link>
               </SwiperSlide>
             );

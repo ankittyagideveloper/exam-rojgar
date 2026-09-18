@@ -10,9 +10,10 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "./language-switcher";
 import { ThemeContext } from "../context/ThemeContext.jsx";
-import { Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui";
+import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { YoutubeIcon } from "../pages/mentorship/Mentorship";
+import SearchBar from "../components/SearchBar";
 
 function InstallPWAButton() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -135,11 +136,11 @@ export function HeaderModernised({ dark, onToggle, isPaid }) {
 export const Header = () => {
   const { user, isSignedIn } = useUser();
   const isAdmin = user?.publicMetadata?.roles?.includes("admin");
-  const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+  const { darkMode, toggleDarkMode, handleLanguageChange } =
     useContext(ThemeContext);
   const {
     t,
-    i18n: { changeLanguage, language },
+    i18n: { language },
   } = useTranslation();
 
   return (
@@ -154,12 +155,13 @@ export const Header = () => {
 
       {/* Header */}
       <header
-        className={`fixed hidden h-[60px]  border-b-1 border-[#DFE4E8] dark:border-[#262626] ${
+        className={`fixed hidden h-[60px] border-b border-[#DFE4E8] dark:border-[#262626] ${
           isAdmin ? "top-[30px]" : "top-0"
-        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between dark:bg-[#262626] border-s border-b-[#DFE4E8]`}
+        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between gap-4 dark:bg-[#262626]`}
         style={{ width: "calc(100% - 60px)" }}
       >
-        <div className="flex items-center gap-3">
+        {/* Left — logo */}
+        <div className="flex items-center gap-3 shrink-0">
           <Link className="flex items-center gap-3" to="/">
             <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
               <img src="/logo.png" alt="examrojgar-logo" />
@@ -172,18 +174,14 @@ export const Header = () => {
           </Link>
         </div>
 
-        <div className="flex gap-2 items-center">
-          <button
-            onClick={toggleDarkMode}
-            className="cursor-pointer flex items-center justify-center w-10 h-10 dark:bg-gray-700 transition-all duration-200"
-            aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-          >
-            {darkMode ? (
-              <Sun className="w-5 h-5 text-yellow-500" />
-            ) : (
-              <Moon className="w-5 h-5 text-slate-700" />
-            )}
-          </button>
+        {/* Centre — search bar */}
+        <div className="flex-1 max-w-xl">
+          <SearchBar placeholder="Search tests, quizzes, topics…" />
+        </div>
+
+        {/* Right — controls */}
+        <div className="flex gap-2 items-center shrink-0">
+          <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
 
           <InstallPWAButton />
           <LanguageSwitcher

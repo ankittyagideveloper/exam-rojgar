@@ -10,11 +10,12 @@ import {
   UserButton,
   useUser,
 } from "@clerk/react-router";
-import { Download, Moon, Sun } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../language-switcher";
-import { ThemeContext } from "../../context/ThemeContext.jsx";
+import { Download } from "lucide-react";
 import { Button } from "@/components/ui";
+import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
+import SearchBar from "../../components/SearchBar";
+import { ThemeContext } from "../../context/ThemeContext.jsx";
+import LanguageSwitcher from "../language-switcher";
 
 const SidebarContext = createContext(undefined);
 const MobileDrawerContext = createContext(false);
@@ -159,21 +160,10 @@ function InstallPWAButton() {
 
 export const MobileSidebar = ({ className, children, ...props }) => {
   const { open, setOpen } = useSidebar();
-  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const { isSignedIn, user } = useUser();
-  const {
-    t,
-    i18n: { changeLanguage, language },
-  } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const { darkMode, toggleDarkMode, handleLanguageChange } = useContext(ThemeContext) || {};
 
-  const handleLanguageChange = () => {
-    const newLanguage = currentLanguage === "en" ? "hi" : "en";
-    setCurrentLanguage(newLanguage);
-    changeLanguage(newLanguage);
-  };
-
-  const closeSidebar = () => setOpen(!open);
+  const closeSidebar = () => setOpen(false);
   const handleBackdropClick = () => setOpen(false);
 
   const isAdmin = user?.publicMetadata?.roles?.includes("admin");
@@ -187,8 +177,9 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         )}
         {...props}
       >
-        <div className="flex items-center justify-between z-20 w-full h-16 px-5">
-          <div className="flex flex-row gap-2 items-center">
+        <div className="flex items-center z-20 w-full h-16 px-3 gap-2">
+          {/* Hamburger + logo */}
+          <div className="flex flex-row gap-2 items-center shrink-0">
             <IconMenu2
               className="text-neutral-800 dark:text-neutral-200 cursor-pointer"
               onClick={() => setOpen(!open)}
@@ -197,24 +188,16 @@ export const MobileSidebar = ({ className, children, ...props }) => {
               <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
             </Link>
           </div>
-          <div className="flex items-center gap-1">
-            <button
-              onClick={toggleDarkMode}
-              className="cursor-pointer flex items-center justify-center w-10 h-10 dark:bg-gray-700 transition-all duration-200"
-              aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
-              ) : (
-                <Moon className="w-5 h-5 text-slate-700" />
-              )}
-            </button>
-            <LanguageSwitcher onChange={handleLanguageChange} />
+
+          {/* Search bar — fills remaining space */}
+          <div className="flex-1 min-w-0">
+            <SearchBar placeholder="Search…" />
+          </div>
+
+          {/* Right — install + user */}
+          <div className="flex items-center gap-1 shrink-0">
             <InstallPWAButton />
-            {isSignedIn && (
-              <UserButton />
-            )
-            }
+            {isSignedIn && <UserButton />}
           </div>
         </div>
         <AnimatePresence>
@@ -260,6 +243,12 @@ export const MobileSidebar = ({ className, children, ...props }) => {
 
                   </MobileDrawerContext.Provider>
                 </div>
+                 {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
+                  <div className=" mx-6 flex items-center justify-between px-5 pt-3 pb-3 border-t border-[#363940]">
+                    <LanguageSwitcher onChange={handleLanguageChange} dropUp />
+                    <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
+                  </div>
+
                 {/* User profile — pinned to bottom */}
                 <div className="mb-3.5 mx-6">
     {isSignedIn ? (
@@ -269,13 +258,13 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                         <p className="text-sm text-[#86a1ae] truncate">{user?.fullName}</p>
                       )}
                     </div>
-                  ) :
+                  ) : (
                     <SignInButton mode="modal">
-                      <Button className="w-full my-3 flex justify-center items-center">
+                      <Button className="w-full my-1 flex justify-center items-center">
                         Login/Register
                       </Button>
                     </SignInButton>
-                  }
+                  )}
                 </div>
             
                 
