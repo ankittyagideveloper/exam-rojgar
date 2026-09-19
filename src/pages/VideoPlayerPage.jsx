@@ -206,7 +206,7 @@ function VideoPlayerPage() {
                   {(() => {
                     let sidebarIndex = 0;
                     return course.seasons?.map((season) => (
-                    <div key={season.id}>
+                    <div key={season.id} className="mb-8">
                       <div className="mb-2 text-sm font-semibold text-gray-600">
                         {season.title}
                       </div>
