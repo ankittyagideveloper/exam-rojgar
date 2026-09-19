@@ -1677,6 +1677,16 @@ export const courseMockData = [
 
             youtubeId: "eZhqnVa1ubQ",
             duration: "05:04",
+          },
+          {
+            id: "Lesson-09",
+            episodeNumber: "Lesson-09",
+            title: "Advance Maths|Circel|RRB NTPC|RRB JE|RRB ALP",
+            description:
+              "",
+
+            youtubeId: "p_qwiXw-sRk",
+            duration: "08:54",
           }
         ],
       },
