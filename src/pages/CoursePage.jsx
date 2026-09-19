@@ -270,13 +270,13 @@ function CoursePage() {
           </div>
 
           {/* Seasons */}
-          <div className="space-y-4">
+          <div className="space-y-4 mb-15 md:mb-0">
             {(() => {
               let flatIndex = 0;
               return course.seasons?.map((season) => (
               <div
                 key={season.id}
-                className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
+                className="mb-4 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
               >
                 {/* Season Header */}
                 <button

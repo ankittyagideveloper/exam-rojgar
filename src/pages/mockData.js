@@ -1683,8 +1683,7 @@ export const courseMockData = [
             episodeNumber: "Lesson-09",
             title: "Advance Maths|Circel|RRB NTPC|RRB JE|RRB ALP",
             description:
-              "",
-
+              "Master Circle concepts for RRB NTPC, JE & ALP — covers chord, arc, tangent, sector area, central and inscribed angles, and key theorems with solved examples.",
             youtubeId: "p_qwiXw-sRk",
             duration: "08:54",
           }
