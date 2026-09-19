@@ -246,19 +246,21 @@ function Hero() {
           </div>
         </div>
 
-
-        <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
-          <img
-            src="/profile-mentor.png"
-            alt="Gopal Sir - Exam Rojgaar Mentor"
-            loading="lazy"
-            width={912}
-            height={1104}
-            className="h-full w-full object-cover"
+        <video
+            src="/target-series.mp4"
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="website-walkthrough"
+            className="h-120  rounded-4xl"
           />
-          {/* circular shadow at bottom */}
+        {/* <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
+  
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
-        </div>
+        </div> */}
       </div>
     </section>
   );
