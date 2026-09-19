@@ -81,8 +81,8 @@ function CursorShadow() {
 }
 
 function Landing() {
-   const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
-      useContext(ThemeContext);
+  const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+    useContext(ThemeContext);
 
   const { hash } = useLocation();
   const { user } = useUser();
@@ -126,10 +126,10 @@ function Landing() {
 }
 
 
-function Header({  onToggle, isPaid }) {
+function Header({ onToggle, isPaid }) {
   const { t } = useTranslation();
-    const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
-      useContext(ThemeContext);
+  const { darkMode, toggleDarkMode, currentLanguage, handleLanguageChange } =
+    useContext(ThemeContext);
 
   const NAV = [
     { label: t("mentorship.nav.overview"), href: "#mission" },
@@ -245,8 +245,8 @@ function Hero() {
             </a>
           </div>
         </div>
-
-        <video
+        <div className="flex justify-center">
+          <video
             src="/target-series.mp4"
             controls
             autoPlay
@@ -257,6 +257,8 @@ function Hero() {
             aria-label="website-walkthrough"
             className="h-120  rounded-4xl"
           />
+        </div>
+
         {/* <div className="relative mask-b-from-60% mask-radial-[60%_60%] mask-radial-from-70% scale-110">
   
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 h-10 w-3/4 rounded-full bg-black/20 blur-2xl" />
