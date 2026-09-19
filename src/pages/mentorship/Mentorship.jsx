@@ -248,7 +248,6 @@ function Hero() {
         <div className="flex justify-center">
           <video
             src="/target-series.mp4"
-            controls
             autoPlay
             muted
             loop
