@@ -2,13 +2,14 @@
 import { cn } from "../utils/utils";
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconMenu2, IconX, IconLogout } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   SignedIn,
   SignInButton,
   UserButton,
   useUser,
+  SignOutButton
 } from "@clerk/react-router";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui";
@@ -166,6 +167,17 @@ export const MobileSidebar = ({ className, children, ...props }) => {
   const closeSidebar = () => setOpen(false);
   const handleBackdropClick = () => setOpen(false);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const isAdmin = user?.publicMetadata?.roles?.includes("admin");
 
   return (
@@ -180,10 +192,6 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         <div className="flex items-center z-20 w-full h-16 px-3 gap-2">
           {/* Hamburger + logo */}
           <div className="flex flex-row gap-2 items-center shrink-0">
-            <IconMenu2
-              className="text-neutral-800 dark:text-neutral-200 cursor-pointer"
-              onClick={() => setOpen(!open)}
-            />
             <Link to="/" className="rounded-full h-10 w-10">
               <img src="/examrojgar-logo-s.png" alt="examrojgar-logo-s" />
             </Link>
@@ -197,9 +205,13 @@ export const MobileSidebar = ({ className, children, ...props }) => {
           {/* Right — install + user */}
           <div className="flex items-center gap-1 shrink-0">
             <InstallPWAButton />
-            {isSignedIn && <UserButton />}
+            <IconMenu2
+              className="text-neutral-800 dark:text-neutral-200 cursor-pointer"
+              onClick={() => setOpen(!open)}
+            />
           </div>
         </div>
+
         <AnimatePresence>
           {open && (
             <>
@@ -212,9 +224,9 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 onClick={handleBackdropClick}
               />
               <motion.div
-                initial={{ x: "-100%", opacity: 0 }}
+                initial={{ x: "100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0 }}
+                exit={{ x: "100%", opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={cn(
                   `${isAdmin ? "mt-[30px]" : ""}
@@ -239,25 +251,38 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 <div className="flex-1 overflow-y-auto overflow-x-hidden">
                   <MobileDrawerContext.Provider value={true}>
                     {children}
-                    {/* User profile — pinned to bottom */}
+
+                    {/* Logout button below all links */}
+                    {isSignedIn && <SignOutButton>
+                      <button
+                        className="w-full flex items-center gap-3 px-6 py-3 text-base text-red-500 hover:bg-[#363940] transition-colors duration-150 cursor-pointer"
+                      >
+                        <IconLogout className="w-6 h-6 shrink-0 text-red-500" />
+                        <span className="text-red-500 font-medium">Logout</span>
+                      </button>
+                    </SignOutButton>}
 
                   </MobileDrawerContext.Provider>
                 </div>
-                 {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
-                  <div className=" mx-6 flex items-center justify-between px-5 pt-3 pb-3 border-t border-[#363940]">
-                    <LanguageSwitcher onChange={handleLanguageChange} dropUp />
-                    <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
-                  </div>
+                {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
+                <div className=" mx-6 flex items-center justify-between px-5 pt-3 pb-3 border-t border-[#363940]">
+                  <LanguageSwitcher onChange={handleLanguageChange} dropUp />
+                  <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
+                </div>
 
                 {/* User profile — pinned to bottom */}
                 <div className="mb-3.5 mx-6">
-    {isSignedIn ? (
-                    <div className="shrink-0 flex items-center gap-3 px-5 py-4 border-t border-[#363940]">
-                      <UserButton />
-                      {user && (
-                        <p className="text-sm text-[#86a1ae] truncate">{user?.fullName}</p>
-                      )}
-                    </div>
+                  {isSignedIn ? (
+                    <UserButton showName={true} appearance={{
+                      elements: {
+                        userButtonTrigger: {
+                          flexDirection: 'reverse',
+                        },
+                        userButtonOuterIdentifier: {
+                          color: '#ffffff',
+                        },
+                      }
+                    }} />
                   ) : (
                     <SignInButton mode="modal">
                       <Button className="w-full my-1 flex justify-center items-center">
@@ -266,8 +291,8 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                     </SignInButton>
                   )}
                 </div>
-            
-                
+
+
               </motion.div>
             </>
           )}
