@@ -117,16 +117,16 @@ export default function LanguageSwitcher({ onChange, dropUp = false }) {
         aria-expanded={open}
         aria-haspopup="listbox"
       >
-        <Globe size={18} className="text-gray-600 dark:text-white" />
-        <span className="hidden text-sm sm:inline text-gray-700 dark:text-white">
+        <Globe size={18} className="text-[#86a1ae] dark:text-white" />
+        <span className="hidden text-sm sm:inline text-[#86a1ae] dark:text-white">
           {selectedLang.label}
         </span>
-        <span className="sm:hidden font-medium text-gray-700 dark:text-white">
+        <span className="sm:hidden font-medium text-[#86a1ae] dark:text-white">
           {selectedLang.shortLabel}
         </span>
         <ChevronDown
           size={16}
-          className={`text-gray-600 dark:text-white transition-transform ${open ? "rotate-180" : ""}`}
+          className={`text-[#86a1ae] dark:text-white transition-transform ${open ? "rotate-180" : ""}`}
         />
       </button>
 
