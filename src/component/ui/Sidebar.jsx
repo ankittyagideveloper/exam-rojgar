@@ -265,7 +265,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                   </MobileDrawerContext.Provider>
                 </div>
                 {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
-                <div className=" mx-6 flex items-center justify-between px-5 pt-3 pb-3 border-t border-[#363940]">
+                <div className=" mx-6 flex items-center justify-between pt-3 pb-3 border-t border-[#363940]">
                   <LanguageSwitcher onChange={handleLanguageChange} dropUp />
                   <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
                 </div>
@@ -273,20 +273,23 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 {/* User profile — pinned to bottom */}
                 <div className="mb-3.5 mx-6">
                   {isSignedIn ? (
-                    <UserButton showName={true} appearance={{
+                    <UserButton showName={true}
+                    
+                    appearance={{
                       elements: {
-                        userButtonTrigger: {
-                          flexDirection: 'reverse',
+                        userButtonBox: {
+                          flexDirection: 'row-reverse',
                         },
                         userButtonOuterIdentifier: {
                           color: '#ffffff',
-                        },
+                        }
                       }
-                    }} />
+                    }} 
+                    />
                   ) : (
                     <SignInButton mode="modal">
                       <Button className="w-full my-1 flex justify-center items-center">
-                        Login/Register
+                        Login / Register
                       </Button>
                     </SignInButton>
                   )}
