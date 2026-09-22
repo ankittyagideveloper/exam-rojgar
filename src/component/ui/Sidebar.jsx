@@ -188,6 +188,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
           } fixed z-999 flex flex-col lg:hidden bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
           "safe-top"
         )}
+        style={{ paddingTop: "var(--safe-area-top)" }}
         {...props}
       >
         <div className="flex items-center z-20 w-full h-[60px] px-3 gap-2">
