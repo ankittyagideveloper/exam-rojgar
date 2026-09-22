@@ -157,7 +157,7 @@ export const Header = () => {
       <header
         className={`fixed hidden h-[60px] border-b border-[#DFE4E8] dark:border-[#262626] ${
           isAdmin ? "top-[30px]" : "top-0"
-        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between gap-4 dark:bg-[#262626]`}
+        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between gap-4 dark:bg-[#262626] safe-top`}
         style={{ width: "calc(100% - 60px)" }}
       >
         {/* Left — logo */}

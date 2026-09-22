@@ -197,7 +197,7 @@ export default function SidebarDemo({ children }) {
       setDesktopCollapsed={setDesktopCollapsed}
     >
       <div className="flex w-full flex-1 flex-col min-h-screen bg-gray-100 dark:bg-neutral-800">
-        <SidebarBody onBlur={()=>setDesktopCollapsed(true)} className="justify-between bg-[#1b1b1b] text-[#86a1ae]">
+        <SidebarBody onBlur={()=>setDesktopCollapsed(true)} className="justify-between bg-[#1b1b1b] text-[#86a1ae] safe-top safe-bottom safe-left">
           <div
             className={`flex flex-1 flex-col overflow-x-hidden overflow-y-auto`}
           >

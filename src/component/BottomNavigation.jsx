@@ -41,8 +41,8 @@ const BottomNavigation = () => {
   };
   return (
     <>
-      <nav className="block pb-2 lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 px-2 py-1 dark:bg-[#121212] dark:border-gray-800">
-        <div className="flex justify-around items-end max-w-lg mx-auto">
+      <nav className="block  lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 px-2 pt-1 safe-bottom safe-left safe-right dark:bg-[#121212] dark:border-gray-800">
+        <div className="pb-2 flex justify-around items-end max-w-lg mx-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.path);

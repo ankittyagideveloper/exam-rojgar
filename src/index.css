@@ -116,18 +116,33 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Extend background behind notch/status-bar and home indicator */
-    padding-top: env(safe-area-inset-top);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    /* Fill the full viewport including safe-area regions */
     min-height: 100dvh;
   }
   #root {
-    /* Let the app shell stretch into the inset regions */
     min-height: 100dvh;
   }
+}
+
+/* ── PWA safe-area / notch utilities ────────────────────────────────────────
+   Use these on fixed bars so they extend under the notch (status bar) and
+   home indicator without pushing regular page content around.
+   Requires viewport-fit=cover in the <meta name="viewport"> tag. */
+
+/* Fixed top bars: shift content down by the status-bar height */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+/* Fixed bottom bars: pad above the home indicator */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+/* Fixed left sidebars (landscape notch) */
+.safe-left {
+  padding-left: env(safe-area-inset-left);
+}
+/* Fixed right sidebars */
+.safe-right {
+  padding-right: env(safe-area-inset-right);
 }
 
 
