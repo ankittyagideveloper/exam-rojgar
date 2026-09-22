@@ -254,7 +254,10 @@ export const LogoIcon = () => {
 
 const Dashboard = ({ children }) => {
   return (
-    <div className="mt-15 lg:mt-0 flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]">
+    <div
+      className="lg:mt-0 flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]"
+      style={{ marginTop: "calc(60px + env(safe-area-inset-top, 0px))" }}
+    >
       {children}
     </div>
   );

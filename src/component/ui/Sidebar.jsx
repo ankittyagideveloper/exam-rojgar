@@ -185,11 +185,12 @@ export const MobileSidebar = ({ className, children, ...props }) => {
       <div
         className={cn(
           `${isAdmin ? "mt-[30px]" : ""
-          } fixed z-999 h-[60px] flex flex-row lg:hidden items-center justify-between bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`
+          } fixed z-999 flex flex-col lg:hidden bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
+          "safe-top"
         )}
         {...props}
       >
-        <div className="flex items-center z-20 w-full h-16 px-3 gap-2">
+        <div className="flex items-center z-20 w-full h-[60px] px-3 gap-2">
           {/* Hamburger + logo */}
           <div className="flex flex-row gap-2 items-center shrink-0">
             <Link to="/" className="rounded-full h-10 w-10">
