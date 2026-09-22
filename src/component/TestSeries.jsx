@@ -499,16 +499,16 @@ const TestSeries = ({ testData }) => {
       {screen === SCREENS.HOME && (
         <div className="flex flex-col min-h-screen bg-[#e4e9f0] text-[13px] overflow-auto">
           {/* Ticker banner */}
-          <div className="bg-black text-center py-1 border-b border-gray-700 shrink-0">
+          {/* <div className="bg-black text-center py-1 border-b border-gray-700 shrink-0">
             <span className="font-bold text-sm text-yellow-300 tracking-widest">
               🚩 कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। 🚩
             </span>
-          </div>
+          </div> */}
 
           {/* Header */}
-          <div className="bg-[#1e5086] text-white flex justify-between items-center px-3 md:px-6 py-2 shadow-md border-b-4 border-[#3a78c4] shrink-0">
+          <div className="bg-[#1272BA] text-white flex justify-between items-center px-3 md:px-6 py-2 shadow-md border-b-4 border-[#1272BA] shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 md:w-20 md:h-20 bg-white rounded flex items-center justify-center font-bold text-[#1e5086] border-2 border-yellow-400 text-[9px] md:text-xs text-center leading-tight p-1 shrink-0">
+              <div className="w-14 h-14 md:w-20 md:h-20 bg-white rounded flex items-center justify-center font-bold text-[#1272BA] border-2 border-yellow-400 text-[9px] md:text-xs text-center leading-tight p-1 shrink-0">
                 <Link to="/home" className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
                   <img src="/logo.png" alt="examrojgar-logo" />
                 </Link>
@@ -527,7 +527,7 @@ const TestSeries = ({ testData }) => {
           <div className="flex-1 flex flex-col md:flex-row gap-2 p-2 overflow-auto">
             {/* Instructions panel */}
             <div className="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden min-h-[300px]">
-              <div className="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400 shrink-0">
+              <div className="bg-[#1272BA] text-white py-2 px-4 font-bold text-sm border-b border-gray-400 shrink-0">
                 Instructions
               </div>
               <div className="p-4 md:p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px]">
