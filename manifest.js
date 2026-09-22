@@ -34,7 +34,7 @@ export const manifestForPlugIn = {
     version: "1.2.0",
     theme_color: "#ffffff",
     background_color: "#f0e7db",
-    display: "fullscreen",
+    display: "standalone",
     display_override: ["window-controls-overlay", "standalone", "browser"],
     scope: "/",
     start_url: "/",
