@@ -254,7 +254,7 @@ export const LogoIcon = () => {
 
 const Dashboard = ({ children }) => {
   return (
-    <div className="mt-15 lg:mt-0 flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]">
+    <div className="safe-top lg:mt-0 flex flex-1 flex-col min-h-screen w-full bg-white dark:bg-neutral-900 overflow-x-hidden lg:pl-[60px]">
       {children}
     </div>
   );

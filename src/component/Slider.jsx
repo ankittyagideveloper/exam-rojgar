@@ -60,7 +60,7 @@ const Slider = () => {
 
   return (
     <BackgroundGradient
-      containerClassName="w-full max-w-[760px] mx-auto"
+      containerClassName="w-full max-w-[760px] mx-auto mt-16 md:mt-0"
       className="rounded-[22px] overflow-hidden bg-white dark:bg-zinc-900"
     >
       <div className="w-full rounded-[20px] overflow-hidden">

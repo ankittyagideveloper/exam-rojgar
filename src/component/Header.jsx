@@ -65,7 +65,7 @@ export function HeaderModernised({ dark, onToggle, isPaid }) {
   ];
 
   return (
-    <header className="fixed top-3 left-3 right-3 z-50 rounded-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
+    <header className="fixed top-0 left-0 right-0 z-50 safe-top rounded-b-2xl border border-black/8 bg-white/80 shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-2xl backdrop-saturate-200 ring-1 ring-black/5">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-3 sm:h-16 sm:px-5">
         <Link className="flex items-center gap-2 sm:gap-3 min-w-0" to="/">
           <div className="w-9 h-9 shrink-0 bg-gray-100 border border-border rounded-full flex items-center justify-center sm:w-12 sm:h-12">

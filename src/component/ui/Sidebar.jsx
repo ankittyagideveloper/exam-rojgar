@@ -186,9 +186,8 @@ export const MobileSidebar = ({ className, children, ...props }) => {
         className={cn(
           `${isAdmin ? "mt-[30px]" : ""
           } fixed z-999 flex flex-col lg:hidden bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
-          "safe-top"
+          "safe-top safe-left safe-right"
         )}
-        style={{ paddingTop: "var(--safe-area-top)" }}
         {...props}
       >
         <div className="flex items-center z-20 w-full h-[60px] px-3 gap-2">
@@ -237,7 +236,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 )}
               >
                 {/* Drawer header — close button + logo */}
-                <div className="flex items-center justify-between gap-3 px-4 h-[60px] shrink-0 border-b border-[#363940]">
+                <div className="flex items-center justify-between gap-3 px-4 h-[60px] shrink-0 border-b border-[#363940] safe-top">
                   <MobileDrawerContext.Provider value={true}>
                     <Logo />
                   </MobileDrawerContext.Provider>
@@ -267,13 +266,13 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                   </MobileDrawerContext.Provider>
                 </div>
                 {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
-                <div className=" mx-6 flex items-center justify-between pt-3 pb-3 border-t border-[#363940]">
+                <div className=" mx-6 flex items-center justify-between pt-3 pb-3 border-t border-[#363940] safe-bottom">
                   <LanguageSwitcher onChange={handleLanguageChange} dropUp />
                   <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
                 </div>
 
                 {/* User profile — pinned to bottom */}
-                <div className="mb-3.5 mx-6">
+                <div className="mb-3.5 mx-6 safe-bottom">
                   {isSignedIn ? (
                     <UserButton showName={true}
                     
