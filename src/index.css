@@ -164,3 +164,14 @@ html {
   padding-right: env(safe-area-inset-right);
 }
 
+body {
+  /* Apply safe area padding to prevent content from hiding behind notches or bottom bars */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  
+  /* Ensure minimum height covers the full screen */
+  min-height: 100vh;
+  min-height: 100dvh;
+}
