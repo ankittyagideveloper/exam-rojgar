@@ -117,16 +117,6 @@
     @apply border-border outline-ring/50;
   }
 
-  /* Fill the notch/status-bar safe area with the header background colour.
-     html sits behind everything and covers the zone that body padding exposes. */
-  html {
-    background-color: #F1F4F6;
-  }
-
-  html.dark {
-    background-color: #262626;
-  }
-
   body {
     @apply bg-background text-foreground;
     min-height: 100dvh;
@@ -180,18 +170,14 @@
   animation: spotlight 2s ease 0.75s 1 forwards;
 }
 
-/* Apply safe area padding ONLY to body for scrollable content.
-   Do NOT apply to html — fixed-position elements (headers, bottom nav)
-   are positioned relative to the viewport and need to extend into
-   the safe area themselves using .safe-top/.safe-bottom utilities. */
+/* Safe-area padding only on sides (landscape notch).
+   Top and bottom are handled by fixed bars (header uses .safe-top,
+   bottom nav uses .safe-bottom) so body must NOT pad top/bottom —
+   doing so would push the entire page below the notch instead of
+   letting the header visually fill it. */
 body {
-  /* Apply safe area padding to prevent content from hiding behind notches or bottom bars */
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
-
-  /* Ensure minimum height covers the full screen (use dynamic viewport height) */
   min-height: 100dvh;
 }
 
