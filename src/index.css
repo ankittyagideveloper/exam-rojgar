@@ -126,18 +126,22 @@
   100% { opacity: 1; transform: translate(-50%, -40%) scale(1); }
 }
 
-html, body {
-    padding: 0;
-    margin: 0;
-}
-
 .animate-spotlight {
   animation: spotlight 2s ease 0.75s 1 forwards;
 }
 
+/* Header padding for the top notch / Dynamic Island */
+header, .app-header {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Footer padding for the home indicator bar */
+footer, .app-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Side padding for landscape mode or curved screens */
 body {
-    padding-top: env(safe-area-inset-top);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
