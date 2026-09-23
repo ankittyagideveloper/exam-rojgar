@@ -1,5 +1,4 @@
 import {
-  SignedIn,
   SignInButton,
   UserButton,
   useUser,
@@ -10,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import LanguageSwitcher from "./language-switcher";
 import { ThemeContext } from "../context/ThemeContext.jsx";
+import NotificationBell from "./NotificationBell";
 import { Button } from "@/components/ui";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import { YoutubeIcon } from "../pages/mentorship/Mentorship";
@@ -155,9 +155,8 @@ export const Header = () => {
 
       {/* Header */}
       <header
-        className={`fixed hidden h-[60px] border-b border-[#DFE4E8] dark:border-[#262626] ${
-          isAdmin ? "top-[30px]" : "top-0"
-        } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between gap-4 dark:bg-[#262626] safe-top`}
+        className={`fixed hidden h-[60px] border-b border-[#DFE4E8] dark:border-[#262626] ${isAdmin ? "top-[30px]" : "top-0"
+          } left-[60px] bg-[#F1F4F6] z-50 px-4 lg:flex items-center justify-between gap-4 dark:bg-[#262626] safe-top`}
         style={{ width: "calc(100% - 60px)" }}
       >
         {/* Left — logo */}
@@ -183,6 +182,7 @@ export const Header = () => {
         <div className="flex gap-2 items-center shrink-0">
           <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
 
+          <NotificationBell />
           <InstallPWAButton />
           <LanguageSwitcher
             onChange={handleLanguageChange}
@@ -202,7 +202,7 @@ export const Header = () => {
           )}
         </div>
       </header>
-      
+
     </>
   );
 };

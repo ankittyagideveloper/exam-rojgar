@@ -5,7 +5,19 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'dev-dist']),
+  {
+    files: ['public/firebase-messaging-sw.js'],
+    extends: [js.configs.recommended],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: { ...globals.browser, ...globals.serviceworker },
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'script',
+      },
+    },
+  },
   {
     files: ['clerk-backend/**/*.js'],
     extends: [js.configs.recommended],

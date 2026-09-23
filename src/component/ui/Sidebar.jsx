@@ -17,6 +17,7 @@ import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 import SearchBar from "../../components/SearchBar";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
 import LanguageSwitcher from "../language-switcher";
+import NotificationBell from "../NotificationBell";
 
 const SidebarContext = createContext(undefined);
 const MobileDrawerContext = createContext(false);
@@ -268,7 +269,10 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                 {/* Footer section — Language Switcher, Dark Mode toggle & User profile */}
                 <div className=" mx-6 flex items-center justify-between pt-3 pb-3 border-t border-[#363940] safe-bottom">
                   <LanguageSwitcher onChange={handleLanguageChange} dropUp />
-                  <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
+                  <div className="flex items-center gap-2">
+                    <NotificationBell />
+                    <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
+                  </div>
                 </div>
 
                 {/* User profile — pinned to bottom */}
