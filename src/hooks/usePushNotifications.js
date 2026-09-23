@@ -52,8 +52,15 @@ export function usePushNotifications(userId) {
     }
 
     try {
-      // Use the already-active SW registration instead of re-registering every time
-      const swRegistration = await navigator.serviceWorker.ready;
+      if (!("serviceWorker" in navigator)) {
+        return { success: false, reason: "service_worker_unsupported" };
+      }
+
+      // Ensure firebase-messaging-sw.js is explicitly registered
+      const swRegistration = await navigator.serviceWorker.register(
+        "/firebase-messaging-sw.js"
+      );
+
       const token = await getToken(messaging, {
         vapidKey: VAPID_KEY,
         serviceWorkerRegistration: swRegistration,

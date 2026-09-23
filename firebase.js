@@ -1,3 +1,4 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getMessaging, isSupported } from "firebase/messaging";
@@ -11,17 +12,19 @@ const firebaseConfig = {
   appId: "1:461311574928:web:3d6251d3a94f52df26a915",
   measurementId: "G-9CKSKVDDSC",
 };
-
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Storage
 export const storage = getStorage(app);
 
-// Lazy singleton — getMessaging() throws outside a browser context,
-// so we only create it on first use after confirming support.
-let _messaging = null;
+// Initialize Firebase Cloud Messaging
+export const messaging = getMessaging(app);
+
+// Lazy accessor — returns null in environments where FCM is not supported
+// (e.g. non-HTTPS, Safari < 16, service-worker unavailable)
 export async function getMessagingInstance() {
-  if (_messaging) return _messaging;
   const supported = await isSupported();
   if (!supported) return null;
-  _messaging = getMessaging(app);
-  return _messaging;
+  return getMessaging(app);
 }
