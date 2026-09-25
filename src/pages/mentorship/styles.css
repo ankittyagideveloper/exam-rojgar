@@ -248,3 +248,48 @@
     box-shadow: 0 0 0 8px oklch(0.42 0.13 160 / 0%);
   }
 }
+
+/* ── Enroll Now CTA — override Razorpay's default button styling ── */
+.mentorship-page .enroll-btn-wrapper form {
+  display: block;
+  width: 100%;
+}
+
+.mentorship-page .enroll-btn-wrapper form button,
+.mentorship-page .enroll-btn-wrapper form input[type="submit"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  border-radius: 9999px !important;
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  padding: 0.875rem 1.25rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  font-family: var(--font-sans) !important;
+  letter-spacing: 0.01em !important;
+  border: none !important;
+  box-shadow: 0 4px 18px -4px oklch(0.45 0.16 248 / 45%) !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.mentorship-page .enroll-btn-wrapper form button::after,
+.mentorship-page .enroll-btn-wrapper form input[type="submit"]::after {
+  content: " →";
+}
+
+.mentorship-page .enroll-btn-wrapper form button:hover,
+.mentorship-page .enroll-btn-wrapper form input[type="submit"]:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 6px 24px -4px oklch(0.45 0.16 248 / 55%) !important;
+}
+
+/* Dark-mode enroll button */
+.mentorship-page.dark .enroll-btn-wrapper form button,
+.mentorship-page.dark .enroll-btn-wrapper form input[type="submit"] {
+  background-color: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  box-shadow: 0 4px 18px -4px oklch(0.54 0.14 248 / 55%) !important;
+}

@@ -440,20 +440,46 @@ function Program({ isPaid }) {
 
       <div className="mt-10 grid gap-5 sm:mt-14 lg:grid-cols-2">
         <article className="relative rounded-2xl p-5 sm:rounded-3xl sm:p-8 glass-card ring-1 ring-accent/60 shadow-glow">
+          {/* Most Selected badge */}
           <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-accent-foreground whitespace-nowrap sm:left-auto sm:right-8 sm:translate-x-0">
             {t("mentorship.program.mostSelected")}
           </span>
+
           <h3 className="font-display text-xl font-bold leading-snug sm:text-2xl">
             {t("mentorship.program.plan.name")}
           </h3>
           <p className="mt-1 text-sm text-violet">{t("mentorship.program.plan.tag")}</p>
 
-          <p className="mt-5 flex items-baseline gap-1.5 sm:mt-6">
-            <span className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          {/* LIMITED-TIME OFFER urgency label */}
+          <p className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-orange-300/60 bg-orange-50 px-3 py-1 text-xs font-semibold tracking-wide text-orange-700 dark:border-orange-400/30 dark:bg-orange-950/40 dark:text-orange-300 sm:mt-6">
+            🔥 LIMITED-TIME OFFER
+          </p>
+
+          {/* Pricing block */}
+          <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1">
+            {/* Offer price — most prominent */}
+            <span className="font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
               ₹399
             </span>
-            <span className="text-sm text-muted-foreground">{t("mentorship.program.plan.unit")}</span>
-          </p>
+            {/* Original price with strikethrough */}
+            <span className="font-display text-xl font-medium text-muted-foreground line-through decoration-2 sm:text-2xl">
+              ₹799
+            </span>
+            {/* 50% OFF badge */}
+            <span className="inline-flex items-center gap-1 rounded-md border border-emerald-300/60 bg-emerald-50 px-2 py-0.5 font-mono text-xs font-bold text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-950/40 dark:text-emerald-300">
+              🏷️ 50% OFF
+            </span>
+          </div>
+
+          {/* One-time payment assurance */}
+          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <span className="text-emerald-600 dark:text-emerald-400">✓</span> One-time payment
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="text-emerald-600 dark:text-emerald-400">✓</span> No recurring subscription
+            </span>
+          </div>
 
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:mt-5">
             {t("mentorship.program.plan.blurb")}
@@ -474,12 +500,18 @@ function Program({ isPaid }) {
             })}
           </ul>
 
-          {isPaid ? <Link
-            to={TARGET_SERIES}
-            className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
-          >
-            {t("mentorship.header.targetSeries")}
-          </Link> : <div className="mt-8 w-full sm:mt-10 sm:max-w-md"><RazorpayButton id="pl_TS4AN7R2A24QKQ" /></div>}
+          {isPaid ? (
+            <Link
+              to={TARGET_SERIES}
+              className="mt-8 block w-full rounded-full bg-primary/90 px-5 py-3.5 text-center text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] backdrop-blur-sm shadow-md sm:mt-10 sm:max-w-md"
+            >
+              {t("mentorship.header.targetSeries")}
+            </Link>
+          ) : (
+            <div className="mt-8 sm:mt-10 sm:max-w-md enroll-btn-wrapper">
+              <RazorpayButton id="pl_TS4AN7R2A24QKQ" />
+            </div>
+          )}
         </article>
       </div>
     </section>
