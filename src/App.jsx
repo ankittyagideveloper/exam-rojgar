@@ -110,6 +110,9 @@ import RRBNTPCEconomyLecture2InflationMockTestPage from "./pages/RRBNTPCEconomyL
 import RRBNTPCEconomyLecture3MonetaryPolicyMockTestPage from "./pages/RRBNTPCEconomyLecture3MonetaryPolicyMockTestPage";
 import RRBNTPCEconomyLecture4TaxationMockTestPage from "./pages/RRBNTPCEconomyLecture4TaxationMockTestPage";
 import EconomyFullTestMockTestPage from "./pages/EconomyFullTestMockTestPage";
+import CircleTest1MockTestPage from "./pages/CircleTest1MockTestPage";
+import QuadrilateralTest1MockTestPage from "./pages/QuadrilateralTest1MockTestPage";
+import PolygonTest1MockTestPage from "./pages/PolygonTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -434,6 +437,12 @@ const router = createBrowserRouter([
       { path: "RRBNTPCEconomyLecture4Taxation", element: <RRBNTPCEconomyLecture4TaxationMockTestPage /> },
     
       { path: "EconomyFullTest", element: <EconomyFullTestMockTestPage /> },
+    
+      { path: "circle-test-1", element: <CircleTest1MockTestPage /> },
+    
+      { path: "polygon-test-1", element: <PolygonTest1MockTestPage /> },
+    
+      { path: "quadrilateral-test-1", element: <QuadrilateralTest1MockTestPage /> },
     ],
   },
   {

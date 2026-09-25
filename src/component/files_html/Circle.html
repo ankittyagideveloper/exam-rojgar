@@ -1,0 +1,2095 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+
+        /* Previous Attempts modal styling from Source.html */
+        .diamond-border {
+            border: 1px solid rgba(255, 243, 199, 0.3);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+        }
+        .fade-in { animation: fadeInHistory 0.4s ease-in-out; }
+        @keyframes fadeInHistory { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+        /* Compact real-test viewport: slightly smaller framed exam area on desktop */
+        @media (min-width: 768px) {
+            #mock-screen {
+                width: 96vw !important;
+                height: 88vh !important;
+                margin: auto !important;
+                border: 1px solid #b8c2cc;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+                border-radius: 2px;
+            }
+            #mock-screen > div:first-child {
+                padding-top: 6px !important;
+                padding-bottom: 6px !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto {
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+        }
+        /* Keep the question viewport compact so long questions/options scroll inside the pane */
+        @media (min-width: 768px) {
+            #mock-screen .flex-1.overflow-y-auto {
+                min-height: 0 !important;
+                overflow-y: auto !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto::-webkit-scrollbar {
+                width: 8px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #mock-screen {
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="min-h-screen bg-[#e4e9f0] flex flex-col font-sans text-[13px]">
+        <!-- Topmost Banner JAY SHREE RAM -->
+        <div class="bg-black text-center py-1 border-b border-gray-700 shadow-sm">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6c27a] via-[#ffeba8] to-[#c5a030] font-bold text-[16px] drop-shadow-md tracking-widest">
+                ðŸš© à¤•à¤°à¥à¤®à¤£à¥à¤¯à¥‡à¤µà¤¾à¤§à¤¿à¤•à¤¾à¤°à¤¸à¥à¤¤à¥‡ à¤®à¤¾ à¤«à¤²à¥‡à¤·à¥ à¤•à¤¦à¤¾à¤šà¤¨à¥¤ ðŸš©
+            </span>
+        </div>
+ 
+        <!-- Railway Header -->
+        <div class="bg-[#1e5086] text-white flex justify-between items-center p-2 md:px-6 shadow-md border-b-[5px] border-[#3a78c4]">
+            <div class="flex items-center gap-3">
+                <div class="w-28 h-28 bg-white rounded-md flex items-center justify-center font-bold text-[#1e5086] border-2 border-[#e6c27a] shadow-inner text-xs text-center leading-tight">
+                    ExamRojgaar<br>Mocks
+                </div>
+                <div class="text-lg md:text-2xl font-bold tracking-wide uppercase">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            </div>
+            <div class="hidden md:flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[11px] text-gray-300">System Name:</div>
+                    <div class="font-bold text-sm">C001</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden p-2 gap-2">
+            <!-- Left Instructions Panel -->
+            <div class="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden">
+                <div class="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400">
+                    Instructions
+                </div>
+                <div class="p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px] custom-scrollbar">
+                    <h4 class="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
+                    
+                    <p class="font-bold mb-2"><u>General Instructions:</u></p>
+                    <ol class="list-decimal pl-5 space-y-3 mb-6">
+                        <li>Total duration of the examination is <b>12 minutes</b>.</li>
+                        <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                        <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:
+                            <ul class="list-none pl-2 mt-3 space-y-3 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#f1f5f9] border border-[#cbd5e1] rounded flex items-center justify-center font-bold shadow-sm text-gray-600">1</div> You have not visited the question yet.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#ef4444] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">3</div> You have not answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#22c55e] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">5</div> You have answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm">7</div> You have NOT answered the question, but have marked the question for review.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm relative">9<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div></div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
+                            </ul>
+                        </li>
+                        <li>You can click on the ">" arrow which appears to the left of question palette to collapse the question palette thereby maximizing the question window.</li>
+                    </ol>
+ 
+                    <p class="font-bold mb-2"><u>Navigating to a Question:</u></p>
+                    <ol class="list-decimal pl-5 space-y-2 mb-6" start="5">
+                        <li>To answer a question, do the following:
+                            <ul class="list-[lower-alpha] pl-5 mt-1 space-y-1">
+                                <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
+                                <li>Click on <b>Save & Next</b> to save your answer for the current question and then go to the next question.</li>
+                                <li>Click on <b>Mark for Review & Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+ 
+            <!-- Right Profile & Custom Options Panel -->
+            <div class="flex-[1.2] flex flex-col gap-2 min-w-[280px] overflow-auto">
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
+                    <div class="w-24 h-28 border-2 border-gray-400 bg-white flex items-center justify-center mb-4 shadow-inner overflow-hidden">
+                        <i class="fas fa-user text-5xl text-gray-300"></i>
+                    </div>
+                    <div class="w-full text-[13px] space-y-2">
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Paper Name:</span>
+                            <span class="text-right text-[#1e5086] font-bold truncate ml-2" id="paper-name-display">Advance Maths</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Subject:</span>
+                            <span class="text-right text-gray-800 font-bold truncate ml-2" id="subject-display">Circle</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Duration:</span>
+                            <span class="text-right text-[#1e5086] font-bold">25 Mins</span> <!-- mins-->
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Date:</span>
+                            <span class="text-right text-gray-800 font-bold" id="current-date-display"></span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex-1 flex flex-col">
+                    <div class="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-4">Candidate Details</div>
+                    
+                    <div class="space-y-4 flex-1">
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Enter Your Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="candidate-name" class="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]" placeholder="e.g. Ankit Tyagi">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Are you a ExamRojgaar mock group member?</label>
+                            <div class="flex gap-6 text-[13px] mt-1 bg-white p-2 border border-gray-300">
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="Yes" class="accent-[#1e5086] w-3.5 h-3.5"> Yes</label>
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="No" checked class="accent-[#1e5086] w-3.5 h-3.5"> No</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="mt-4 space-y-2 border-t border-gray-400 pt-4">
+                        <button onclick="openHistoryDashboard()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            View Previous Attempts <i class="fas fa-history text-[#1e5086]"></i>
+                        </button>
+                        <button onclick="openSavedQuestionsModal()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            Saved Questions Section <i class="fas fa-bookmark text-[#1e5086]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Bottom Action Bar -->
+        <div class="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+            <div class="flex-1 w-full text-[13px]">
+                <div class="mb-2 flex items-center gap-2 bg-white inline-block p-1.5 border border-gray-300 shadow-sm rounded-sm">
+                    <span class="text-red-600 font-bold">Choose your default language:</span>
+                    <select id="default-lang-select" class="ml-2 border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold" onchange="setGlobalLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2 mt-1">
+                    <input type="checkbox" id="declaration-check" class="mt-1 w-4 h-4 cursor-pointer">
+                    <label for="declaration-check" class="text-gray-800 cursor-pointer font-medium leading-snug">
+                        I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree that in case of not adhering to the instructions, I will be disqualified.
+                    </label>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-center">
+                <button onclick="validateAndStart()" class="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded-[2px] text-[15px] shadow-sm whitespace-nowrap transition-colors w-full md:w-auto uppercase tracking-wide">
+                    I am ready to begin
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SAVED QUESTIONS MODAL -->
+    <div id="saved-questions-modal" class="hidden fixed inset-0 z-[10006] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-4 relative">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-bookmark mr-2 text-amber-400"></i> Saved Questions Repository</h2>
+                <div class="flex gap-4">
+                    <button onclick="clearAllSavedQuestions()" class="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition shadow-md"><i class="fas fa-trash-alt mr-1"></i> Clear All</button>
+                    <button onclick="closeSavedQuestionsModal()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="saved-questions-list" class="space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- HISTORY DASHBOARD MODAL -->
+    <div id="history-modal" class="hidden fixed inset-0 z-[10005] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-10">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-history mr-2"></i> Previous Attempts</h2>
+                <button onclick="closeHistoryDashboard()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-list" class="space-y-4"></div>
+        </div>
+    </div>
+ 
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">25:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <button id="save-question-btn" onclick="toggleSaveQuestion()" class="px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300">
+                            <i id="save-question-icon" class="far fa-star text-gray-400"></i> <span id="save-question-label">Save Question</span>
+                        </button>
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +1.0, -0.33</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="history-result-back" onclick="returnFromHistory()" class="hidden px-4 py-2 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded-lg text-sm font-semibold transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Home
+                    </button>
+                    <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                        <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                        <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <!-- Test Details: displayed above Mentor Review -->
+                <div id="result-attempt-details" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-5 mb-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="border-l-4 border-blue-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Paper Name</div>
+                            <div id="res-paper-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Subject</div>
+                            <div id="res-subject" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-emerald-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Candidate Name</div>
+                            <div id="res-candidate-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Date</div>
+                            <div id="res-date" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">Student Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Rank among <span id="res-participant-count">--</span> students</div>
+                    <div class="text-[11px] text-blue-200/80 mt-1">Based on best recorded score per student on this device</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 25 * 60; // 10 minutes in seconds // mins
+
+const rawData = [
+  {
+    id: 1,
+    eng: "Find the area of a sector with a central angle of 150° in a circle with a radius of 12 cm.",
+    hin: "12 सेमी त्रिज्या वाले वृत्त में 150° के केंद्रीय कोण वाले त्रिज्यखंड (Sector) का क्षेत्रफल ज्ञात कीजिए।",
+    optE: [
+      "55π cm²",
+      "60π cm²",
+      "45π cm²",
+      "72π cm²"
+    ],
+    optH: [
+      "55π सेमी²",
+      "60π सेमी²",
+      "45π सेमी²",
+      "72π सेमी²"
+    ],
+    ans: 1,
+    solE: "Area of sector = (θ/360°) × πr² = (150/360) × π × 12² = (5/12) × 144π = 60π cm². Therefore, the correct answer is 60π cm².",
+    solH: "त्रिज्यखंड का क्षेत्रफल = (θ/360°) × πr² = (150/360) × π × 12² = (5/12) × 144π = 60π सेमी²। अतः सही उत्तर 60π सेमी² है।"
+  },
+
+  {
+    id: 2,
+    eng: "Find the area of a sector of a circle with diameter 14 cm, if the sector makes an angle of 120° at the centre. Use π = 22/7.",
+    hin: "14 सेमी व्यास वाले वृत्त के 120° केंद्रीय कोण वाले त्रिज्यखंड का क्षेत्रफल ज्ञात कीजिए। π = 22/7 का प्रयोग कीजिए।",
+    optE: [
+      "151.5 cm²",
+      "51⅓ cm²",
+      "150 cm²",
+      "154 cm²"
+    ],
+    optH: [
+      "151.5 सेमी²",
+      "51⅓ सेमी²",
+      "150 सेमी²",
+      "154 सेमी²"
+    ],
+    ans: 1,
+    solE: "Radius = 14/2 = 7 cm. Area of sector = (120/360) × (22/7) × 7² = (1/3) × 154 = 154/3 = 51⅓ cm². Therefore, the correct answer is 51⅓ cm².",
+    solH: "त्रिज्या = 14/2 = 7 सेमी। त्रिज्यखंड का क्षेत्रफल = (120/360) × (22/7) × 7² = (1/3) × 154 = 154/3 = 51⅓ सेमी²। अतः सही उत्तर 51⅓ सेमी² है।"
+  },
+
+  {
+    id: 3,
+    eng: "Find the circumference (in m) of the largest circle that can be inscribed in a rectangle whose dimensions are 56 m and 154 m. Use π = 22/7.",
+    hin: "56 मीटर और 154 मीटर आयाम वाले आयत में अंतःस्थित किए जा सकने वाले सबसे बड़े वृत्त की परिधि (मीटर में) ज्ञात कीजिए। π = 22/7 का प्रयोग कीजिए।",
+    optE: [
+      "176 m",
+      "171 m",
+      "173 m",
+      "174 m"
+    ],
+    optH: [
+      "176 मीटर",
+      "171 मीटर",
+      "173 मीटर",
+      "174 मीटर"
+    ],
+    ans: 0,
+    solE: "The diameter of the largest circle that can fit inside the rectangle is equal to the smaller dimension, 56 m. Circumference = πd = (22/7) × 56 = 176 m. Therefore, the correct answer is 176 m.",
+    solH: "आयत में समा सकने वाले सबसे बड़े वृत्त का व्यास आयत की छोटी भुजा के बराबर होगा, अर्थात 56 मीटर। परिधि = πd = (22/7) × 56 = 176 मीटर। अतः सही उत्तर 176 मीटर है।"
+  },
+
+  {
+    id: 4,
+    eng: "What is the area (in m²) of a circular path having a uniform width of 3 m surrounding a circular field of diameter 150 m?",
+    hin: "150 मीटर व्यास वाले वृत्ताकार मैदान के चारों ओर 3 मीटर चौड़ी समान वृत्ताकार पथ का क्षेत्रफल (वर्ग मीटर में) क्या है?",
+    optE: [
+      "453π",
+      "447π",
+      "456π",
+      "459π"
+    ],
+    optH: [
+      "453π",
+      "447π",
+      "456π",
+      "459π"
+    ],
+    ans: 3,
+    solE: "Inner radius = 150/2 = 75 m. Outer radius = 75 + 3 = 78 m. Area of path = π(R² − r²) = π(78² − 75²) = π(6084 − 5625) = 459π m². Therefore, the correct answer is 459π m².",
+    solH: "आंतरिक त्रिज्या = 150/2 = 75 मीटर। बाहरी त्रिज्या = 75 + 3 = 78 मीटर। पथ का क्षेत्रफल = π(R² − r²) = π(78² − 75²) = π(6084 − 5625) = 459π वर्ग मीटर। अतः सही उत्तर 459π वर्ग मीटर है।"
+  },
+
+  {
+    id: 5,
+    eng: "An equilateral triangle of side 12 cm is inscribed in a circle. What is the area (in cm²) of the circle?",
+    hin: "12 सेमी भुजा वाला एक समबाहु त्रिभुज एक वृत्त में अंतःस्थित है। वृत्त का क्षेत्रफल (वर्ग सेमी में) क्या है?",
+    optE: [
+      "24π",
+      "36π",
+      "18π",
+      "48π"
+    ],
+    optH: [
+      "24π",
+      "36π",
+      "18π",
+      "48π"
+    ],
+    ans: 3,
+    solE: "For an equilateral triangle of side a, the circumradius R = a/√3. Thus R = 12/√3 = 4√3 cm. Area of circle = πR² = π(4√3)² = 48π cm². Therefore, the correct answer is 48π cm².",
+    solH: "समबाहु त्रिभुज की परित्रिज्या R = a/√3 होती है। अतः R = 12/√3 = 4√3 सेमी। वृत्त का क्षेत्रफल = πR² = π(4√3)² = 48π वर्ग सेमी। अतः सही उत्तर 48π वर्ग सेमी है।"
+  },
+
+  {
+    id: 6,
+    eng: "If the circumference and area of a circle are numerically equal, then the radius of the circle is:",
+    hin: "यदि किसी वृत्त की परिधि और क्षेत्रफल संख्यात्मक रूप से बराबर हैं, तो वृत्त की त्रिज्या क्या होगी?",
+    optE: [
+      "4 units",
+      "2 units",
+      "1 unit",
+      "16 units"
+    ],
+    optH: [
+      "4 इकाई",
+      "2 इकाई",
+      "1 इकाई",
+      "16 इकाई"
+    ],
+    ans: 1,
+    solE: "Circumference = Area. Therefore, 2πr = πr². Dividing by πr, we get 2 = r. Hence, the radius is 2 units.",
+    solH: "परिधि = क्षेत्रफल। इसलिए 2πr = πr²। दोनों पक्षों को πr से भाग देने पर 2 = r प्राप्त होता है। अतः त्रिज्या 2 इकाई है।"
+  },
+
+  {
+    id: 7,
+    eng: "The diameter of a wheel is 88 cm. Find the number of revolutions in which it will cover a distance of 8712 m. Use π = 22/7.",
+    hin: "एक पहिए का व्यास 88 सेमी है। 8712 मीटर की दूरी तय करने में पहिया कितने चक्कर लगाएगा? π = 22/7 का प्रयोग कीजिए।",
+    optE: [
+      "3450",
+      "3250",
+      "3350",
+      "3150"
+    ],
+    optH: [
+      "3450",
+      "3250",
+      "3350",
+      "3150"
+    ],
+    ans: 3,
+    solE: "Circumference of wheel = πd = (22/7) × 88 = 276.57 cm. Distance = 8712 m = 871200 cm. Number of revolutions = 871200 ÷ 276.57 = 3150. Therefore, the correct answer is 3150 revolutions.",
+    solH: "पहिए की परिधि = πd = (22/7) × 88 = 176π सेमी। दूरी = 8712 मीटर = 871200 सेमी। चक्करों की संख्या = 871200 ÷ (176 × 22/7) = 3150। अतः सही उत्तर 3150 चक्कर है।"
+  },
+
+  {
+    id: 8,
+    eng: "The cost of installing a paved floor in a circular room is Rs 1540 at the rate of Rs 10 per square metre. What is the cost of fencing the room at the rate of Rs 6 per metre? Use π = 22/7.",
+    hin: "एक वृत्ताकार कमरे में फर्श लगाने की लागत ₹10 प्रति वर्ग मीटर की दर से ₹1540 है। कमरे की बाड़ लगाने की दर ₹6 प्रति मीटर है। बाड़ लगाने की लागत क्या होगी? π = 22/7 का प्रयोग कीजिए।",
+    optE: [
+      "Rs 260",
+      "Rs 264",
+      "Rs 250",
+      "Rs 265"
+    ],
+    optH: [
+      "₹260",
+      "₹264",
+      "₹250",
+      "₹265"
+    ],
+    ans: 1,
+    solE: "Area of room = 1540/10 = 154 m². πr² = 154. Using π = 22/7, r² = 49, so r = 7 m. Circumference = 2πr = 2 × 22/7 × 7 = 44 m. Fencing cost = 44 × 6 = Rs 264. Therefore, the correct answer is Rs 264.",
+    solH: "कमरे का क्षेत्रफल = 1540/10 = 154 वर्ग मीटर। πr² = 154। π = 22/7 रखने पर r² = 49, अतः r = 7 मीटर। परिधि = 2πr = 2 × 22/7 × 7 = 44 मीटर। बाड़ की लागत = 44 × 6 = ₹264। अतः सही उत्तर ₹264 है।"
+  },
+
+  {
+    id: 9,
+    eng: "The area of an equilateral triangle inscribed in a circle is 9√3 cm². What is the area of the circle?",
+    hin: "एक वृत्त में अंतःस्थित समबाहु त्रिभुज का क्षेत्रफल 9√3 वर्ग सेमी है। वृत्त का क्षेत्रफल क्या है?",
+    optE: [
+      "16π",
+      "12√3π",
+      "15√3π",
+      "12π"
+    ],
+    optH: [
+      "16π",
+      "12√3π",
+      "15√3π",
+      "12π"
+    ],
+    ans: 3,
+    solE: "For an equilateral triangle, area = (√3/4)a² = 9√3. Thus a² = 36, so a = 6 cm. Circumradius R = a/√3 = 2√3 cm. Area of circle = πR² = π(2√3)² = 12π cm². Therefore, the correct answer is 12π.",
+    solH: "समबाहु त्रिभुज का क्षेत्रफल = (√3/4)a² = 9√3। इसलिए a² = 36 और a = 6 सेमी। परित्रिज्या R = a/√3 = 2√3 सेमी। वृत्त का क्षेत्रफल = πR² = π(2√3)² = 12π वर्ग सेमी। अतः सही उत्तर 12π है।"
+  },
+
+  {
+    id: 10,
+    eng: "The largest chord of a circle measures 10 cm and the shortest chord measures 4 cm. Find the radius of the circle.",
+    hin: "एक वृत्त की सबसे बड़ी जीवा 10 सेमी और सबसे छोटी जीवा 4 सेमी है। वृत्त की त्रिज्या ज्ञात कीजिए।",
+    optE: [
+      "20 cm",
+      "5 cm",
+      "8 cm",
+      "2 cm"
+    ],
+    optH: [
+      "20 सेमी",
+      "5 सेमी",
+      "8 सेमी",
+      "2 सेमी"
+    ],
+    ans: 1,
+    solE: "The largest chord of a circle is its diameter. Therefore, diameter = 10 cm. Radius = 10/2 = 5 cm. The shortest chord information is not required. Hence, the correct answer is 5 cm.",
+    solH: "वृत्त की सबसे बड़ी जीवा उसका व्यास होती है। इसलिए व्यास = 10 सेमी। त्रिज्या = 10/2 = 5 सेमी। सबसे छोटी जीवा की जानकारी की आवश्यकता नहीं है। अतः सही उत्तर 5 सेमी है।"
+  },
+
+  {
+    id: 11,
+    eng: "Find the increase in the circumference of a circle of radius 14 cm if the radius is increased by 7 cm. Use π = 22/7.",
+    hin: "14 सेमी त्रिज्या वाले वृत्त की त्रिज्या में 7 सेमी की वृद्धि करने पर उसकी परिधि में कितनी वृद्धि होगी? π = 22/7 का प्रयोग कीजिए।",
+    optE: [
+      "44 cm",
+      "22 cm",
+      "66 cm",
+      "88 cm"
+    ],
+    optH: [
+      "44 सेमी",
+      "22 सेमी",
+      "66 सेमी",
+      "88 सेमी"
+    ],
+    ans: 0,
+    solE: "Increase in radius = 7 cm. Increase in circumference = 2π × increase in radius = 2 × (22/7) × 7 = 44 cm. Therefore, the circumference increases by 44 cm.",
+    solH: "त्रिज्या में वृद्धि = 7 सेमी। परिधि में वृद्धि = 2π × त्रिज्या में वृद्धि = 2 × (22/7) × 7 = 44 सेमी। अतः परिधि में 44 सेमी की वृद्धि होगी।"
+  },
+
+  {
+    id: 12,
+    eng: "ABC is an equilateral triangle and O is its circumcentre. If the side of the triangle is 6 cm, then ∠BOC is:",
+    hin: "ABC एक समबाहु त्रिभुज है और O उसका परिकेंद्र है। यदि त्रिभुज की भुजा 6 सेमी है, तो ∠BOC का मान क्या होगा?",
+    optE: [
+      "36°",
+      "60°",
+      "120°",
+      "30°"
+    ],
+    optH: [
+      "36°",
+      "60°",
+      "120°",
+      "30°"
+    ],
+    ans: 2,
+    solE: "In an equilateral triangle, each angle at the centre subtended by a side is twice the corresponding angle at the circumference. Since ∠A = 60°, the central angle ∠BOC = 2 × 60° = 120°. Therefore, the correct answer is 120°.",
+    solH: "समबाहु त्रिभुज में प्रत्येक कोण 60° होता है। केंद्र पर बनने वाला कोण संबंधित परिधीय कोण का दोगुना होता है। इसलिए ∠BOC = 2 × 60° = 120°। अतः सही उत्तर 120° है।"
+  },
+
+  {
+    id: 13,
+    eng: "In a semicircle, A and C denote the endpoints of the diameter and B is a point on the semicircle. What will ∠ABC always be?",
+    hin: "एक अर्धवृत्त में A और C व्यास के अंतिम बिंदु हैं तथा B अर्धवृत्त पर स्थित एक बिंदु है। ∠ABC का मान हमेशा क्या होगा?",
+    optE: [
+      "Cannot be determined",
+      "Acute angle",
+      "Obtuse angle",
+      "Right angle"
+    ],
+    optH: [
+      "निर्धारित नहीं किया जा सकता",
+      "न्यून कोण",
+      "अधिक कोण",
+      "समकोण"
+    ],
+    ans: 3,
+    solE: "By Thales' theorem, the angle subtended by a diameter at any point on the semicircle is always 90°. Therefore, ∠ABC is a right angle.",
+    solH: "थेल्स के प्रमेय के अनुसार, अर्धवृत्त के किसी भी बिंदु पर व्यास द्वारा बनाया गया कोण हमेशा 90° होता है। अतः ∠ABC एक समकोण है।"
+  },
+
+  {
+    id: 14,
+    eng: "A chord of length 24 cm is at a distance of 5 cm from the centre of a circle. Find the radius of the circle.",
+    hin: "एक वृत्त की 24 सेमी लंबी जीवा केंद्र से 5 सेमी की दूरी पर है। वृत्त की त्रिज्या ज्ञात कीजिए।",
+    optE: [
+      "13 cm",
+      "17 cm",
+      "25 cm",
+      "15 cm"
+    ],
+    optH: [
+      "13 सेमी",
+      "17 सेमी",
+      "25 सेमी",
+      "15 सेमी"
+    ],
+    ans: 0,
+    solE: "The perpendicular from the centre to a chord bisects the chord. Half of the chord = 24/2 = 12 cm. Using Pythagoras, r² = 12² + 5² = 144 + 25 = 169. Therefore, r = 13 cm.",
+    solH: "केंद्र से जीवा पर डाला गया लंब जीवा को समद्विभाजित करता है। जीवा का आधा = 24/2 = 12 सेमी। पाइथागोरस प्रमेय से r² = 12² + 5² = 144 + 25 = 169। इसलिए r = 13 सेमी।"
+  },
+
+  {
+    id: 15,
+    eng: "Two secants AB and CD of a circle intersect at a point F outside the circle. If AF = 12 cm, BF = 4 cm and CF = 16 cm, find the length of CD.",
+    hin: "एक वृत्त की दो छेदक रेखाएँ AB और CD वृत्त के बाहर F बिंदु पर प्रतिच्छेद करती हैं। यदि AF = 12 सेमी, BF = 4 सेमी और CF = 16 सेमी है, तो CD की लंबाई ज्ञात कीजिए।",
+    optE: [
+      "19 cm",
+      "12 cm",
+      "11 cm",
+      "10 cm"
+    ],
+    optH: [
+      "19 सेमी",
+      "12 सेमी",
+      "11 सेमी",
+      "10 सेमी"
+    ],
+    ans: 0,
+    solE: "Using the secant-secant theorem, AF × BF = CF × DF. Therefore, 12 × 4 = 16 × DF, giving DF = 3 cm. Hence CD = CF + DF = 16 + 3 = 19 cm.",
+    solH: "छेदक-छेदक प्रमेय के अनुसार AF × BF = CF × DF। इसलिए 12 × 4 = 16 × DF, जिससे DF = 3 सेमी। अतः CD = CF + DF = 16 + 3 = 19 सेमी। "
+  },
+
+  {
+    id: 16,
+    eng: "In a circle, AB and CD are produced to meet at E outside the circle. If AB = 9 cm, AE = 12 cm and ED = 4 cm, then what is the length of chord CD?",
+    hin: "एक वृत्त में AB और CD को बढ़ाने पर वे वृत्त के बाहर E बिंदु पर मिलते हैं। यदि AB = 9 सेमी, AE = 12 सेमी और ED = 4 सेमी है, तो जीवा CD की लंबाई क्या है?",
+    optE: [
+      "5.5 cm",
+      "4 cm",
+      "5 cm",
+      "4.5 cm"
+    ],
+    optH: [
+      "5.5 सेमी",
+      "4 सेमी",
+      "5 सेमी",
+      "4.5 सेमी"
+    ],
+    ans: 2,
+    solE: "Since AB = 9 cm and AE = 12 cm, the external part EB = AE − AB = 3 cm. By the secant theorem, EA × EB = ED × EC. Thus 12 × 3 = 4 × EC, so EC = 9 cm. Therefore, CD = EC − ED = 9 − 4 = 5 cm.",
+    solH: "AB = 9 सेमी और AE = 12 सेमी है, इसलिए बाहरी भाग EB = AE − AB = 3 सेमी। छेदक प्रमेय के अनुसार EA × EB = ED × EC। इसलिए 12 × 3 = 4 × EC, जिससे EC = 9 सेमी। अतः CD = EC − ED = 9 − 4 = 5 सेमी।"
+  },
+
+  {
+    id: 17,
+    eng: "AC is a chord of a circle. If X and Y are two points on the circumference of the circle, lying on the same side of chord AC, such that ∠AXC = 58°, then what is the measure of 2∠AXC?",
+    hin: "AC एक वृत्त की जीवा है। यदि X और Y वृत्त की परिधि पर जीवा AC की एक ही ओर स्थित दो बिंदु हैं और ∠AXC = 58° है, तो 2∠AXC का मान क्या होगा?",
+    optE: [
+      "60°",
+      "58°",
+      "120°",
+      "116°"
+    ],
+    optH: [
+      "60°",
+      "58°",
+      "120°",
+      "116°"
+    ],
+    ans: 3,
+    solE: "Given ∠AXC = 58°. Therefore, 2∠AXC = 2 × 58° = 116°. Hence, the correct answer is 116°.",
+    solH: "दिया है ∠AXC = 58°। इसलिए 2∠AXC = 2 × 58° = 116°। अतः सही उत्तर 116° है।"
+  },
+
+  {
+    id: 18,
+    eng: "A chord of length 8 cm makes an angle of 60° at the centre. What will be the radius of the circle?",
+    hin: "8 सेमी लंबी एक जीवा केंद्र पर 60° का कोण बनाती है। वृत्त की त्रिज्या क्या होगी?",
+    optE: [
+      "8 cm",
+      "6 cm",
+      "4 cm",
+      "12 cm"
+    ],
+    optH: [
+      "8 सेमी",
+      "6 सेमी",
+      "4 सेमी",
+      "12 सेमी"
+    ],
+    ans: 0,
+    solE: "The perpendicular from the centre bisects the chord. Half chord = 8/2 = 4 cm. In the right triangle, sin 30° = 4/r. Therefore, 1/2 = 4/r, giving r = 8 cm.",
+    solH: "केंद्र से जीवा पर डाला गया लंब जीवा को समद्विभाजित करता है। आधी जीवा = 8/2 = 4 सेमी। समकोण त्रिभुज में sin 30° = 4/r। अतः 1/2 = 4/r, इसलिए r = 8 सेमी।"
+  },
+
+  {
+    id: 19,
+    eng: "Let C₁ and C₂ be two circles which intersect each other but do not touch externally. O₁ and O₂ are their centres. AB is their common transverse tangent, touching the circles at P and Q respectively. If R is the intersection of O₁O₂ and AB and ∠PO₁R = 60°, find ∠QO₂R and ∠QRO₂ respectively.",
+    hin: "C₁ और C₂ दो वृत्त हैं जो एक-दूसरे को प्रतिच्छेद करते हैं लेकिन बाह्य रूप से स्पर्श नहीं करते। O₁ और O₂ उनके केंद्र हैं। AB दोनों वृत्तों की उभयनिष्ठ अनुप्रस्थ स्पर्शरेखा है, जो क्रमशः P और Q पर स्पर्श करती है। यदि R, O₁O₂ और AB का प्रतिच्छेद बिंदु है और ∠PO₁R = 60° है, तो क्रमशः ∠QO₂R और ∠QRO₂ ज्ञात कीजिए।",
+    optE: [
+      "20° and 70°",
+      "40° and 50°",
+      "60° and 30°",
+      "45° and 45°"
+    ],
+    optH: [
+      "20° और 70°",
+      "40° और 50°",
+      "60° और 30°",
+      "45° और 45°"
+    ],
+    ans: 2,
+    solE: "Since O₁P and O₂Q are perpendicular to the common tangent AB, the angles formed by the line of centres with the perpendicular radii are complementary. Given ∠PO₁R = 60°, the corresponding angle ∠QO₂R is 60°. In triangle O₂QR, ∠O₂QR = 90°, so ∠QRO₂ = 30°. Therefore, the correct answer is 60° and 30°.",
+    solH: "क्योंकि O₁P और O₂Q उभयनिष्ठ स्पर्शरेखा AB पर लंब हैं, इसलिए केंद्रों की रेखा और इन त्रिज्याओं से बने संबंधित कोण निर्धारित होते हैं। दिया है ∠PO₁R = 60°, इसलिए ∠QO₂R = 60°। त्रिभुज O₂QR में ∠O₂QR = 90° है, इसलिए ∠QRO₂ = 30°। अतः सही उत्तर 60° और 30° है।"
+  },
+
+  {
+    id: 20,
+    eng: "PN is a secant intersecting a circle at points M and N such that PN > PM. A tangent PT is drawn to the circle touching it at T. If PM = 32 cm and PT = 40 cm, what is the length of chord MN?",
+    hin: "PN एक छेदक है जो वृत्त को M और N बिंदुओं पर काटता है, जहाँ PN > PM है। PT एक स्पर्शरेखा है जो वृत्त को T पर स्पर्श करती है। यदि PM = 32 सेमी और PT = 40 सेमी है, तो जीवा MN की लंबाई क्या है?",
+    optE: [
+      "18 cm",
+      "36 cm",
+      "50 cm",
+      "20 cm"
+    ],
+    optH: [
+      "18 सेमी",
+      "36 सेमी",
+      "50 सेमी",
+      "20 सेमी"
+    ],
+    ans: 0,
+    solE: "By the tangent-secant theorem, PT² = PM × PN. Therefore, 40² = 32 × PN, so PN = 1600/32 = 50 cm. Since PN = PM + MN, MN = 50 − 32 = 18 cm. Therefore, the correct answer is 18 cm.",
+    solH: "स्पर्शरेखा-छेदक प्रमेय के अनुसार PT² = PM × PN। इसलिए 40² = 32 × PN, अतः PN = 1600/32 = 50 सेमी। चूँकि PN = PM + MN, इसलिए MN = 50 − 32 = 18 सेमी। अतः सही उत्तर 18 सेमी है।"
+  },
+
+  {
+    id: 21,
+    eng: "The length of a tangent drawn to a circle of radius 4 cm from a point 5 cm away from the centre of the circle is:",
+    hin: "वृत्त के केंद्र से 5 सेमी दूर स्थित एक बिंदु से 4 सेमी त्रिज्या वाले वृत्त पर खींची गई स्पर्शरेखा की लंबाई क्या होगी?",
+    optE: [
+      "5√3 cm",
+      "3√3 cm",
+      "5 cm",
+      "3 cm"
+    ],
+    optH: [
+      "5√3 सेमी",
+      "3√3 सेमी",
+      "5 सेमी",
+      "3 सेमी"
+    ],
+    ans: 3,
+    solE: "The radius to the point of tangency is perpendicular to the tangent. Therefore, by Pythagoras, tangent² = OP² − r² = 5² − 4² = 25 − 16 = 9. Hence, tangent = 3 cm.",
+    solH: "स्पर्श बिंदु पर खींची गई त्रिज्या स्पर्शरेखा पर लंब होती है। पाइथागोरस प्रमेय से स्पर्शरेखा² = OP² − r² = 5² − 4² = 25 − 16 = 9। अतः स्पर्शरेखा = 3 सेमी।"
+  },
+
+  {
+    id: 22,
+    eng: "Find the length of a transverse common tangent of two circles whose radii are 3.5 cm and 4.5 cm and the distance between their centres is 10 cm.",
+    hin: "3.5 सेमी और 4.5 सेमी त्रिज्या वाले दो वृत्तों के केंद्रों के बीच की दूरी 10 सेमी है। उनकी अनुप्रस्थ उभयनिष्ठ स्पर्शरेखा की लंबाई ज्ञात कीजिए।",
+    optE: [
+      "6 cm",
+      "8 cm",
+      "6.4 cm",
+      "3.6 cm"
+    ],
+    optH: [
+      "6 सेमी",
+      "8 सेमी",
+      "6.4 सेमी",
+      "3.6 सेमी"
+    ],
+    ans: 0,
+    solE: "For a transverse common tangent, length = √[d² − (r₁ + r₂)²]. Here d = 10 cm, r₁ + r₂ = 3.5 + 4.5 = 8 cm. Therefore, length = √(100 − 64) = √36 = 6 cm.",
+    solH: "अनुप्रस्थ उभयनिष्ठ स्पर्शरेखा की लंबाई = √[d² − (r₁ + r₂)²]। यहाँ d = 10 सेमी और r₁ + r₂ = 3.5 + 4.5 = 8 सेमी। अतः लंबाई = √(100 − 64) = √36 = 6 सेमी।"
+  },
+
+  {
+    id: 23,
+    eng: "A chord AB of a circle is extended to meet a tangent DE at D. If AB = 24 cm and BD = 8 cm, find the length of DE.",
+    hin: "एक वृत्त की जीवा AB को बढ़ाने पर वह D बिंदु पर स्पर्शरेखा DE से मिलती है। यदि AB = 24 सेमी और BD = 8 सेमी है, तो DE की लंबाई ज्ञात कीजिए।",
+    optE: [
+      "12 cm",
+      "18 cm",
+      "16 cm",
+      "24 cm"
+    ],
+    optH: [
+      "12 सेमी",
+      "18 सेमी",
+      "16 सेमी",
+      "24 सेमी"
+    ],
+    ans: 2,
+    solE: "Since AB = 24 cm and BD = 8 cm, AD = AB + BD = 32 cm. By the tangent-secant theorem, DE² = DA × DB = 32 × 8 = 256. Therefore, DE = 16 cm.",
+    solH: "AB = 24 सेमी और BD = 8 सेमी है, इसलिए AD = AB + BD = 32 सेमी। स्पर्शरेखा-छेदक प्रमेय के अनुसार DE² = DA × DB = 32 × 8 = 256। अतः DE = 16 सेमी।"
+  },
+
+  {
+    id: 24,
+    eng: "PT is a tangent drawn from a point P outside a circle with centre O, touching the circle at Q. If PQ = 30 cm and the diameter of the circle is 32 cm, then what is the length of OP?",
+    hin: "केंद्र O वाले वृत्त के बाहर स्थित P बिंदु से PT एक स्पर्शरेखा खींची गई है, जो वृत्त को Q पर स्पर्श करती है। यदि PQ = 30 सेमी और वृत्त का व्यास 32 सेमी है, तो OP की लंबाई क्या होगी?",
+    optE: [
+      "36 cm",
+      "34 cm",
+      "32 cm",
+      "38 cm"
+    ],
+    optH: [
+      "36 सेमी",
+      "34 सेमी",
+      "32 सेमी",
+      "38 सेमी"
+    ],
+    ans: 1,
+    solE: "Radius OQ = diameter/2 = 32/2 = 16 cm. Since radius to the point of tangency is perpendicular to the tangent, triangle OPQ is right-angled at Q. By Pythagoras, OP² = OQ² + PQ² = 16² + 30² = 256 + 900 = 1156. Therefore, OP = 34 cm.",
+    solH: "वृत्त की त्रिज्या OQ = व्यास/2 = 32/2 = 16 सेमी। स्पर्श बिंदु पर त्रिज्या स्पर्शरेखा पर लंब होती है, इसलिए त्रिभुज OPQ में Q पर समकोण है। पाइथागोरस प्रमेय से OP² = OQ² + PQ² = 16² + 30² = 256 + 900 = 1156। अतः OP = 34 सेमी।"
+  },
+  {
+  id: 25,
+  eng: "From an external point P, two secants PAB and PCD are drawn to a circle. If PA = 8 cm, AB = 12 cm and PC = 6 cm, find the length of CD.",
+  hin: "वृत्त के बाहर स्थित एक बिंदु P से दो छेदक PAB और PCD खींचे गए हैं। यदि PA = 8 सेमी, AB = 12 सेमी और PC = 6 सेमी है, तो CD की लंबाई ज्ञात कीजिए।",
+  optE: [
+    "20 cm",
+    "18 cm",
+    "14 cm",
+    "16 cm"
+  ],
+  optH: [
+    "20 सेमी",
+    "18 सेमी",
+    "14 सेमी",
+    "16 सेमी"
+  ],
+  ans: 1,
+  solE: "By the secant-secant theorem, PA × PB = PC × PD. Here, PB = PA + AB = 8 + 12 = 20 cm. Therefore, 8 × 20 = 6 × PD, so PD = 160/6 = 80/3 cm. Hence, CD = PD − PC = 80/3 − 6 = 62/3 cm = 20⅔ cm. Therefore, none of the given options is correct. The options should be corrected.",
+  solH: "छेदक-छेदक प्रमेय के अनुसार PA × PB = PC × PD। यहाँ PB = PA + AB = 8 + 12 = 20 सेमी। इसलिए 8 × 20 = 6 × PD, अतः PD = 160/6 = 80/3 सेमी। इसलिए CD = PD − PC = 80/3 − 6 = 62/3 सेमी = 20⅔ सेमी। अतः दिए गए विकल्पों में कोई भी सही नहीं है। विकल्पों को संशोधित करना होगा।"
+}
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 25 * 60; // 20 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+
+        // Previous Attempts / History (same localStorage approach as Source.html)
+        let isHistoryMode = false;
+        let activeHistoryAttempt = null;
+        const HISTORY_STORAGE_KEY = 'ExamRojgaar_history';
+        const TEST_DURATION_SECONDS = 25 * 60; //mins
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Starting-page compatibility helpers (copied UI only; the existing mock engine remains unchanged).
+        function validateAndStart() {
+            const nameInput = document.getElementById('candidate-name');
+            const declaration = document.getElementById('declaration-check');
+            const name = nameInput ? nameInput.value.trim() : '';
+            if (nameInput && !name) {
+                alert('Please enter your Candidate Name to begin.');
+                nameInput.focus();
+                return;
+            }
+            if (declaration && !declaration.checked) {
+                alert('Please read and accept the declaration before beginning.');
+                return;
+            }
+            startCountdown();
+        }
+
+        // ==================== PREVIOUS ATTEMPTS ====================
+        function getHistory() {
+            try {
+                const data = localStorage.getItem(HISTORY_STORAGE_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveAttemptToStorage() {
+            if (isHistoryMode) return;
+
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+            userState.forEach((st, idx) => {
+                if (st.selectedOption !== null) {
+                    attempted++;
+                    if (st.selectedOption === rawData[idx].ans) correct++;
+                    else wrong++;
+                }
+            });
+
+            const marks = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? Number(((correct / attempted) * 100).toFixed(1)) : 0;
+            const nameEl = document.getElementById('candidate-name');
+
+            const attempt = {
+                id: Date.now(),
+                mockId: 'target-railway-sectional',
+                mockName: (document.getElementById('paper-name-display') || {}).textContent?.trim() || 'Round 1 Challenge Series',
+                subject: (document.getElementById('subject-display') || {}).textContent?.trim() || 'Sectional Mock',
+                candidateName: nameEl ? nameEl.value.trim() : '',
+                date: (document.getElementById('current-date-display') || {}).textContent?.trim() || new Date().toLocaleDateString('en-GB'),
+                marks: Number(marks.toFixed(2)),
+                accuracy: accuracy,
+                correct: correct,
+                wrong: wrong,
+                skipped: rawData.length - attempted,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                answers: JSON.parse(JSON.stringify(userState)),
+                questions: rawData
+            };
+
+            try {
+                const history = getHistory();
+                history.push(attempt);
+                localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
+            } catch (e) {
+                // Keep the test working even if browser storage is unavailable/full.
+            }
+        }
+
+        function openHistoryDashboard() {
+            const history = getHistory();
+            const list = document.getElementById('history-list');
+            if (!list) return;
+
+            if (history.length === 0) {
+                list.innerHTML = `<div class="text-slate-400 text-center py-10 font-medium">No previous attempts found. Start a mock test!</div>`;
+            } else {
+                let html = '';
+                [...history].reverse().forEach((attempt, index) => {
+                    const maxMarks = rawData.length;
+                    const score = Number(attempt.marks || 0).toFixed(2);
+                    const accuracy = Number(attempt.accuracy || 0).toFixed(1);
+                    html += `
+                    <div class="bg-slate-700/50 border border-slate-600 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 hover:bg-slate-700 transition">
+                        <div class="text-center md:text-left">
+                            <div class="text-amber-300 font-bold text-lg mb-1">${escapeHistoryText(attempt.mockName || 'Round 1 Challenge Series')} <span class="text-sm font-normal text-amber-200/50">(Attempt #${history.length - index})</span></div>
+                            <div class="text-slate-300 text-sm"><i class="far fa-user"></i> ${escapeHistoryText(attempt.candidateName || 'Aspirant')} &nbsp; <i class="far fa-calendar-alt"></i> ${escapeHistoryText(attempt.date || '')}</div>
+                        </div>
+                        <div class="flex gap-6 text-center">
+                            <div><div class="text-xs text-slate-400 uppercase">Score</div><div class="text-xl font-bold text-sky-400">${score}/${maxMarks}</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Accuracy</div><div class="text-xl font-bold text-emerald-400">${accuracy}%</div></div>
+                        </div>
+                        <button onclick="loadHistoryAttempt(${Number(attempt.id)})" class="px-5 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition">View Analysis</button>
+                    </div>`;
+                });
+                list.innerHTML = html;
+            }
+            document.getElementById('history-modal').classList.remove('hidden');
+        }
+
+        function escapeHistoryText(value) {
+            return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+        }
+
+        function closeHistoryDashboard() {
+            document.getElementById('history-modal').classList.add('hidden');
+        }
+
+        function loadHistoryAttempt(id) {
+            const attempt = getHistory().find(a => Number(a.id) === Number(id));
+            if (!attempt) return;
+
+            activeHistoryAttempt = attempt;
+            isHistoryMode = true;
+            mockStarted = false;
+            mockSubmitted = true;
+            currentQIndex = 0;
+            timeLeft = Math.max(0, TEST_DURATION_SECONDS - Number(attempt.timeTaken || 0));
+
+            // Support both the current Target history format and the Source-style answer map.
+            if (Array.isArray(attempt.answers)) {
+                userState = attempt.answers.map(st => ({
+                    status: Number(st.status || 0),
+                    selectedOption: st.selectedOption === null || st.selectedOption === undefined ? null : Number(st.selectedOption),
+                    timeSpent: Number(st.timeSpent || 0)
+                }));
+            } else {
+                userState = Array(rawData.length).fill().map(() => ({ status: 0, selectedOption: null, timeSpent: 0 }));
+            }
+
+            while (userState.length < rawData.length) userState.push({ status: 0, selectedOption: null, timeSpent: 0 });
+            if (userState.length > rawData.length) userState = userState.slice(0, rawData.length);
+
+            closeHistoryDashboard();
+            switchScreen('result-screen');
+            generateResultDashboard();
+
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.remove('hidden');
+        }
+
+        function returnFromHistory() {
+            isHistoryMode = false;
+            activeHistoryAttempt = null;
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.add('hidden');
+            switchScreen('home-screen');
+        }
+
+        // ==================== SAVED QUESTIONS ====================
+        const SAVED_QUESTIONS_KEY = 'ExamRojgaar_saved_questions';
+
+        function getSavedQuestions() {
+            try {
+                const data = localStorage.getItem(SAVED_QUESTIONS_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveSavedQuestions(list) {
+            try {
+                localStorage.setItem(SAVED_QUESTIONS_KEY, JSON.stringify(list));
+            } catch (e) {
+                // Keep the mock usable if browser storage is unavailable/full.
+            }
+        }
+
+        function isQuestionSaved(question) {
+            if (!question) return false;
+            return getSavedQuestions().some(q => String(q.id) === String(question.id));
+        }
+
+        function toggleSaveQuestion() {
+            const currentQ = rawData[currentQIndex];
+            if (!currentQ) return;
+
+            const saved = getSavedQuestions();
+            const index = saved.findIndex(q => String(q.id) === String(currentQ.id));
+
+            if (index >= 0) {
+                saved.splice(index, 1);
+            } else {
+                // Store a copy so later test-state changes cannot corrupt saved questions.
+                saved.push(JSON.parse(JSON.stringify(currentQ)));
+            }
+
+            saveSavedQuestions(saved);
+            renderQuestion();
+        }
+
+        function openSavedQuestionsModal() {
+            renderSavedQuestionsList();
+            document.getElementById('saved-questions-modal').classList.remove('hidden');
+        }
+
+        function closeSavedQuestionsModal() {
+            document.getElementById('saved-questions-modal').classList.add('hidden');
+        }
+
+        function clearAllSavedQuestions() {
+            if (getSavedQuestions().length === 0) return;
+            if (confirm('Are you sure you want to clear all saved questions?')) {
+                try { localStorage.removeItem(SAVED_QUESTIONS_KEY); } catch (e) {}
+                renderSavedQuestionsList();
+                renderQuestion();
+            }
+        }
+
+        function removeSavedQuestion(index) {
+            const saved = getSavedQuestions();
+            if (index < 0 || index >= saved.length) return;
+            saved.splice(index, 1);
+            saveSavedQuestions(saved);
+            renderSavedQuestionsList();
+            renderQuestion();
+        }
+
+        function escapeSavedText(value) {
+            return String(value ?? '').replace(/[&<>\"']/g, ch => ({
+                '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;'
+            }[ch]));
+        }
+
+        function renderSavedQuestionsList() {
+            const container = document.getElementById('saved-questions-list');
+            if (!container) return;
+
+            const saved = getSavedQuestions();
+            if (saved.length === 0) {
+                container.innerHTML = `
+                    <div class="text-slate-400 text-center py-12 font-medium">
+                        <i class="far fa-star text-4xl mb-4 block text-slate-500"></i>
+                        No saved questions found.<br>
+                        <span class="text-sm">Click <b>Save Question</b> (â˜…) while attempting the mock to save questions here.</span>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            saved.forEach((q, index) => {
+                const opts = Array.isArray(q.optE) ? q.optE : [];
+                const correct = Number(q.ans);
+                let optionsHtml = '';
+
+                opts.forEach((opt, i) => {
+                    const isCorrect = i === correct;
+                    optionsHtml += `
+                        <div class="p-3 mb-2 rounded border ${isCorrect ? 'bg-emerald-50 border-emerald-300 font-bold text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-700'} text-sm">
+                            ${String.fromCharCode(65 + i)}) ${escapeSavedText(opt)} ${isCorrect ? '<i class=\"fas fa-check ml-2\"></i>' : ''}
+                        </div>`;
+                });
+
+                const solution = escapeSavedText(q.solE || 'No solution provided.');
+                const hindiQuestion = q.hin ? escapeSavedText(q.hin) : '';
+
+                html += `
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative mb-4">
+                        <button onclick="removeSavedQuestion(${index})" class="absolute top-4 right-4 text-slate-400 hover:text-rose-500 transition font-medium text-sm">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <div class="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest pr-20">Saved Question ${index + 1}</div>
+                        <div class="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">${escapeSavedText(q.eng || '')}</div>
+                        ${hindiQuestion ? `<div class="text-slate-600 text-sm mb-4 whitespace-pre-wrap"><b>Hindi:</b> ${hindiQuestion}</div>` : ''}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">${optionsHtml}</div>
+                        <div class="mt-4 border-t border-slate-100 pt-4">
+                            <div class="text-sm text-slate-600 font-medium bg-slate-50 p-3 rounded leading-relaxed whitespace-pre-line border border-slate-100">
+                                <i class="fas fa-lightbulb text-amber-500 mr-2"></i><b>Solution:</b><br>${solution}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+
+            // Update Save Question button from persistent browser storage.
+            const saveBtn = document.getElementById('save-question-btn');
+            const saveIcon = document.getElementById('save-question-icon');
+            const saveLabel = document.getElementById('save-question-label');
+            const saved = isQuestionSaved(q);
+            if (saveBtn && saveIcon && saveLabel) {
+                saveBtn.className = `px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300'}`;
+                saveIcon.className = saved ? 'fas fa-star text-amber-500' : 'far fa-star text-gray-400';
+                saveLabel.innerText = saved ? 'Saved' : 'Save Question';
+            }
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION â†’ open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+                    // Store this completed attempt so it appears under "Previous Attempts".
+                    saveAttemptToStorage();
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            const historyBack = document.getElementById('history-result-back');
+            if (historyBack) historyBack.classList.toggle('hidden', !isHistoryMode);
+
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. REAL LEADERBOARD RANK ENGINE
+            // Ranking is calculated from the attempts stored in this browser.
+            // For a true cross-device/all-student rank, replace getHistory() with a shared
+            // database/API (e.g. Supabase/Firebase). This engine deliberately does NOT use
+            // a fake fixed population such as 5,000 users.
+            const currentCandidateEl = document.getElementById('candidate-name');
+            const currentCandidate = (isHistoryMode && activeHistoryAttempt)
+                ? String(activeHistoryAttempt.candidateName || '').trim()
+                : (currentCandidateEl ? String(currentCandidateEl.value || '').trim() : '');
+
+            const currentAttempt = {
+                id: isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now(),
+                candidateName: currentCandidate || ('Student #' + (isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now())),
+                marks: Number(score.toFixed(2)),
+                accuracy: Number(accuracy),
+                correct: correct,
+                wrong: wrong,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                date: new Date().toISOString()
+            };
+
+            function getLeaderboardEntries() {
+                const history = getHistory();
+                const entries = history.map(a => ({
+                    id: a.id,
+                    candidateName: String(a.candidateName || '').trim(),
+                    marks: Number(a.marks || 0),
+                    accuracy: Number(a.accuracy || 0),
+                    correct: Number(a.correct || 0),
+                    wrong: Number(a.wrong || 0),
+                    timeTaken: Number(a.timeTaken || TEST_DURATION_SECONDS),
+                    date: a.date || ''
+                }));
+
+                // Ensure the attempt being displayed is present even if it has not been saved.
+                if (!entries.some(e => String(e.id) === String(currentAttempt.id))) entries.push(currentAttempt);
+
+                // One leaderboard position per student: if the same named student has multiple
+                // attempts, only their BEST attempt is counted. Blank names are treated as unique.
+                const bestByStudent = new Map();
+                entries.forEach((e, i) => {
+                    const key = e.candidateName
+                        ? 'name:' + e.candidateName.toLowerCase().replace(/\s+/g, ' ')
+                        : 'attempt:' + String(e.id || i);
+                    const old = bestByStudent.get(key);
+                    const better = !old ||
+                        e.marks > old.marks ||
+                        (e.marks === old.marks && e.accuracy > old.accuracy) ||
+                        (e.marks === old.marks && e.accuracy === old.accuracy && e.timeTaken < old.timeTaken);
+                    if (better) bestByStudent.set(key, e);
+                });
+
+                return Array.from(bestByStudent.values()).sort((a,b) => {
+                    if (b.marks !== a.marks) return b.marks - a.marks;
+                    if (b.correct !== a.correct) return b.correct - a.correct;
+                    if (b.accuracy !== a.accuracy) return b.accuracy - a.accuracy;
+                    if (a.timeTaken !== b.timeTaken) return a.timeTaken - b.timeTaken;
+                    return String(a.date).localeCompare(String(b.date));
+                });
+            }
+
+            const leaderboard = getLeaderboardEntries();
+            const targetEntry = (isHistoryMode && activeHistoryAttempt)
+                ? leaderboard.find(e => {
+                    const n1 = String(e.candidateName || '').trim().toLowerCase();
+                    const n2 = String(activeHistoryAttempt.candidateName || '').trim().toLowerCase();
+                    return n1 && n1 === n2;
+                }) || currentAttempt
+                : currentAttempt;
+
+            // Competition rank: students with a higher score occupy earlier positions.
+            // Equal scores receive the same rank (1, 1, 3), which is the standard exam convention.
+            const rank = 1 + leaderboard.filter(e => Number(e.marks) > Number(targetEntry.marks)).length;
+
+            // Percentile = percentage of students scoring below this student's score.
+            const lowerCount = leaderboard.filter(e => Number(e.marks) < Number(targetEntry.marks)).length;
+            const percentile = leaderboard.length <= 1
+                ? 100
+                : Math.max(0, Math.min(100, (lowerCount / (leaderboard.length - 1)) * 100));
+
+            // 3. Update result identity/details from the starting page
+            const paperEl = document.getElementById('paper-name-display');
+            const subjectEl = document.getElementById('subject-display');
+            const startDateEl = document.getElementById('current-date-display');
+            const resultCandidate = isHistoryMode && activeHistoryAttempt
+                ? (activeHistoryAttempt.candidateName || '')
+                : ((document.getElementById('candidate-name') || {}).value || '');
+            document.getElementById('res-paper-name').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.mockName ? activeHistoryAttempt.mockName : (paperEl ? paperEl.textContent.trim() : 'Round 1 Challenge Series');
+            document.getElementById('res-subject').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.subject ? activeHistoryAttempt.subject : (subjectEl ? subjectEl.textContent.trim() : 'Sectional Mock');
+            document.getElementById('res-candidate-name').innerText = resultCandidate.trim() || 'Aspirant';
+            document.getElementById('res-date').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.date ? activeHistoryAttempt.date : (startDateEl ? startDateEl.textContent.trim() : new Date().toLocaleDateString('en-GB'));
+
+            // 4. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            const participantEl = document.getElementById('res-participant-count');
+            if (participantEl) participantEl.innerText = leaderboard.length.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percentile.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const el = document.getElementById('current-date-display');
+            if (el) {
+                const d = new Date();
+                el.textContent = String(d.getDate()).padStart(2, '0') + '/' +
+                    String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
