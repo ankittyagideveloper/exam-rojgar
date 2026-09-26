@@ -99,13 +99,14 @@ registerRoute(
 
 // When registerType is "prompt", the new SW waits in the "installed" state.
 // UpdateToast calls updateServiceWorker(true) which posts SKIP_WAITING here,
-// then the SW activates and clientsClaim() takes control of all open tabs.
+// then skipWaiting() activates the SW and clientsClaim() takes control of all
+// open tabs. clientsClaim() must run AFTER skipWaiting() so it only claims
+// clients when the user explicitly approved the update — calling it
+// unconditionally at module scope would bypass the "prompt" gate.
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
+    self.skipWaiting().then(() => clientsClaim());
   }
 });
-
-clientsClaim();
 
 
