@@ -196,7 +196,7 @@ export const Header = () => {
           ) : (
             <SignInButton mode="modal">
               <Button className="cursor-pointer text-white px-4 py-1.5 rounded-lg text-sm font-medium transition-colors duration-200">
-                Log In
+                Log In <img src="login-icon.webp" width="35" height="27" alt="your account"></img>
               </Button>
             </SignInButton>
           )}
