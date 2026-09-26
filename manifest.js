@@ -1,5 +1,12 @@
 export const manifestForPlugIn = {
   registerType: "prompt",
+  strategies: 'injectManifest',
+  srcDir: 'src',
+  filename: 'sw.js',
+  injectManifest: {
+    rollupFormat: 'iife',
+    maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6 MiB — covers the current ~5.2 MiB main bundle
+  },
   includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
   manifest: {
     name: "Exam Rojgaar",
@@ -39,30 +46,8 @@ export const manifestForPlugIn = {
     scope: "/",
     start_url: "/",
   },
-  workbox: {
-    clientsClaim: true,
-    maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-    globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-    navigateFallbackDenylist: [/^\/sitemap\.xml$/, /^\/robots\.txt$/],
-  },
   devOptions: {
     enabled: true,
+    type: "module",
   },
-  runtimeCaching: [
-    {
-      urlPattern: ({ url }) => url.pathname.startsWith("/api/v1/data"), // Match your API calls
-      handler: "NetworkFirst",
-      options: {
-        cacheName: "api-cache",
-        expiration: {
-          maxEntries: 50,
-          maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
-        },
-        // Ensure response is cacheable
-        cacheableResponse: {
-          statuses: [0, 200],
-        },
-      },
-    },
-  ],
 };

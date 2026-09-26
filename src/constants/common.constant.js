@@ -47,7 +47,7 @@ export const testimonials = [
   },
   {
     quote:"Sir, your Target Series batch is very helpful for my NTPC preparation. My preparation is much better now, and I feel confident. Thank you so much for your support!",
-    name: "Susmita",
+    name: "Susmita ",
     title: "Exam Rojgar 2026 Batch-1",
   },
   {

@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { getMessaging, isSupported } from "firebase/messaging";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyAyXH4R0qAcXScwcslRBLneGX3ibv5REEA",
   authDomain: "exam-rojgaar-e1b10.firebaseapp.com",
   projectId: "exam-rojgaar-e1b10",
@@ -18,13 +18,16 @@ export const app = initializeApp(firebaseConfig);
 // Initialize Firebase Storage
 export const storage = getStorage(app);
 
-// Initialize Firebase Cloud Messaging
-export const messaging = getMessaging(app);
-
-// Lazy accessor — returns null in environments where FCM is not supported
-// (e.g. non-HTTPS, Safari < 16, service-worker unavailable)
-export async function getMessagingInstance() {
-  const supported = await isSupported();
-  if (!supported) return null;
-  return getMessaging(app);
+// Lazy singleton — resolved once, then cached.
+// Do NOT call getMessaging() eagerly at module load; defer until the SW is
+// active so getToken() can bind to the correct registration.
+let _messagingPromise = null;
+export function getMessagingInstance() {
+  if (!_messagingPromise) {
+    _messagingPromise = isSupported().then((supported) => {
+      if (!supported) return null;
+      return getMessaging(app);
+    });
+  }
+  return _messagingPromise;
 }
