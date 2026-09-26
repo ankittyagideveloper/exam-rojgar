@@ -293,8 +293,8 @@ export const MobileSidebar = ({ className, children, ...props }) => {
                     />
                   ) : (
                     <SignInButton mode="modal">
-                      <Button className="w-full my-1 flex justify-center items-center">
-                        Login / Register <img src="login-icon.webp" width="35" height="27" alt="your account"></img>
+                      <Button className="w-full my-1 flex gap-0.2 justify-center items-center">
+                        <img src="login-icon.webp" width="25" height="16" alt="your account"></img> Login / Register 
                       </Button>
                     </SignInButton>
                   )}
