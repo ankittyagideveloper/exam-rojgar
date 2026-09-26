@@ -50,16 +50,19 @@ self.addEventListener("notificationclick", (event) => {
 // ----------------------------------------------------
 // 2. Workbox Precaching & Routing
 // ----------------------------------------------------
-// self.__WB_MANIFEST is default injection point
-precacheAndRoute(self.__WB_MANIFEST);
+// self.__WB_MANIFEST is the single injection point for workbox-build.
+// Capture it once so we can inspect it without triggering the "more than
+// one match" assertion from injectManifest.
+const WB_MANIFEST = self.__WB_MANIFEST;
+precacheAndRoute(WB_MANIFEST);
 
 // clean old assets
 cleanupOutdatedCaches();
 
 // Only register the navigation route when index.html is actually precached.
-// In dev mode self.__WB_MANIFEST is empty, so createHandlerBoundToURL would
+// In dev mode WB_MANIFEST is empty, so createHandlerBoundToURL would
 // throw "non-precached-url" and prevent the SW from ever activating.
-const isPrecached = (self.__WB_MANIFEST ?? []).some(
+const isPrecached = (WB_MANIFEST ?? []).some(
   (e) => (typeof e === 'string' ? e : e.url) === 'index.html'
 );
 
