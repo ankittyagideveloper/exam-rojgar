@@ -138,7 +138,7 @@ const FreeTestsPage = () => {
 
       {/* Test list */}
       {!isRoot && current?.tests && (
-        <div className="mx-4 mb-28 flex flex-col gap-4">
+        <div className="mx-4 mt-4 md:mt-0 mb-28 flex flex-col gap-4">
           {current.tests.length === 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
