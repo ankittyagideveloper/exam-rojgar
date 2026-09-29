@@ -1249,7 +1249,22 @@ export const mockData = {
                   isSpecialMock: true,
                   route: "/mock-test/Sports",
                 },
-              ],
+              
+                    {
+                      id: "budget-and-economic-survey-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Budget And Economic Survey Test 1 Mock Test",
+                      title: "Budget And Economic Survey Test 1 - Mock Test",
+                      name: "Budget And Economic Survey Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "10",
+                      isSpecialMock: true,
+                      route: "/mock-test/budget-and-economic-survey-test-1",
+                    },
+                  ],
             },
             "full-length-test": {
               id: "full-length-test",

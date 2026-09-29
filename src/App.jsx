@@ -113,6 +113,7 @@ import EconomyFullTestMockTestPage from "./pages/EconomyFullTestMockTestPage";
 import CircleTest1MockTestPage from "./pages/CircleTest1MockTestPage";
 import QuadrilateralTest1MockTestPage from "./pages/QuadrilateralTest1MockTestPage";
 import PolygonTest1MockTestPage from "./pages/PolygonTest1MockTestPage";
+import BudgetAndEconomicSurveyTest1MockTestPage from "./pages/BudgetAndEconomicSurveyTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -443,6 +444,8 @@ const router = createBrowserRouter([
       { path: "polygon-test-1", element: <PolygonTest1MockTestPage /> },
     
       { path: "quadrilateral-test-1", element: <QuadrilateralTest1MockTestPage /> },
+    
+      { path: "budget-and-economic-survey-test-1", element: <BudgetAndEconomicSurveyTest1MockTestPage /> },
     ],
   },
   {
