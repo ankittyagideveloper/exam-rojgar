@@ -1,0 +1,614 @@
+export const MsExcelMockData = {
+  "paperName": "Computer",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+  "subject": "MS Excel",
+  "category": "MS Excel",
+  "duration": 10,
+  "marksCorrect": 2,
+  "marksWrong": 0.5,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_MsExcelMockData",
+  "questions": [
+    {
+      "id": 1,
+      "eng": "A user creates a new workbook in a modern version of MS Excel. Which file extension will be used when the workbook is saved in the default Excel format?",
+      "hin": "एक उपयोगकर्ता MS Excel के आधुनिक संस्करण में एक नई वर्कबुक बनाता है। डिफ़ॉल्ट Excel प्रारूप में सेव करने पर वर्कबुक का फ़ाइल एक्सटेंशन क्या होगा?",
+      "optE": [
+        ".xls",
+        ".xlsx",
+        ".csv",
+        ".xlt"
+      ],
+      "optH": [
+        ".xls",
+        ".xlsx",
+        ".csv",
+        ".xlt"
+      ],
+      "ans": 1,
+      "solE": "The default file extension for a modern Excel workbook is .xlsx. The older Excel 97–2003 workbook format uses .xls.",
+      "solH": "आधुनिक Excel वर्कबुक का डिफ़ॉल्ट फ़ाइल एक्सटेंशन .xlsx होता है। पुराने Excel 97–2003 वर्कबुक प्रारूप में .xls का उपयोग होता था।"
+    },
+    {
+      "id": 2,
+      "eng": "When a new Excel workbook is created, what is the default name assigned to the workbook before it is saved?",
+      "hin": "जब एक नई Excel वर्कबुक बनाई जाती है, तो सेव करने से पहले वर्कबुक को डिफ़ॉल्ट रूप से कौन-सा नाम दिया जाता है?",
+      "optE": [
+        "Book1",
+        "Sheet1",
+        "Excel1",
+        "Workbook1"
+      ],
+      "optH": [
+        "Book1",
+        "Sheet1",
+        "Excel1",
+        "Workbook1"
+      ],
+      "ans": 0,
+      "solE": "A newly created Excel workbook is typically named Book1 before it is saved. Subsequent new workbooks are generally named Book2, Book3, and so on.",
+      "solH": "नई Excel वर्कबुक को सेव करने से पहले सामान्यतः Book1 नाम दिया जाता है। इसके बाद बनाई गई वर्कबुक को सामान्यतः Book2, Book3 आदि नाम दिए जाते हैं।"
+    },
+    {
+      "id": 3,
+      "eng": "In a current version of MS Excel, a newly created workbook normally opens with how many worksheets by default?",
+      "hin": "MS Excel के वर्तमान संस्करण में नई बनाई गई वर्कबुक सामान्यतः डिफ़ॉल्ट रूप से कितनी वर्कशीट के साथ खुलती है?",
+      "optE": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "optH": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "ans": 0,
+      "solE": "Modern Excel versions normally create a new workbook with one worksheet by default. The number can be changed through Excel settings.",
+      "solH": "आधुनिक Excel संस्करणों में नई वर्कबुक सामान्यतः एक वर्कशीट के साथ खुलती है। Excel की सेटिंग्स के माध्यम से इस संख्या को बदला जा सकता है।"
+    },
+    {
+      "id": 4,
+      "eng": "A teacher wants to maintain marks, calculate averages, sort students, filter records and create performance charts. Which application is most appropriate?",
+      "hin": "एक शिक्षक विद्यार्थियों के अंक दर्ज करना, औसत निकालना, विद्यार्थियों को क्रमबद्ध करना, रिकॉर्ड फ़िल्टर करना और प्रदर्शन के चार्ट बनाना चाहता है। इसके लिए कौन-सा एप्लिकेशन सबसे उपयुक्त है?",
+      "optE": [
+        "MS Word",
+        "MS PowerPoint",
+        "MS Excel",
+        "MS Access"
+      ],
+      "optH": [
+        "MS Word",
+        "MS PowerPoint",
+        "MS Excel",
+        "MS Access"
+      ],
+      "ans": 2,
+      "solE": "MS Excel is designed for spreadsheet-based calculations, data organization, analysis, sorting, filtering and chart creation.",
+      "solH": "MS Excel स्प्रेडशीट आधारित गणना, डेटा व्यवस्थित करने, विश्लेषण, क्रमबद्ध करने, फ़िल्टर करने और चार्ट बनाने के लिए उपयोग किया जाता है।"
+    },
+    {
+      "id": 5,
+      "eng": "In an Excel worksheet, what is the maximum number of rows and columns available in a single worksheet in modern Excel?",
+      "hin": "आधुनिक Excel की एक वर्कशीट में अधिकतम कितनी Rows और Columns उपलब्ध होती हैं?",
+      "optE": [
+        "1,048,576 rows and 16,384 columns",
+        "65,536 rows and 256 columns",
+        "1,000,000 rows and 10,000 columns",
+        "16,384 rows and 1,048,576 columns"
+      ],
+      "optH": [
+        "1,048,576 Rows और 16,384 Columns",
+        "65,536 Rows और 256 Columns",
+        "1,000,000 Rows और 10,000 Columns",
+        "16,384 Rows और 1,048,576 Columns"
+      ],
+      "ans": 0,
+      "solE": "Modern Excel worksheets contain 1,048,576 rows and 16,384 columns. The last column is XFD.",
+      "solH": "आधुनिक Excel वर्कशीट में 1,048,576 Rows और 16,384 Columns होते हैं। अंतिम Column का नाम XFD है।"
+    },
+    {
+      "id": 6,
+      "eng": "If an Excel worksheet has 1,048,576 rows and 16,384 columns, what is the total number of cells available in that worksheet?",
+      "hin": "यदि किसी Excel वर्कशीट में 1,048,576 Rows और 16,384 Columns हैं, तो उस वर्कशीट में कुल कितने Cells होंगे?",
+      "optE": [
+        "17,179,869,184",
+        "17,179,869,184,000",
+        "1,073,741,824",
+        "16,384,000,000"
+      ],
+      "optH": [
+        "17,179,869,184",
+        "17,179,869,184,000",
+        "1,073,741,824",
+        "16,384,000,000"
+      ],
+      "ans": 0,
+      "solE": "Total cells = Rows × Columns = 1,048,576 × 16,384 = 17,179,869,184 cells.",
+      "solH": "कुल Cells = Rows × Columns = 1,048,576 × 16,384 = 17,179,869,184 Cells।"
+    },
+    {
+      "id": 7,
+      "eng": "Which statement correctly distinguishes a workbook from a worksheet in MS Excel?",
+      "hin": "MS Excel में Workbook और Worksheet के बीच सही अंतर कौन-सा है?",
+      "optE": [
+        "A workbook is a cell, whereas a worksheet is a file.",
+        "A workbook is an Excel file that can contain one or more worksheets.",
+        "A worksheet can contain multiple workbooks.",
+        "Workbook and worksheet are exactly the same."
+      ],
+      "optH": [
+        "Workbook एक Cell है, जबकि Worksheet एक File है।",
+        "Workbook एक Excel File है जिसमें एक या अधिक Worksheets हो सकती हैं।",
+        "Worksheet में कई Workbooks हो सकती हैं।",
+        "Workbook और Worksheet बिल्कुल समान हैं।"
+      ],
+      "ans": 1,
+      "solE": "A workbook is the Excel file itself, while a worksheet is an individual spreadsheet page inside the workbook.",
+      "solH": "Workbook स्वयं Excel File होती है, जबकि Worksheet उस Workbook के अंदर मौजूद एक Spreadsheet Page होती है।"
+    },
+    {
+      "id": 8,
+      "eng": "Cell C7 is selected in an Excel worksheet. Which statement correctly describes C7?",
+      "hin": "Excel वर्कशीट में Cell C7 चुना गया है। C7 के बारे में कौन-सा कथन सही है?",
+      "optE": [
+        "C represents the row and 7 represents the column.",
+        "C represents the worksheet and 7 represents the workbook.",
+        "C represents the column and 7 represents the row.",
+        "C7 represents a chart reference."
+      ],
+      "optH": [
+        "C Row को और 7 Column को दर्शाता है।",
+        "C Worksheet को और 7 Workbook को दर्शाता है।",
+        "C Column को और 7 Row को दर्शाता है।",
+        "C7 एक Chart Reference को दर्शाता है।"
+      ],
+      "ans": 2,
+      "solE": "An Excel cell reference consists of the column letter followed by the row number. Therefore, C7 means column C and row 7.",
+      "solH": "Excel में Cell Reference में पहले Column का Letter और उसके बाद Row Number होता है। इसलिए C7 का अर्थ Column C और Row 7 है।"
+    },
+    {
+      "id": 9,
+      "eng": "A user wants to add all numeric values in cells B2:B20 without manually entering the individual cell references. Which formula is most appropriate?",
+      "hin": "एक उपयोगकर्ता B2:B20 Cells में मौजूद सभी संख्यात्मक मानों को जोड़ना चाहता है और प्रत्येक Cell का Reference अलग-अलग नहीं लिखना चाहता। इसके लिए कौन-सा Formula सबसे उपयुक्त है?",
+      "optE": [
+        "=ADD(B2:B20)",
+        "=SUM(B2:B20)",
+        "=TOTAL(B2:B20)",
+        "=PLUS(B2:B20)"
+      ],
+      "optH": [
+        "=ADD(B2:B20)",
+        "=SUM(B2:B20)",
+        "=TOTAL(B2:B20)",
+        "=PLUS(B2:B20)"
+      ],
+      "ans": 1,
+      "solE": "SUM() adds the numeric values contained in the specified range.",
+      "solH": "SUM() दिए गए Range में मौजूद संख्यात्मक मानों का योग करता है।"
+    },
+    {
+      "id": 10,
+      "eng": "The marks of five students are stored in cells C2:C6. Which function should be used to find their arithmetic mean?",
+      "hin": "पाँच विद्यार्थियों के अंक C2:C6 Cells में दर्ज हैं। उनका Arithmetic Mean ज्ञात करने के लिए किस Function का प्रयोग किया जाना चाहिए?",
+      "optE": [
+        "MAX()",
+        "COUNT()",
+        "SUM()",
+        "AVERAGE()"
+      ],
+      "optH": [
+        "MAX()",
+        "COUNT()",
+        "SUM()",
+        "AVERAGE()"
+      ],
+      "ans": 3,
+      "solE": "AVERAGE() calculates the arithmetic mean of the numeric values in the specified range.",
+      "solH": "AVERAGE() दिए गए Range में मौजूद संख्यात्मक मानों का Arithmetic Mean ज्ञात करता है।"
+    },
+    {
+      "id": 11,
+      "eng": "A manager has monthly sales figures in D2:D13 and wants to identify the highest and lowest monthly sales. Which pair of functions should be used?",
+      "hin": "एक Manager के पास D2:D13 में मासिक बिक्री के आँकड़े हैं और वह सबसे अधिक तथा सबसे कम मासिक बिक्री ज्ञात करना चाहता है। किस Function Pair का प्रयोग किया जाना चाहिए?",
+      "optE": [
+        "SUM() and COUNT()",
+        "MAX() and MIN()",
+        "AVERAGE() and SUM()",
+        "COUNT() and AVERAGE()"
+      ],
+      "optH": [
+        "SUM() और COUNT()",
+        "MAX() और MIN()",
+        "AVERAGE() और SUM()",
+        "COUNT() और AVERAGE()"
+      ],
+      "ans": 1,
+      "solE": "MAX() returns the largest value and MIN() returns the smallest value in a range.",
+      "solH": "MAX() किसी Range की सबसे बड़ी Value और MIN() सबसे छोटी Value लौटाता है।"
+    },
+    {
+      "id": 12,
+      "eng": "A worksheet contains numbers in A1:A10 and text labels in B1:B10. If the user wants to count only the numeric entries in A1:A10, which function is appropriate?",
+      "hin": "एक Worksheet में A1:A10 में Numbers और B1:B10 में Text Labels हैं। यदि उपयोगकर्ता केवल A1:A10 में मौजूद Numeric Entries की संख्या गिनना चाहता है, तो कौन-सा Function उपयुक्त है?",
+      "optE": [
+        "COUNT()",
+        "SUM()",
+        "COUNTA()",
+        "MAX()"
+      ],
+      "optH": [
+        "COUNT()",
+        "SUM()",
+        "COUNTA()",
+        "MAX()"
+      ],
+      "ans": 0,
+      "solE": "COUNT() counts cells containing numeric values. COUNTA() counts non-empty cells, including text.",
+      "solH": "COUNT() उन Cells की संख्या गिनता है जिनमें Numeric Values होती हैं। COUNTA() Text सहित सभी Non-empty Cells को गिनता है।"
+    },
+    {
+      "id": 13,
+      "eng": "A user selects a range containing numbers and wants Excel to automatically insert a SUM formula for that range. Which shortcut should be used?",
+      "hin": "एक उपयोगकर्ता Numbers वाले एक Range को Select करता है और चाहता है कि Excel उस Range के लिए स्वतः SUM Formula लगा दे। इसके लिए कौन-सा Shortcut प्रयोग किया जाना चाहिए?",
+      "optE": [
+        "Ctrl + 1",
+        "Alt + =",
+        "F2",
+        "Shift + Space"
+      ],
+      "optH": [
+        "Ctrl + 1",
+        "Alt + =",
+        "F2",
+        "Shift + Space"
+      ],
+      "ans": 1,
+      "solE": "Alt + = activates AutoSum, allowing Excel to automatically suggest a SUM formula for a nearby range.",
+      "solH": "Alt + = AutoSum को सक्रिय करता है, जिससे Excel आसपास के Data के आधार पर SUM Formula सुझाता है।"
+    },
+    {
+      "id": 14,
+      "eng": "A user wants to open the Format Cells dialog box quickly for a selected cell or range. Which shortcut is used?",
+      "hin": "एक उपयोगकर्ता किसी Selected Cell या Range के लिए Format Cells Dialog Box को जल्दी खोलना चाहता है। कौन-सा Shortcut प्रयोग किया जाता है?",
+      "optE": [
+        "Ctrl + 1",
+        "Ctrl + F",
+        "F2",
+        "Alt + 1"
+      ],
+      "optH": [
+        "Ctrl + 1",
+        "Ctrl + F",
+        "F2",
+        "Alt + 1"
+      ],
+      "ans": 0,
+      "solE": "Ctrl + 1 opens the Format Cells dialog box in Excel.",
+      "solH": "Excel में Ctrl + 1 दबाने पर Format Cells Dialog Box खुलता है।"
+    },
+    {
+      "id": 15,
+      "eng": "A user wants to edit the contents of the currently selected cell directly without using the mouse. Which key should be pressed?",
+      "hin": "एक उपयोगकर्ता Mouse का प्रयोग किए बिना Selected Cell की सामग्री को सीधे Edit करना चाहता है। कौन-सी Key दबानी चाहिए?",
+      "optE": [
+        "F1",
+        "F2",
+        "F5",
+        "F12"
+      ],
+      "optH": [
+        "F1",
+        "F2",
+        "F5",
+        "F12"
+      ],
+      "ans": 1,
+      "solE": "F2 places the selected cell into edit mode, allowing its contents to be modified.",
+      "solH": "F2 Selected Cell को Edit Mode में ले जाता है, जिससे उसकी सामग्री को बदला जा सकता है।"
+    },
+    {
+      "id": 16,
+      "eng": "A user is working in a large worksheet and wants to quickly move to the edge of the current data region using the keyboard. Which shortcut is generally used?",
+      "hin": "एक उपयोगकर्ता एक बड़ी Worksheet में काम कर रहा है और Keyboard की सहायता से वर्तमान Data Region के किनारे तक जल्दी पहुँचना चाहता है। सामान्यतः कौन-सा Shortcut प्रयोग किया जाता है?",
+      "optE": [
+        "Ctrl + Arrow Key",
+        "Shift + Arrow Key",
+        "Alt + Arrow Key",
+        "Ctrl + Shift + 1"
+      ],
+      "optH": [
+        "Ctrl + Arrow Key",
+        "Shift + Arrow Key",
+        "Alt + Arrow Key",
+        "Ctrl + Shift + 1"
+      ],
+      "ans": 0,
+      "solE": "Ctrl + Arrow Key moves the active cell to the edge of the current data region in the corresponding direction.",
+      "solH": "Ctrl + Arrow Key Active Cell को संबंधित दिशा में वर्तमान Data Region के किनारे तक ले जाता है।"
+    },
+    {
+      "id": 17,
+      "eng": "Which shortcut selects the entire row containing the active cell in Excel?",
+      "hin": "Excel में Active Cell वाली पूरी Row को Select करने के लिए कौन-सा Shortcut प्रयोग किया जाता है?",
+      "optE": [
+        "Ctrl + Space",
+        "Shift + Space",
+        "Alt + Space",
+        "Ctrl + Shift + Space"
+      ],
+      "optH": [
+        "Ctrl + Space",
+        "Shift + Space",
+        "Alt + Space",
+        "Ctrl + Shift + Space"
+      ],
+      "ans": 1,
+      "solE": "Shift + Space selects the entire row containing the active cell. Ctrl + Space selects the entire column.",
+      "solH": "Shift + Space Active Cell वाली पूरी Row को Select करता है। Ctrl + Space पूरी Column को Select करता है।"
+    },
+    {
+      "id": 18,
+      "eng": "A company wants to compare the sales of four different products side by side. Which chart type is generally most suitable?",
+      "hin": "एक कंपनी चार अलग-अलग Products की Sales को एक-दूसरे के साथ तुलना करना चाहती है। इसके लिए सामान्यतः कौन-सा Chart सबसे उपयुक्त होगा?",
+      "optE": [
+        "Pie Chart",
+        "Line Chart",
+        "Column Chart",
+        "Area Chart"
+      ],
+      "optH": [
+        "Pie Chart",
+        "Line Chart",
+        "Column Chart",
+        "Area Chart"
+      ],
+      "ans": 2,
+      "solE": "A Column Chart is well suited for comparing values across different categories.",
+      "solH": "अलग-अलग Categories के Values की तुलना करने के लिए Column Chart उपयुक्त होता है।"
+    },
+    {
+      "id": 19,
+      "eng": "A business wants to show how its monthly revenue changes continuously from January to December. Which chart would be most appropriate?",
+      "hin": "एक Business जनवरी से दिसंबर तक अपनी Monthly Revenue में होने वाले लगातार परिवर्तन को दिखाना चाहता है। इसके लिए कौन-सा Chart सबसे उपयुक्त होगा?",
+      "optE": [
+        "Line Chart",
+        "Pie Chart",
+        "Bar Chart",
+        "Doughnut Chart"
+      ],
+      "optH": [
+        "Line Chart",
+        "Pie Chart",
+        "Bar Chart",
+        "Doughnut Chart"
+      ],
+      "ans": 0,
+      "solE": "A Line Chart is commonly used to show trends and changes over a continuous sequence such as time.",
+      "solH": "Line Chart का उपयोग समय के साथ होने वाले Trends और Changes को दिखाने के लिए किया जाता है।"
+    },
+    {
+      "id": 20,
+      "eng": "A company wants to display the percentage contribution of different departments to the total annual expenditure. Which chart is most suitable?",
+      "hin": "एक कंपनी कुल वार्षिक व्यय में अलग-अलग Departments के प्रतिशत योगदान को दिखाना चाहती है। इसके लिए कौन-सा Chart सबसे उपयुक्त है?",
+      "optE": [
+        "Line Chart",
+        "Pie Chart",
+        "Column Chart",
+        "Area Chart"
+      ],
+      "optH": [
+        "Line Chart",
+        "Pie Chart",
+        "Column Chart",
+        "Area Chart"
+      ],
+      "ans": 1,
+      "solE": "A Pie Chart is suitable for showing parts or percentage contributions of categories to a whole.",
+      "solH": "Pie Chart किसी पूर्ण योग में अलग-अलग Categories के हिस्से या प्रतिशत योगदान को दिखाने के लिए उपयुक्त है।"
+    },
+    {
+      "id": 21,
+      "eng": "A user needs to compare the performance of several categories where the category names are long and would be easier to read horizontally. Which chart can be particularly useful?",
+      "hin": "एक उपयोगकर्ता कई Categories के Performance की तुलना करना चाहता है, जहाँ Category Names लंबे हैं और उन्हें Horizontal रूप में पढ़ना अधिक आसान होगा। कौन-सा Chart विशेष रूप से उपयोगी हो सकता है?",
+      "optE": [
+        "Bar Chart",
+        "Pie Chart",
+        "Line Chart",
+        "Area Chart"
+      ],
+      "optH": [
+        "Bar Chart",
+        "Pie Chart",
+        "Line Chart",
+        "Area Chart"
+      ],
+      "ans": 0,
+      "solE": "A Bar Chart uses horizontal bars and can be useful when category labels are long.",
+      "solH": "Bar Chart में Horizontal Bars होते हैं और लंबे Category Labels को प्रदर्शित करने के लिए यह उपयोगी हो सकता है।"
+    },
+    {
+      "id": 22,
+      "eng": "Which chart type is particularly useful for showing the magnitude of values over time while emphasizing the cumulative or filled area beneath the trend?",
+      "hin": "समय के साथ Values की मात्रा को दिखाने तथा Trend के नीचे के Cumulative या Filled Area को प्रमुखता देने के लिए कौन-सा Chart उपयोगी है?",
+      "optE": [
+        "Pie Chart",
+        "Area Chart",
+        "Bar Chart",
+        "Scatter Chart"
+      ],
+      "optH": [
+        "Pie Chart",
+        "Area Chart",
+        "Bar Chart",
+        "Scatter Chart"
+      ],
+      "ans": 1,
+      "solE": "An Area Chart emphasizes the magnitude of values over time by filling the area beneath the line.",
+      "solH": "Area Chart Line के नीचे के क्षेत्र को Fill करके समय के साथ Values की मात्रा को प्रमुखता से दिखाता है।"
+    },
+    {
+      "id": 23,
+      "eng": "A user wants to import data directly from an online source into Excel. In modern Excel, which Data tab option is relevant for obtaining data from the web?",
+      "hin": "एक उपयोगकर्ता किसी Online Source से Data को सीधे Excel में Import करना चाहता है। आधुनिक Excel में Data Tab का कौन-सा Option Web से Data प्राप्त करने के लिए संबंधित है?",
+      "optE": [
+        "From Web",
+        "From Text",
+        "From Picture",
+        "From Clipboard"
+      ],
+      "optH": [
+        "From Web",
+        "From Text",
+        "From Picture",
+        "From Clipboard"
+      ],
+      "ans": 0,
+      "solE": "The From Web option under the Data/Get & Transform Data area can be used to retrieve data from web sources, depending on the Excel version.",
+      "solH": "Excel के संबंधित संस्करण में Data/Get & Transform Data क्षेत्र के अंतर्गत From Web का उपयोग Web Sources से Data प्राप्त करने के लिए किया जा सकता है।"
+    },
+    {
+      "id": 24,
+      "eng": "A user has a formatted Excel table and wants to use it as a source for importing or transforming data. Which Data tab option is relevant?",
+      "hin": "एक उपयोगकर्ता के पास एक Formatted Excel Table है और वह उसे Data Import या Transformation के Source के रूप में उपयोग करना चाहता है। Data Tab में कौन-सा Option संबंधित है?",
+      "optE": [
+        "From Table/Range",
+        "From Web",
+        "From Picture",
+        "From Database"
+      ],
+      "optH": [
+        "From Table/Range",
+        "From Web",
+        "From Picture",
+        "From Database"
+      ],
+      "ans": 0,
+      "solE": "From Table/Range is used with an Excel table or selected range as a source for Power Query/Get & Transform operations.",
+      "solH": "From Table/Range का उपयोग Excel Table या Selected Range को Power Query/Get & Transform प्रक्रिया के Source के रूप में करने के लिए किया जाता है।"
+    },
+    {
+      "id": 25,
+      "eng": "What does CSV stand for, and why is CSV commonly used with spreadsheet data?",
+      "hin": "CSV का पूर्ण रूप क्या है और Spreadsheet Data के साथ CSV का सामान्यतः उपयोग क्यों किया जाता है?",
+      "optE": [
+        "Computer Separated Values; it stores formulas.",
+        "Comma Separated Values; it stores tabular data as text separated by delimiters.",
+        "Column Standard Values; it stores charts.",
+        "Common Spreadsheet Version; it stores workbook formatting."
+      ],
+      "optH": [
+        "Computer Separated Values; इसमें Formulas Store होते हैं।",
+        "Comma Separated Values; इसमें Tabular Data को Delimiters द्वारा अलग किए गए Text के रूप में Store किया जाता है।",
+        "Column Standard Values; इसमें Charts Store होते हैं।",
+        "Common Spreadsheet Version; इसमें Workbook Formatting Store होती है।"
+      ],
+      "ans": 1,
+      "solE": "CSV stands for Comma Separated Values. It is commonly used to exchange tabular data in a simple text-based format.",
+      "solH": "CSV का पूर्ण रूप Comma Separated Values है। इसका उपयोग Tabular Data को सरल Text-based Format में आदान-प्रदान करने के लिए किया जाता है।"
+    },
+    {
+      "id": 26,
+      "eng": "A user saves an Excel worksheet as a CSV file and then opens the CSV in a text editor. Which Excel-specific feature would generally NOT be preserved in the CSV format?",
+      "hin": "एक उपयोगकर्ता Excel Worksheet को CSV File के रूप में Save करता है और फिर उसे Text Editor में खोलता है। CSV Format में Excel की कौन-सी विशेषता सामान्यतः Preserve नहीं होगी?",
+      "optE": [
+        "Plain text values",
+        "Comma-separated data",
+        "Cell formatting and multiple worksheets",
+        "Text characters"
+      ],
+      "optH": [
+        "Plain Text Values",
+        "Comma-separated Data",
+        "Cell Formatting और Multiple Worksheets",
+        "Text Characters"
+      ],
+      "ans": 2,
+      "solE": "CSV is a text-based format and does not preserve Excel-specific features such as cell formatting, formulas as formulas, charts, or multiple worksheets.",
+      "solH": "CSV एक Text-based Format है और इसमें Cell Formatting, Charts तथा Multiple Worksheets जैसी Excel-specific Features सामान्यतः Preserve नहीं होती हैं।"
+    },
+    {
+      "id": 27,
+      "eng": "A user wants to display data from a table on a webpage and then clean and transform that data before using it in Excel. Which combination of Excel features is most relevant?",
+      "hin": "एक उपयोगकर्ता किसी Webpage की Table से Data लेकर उसे Excel में उपयोग करने से पहले Clean और Transform करना चाहता है। Excel की कौन-सी Features का संयोजन सबसे अधिक संबंधित है?",
+      "optE": [
+        "From Web and Power Query/Get & Transform",
+        "Pie Chart and WordArt",
+        "Format Painter and Page Layout",
+        "F2 and Freeze Panes"
+      ],
+      "optH": [
+        "From Web और Power Query/Get & Transform",
+        "Pie Chart और WordArt",
+        "Format Painter और Page Layout",
+        "F2 और Freeze Panes"
+      ],
+      "ans": 0,
+      "solE": "From Web can retrieve web data, while Power Query/Get & Transform provides tools to clean and transform the imported data.",
+      "solH": "From Web का उपयोग Web Data प्राप्त करने के लिए और Power Query/Get & Transform का उपयोग Imported Data को Clean तथा Transform करने के लिए किया जा सकता है।"
+    },
+    {
+      "id": 28,
+      "eng": "Which Excel feature is most appropriate when a user wants the first row of a large worksheet to remain visible while scrolling down through thousands of records?",
+      "hin": "जब उपयोगकर्ता हजारों Records वाली बड़ी Worksheet में नीचे Scroll करते समय पहली Row को लगातार दिखाई देना चाहता है, तो कौन-सी Excel Feature सबसे उपयुक्त है?",
+      "optE": [
+        "Split Cells",
+        "Freeze Panes",
+        "Format Painter",
+        "AutoSum"
+      ],
+      "optH": [
+        "Split Cells",
+        "Freeze Panes",
+        "Format Painter",
+        "AutoSum"
+      ],
+      "ans": 1,
+      "solE": "Freeze Panes keeps selected rows or columns visible while the user scrolls through the worksheet.",
+      "solH": "Freeze Panes का उपयोग Worksheet में Scroll करते समय Selected Rows या Columns को लगातार दिखाई देने के लिए किया जाता है।"
+    },
+    {
+      "id": 29,
+      "eng": "A user enters =SUM(B2:B10) in cell B11 and then wants to quickly copy the formula to adjacent columns while maintaining the relative references. Which Excel feature is most useful?",
+      "hin": "एक उपयोगकर्ता B11 Cell में =SUM(B2:B10) लिखता है और फिर Formula को Adjacent Columns में इस प्रकार जल्दी Copy करना चाहता है कि Relative References अपने अनुसार बदल जाएँ। कौन-सी Excel Feature सबसे उपयोगी है?",
+      "optE": [
+        "AutoFill",
+        "Find and Replace",
+        "Data Validation",
+        "Text to Columns"
+      ],
+      "optH": [
+        "AutoFill",
+        "Find and Replace",
+        "Data Validation",
+        "Text to Columns"
+      ],
+      "ans": 0,
+      "solE": "AutoFill can copy formulas to adjacent cells while adjusting relative references according to the new position.",
+      "solH": "AutoFill Formula को Adjacent Cells में Copy कर सकता है और नई Position के अनुसार Relative References को स्वतः Adjust करता है।"
+    },
+    {
+      "id": 30,
+      "eng": "A worksheet contains thousands of records. A user wants to display only the records that satisfy a particular condition without deleting the other records. Which Excel feature should be used?",
+      "hin": "एक Worksheet में हजारों Records हैं। उपयोगकर्ता केवल उन Records को दिखाना चाहता है जो किसी विशेष Condition को पूरा करते हैं, जबकि अन्य Records को Delete नहीं करना चाहता। कौन-सी Excel Feature का उपयोग किया जाना चाहिए?",
+      "optE": [
+        "Sort",
+        "Filter",
+        "Merge & Center",
+        "Wrap Text"
+      ],
+      "optH": [
+        "Sort",
+        "Filter",
+        "Merge & Center",
+        "Wrap Text"
+      ],
+      "ans": 1,
+      "solE": "Filter displays only records meeting specified criteria while keeping the other records in the data set.",
+      "solH": "Filter दिए गए Criteria को पूरा करने वाले Records को ही प्रदर्शित करता है, जबकि अन्य Records Data Set में बने रहते हैं।"
+    }
+  ]
+};
