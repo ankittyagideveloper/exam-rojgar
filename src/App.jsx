@@ -114,6 +114,13 @@ import CircleTest1MockTestPage from "./pages/CircleTest1MockTestPage";
 import QuadrilateralTest1MockTestPage from "./pages/QuadrilateralTest1MockTestPage";
 import PolygonTest1MockTestPage from "./pages/PolygonTest1MockTestPage";
 import BudgetAndEconomicSurveyTest1MockTestPage from "./pages/BudgetAndEconomicSurveyTest1MockTestPage";
+import MsWordPyqMockTestPage from "./pages/MsWordPyqMockTestPage";
+import MsPowerpointMockTestPage from "./pages/MsPowerpointMockTestPage";
+import MsExcelMockTestPage from "./pages/MsExcelMockTestPage";
+import MsOfficeMsWordMockTestPage from "./pages/MsOfficeMsWordMockTestPage";
+import ComputerLecture2CPUandMemoryMockTestPage from "./pages/ComputerLecture2CPUandMemoryMockTestPage";
+import ComputerLecture1FundamentalsTestMockTestPage from "./pages/ComputerLecture1FundamentalsTestMockTestPage";
+import ComputerOperatingSystemlecture3MockTestPage from "./pages/ComputerOperatingSystemlecture3MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -446,6 +453,19 @@ const router = createBrowserRouter([
       { path: "quadrilateral-test-1", element: <QuadrilateralTest1MockTestPage /> },
     
       { path: "budget-and-economic-survey-test-1", element: <BudgetAndEconomicSurveyTest1MockTestPage /> },
+      { path: "MsWordPyq", element: <MsWordPyqMockTestPage /> },
+    
+      { path: "MsPowerpoint", element: <MsPowerpointMockTestPage /> },
+    
+      { path: "MsExcel", element: <MsExcelMockTestPage /> },
+    
+      { path: "MsOfficeMsWord", element: <MsOfficeMsWordMockTestPage /> },
+    
+      { path: "ComputerLecture2CPUandMemory", element: <ComputerLecture2CPUandMemoryMockTestPage /> },
+    
+      { path: "ComputerLecture1FundamentalsTest", element: <ComputerLecture1FundamentalsTestMockTestPage /> },
+    
+      { path: "ComputerOperatingSystemlecture3", element: <ComputerOperatingSystemlecture3MockTestPage /> },
     ],
   },
   {
