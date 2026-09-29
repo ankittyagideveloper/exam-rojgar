@@ -79,7 +79,7 @@ const Footer = () => {
     // hidden on mobile & tablet, shown only on lg+
     // -mx-4 cancels the md:px-4 parent padding so footer is flush edge-to-edge
     // mt-8 adds top gap from testimonials section
-    <footer className="hidden lg:block -mx-4 mt-8 bg-white/60 dark:bg-black/60 backdrop-blur-md text-slate-800 dark:text-neutral-200 border-t border-slate-200/80 dark:border-neutral-800/40">
+    <footer className="hidden lg:block -mx-4 bg-white/60 dark:bg-black/60 backdrop-blur-md text-slate-800 dark:text-neutral-200 border-t border-slate-200/80 dark:border-neutral-800/40">
       <div className="max-w-6xl mx-auto px-8 pt-12 pb-8">
         <div className="grid grid-cols-4 gap-10">
 
