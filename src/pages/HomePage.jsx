@@ -89,7 +89,7 @@ function HomePage() {
 
       <SpotlightPreview>
       <div
-        className="min-h-screen pb-20"
+        className="min-h-screen pb-20 lg:pb-0"
       >
         {/* <header>
         <SignedOut>
@@ -101,7 +101,7 @@ function HomePage() {
       </header> */}
         {/* Main Content */}
         {/* <StickyBannerDemo /> */}
-        <main className="px-0 py-0 md:px-4 md:py-6 ">
+        <main className="px-0 py-0 md:px-4 md:pt-6 md:pb-0">
           <div className="lg:flex lg:items-center xl:flex-row justify-around gap-8">
             {/* Hero Section */}
             <div className="hidden lg:flex flex-col mb-8 max-w-sm  xl:max-w-3xl px-4">

@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { MoveUp } from "lucide-react";
 import  { Header,HeaderModernised } from "./Header";
 import BottomNavigation from "./BottomNavigation";
-import Footer from "./Footer";
 import SidebarDemo from "./SidebarDemo";
 import { StickyBannerDemo } from "./sticky-banner/StickyBanner";
 import { ConnectivityBanner } from "./connectivity-banner/connectivityBanner";
 import { useClerk, useAuth } from "@clerk/clerk-react";
 import AppBreadcrumb from "./AppBreadcrumb";
 import { Button } from "@/components/ui";
+import Footer from "./footer/Footer";
 
 const Layout = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,6 +55,7 @@ const Layout = () => {
             <AppBreadcrumb />
             <Outlet />
           </main>
+          <Footer/>
           {/* {isVisible && (
             <Button
               onClick={scrollToTop}
