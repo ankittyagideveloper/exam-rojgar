@@ -187,7 +187,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
       <div
         className={cn(
           `${isAdmin ? "mt-[30px]" : ""
-          } fixed z-999 flex flex-col lg:hidden bg-[#fff] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
+          } fixed z-999 flex flex-col lg:hidden bg-[#fff] dark:bg-[#121212] w-full dark:border-[#363636] md:border-1 border-s border-b-[#DFE4E8] border-t-0`,
           "safe-top safe-left safe-right"
         )}
         {...props}
