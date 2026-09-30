@@ -1,0 +1,1614 @@
+export const heatAndLightTest1MockData = {
+  "paperName": "Heat and Light",
+  "title": "EXAM ROJGAAR MOCKS",
+  "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+  "subject": "Physics",
+  "category": "Heat and Light",
+  "duration": 20,
+  "marksCorrect": 1,
+  "marksWrong": 0.33,
+  "telegramLink": "https://t.me/ExamRojgaar",
+  "storageKey": "ExamRojgaar_heatAndLightTest1MockData",
+  "questions": [
+    {
+      "id": 1,
+      "eng": "A thermometer reads 68°F. What is the corresponding temperature on the Celsius scale?",
+      "hin": "एक thermometer 68°F तापमान दर्शाता है। Celsius scale पर इसका संगत तापमान क्या होगा?",
+      "optE": [
+        "10°C",
+        "20°C",
+        "30°C",
+        "40°C"
+      ],
+      "optH": [
+        "10°C",
+        "20°C",
+        "30°C",
+        "40°C"
+      ],
+      "ans": 1,
+      "solE": "C = (F − 32) × 5/9 = (68 − 32) × 5/9 = 20°C.",
+      "solH": "C = (F − 32) × 5/9 = (68 − 32) × 5/9 = 20°C।"
+    },
+    {
+      "id": 2,
+      "eng": "At what temperature are the Celsius and Fahrenheit scales numerically equal?",
+      "hin": "किस तापमान पर Celsius और Fahrenheit scales का numerical value समान होता है?",
+      "optE": [
+        "-40°",
+        "0°",
+        "32°",
+        "100°"
+      ],
+      "optH": [
+        "-40°",
+        "0°",
+        "32°",
+        "100°"
+      ],
+      "ans": 0,
+      "solE": "The Celsius and Fahrenheit scales are equal at -40°, i.e. -40°C = -40°F.",
+      "solH": "Celsius और Fahrenheit scales -40° पर समान होती हैं, अर्थात -40°C = -40°F।"
+    },
+    {
+      "id": 3,
+      "eng": "The relation between Celsius and Kelvin temperature scales is:",
+      "hin": "Celsius और Kelvin temperature scales के बीच संबंध है:",
+      "optE": [
+        "K = °C − 273.15",
+        "K = °C + 273.15",
+        "K = 273.15 − °C",
+        "K = °C/273.15"
+      ],
+      "optH": [
+        "K = °C − 273.15",
+        "K = °C + 273.15",
+        "K = 273.15 − °C",
+        "K = °C/273.15"
+      ],
+      "ans": 1,
+      "solE": "Kelvin temperature = Celsius temperature + 273.15.",
+      "solH": "Kelvin तापमान = Celsius तापमान + 273.15।"
+    },
+    {
+      "id": 4,
+      "eng": "A metal rod is heated. If its length increases due to heating, the phenomenon is called:",
+      "hin": "किसी metal rod को गर्म करने पर उसकी लंबाई बढ़ जाती है। इस घटना को क्या कहते हैं?",
+      "optE": [
+        "Thermal contraction",
+        "Linear thermal expansion",
+        "Conduction",
+        "Radiation"
+      ],
+      "optH": [
+        "Thermal contraction",
+        "Linear thermal expansion",
+        "Conduction",
+        "Radiation"
+      ],
+      "ans": 1,
+      "solE": "Increase in length due to rise in temperature is called linear thermal expansion.",
+      "solH": "तापमान बढ़ने के कारण लंबाई में वृद्धि को linear thermal expansion कहते हैं।"
+    },
+    {
+      "id": 5,
+      "eng": "Which mode of heat transfer occurs mainly through the bulk movement of a fluid?",
+      "hin": "ऊष्मा का कौन-सा transfer मुख्यतः fluid के bulk movement के कारण होता है?",
+      "optE": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Reflection"
+      ],
+      "optH": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Reflection"
+      ],
+      "ans": 1,
+      "solE": "Convection involves transfer of heat by the bulk movement of liquids or gases.",
+      "solH": "Convection में liquids या gases के bulk movement द्वारा heat transfer होती है।"
+    },
+    {
+      "id": 6,
+      "eng": "Heat from the Sun reaches the Earth mainly by:",
+      "hin": "सूर्य से पृथ्वी तक ऊष्मा मुख्यतः किस माध्यम से पहुँचती है?",
+      "optE": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Evaporation"
+      ],
+      "optH": [
+        "Conduction",
+        "Convection",
+        "Radiation",
+        "Evaporation"
+      ],
+      "ans": 2,
+      "solE": "Radiation does not require a material medium, so solar heat can travel through vacuum.",
+      "solH": "Radiation को material medium की आवश्यकता नहीं होती, इसलिए सूर्य की heat vacuum के माध्यम से पृथ्वी तक पहुँच सकती है।"
+    },
+    {
+      "id": 7,
+      "eng": "According to Newton's law of cooling, for a small temperature difference, the rate of cooling is approximately proportional to:",
+      "hin": "Newton's law of cooling के अनुसार छोटे temperature difference के लिए cooling की rate लगभग किसके समानुपाती होती है?",
+      "optE": [
+        "Absolute temperature only",
+        "Difference between object's temperature and surroundings",
+        "Volume of the object only",
+        "Mass of the object only"
+      ],
+      "optH": [
+        "केवल absolute temperature",
+        "वस्तु और surroundings के तापमान के अंतर",
+        "केवल वस्तु के volume",
+        "केवल वस्तु के mass"
+      ],
+      "ans": 1,
+      "solE": "Newton's law of cooling states that the rate of cooling is approximately proportional to the temperature difference between the body and surroundings for small differences.",
+      "solH": "Newton's law of cooling के अनुसार छोटे temperature difference के लिए cooling की rate वस्तु और surroundings के temperature difference के समानुपाती होती है।"
+    },
+    {
+      "id": 8,
+      "eng": "Kirchhoff's law of thermal radiation states that, at thermal equilibrium, the emissivity of a body is equal to its:",
+      "hin": "Kirchhoff's law of thermal radiation के अनुसार thermal equilibrium पर किसी body की emissivity किसके बराबर होती है?",
+      "optE": [
+        "Reflectivity",
+        "Absorptivity",
+        "Transmissivity",
+        "Conductivity"
+      ],
+      "optH": [
+        "Reflectivity",
+        "Absorptivity",
+        "Transmissivity",
+        "Conductivity"
+      ],
+      "ans": 1,
+      "solE": "At thermal equilibrium, emissivity equals absorptivity at a given wavelength and temperature.",
+      "solH": "Thermal equilibrium पर किसी निश्चित wavelength और temperature के लिए emissivity, absorptivity के बराबर होती है।"
+    },
+    {
+      "id": 9,
+      "eng": "According to Stefan-Boltzmann law, the radiant energy emitted per unit area per unit time by a perfect black body is proportional to:",
+      "hin": "Stefan-Boltzmann law के अनुसार perfect black body द्वारा प्रति इकाई area प्रति इकाई time उत्सर्जित radiant energy किसके समानुपाती होती है?",
+      "optE": [
+        "T",
+        "T²",
+        "T³",
+        "T⁴"
+      ],
+      "optH": [
+        "T",
+        "T²",
+        "T³",
+        "T⁴"
+      ],
+      "ans": 3,
+      "solE": "Stefan-Boltzmann law: E = σT⁴.",
+      "solH": "Stefan-Boltzmann law के अनुसार E = σT⁴।"
+    },
+    {
+      "id": 10,
+      "eng": "The change of a solid directly into vapour without passing through the liquid state is called:",
+      "hin": "किसी solid का liquid state से गुजरे बिना सीधे vapour में बदलना कहलाता है:",
+      "optE": [
+        "Fusion",
+        "Condensation",
+        "Sublimation",
+        "Freezing"
+      ],
+      "optH": [
+        "Fusion",
+        "Condensation",
+        "Sublimation",
+        "Freezing"
+      ],
+      "ans": 2,
+      "solE": "Direct conversion of a solid into vapour is sublimation.",
+      "solH": "Solid का सीधे vapour में परिवर्तन sublimation कहलाता है।"
+    },
+    {
+      "id": 11,
+      "eng": "The change of a solid into liquid at its melting point is called:",
+      "hin": "Melting point पर solid का liquid में परिवर्तन कहलाता है:",
+      "optE": [
+        "Fusion",
+        "Freezing",
+        "Condensation",
+        "Vaporisation"
+      ],
+      "optH": [
+        "Fusion",
+        "Freezing",
+        "Condensation",
+        "Vaporisation"
+      ],
+      "ans": 0,
+      "solE": "Fusion is the process of changing a solid into a liquid.",
+      "solH": "Solid का liquid में परिवर्तन fusion कहलाता है।"
+    },
+    {
+      "id": 12,
+      "eng": "During the melting of pure ice at 1 atm pressure, the temperature remains constant because the supplied heat is used as:",
+      "hin": "1 atm pressure पर pure ice के melting के दौरान temperature constant रहता है क्योंकि supplied heat का उपयोग किसके रूप में होता है?",
+      "optE": [
+        "Specific heat only",
+        "Latent heat of fusion",
+        "Latent heat of vaporisation",
+        "Radiation"
+      ],
+      "optH": [
+        "केवल specific heat",
+        "Latent heat of fusion",
+        "Latent heat of vaporisation",
+        "Radiation"
+      ],
+      "ans": 1,
+      "solE": "During melting, heat is used to change the state rather than raise the temperature. This is latent heat of fusion.",
+      "solH": "Melting के दौरान heat का उपयोग state change के लिए होता है, temperature बढ़ाने के लिए नहीं। इसे latent heat of fusion कहते हैं।"
+    },
+    {
+      "id": 13,
+      "eng": "Which process occurs throughout the liquid at its boiling point?",
+      "hin": "Boiling point पर liquid के पूरे volume में कौन-सी प्रक्रिया होती है?",
+      "optE": [
+        "Evaporation",
+        "Boiling",
+        "Condensation",
+        "Freezing"
+      ],
+      "optH": [
+        "Evaporation",
+        "Boiling",
+        "Condensation",
+        "Freezing"
+      ],
+      "ans": 1,
+      "solE": "Boiling is a bulk phenomenon occurring throughout the liquid at its boiling point.",
+      "solH": "Boiling एक bulk phenomenon है जो boiling point पर पूरे liquid में होती है।"
+    },
+    {
+      "id": 14,
+      "eng": "Which statement correctly distinguishes evaporation from boiling?",
+      "hin": "Evaporation और boiling के बीच सही अंतर कौन-सा है?",
+      "optE": [
+        "Evaporation occurs only at boiling point",
+        "Boiling occurs only at the surface",
+        "Evaporation can occur at temperatures below boiling point",
+        "Evaporation requires the entire liquid to reach boiling point"
+      ],
+      "optH": [
+        "Evaporation केवल boiling point पर होती है",
+        "Boiling केवल surface पर होती है",
+        "Evaporation boiling point से कम temperature पर भी हो सकती है",
+        "Evaporation के लिए पूरे liquid का boiling point तक पहुँचना आवश्यक है"
+      ],
+      "ans": 2,
+      "solE": "Evaporation is a surface phenomenon and can occur at temperatures below the boiling point.",
+      "solH": "Evaporation एक surface phenomenon है और boiling point से कम temperature पर भी हो सकती है।"
+    },
+    {
+      "id": 15,
+      "eng": "Relative humidity of air is commonly measured using a:",
+      "hin": "वायु की relative humidity सामान्यतः किस यंत्र से मापी जाती है?",
+      "optE": [
+        "Barometer",
+        "Hygrometer",
+        "Calorimeter",
+        "Manometer"
+      ],
+      "optH": [
+        "Barometer",
+        "Hygrometer",
+        "Calorimeter",
+        "Manometer"
+      ],
+      "ans": 1,
+      "solE": "A hygrometer is used to measure humidity; a psychrometer is a type of hygrometer.",
+      "solH": "Humidity मापने के लिए hygrometer का उपयोग किया जाता है; psychrometer hygrometer का एक प्रकार है।"
+    },
+    {
+      "id": 16,
+      "eng": "The first law of thermodynamics is essentially a statement of conservation of:",
+      "hin": "Thermodynamics का first law मुख्यतः किसके conservation को व्यक्त करता है?",
+      "optE": [
+        "Mass only",
+        "Momentum only",
+        "Energy",
+        "Temperature"
+      ],
+      "optH": [
+        "केवल mass",
+        "केवल momentum",
+        "Energy",
+        "Temperature"
+      ],
+      "ans": 2,
+      "solE": "The first law is based on conservation of energy: heat supplied equals change in internal energy plus work done by the system.",
+      "solH": "First law energy conservation पर आधारित है: supplied heat = change in internal energy + system द्वारा किया गया work।"
+    },
+    {
+      "id": 17,
+      "eng": "In an isothermal process for an ideal gas, which quantity remains constant?",
+      "hin": "Ideal gas के isothermal process में कौन-सी quantity constant रहती है?",
+      "optE": [
+        "Pressure",
+        "Temperature",
+        "Volume",
+        "Internal energy and temperature"
+      ],
+      "optH": [
+        "Pressure",
+        "Temperature",
+        "Volume",
+        "Internal energy और temperature"
+      ],
+      "ans": 3,
+      "solE": "For an ideal gas in an isothermal process, temperature and therefore internal energy remain constant.",
+      "solH": "Ideal gas के isothermal process में temperature constant रहता है और ideal gas की internal energy भी constant रहती है।"
+    },
+    {
+      "id": 18,
+      "eng": "In an adiabatic process:",
+      "hin": "Adiabatic process में:",
+      "optE": [
+        "No heat is exchanged with surroundings",
+        "Temperature is always constant",
+        "Pressure is always constant",
+        "No work is done"
+      ],
+      "optH": [
+        "Surroundings के साथ heat exchange नहीं होता",
+        "Temperature हमेशा constant रहता है",
+        "Pressure हमेशा constant रहता है",
+        "कोई work नहीं किया जाता"
+      ],
+      "ans": 0,
+      "solE": "For an adiabatic process, Q = 0; no heat enters or leaves the system.",
+      "solH": "Adiabatic process में Q = 0 होता है; system और surroundings के बीच heat exchange नहीं होता।"
+    },
+    {
+      "id": 19,
+      "eng": "Which statement represents the Kelvin-Planck statement of the second law of thermodynamics?",
+      "hin": "Thermodynamics के second law का Kelvin-Planck statement किस बात को व्यक्त करता है?",
+      "optE": [
+        "Heat cannot flow from cold to hot",
+        "No heat engine can convert all heat absorbed from a single reservoir completely into work",
+        "Energy cannot be created",
+        "Pressure is inversely proportional to volume"
+      ],
+      "optH": [
+        "Heat cold body से hot body की ओर नहीं जा सकती",
+        "कोई heat engine एक ही reservoir से प्राप्त पूरी heat को 100% work में परिवर्तित नहीं कर सकता",
+        "Energy को create नहीं किया जा सकता",
+        "Pressure volume के व्युत्क्रमानुपाती है"
+      ],
+      "ans": 1,
+      "solE": "Kelvin-Planck statement says no cyclic heat engine can convert all heat taken from a single reservoir completely into work.",
+      "solH": "Kelvin-Planck statement के अनुसार कोई cyclic heat engine एक single reservoir से प्राप्त पूरी heat को पूरी तरह work में convert नहीं कर सकता।"
+    },
+    {
+      "id": 20,
+      "eng": "Clausius statement of the second law states that heat cannot spontaneously flow:",
+      "hin": "Second law के Clausius statement के अनुसार heat spontaneously किस दिशा में flow नहीं कर सकती?",
+      "optE": [
+        "From hot body to cold body",
+        "From cold body to hot body",
+        "Within a hot body",
+        "From a source to an engine"
+      ],
+      "optH": [
+        "Hot body से cold body की ओर",
+        "Cold body से hot body की ओर",
+        "Hot body के भीतर",
+        "Source से engine की ओर"
+      ],
+      "ans": 1,
+      "solE": "Clausius statement says heat cannot, of itself, flow from a colder body to a hotter body.",
+      "solH": "Clausius statement के अनुसार heat अपने आप cold body से hot body की ओर flow नहीं कर सकती।"
+    },
+    {
+      "id": 21,
+      "eng": "The efficiency of a heat engine is defined as:",
+      "hin": "Heat engine की efficiency को किस प्रकार परिभाषित किया जाता है?",
+      "optE": [
+        "Heat rejected / heat supplied",
+        "Work output / heat input",
+        "Heat input / work output",
+        "Work input / heat rejected"
+      ],
+      "optH": [
+        "Rejected heat / supplied heat",
+        "Work output / heat input",
+        "Heat input / work output",
+        "Work input / rejected heat"
+      ],
+      "ans": 1,
+      "solE": "Efficiency η = W/QH, where W is work output and QH is heat absorbed from the hot reservoir.",
+      "solH": "Efficiency η = W/QH होती है, जहाँ W work output और QH hot reservoir से absorbed heat है।"
+    },
+    {
+      "id": 22,
+      "eng": "The maximum possible efficiency of a Carnot engine operating between temperatures T₁ and T₂ (T₁ > T₂) is:",
+      "hin": "T₁ और T₂ (T₁ > T₂) temperatures के बीच काम करने वाले Carnot engine की maximum possible efficiency क्या है?",
+      "optE": [
+        "1 − T₂/T₁",
+        "1 − T₁/T₂",
+        "T₂/T₁",
+        "T₁/T₂"
+      ],
+      "optH": [
+        "1 − T₂/T₁",
+        "1 − T₁/T₂",
+        "T₂/T₁",
+        "T₁/T₂"
+      ],
+      "ans": 0,
+      "solE": "Carnot efficiency η = 1 − T₂/T₁, with temperatures measured in Kelvin.",
+      "solH": "Carnot efficiency η = 1 − T₂/T₁ होती है, जहाँ temperatures Kelvin में होने चाहिए।"
+    },
+    {
+      "id": 23,
+      "eng": "According to Carnot theorem, the efficiency of a reversible Carnot engine depends only on:",
+      "hin": "Carnot theorem के अनुसार reversible Carnot engine की efficiency केवल किस पर निर्भर करती है?",
+      "optE": [
+        "Working substance",
+        "Mass of engine",
+        "Temperatures of hot and cold reservoirs",
+        "Pressure of atmosphere"
+      ],
+      "optH": [
+        "Working substance",
+        "Engine का mass",
+        "Hot और cold reservoirs के temperatures",
+        "Atmospheric pressure"
+      ],
+      "ans": 2,
+      "solE": "Carnot efficiency depends only on the temperatures of the hot and cold reservoirs, not on the working substance.",
+      "solH": "Carnot efficiency केवल hot और cold reservoirs के temperatures पर निर्भर करती है, working substance पर नहीं।"
+    },
+    {
+      "id": 24,
+      "eng": "Which of the following is an electromagnetic wave?",
+      "hin": "निम्नलिखित में से कौन-सी electromagnetic wave है?",
+      "optE": [
+        "Sound wave",
+        "Water wave",
+        "X-ray",
+        "Wave on a string"
+      ],
+      "optH": [
+        "Sound wave",
+        "Water wave",
+        "X-ray",
+        "String wave"
+      ],
+      "ans": 2,
+      "solE": "X-rays are electromagnetic waves and can travel through vacuum.",
+      "solH": "X-rays electromagnetic waves हैं और vacuum में भी travel कर सकती हैं।"
+    },
+    {
+      "id": 25,
+      "eng": "According to Planck's quantum relation, the energy of a photon is:",
+      "hin": "Planck के quantum relation के अनुसार photon की energy क्या होती है?",
+      "optE": [
+        "E = hν",
+        "E = h/ν",
+        "E = ν/h",
+        "E = mc"
+      ],
+      "optH": [
+        "E = hν",
+        "E = h/ν",
+        "E = ν/h",
+        "E = mc"
+      ],
+      "ans": 0,
+      "solE": "Photon energy is E = hν, where h is Planck's constant and ν is frequency.",
+      "solH": "Photon की energy E = hν होती है, जहाँ h Planck constant और ν frequency है।"
+    },
+    {
+      "id": 26,
+      "eng": "The speed of light is maximum in:",
+      "hin": "Light की speed सबसे अधिक किसमें होती है?",
+      "optE": [
+        "Glass",
+        "Water",
+        "Diamond",
+        "Vacuum"
+      ],
+      "optH": [
+        "Glass",
+        "Water",
+        "Diamond",
+        "Vacuum"
+      ],
+      "ans": 3,
+      "solE": "Light travels at approximately 3 × 10⁸ m/s in vacuum, its maximum speed.",
+      "solH": "Vacuum में light की speed लगभग 3 × 10⁸ m/s होती है, जो इसकी maximum speed है।"
+    },
+    {
+      "id": 27,
+      "eng": "When light enters glass from air, its speed generally:",
+      "hin": "जब light air से glass में प्रवेश करती है, तो उसकी speed सामान्यतः:",
+      "optE": [
+        "Increases",
+        "Decreases",
+        "Becomes zero",
+        "Remains equal to speed in vacuum"
+      ],
+      "optH": [
+        "बढ़ती है",
+        "घटती है",
+        "शून्य हो जाती है",
+        "Vacuum की speed के बराबर रहती है"
+      ],
+      "ans": 1,
+      "solE": "Light travels slower in an optically denser medium such as glass than in air or vacuum.",
+      "solH": "Glass जैसे optically denser medium में light की speed air या vacuum की तुलना में कम होती है।"
+    },
+    {
+      "id": 28,
+      "eng": "The refractive index of a medium is defined as:",
+      "hin": "किसी medium का refractive index किस प्रकार परिभाषित किया जाता है?",
+      "optE": [
+        "n = v/c",
+        "n = c/v",
+        "n = cv",
+        "n = c + v"
+      ],
+      "optH": [
+        "n = v/c",
+        "n = c/v",
+        "n = cv",
+        "n = c + v"
+      ],
+      "ans": 1,
+      "solE": "Absolute refractive index n = c/v, where c is speed of light in vacuum and v is speed in the medium.",
+      "solH": "Absolute refractive index n = c/v होता है, जहाँ c vacuum में और v medium में light की speed है।"
+    },
+    {
+      "id": 29,
+      "eng": "Which material allows most light to pass through with comparatively clear visibility of objects behind it?",
+      "hin": "कौन-सा material light को लगभग पूरी तरह pass होने देता है और उसके पीछे की वस्तुएँ स्पष्ट दिखाई देती हैं?",
+      "optE": [
+        "Opaque",
+        "Translucent",
+        "Transparent",
+        "Blackbody"
+      ],
+      "optH": [
+        "Opaque",
+        "Translucent",
+        "Transparent",
+        "Blackbody"
+      ],
+      "ans": 2,
+      "solE": "Transparent materials transmit most incident light and allow clear visibility through them.",
+      "solH": "Transparent materials अधिकांश incident light को transmit करते हैं और उनके पार वस्तुएँ स्पष्ट दिखाई देती हैं।"
+    },
+    {
+      "id": 30,
+      "eng": "The completely dark central region of a shadow is called:",
+      "hin": "Shadow के पूरी तरह dark central region को क्या कहते हैं?",
+      "optE": [
+        "Penumbra",
+        "Umbra",
+        "Spectrum",
+        "Focus"
+      ],
+      "optH": [
+        "Penumbra",
+        "Umbra",
+        "Spectrum",
+        "Focus"
+      ],
+      "ans": 1,
+      "solE": "Umbra is the completely dark region where the light source is completely blocked.",
+      "solH": "Umbra shadow का वह पूरी तरह dark region है जहाँ light source पूरी तरह block हो जाता है।"
+    },
+    {
+      "id": 31,
+      "eng": "The partially illuminated region surrounding the umbra is called:",
+      "hin": "Umbra के आसपास का partially illuminated region कहलाता है:",
+      "optE": [
+        "Penumbra",
+        "Principal focus",
+        "Optical centre",
+        "Aperture"
+      ],
+      "optH": [
+        "Penumbra",
+        "Principal focus",
+        "Optical centre",
+        "Aperture"
+      ],
+      "ans": 0,
+      "solE": "Penumbra is the partially shaded region where the light source is only partly blocked.",
+      "solH": "Penumbra वह partially shaded region है जहाँ light source आंशिक रूप से block होता है।"
+    },
+    {
+      "id": 32,
+      "eng": "According to the law of reflection, the angle of incidence is:",
+      "hin": "Reflection के law के अनुसार angle of incidence किसके बराबर होता है?",
+      "optE": [
+        "Twice the angle of reflection",
+        "Equal to the angle of reflection",
+        "Half the angle of reflection",
+        "Always 90°"
+      ],
+      "optH": [
+        "Angle of reflection का दोगुना",
+        "Angle of reflection के बराबर",
+        "Angle of reflection का आधा",
+        "हमेशा 90°"
+      ],
+      "ans": 1,
+      "solE": "The law of reflection states that angle of incidence equals angle of reflection.",
+      "solH": "Reflection के law के अनुसार angle of incidence = angle of reflection होता है।"
+    },
+    {
+      "id": 33,
+      "eng": "An object is placed 20 cm in front of a plane mirror. The distance between the object and its image is:",
+      "hin": "एक object को plane mirror के सामने 20 cm पर रखा गया है। Object और image के बीच की दूरी कितनी होगी?",
+      "optE": [
+        "10 cm",
+        "20 cm",
+        "40 cm",
+        "60 cm"
+      ],
+      "optH": [
+        "10 cm",
+        "20 cm",
+        "40 cm",
+        "60 cm"
+      ],
+      "ans": 2,
+      "solE": "The image forms 20 cm behind the mirror, so object-image distance = 20 + 20 = 40 cm.",
+      "solH": "Image mirror के पीछे 20 cm पर बनेगी, इसलिए object-image distance = 20 + 20 = 40 cm।"
+    },
+    {
+      "id": 34,
+      "eng": "The image formed by a plane mirror is generally:",
+      "hin": "Plane mirror द्वारा बनने वाली image सामान्यतः कैसी होती है?",
+      "optE": [
+        "Real, inverted and magnified",
+        "Virtual, erect and same size",
+        "Real, erect and diminished",
+        "Virtual, inverted and magnified"
+      ],
+      "optH": [
+        "Real, inverted और magnified",
+        "Virtual, erect और same size",
+        "Real, erect और diminished",
+        "Virtual, inverted और magnified"
+      ],
+      "ans": 1,
+      "solE": "A plane mirror forms a virtual, erect image of the same size as the object, with lateral inversion.",
+      "solH": "Plane mirror virtual, erect और object के समान size की image बनाता है तथा lateral inversion होता है।"
+    },
+    {
+      "id": 35,
+      "eng": "An object is placed beyond the centre of curvature of a concave mirror. The image is formed:",
+      "hin": "Concave mirror के centre of curvature से बाहर object रखने पर image कहाँ बनती है?",
+      "optE": [
+        "Between F and P",
+        "At F",
+        "Between F and C",
+        "Between C and infinity"
+      ],
+      "optH": [
+        "F और P के बीच",
+        "F पर",
+        "F और C के बीच",
+        "C और infinity के बीच"
+      ],
+      "ans": 2,
+      "solE": "For an object beyond C, a concave mirror forms a real, inverted and diminished image between C and F.",
+      "solH": "C से बाहर object रखने पर concave mirror C और F के बीच real, inverted और diminished image बनाता है।"
+    },
+    {
+      "id": 36,
+      "eng": "An object is placed at the centre of curvature of a concave mirror. The image is formed:",
+      "hin": "Concave mirror के centre of curvature पर object रखने पर image कहाँ बनती है?",
+      "optE": [
+        "At F",
+        "At C, same size and inverted",
+        "Behind the mirror",
+        "Between P and F"
+      ],
+      "optH": [
+        "F पर",
+        "C पर, same size और inverted",
+        "Mirror के पीछे",
+        "P और F के बीच"
+      ],
+      "ans": 1,
+      "solE": "At C, the image is formed at C, real, inverted and of the same size.",
+      "solH": "C पर object रखने पर image भी C पर बनती है, real, inverted और same size की होती है।"
+    },
+    {
+      "id": 37,
+      "eng": "An object is placed between F and C of a concave mirror. The image will be:",
+      "hin": "Concave mirror के F और C के बीच object रखने पर image कैसी बनेगी?",
+      "optE": [
+        "Real, inverted and magnified beyond C",
+        "Virtual and diminished",
+        "Real and same size at C",
+        "Virtual and erect behind mirror"
+      ],
+      "optH": [
+        "C के बाहर real, inverted और magnified",
+        "Virtual और diminished",
+        "C पर real और same size",
+        "Mirror के पीछे virtual और erect"
+      ],
+      "ans": 0,
+      "solE": "For an object between F and C, the image is real, inverted, magnified and formed beyond C.",
+      "solH": "F और C के बीच object रखने पर image C के बाहर real, inverted और magnified बनती है।"
+    },
+    {
+      "id": 38,
+      "eng": "An object is placed between the pole and focus of a concave mirror. The image formed is:",
+      "hin": "Concave mirror के pole और focus के बीच object रखने पर image कैसी बनती है?",
+      "optE": [
+        "Real and inverted",
+        "Virtual, erect and magnified",
+        "Real and diminished",
+        "Real and same size"
+      ],
+      "optH": [
+        "Real और inverted",
+        "Virtual, erect और magnified",
+        "Real और diminished",
+        "Real और same size"
+      ],
+      "ans": 1,
+      "solE": "When the object lies between P and F, the concave mirror forms a virtual, erect and magnified image behind the mirror.",
+      "solH": "P और F के बीच object होने पर concave mirror mirror के पीछे virtual, erect और magnified image बनाता है।"
+    },
+    {
+      "id": 39,
+      "eng": "A convex mirror always forms an image that is:",
+      "hin": "Convex mirror हमेशा कैसी image बनाता है?",
+      "optE": [
+        "Real, inverted and magnified",
+        "Virtual, erect and diminished",
+        "Real, erect and same size",
+        "Virtual, inverted and magnified"
+      ],
+      "optH": [
+        "Real, inverted और magnified",
+        "Virtual, erect और diminished",
+        "Real, erect और same size",
+        "Virtual, inverted और magnified"
+      ],
+      "ans": 1,
+      "solE": "A convex mirror always produces a virtual, erect and diminished image behind the mirror.",
+      "solH": "Convex mirror हमेशा mirror के पीछे virtual, erect और diminished image बनाता है।"
+    },
+    {
+      "id": 40,
+      "eng": "Which mirror is commonly used as a rear-view mirror in vehicles?",
+      "hin": "Vehicles में rear-view mirror के रूप में सामान्यतः कौन-सा mirror उपयोग किया जाता है?",
+      "optE": [
+        "Plane mirror",
+        "Concave mirror",
+        "Convex mirror",
+        "Parabolic mirror"
+      ],
+      "optH": [
+        "Plane mirror",
+        "Concave mirror",
+        "Convex mirror",
+        "Parabolic mirror"
+      ],
+      "ans": 2,
+      "solE": "A convex mirror provides a wider field of view and forms erect, diminished images.",
+      "solH": "Convex mirror wider field of view देता है और erect, diminished image बनाता है।"
+    },
+    {
+      "id": 41,
+      "eng": "A concave mirror is used by a dentist because, when the tooth is placed within its focal length, it can produce:",
+      "hin": "Dentist concave mirror का उपयोग क्यों करता है? जब tooth focal length के भीतर रखा जाता है, तो यह क्या बना सकता है?",
+      "optE": [
+        "A virtual, erect and magnified image",
+        "A real, inverted and diminished image",
+        "A real image of zero size",
+        "Only a same-sized image"
+      ],
+      "optH": [
+        "Virtual, erect और magnified image",
+        "Real, inverted और diminished image",
+        "Zero size की real image",
+        "केवल same-sized image"
+      ],
+      "ans": 0,
+      "solE": "A concave mirror with the object within its focal length acts as a magnifying mirror.",
+      "solH": "Object को focal length के भीतर रखने पर concave mirror magnifying mirror की तरह कार्य करता है।"
+    },
+    {
+      "id": 42,
+      "eng": "Which mirror is suitable for concentrating sunlight at a point to produce high temperature?",
+      "hin": "Sunlight को एक point पर concentrate करके high temperature प्राप्त करने के लिए कौन-सा mirror suitable है?",
+      "optE": [
+        "Convex mirror",
+        "Plane mirror",
+        "Concave mirror",
+        "Any mirror"
+      ],
+      "optH": [
+        "Convex mirror",
+        "Plane mirror",
+        "Concave mirror",
+        "कोई भी mirror"
+      ],
+      "ans": 2,
+      "solE": "A concave mirror converges approximately parallel rays of sunlight toward its focus.",
+      "solH": "Concave mirror sunlight की approximately parallel rays को focus की ओर converge करता है।"
+    },
+    {
+      "id": 43,
+      "eng": "An object is placed at infinity in front of a concave mirror. Where is the image formed?",
+      "hin": "Concave mirror के सामने infinity पर object रखने पर image कहाँ बनती है?",
+      "optE": [
+        "At the pole",
+        "At the focus",
+        "At the centre of curvature",
+        "Behind the mirror"
+      ],
+      "optH": [
+        "Pole पर",
+        "Focus पर",
+        "Centre of curvature पर",
+        "Mirror के पीछे"
+      ],
+      "ans": 1,
+      "solE": "Parallel rays from an object at infinity converge at the principal focus of a concave mirror.",
+      "solH": "Infinity से आने वाली parallel rays concave mirror के principal focus पर converge होती हैं।"
+    },
+    {
+      "id": 44,
+      "eng": "Refraction of light occurs because the speed of light:",
+      "hin": "Light का refraction मुख्यतः किस कारण होता है?",
+      "optE": [
+        "Always remains unchanged",
+        "Changes when light enters a different optical medium",
+        "Becomes zero at the boundary",
+        "Changes its frequency in every medium"
+      ],
+      "optH": [
+        "हमेशा unchanged रहती है",
+        "Different optical medium में प्रवेश करने पर उसकी speed बदलती है",
+        "Boundary पर zero हो जाती है",
+        "हर medium में उसकी frequency बदल जाती है"
+      ],
+      "ans": 1,
+      "solE": "Refraction occurs due to change in the speed of light when it enters another medium. Frequency remains unchanged at a stationary boundary.",
+      "solH": "दूसरे medium में प्रवेश करने पर light की speed बदलने से refraction होता है। Stationary boundary पर frequency unchanged रहती है।"
+    },
+    {
+      "id": 45,
+      "eng": "When light travels from a rarer medium to a denser medium obliquely, it bends:",
+      "hin": "जब light obliquely rarer medium से denser medium में जाती है, तो वह:",
+      "optE": [
+        "Away from the normal",
+        "Towards the normal",
+        "Along the surface",
+        "Back toward the source"
+      ],
+      "optH": [
+        "Normal से दूर मुड़ती है",
+        "Normal की ओर मुड़ती है",
+        "Surface के along चलती है",
+        "Source की ओर वापस लौटती है"
+      ],
+      "ans": 1,
+      "solE": "Light bends towards the normal when travelling from a rarer to a denser medium.",
+      "solH": "Rarer से denser medium में जाते समय light normal की ओर bend होती है।"
+    },
+    {
+      "id": 46,
+      "eng": "Snell's law of refraction is:",
+      "hin": "Refraction का Snell's law है:",
+      "optE": [
+        "n₁ sin i = n₂ sin r",
+        "n₁ cos i = n₂ cos r",
+        "n₁ tan i = n₂ tan r",
+        "n₁i = n₂r"
+      ],
+      "optH": [
+        "n₁ sin i = n₂ sin r",
+        "n₁ cos i = n₂ cos r",
+        "n₁ tan i = n₂ tan r",
+        "n₁i = n₂r"
+      ],
+      "ans": 0,
+      "solE": "Snell's law is n₁ sin i = n₂ sin r.",
+      "solH": "Snell's law के अनुसार n₁ sin i = n₂ sin r।"
+    },
+    {
+      "id": 47,
+      "eng": "The critical angle is defined for light travelling from:",
+      "hin": "Critical angle किस स्थिति में define किया जाता है?",
+      "optE": [
+        "Rarer to denser medium only",
+        "Denser to rarer medium",
+        "Vacuum to denser medium only",
+        "Any medium regardless of direction"
+      ],
+      "optH": [
+        "केवल rarer से denser medium",
+        "Denser से rarer medium",
+        "केवल vacuum से denser medium",
+        "दिशा की परवाह किए बिना किसी भी medium में"
+      ],
+      "ans": 1,
+      "solE": "Critical angle is defined when light travels from an optically denser medium to a rarer medium.",
+      "solH": "Critical angle उस स्थिति में define होता है जब light optically denser medium से rarer medium में जाती है।"
+    },
+    {
+      "id": 48,
+      "eng": "For total internal reflection to occur, which condition is necessary?",
+      "hin": "Total internal reflection होने के लिए कौन-सी condition आवश्यक है?",
+      "optE": [
+        "Light must travel from rarer to denser medium",
+        "Angle of incidence must be less than critical angle",
+        "Light must travel from denser to rarer medium and incidence angle must exceed critical angle",
+        "The incidence angle must always be zero"
+      ],
+      "optH": [
+        "Light rarer से denser medium में जाए",
+        "Angle of incidence critical angle से कम हो",
+        "Light denser से rarer medium में जाए और incidence angle critical angle से अधिक हो",
+        "Incidence angle हमेशा zero हो"
+      ],
+      "ans": 2,
+      "solE": "TIR requires light to travel from denser to rarer medium and i > critical angle.",
+      "solH": "TIR के लिए light का denser से rarer medium में जाना तथा i > critical angle होना आवश्यक है।"
+    },
+    {
+      "id": 49,
+      "eng": "Which technology primarily works on the principle of total internal reflection?",
+      "hin": "निम्नलिखित में से कौन-सी technology मुख्यतः total internal reflection के principle पर काम करती है?",
+      "optE": [
+        "Optical fibre",
+        "Thermometer",
+        "Barometer",
+        "Simple pendulum"
+      ],
+      "optH": [
+        "Optical fibre",
+        "Thermometer",
+        "Barometer",
+        "Simple pendulum"
+      ],
+      "ans": 0,
+      "solE": "Optical fibres guide light through repeated total internal reflection.",
+      "solH": "Optical fibres repeated total internal reflection के माध्यम से light को guide करते हैं।"
+    },
+    {
+      "id": 50,
+      "eng": "A convex lens is also called a:",
+      "hin": "Convex lens को किस नाम से भी जाना जाता है?",
+      "optE": [
+        "Diverging lens",
+        "Converging lens",
+        "Cylindrical mirror",
+        "Plane lens"
+      ],
+      "optH": [
+        "Diverging lens",
+        "Converging lens",
+        "Cylindrical mirror",
+        "Plane lens"
+      ],
+      "ans": 1,
+      "solE": "A convex lens generally converges parallel rays of light and is therefore called a converging lens.",
+      "solH": "Convex lens सामान्यतः parallel light rays को converge करता है, इसलिए इसे converging lens कहते हैं।"
+    },
+    {
+      "id": 51,
+      "eng": "An object is placed beyond 2F of a convex lens. The image is formed:",
+      "hin": "Convex lens के 2F से बाहर object रखने पर image कहाँ बनती है?",
+      "optE": [
+        "Between F and 2F, real, inverted and diminished",
+        "Beyond 2F, virtual and magnified",
+        "At F, same size",
+        "Between lens and F, virtual and diminished"
+      ],
+      "optH": [
+        "F और 2F के बीच, real, inverted और diminished",
+        "2F के बाहर, virtual और magnified",
+        "F पर, same size",
+        "Lens और F के बीच, virtual और diminished"
+      ],
+      "ans": 0,
+      "solE": "For an object beyond 2F, a convex lens forms a real, inverted and diminished image between F and 2F.",
+      "solH": "2F से बाहर object रखने पर convex lens F और 2F के बीच real, inverted और diminished image बनाता है।"
+    },
+    {
+      "id": 52,
+      "eng": "An object is placed at 2F of a convex lens. The image is:",
+      "hin": "Convex lens के 2F पर object रखने पर image कैसी बनती है?",
+      "optE": [
+        "Virtual and magnified",
+        "Real, inverted and same size at 2F",
+        "Real and diminished at F",
+        "Virtual and erect at 2F"
+      ],
+      "optH": [
+        "Virtual और magnified",
+        "2F पर real, inverted और same size",
+        "F पर real और diminished",
+        "2F पर virtual और erect"
+      ],
+      "ans": 1,
+      "solE": "At 2F, the image is formed at 2F and is real, inverted and of the same size.",
+      "solH": "2F पर object रखने पर image भी 2F पर real, inverted और same size की बनती है।"
+    },
+    {
+      "id": 53,
+      "eng": "An object is placed between F and 2F of a convex lens. The image is formed:",
+      "hin": "Convex lens के F और 2F के बीच object रखने पर image कहाँ बनती है?",
+      "optE": [
+        "Between F and lens",
+        "At F",
+        "Beyond 2F, real, inverted and magnified",
+        "Behind the object, virtual and diminished"
+      ],
+      "optH": [
+        "F और lens के बीच",
+        "F पर",
+        "2F के बाहर, real, inverted और magnified",
+        "Object के पीछे, virtual और diminished"
+      ],
+      "ans": 2,
+      "solE": "For an object between F and 2F, the convex lens forms a real, inverted and magnified image beyond 2F.",
+      "solH": "F और 2F के बीच object रखने पर convex lens 2F के बाहर real, inverted और magnified image बनाता है।"
+    },
+    {
+      "id": 54,
+      "eng": "An object is placed between the optical centre and focus of a convex lens. The image is:",
+      "hin": "Convex lens के optical centre और focus के बीच object रखने पर image कैसी बनेगी?",
+      "optE": [
+        "Real, inverted and diminished",
+        "Virtual, erect and magnified",
+        "Real and same size",
+        "Real, inverted and same size"
+      ],
+      "optH": [
+        "Real, inverted और diminished",
+        "Virtual, erect और magnified",
+        "Real और same size",
+        "Real, inverted और same size"
+      ],
+      "ans": 1,
+      "solE": "When the object lies within the focal length of a convex lens, the image is virtual, erect and magnified.",
+      "solH": "Object focal length के भीतर होने पर convex lens virtual, erect और magnified image बनाता है।"
+    },
+    {
+      "id": 55,
+      "eng": "A concave lens always forms an image that is:",
+      "hin": "Concave lens हमेशा कैसी image बनाता है?",
+      "optE": [
+        "Real, inverted and magnified",
+        "Virtual, erect and diminished",
+        "Real and same size",
+        "Real, erect and magnified"
+      ],
+      "optH": [
+        "Real, inverted और magnified",
+        "Virtual, erect और diminished",
+        "Real और same size",
+        "Real, erect और magnified"
+      ],
+      "ans": 1,
+      "solE": "A concave lens always produces a virtual, erect and diminished image between the optical centre and focus.",
+      "solH": "Concave lens हमेशा optical centre और focus के बीच virtual, erect और diminished image बनाता है।"
+    },
+    {
+      "id": 56,
+      "eng": "A convex lens of focal length 20 cm has an object placed at 40 cm. Where will the image be formed?",
+      "hin": "20 cm focal length वाले convex lens के सामने object 40 cm पर रखा गया है। Image कहाँ बनेगी?",
+      "optE": [
+        "20 cm on the other side",
+        "40 cm on the other side",
+        "60 cm on the other side",
+        "At infinity"
+      ],
+      "optH": [
+        "दूसरी ओर 20 cm पर",
+        "दूसरी ओर 40 cm पर",
+        "दूसरी ओर 60 cm पर",
+        "Infinity पर"
+      ],
+      "ans": 1,
+      "solE": "Object is at 2F because 2f = 40 cm. Hence image forms at 2F, i.e. 40 cm on the other side.",
+      "solH": "Object 2F पर है क्योंकि 2f = 40 cm। इसलिए image दूसरी ओर 2F अर्थात 40 cm पर बनेगी।"
+    },
+    {
+      "id": 57,
+      "eng": "The splitting of white light into its constituent colours is called:",
+      "hin": "White light का उसके constituent colours में विभाजन कहलाता है:",
+      "optE": [
+        "Reflection",
+        "Dispersion",
+        "Interference",
+        "Polarisation"
+      ],
+      "optH": [
+        "Reflection",
+        "Dispersion",
+        "Interference",
+        "Polarisation"
+      ],
+      "ans": 1,
+      "solE": "Dispersion is the separation of white light into its constituent colours, such as through a prism.",
+      "solH": "Dispersion white light को उसके constituent colours में अलग करने की घटना है, जैसे prism में।"
+    },
+    {
+      "id": 58,
+      "eng": "In a prism, which colour generally deviates the most?",
+      "hin": "Prism में सामान्यतः कौन-सा colour सबसे अधिक deviate होता है?",
+      "optE": [
+        "Red",
+        "Yellow",
+        "Green",
+        "Violet"
+      ],
+      "optH": [
+        "Red",
+        "Yellow",
+        "Green",
+        "Violet"
+      ],
+      "ans": 3,
+      "solE": "Violet has the shortest wavelength among visible colours and generally undergoes the greatest deviation in glass.",
+      "solH": "Visible colours में violet की wavelength सबसे छोटी होती है और glass में इसका deviation सामान्यतः सबसे अधिक होता है।"
+    },
+    {
+      "id": 59,
+      "eng": "The blue appearance of the sky is primarily due to:",
+      "hin": "आकाश का blue दिखाई देना मुख्यतः किसके कारण है?",
+      "optE": [
+        "Reflection",
+        "Scattering of light",
+        "Total internal reflection",
+        "Interference only"
+      ],
+      "optH": [
+        "Reflection",
+        "Light का scattering",
+        "Total internal reflection",
+        "केवल interference"
+      ],
+      "ans": 1,
+      "solE": "Shorter wavelengths such as blue are scattered more strongly by atmospheric molecules than longer wavelengths such as red.",
+      "solH": "Atmospheric molecules shorter wavelengths जैसे blue को red की तुलना में अधिक scatter करते हैं, इसलिए sky blue दिखाई देता है।"
+    },
+    {
+      "id": 60,
+      "eng": "During sunrise and sunset, the Sun often appears reddish mainly because:",
+      "hin": "Sunrise और sunset के समय Sun अक्सर reddish दिखाई देता है। इसका मुख्य कारण क्या है?",
+      "optE": [
+        "Red light is scattered the most",
+        "Blue and shorter wavelengths are scattered away more strongly along the long atmospheric path",
+        "Red light has the highest frequency",
+        "The Sun changes its temperature suddenly"
+      ],
+      "optH": [
+        "Red light सबसे अधिक scatter होती है",
+        "Blue और shorter wavelengths लंबी atmospheric path में अधिक strongly scatter हो जाती हैं",
+        "Red light की frequency सबसे अधिक होती है",
+        "Sun अचानक अपना temperature बदलता है"
+      ],
+      "ans": 1,
+      "solE": "During sunrise and sunset, light travels through a longer atmospheric path, causing stronger scattering of shorter wavelengths and leaving more red/orange light.",
+      "solH": "Sunrise और sunset पर light लंबी atmospheric path से गुजरती है, जिससे shorter wavelengths अधिक scatter होती हैं और red/orange light अधिक दिखाई देती है।"
+    },
+    {
+      "id": 61,
+      "eng": "Which combination of primary colours of light produces white light?",
+      "hin": "Light के primary colours का कौन-सा combination white light उत्पन्न करता है?",
+      "optE": [
+        "Red + Green + Blue",
+        "Red + Yellow + Blue",
+        "Green + Yellow + Violet",
+        "Red + Black + Blue"
+      ],
+      "optH": [
+        "Red + Green + Blue",
+        "Red + Yellow + Blue",
+        "Green + Yellow + Violet",
+        "Red + Black + Blue"
+      ],
+      "ans": 0,
+      "solE": "In additive colour mixing, red, green and blue light combine to produce white light.",
+      "solH": "Additive colour mixing में red, green और blue light मिलकर white light बनाते हैं।"
+    },
+    {
+      "id": 62,
+      "eng": "Which combination produces yellow light in additive colour mixing?",
+      "hin": "Additive colour mixing में कौन-सा combination yellow light उत्पन्न करता है?",
+      "optE": [
+        "Red + Green",
+        "Green + Blue",
+        "Red + Blue",
+        "Blue + Yellow"
+      ],
+      "optH": [
+        "Red + Green",
+        "Green + Blue",
+        "Red + Blue",
+        "Blue + Yellow"
+      ],
+      "ans": 0,
+      "solE": "Red + green light produces yellow in additive colour mixing.",
+      "solH": "Additive colour mixing में red + green light से yellow colour बनता है।"
+    },
+    {
+      "id": 63,
+      "eng": "Two coherent light waves meet in phase and produce maximum intensity. This phenomenon is called:",
+      "hin": "दो coherent light waves same phase में मिलकर maximum intensity उत्पन्न करती हैं। यह घटना कहलाती है:",
+      "optE": [
+        "Destructive interference",
+        "Constructive interference",
+        "Diffraction",
+        "Polarisation"
+      ],
+      "optH": [
+        "Destructive interference",
+        "Constructive interference",
+        "Diffraction",
+        "Polarisation"
+      ],
+      "ans": 1,
+      "solE": "Constructive interference occurs when waves meet in phase, producing maximum intensity.",
+      "solH": "जब waves same phase में मिलती हैं तो constructive interference होता है और intensity maximum होती है।"
+    },
+    {
+      "id": 64,
+      "eng": "When two coherent waves meet with a phase difference of π, the resulting interference is:",
+      "hin": "जब दो coherent waves के बीच phase difference π हो, तो resulting interference क्या होगा?",
+      "optE": [
+        "Constructive",
+        "Destructive",
+        "No interference",
+        "Polarisation"
+      ],
+      "optH": [
+        "Constructive",
+        "Destructive",
+        "No interference",
+        "Polarisation"
+      ],
+      "ans": 1,
+      "solE": "A phase difference of π corresponds to destructive interference, giving minimum intensity for equal amplitudes.",
+      "solH": "π का phase difference destructive interference उत्पन्न करता है और equal amplitudes के लिए minimum intensity प्राप्त होती है।"
+    },
+    {
+      "id": 65,
+      "eng": "The bending or spreading of light around obstacles or through narrow openings is called:",
+      "hin": "Obstacles के चारों ओर या narrow openings से गुजरते समय light के bending/spreading को क्या कहते हैं?",
+      "optE": [
+        "Diffraction",
+        "Reflection",
+        "Dispersion",
+        "Refraction"
+      ],
+      "optH": [
+        "Diffraction",
+        "Reflection",
+        "Dispersion",
+        "Refraction"
+      ],
+      "ans": 0,
+      "solE": "Diffraction is the bending/spreading of waves around obstacles or through apertures comparable to the wavelength.",
+      "solH": "Diffraction waves के obstacles के चारों ओर bend/spread होने या wavelength के comparable aperture से गुजरने पर फैलने की घटना है।"
+    },
+    {
+      "id": 66,
+      "eng": "Polarisation of light demonstrates that light is:",
+      "hin": "Light का polarisation यह दर्शाता है कि light:",
+      "optE": [
+        "Longitudinal",
+        "Transverse",
+        "Always mechanical",
+        "A sound wave"
+      ],
+      "optH": [
+        "Longitudinal है",
+        "Transverse है",
+        "हमेशा mechanical है",
+        "Sound wave है"
+      ],
+      "ans": 1,
+      "solE": "Only transverse waves can be polarised. Therefore, polarisation establishes the transverse nature of light.",
+      "solH": "केवल transverse waves का polarisation संभव है। इसलिए polarisation light की transverse nature को सिद्ध करता है।"
+    },
+    {
+      "id": 67,
+      "eng": "Which optical phenomenon is used in Polaroid sunglasses to reduce glare?",
+      "hin": "Glare कम करने के लिए Polaroid sunglasses में किस optical phenomenon का उपयोग किया जाता है?",
+      "optE": [
+        "Polarisation",
+        "Dispersion",
+        "Total internal reflection",
+        "Diffraction"
+      ],
+      "optH": [
+        "Polarisation",
+        "Dispersion",
+        "Total internal reflection",
+        "Diffraction"
+      ],
+      "ans": 0,
+      "solE": "Polaroid filters use polarisation to reduce glare from reflected light.",
+      "solH": "Polaroid filters reflected light की glare को कम करने के लिए polarisation का उपयोग करते हैं।"
+    },
+    {
+      "id": 68,
+      "eng": "The normal human eye can focus a sharp image on the retina mainly by changing the:",
+      "hin": "Normal human eye retina पर sharp image focus करने के लिए मुख्यतः किसे बदलता है?",
+      "optE": [
+        "Size of retina",
+        "Focal length/power of the eye lens",
+        "Colour of iris",
+        "Size of optic nerve"
+      ],
+      "optH": [
+        "Retina का size",
+        "Eye lens की focal length/power",
+        "Iris का colour",
+        "Optic nerve का size"
+      ],
+      "ans": 1,
+      "solE": "Accommodation involves changing the curvature and hence focal length/power of the crystalline lens.",
+      "solH": "Accommodation में eye lens की curvature बदलती है, जिससे उसकी focal length/power बदलती है और image retina पर focus होती है।"
+    },
+    {
+      "id": 69,
+      "eng": "Myopia is a condition in which a person has difficulty seeing:",
+      "hin": "Myopia में व्यक्ति को किसे देखने में कठिनाई होती है?",
+      "optE": [
+        "Nearby objects",
+        "Distant objects",
+        "Only very bright objects",
+        "Only coloured objects"
+      ],
+      "optH": [
+        "पास की वस्तुएँ",
+        "दूर की वस्तुएँ",
+        "केवल बहुत bright objects",
+        "केवल coloured objects"
+      ],
+      "ans": 1,
+      "solE": "In myopia, distant objects appear blurred because their images tend to form in front of the retina.",
+      "solH": "Myopia में दूर की वस्तुओं की image retina के आगे बनने की प्रवृत्ति होती है, इसलिए वे blurred दिखाई देती हैं।"
+    },
+    {
+      "id": 70,
+      "eng": "Myopia is corrected using a:",
+      "hin": "Myopia को किस lens से correct किया जाता है?",
+      "optE": [
+        "Convex lens",
+        "Concave lens",
+        "Cylindrical lens only",
+        "Plane glass"
+      ],
+      "optH": [
+        "Convex lens",
+        "Concave lens",
+        "केवल cylindrical lens",
+        "Plane glass"
+      ],
+      "ans": 1,
+      "solE": "A concave lens diverges incoming rays so that the eye lens can focus the image on the retina.",
+      "solH": "Concave lens incoming rays को diverge करता है ताकि eye lens image को retina पर focus कर सके।"
+    },
+    {
+      "id": 71,
+      "eng": "Hypermetropia is a condition in which a person has difficulty seeing:",
+      "hin": "Hypermetropia में व्यक्ति को किसे देखने में कठिनाई होती है?",
+      "optE": [
+        "Nearby objects",
+        "Distant objects only",
+        "Only moving objects",
+        "Only coloured objects"
+      ],
+      "optH": [
+        "पास की वस्तुएँ",
+        "केवल दूर की वस्तुएँ",
+        "केवल moving objects",
+        "केवल coloured objects"
+      ],
+      "ans": 0,
+      "solE": "In hypermetropia, nearby objects appear blurred because the image tends to form behind the retina.",
+      "solH": "Hypermetropia में पास की वस्तुओं की image retina के पीछे बनने की प्रवृत्ति होती है, इसलिए वे blurred दिखाई देती हैं।"
+    },
+    {
+      "id": 72,
+      "eng": "Hypermetropia is generally corrected using a:",
+      "hin": "Hypermetropia को सामान्यतः किस lens से correct किया जाता है?",
+      "optE": [
+        "Concave lens",
+        "Convex lens",
+        "Plane mirror",
+        "Convex mirror"
+      ],
+      "optH": [
+        "Concave lens",
+        "Convex lens",
+        "Plane mirror",
+        "Convex mirror"
+      ],
+      "ans": 1,
+      "solE": "A convex lens converges light before it enters the eye, helping the image form on the retina.",
+      "solH": "Convex lens light rays को converge करता है, जिससे image retina पर बनने में सहायता मिलती है।"
+    },
+    {
+      "id": 73,
+      "eng": "Presbyopia is primarily associated with:",
+      "hin": "Presbyopia मुख्यतः किससे संबंधित है?",
+      "optE": [
+        "Age-related loss of accommodation",
+        "Damage caused only by ultraviolet radiation",
+        "Inability to see colours",
+        "Only corneal infection"
+      ],
+      "optH": [
+        "Age-related accommodation की कमी",
+        "केवल ultraviolet radiation से damage",
+        "Colours को न देख पाना",
+        "केवल corneal infection"
+      ],
+      "ans": 0,
+      "solE": "Presbyopia is an age-related reduction in the eye's ability to accommodate, often making near vision difficult.",
+      "solH": "Presbyopia उम्र के साथ eye की accommodation ability कम होने की स्थिति है, जिससे near vision में कठिनाई हो सकती है।"
+    },
+    {
+      "id": 74,
+      "eng": "Astigmatism is commonly caused by:",
+      "hin": "Astigmatism सामान्यतः किस कारण होता है?",
+      "optE": [
+        "Irregular curvature of the cornea or lens",
+        "Complete absence of retina",
+        "Only excessive pupil size",
+        "No refractive power of the eye"
+      ],
+      "optH": [
+        "Cornea या lens की irregular curvature",
+        "Retina की पूर्ण अनुपस्थिति",
+        "केवल pupil का अत्यधिक बड़ा होना",
+        "Eye की refractive power का पूर्ण अभाव"
+      ],
+      "ans": 0,
+      "solE": "Astigmatism results from unequal curvature of the cornea or lens, causing different focusing in different planes.",
+      "solH": "Astigmatism cornea या lens की unequal/irregular curvature के कारण होता है, जिससे अलग-अलग planes में focusing अलग होती है।"
+    },
+    {
+      "id": 75,
+      "eng": "A simple microscope generally uses:",
+      "hin": "Simple microscope में सामान्यतः कितने lenses का उपयोग होता है?",
+      "optE": [
+        "One converging lens",
+        "Two converging lenses",
+        "One concave and one convex lens",
+        "Three lenses"
+      ],
+      "optH": [
+        "एक converging lens",
+        "दो converging lenses",
+        "एक concave और एक convex lens",
+        "तीन lenses"
+      ],
+      "ans": 0,
+      "solE": "A simple microscope is essentially a single convex lens of short focal length used as a magnifier.",
+      "solH": "Simple microscope मूलतः short focal length वाले एक convex lens का magnifying instrument है।"
+    },
+    {
+      "id": 76,
+      "eng": "A compound microscope primarily uses:",
+      "hin": "Compound microscope में मुख्यतः किस प्रकार के lenses का उपयोग होता है?",
+      "optE": [
+        "One lens",
+        "Two convex lenses: objective and eyepiece",
+        "Two concave lenses only",
+        "One convex mirror and one lens"
+      ],
+      "optH": [
+        "एक lens",
+        "दो convex lenses: objective और eyepiece",
+        "केवल दो concave lenses",
+        "एक convex mirror और एक lens"
+      ],
+      "ans": 1,
+      "solE": "A compound microscope uses an objective lens and an eyepiece lens, generally both convex.",
+      "solH": "Compound microscope में objective और eyepiece नामक दो lenses होते हैं, जो सामान्यतः दोनों convex होते हैं।"
+    },
+    {
+      "id": 77,
+      "eng": "A compound microscope is primarily used to:",
+      "hin": "Compound microscope का मुख्य उपयोग किसके लिए किया जाता है?",
+      "optE": [
+        "Observe very small objects with high magnification",
+        "Observe distant stars only",
+        "Measure atmospheric pressure",
+        "Measure temperature"
+      ],
+      "optH": [
+        "बहुत छोटी वस्तुओं को high magnification पर देखने के लिए",
+        "केवल दूर के stars देखने के लिए",
+        "Atmospheric pressure मापने के लिए",
+        "Temperature मापने के लिए"
+      ],
+      "ans": 0,
+      "solE": "A compound microscope provides high magnification for observing very small objects such as cells and microorganisms.",
+      "solH": "Compound microscope cells और microorganisms जैसी बहुत छोटी वस्तुओं को high magnification पर देखने के लिए उपयोग किया जाता है।"
+    },
+    {
+      "id": 78,
+      "eng": "An astronomical refracting telescope generally uses:",
+      "hin": "Astronomical refracting telescope में सामान्यतः कितने principal lenses होते हैं?",
+      "optE": [
+        "One lens",
+        "Two convex lenses: objective and eyepiece",
+        "Two concave lenses",
+        "Three plane mirrors"
+      ],
+      "optH": [
+        "एक lens",
+        "दो convex lenses: objective और eyepiece",
+        "दो concave lenses",
+        "तीन plane mirrors"
+      ],
+      "ans": 1,
+      "solE": "A refracting telescope uses an objective lens and an eyepiece lens. In the basic astronomical telescope, both are convex.",
+      "solH": "Refracting telescope में objective lens और eyepiece lens होते हैं। Basic astronomical telescope में दोनों convex होते हैं।"
+    },
+    {
+      "id": 79,
+      "eng": "Which optical instrument is specifically designed to observe distant astronomical objects with angular magnification?",
+      "hin": "दूर स्थित astronomical objects को angular magnification के साथ देखने के लिए कौन-सा optical instrument बनाया गया है?",
+      "optE": [
+        "Simple microscope",
+        "Astronomical telescope",
+        "Barometer",
+        "Calorimeter"
+      ],
+      "optH": [
+        "Simple microscope",
+        "Astronomical telescope",
+        "Barometer",
+        "Calorimeter"
+      ],
+      "ans": 1,
+      "solE": "An astronomical telescope is designed to observe distant celestial objects with angular magnification.",
+      "solH": "Astronomical telescope दूर स्थित celestial objects को angular magnification के साथ देखने के लिए बनाया गया है।"
+    },
+    {
+      "id": 80,
+      "eng": "Which of the following combinations is correctly matched?",
+      "hin": "निम्नलिखित में से कौन-सा combination सही matched है?",
+      "optE": [
+        "Myopia — Convex lens; Hypermetropia — Concave lens",
+        "Myopia — Concave lens; Hypermetropia — Convex lens",
+        "Myopia — Plane glass; Hypermetropia — Convex mirror",
+        "Myopia — Convex mirror; Hypermetropia — Concave mirror"
+      ],
+      "optH": [
+        "Myopia — Convex lens; Hypermetropia — Concave lens",
+        "Myopia — Concave lens; Hypermetropia — Convex lens",
+        "Myopia — Plane glass; Hypermetropia — Convex mirror",
+        "Myopia — Convex mirror; Hypermetropia — Concave mirror"
+      ],
+      "ans": 1,
+      "solE": "Myopia is corrected by a concave lens, while hypermetropia is corrected by a convex lens.",
+      "solH": "Myopia को concave lens से और hypermetropia को convex lens से correct किया जाता है।"
+    }
+  ]
+};

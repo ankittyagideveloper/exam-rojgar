@@ -122,6 +122,30 @@ const PAGE_SEO = {
       "rrb ntpc science mock test, physics chemistry biology test railway, general science rrb ntpc",
     h1: "RRB NTPC Science Mock Tests",
   },
+  "rrb/rrb-ntpc/science/physics": {
+    title: "RRB NTPC Physics Mock Tests – General Physics | Exam Rojgaar",
+    description:
+      "Practice Physics mock tests for RRB NTPC. Covers mechanics, optics, electricity, magnetism and general physics concepts with previous year questions.",
+    keywords:
+      "rrb ntpc physics mock test, physics test railway exam, general physics rrb ntpc, physics questions railway",
+    h1: "RRB NTPC Physics Mock Tests",
+  },
+  "rrb/rrb-ntpc/science/chemistry": {
+    title: "RRB NTPC Chemistry Mock Tests – General Chemistry | Exam Rojgaar",
+    description:
+      "Practice Chemistry mock tests for RRB NTPC. Covers periodic table, chemical reactions, acids & bases, metals and general chemistry concepts.",
+    keywords:
+      "rrb ntpc chemistry mock test, chemistry test railway exam, general chemistry rrb ntpc, chemistry questions railway",
+    h1: "RRB NTPC Chemistry Mock Tests",
+  },
+  "rrb/rrb-ntpc/science/biology": {
+    title: "RRB NTPC Biology Mock Tests – General Biology | Exam Rojgaar",
+    description:
+      "Practice Biology mock tests for RRB NTPC. Covers cell biology, human body, plant biology, ecology and general life science concepts.",
+    keywords:
+      "rrb ntpc biology mock test, biology test railway exam, general biology rrb ntpc, life science questions railway",
+    h1: "RRB NTPC Biology Mock Tests",
+  },
   "rrb/rrb-ntpc/maths": {
     title: "RRB NTPC Maths Mock Tests – Arithmetic, Quantitative Aptitude | Exam Rojgaar",
     description:

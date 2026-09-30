@@ -121,6 +121,9 @@ import MsOfficeMsWordMockTestPage from "./pages/MsOfficeMsWordMockTestPage";
 import ComputerLecture2CPUandMemoryMockTestPage from "./pages/ComputerLecture2CPUandMemoryMockTestPage";
 import ComputerLecture1FundamentalsTestMockTestPage from "./pages/ComputerLecture1FundamentalsTestMockTestPage";
 import ComputerOperatingSystemlecture3MockTestPage from "./pages/ComputerOperatingSystemlecture3MockTestPage";
+import HeatAndLightTest1MockTestPage from "./pages/HeatAndLightTest1MockTestPage";
+import ElectricityAndMagnetismTest1MockTestPage from "./pages/ElectricityAndMagnetismTest1MockTestPage";
+import GravitationPressureElasticityWavesTest1MockTestPage from "./pages/GravitationPressureElasticityWavesTest1MockTestPage";
 
 // Inline redirect element — only redirects when the route is actually rendered
 const ExternalRedirect = ({ url }) => {
@@ -466,6 +469,12 @@ const router = createBrowserRouter([
       { path: "ComputerLecture1FundamentalsTest", element: <ComputerLecture1FundamentalsTestMockTestPage /> },
     
       { path: "ComputerOperatingSystemlecture3", element: <ComputerOperatingSystemlecture3MockTestPage /> },
+    
+      { path: "heat-and-light-test-1", element: <HeatAndLightTest1MockTestPage /> },
+    
+      { path: "electricity-and-magnetism-test-1", element: <ElectricityAndMagnetismTest1MockTestPage /> },
+    
+      { path: "gravitation-pressure-elasticity-waves-test-1", element: <GravitationPressureElasticityWavesTest1MockTestPage /> },
     ],
   },
   {
