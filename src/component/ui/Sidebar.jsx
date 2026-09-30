@@ -2,7 +2,7 @@
 import { cn } from "../utils/utils";
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { IconMenu2, IconX, IconLogout } from "@tabler/icons-react";
+import {  IconX, IconLogout } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
 import {
   SignedIn,
@@ -18,6 +18,7 @@ import SearchBar from "../../components/SearchBar";
 import { ThemeContext } from "../../context/ThemeContext.jsx";
 import LanguageSwitcher from "../language-switcher";
 import NotificationBell from "../NotificationBell";
+import { EllipsisVertical } from "lucide-react";
 
 const SidebarContext = createContext(undefined);
 const MobileDrawerContext = createContext(false);
@@ -186,7 +187,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
       <div
         className={cn(
           `${isAdmin ? "mt-[30px]" : ""
-          } fixed z-999 flex flex-col lg:hidden bg-[#F1F4F6] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
+          } fixed z-999 flex flex-col lg:hidden bg-[#fff] dark:bg-[#121212] w-full dark:border-[#363636] border-1 border-s border-b-[#DFE4E8]`,
           "safe-top safe-left safe-right"
         )}
         {...props}
@@ -207,7 +208,7 @@ export const MobileSidebar = ({ className, children, ...props }) => {
           {/* Right — install + user */}
           <div className="flex items-center gap-1 shrink-0">
             <InstallPWAButton />
-            <IconMenu2
+            <EllipsisVertical
               className="text-neutral-800 dark:text-neutral-200 cursor-pointer"
               onClick={() => setOpen(!open)}
             />
