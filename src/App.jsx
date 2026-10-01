@@ -478,9 +478,7 @@ const router = createBrowserRouter([
   {
     path: "/free-mock-test",
     element: (
-      <ProtectedRoute>
         <TestLayout />
-      </ProtectedRoute>
     ),
     children: [
       { path: "current-affairs-pyq-2026-test-1", element: <CurrentAffairsPyqTest1MockTestPage /> },
