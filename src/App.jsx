@@ -180,9 +180,7 @@ const router = createBrowserRouter([
       {
         path: "free-tests/*",
         element: (
-          <ProtectedRoute>
             <FreeTestsPage />
-          </ProtectedRoute>
         ),
       },
       {
