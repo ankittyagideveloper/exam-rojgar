@@ -7,7 +7,7 @@ export const manifestForPlugIn = {
     rollupFormat: 'iife',
     maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // 6 MiB — covers the current ~5.2 MiB main bundle
   },
-  includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+  includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg", "examrojgar-logo-s.png","**/*.png", "**/*.webp"],
   manifest: {
     name: "Exam Rojgaar",
     short_name: "Exam Rojgaar",
