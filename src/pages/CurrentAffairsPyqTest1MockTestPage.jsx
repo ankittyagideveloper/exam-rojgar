@@ -9,7 +9,7 @@ const CurrentAffairsPyqTest1MockTestPage = () => {
 
   return (
     <div className="w-full h-screen">
-      <TestSeries testData={currentAffairsPyqTest1MockData} onComplete={handleComplete} />
+      <TestSeries testData={currentAffairsPyqTest1MockData} onComplete={handleComplete} isfreeTest={true}  />
     </div>
   );
 };

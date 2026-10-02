@@ -82,7 +82,7 @@ function paletteClass(status, active) {
 }
 
 // ─── main component ───────────────────────────────────────────────────────────
-const TestSeries = ({ testData }) => {
+const TestSeries = ({ testData,isfreeTest=false}) => {
   const { isLoaded, isSignedIn, user } = useUser();
   const { isFullScreen, toggleFullscreen } = useFullscreen();
 
@@ -489,9 +489,6 @@ const TestSeries = ({ testData }) => {
     return { msg: "No issue, this is your starting point.", sub: "Deeply analyze your mistakes below. Build concepts before speed.", color: "bg-red-50" };
   };
 
-  if (!isLoaded) {
-    return <p>Loading...</p>;
-  }
 
 
   // ═══════════════════════════ RENDER ══════════════════════════════════════
