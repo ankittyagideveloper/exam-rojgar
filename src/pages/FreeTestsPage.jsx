@@ -1,14 +1,80 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
-import { useUser } from "@clerk/clerk-react";
 import TestCard2 from "../component/TestCard2";
 import { QuizCard } from "../component/QuizCard";
 import { freeTestsData, countFreeTests } from "../data/freeTestsMockData";
+import { freeTestDataRegistry } from "../data/freeTestDataRegistry";
+import {
+  saveTestOffline,
+  getOfflineTest,
+  deleteOfflineTest,
+} from "../db/offlineTestCache";
 
+/**
+ * Per-test card: owns its own download / remove state.
+ * Checks IndexedDB on mount; handles async lazy-load of test data on download.
+ */
+function FreeTestQuizCard({ test, onStartClick }) {
+  const loadData = freeTestDataRegistry[test.id];
+
+  const [isDownloaded, setIsDownloaded] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  // Check IDB on mount
+  React.useEffect(() => {
+    if (!loadData) return;
+    getOfflineTest(test.id).then((rec) => {
+      if (rec) setIsDownloaded(true);
+    });
+  }, [test.id, loadData]);
+
+  const handleDownload = useCallback(async () => {
+    if (!loadData || isDownloading || isDownloaded) return;
+    setIsDownloading(true);
+    try {
+      const testData = await loadData();
+      await saveTestOffline(test.id, testData, {
+        title: test.title,
+        route: test.route,
+        questions: test.questions,
+        marks: test.marks,
+        duration: test.duration,
+      });
+      setIsDownloaded(true);
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [loadData, isDownloading, isDownloaded, test]);
+
+  const handleRemove = useCallback(async () => {
+    await deleteOfflineTest(test.id);
+    setIsDownloaded(false);
+  }, [test.id]);
+
+  return (
+    <QuizCard
+      title={test.title}
+      questions={test.questions}
+      marks={test.marks}
+      duration={test.duration}
+      languages={test.languages ?? []}
+      isFree={true}
+      isNewInterface={true}
+      isPaid={true}
+      onStartClick={() => onStartClick(test)}
+      testUrl={test.route}
+      isDownloaded={isDownloaded}
+      isDownloading={isDownloading}
+      onDownload={loadData ? handleDownload : undefined}
+      onRemoveDownload={handleRemove}
+    />
+  );
+}
+
+// ─── Main page ───────────────────────────────────────────────────────────────
 const FreeTestsPage = () => {
-  const { user } = useUser();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -59,51 +125,6 @@ const FreeTestsPage = () => {
         />
       </Helmet>
 
-      {/* Page header
-      <div className="px-5 pt-6 pb-2 flex items-center gap-3">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-              {isRoot ? "Free Tests & Quizzes" : pageTitle}
-            </h1>
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider bg-green-100 text-green-700 border border-green-300 uppercase">
-              Free
-            </span>
-          </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-            {isRoot
-              ? "Login required · No subscription needed · Attempt anytime"
-              : current?.description ?? ""}
-          </p>
-        </div>
-      </div> */}
-
-      {/* Breadcrumb (non-root) */}
-      {/* {!isRoot && (
-        <nav className="px-5 mb-2 flex items-center gap-1 text-xs text-gray-400">
-          <button
-            onClick={() => navigate("/free-tests")}
-            className="hover:text-[#1272ba] transition-colors cursor-pointer"
-          >
-            Free Tests
-          </button>
-          {pathSegments.map((seg, idx) => {
-            const href = `/free-tests/${pathSegments.slice(0, idx + 1).join("/")}`;
-            return (
-              <React.Fragment key={seg}>
-                <span>/</span>
-                <button
-                  onClick={() => navigate(href)}
-                  className="hover:text-[#1272ba] transition-colors capitalize cursor-pointer"
-                >
-                  {seg.replace(/-/g, " ")}
-                </button>
-              </React.Fragment>
-            );
-          })}
-        </nav>
-      )} */}
-
       {/* Category / Subcategory cards */}
       {(isRoot || current?.subcategories) && (
         <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -138,7 +159,7 @@ const FreeTestsPage = () => {
 
       {/* Test list */}
       {!isRoot && current?.tests && (
-        <div className="mx-4 mt-4 md:mt-0 mb-28 flex flex-col gap-4">
+        <div className="mx-4 mt-6 md:mt-0 mb-28 flex flex-col gap-4">
           {current.tests.length === 0 ? (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -155,18 +176,10 @@ const FreeTestsPage = () => {
             </motion.div>
           ) : (
             current.tests.map((test) => (
-              <QuizCard
+              <FreeTestQuizCard
                 key={test.id}
-                title={test.title}
-                questions={test.questions}
-                marks={test.marks}
-                duration={test.duration}
-                languages={test.languages ?? []}
-                isFree={true}
-                isNewInterface={true}
-                isPaid={true}
-                onStartClick={() => handleTestClick(test)}
-                testUrl={test.route}
+                test={test}
+                onStartClick={handleTestClick}
               />
             ))
           )}
