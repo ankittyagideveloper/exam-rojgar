@@ -1,57 +1,57 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import TestCard2 from "../component/TestCard2";
 import { QuizCard } from "../component/QuizCard";
 import { freeTestsData, countFreeTests } from "../data/freeTestsMockData";
-import { freeTestDataRegistry } from "../data/freeTestDataRegistry";
-import {
-  saveTestOffline,
-  getOfflineTest,
-  deleteOfflineTest,
-} from "../db/offlineTestCache";
+// import { freeTestDataRegistry } from "../data/freeTestDataRegistry";
+// import {
+//   saveTestOffline,
+//   getOfflineTest,
+//   deleteOfflineTest,
+// } from "../db/offlineTestCache";
 
 /**
  * Per-test card: owns its own download / remove state.
  * Checks IndexedDB on mount; handles async lazy-load of test data on download.
  */
 function FreeTestQuizCard({ test, onStartClick }) {
-  const loadData = freeTestDataRegistry[test.id];
+  // const loadData = freeTestDataRegistry[test.id];
 
-  const [isDownloaded, setIsDownloaded] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
+  // const [isDownloaded, setIsDownloaded] = useState(false);
+  // const [isDownloading, setIsDownloading] = useState(false);
 
-  // Check IDB on mount
-  React.useEffect(() => {
-    if (!loadData) return;
-    getOfflineTest(test.id).then((rec) => {
-      if (rec) setIsDownloaded(true);
-    });
-  }, [test.id, loadData]);
+  // // Check IDB on mount
+  // React.useEffect(() => {
+  //   if (!loadData) return;
+  //   getOfflineTest(test.id).then((rec) => {
+  //     if (rec) setIsDownloaded(true);
+  //   });
+  // }, [test.id, loadData]);
 
-  const handleDownload = useCallback(async () => {
-    if (!loadData || isDownloading || isDownloaded) return;
-    setIsDownloading(true);
-    try {
-      const testData = await loadData();
-      await saveTestOffline(test.id, testData, {
-        title: test.title,
-        route: test.route,
-        questions: test.questions,
-        marks: test.marks,
-        duration: test.duration,
-      });
-      setIsDownloaded(true);
-    } finally {
-      setIsDownloading(false);
-    }
-  }, [loadData, isDownloading, isDownloaded, test]);
+  // const handleDownload = useCallback(async () => {
+  //   if (!loadData || isDownloading || isDownloaded) return;
+  //   setIsDownloading(true);
+  //   try {
+  //     const testData = await loadData();
+  //     await saveTestOffline(test.id, testData, {
+  //       title: test.title,
+  //       route: test.route,
+  //       questions: test.questions,
+  //       marks: test.marks,
+  //       duration: test.duration,
+  //     });
+  //     setIsDownloaded(true);
+  //   } finally {
+  //     setIsDownloading(false);
+  //   }
+  // }, [loadData, isDownloading, isDownloaded, test]);
 
-  const handleRemove = useCallback(async () => {
-    await deleteOfflineTest(test.id);
-    setIsDownloaded(false);
-  }, [test.id]);
+  // const handleRemove = useCallback(async () => {
+  //   await deleteOfflineTest(test.id);
+  //   setIsDownloaded(false);
+  // }, [test.id]);
 
   return (
     <QuizCard
@@ -65,10 +65,10 @@ function FreeTestQuizCard({ test, onStartClick }) {
       isPaid={true}
       onStartClick={() => onStartClick(test)}
       testUrl={test.route}
-      isDownloaded={isDownloaded}
-      isDownloading={isDownloading}
-      onDownload={loadData ? handleDownload : undefined}
-      onRemoveDownload={handleRemove}
+      // isDownloaded={isDownloaded}
+      // isDownloading={isDownloading}
+      // onDownload={loadData ? handleDownload : undefined}
+      // onRemoveDownload={handleRemove}
     />
   );
 }
