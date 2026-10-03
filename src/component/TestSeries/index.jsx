@@ -1,5 +1,5 @@
 import { useUser } from "@clerk/clerk-react";
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, useContext } from "react";
 import { Button } from "@/components";
 import { Link } from "react-router";
 import { useFullscreen } from "@/hooks";
@@ -8,6 +8,8 @@ import {
 } from "@tabler/icons-react";
 import { PreviousAttemptModal } from "./PreviousAttemptModal";
 import { CircleUserRound } from "lucide-react";
+import { ThemeContext } from "@/context/ThemeContext";
+import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 
 /**
  * TestSeries — Railway CBT-style mock test component
@@ -73,7 +75,7 @@ function paletteClass(status, active) {
   const base =
     "w-10 h-10 flex items-center justify-center font-semibold text-sm cursor-pointer transition-all relative select-none ";
   const highlight = active ? "ring-2 ring-blue-600 scale-110 shadow-lg " : "";
-  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-gray-200 text-gray-700 border border-gray-300 rounded";
+  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-gray-200 dark:bg-[#2e2e2e] text-gray-700 dark:text-neutral-200 border border-gray-300 dark:border-[#363636] rounded";
   if (status === STATUS.NOT_ANSWERED) return base + highlight + "bg-red-500 text-white rounded-br-2xl";
   if (status === STATUS.ANSWERED) return base + highlight + "bg-green-500 text-white rounded-tl-2xl";
   if (status === STATUS.MARKED) return base + highlight + "bg-purple-500 text-white rounded-full";
@@ -85,6 +87,7 @@ function paletteClass(status, active) {
 const TestSeries = ({ testData,isfreeTest=false}) => {
   const { isLoaded, isSignedIn, user } = useUser();
   const { isFullScreen, toggleFullscreen } = useFullscreen();
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
 
 
@@ -493,7 +496,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
   // ═══════════════════════════ RENDER ══════════════════════════════════════
   return (
-    <div className="w-full h-screen overflow-hidden flex flex-col font-sans text-slate-800 antialiased">
+    <div className="w-full h-screen overflow-hidden flex flex-col font-sans text-slate-800 dark:text-neutral-100 antialiased dark:bg-[#121212]">
       {/* Danger flash overlay */}
       {dangerFlash && (
         <div className="fixed inset-0 bg-red-500/30 pointer-events-none z-[9999] animate-pulse" />
@@ -501,7 +504,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
       {/* ══ HOME SCREEN ══════════════════════════════════════════════════════ */}
       {screen === SCREENS.HOME && (
-        <div className="flex flex-col min-h-screen bg-[#e4e9f0] text-[13px] overflow-auto">
+        <div className="flex flex-col min-h-screen bg-[#e4e9f0] dark:bg-[#121212] text-[13px] overflow-auto">
           {/* Ticker banner */}
           {/* <div className="bg-black text-center py-1 border-b border-gray-700 shrink-0">
             <span className="font-bold text-sm text-yellow-300 tracking-widest">
@@ -521,20 +524,27 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                 {title}
               </div>
             </div>
-            <div className="hidden md:block text-right text-xs text-gray-300">
-              <div>System Name:</div>
-              <div className="font-bold text-sm text-white">C001</div>
+            <div className="flex items-center gap-3">
+              <DarkModeToggle
+                darkMode={darkMode}
+                onToggle={toggleDarkMode}
+                className={!darkMode ? "border-white/60 bg-white/20 hover:bg-white/30 focus-visible:ring-white" : ""}
+              />
+              <div className="hidden md:block text-right text-xs text-gray-300">
+                <div>System Name:</div>
+                <div className="font-bold text-sm text-white">C001</div>
+              </div>
             </div>
           </div>
 
           {/* Main content */}
           <div className="flex-1 flex flex-col md:flex-row gap-2 p-2 overflow-auto">
             {/* Instructions panel */}
-            <div className="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden min-h-[300px]">
-              <div className="bg-[#1272BA] text-white py-2 px-4 font-bold text-sm border-b border-gray-400 shrink-0">
+            <div className="flex-[3] bg-white dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm flex flex-col overflow-hidden min-h-[300px]">
+              <div className="bg-[#1272BA] text-white py-2 px-4 font-bold text-sm border-b border-gray-400 dark:border-[#363636] shrink-0">
                 Instructions
               </div>
-              <div className="p-4 md:p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px]">
+              <div className="p-4 md:p-5 overflow-y-auto text-[#333] dark:text-neutral-200 leading-relaxed text-[13px]">
                 <h4 className="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
                 <p className="font-bold mb-2 underline">General Instructions:</p>
                 <ol className="list-decimal pl-5 space-y-2 mb-5">
@@ -543,7 +553,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                   <li>The Question Palette shows the status of each question using:
                     <ul className="list-none pl-2 mt-2 space-y-2 font-medium">
                       <li className="flex items-center gap-2">
-                        <div className="w-7 h-7 bg-gray-200 border border-gray-300 rounded flex items-center justify-center font-bold text-gray-600 text-xs shrink-0">1</div>
+                        <div className="w-7 h-7 bg-gray-200 dark:bg-[#2e2e2e] border border-gray-300 dark:border-[#363636] rounded flex items-center justify-center font-bold text-gray-600 dark:text-neutral-300 text-xs shrink-0">1</div>
                         Not visited yet.
                       </li>
                       <li className="flex items-center gap-2">
@@ -578,19 +588,19 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
             {/* Right panel */}
             <div className="flex-[1.2] flex flex-col gap-2 min-w-[260px] md:min-w-[280px]">
               {/* Info card */}
-              <div className="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
-                <div className="w-20 h-24 border-2 border-gray-400 bg-white flex items-center justify-center mb-3 text-gray-300 text-5xl shadow-inner overflow-hidden">
+              <div className="bg-[#f5f7f8] dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col items-center">
+                <div className="w-20 h-24 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center mb-3 text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
                   {profileImageUrl ?<img src={profileImageUrl} alt='user-profile' />: <CircleUserRound size={42} />}
                 </div>
                 <div className="w-full text-[13px] space-y-2">
                   {[
-                    ["Paper Name", paperName, "text-[#1e5086]"],
-                    ["Subject", subject, "text-gray-800"],
-                    ["Duration", `${duration} Mins`, "text-[#1e5086]"],
-                    ["Date", todayStr(), "text-gray-800"],
+                    ["Paper Name", paperName, "text-[#1e5086] dark:text-[#5aaef0]"],
+                    ["Subject", subject, "text-gray-800 dark:text-neutral-200"],
+                    ["Duration", `${duration} Mins`, "text-[#1e5086] dark:text-[#5aaef0]"],
+                    ["Date", todayStr(), "text-gray-800 dark:text-neutral-200"],
                   ].map(([label, value, cls]) => (
-                    <div key={label} className="flex items-center justify-between border-b border-gray-300 pb-1">
-                      <span className="font-bold text-gray-700">{label}:</span>
+                    <div key={label} className="flex items-center justify-between border-b border-gray-300 dark:border-[#363636] pb-1">
+                      <span className="font-bold text-gray-700 dark:text-neutral-400">{label}:</span>
                       <span className={`text-right font-bold truncate ml-2 ${cls}`}>{value}</span>
                     </div>
                   ))}
@@ -598,11 +608,11 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
               </div>
 
               {/* Candidate details */}
-              <div className="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col flex-1">
-                <div className="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-3">Candidate Details</div>
+              <div className="bg-[#f5f7f8] dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col flex-1">
+                <div className="font-bold text-[#1e5086] dark:text-[#5aaef0] border-b border-gray-400 dark:border-[#363636] pb-2 mb-3">Candidate Details</div>
                 <div className="space-y-3 flex-1">
                   <div>
-                    <label className="text-[13px] font-bold text-gray-800 block mb-1">
+                    <label className="text-[13px] font-bold text-gray-800 dark:text-neutral-200 block mb-1">
                       Enter Your Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -610,12 +620,12 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                       value={candidateName}
                       onChange={(e) => setCandidateName(e.target.value)}
                       placeholder="e.g. Ankit Tyagi"
-                      className="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]"
+                      className="w-full border border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] dark:text-neutral-100 dark:placeholder-neutral-500 p-1.5 text-[13px] focus:outline-none focus:border-[#1272ba] focus:ring-1 focus:ring-[#1272ba]"
                     />
                   </div>
                   <div>
-                    <label className="text-[13px] font-bold text-gray-800 block mb-1">Are you an ExamRojgaar mock group member?</label>
-                    <div className="flex gap-6 text-[13px] bg-white p-2 border border-gray-300">
+                    <label className="text-[13px] font-bold text-gray-800 dark:text-neutral-200 block mb-1">Are you an ExamRojgaar mock group member?</label>
+                    <div className="flex gap-6 text-[13px] bg-white dark:bg-[#2C2C2C] dark:text-neutral-200 p-2 border border-gray-300 dark:border-[#363636]">
                       {["Yes", "No"].map((v) => (
                         <label key={v} className="flex items-center gap-1.5 cursor-pointer font-medium">
                           <input type="radio" name="is_member" value={v} checked={isMember === v} onChange={() => setIsMember(v)} className="accent-[#1e5086] w-3.5 h-3.5" />
@@ -625,12 +635,12 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-3 space-y-2 border-t border-gray-400 pt-3">
-                  <Button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
-                    View Previous Attempts <span className="text-[#1e5086]">📋</span>
+                <div className="mt-3 space-y-2 border-t border-gray-400 dark:border-[#363636] pt-3">
+                  <Button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
+                    View Previous Attempts <span className="text-[#1e5086] dark:text-[#5aaef0]">📋</span>
                   </Button>
-                  <Button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold transition-colors flex justify-between items-center">
-                    Saved Questions Section <span className="text-[#1e5086]">🔖</span>
+                  <Button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
+                    Saved Questions Section <span className="text-[#1e5086] dark:text-[#5aaef0]">🔖</span>
                   </Button>
                 </div>
               </div>
@@ -638,22 +648,29 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
           </div>
 
           {/* Bottom bar */}
-          <div className="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shrink-0">
+          <div className="bg-[#f8f9fa] dark:bg-[#1e1e1e] border-t border-gray-400 dark:border-[#363636] shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shrink-0">
             <div className="flex-1 w-full text-[13px]">
               <div className="mb-2 flex items-center gap-2 flex-wrap">
-                <span className="text-red-600 font-bold">Choose your default language:</span>
+                <span className="text-red-600 dark:text-red-400 font-bold">Choose your default language:</span>
                 <select
                   value={defaultLang}
                   onChange={(e) => { setDefaultLang(e.target.value); setCurrentLang(e.target.value === "hi" ? "hin" : "eng"); }}
-                  className="border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold"
+                  className="border border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] dark:text-neutral-100 p-0.5 text-sm focus:outline-none text-gray-800 font-bold"
                 >
                   <option value="en">English</option>
                   <option value="hi">Hindi</option>
                 </select>
               </div>
               <div className="flex items-start gap-2">
-                <input type="checkbox" id="decl" checked={declaration} onChange={(e) => setDeclaration(e.target.checked)} className="mt-1 w-4 h-4 cursor-pointer shrink-0" />
-                <label htmlFor="decl" className="text-gray-800 cursor-pointer font-medium leading-snug">
+                <input
+                  type="checkbox"
+                  id="decl"
+                  checked={declaration}
+                  onChange={(e) => setDeclaration(e.target.checked)}
+                  onKeyDown={(e) => { if (e.key === "Enter") setDeclaration((v) => !v); }}
+                  className="mt-1 w-4 h-4 cursor-pointer shrink-0 accent-[#1272ba] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1272ba] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#1e1e1e]"
+                />
+                <label htmlFor="decl" className="text-gray-800 dark:text-neutral-300 cursor-pointer font-medium leading-snug">
                   I have read and understood the instructions. I agree that in case of not adhering to the instructions, I will be disqualified.
                 </label>
               </div>
@@ -690,10 +707,10 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
         const saved = isQuestionSaved(q);
 
         return (
-          <div className="flex-1 flex flex-col overflow-hidden bg-white w-full border border-gray-300 md:w-[96vw] md:h-[88vh] md:mx-auto md:my-auto md:shadow-md">
+          <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-[#121212] w-full border border-gray-300 dark:border-[#363636] md:w-[96vw] md:h-[88vh] md:mx-auto md:my-auto md:shadow-md">
             {/* Top bar */}
-            <div className="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 z-10">
-              <div className="font-bold text-sm md:text-base text-slate-800 truncate hidden md:block">
+            <div className="bg-white dark:bg-[#262626] border-b border-gray-300 dark:border-[#363636] shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 z-10">
+              <div className="font-bold text-sm md:text-base text-slate-800 dark:text-neutral-100 truncate hidden md:block">
                 {title}
               </div>
               <div className="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
@@ -702,16 +719,17 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                   <select
                     value={currentLang}
                     onChange={(e) => setCurrentLang(e.target.value)}
-                    className="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500"
+                    className="border border-gray-300 dark:border-[#363636] rounded px-1 py-1 text-xs md:text-sm bg-gray-50 dark:bg-[#2C2C2C] dark:text-neutral-100 outline-none focus:border-[#1272ba]"
                   >
                     <option value="eng">English</option>
                     <option value="hin">Hindi</option>
                   </select>
+                  <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
                   <button className="hidden md:block border-none bg-none 	pointer text-inherit px-2" onClick={toggleFullscreen}>
                     {isFullScreen ?  <IconMinimize />:<IconMaximize />}
                   </button>
                 </div>
-                <div className={`border px-2 md:px-4 py-1 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold justify-center min-w-[80px] ${timerDanger ? "bg-red-100 border-red-500 text-red-600" : "bg-gray-100 border-gray-300 text-slate-700"}`}>
+                <div className={`border px-2 md:px-4 py-1 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold justify-center min-w-[80px] ${timerDanger ? "bg-red-100 dark:bg-red-950/60 border-red-500 text-red-600 dark:text-red-400" : "bg-gray-100 dark:bg-[#2C2C2C] border-gray-300 dark:border-[#363636] text-slate-700 dark:text-neutral-200"}`}>
                   <span>⏱</span>
                   <span>{formatTime(timeLeft)}</span>
                 </div>
@@ -726,21 +744,21 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
             <div className="flex flex-1 overflow-hidden relative">
               {/* Question panel */}
-              <div className="flex-1 flex flex-col h-full overflow-hidden bg-white">
+              <div className="flex-1 flex flex-col h-full overflow-hidden bg-white dark:bg-[#121212]">
                 {/* Question header */}
-                <div className="border-b border-gray-200 px-3 py-2 md:px-3 md:py-2 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm">
-                  <div className="font-bold text-blue-800 text-sm md:text-base flex items-center gap-1">
-                    Q. <span className="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">{currentQIndex + 1}</span>
+                <div className="border-b border-gray-200 dark:border-[#363636] px-3 py-2 md:px-3 md:py-2 bg-gray-50 dark:bg-[#1e1e1e] flex justify-between items-center shrink-0 shadow-sm">
+                  <div className="font-bold text-blue-800 dark:text-[#5aaef0] text-sm md:text-base flex items-center gap-1">
+                    Q. <span className="bg-blue-100 dark:bg-[#1272ba]/20 px-2 py-0.5 rounded text-blue-900 dark:text-[#5aaef0] border border-blue-200 dark:border-[#1272ba]/40">{currentQIndex + 1}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Button
                       onClick={toggleSaveQuestion}
-                      className={`px-2 py-1.5 text-xs rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? "bg-amber-50 border-amber-300 text-amber-700" : "bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300"}`}
+                      className={`px-2 py-1.5 text-xs rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? "bg-amber-50 dark:bg-amber-950/50 border-amber-300 dark:border-amber-700 text-amber-700 dark:text-amber-400" : "bg-white dark:bg-[#2C2C2C] border-gray-300 dark:border-[#363636] text-gray-600 dark:text-neutral-300 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:border-amber-300"}`}
                     >
                       <span>{saved ? "★" : "☆"}</span>
                       <span className="hidden sm:inline">{saved ? "Saved" : "Save Question"}</span>
                     </Button>
-                    <span className="text-xs font-semibold text-gray-600 hidden sm:inline">+{marksCorrect}, -{marksWrong}</span>
+                    <span className="text-xs font-semibold text-gray-600 dark:text-neutral-400 hidden sm:inline">+{marksCorrect}, -{marksWrong}</span>
                     <Button
                       onClick={() => setShowMobilePalette(true)}
                       className="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-2 py-1 rounded bg-blue-50 text-xs shadow-sm"
@@ -752,7 +770,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
                 {/* Question content */}
                 <div className="flex-1 overflow-y-auto p-4 md:p-5 text-sm md:text-base">
-                  <div className="mb-5 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap">{qText}</div>
+                  <div className="mb-5 font-medium text-slate-800 dark:text-neutral-100 leading-relaxed whitespace-pre-wrap">{qText}</div>
                   <div className="space-y-2 max-w-3xl">
                     {opts.map((optText, i) => {
                       const isSelected = state.selectedOption === i;
@@ -760,12 +778,12 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                         <div
                           key={i}
                           onClick={() => selectOption(i)}
-                          className={`p-3 rounded flex items-center gap-3 cursor-pointer transition-all border ${isSelected ? "bg-blue-50 border-blue-500" : "border-gray-200 hover:bg-gray-50"}`}
+                          className={`p-3 rounded flex items-center gap-3 cursor-pointer transition-all border ${isSelected ? "bg-[#1272ba]/10 dark:bg-[#1272ba]/20 border-[#1272ba]" : "border-gray-200 dark:border-[#363636] hover:bg-gray-50 dark:hover:bg-[#1e1e1e]"}`}
                         >
-                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? "border-blue-600 bg-blue-600" : "border-gray-400"}`}>
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? "border-[#1272ba] bg-[#1272ba]" : "border-gray-400 dark:border-[#4a4a4a]"}`}>
                             {isSelected && <div className="w-2 h-2 bg-white rounded-full" />}
                           </div>
-                          <span className={`font-medium ${isSelected ? "text-blue-900" : "text-slate-700"}`}>
+                          <span className={`font-medium ${isSelected ? "text-[#1272ba] dark:text-[#5aaef0]" : "text-slate-700 dark:text-neutral-200"}`}>
                             {String.fromCharCode(65 + i)}. {optText}
                           </span>
                         </div>
@@ -775,12 +793,12 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                 </div>
 
                 {/* Action bar */}
-                <div className="w-full bg-white border-t border-gray-300 p-2 md:p-3 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                <div className="w-full bg-white dark:bg-[#262626] border-t border-gray-300 dark:border-[#363636] p-2 md:p-3 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
                   <div className="flex gap-2 w-full sm:w-auto">
-                    <Button onClick={markForReview} className="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
+                    <Button onClick={markForReview} className="flex-1 sm:flex-none bg-[#1272ba] hover:bg-[#1260ba] text-white font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
                       Mark Review
                     </Button>
-                    <Button onClick={clearResponse} className="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
+                    <Button onClick={clearResponse} className="flex-1 sm:flex-none bg-white dark:bg-[#2C2C2C] hover:bg-gray-100 dark:hover:bg-[#363636] text-gray-700 dark:text-neutral-200 border border-gray-400 dark:border-[#363636] font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
                       Clear
                     </Button>
                   </div>
@@ -798,7 +816,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                 />
               )}
               <div
-                className={`fixed inset-y-0 right-0 transform transition-transform duration-300 md:relative md:translate-x-0 w-[85%] max-w-xs md:max-w-none md:w-72 bg-white shadow-xl md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0 ${showMobilePalette ? "translate-x-0" : "translate-x-full"}`}
+                className={`fixed inset-y-0 right-0 transform transition-transform duration-300 md:relative md:translate-x-0 w-[85%] max-w-xs md:max-w-none md:w-72 bg-white dark:bg-[#1e1e1e] shadow-xl md:shadow-none md:border-l md:border-gray-300 dark:md:border-[#363636] z-[60] md:z-auto flex flex-col shrink-0 ${showMobilePalette ? "translate-x-0" : "translate-x-full"}`}
               >
                 <div className="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
                   <span className="text-sm truncate">{candidateName || "Aspirant"}</span>
@@ -806,14 +824,14 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                 </div>
 
                 {/* Legend */}
-                <div className="p-3 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 bg-gray-50 shrink-0">
+                <div className="p-3 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 dark:border-[#363636] bg-gray-50 dark:bg-[#262626] shrink-0">
                   {[
                     ["bg-green-500 rounded-tl-2xl", `${counts.answered} Answered`],
                     ["bg-red-500 rounded-br-2xl", `${counts.notAnswered} Not Ans.`],
-                    ["bg-gray-200 border border-gray-300 rounded", `${counts.notVisited} Not Visited`],
+                    ["bg-[#2e2e2e] border border-[#363636] rounded", `${counts.notVisited} Not Visited`],
                     ["bg-purple-500 rounded-full", `${counts.marked + counts.ansMarked} Marked`],
                   ].map(([cls, label]) => (
-                    <div key={label} className="flex items-center gap-1.5">
+                    <div key={label} className="flex items-center gap-1.5 dark:text-neutral-300">
                       <div className={`w-5 h-5 shrink-0 ${cls}`} />
                       <span>{label}</span>
                     </div>
@@ -821,8 +839,8 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                 </div>
 
                 {/* Grid */}
-                <div className="p-3 flex-1 overflow-y-auto bg-blue-50/30">
-                  <div className="font-bold text-gray-700 mb-2 border-b pb-1 text-xs uppercase">{category}</div>
+                <div className="p-3 flex-1 overflow-y-auto bg-blue-50/30 dark:bg-[#1e1e1e]">
+                  <div className="font-bold text-gray-700 dark:text-neutral-400 mb-2 border-b dark:border-[#363636] pb-1 text-xs uppercase">{category}</div>
                   <div className="grid grid-cols-5 gap-2">
                     {userState.map((s, idx) => (
                       <Button
@@ -846,21 +864,21 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
               const counts2 = getCounts();
               return (
                 <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
-                  <div className="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
-                    <div className="bg-slate-800 p-4 text-white flex items-center gap-3 rounded-t-xl">
+                  <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
+                    <div className="bg-slate-800 dark:bg-[#121212] p-4 text-white flex items-center gap-3 rounded-t-xl">
                       <span className="text-yellow-400 text-2xl">⚠</span>
                       <h3 className="text-xl font-bold">Confirm Submission</h3>
                     </div>
                     <div className="p-5">
-                      <p className="text-slate-700 text-base mb-2">Are you sure you want to submit the test?</p>
-                      <p className="text-sm text-red-600 font-semibold mb-4">Once submitted, you cannot change your answers.</p>
-                      <div className="grid grid-cols-2 gap-4 text-center text-sm mb-5 bg-slate-50 p-4 rounded-lg border">
-                        <div>
+                      <p className="text-slate-700 dark:text-neutral-200 text-base mb-2">Are you sure you want to submit the test?</p>
+                      <p className="text-sm text-red-600 dark:text-red-400 font-semibold mb-4">Once submitted, you cannot change your answers.</p>
+                      <div className="grid grid-cols-2 gap-4 text-center text-sm mb-5 bg-slate-50 dark:bg-[#2C2C2C] p-4 rounded-lg border dark:border-[#363636]">
+                        <div className="dark:text-neutral-300">
                           <span className="block font-bold text-xl text-green-600">{counts2.answered + counts2.ansMarked}</span>
                           Answered
                         </div>
-                        <div>
-                          <span className="block font-bold text-xl text-slate-500">{TOTAL - counts2.answered - counts2.ansMarked}</span>
+                        <div className="dark:text-neutral-300">
+                          <span className="block font-bold text-xl text-slate-500 dark:text-neutral-400">{TOTAL - counts2.answered - counts2.ansMarked}</span>
                           Unanswered
                         </div>
                       </div>
@@ -893,7 +911,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
         });
 
         return (
-          <div className="flex-1 bg-slate-50 overflow-y-auto">
+          <div className="flex-1 bg-slate-50 dark:bg-[#121212] overflow-y-auto">
             {/* Header */}
             <div className="bg-slate-800 text-white p-4 md:p-6 shadow-md shrink-0">
               <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
@@ -901,7 +919,8 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                   <h1 className="text-xl md:text-2xl font-bold">Performance Dashboard</h1>
                   <p className="text-blue-400 font-medium mt-1 text-sm">EXAM ROJGAAR MOCKS · {paperName}</p>
                 </div>
-                <div className="flex gap-2 flex-wrap">
+                <div className="flex gap-2 flex-wrap items-center">
+                  <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
                   {isHistoryMode && (
                     <Button onClick={returnFromHistory} className="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded text-sm font-semibold transition-colors">
                       ← Back to Home
@@ -916,7 +935,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
             <div className="max-w-7xl mx-auto p-3 md:p-5 space-y-5 pb-20">
               {/* Attempt details */}
-              <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+              <div className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-sm border border-slate-200 dark:border-[#363636] p-4">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                   {[
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
@@ -925,8 +944,8 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     ["Date", isHistoryMode && historyAttempt ? historyAttempt.date : todayStr(), "border-amber-500"],
                   ].map(([label, val, border]) => (
                     <div key={label} className={`border-l-4 ${border} pl-3`}>
-                      <div className="text-xs font-bold text-slate-500 uppercase tracking-wide">{label}</div>
-                      <div className="font-bold text-slate-800 mt-0.5 break-words">{val}</div>
+                      <div className="text-xs font-bold text-slate-500 dark:text-neutral-400 uppercase tracking-wide">{label}</div>
+                      <div className="font-bold text-slate-800 dark:text-neutral-100 mt-0.5 break-words">{val}</div>
                     </div>
                   ))}
                 </div>
@@ -934,11 +953,11 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
               {/* Feedback + stats */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <div className="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-5 relative overflow-hidden">
+                <div className="lg:col-span-2 bg-white dark:bg-[#1e1e1e] rounded-xl shadow-sm border border-slate-200 dark:border-[#363636] p-5 relative overflow-hidden">
                   <div className={`absolute top-0 right-0 w-28 h-28 opacity-10 rounded-bl-full translate-x-8 -translate-y-8 ${fb.color}`} />
-                  <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
-                  <div className="text-xl md:text-2xl font-bold text-slate-800 leading-tight mb-3">{fb.msg}</div>
-                  <p className="text-slate-600">{fb.sub}</p>
+                  <h2 className="text-sm font-bold text-slate-500 dark:text-neutral-400 uppercase tracking-wider mb-2">Mentor Review</h2>
+                  <div className="text-xl md:text-2xl font-bold text-slate-800 dark:text-neutral-100 leading-tight mb-3">{fb.msg}</div>
+                  <p className="text-slate-600 dark:text-neutral-300">{fb.sub}</p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-5 text-white flex flex-col justify-center items-center text-center relative overflow-hidden">
                   <span className="absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 -rotate-12">🏆</span>
@@ -961,13 +980,13 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
               {/* Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
-                  ["Final Score", `${r.score} / ${MAX_SCORE}`, "text-slate-800 text-2xl md:text-3xl"],
-                  ["Attempted", `${r.attempted} / ${TOTAL}`, "text-blue-600 text-2xl md:text-3xl"],
+                  ["Final Score", `${r.score} / ${MAX_SCORE}`, "text-slate-800 dark:text-neutral-100 text-2xl md:text-3xl"],
+                  ["Attempted", `${r.attempted} / ${TOTAL}`, "text-blue-600 dark:text-[#5aaef0] text-2xl md:text-3xl"],
                   ["Correct / Wrong", null, "text-2xl"],
                   ["Attempt Number", isHistoryMode && historyAttempt ? historyAttempt.attemptNumber : currentAttemptNumber, "text-yellow-500 text-2xl md:text-3xl"],
                 ].map((item, i) => (
-                  <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200 text-center">
-                    <div className="text-slate-500 text-xs font-semibold mb-1">{item[0]}</div>
+                  <div key={i} className="bg-white dark:bg-[#1e1e1e] p-4 rounded-xl shadow-sm border border-slate-200 dark:border-[#363636] text-center">
+                    <div className="text-slate-500 dark:text-neutral-400 text-xs font-semibold mb-1">{item[0]}</div>
                     {i === 2 ? (
                       <div className="text-2xl font-bold">
                         <span className="text-green-500">{r.correct}</span>
@@ -993,13 +1012,13 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
               {/* Analysis */}
               <div>
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 mt-4">
-                  <h3 className="text-xl font-bold text-slate-800">Detailed Question Analysis</h3>
+                  <h3 className="text-xl font-bold text-slate-800 dark:text-neutral-100">Detailed Question Analysis</h3>
                   <div className="flex gap-2 flex-wrap">
                     {["all", "correct", "wrong", "skipped"].map((f) => (
                       <Button
                         key={f}
                         onClick={() => setAnalysisFilter(f)}
-                        className={`px-3 py-1 rounded text-sm font-semibold ${analysisFilter === f ? "bg-blue-600 text-white" : "bg-white border border-slate-300 text-slate-600 hover:bg-slate-50"}`}
+                        className={`px-3 py-1 rounded text-sm font-semibold ${analysisFilter === f ? "bg-[#1272ba] text-white" : "bg-white dark:bg-[#2C2C2C] border border-slate-300 dark:border-[#363636] text-slate-600 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#363636]"}`}
                       >
                         {f.charAt(0).toUpperCase() + f.slice(1)}
                       </Button>
@@ -1015,39 +1034,39 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     const correct = attempted && s.selectedOption === q.ans;
 
                     const badge = !attempted
-                      ? <span className="bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full text-xs font-bold uppercase">Skipped</span>
+                      ? <span className="bg-slate-200 dark:bg-[#2e2e2e] text-slate-700 dark:text-neutral-300 px-2 py-0.5 rounded-full text-xs font-bold uppercase">Skipped</span>
                       : correct
-                        ? <span className="bg-green-100 text-green-700 border border-green-200 px-2 py-0.5 rounded-full text-xs font-bold uppercase">✓ Correct</span>
-                        : <span className="bg-red-100 text-red-700 border border-red-200 px-2 py-0.5 rounded-full text-xs font-bold uppercase">✗ Incorrect</span>;
+                        ? <span className="bg-green-100 dark:bg-green-950/60 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-900 px-2 py-0.5 rounded-full text-xs font-bold uppercase">✓ Correct</span>
+                        : <span className="bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900 px-2 py-0.5 rounded-full text-xs font-bold uppercase">✗ Incorrect</span>;
 
                     return (
-                      <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                        <div className="bg-slate-50 border-b p-3 md:p-4 flex justify-between items-center gap-2">
-                          <span className="font-bold text-slate-800 text-sm">Question {idx + 1}</span>
+                      <div key={idx} className="bg-white dark:bg-[#1e1e1e] rounded-xl shadow-sm border border-slate-200 dark:border-[#363636] overflow-hidden">
+                        <div className="bg-slate-50 dark:bg-[#262626] border-b dark:border-[#363636] p-3 md:p-4 flex justify-between items-center gap-2">
+                          <span className="font-bold text-slate-800 dark:text-neutral-100 text-sm">Question {idx + 1}</span>
                           {badge}
                         </div>
                         <div className="p-4 md:p-5">
                           <div className="mb-4">
-                            <p className="text-slate-800 font-medium mb-2 whitespace-pre-wrap text-sm">
-                              <span className="font-bold text-blue-600">EN:</span> {q.eng}
+                            <p className="text-slate-800 dark:text-neutral-100 font-medium mb-2 whitespace-pre-wrap text-sm">
+                              <span className="font-bold text-blue-600 dark:text-[#5aaef0]">EN:</span> {q.eng}
                             </p>
                             {q.hin && (
-                              <p className="text-slate-600 whitespace-pre-wrap text-sm">
-                                <span className="font-bold text-blue-600">HI:</span> {q.hin}
+                              <p className="text-slate-600 dark:text-neutral-300 whitespace-pre-wrap text-sm">
+                                <span className="font-bold text-blue-600 dark:text-[#5aaef0]">HI:</span> {q.hin}
                               </p>
                             )}
                           </div>
 
                           <div className="mb-4 max-w-3xl space-y-2">
                             {q.optE.map((opt, i) => {
-                              let cls = "border-slate-200 bg-white";
+                              let cls = "border-slate-200 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] dark:text-neutral-200";
                               let marker = null;
                               if (i === q.ans) {
-                                cls = "border-green-500 bg-green-50 font-bold text-green-900";
-                                marker = <span className="ml-auto text-green-500">✓</span>;
+                                cls = "border-green-500 dark:border-green-800 bg-green-50 dark:bg-green-950/50 font-bold text-green-900 dark:text-green-400";
+                                marker = <span className="ml-auto text-green-500 dark:text-green-400">✓</span>;
                               } else if (attempted && s.selectedOption === i) {
-                                cls = "border-red-500 bg-red-50 font-bold text-red-900";
-                                marker = <span className="ml-auto text-red-500">✗</span>;
+                                cls = "border-red-500 dark:border-red-800 bg-red-50 dark:bg-red-950/50 font-bold text-red-900 dark:text-red-400";
+                                marker = <span className="ml-auto text-red-500 dark:text-red-400">✗</span>;
                               }
                               return (
                                 <div key={i} className={`p-3 border rounded flex items-center text-sm ${cls}`}>
@@ -1059,25 +1078,25 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                             })}
                           </div>
 
-                          <div className="p-3 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-3 text-sm mb-4">
-                            <span><span className="text-slate-500 font-semibold">Your Answer: </span><span className={`font-bold ${correct ? "text-green-600" : attempted ? "text-red-600" : "text-slate-500"}`}>{attempted ? String.fromCharCode(65 + s.selectedOption) : "Not Attempted"}</span></span>
-                            <span><span className="text-slate-500 font-semibold">Correct: </span><span className="font-bold text-green-600">{String.fromCharCode(65 + q.ans)}</span></span>
-                            <span><span className="text-slate-500 font-semibold">Time: </span><span className="font-bold text-slate-700">{s.timeSpent}s</span></span>
+                          <div className="p-3 bg-slate-50 dark:bg-[#262626] rounded border border-slate-200 dark:border-[#363636] flex flex-wrap gap-3 text-sm mb-4">
+                            <span><span className="text-slate-500 dark:text-neutral-400 font-semibold">Your Answer: </span><span className={`font-bold ${correct ? "text-green-600 dark:text-green-400" : attempted ? "text-red-600 dark:text-red-400" : "text-slate-500 dark:text-neutral-400"}`}>{attempted ? String.fromCharCode(65 + s.selectedOption) : "Not Attempted"}</span></span>
+                            <span><span className="text-slate-500 dark:text-neutral-400 font-semibold">Correct: </span><span className="font-bold text-green-600 dark:text-green-400">{String.fromCharCode(65 + q.ans)}</span></span>
+                            <span><span className="text-slate-500 dark:text-neutral-400 font-semibold">Time: </span><span className="font-bold text-slate-700 dark:text-neutral-300">{s.timeSpent}s</span></span>
                           </div>
 
-                          <div className="bg-blue-50/50 rounded-lg border border-blue-100 p-4">
-                            <h4 className="font-bold text-blue-800 flex items-center gap-2 mb-3 text-sm">
+                          <div className="bg-blue-50/50 dark:bg-[#1272ba]/10 rounded-lg border border-blue-100 dark:border-[#1272ba]/20 p-4">
+                            <h4 className="font-bold text-blue-800 dark:text-[#5aaef0] flex items-center gap-2 mb-3 text-sm">
                               📖 Detailed Solution
                             </h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
-                                <div className="text-xs font-bold text-blue-500 mb-1 uppercase tracking-wider">English</div>
-                                <div className="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">{q.solE}</div>
+                                <div className="text-xs font-bold text-blue-500 dark:text-[#5aaef0] mb-1 uppercase tracking-wider">English</div>
+                                <div className="text-slate-700 dark:text-neutral-300 text-sm whitespace-pre-wrap leading-relaxed">{q.solE}</div>
                               </div>
                               {q.solH && (
                                 <div>
-                                  <div className="text-xs font-bold text-blue-500 mb-1 uppercase tracking-wider">Hindi</div>
-                                  <div className="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">{q.solH}</div>
+                                  <div className="text-xs font-bold text-blue-500 dark:text-[#5aaef0] mb-1 uppercase tracking-wider">Hindi</div>
+                                  <div className="text-slate-700 dark:text-neutral-300 text-sm whitespace-pre-wrap leading-relaxed">{q.solH}</div>
                                 </div>
                               )}
                             </div>
@@ -1087,7 +1106,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     );
                   })}
                   {filteredQs.length === 0 && (
-                    <div className="text-center text-slate-400 py-10 font-medium">No questions match this filter.</div>
+                    <div className="text-center text-slate-400 dark:text-neutral-500 py-10 font-medium">No questions match this filter.</div>
                   )}
                 </div>
               </div>
