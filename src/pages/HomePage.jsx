@@ -113,7 +113,7 @@ function HomePage() {
               {/* Target Exam Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#1272ba] dark:text-blue-400 text-xs sm:text-sm font-semibold mb-4 w-fit shadow-xs whitespace-nowrap">
                 <Sparkles className="w-4 h-4 text-[#FF7D07] shrink-0" />
-                <span className="whitespace-nowrap">{currentLanguage === "en" ? "Target 2026–27: RRB NTPC & RRB JE Exam Prep" : "लक्ष्य 2026–27: RRB NTPC और RRB JE परीक्षा तैयारी"}</span>
+                <span className="whitespace-nowrap">{currentLanguage === "en" ? "Target 2026: RRB NTPC & RRB JE Exam Prep" : "लक्ष्य 2026–27: RRB NTPC और RRB JE परीक्षा तैयारी"}</span>
               </div>
 
               {currentLanguage === "en" ? (

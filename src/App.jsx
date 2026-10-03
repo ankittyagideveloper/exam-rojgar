@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { lazy, Suspense } from "react";
 import { UpdateToast } from "./component/UpdateToast";
+import AutoNotificationPrompt from "./component/AutoNotificationPrompt";
 import Layout from "./component/Layout";
 import HomePage from "./pages/HomePage";
 import {
@@ -497,6 +498,7 @@ function App() {
           <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
             <RouterProvider router={router} />
             <UpdateToast />
+            <AutoNotificationPrompt />
           </ClerkProvider>
         </ThemeProvider>
       </HelmetProvider>
