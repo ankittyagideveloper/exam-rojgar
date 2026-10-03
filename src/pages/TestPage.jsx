@@ -492,6 +492,7 @@ const TestPage = () => {
               isNewInterface={true}
               isPaid={isPaid}
               testUrl={test.isSpecialMock && test.route}
+              storageKey={test.storageKey}
               onStartClick={() => {
                 if (test.isSpecialMock && test.route) {
                   navigate(test.route);

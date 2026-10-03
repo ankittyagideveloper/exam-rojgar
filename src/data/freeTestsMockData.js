@@ -383,6 +383,7 @@ export const freeTestsData = {
           duration: "120",
           isSpecialMock: true,
           route: "/free-mock-test/current-affairs-pyq-2026-test-1",
+          storageKey: "ExamRojgaar_currentAffairsPyqTest1MockData",
         },
         //{
         //  id: "gk-polity-free-mock-test",

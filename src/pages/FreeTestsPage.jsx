@@ -65,6 +65,7 @@ function FreeTestQuizCard({ test, onStartClick }) {
       isPaid={true}
       onStartClick={() => onStartClick(test)}
       testUrl={test.route}
+      storageKey={test.storageKey}
       // isDownloaded={isDownloaded}
       // isDownloading={isDownloading}
       // onDownload={loadData ? handleDownload : undefined}

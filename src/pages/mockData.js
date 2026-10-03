@@ -48,6 +48,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/harappa",
+                      storageKey: "ExamRojgaar_harappaMockData",
                     },
                     {
                       id: "vedic-mock-2-mock-test",
@@ -62,6 +63,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/vedic-mock-2",
+                      storageKey: "ExamRojgaar_vedicMock2MockData",
                     },
                     {
                       id: "mahajanpad-mock-test",
@@ -76,6 +78,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/mahajanpad",
+                      storageKey: "ExamRojgaar_mahajanpadMockData",
                     },
                     {
                       id: "buddhism-mock-test",
@@ -90,6 +93,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/buddhism",
+                      storageKey: "ExamRojgaar_buddhismMockData",
                     },
                     {
                       id: "jainism-mock-test",
@@ -104,6 +108,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/jainism",
+                      storageKey: "ExamRojgaar_jainismMockData",
                     },
                     {
                       id: "mauryan-empire-mock-test",
@@ -118,6 +123,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/mauryan-empire",
+                      storageKey: "ExamRojgaar_mauryanEmpireMockData",
                     },
                     {
                       id: "post-mauryan-empire-mock-test",
@@ -132,6 +138,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/post-mauryan-empire",
+                      storageKey: "ExamRojgaar_postMauryanEmpireMockData",
                     },
                     {
                       id: "gupta-mock-test",
@@ -146,6 +153,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/gupta",
+                      storageKey: "ExamRojgaar_guptaMockData",
                     },
                     {
                       id: "sangam-mock-test",
@@ -160,6 +168,7 @@ export const mockData = {
                       duration: "13",
                       isSpecialMock: true,
                       route: "/mock-test/sangam",
+                      storageKey: "ExamRojgaar_sangamMockData",
                     }
                   ],
                 },
@@ -185,6 +194,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/delhi-sultanate",
+                      storageKey: "ExamRojgaar_delhiSultanateMockData",
                     },
                     {
                       id: "vijayanagar-bahmani-mock-test",
@@ -199,6 +209,7 @@ export const mockData = {
                       duration: "13",
                       isSpecialMock: true,
                       route: "/mock-test/vijayanagar-bahmani",
+                      storageKey: "ExamRojgaar_vijayanagarBahmaniMockData",
                     },
                     {
                       id: "VijayNagarAndBahmani-mock-test",
@@ -213,6 +224,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/vijay-nagar-and-bahmani",
+                      storageKey: "ExamRojgaar_VijayNagarAndBahmaniMockData",
                     },
                     {
                       id: "Mughal-mock-test",
@@ -227,6 +239,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/mughal",
+                      storageKey: "ExamRojgaar_MughalMockData",
                     },
                     {
                       id: "BhaktiAndSufi-mock-test",
@@ -241,6 +254,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/bhakti-and-sufi",
+                      storageKey: "ExamRojgaar_BhaktiAndSufiMockData",
                     },
                     {
                       id: "Maratha-mock-test",
@@ -255,6 +269,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/maratha",
+                      storageKey: "ExamRojgaar_MarathaMockData",
                     },
 
                     {
@@ -270,6 +285,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/MedievalHistoryRajputAndTriPartite",
+                      storageKey: "ExamRojgaar_MedievalHistoryRajputAndTriPartiteMockData",
                     },
                   ],
                 },
@@ -295,6 +311,7 @@ export const mockData = {
                       duration: "5",
                       isSpecialMock: true,
                       route: "/mock-test/advent",
+                      storageKey: "ExamRojgaar_AdventMockData",
                     },
                     {
                       id: "RevoltEconomicImpactPeasant-mock-test",
@@ -309,6 +326,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/revolt-economic-impact-peasant",
+                      storageKey: "ExamRojgaar_RevoltEconomicImpactPeasantMockData",
                     },
                     {
                       id: "ModernHistoryExtremistPhase-mock-test",
@@ -323,6 +341,7 @@ export const mockData = {
                       duration: "5",
                       isSpecialMock: true,
                       route: "/mock-test/modern-history-extremist-phase",
+                      storageKey: "ExamRojgaar_ModernHistoryExtremistPhaseMockData",
                     },
                   ],
                 },
@@ -341,6 +360,7 @@ export const mockData = {
                   duration: "5",
                   isSpecialMock: true,
                   route: "/mock-test/history-full-revision-test",
+                  storageKey: "ExamRojgaar_hostoryFullRevisionTestMockData",
                 }
               ],
             },
@@ -366,6 +386,7 @@ export const mockData = {
                   duration: "60",
                   isSpecialMock: true,
                   route: "/mock-test/RevisionTestPolityFull",
+                  storageKey: "ExamRojgaar_RevisionTestPolityFullMockTestPage",
                 },
               ],
               subcategories: {
@@ -391,6 +412,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/polity-constitution-and-preamble-and-sources",
+                      storageKey: "ExamRojgaar_PolityConstitutionAndPreambleAndSourcesMockData",
                     },
                     {
                       id: "ScheduleCitizenship-mock-test",
@@ -405,6 +427,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/schedule-citizenship",
+                      storageKey: "ExamRojgaar_ScheduleCitizenshipMockData",
                     },
                     {
                       id: "FundamentalRightsAndDpSp-mock-test",
@@ -419,6 +442,7 @@ export const mockData = {
                       duration: "4",
                       isSpecialMock: true,
                       route: "/mock-test/fundamental-rights-and-dp-sp",
+                      storageKey: "ExamRojgaar_FundamentalRightsAndDpSpMockData",
                     },
                     {
                       id: "Amendments-mock-test",
@@ -433,6 +457,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/amendments",
+                      storageKey: "ExamRojgaar_AmendmentsMockData",
                     },
 
                     {
@@ -448,6 +473,7 @@ export const mockData = {
                       duration: "4",
                       isSpecialMock: true,
                       route: "/mock-test/Regulating",
+                      storageKey: "ExamRojgaar_Regulating",
                     }
                   ],
                 },
@@ -473,6 +499,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/parliament",
+                      storageKey: "ExamRojgaar_ParliamentMockData",
                     },
 
                     {
@@ -488,6 +515,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/president-governor-pm-test-1",
+                      storageKey: "ExamRojgaar_presidentGovernorPmTest1MockData",
                     },
 
                     {
@@ -503,6 +531,7 @@ export const mockData = {
                       duration: "4",
                       isSpecialMock: true,
                       route: "/mock-test/ConstitutionalBodies",
+                      storageKey: "ExamRojgaar_ConstitutionalBodies",
                     },
                   ],
                 },
@@ -528,6 +557,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/state-legislature-panchayati-raj-test-1",
+                      storageKey: "ExamRojgaar_stateLegislaturePanchayatiRajTest1MockData",
                     },
                   ],
                 },
@@ -564,6 +594,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/geography-basics-test-1",
+                      storageKey: "ExamRojgaar_geographyBasicsTest1MockData",
                     },
                   
                     {
@@ -579,6 +610,7 @@ export const mockData = {
                       duration: "12",
                       isSpecialMock: true,
                       route: "/mock-test/UniverseLatitudeAndLongitude",
+                      storageKey: "ExamRojgaar_UniverseLatitudeAndLongitudeMockTestPage",
                     },
                   ],
                 },
@@ -604,6 +636,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/TransportationSystem",
+                      storageKey: "ExamRojgaar_TransportationSystemMockData",
                     },
                   ],
                 },
@@ -629,6 +662,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/environment-quiz",
+                      storageKey: "ExamRojgaar_environmentQuizMockData",
                     },
                   ],
                 },
@@ -647,6 +681,7 @@ export const mockData = {
                   duration: "60",
                   isSpecialMock: true,
                   route: "/mock-test/geography-full-test-1",
+                  storageKey: "ExamRojgaar_geographyFullTest1MockData",
                 },
               ]
             },
@@ -681,6 +716,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/heat-and-light-test-1",
+                      storageKey: "ExamRojgaar_heatAndLightTest1MockData",
                     },
                   
                     {
@@ -696,6 +732,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/electricity-and-magnetism-test-1",
+                      storageKey: "ExamRojgaar_electricityAndMagnetismTest1MockData",
                     },
                   
                     {
@@ -711,6 +748,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/gravitation-pressure-elasticity-waves-test-1",
+                      storageKey: "ExamRojgaar_gravitationPressureElasticityWavesTest1MockData",
                     },
                   ],
                 },
@@ -767,6 +805,7 @@ export const mockData = {
                       duration: "30",
                       isSpecialMock: true,
                       route: "/mock-test/profit-loss-discount",
+                      storageKey: "ExamRojgaar_profitLossDiscountMockData",
                     },
                     {
                       id: "Profit-mock-test",
@@ -781,6 +820,7 @@ export const mockData = {
                       duration: "30",
                       isSpecialMock: true,
                       route: "/mock-test/profit",
+                      storageKey: "ExamRojgaar_ProfitMockData",
                     },
                     {
                       id: "Percentage-mock-test",
@@ -795,6 +835,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/percentage",
+                      storageKey: "ExamRojgaar_PercentageMockData",
                     },
                     {
                       id: "Ratio-mock-test",
@@ -809,6 +850,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/ratio",
+                      storageKey: "ExamRojgaar_RatioMockData",
                     },
                     {
                       id: "average-mock-test",
@@ -823,6 +865,7 @@ export const mockData = {
                       duration: "3",
                       isSpecialMock: true,
                       route: "/mock-test/average",
+                      storageKey: "ExamRojgaar_AverageMockData",
                     },
                     {
                       id: "Average-mock-test",
@@ -837,6 +880,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/average",
+                      storageKey: "ExamRojgaar_AverageMockData",
                     },
                     {
                       id: "mixture-alligation-mock-test",
@@ -851,6 +895,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/mixture-alligation",
+                      storageKey: "ExamRojgaar_mixtureAlligationMockData",
                     },
                     {
                       id: "mixture-alligation-test-2-mock-test",
@@ -865,6 +910,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/mixture-alligation-test-2",
+                      storageKey: "ExamRojgaar_mixtureAlligationTest2MockData",
                     },
                     {
                       id: "compound-interest-mock-test",
@@ -879,6 +925,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/compound-interest",
+                      storageKey: "ExamRojgaar_compoundInterestMockData",
                     },
                     {
                       id: "TimeAndWork-mock-test",
@@ -893,6 +940,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/time-and-work",
+                      storageKey: "ExamRojgaar_TimeAndWorkMockData",
                     },
                     {
                       id: "pipe-cistern-mock-test",
@@ -907,6 +955,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/pipe-cistern",
+                      storageKey: "ExamRojgaar_pipeCisternMockData",
                     },
                     {
                       id: "Pipe-mock-test",
@@ -921,6 +970,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/pipe",
+                      storageKey: "ExamRojgaar_PipeMockData",
                     },
                     {
                       id: "TimeSpeedDistanceBoat-mock-test",
@@ -935,6 +985,7 @@ export const mockData = {
                       duration: "30",
                       isSpecialMock: true,
                       route: "/mock-test/time-speed-distance-boat",
+                      storageKey: "ExamRojgaar_TimeSpeedDistanceBoatMockData",
                     },
                     {
                       id: "hcf-lcm-mock-test",
@@ -949,6 +1000,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/hcf-lcm",
+                      storageKey: "ExamRojgaar_hcflcmMockData",
                     },
                     {
                       id: "ArithmeticSectionalTest-mock-test",
@@ -963,6 +1015,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/arithmetic-sectional-test",
+                      storageKey: "ExamRojgaar_ArithmeticSectionalTestMockData",
                     }
                   ],
                 },
@@ -988,6 +1041,7 @@ export const mockData = {
                       duration: "12",
                       isSpecialMock: true,
                       route: "/mock-test/line-angles-test-1",
+                      storageKey: "ExamRojgaar_lineAnglesTest1MockData",
                     },
 
                     {
@@ -1003,6 +1057,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/Trigonometry",
+                      storageKey: "ExamRojgaar_TrigonometryMockData",
                     },
 
                     {
@@ -1018,6 +1073,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/Height",
+                      storageKey: "ExamRojgaar_HeightMockData",
                     },
 
                     {
@@ -1033,6 +1089,7 @@ export const mockData = {
                       duration: "20",
                       isSpecialMock: true,
                       route: "/mock-test/triangles-test-1",
+                      storageKey: "ExamRojgaar_trianglesTest1MockData",
                     },
 
                     {
@@ -1048,6 +1105,7 @@ export const mockData = {
                       duration: "50",
                       isSpecialMock: true,
                       route: "/mock-test/AdvanceMathsMensuration",
+                      storageKey: "ExamRojgaar_AdvanceMathsMensurationMockData",
                     },
                   
                     {
@@ -1063,6 +1121,7 @@ export const mockData = {
                       duration: "25",
                       isSpecialMock: true,
                       route: "/mock-test/circle-test-1",
+                      storageKey: "ExamRojgaar_circleTest1MockData",
                     },
                   
                     {
@@ -1078,6 +1137,7 @@ export const mockData = {
                       duration: "25",
                       isSpecialMock: true,
                       route: "/mock-test/polygon-test-1",
+                      storageKey: "ExamRojgaar_polygonTest1MockData",
                     },
                   
                     {
@@ -1093,6 +1153,7 @@ export const mockData = {
                       duration: "25",
                       isSpecialMock: true,
                       route: "/mock-test/quadrilateral-test-1",
+                      storageKey: "ExamRojgaar_quadrilateralTest1MockData",
                     },
                   ],
                 },
@@ -1111,6 +1172,7 @@ export const mockData = {
                   duration: "90",
                   isSpecialMock: true,
                   route: "/mock-test/maths",
+                  storageKey: "ExamRojgaar_MathsMockData",
                 },
               ],
             },
@@ -1135,7 +1197,8 @@ export const mockData = {
                       duration: "60",
                       isSpecialMock: true,
                       route: "/mock-test/EconomyFullTest",
-              }],
+                      storageKey: "ExamRojgaar_EconomyFullTestMockData",
+               }],
               subcategories: {
                 "basic-concepts": {
                   id: "basic-concepts",
@@ -1159,6 +1222,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/EconomicsGDPGNPBasics1",
+                      storageKey: "ExamRojgaar_EconomicsGDPGNPBasics1MockData",
                     },
                   
                     
@@ -1185,6 +1249,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/RRBNTPCEconomyLecture2Inflation",
+                      storageKey: "ExamRojgaar_RRBNTPCEconomyLecture2InflationMockData",
                     },
                   
                     {
@@ -1200,6 +1265,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/RRBNTPCEconomyLecture3MonetaryPolicy",
+                      storageKey: "ExamRojgaar_RRBNTPCEconomyLecture3MonetaryPolicyMockData",
                     },
                   
                     {
@@ -1215,6 +1281,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/RRBNTPCEconomyLecture4Taxation",
+                      storageKey: "ExamRojgaar_RRBNTPCEconomyLecture4TaxationMockData",
                     },],
                 },
                 "world-economy": {
@@ -1252,6 +1319,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/ComputerLecture1FundamentalsTest",
+                      storageKey: "ExamRojgaar_ComputerLecture1FundamentalsTestMockData",
                     },
                     {
                       id: "ComputerLecture2CPUandMemory-mock-test",
@@ -1266,6 +1334,7 @@ export const mockData = {
                       duration: "15",
                       isSpecialMock: true,
                       route: "/mock-test/ComputerLecture2CPUandMemory",
+                      storageKey: "ExamRojgaar_ComputerLecture2CPUandMemoryMockData",
                     },
                   
                     {
@@ -1281,6 +1350,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/ComputerOperatingSystemlecture3",
+                      storageKey: "ExamRojgaar_ComputerOperatingSystemlecture3MockData",
                     },
                     {
                       id: "MsWordPyq-mock-test",
@@ -1295,6 +1365,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/MsWordPyq",
+                      storageKey: "ExamRojgaar_MsWordPyqMockData",
                     },
                   
                     {
@@ -1310,6 +1381,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/MsPowerpoint",
+                      storageKey: "ExamRojgaar_MsPowerpointMockData",
                     },
                   
                     {
@@ -1325,6 +1397,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/MsExcel",
+                      storageKey: "ExamRojgaar_MsExcelMockData",
                     },
                   
                     {
@@ -1340,6 +1413,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/MsOfficeMsWord",
+                      storageKey: "ExamRojgaar_MsOfficeMsWordMockData",
                     },
                   ],
             },
@@ -1365,6 +1439,7 @@ export const mockData = {
                   duration: "20",
                   isSpecialMock: true,
                   route: "/mock-test/military-exercise-test-1",
+                  storageKey: "ExamRojgaar_militaryExerciseTest1MockData",
                 },
 
                 {
@@ -1380,6 +1455,7 @@ export const mockData = {
                   duration: "3",
                   isSpecialMock: true,
                   route: "/mock-test/important-days-test-1",
+                  storageKey: "ExamRojgaar_importantDaysTest1MockData",
                 },
 
 
@@ -1397,6 +1473,7 @@ export const mockData = {
                   duration: "6",
                   isSpecialMock: true,
                   route: "/mock-test/Sports",
+                  storageKey: "ExamRojgaar_SportsMockData",
                 },
               
                     {
@@ -1412,6 +1489,7 @@ export const mockData = {
                       duration: "10",
                       isSpecialMock: true,
                       route: "/mock-test/budget-and-economic-survey-test-1",
+                      storageKey: "ExamRojgaar_budgetAndEconomicSurveyTest1MockData",
                     },
                   ],
             },
@@ -1437,6 +1515,7 @@ export const mockData = {
                   duration: "90",
                   isSpecialMock: true,
                   route: "/mock-test/cbt2-ug-test-1",
+                  storageKey: "ExamRojgaar_cbt2UgTest1MockData",
                 },
               ],
             },
@@ -1462,6 +1541,7 @@ export const mockData = {
                   duration: "60",
                   isSpecialMock: true,
                   route: "/mock-test/revision-test-1",
+                  storageKey: "ExamRojgaar_revisionTest1MockData",
                 },
                 // {
                 //   id: "revision-test-1",
@@ -1490,6 +1570,7 @@ export const mockData = {
                   duration: "80",
                   isSpecialMock: true,
                   route: "/mock-test/revision-test-2",
+                  storageKey: "ExamRojgaar_revisionTest2MockData",
                 },
                 {
                   id: "Revision-mock-test",
@@ -1504,6 +1585,7 @@ export const mockData = {
                   duration: "80",
                   isSpecialMock: true,
                   route: "/mock-test/Revision",
+                  storageKey: "ExamRojgaar_RevisionMockData",
                 },
                 {
                   id: "Revision-Test-3-mock-test",
@@ -1518,6 +1600,7 @@ export const mockData = {
                   duration: "80",
                   isSpecialMock: true,
                   route: "/mock-test/Revision-Test-3",
+                  storageKey: "ExamRojgaar_RevisionTest3MockData",
                 }
               ],
             },

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui";
 import { useNavigate } from "react-router";
 import { ShareTest } from "../components/ui/shareTest";
+import { ViewPreviousAttemptsButton } from "./testSeries/ViewPreviousAttemptsButton";
 
 export function QuizCard({
   title,
@@ -17,7 +18,8 @@ export function QuizCard({
   onStartClick,
   attemptStatus,
   isPaid = false,
-  testUrl
+  testUrl,
+  storageKey,
 }) {
   const isSubmitted = attemptStatus === "SUBMITTED";
   const isInProgress = attemptStatus === "IN_PROGRESS";
@@ -90,6 +92,13 @@ export function QuizCard({
               </Button>
             )}
           </div>
+          {storageKey && (
+            <ViewPreviousAttemptsButton
+              storageKey={storageKey}
+              variant="card-mobile"
+              testRoute={testUrl}
+            />
+          )}
         </div>
 
         {/* ── DESKTOP LAYOUT ── */}
@@ -150,6 +159,13 @@ export function QuizCard({
                 >
                   View Last Attempt
                 </Button>
+              )}
+              {storageKey && (
+                <ViewPreviousAttemptsButton
+                  storageKey={storageKey}
+                  variant="card-desktop"
+                  testRoute={testUrl}
+                />
               )}
             </div>
           </div>

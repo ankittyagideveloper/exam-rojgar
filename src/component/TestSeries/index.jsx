@@ -1,7 +1,7 @@
 import { useUser } from "@clerk/clerk-react";
 import React, { useState, useEffect, useCallback, useRef, useContext } from "react";
 import { Button } from "@/components";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { useFullscreen } from "@/hooks";
 import {
   IconMaximize, IconMinimize
@@ -88,6 +88,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
   const { isLoaded, isSignedIn, user } = useUser();
   const { isFullScreen, toggleFullscreen } = useFullscreen();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+  const [searchParams] = useSearchParams();
 
 
 
@@ -420,6 +421,16 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
     setUserState(makeFreshState(TOTAL));
     setScreen(SCREENS.HOME);
   };
+
+  // ─── auto-load attempt from URL ?attempt=<id> ────────────────────────────
+  useEffect(() => {
+    const attemptId = searchParams.get("attempt");
+    if (!attemptId) return;
+    const attempt = readStorage(HISTORY_KEY).find((a) => String(a.id) === String(attemptId));
+    if (!attempt) return;
+    loadHistoryAttempt(attempt.id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ─── saved questions ──────────────────────────────────────────────────────
   const isQuestionSaved = (q) => {
