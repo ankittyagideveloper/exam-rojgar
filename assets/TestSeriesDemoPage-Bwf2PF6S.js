@@ -1,0 +1,1 @@
+import{j as t}from"./index-BnZsw76H.js";import{T as o}from"./index-Cwue8Me9.js";import{P as r}from"./PolityConstitutionAndPreambleAndSourcesMockData-C_Qg-JBS.js";import"./QueryData-igibdTIJ.js";import"./useQuery-ZETyfFLG.js";import"./firestoreHelpers-C2AoVsdN.js";function p(){return t.jsx(o,{testData:r})}export{p as default};
