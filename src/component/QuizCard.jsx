@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui";
 import { useNavigate } from "react-router";
 import { ShareTest } from "../components/ui/shareTest";
-import { ViewPreviousAttemptsButton } from "./testSeries/ViewPreviousAttemptsButton";
+import { ViewPreviousAttemptsButton } from "./TestSeries/ViewPreviousAttemptsButton";
 
 export function QuizCard({
   title,
