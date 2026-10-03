@@ -1,5 +1,5 @@
 import React from "react";
-import { FileText, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { FileText, ChevronLeft, ChevronRight, Play, Sparkles, CheckCircle2 } from "lucide-react";
 import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
 import { useTranslation } from "react-i18next";
@@ -102,40 +102,53 @@ function HomePage() {
         {/* Main Content */}
         {/* <StickyBannerDemo /> */}
         <main className="px-0 py-0 md:px-4 md:pt-6 md:pb-0">
-          <div className="lg:flex lg:items-center xl:flex-row justify-around gap-8">
+          <div className="lg:flex lg:items-center xl:flex-row justify-between gap-6 xl:gap-10">
             {/* Hero Section */}
-            <div className="hidden lg:flex flex-col mb-8 max-w-sm  xl:max-w-3xl px-4">
+            <div className="hidden lg:flex flex-col mb-8 flex-1 min-w-0 max-w-2xl xl:max-w-3xl px-4">
+              {/* Target Exam Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 text-[#1272ba] dark:text-blue-400 text-xs sm:text-sm font-semibold mb-4 w-fit shadow-xs whitespace-nowrap">
+                <Sparkles className="w-4 h-4 text-[#FF7D07] shrink-0" />
+                <span className="whitespace-nowrap">{currentLanguage === "en" ? "Target 2026–27: RRB NTPC & RRB JE Exam Prep" : "लक्ष्य 2026–27: RRB NTPC और RRB JE परीक्षा तैयारी"}</span>
+              </div>
+
               {currentLanguage === "en" ? (
-                <>
-                  <h2 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-2">
-                    Crack your <span className="text-[#1272ba]">goal</span>
-                  </h2>
-                  <h3 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-                    with <span className="text-[#1272ba]">Exam Rojgaar</span>
-                    <br />Test Series
-                  </h3>
-                </>
+                <h1 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 leading-tight">
+                  Ace <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1272ba] to-[#0ea5e9]">RRB NTPC &amp; JE</span> with India&apos;s #1 Test Series
+                </h1>
               ) : (
-                <>
-                  <h2 className="text-3xl xl:text-4xl  2xl:text-6xl font-bold text-gray-800 dark:text-white mb-2">
-                    <span className="text-[#1272ba]">Exam Rojgaar</span>
-                  </h2>
-                  <h3 className="text-3xl xl:text-4xl 2xl:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-                    टेस्ट सीरीज़ के साथ <br />
-                    अपना <span className="text-[#1272ba]">लक्ष्य</span> हासिल करें
-                  </h3>
-                </>
+                <h1 className="text-3xl md:text-4xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4 leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1272ba] to-[#0ea5e9]">RRB NTPC &amp; JE</span> में सफलता पाएं <span className="text-[#1272ba]">Exam Rojgaar</span> के साथ
+                </h1>
               )}
-              <p className="text-gray-600 md:text-3xl xl:text-xl 2xl:text-3xl text-base leading-relaxed mb-6 dark:text-white">
+              <p className="text-gray-600 dark:text-gray-300 md:text-base xl:text-lg 2xl:text-xl text-base leading-relaxed mb-6 font-normal">
                 {t("tagLine")}
               </p>
-              <Link
-                to="/online-test-series"
-                className="inline-flex items-center justify-center gap-2 bg-[#1272ba] hover:bg-[#1260ba] text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 w-fit"
-              >
-                <Play className="w-4 h-4" />
-                Start Test Series
-              </Link>
+
+              {/* CTAs */}
+              <div className="flex flex-row items-center gap-3.5 mb-6 flex-nowrap">
+                <Link
+                  to="/online-test-series"
+                  className="inline-flex items-center justify-center gap-2 bg-[#1272ba] hover:bg-[#0f5f9c] active:scale-[0.98] text-white font-semibold px-5 xl:px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg shadow-blue-500/20 whitespace-nowrap text-sm xl:text-base"
+                >
+                  <Play className="w-4 h-4 fill-white shrink-0" />
+                  <span>Start Test Series</span>
+                </Link>
+                <Link
+                  to="/free-tests"
+                  className="inline-flex items-center justify-center gap-2 bg-white dark:bg-zinc-800 hover:bg-orange-50 dark:hover:bg-zinc-700 active:scale-[0.98] text-[#FF7D07] dark:text-orange-400 border border-orange-200 dark:border-orange-500/30 font-semibold px-5 xl:px-6 py-3 rounded-xl transition-all duration-200 shadow-xs hover:shadow-md whitespace-nowrap text-sm xl:text-base"
+                >
+                  <Sparkles className="w-4 h-4 text-[#FF7D07] shrink-0" />
+                  <span>Try Free Test</span>
+                </Link>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="flex items-center gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <span>Latest Exam Pattern &amp; Detailed Solutions</span>
+                </div>
+              </div>
             </div>
 
             {/* App Preview Card */}
