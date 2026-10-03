@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { FileText, ChevronLeft, ChevronRight, Play, Sparkles, CheckCircle2 } from "lucide-react";
 import Slider from "../component/Slider";
 import FeaturesRibbon from "../component/features-ribbon";
@@ -7,11 +7,16 @@ import VideoPlayer from "../component/VideoPlayer";
 import MeetInstructor from "../component/MeetInstructor";
 import { Helmet } from "react-helmet-async";
 import { StickyBannerDemo } from "../component/sticky-banner/StickyBanner";
-import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 import { testimonials } from "@/constants";
 import { Link } from "react-router";
-import TelegramChatBot from "../component/TelegramChatBot";
 import SpotlightPreview from "../components/ui/spotlight-demo";
+
+const InfiniteMovingCards = lazy(() =>
+  import("../components/ui/infinite-moving-cards").then((module) => ({
+    default: module.InfiniteMovingCards,
+  }))
+);
+const TelegramChatBot = lazy(() => import("../component/TelegramChatBot"));
 
 
 function HomePage() {
@@ -204,88 +209,23 @@ function HomePage() {
             See what our <br className="inline-block md:hidden" />students tell
             about us 💕
           </div>
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="left"
-            speed="slow"
-            pauseOnHover={true}
-            className="py-4"
-          />
+          <Suspense fallback={<div className="h-40 w-full" />}>
+            <InfiniteMovingCards
+              items={testimonials}
+              direction="left"
+              speed="slow"
+              pauseOnHover={true}
+              className="py-4"
+            />
+          </Suspense>
 
           {/* <MeetInstructor /> */}
-          {/* Quick Actions */}
-          {/* <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 dark:bg-[#121212]">
-          <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-4">
-            Quick Actions
-          </h3>
-          <div className="space-y-3 dark:bg-[#121212]">
-            {[
-              {
-                title: "Start Free Test",
-                subtitle: "Begin your preparation journey",
-                color: "bg-teal-600",
-              },
-              {
-                title: "Download App",
-                subtitle: "Get the mobile experience",
-                color: "bg-blue-600",
-              },
-              {
-                title: "View Results",
-                subtitle: "Check your latest scores",
-                color: "bg-purple-600",
-              },
-            ].map((action, index) => (
-              <Button
-                key={index}
-                className={`w-full ${action.color} text-white rounded-xl p-4 text-left hover:opacity-90 transition-opacity`}
-              >
-                <div className="font-semibold">{action.title}</div>
-                <div className="text-sm opacity-90">{action.subtitle}</div>
-              </Button>
-            ))}
-          </div>
-        </div> */}
         </main>
 
-        {/* Bottom Navigation */}
-        {/* <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2">
-        <div className="flex justify-around items-center">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeTab === item.id;
-            return (
-              <Button
-                key={item.id}
-                onClick={() => {
-                  setActiveTab(item.id);
-                }}
-                className={`flex flex-col items-center py-2 px-3 rounded-lg transition-colors ${
-                  isActive
-                    ? "text-teal-600 bg-teal-50"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                <Icon
-                  className={`w-6 h-6 mb-1 ${
-                    isActive ? "text-teal-600" : "text-gray-500"
-                  }`}
-                />
-                <span
-                  className={`text-xs font-medium ${
-                    isActive ? "text-teal-600" : "text-gray-500"
-                  }`}
-                >
-                  {item.label}
-                </span>
-              </Button>
-            );
-          })}
-        </div>
-      </nav> */}
-
         {/* Telegram Chatbot floating widget */}
-        <TelegramChatBot />
+        <Suspense fallback={null}>
+          <TelegramChatBot />
+        </Suspense>
       </div>
       </SpotlightPreview>
     </>

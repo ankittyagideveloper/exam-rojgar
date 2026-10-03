@@ -12,7 +12,7 @@ import { ThemeContext } from "../context/ThemeContext.jsx";
 import NotificationBell from "./NotificationBell";
 import { Button } from "@/components/ui";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
-import { YoutubeIcon } from "../pages/mentorship/Mentorship";
+import { YoutubeIcon } from "@/components/ui/YoutubeIcon";
 import SearchBar from "../components/SearchBar";
 
 function InstallPWAButton() {

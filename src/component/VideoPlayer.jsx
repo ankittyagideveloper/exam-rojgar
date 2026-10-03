@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router";
-import { YoutubeIcon } from "../pages/mentorship/Mentorship";
+import { YoutubeIcon } from "@/components/ui/YoutubeIcon";
 import { VideoCard } from "./VideoCard";
 
 const videos = [
