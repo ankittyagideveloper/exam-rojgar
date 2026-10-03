@@ -12,7 +12,7 @@ export const manifestForPlugIn = {
     name: "Exam Rojgaar",
     short_name: "Exam Rojgaar",
     description:
-      "Exam Rojgaar Test Series one of the best online test platform in India for railway, ssc departmental exams.",
+      "Exam Rojgaar Test Series is one of the best online test platforms in India for Railway, SSC & departmental exams.",
     icons: [
       {
         src: "/android-chrome-192x192.png",
