@@ -17,6 +17,7 @@ import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./components/ErrorBoundary";
 import ErrorPage from "./pages/ErrorPage";
+import ModernAndNuclearPhysicsTest1MockTestPage from "./pages/ModernAndNuclearPhysicsTest1MockTestPage";
 
 // Lazy-loaded pages and secondary routes to dramatically decrease initial bundle size & JavaScript execution time
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -469,6 +470,8 @@ const router = createBrowserRouter([
       { path: "heat-and-light-test-1", element: <Suspense fallback={<RouteLoader />}><HeatAndLightTest1MockTestPage /></Suspense> },
       { path: "electricity-and-magnetism-test-1", element: <Suspense fallback={<RouteLoader />}><ElectricityAndMagnetismTest1MockTestPage /></Suspense> },
       { path: "gravitation-pressure-elasticity-waves-test-1", element: <Suspense fallback={<RouteLoader />}><GravitationPressureElasticityWavesTest1MockTestPage /></Suspense> },
+    
+      { path: "modern-and-nuclear-physics-test-1", element: <ModernAndNuclearPhysicsTest1MockTestPage /> },
     ],
   },
   {

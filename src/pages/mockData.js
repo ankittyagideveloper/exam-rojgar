@@ -750,6 +750,21 @@ export const mockData = {
                       route: "/mock-test/gravitation-pressure-elasticity-waves-test-1",
                       storageKey: "ExamRojgaar_gravitationPressureElasticityWavesTest1MockData",
                     },
+                  
+                    {
+                      id: "modern-and-nuclear-physics-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Modern And Nuclear Physics Test 1 Mock Test",
+                      title: "Modern And Nuclear Physics Test 1 - Mock Test",
+                      name: "Modern And Nuclear Physics Test 1 Mock",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "15",
+                      isSpecialMock: true,
+                      route: "/mock-test/modern-and-nuclear-physics-test-1",
+                    },
                   ],
                 },
                 "chemistry": {
