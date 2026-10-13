@@ -1494,9 +1494,9 @@ export const mockData = {
                     {
                       id: "budget-and-economic-survey-test-1-mock-test",
                       image: "/rrb-ntpc.webp",
-                      alt: "Budget And Economic Survey Test 1 Mock Test",
-                      title: "Budget And Economic Survey Test 1 - Mock Test",
-                      name: "Budget And Economic Survey Test 1 Mock",
+                      alt: "Budget And Economic Survey",
+                      title: "Budget And Economic Survey",
+                      name: "Budget And Economic Survey",
                       difficulty: "Hard",
                       languages: ["English", "Hindi"],
                       questions: "30",
