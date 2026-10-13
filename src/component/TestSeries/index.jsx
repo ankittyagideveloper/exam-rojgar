@@ -607,6 +607,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                   {[
                     ["Paper Name", paperName, "text-[#1e5086] dark:text-[#5aaef0]"],
                     ["Subject", subject, "text-gray-800 dark:text-neutral-200"],
+                    ["Questions", `${(questions.length) ?? 0}`, "text-[#1e5086] dark:text-[#5aaef0]"],
                     ["Duration", `${duration} Mins`, "text-[#1e5086] dark:text-[#5aaef0]"],
                     ["Date", todayStr(), "text-gray-800 dark:text-neutral-200"],
                   ].map(([label, value, cls]) => (
