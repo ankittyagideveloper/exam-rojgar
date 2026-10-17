@@ -765,12 +765,11 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/modern-and-nuclear-physics-test-1",
                     },
-
                     {
                       id: "units-motion-energy-power-test-1-mock-test",
                       image: "/rrb-ntpc.webp",
                       alt: "Units Motion Energy Power Test 1 Mock Test",
-                      title: "Units Motion Energy Power",
+                      title: "Unit Dimension and Motion and Work Energy Power",
                       name: "Units Motion Energy Power Test 1 Mock",
                       difficulty: "Hard",
                       languages: ["English", "Hindi"],
