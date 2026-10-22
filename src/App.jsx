@@ -19,6 +19,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import ErrorPage from "./pages/ErrorPage";
 import ModernAndNuclearPhysicsTest1MockTestPage from "./pages/ModernAndNuclearPhysicsTest1MockTestPage";
 import UnitsMotionEnergyPowerTest1MockTestPage from "./pages/UnitsMotionEnergyPowerTest1MockTestPage";
+import ClassificationOfElementsSolutionTest1MockTestPage from "./pages/ClassificationOfElementsSolutionTest1MockTestPage";
 
 // Lazy-loaded pages and secondary routes to dramatically decrease initial bundle size & JavaScript execution time
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -475,6 +476,8 @@ const router = createBrowserRouter([
       { path: "modern-and-nuclear-physics-test-1", element: <ModernAndNuclearPhysicsTest1MockTestPage /> },
 
       { path: "units-motion-energy-power-test-1", element: <UnitsMotionEnergyPowerTest1MockTestPage /> },
+    
+      { path: "classification-of-elements-solution-test-1", element: <ClassificationOfElementsSolutionTest1MockTestPage /> },
     ],
   },
   {

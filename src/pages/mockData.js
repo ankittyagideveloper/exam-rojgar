@@ -789,7 +789,22 @@ export const mockData = {
                   name: "Chemistry",
                   slug: "chemistry",
                   description: "General Chemistry Concepts and Questions",
-                  tests: [],
+                  tests: [
+                    {
+                      id: "classification-of-elements-solution-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Classification Of Elements Solution",
+                      title: "Classification Of Elements Solution",
+                      name: "Classification Of Elements Solution",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "50",
+                      marks: "50",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/classification-of-elements-solution-test-1",
+                    },
+                  ],
                 },
                 "biology": {
                   id: "biology",
