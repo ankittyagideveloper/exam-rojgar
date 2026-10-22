@@ -834,6 +834,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/chemistry-full-test-1",
                     },
+
+                    {
+                      id: "matter-metals-atomic-structure-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Matter Metals Atomic Structure",
+                      title: "Matter Metals Atomic Structure",
+                      name: "Matter Metals Atomic Structure",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "50",
+                      marks: "50",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/matter-metals-atomic-structure-test-1",
+                    },
                   ],
                 },
                 "biology": {

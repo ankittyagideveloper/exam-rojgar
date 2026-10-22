@@ -22,6 +22,7 @@ import UnitsMotionEnergyPowerTest1MockTestPage from "./pages/UnitsMotionEnergyPo
 import ClassificationOfElementsSolutionTest1MockTestPage from "./pages/ClassificationOfElementsSolutionTest1MockTestPage";
 import AcidsBasesSaltsGasesBehavioursTest1MockTestPage from "./pages/AcidsBasesSaltsGasesBehavioursTest1MockTestPage";
 import ChemistryFullTest1MockTestPage from "./pages/ChemistryFullTest1MockTestPage";
+import MatterMetalsAtomicStructureTest1MockTestPage from "./pages/MatterMetalsAtomicStructureTest1MockTestPage";
 
 // Lazy-loaded pages and secondary routes to dramatically decrease initial bundle size & JavaScript execution time
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -484,6 +485,8 @@ const router = createBrowserRouter([
       { path: "acids-bases-salts-gases-behaviours-test-1", element: <AcidsBasesSaltsGasesBehavioursTest1MockTestPage /> },
     
       { path: "chemistry-full-test-1", element: <ChemistryFullTest1MockTestPage /> },
+    
+      { path: "matter-metals-atomic-structure-test-1", element: <MatterMetalsAtomicStructureTest1MockTestPage /> },
     ],
   },
   {
