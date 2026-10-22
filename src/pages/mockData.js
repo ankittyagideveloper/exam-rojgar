@@ -849,6 +849,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/matter-metals-atomic-structure-test-1",
                     },
+
+                    {
+                      id: "soaps-detergents-glass-polymerisation-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Soaps Detergents Glass Polymerisation",
+                      title: "Soaps Detergents Glass Polymerisation",
+                      name: "Soaps Detergents Glass Polymerisation",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "30",
+                      marks: "30",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/soaps-detergents-glass-polymerisation-test-1",
+                    },
                   ],
                 },
                 "biology": {
