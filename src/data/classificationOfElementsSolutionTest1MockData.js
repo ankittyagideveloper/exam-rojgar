@@ -2,7 +2,7 @@ export const classificationOfElementsSolutionTest1MockData = {
   "paperName": "Chemistry",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "subject": "Chemistry",
+  "subject": "Classification of elements and Solution",
   "category": "Classification of elements and Solution",
   "duration": 20,
   "marksCorrect": 1,

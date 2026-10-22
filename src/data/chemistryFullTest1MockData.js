@@ -2,7 +2,7 @@ export const chemistryFullTest1MockData = {
   "paperName": "Chemistry",
   "title": "EXAM ROJGAAR MOCKS",
   "subtitle": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। / You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-  "subject": "Chemistry",
+  "subject": "Thermodynamics,Carbon and its compounds",
   "category": "Thermodynamics,Carbon and its compounds",
   "duration": 50,
   "marksCorrect": 1,
