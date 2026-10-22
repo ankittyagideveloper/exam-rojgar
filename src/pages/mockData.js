@@ -864,6 +864,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/soaps-detergents-glass-polymerisation-test-1",
                     },
+
+                    {
+                      id: "thermodynamics-carbon-compounds-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Thermodynamics Carbon Compound",
+                      title: "Thermodynamics Carbon Compounds",
+                      name: "Thermodynamics Carbon Compounds",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "50",
+                      marks: "50",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/thermodynamics-carbon-compounds-test-1",
+                    },
                   ],
                 },
                 "biology": {
