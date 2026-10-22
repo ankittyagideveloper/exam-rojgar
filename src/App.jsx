@@ -501,6 +501,12 @@ const router = createBrowserRouter([
     children: [
       { path: "current-affairs-pyq-2026-test-1", element: <Suspense fallback={<RouteLoader />}><CurrentAffairsPyqTest1MockTestPage /></Suspense> },
       { path: "units-motion-energy-power-test-1", element: <UnitsMotionEnergyPowerTest1MockTestPage /> },
+      { path: "heat-and-light-test-1", element: <Suspense fallback={<RouteLoader />}><HeatAndLightTest1MockTestPage /></Suspense> },
+      { path: "electricity-and-magnetism-test-1", element: <Suspense fallback={<RouteLoader />}><ElectricityAndMagnetismTest1MockTestPage /></Suspense> },
+      { path: "gravitation-pressure-elasticity-waves-test-1", element: <Suspense fallback={<RouteLoader />}><GravitationPressureElasticityWavesTest1MockTestPage /></Suspense> },
+
+      { path: "modern-and-nuclear-physics-test-1", element: <ModernAndNuclearPhysicsTest1MockTestPage /> },
+
       { path: "classification-of-elements-solution-test-1", element: <ClassificationOfElementsSolutionTest1MockTestPage /> },
 
       { path: "acids-bases-salts-gases-behaviours-test-1", element: <AcidsBasesSaltsGasesBehavioursTest1MockTestPage /> },
