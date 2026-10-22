@@ -1,0 +1,1 @@
+import{j as e,af as s}from"./index-860G08X5.js";import{P as n}from"./PolityConstitutionAndPreambleAndSourcesMockData-C_Qg-JBS.js";const r=()=>{const t=o=>{console.log("Test completed with results:",o)};return e.jsx("div",{className:"w-full h-screen",children:e.jsx(s,{testData:n,onComplete:t})})};export{r as default};
