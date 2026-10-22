@@ -481,17 +481,17 @@ const router = createBrowserRouter([
       { path: "modern-and-nuclear-physics-test-1", element: <ModernAndNuclearPhysicsTest1MockTestPage /> },
 
       { path: "units-motion-energy-power-test-1", element: <UnitsMotionEnergyPowerTest1MockTestPage /> },
-    
+
       { path: "classification-of-elements-solution-test-1", element: <ClassificationOfElementsSolutionTest1MockTestPage /> },
-    
+
       { path: "acids-bases-salts-gases-behaviours-test-1", element: <AcidsBasesSaltsGasesBehavioursTest1MockTestPage /> },
-    
+
       { path: "chemistry-full-test-1", element: <ChemistryFullTest1MockTestPage /> },
-    
+
       { path: "matter-metals-atomic-structure-test-1", element: <MatterMetalsAtomicStructureTest1MockTestPage /> },
-    
+
       { path: "soaps-detergents-glass-polymerisation-test-1", element: <SoapsDetergentsGlassPolymerisationTest1MockTestPage /> },
-    
+
       { path: "thermodynamics-carbon-compounds-test-1", element: <ThermodynamicsCarbonCompoundsTest1MockTestPage /> },
     ],
   },
@@ -501,6 +501,17 @@ const router = createBrowserRouter([
     children: [
       { path: "current-affairs-pyq-2026-test-1", element: <Suspense fallback={<RouteLoader />}><CurrentAffairsPyqTest1MockTestPage /></Suspense> },
       { path: "units-motion-energy-power-test-1", element: <UnitsMotionEnergyPowerTest1MockTestPage /> },
+      { path: "classification-of-elements-solution-test-1", element: <ClassificationOfElementsSolutionTest1MockTestPage /> },
+
+      { path: "acids-bases-salts-gases-behaviours-test-1", element: <AcidsBasesSaltsGasesBehavioursTest1MockTestPage /> },
+
+      { path: "chemistry-full-test-1", element: <ChemistryFullTest1MockTestPage /> },
+
+      { path: "matter-metals-atomic-structure-test-1", element: <MatterMetalsAtomicStructureTest1MockTestPage /> },
+
+      { path: "soaps-detergents-glass-polymerisation-test-1", element: <SoapsDetergentsGlassPolymerisationTest1MockTestPage /> },
+
+      { path: "thermodynamics-carbon-compounds-test-1", element: <ThermodynamicsCarbonCompoundsTest1MockTestPage /> },
     ],
   },
   {
