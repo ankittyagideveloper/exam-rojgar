@@ -804,6 +804,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/classification-of-elements-solution-test-1",
                     },
+
+                    {
+                      id: "acids-bases-salts-gases-behaviours",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Acids Bases Salts Gases Behaviours",
+                      title: "Acids Bases Salts Gases Behaviours",
+                      name: "Acids Bases Salts Gases Behaviours",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "50",
+                      marks: "50",
+                      duration: "20",
+                      isSpecialMock: true,
+                      route: "/mock-test/acids-bases-salts-gases-behaviours-test-1",
+                    },
                   ],
                 },
                 "biology": {
