@@ -819,6 +819,21 @@ export const mockData = {
                       isSpecialMock: true,
                       route: "/mock-test/acids-bases-salts-gases-behaviours-test-1",
                     },
+
+                    {
+                      id: "chemistry-full-test-1-mock-test",
+                      image: "/rrb-ntpc.webp",
+                      alt: "Chemistry Full Test",
+                      title: "Chemistry Full Test",
+                      name: "Chemistry Full Test",
+                      difficulty: "Hard",
+                      languages: ["English", "Hindi"],
+                      questions: "100",
+                      marks: "100",
+                      duration: "50",
+                      isSpecialMock: true,
+                      route: "/mock-test/chemistry-full-test-1",
+                    },
                   ],
                 },
                 "biology": {

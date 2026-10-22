@@ -1,0 +1,2572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+
+        /* Previous Attempts modal styling from Source.html */
+        .diamond-border {
+            border: 1px solid rgba(255, 243, 199, 0.3);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+        }
+        .fade-in { animation: fadeInHistory 0.4s ease-in-out; }
+        @keyframes fadeInHistory { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+        /* Compact real-test viewport: slightly smaller framed exam area on desktop */
+        @media (min-width: 768px) {
+            #mock-screen {
+                width: 96vw !important;
+                height: 88vh !important;
+                margin: auto !important;
+                border: 1px solid #b8c2cc;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+                border-radius: 2px;
+            }
+            #mock-screen > div:first-child {
+                padding-top: 6px !important;
+                padding-bottom: 6px !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto {
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+        }
+        /* Keep the question viewport compact so long questions/options scroll inside the pane */
+        @media (min-width: 768px) {
+            #mock-screen .flex-1.overflow-y-auto {
+                min-height: 0 !important;
+                overflow-y: auto !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto::-webkit-scrollbar {
+                width: 8px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #mock-screen {
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="min-h-screen bg-[#e4e9f0] flex flex-col font-sans text-[13px]">
+        <!-- Topmost Banner JAY SHREE RAM -->
+        <div class="bg-black text-center py-1 border-b border-gray-700 shadow-sm">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6c27a] via-[#ffeba8] to-[#c5a030] font-bold text-[16px] drop-shadow-md tracking-widest">
+                ðŸš© à¤•à¤°à¥à¤®à¤£à¥à¤¯à¥‡à¤µà¤¾à¤§à¤¿à¤•à¤¾à¤°à¤¸à¥à¤¤à¥‡ à¤®à¤¾ à¤«à¤²à¥‡à¤·à¥ à¤•à¤¦à¤¾à¤šà¤¨à¥¤ ðŸš©
+            </span>
+        </div>
+ 
+        <!-- Railway Header -->
+        <div class="bg-[#1e5086] text-white flex justify-between items-center p-2 md:px-6 shadow-md border-b-[5px] border-[#3a78c4]">
+            <div class="flex items-center gap-3">
+                <div class="w-28 h-28 bg-white rounded-md flex items-center justify-center font-bold text-[#1e5086] border-2 border-[#e6c27a] shadow-inner text-xs text-center leading-tight">
+                    ExamRojgaar<br>Mocks
+                </div>
+                <div class="text-lg md:text-2xl font-bold tracking-wide uppercase">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            </div>
+            <div class="hidden md:flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[11px] text-gray-300">System Name:</div>
+                    <div class="font-bold text-sm">C001</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden p-2 gap-2">
+            <!-- Left Instructions Panel -->
+            <div class="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden">
+                <div class="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400">
+                    Instructions
+                </div>
+                <div class="p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px] custom-scrollbar">
+                    <h4 class="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
+                    
+                    <p class="font-bold mb-2"><u>General Instructions:</u></p>
+                    <ol class="list-decimal pl-5 space-y-3 mb-6">
+                        <li>Total duration of the examination is <b>12 minutes</b>.</li>
+                        <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                        <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:
+                            <ul class="list-none pl-2 mt-3 space-y-3 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#f1f5f9] border border-[#cbd5e1] rounded flex items-center justify-center font-bold shadow-sm text-gray-600">1</div> You have not visited the question yet.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#ef4444] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">3</div> You have not answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#22c55e] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">5</div> You have answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm">7</div> You have NOT answered the question, but have marked the question for review.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm relative">9<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div></div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
+                            </ul>
+                        </li>
+                        <li>You can click on the ">" arrow which appears to the left of question palette to collapse the question palette thereby maximizing the question window.</li>
+                    </ol>
+ 
+                    <p class="font-bold mb-2"><u>Navigating to a Question:</u></p>
+                    <ol class="list-decimal pl-5 space-y-2 mb-6" start="5">
+                        <li>To answer a question, do the following:
+                            <ul class="list-[lower-alpha] pl-5 mt-1 space-y-1">
+                                <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
+                                <li>Click on <b>Save & Next</b> to save your answer for the current question and then go to the next question.</li>
+                                <li>Click on <b>Mark for Review & Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+ 
+            <!-- Right Profile & Custom Options Panel -->
+            <div class="flex-[1.2] flex flex-col gap-2 min-w-[280px] overflow-auto">
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
+                    <div class="w-24 h-28 border-2 border-gray-400 bg-white flex items-center justify-center mb-4 shadow-inner overflow-hidden">
+                        <i class="fas fa-user text-5xl text-gray-300"></i>
+                    </div>
+                    <div class="w-full text-[13px] space-y-2">
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Paper Name:</span>
+                            <span class="text-right text-[#1e5086] font-bold truncate ml-2" id="paper-name-display">Chemistry</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Subject:</span>
+                            <span class="text-right text-gray-800 font-bold truncate ml-2" id="subject-display">Thermodynamics,Carbon and its compounds</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Duration:</span>
+                            <span class="text-right text-[#1e5086] font-bold">20 Mins</span>  <!-- Mins -->
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Date:</span>
+                            <span class="text-right text-gray-800 font-bold" id="current-date-display"></span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex-1 flex flex-col">
+                    <div class="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-4">Candidate Details</div>
+                    
+                    <div class="space-y-4 flex-1">
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Enter Your Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="candidate-name" class="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]" placeholder="e.g. Ankit Tyagi">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Are you a ExamRojgaar mock group member?</label>
+                            <div class="flex gap-6 text-[13px] mt-1 bg-white p-2 border border-gray-300">
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="Yes" class="accent-[#1e5086] w-3.5 h-3.5"> Yes</label>
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="No" checked class="accent-[#1e5086] w-3.5 h-3.5"> No</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="mt-4 space-y-2 border-t border-gray-400 pt-4">
+                        <button onclick="openHistoryDashboard()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            View Previous Attempts <i class="fas fa-history text-[#1e5086]"></i>
+                        </button>
+                        <button onclick="openSavedQuestionsModal()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            Saved Questions Section <i class="fas fa-bookmark text-[#1e5086]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Bottom Action Bar -->
+        <div class="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+            <div class="flex-1 w-full text-[13px]">
+                <div class="mb-2 flex items-center gap-2 bg-white inline-block p-1.5 border border-gray-300 shadow-sm rounded-sm">
+                    <span class="text-red-600 font-bold">Choose your default language:</span>
+                    <select id="default-lang-select" class="ml-2 border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold" onchange="setGlobalLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2 mt-1">
+                    <input type="checkbox" id="declaration-check" class="mt-1 w-4 h-4 cursor-pointer">
+                    <label for="declaration-check" class="text-gray-800 cursor-pointer font-medium leading-snug">
+                        I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree that in case of not adhering to the instructions, I will be disqualified.
+                    </label>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-center">
+                <button onclick="validateAndStart()" class="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded-[2px] text-[15px] shadow-sm whitespace-nowrap transition-colors w-full md:w-auto uppercase tracking-wide">
+                    I am ready to begin
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SAVED QUESTIONS MODAL -->
+    <div id="saved-questions-modal" class="hidden fixed inset-0 z-[10006] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-4 relative">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-bookmark mr-2 text-amber-400"></i> Saved Questions Repository</h2>
+                <div class="flex gap-4">
+                    <button onclick="clearAllSavedQuestions()" class="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition shadow-md"><i class="fas fa-trash-alt mr-1"></i> Clear All</button>
+                    <button onclick="closeSavedQuestionsModal()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="saved-questions-list" class="space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- HISTORY DASHBOARD MODAL -->
+    <div id="history-modal" class="hidden fixed inset-0 z-[10005] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-10">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-history mr-2"></i> Previous Attempts</h2>
+                <button onclick="closeHistoryDashboard()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-list" class="space-y-4"></div>
+        </div>
+    </div>
+ 
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">25:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <button id="save-question-btn" onclick="toggleSaveQuestion()" class="px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300">
+                            <i id="save-question-icon" class="far fa-star text-gray-400"></i> <span id="save-question-label">Save Question</span>
+                        </button>
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +1.0, -0.33</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="history-result-back" onclick="returnFromHistory()" class="hidden px-4 py-2 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded-lg text-sm font-semibold transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Home
+                    </button>
+                    <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                        <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                        <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <!-- Test Details: displayed above Mentor Review -->
+                <div id="result-attempt-details" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-5 mb-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="border-l-4 border-blue-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Paper Name</div>
+                            <div id="res-paper-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Subject</div>
+                            <div id="res-subject" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-emerald-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Candidate Name</div>
+                            <div id="res-candidate-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Date</div>
+                            <div id="res-date" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">Student Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Rank among <span id="res-participant-count">--</span> students</div>
+                    <div class="text-[11px] text-blue-200/80 mt-1">Based on best recorded score per student on this device</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 50 * 60; // 10 minutes in seconds // mins
+
+const rawData = [
+  {
+    "id": 1,
+    "eng": "Consider the following statements about temporary and permanent hardness of water:\n1. Temporary hardness is mainly caused by bicarbonates of calcium and magnesium.\n2. Permanent hardness can generally be removed by boiling alone.\nWhich of the statements given above is/are correct?",
+    "hin": "जल की अस्थायी और स्थायी कठोरता के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. अस्थायी कठोरता मुख्यतः कैल्शियम और मैग्नीशियम के बाइकार्बोनेट के कारण होती है।\n2. स्थायी कठोरता को सामान्यतः केवल उबालकर दूर किया जा सकता है।\nउपर्युक्त में से कौन-सा/से कथन सही है/हैं?",
+    "optE": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1, न ही 2"],
+    "ans": [0],
+    "solE": "Statement 1 is correct. Bicarbonates cause temporary hardness. Permanent hardness due to chlorides and sulphates generally requires methods such as washing soda treatment or ion exchange.",
+    "solH": "कथन 1 सही है। बाइकार्बोनेट अस्थायी कठोरता उत्पन्न करते हैं। क्लोराइड और सल्फेट के कारण होने वाली स्थायी कठोरता के लिए सामान्यतः धोने के सोडे या आयन-विनिमय जैसी विधियाँ आवश्यक होती हैं।"
+  },
+  {
+    "id": 2,
+    "eng": "Statement I: Soap is less effective in hard water than in soft water.\nStatement II: Calcium and magnesium ions react with soap to form insoluble salts.",
+    "hin": "कथन I: कठोर जल में साबुन, मृदु जल की तुलना में कम प्रभावी होता है।\nकथन II: कैल्शियम और मैग्नीशियम आयन साबुन से अभिक्रिया करके अघुलनशील लवण बनाते हैं।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Hardness ions consume soap by forming insoluble scum, leaving less soap available for cleansing and lather formation.",
+    "solH": "कठोरता उत्पन्न करने वाले आयन अघुलनशील मैल बनाकर साबुन का उपयोग कर लेते हैं। इससे सफाई और झाग बनाने के लिए कम साबुन उपलब्ध रहता है।"
+  },
+  {
+    "id": 3,
+    "eng": "Match List I with List II.\nList I: A. Temporary hardness; B. Permanent hardness; C. Ion-exchange softening; D. Soap scum.\nList II: 1. Insoluble salts of soap; 2. Calcium/magnesium bicarbonates; 3. Replacement of hardness ions; 4. Calcium/magnesium chlorides or sulphates.\nChoose the correct code.",
+    "hin": "सूची I का सूची II से मिलान कीजिए।\nसूची I: A. अस्थायी कठोरता; B. स्थायी कठोरता; C. आयन-विनिमय मृदुकरण; D. साबुन का मैल।\nसूची II: 1. साबुन के अघुलनशील लवण; 2. कैल्शियम/मैग्नीशियम बाइकार्बोनेट; 3. कठोरता आयनों का प्रतिस्थापन; 4. कैल्शियम/मैग्नीशियम क्लोराइड या सल्फेट।\nसही कूट चुनिए।",
+    "optE": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Temporary hardness is associated with bicarbonates; permanent hardness with chlorides and sulphates. Ion exchange replaces hardness ions, while scum consists of insoluble soap salts.",
+    "solH": "अस्थायी कठोरता बाइकार्बोनेट तथा स्थायी कठोरता क्लोराइड और सल्फेट से संबंधित है। आयन-विनिमय कठोरता आयनों को बदलता है, जबकि मैल साबुन के अघुलनशील लवणों से बनता है।"
+  },
+  {
+    "id": 4,
+    "eng": "Which of the following is NOT a valid general statement about synthetic detergents?",
+    "hin": "कृत्रिम अपमार्जकों के संबंध में निम्नलिखित में से कौन-सा सामान्य कथन सही नहीं है?",
+    "optE": ["Many work effectively in hard water", "Some detergents may be poorly biodegradable", "All synthetic detergents are completely harmless to aquatic ecosystems", "Their cleansing action involves interaction with grease and water"],
+    "optH": ["अनेक अपमार्जक कठोर जल में प्रभावी होते हैं", "कुछ अपमार्जक जैव-अपघटन में कठिन हो सकते हैं", "सभी कृत्रिम अपमार्जक जलीय पारितंत्रों के लिए पूरी तरह हानिरहित हैं", "उनकी सफाई क्रिया में चिकनाई और जल के साथ अंतःक्रिया होती है"],
+    "ans": [2],
+    "solE": "Environmental effects depend on the detergent's composition and biodegradability. It is incorrect to claim that every synthetic detergent is completely harmless.",
+    "solH": "अपमार्जकों का पर्यावरणीय प्रभाव उनकी संरचना और जैव-अपघटन क्षमता पर निर्भर करता है। प्रत्येक कृत्रिम अपमार्जक को पूरी तरह हानिरहित कहना गलत है।"
+  },
+  {
+    "id": 5,
+    "eng": "Consider the following statements about noble gases:\n1. Their outer electron shells are generally complete.\n2. All noble gases are completely incapable of forming compounds under any conditions.\nWhich of the statements is/are correct?",
+    "hin": "उत्कृष्ट गैसों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. इनके बाहरी इलेक्ट्रॉन कोश सामान्यतः पूर्ण होते हैं।\n2. सभी उत्कृष्ट गैसें किसी भी परिस्थिति में यौगिक बनाने में पूरी तरह असमर्थ होती हैं।\nकौन-सा/से कथन सही है/हैं?",
+    "optE": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1, न ही 2"],
+    "ans": [0],
+    "solE": "Statement 1 is correct. Xenon and krypton can form certain compounds under suitable conditions, so statement 2 is false.",
+    "solH": "कथन 1 सही है। जेनॉन और क्रिप्टॉन उपयुक्त परिस्थितियों में कुछ यौगिक बना सकते हैं, इसलिए कथन 2 गलत है।"
+  },
+  {
+    "id": 6,
+    "eng": "Statement I: Argon is used in some electric bulbs.\nStatement II: Argon is relatively unreactive and helps protect the hot filament.",
+    "hin": "कथन I: कुछ विद्युत बल्बों में आर्गन का उपयोग किया जाता है।\nकथन II: आर्गन अपेक्षाकृत निष्क्रिय है और गर्म फिलामेंट की सुरक्षा में सहायता करता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Argon is used as a relatively inert filling gas in many incandescent bulbs to reduce unwanted reactions involving the filament.",
+    "solH": "फिलामेंट से संबंधित अवांछित अभिक्रियाएँ कम करने के लिए अनेक तापदीप्त बल्बों में अपेक्षाकृत निष्क्रिय गैस आर्गन भरी जाती है।"
+  },
+  {
+    "id": 7,
+    "eng": "Match the noble gas with its common application.\nA. Helium; B. Neon; C. Argon; D. Xenon.\n1. Some high-intensity lamps; 2. Balloons and cryogenic applications; 3. Sign lighting; 4. Protective atmosphere in bulbs and welding.",
+    "hin": "उत्कृष्ट गैस का उसके सामान्य उपयोग से मिलान कीजिए।\nA. हीलियम; B. नियॉन; C. आर्गन; D. जेनॉन।\n1. कुछ उच्च-तीव्रता वाले लैम्प; 2. गुब्बारे और निम्नतापीय उपयोग; 3. संकेत प्रकाश; 4. बल्ब और वेल्डिंग में सुरक्षात्मक वातावरण।",
+    "optE": ["A-3, B-2, C-1, D-4", "A-1, B-4, C-2, D-3", "A-2, B-3, C-4, D-1", "A-4, B-1, C-3, D-2"],
+    "optH": ["A-3, B-2, C-1, D-4", "A-1, B-4, C-2, D-3", "A-2, B-3, C-4, D-1", "A-4, B-1, C-3, D-2"],
+    "ans": [2],
+    "solE": "Helium is useful in balloons and cryogenics, neon in signs, argon in protective atmospheres, and xenon in certain high-intensity lamps.",
+    "solH": "हीलियम गुब्बारों और निम्नतापीय उपयोगों, नियॉन संकेत प्रकाश, आर्गन सुरक्षात्मक वातावरण तथा जेनॉन कुछ उच्च-तीव्रता वाले लैम्पों में उपयोगी है।"
+  },
+  {
+    "id": 8,
+    "eng": "Which of the following statements about glass is NOT correct?",
+    "hin": "काँच के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Borosilicate glass resists thermal shock relatively well", "Soda-lime glass is widely used for windows", "Glass is generally an amorphous solid", "Ordinary soda-lime glass is always more resistant to sudden temperature changes than borosilicate glass"],
+    "optH": ["बोरोसिलिकेट काँच तापीय आघात का अपेक्षाकृत अच्छा प्रतिरोध करता है", "सोडा-लाइम काँच खिड़कियों में व्यापक रूप से उपयोग होता है", "काँच सामान्यतः एक अक्रिस्टलीय ठोस है", "साधारण सोडा-लाइम काँच अचानक तापमान परिवर्तन का हमेशा बोरोसिलिकेट काँच से बेहतर प्रतिरोध करता है"],
+    "ans": [3],
+    "solE": "Borosilicate glass generally has better thermal-shock resistance because of its lower thermal expansion.",
+    "solH": "बोरोसिलिकेट काँच का तापीय प्रसार कम होने के कारण यह सामान्यतः तापीय आघात का बेहतर प्रतिरोध करता है।"
+  },
+  {
+    "id": 9,
+    "eng": "Consider the following statements about polymers:\n1. A polymer may be made from repeating units derived from monomers.\n2. Every polymer is necessarily a synthetic material.\nWhich of the statements is/are correct?",
+    "hin": "बहुलकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. बहुलक मोनोमर से प्राप्त दोहराने वाली इकाइयों से बन सकता है।\n2. प्रत्येक बहुलक अनिवार्य रूप से कृत्रिम पदार्थ होता है।\nकौन-सा/से कथन सही है/हैं?",
+    "optE": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1, न ही 2"],
+    "ans": [0],
+    "solE": "Statement 1 describes polymer structure. Natural polymers include cellulose, starch, proteins and natural rubber, so statement 2 is false.",
+    "solH": "कथन 1 बहुलक की संरचना बताता है। सेल्यूलोज, स्टार्च, प्रोटीन और प्राकृतिक रबर प्राकृतिक बहुलक हैं, इसलिए कथन 2 गलत है।"
+  },
+  {
+    "id": 10,
+    "eng": "Statement I: Bakelite is a thermosetting polymer.\nStatement II: After curing, Bakelite forms a rigid cross-linked structure that cannot be remoulded like an ordinary thermoplastic.",
+    "hin": "कथन I: बैकेलाइट एक तापदृढ़ बहुलक है।\nकथन II: जमने के बाद बैकेलाइट कठोर क्रॉस-लिंक संरचना बनाता है, जिसे सामान्य तापसुघट्य प्लास्टिक की तरह दोबारा नहीं ढाला जा सकता।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Cross-linking gives Bakelite a rigid structure that does not soften for remoulding in the same way as thermoplastics.",
+    "solH": "क्रॉस-लिंकिंग बैकेलाइट को कठोर संरचना देती है, जो तापसुघट्य प्लास्टिक की तरह दोबारा ढालने के लिए नरम नहीं होती।"
+  },
+  {
+    "id": 11,
+    "eng": "Match the polymer with its characteristic use or property.\nA. PTFE; B. Nylon; C. Bakelite; D. Polyethene.\n1. Thermoplastic packaging; 2. Non-stick coating; 3. Synthetic polyamide fibre; 4. Thermosetting electrical components.",
+    "hin": "बहुलक का उसके विशिष्ट उपयोग या गुण से मिलान कीजिए।\nA. PTFE; B. नायलॉन; C. बैकेलाइट; D. पॉलीथीन।\n1. तापसुघट्य पैकेजिंग; 2. नॉन-स्टिक परत; 3. कृत्रिम पॉलीएमाइड रेशा; 4. तापदृढ़ विद्युत घटक।",
+    "optE": ["A-1, B-2, C-3, D-4", "A-2, B-3, C-4, D-1", "A-4, B-1, C-2, D-3", "A-3, B-4, C-1, D-2"],
+    "optH": ["A-1, B-2, C-3, D-4", "A-2, B-3, C-4, D-1", "A-4, B-1, C-2, D-3", "A-3, B-4, C-1, D-2"],
+    "ans": [1],
+    "solE": "PTFE is used for non-stick coatings, nylon is a polyamide fibre, Bakelite is thermosetting, and polyethene is a common thermoplastic.",
+    "solH": "PTFE नॉन-स्टिक परत, नायलॉन पॉलीएमाइड रेशे, बैकेलाइट तापदृढ़ घटकों तथा पॉलीथीन सामान्य तापसुघट्य उत्पादों में उपयोग होता है।"
+  },
+  {
+    "id": 12,
+    "eng": "Which of the following is NOT a correct statement about vulcanisation?",
+    "hin": "वल्कनीकरण के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Sulphur is commonly used in conventional vulcanisation", "Cross-links can improve rubber's strength and elasticity", "Vulcanisation can improve resistance to deformation", "Vulcanisation simply dissolves all rubber polymer chains into separate monomers"],
+    "optH": ["पारंपरिक वल्कनीकरण में सामान्यतः सल्फर उपयोग होता है", "क्रॉस-लिंक रबर की मजबूती और प्रत्यास्थता बढ़ा सकते हैं", "वल्कनीकरण विरूपण के प्रति प्रतिरोध बढ़ा सकता है", "वल्कनीकरण रबर की सभी बहुलक शृंखलाओं को अलग-अलग मोनोमर में घोल देता है"],
+    "ans": [3],
+    "solE": "Vulcanisation forms cross-links between polymer chains; it does not break all chains into monomers.",
+    "solH": "वल्कनीकरण बहुलक शृंखलाओं के बीच क्रॉस-लिंक बनाता है; यह सभी शृंखलाओं को मोनोमर में नहीं तोड़ता।"
+  },
+  {
+    "id": 13,
+    "eng": "Consider the following statements about soaps and detergents:\n1. Soap molecules have a hydrophilic part and a hydrophobic part.\n2. Micelles help disperse oily dirt in water.\n3. All detergents are necessarily biodegradable.",
+    "hin": "साबुन और अपमार्जकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. साबुन के अणुओं में जलस्नेही और जलविरागी भाग होते हैं।\n2. मिसेल तैलीय गंदगी को जल में फैलाने में सहायता करते हैं।\n3. सभी अपमार्जक अनिवार्य रूप से जैव-अपघटनीय होते हैं।",
+    "optE": ["1 only", "1 and 3 only", "1 and 2 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 3", "केवल 1 और 2", "1, 2 और 3"],
+    "ans": [2],
+    "solE": "Statements 1 and 2 are correct. Biodegradability varies with detergent chemistry, so statement 3 is false.",
+    "solH": "कथन 1 और 2 सही हैं। अपमार्जकों की जैव-अपघटन क्षमता उनकी रासायनिक संरचना पर निर्भर करती है, इसलिए कथन 3 गलत है।"
+  },
+  {
+    "id": 14,
+    "eng": "Which of the following pairs is mismatched?",
+    "hin": "निम्नलिखित में से कौन-सा युग्म सुमेलित नहीं है?",
+    "optE": ["Analgesic — relief from pain", "Antipyretic — reduction of fever", "Antacid — neutralisation of excess stomach acid", "Antiseptic — treatment of every infection by killing all pathogens inside the bloodstream"],
+    "optH": ["पीड़ानाशक — दर्द से राहत", "ज्वरनाशक — बुखार कम करना", "अम्लनाशक — पेट के अतिरिक्त अम्ल का उदासीनीकरण", "प्रतिसेप्टिक — रक्तप्रवाह के भीतर सभी रोगजनकों को मारकर प्रत्येक संक्रमण का उपचार"],
+    "ans": [3],
+    "solE": "Antiseptics are used on living tissues to inhibit microorganisms. They are not a universal treatment for bloodstream infections.",
+    "solH": "प्रतिसेप्टिक जीवित ऊतकों पर सूक्ष्मजीवों को रोकने के लिए उपयोग होते हैं। वे रक्तप्रवाह के संक्रमणों का सार्वभौमिक उपचार नहीं हैं।"
+  },
+  {
+    "id": 15,
+    "eng": "Statement I: Paracetamol is used as an antipyretic.\nStatement II: An antipyretic is a substance used to reduce fever.",
+    "hin": "कथन I: पैरासिटामोल का उपयोग ज्वरनाशक के रूप में किया जाता है।\nकथन II: ज्वरनाशक वह पदार्थ है जिसका उपयोग बुखार कम करने के लिए किया जाता है।",
+    "optE": ["Both statements are correct, and II correctly explains the classification in I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I में दिए वर्गीकरण की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Paracetamol has antipyretic activity, meaning it can reduce fever; it also has analgesic activity.",
+    "solH": "पैरासिटामोल में ज्वरनाशक गुण होता है, अर्थात यह बुखार कम कर सकता है। इसमें पीड़ानाशक गुण भी होता है।"
+  },
+  {
+    "id": 16,
+    "eng": "Match the substance with its correct category.\nA. Magnesium hydroxide; B. Paracetamol; C. Sodium benzoate; D. Aspartame.\n1. Artificial sweetener; 2. Antacid; 3. Food preservative; 4. Analgesic and antipyretic.",
+    "hin": "पदार्थ का सही वर्ग से मिलान कीजिए।\nA. मैग्नीशियम हाइड्रॉक्साइड; B. पैरासिटामोल; C. सोडियम बेंजोएट; D. एस्पार्टेम।\n1. कृत्रिम मिठासकारक; 2. अम्लनाशक; 3. खाद्य परिरक्षक; 4. पीड़ानाशक और ज्वरनाशक।",
+    "optE": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4"],
+    "optH": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4"],
+    "ans": [1],
+    "solE": "Magnesium hydroxide neutralises stomach acid; paracetamol reduces pain and fever; sodium benzoate preserves some foods; aspartame sweetens foods.",
+    "solH": "मैग्नीशियम हाइड्रॉक्साइड पेट के अम्ल को उदासीन करता है; पैरासिटामोल दर्द और बुखार कम करता है; सोडियम बेंजोएट कुछ खाद्य पदार्थों का परिरक्षण करता है; एस्पार्टेम मिठास देता है।"
+  },
+  {
+    "id": 17,
+    "eng": "Which statement about disinfectants and antiseptics is NOT correct?",
+    "hin": "कीटाणुनाशकों और प्रतिसेप्टिक के संबंध में कौन-सा कथन सही नहीं है?",
+    "optE": ["Disinfectants are commonly used on non-living surfaces", "Antiseptics are formulated for use on living tissues", "The suitability of a chemical depends on its concentration and intended use", "Every disinfectant can be applied safely to wounds at any concentration"],
+    "optH": ["कीटाणुनाशक सामान्यतः निर्जीव सतहों पर उपयोग होते हैं", "प्रतिसेप्टिक जीवित ऊतकों पर उपयोग के लिए बनाए जाते हैं", "किसी रसायन की उपयुक्तता उसकी सांद्रता और उपयोग पर निर्भर करती है", "प्रत्येक कीटाणुनाशक को किसी भी सांद्रता में घाव पर सुरक्षित रूप से लगाया जा सकता है"],
+    "ans": [3],
+    "solE": "Some disinfectants can damage living tissue. Use on wounds depends on the specific product, formulation and approved directions.",
+    "solH": "कुछ कीटाणुनाशक जीवित ऊतकों को नुकसान पहुँचा सकते हैं। घाव पर उनका उपयोग विशिष्ट उत्पाद, संरचना और अनुमोदित निर्देशों पर निर्भर करता है।"
+  },
+  {
+    "id": 18,
+    "eng": "Consider the following statements about artificial sweeteners:\n1. Aspartame is an artificial sweetener.\n2. Every artificial sweetener is calorie-free in every quantity and every formulation.\nWhich of the statements is/are correct?",
+    "hin": "कृत्रिम मिठासकारकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. एस्पार्टेम एक कृत्रिम मिठासकारक है।\n2. प्रत्येक कृत्रिम मिठासकारक हर मात्रा और हर उत्पाद में कैलोरी-रहित होता है।\nकौन-सा/से कथन सही है/हैं?",
+    "optE": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1, न ही 2"],
+    "ans": [0],
+    "solE": "Aspartame is an artificial sweetener. Sweeteners differ in energy content, and complete products may contain other energy-providing ingredients.",
+    "solH": "एस्पार्टेम एक कृत्रिम मिठासकारक है। मिठासकारकों की ऊर्जा मात्रा अलग-अलग होती है और तैयार उत्पाद में अन्य ऊर्जा देने वाले घटक भी हो सकते हैं।"
+  },
+  {
+    "id": 19,
+    "eng": "Which of the following statements about chlorine and bromine is correct?",
+    "hin": "क्लोरीन और ब्रोमीन के संबंध में निम्नलिखित में से कौन-सा कथन सही है?",
+    "optE": ["Both are colourless gases at room temperature", "Chlorine is a greenish-yellow gas and bromine is a reddish-brown liquid", "Chlorine is a metal and bromine is a noble gas", "Both are inert gases in Group 18"],
+    "optH": ["दोनों कमरे के तापमान पर रंगहीन गैसें हैं", "क्लोरीन हरिताभ-पीली गैस और ब्रोमीन लाल-भूरा द्रव है", "क्लोरीन धातु और ब्रोमीन उत्कृष्ट गैस है", "दोनों समूह 18 की निष्क्रिय गैसें हैं"],
+    "ans": [1],
+    "solE": "Chlorine and bromine are halogens in Group 17. Chlorine is a gas and bromine is a liquid under ordinary room conditions.",
+    "solH": "क्लोरीन और ब्रोमीन समूह 17 के हैलोजन हैं। सामान्य कमरे की परिस्थितियों में क्लोरीन गैस और ब्रोमीन द्रव है।"
+  },
+  {
+    "id": 20,
+    "eng": "Match the calcium compound with its formula.\nA. Quicklime; B. Slaked lime; C. Gypsum; D. Plaster of Paris.\n1. CaSO₄·2H₂O; 2. CaO; 3. CaSO₄·½H₂O; 4. Ca(OH)₂.",
+    "hin": "कैल्शियम यौगिक का उसके सूत्र से मिलान कीजिए।\nA. बिना बुझा चूना; B. बुझा हुआ चूना; C. जिप्सम; D. प्लास्टर ऑफ पेरिस।\n1. CaSO₄·2H₂O; 2. CaO; 3. CaSO₄·½H₂O; 4. Ca(OH)₂।",
+    "optE": ["A-4, B-2, C-3, D-1", "A-1, B-3, C-2, D-4", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2"],
+    "optH": ["A-4, B-2, C-3, D-1", "A-1, B-3, C-2, D-4", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2"],
+    "ans": [2],
+    "solE": "Quicklime is CaO; slaked lime is Ca(OH)₂; gypsum is calcium sulphate dihydrate; plaster of Paris is calcium sulphate hemihydrate.",
+    "solH": "बिना बुझा चूना CaO, बुझा चूना Ca(OH)₂, जिप्सम कैल्शियम सल्फेट डाइहाइड्रेट और प्लास्टर ऑफ पेरिस कैल्शियम सल्फेट हेमीहाइड्रेट है।"
+  },
+  {
+    "id": 21,
+    "eng": "Statement I: Plaster of Paris hardens when mixed with water.\nStatement II: It reacts with water to form gypsum.",
+    "hin": "कथन I: प्लास्टर ऑफ पेरिस जल के साथ मिलाने पर कठोर हो जाता है।\nकथन II: यह जल से अभिक्रिया करके जिप्सम बनाता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Plaster of Paris rehydrates to form gypsum crystals, which interlock and cause the material to set.",
+    "solH": "प्लास्टर ऑफ पेरिस जल ग्रहण करके जिप्सम के क्रिस्टल बनाता है। ये आपस में जुड़कर पदार्थ को कठोर करते हैं।"
+  },
+  {
+    "id": 22,
+    "eng": "Which of the following is NOT correct about quicklime and slaked lime?",
+    "hin": "बिना बुझा चूना और बुझा चूना के संबंध में कौन-सा कथन सही नहीं है?",
+    "optE": ["Quicklime is CaO", "Slaked lime is Ca(OH)₂", "Quicklime reacts with water and releases heat", "Slaked lime is chemically identical to calcium carbonate"],
+    "optH": ["बिना बुझा चूना CaO है", "बुझा चूना Ca(OH)₂ है", "बिना बुझा चूना जल से अभिक्रिया करके ऊष्मा छोड़ता है", "बुझा चूना रासायनिक रूप से कैल्शियम कार्बोनेट के समान है"],
+    "ans": [3],
+    "solE": "Slaked lime is calcium hydroxide, whereas calcium carbonate is CaCO₃. They are different compounds.",
+    "solH": "बुझा चूना कैल्शियम हाइड्रॉक्साइड है, जबकि कैल्शियम कार्बोनेट का सूत्र CaCO₃ है। ये अलग-अलग यौगिक हैं।"
+  },
+  {
+    "id": 23,
+    "eng": "Consider the following statements about hydrogen isotopes:\n1. Protium has no neutron.\n2. Deuterium has one neutron.\n3. Tritium has two neutrons and is radioactive.",
+    "hin": "हाइड्रोजन के समस्थानिकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. प्रोटियम में कोई न्यूट्रॉन नहीं होता।\n2. ड्यूटेरियम में एक न्यूट्रॉन होता है।\n3. ट्रिटियम में दो न्यूट्रॉन होते हैं और यह रेडियोधर्मी है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "The three principal hydrogen isotopes have mass numbers 1, 2 and 3. Their neutron counts are 0, 1 and 2 respectively; tritium is radioactive.",
+    "solH": "हाइड्रोजन के तीन प्रमुख समस्थानिकों की द्रव्यमान संख्याएँ 1, 2 और 3 हैं। इनमें क्रमशः 0, 1 और 2 न्यूट्रॉन होते हैं; ट्रिटियम रेडियोधर्मी है।"
+  },
+  {
+    "id": 24,
+    "eng": "Which of the following is NOT a correct statement about heavy water?",
+    "hin": "भारी जल के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Its formula is D₂O", "It contains deuterium instead of ordinary hydrogen", "It has applications as a neutron moderator in certain nuclear reactors", "It is chemically identical in every respect to ordinary water and has exactly the same physical properties"],
+    "optH": ["इसका सूत्र D₂O है", "इसमें साधारण हाइड्रोजन के स्थान पर ड्यूटेरियम होता है", "कुछ परमाणु रिएक्टरों में इसका उपयोग न्यूट्रॉन मंदक के रूप में होता है", "यह प्रत्येक दृष्टि से साधारण जल के रासायनिक रूप से समान और इसके सभी भौतिक गुणों वाला बिल्कुल समान पदार्थ है"],
+    "ans": [3],
+    "solE": "Heavy water has broadly similar chemistry to ordinary water but differs in several physical properties and reaction rates because deuterium is heavier.",
+    "solH": "भारी जल की रसायनिकी साधारण जल से व्यापक रूप से मिलती है, लेकिन ड्यूटेरियम भारी होने के कारण इसके कई भौतिक गुण और अभिक्रिया दर अलग होते हैं।"
+  },
+  {
+    "id": 25,
+    "eng": "Match the hydrogen isotope with its neutron count.\nA. Protium; B. Deuterium; C. Tritium.\n1. Two neutrons; 2. Zero neutrons; 3. One neutron.",
+    "hin": "हाइड्रोजन के समस्थानिक का उसके न्यूट्रॉन की संख्या से मिलान कीजिए।\nA. प्रोटियम; B. ड्यूटेरियम; C. ट्रिटियम।\n1. दो न्यूट्रॉन; 2. शून्य न्यूट्रॉन; 3. एक न्यूट्रॉन।",
+    "optE": ["A-1, B-2, C-3", "A-2, B-3, C-1", "A-3, B-1, C-2", "A-2, B-1, C-3"],
+    "optH": ["A-1, B-2, C-3", "A-2, B-3, C-1", "A-3, B-1, C-2", "A-2, B-1, C-3"],
+    "ans": [1],
+    "solE": "Protium has zero neutrons, deuterium has one, and tritium has two.",
+    "solH": "प्रोटियम में शून्य, ड्यूटेरियम में एक और ट्रिटियम में दो न्यूट्रॉन होते हैं।"
+  },
+  {
+    "id": 26,
+    "eng": "Consider the following statements about the modern periodic table:\n1. Elements in the same group often have similar valence-shell configurations.\n2. The modern periodic law relates properties of elements to their atomic numbers.\n3. Isotopes occupy different positions because they have different mass numbers.",
+    "hin": "आधुनिक आवर्त सारणी के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. एक ही समूह के तत्वों के संयोजकता कोश विन्यास अक्सर समान होते हैं।\n2. आधुनिक आवर्त नियम तत्वों के गुणों को उनकी परमाणु संख्या से संबंधित करता है।\n3. समस्थानिक अलग-अलग द्रव्यमान संख्या के कारण अलग-अलग स्थानों पर रखे जाते हैं।",
+    "optE": ["1 only", "2 and 3 only", "1 and 2 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 2 और 3", "केवल 1 और 2", "1, 2 और 3"],
+    "ans": [2],
+    "solE": "Statements 1 and 2 are correct. Isotopes have the same atomic number and occupy the same position in the modern periodic table.",
+    "solH": "कथन 1 और 2 सही हैं। समस्थानिकों की परमाणु संख्या समान होती है और वे आधुनिक आवर्त सारणी में एक ही स्थान पर आते हैं।"
+  },
+  {
+    "id": 27,
+    "eng": "Statement I: Atomic radius generally decreases across a period from left to right.\nStatement II: Nuclear charge increases while added electrons enter the same principal shell.",
+    "hin": "कथन I: एक आवर्त में बाएँ से दाएँ जाने पर परमाणु त्रिज्या सामान्यतः घटती है।\nकथन II: इस दौरान नाभिकीय आवेश बढ़ता है और जुड़ने वाले इलेक्ट्रॉन उसी मुख्य कोश में प्रवेश करते हैं।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Increasing effective nuclear attraction generally pulls the electron cloud closer across a period.",
+    "solH": "एक आवर्त में प्रभावी नाभिकीय आकर्षण बढ़ने से इलेक्ट्रॉन बादल सामान्यतः नाभिक के निकट आता है।"
+  },
+  {
+    "id": 28,
+    "eng": "Match the element with its periodic-table family.\nA. Sodium; B. Calcium; C. Chlorine; D. Argon.\n1. Noble gas; 2. Alkali metal; 3. Halogen; 4. Alkaline-earth metal.",
+    "hin": "तत्व का उसके आवर्त सारणी परिवार से मिलान कीजिए।\nA. सोडियम; B. कैल्शियम; C. क्लोरीन; D. आर्गन।\n1. उत्कृष्ट गैस; 2. क्षार धातु; 3. हैलोजन; 4. क्षारीय मृदा धातु।",
+    "optE": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-1, B-2, C-4, D-3", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-1, B-2, C-4, D-3", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Sodium is Group 1, calcium Group 2, chlorine Group 17, and argon Group 18.",
+    "solH": "सोडियम समूह 1, कैल्शियम समूह 2, क्लोरीन समूह 17 और आर्गन समूह 18 में स्थित है।"
+  },
+  {
+    "id": 29,
+    "eng": "Which of the following is NOT generally true of elements in the same period?",
+    "hin": "एक ही आवर्त के तत्वों के संबंध में सामान्यतः कौन-सा कथन सही नहीं है?",
+    "optE": ["They have the same number of occupied principal electron shells", "Their atomic numbers increase from left to right", "Their valence-shell configurations can change across the period", "They necessarily have identical chemical properties"],
+    "optH": ["उनमें भरे हुए मुख्य इलेक्ट्रॉन कोशों की संख्या समान होती है", "बाएँ से दाएँ उनकी परमाणु संख्या बढ़ती है", "आवर्त में उनका संयोजकता कोश विन्यास बदल सकता है", "उनके रासायनिक गुण अनिवार्य रूप से समान होते हैं"],
+    "ans": [3],
+    "solE": "Elements in the same period show changing valence configurations and can have very different chemical properties.",
+    "solH": "एक ही आवर्त के तत्वों के संयोजकता विन्यास बदलते हैं और उनके रासायनिक गुण काफी अलग हो सकते हैं।"
+  },
+  {
+    "id": 30,
+    "eng": "Consider the following statements about acids and bases:\n1. A strong acid ionises extensively in water.\n2. A concentrated acid must always be a strong acid.\n3. pH is related to hydrogen-ion activity.",
+    "hin": "अम्ल और क्षार के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. प्रबल अम्ल जल में व्यापक रूप से आयनित होता है।\n2. सांद्र अम्ल अनिवार्य रूप से प्रबल अम्ल ही होता है।\n3. pH का संबंध हाइड्रोजन आयन की सक्रियता से है।",
+    "optE": ["1 only", "1 and 2 only", "1 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 1 और 3", "1, 2 और 3"],
+    "ans": [2],
+    "solE": "Strength describes the extent of ionisation, whereas concentration describes the amount of acid per volume. A concentrated weak acid is possible.",
+    "solH": "प्रबलता आयनीकरण की मात्रा बताती है, जबकि सांद्रता प्रति आयतन अम्ल की मात्रा बताती है। सांद्र दुर्बल अम्ल भी संभव है।"
+  },
+  {
+    "id": 31,
+    "eng": "A solution has pH 3 and another has pH 5 at the same temperature. The hydrogen-ion activity of the first is approximately how many times that of the second?",
+    "hin": "एक विलयन का pH 3 और दूसरे का pH 5 है। समान तापमान पर पहले विलयन की हाइड्रोजन आयन सक्रियता दूसरे की तुलना में लगभग कितनी गुनी है?",
+    "optE": ["2 times", "20 times", "100 times", "1,000 times"],
+    "optH": ["2 गुनी", "20 गुनी", "100 गुनी", "1,000 गुनी"],
+    "ans": [2],
+    "solE": "A difference of two pH units corresponds to a factor of 10², or 100, in hydrogen-ion activity.",
+    "solH": "pH में दो इकाई का अंतर हाइड्रोजन आयन सक्रियता में 10², अर्थात 100 गुना, अंतर दर्शाता है।"
+  },
+  {
+    "id": 32,
+    "eng": "Statement I: Dilution of a strong acid with water is exothermic.\nStatement II: Hydration of ions releases energy, although the overall heat effect depends on the acid and conditions.",
+    "hin": "कथन I: प्रबल अम्ल को जल से तनु करना ऊष्माक्षेपी होता है।\nकथन II: आयनों के जलयोजन से ऊर्जा निकलती है, हालाँकि कुल ऊष्मीय प्रभाव अम्ल और परिस्थितियों पर निर्भर करता है।",
+    "optE": ["Both statements are correct, and II correctly explains I in general", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II सामान्यतः I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Dilution of common strong mineral acids releases heat due largely to hydration processes. Acid should always be added slowly to water, not water to concentrated acid.",
+    "solH": "सामान्य प्रबल खनिज अम्लों को तनु करने पर जलयोजन प्रक्रियाओं के कारण ऊष्मा निकलती है। अम्ल को धीरे-धीरे जल में मिलाना चाहिए, सांद्र अम्ल में जल नहीं डालना चाहिए।"
+  },
+  {
+    "id": 33,
+    "eng": "Match the indicator with its behaviour in acidic solution.\nA. Blue litmus; B. Methyl orange; C. Phenolphthalein; D. Turmeric.\n1. Red; 2. Red; 3. Colourless; 4. Yellow.",
+    "hin": "सूचक का अम्लीय विलयन में उसके व्यवहार से मिलान कीजिए।\nA. नीला लिटमस; B. मिथाइल ऑरेंज; C. फिनॉल्फ्थेलीन; D. हल्दी।\n1. लाल; 2. लाल; 3. रंगहीन; 4. पीला।",
+    "optE": ["A-1, B-2, C-3, D-4", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2", "A-4, B-3, C-2, D-1"],
+    "optH": ["A-1, B-2, C-3, D-4", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2", "A-4, B-3, C-2, D-1"],
+    "ans": [0],
+    "solE": "Blue litmus turns red; methyl orange is red; phenolphthalein is colourless; turmeric remains yellow in acidic solution.",
+    "solH": "नीला लिटमस लाल हो जाता है; मिथाइल ऑरेंज लाल रहता है; फिनॉल्फ्थेलीन रंगहीन रहती है; अम्लीय विलयन में हल्दी पीली रहती है।"
+  },
+  {
+    "id": 34,
+    "eng": "Which of the following is NOT a correct statement about neutralisation?",
+    "hin": "उदासीनीकरण के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["A typical acid-base neutralisation produces water and a salt", "Strong acid-strong base neutralisation is generally exothermic", "The final solution must always have pH exactly 7 regardless of acid, base and conditions", "Net ionic neutralisation often involves H⁺ and OH⁻ forming water"],
+    "optH": ["सामान्य अम्ल-क्षार उदासीनीकरण से जल और लवण बनते हैं", "प्रबल अम्ल-प्रबल क्षार का उदासीनीकरण सामान्यतः ऊष्माक्षेपी होता है", "अम्ल, क्षार और परिस्थितियों की परवाह किए बिना अंतिम विलयन का pH हमेशा ठीक 7 होना चाहिए", "शुद्ध आयनिक उदासीनीकरण में प्रायः H⁺ और OH⁻ मिलकर जल बनाते हैं"],
+    "ans": [2],
+    "solE": "The equivalence-point pH depends on the strengths of the acid and base and on temperature. It is approximately 7 for strong acid-strong base systems at 25°C.",
+    "solH": "तुल्यता बिंदु का pH अम्ल और क्षार की प्रबलता तथा तापमान पर निर्भर करता है। 25°C पर प्रबल अम्ल-प्रबल क्षार के लिए यह लगभग 7 होता है।"
+  },
+  {
+    "id": 35,
+    "eng": "Consider the following statements about chemical reactions:\n1. Oxidation may involve loss of electrons.\n2. Reduction may involve gain of electrons.\n3. Oxidation and reduction always occur together in a redox reaction.",
+    "hin": "रासायनिक अभिक्रियाओं के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. ऑक्सीकरण में इलेक्ट्रॉनों का त्याग हो सकता है।\n2. अपचयन में इलेक्ट्रॉनों की प्राप्ति हो सकती है।\n3. रेडॉक्स अभिक्रिया में ऑक्सीकरण और अपचयन साथ-साथ होते हैं।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "Electron loss is oxidation and electron gain is reduction. A redox reaction couples both processes.",
+    "solH": "इलेक्ट्रॉन का त्याग ऑक्सीकरण और इलेक्ट्रॉन की प्राप्ति अपचयन है। रेडॉक्स अभिक्रिया में दोनों प्रक्रियाएँ जुड़ी होती हैं।"
+  },
+  {
+    "id": 36,
+    "eng": "Statement I: Oxidation number of an element in its free elemental form is zero.\nStatement II: In elemental oxygen, O₂, each oxygen atom has oxidation number zero.",
+    "hin": "कथन I: किसी तत्व की मुक्त तात्विक अवस्था में उसकी ऑक्सीकरण संख्या शून्य होती है।\nकथन II: तात्विक ऑक्सीजन O₂ में प्रत्येक ऑक्सीजन परमाणु की ऑक्सीकरण संख्या शून्य होती है।",
+    "optE": ["Both statements are correct, and II illustrates I", "Both statements are correct, but II does not illustrate I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I का उदाहरण है", "दोनों कथन सही हैं, लेकिन II, I का उदाहरण नहीं है", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Any element in its uncombined elemental form has oxidation number zero, including O₂, H₂ and metallic sodium.",
+    "solH": "असंयोजित तात्विक अवस्था में किसी भी तत्व की ऑक्सीकरण संख्या शून्य होती है; इसमें O₂, H₂ और धात्विक सोडियम शामिल हैं।"
+  },
+  {
+    "id": 37,
+    "eng": "Match the process with the description.\nA. Oxidation; B. Reduction; C. Neutralisation; D. Precipitation.\n1. Formation of an insoluble solid; 2. Loss of electrons; 3. Acid-base reaction; 4. Gain of electrons.",
+    "hin": "प्रक्रिया का विवरण से मिलान कीजिए।\nA. ऑक्सीकरण; B. अपचयन; C. उदासीनीकरण; D. अवक्षेपण।\n1. अघुलनशील ठोस का बनना; 2. इलेक्ट्रॉनों का त्याग; 3. अम्ल-क्षार अभिक्रिया; 4. इलेक्ट्रॉनों की प्राप्ति।",
+    "optE": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2"],
+    "optH": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2"],
+    "ans": [1],
+    "solE": "Oxidation involves electron loss, reduction electron gain, neutralisation an acid-base reaction, and precipitation the formation of an insoluble solid.",
+    "solH": "ऑक्सीकरण में इलेक्ट्रॉन का त्याग, अपचयन में इलेक्ट्रॉन की प्राप्ति, उदासीनीकरण में अम्ल-क्षार अभिक्रिया और अवक्षेपण में अघुलनशील ठोस बनता है।"
+  },
+  {
+    "id": 38,
+    "eng": "Which of the following is NOT a redox reaction?",
+    "hin": "निम्नलिखित में से कौन-सी रेडॉक्स अभिक्रिया नहीं है?",
+    "optE": ["Zn + CuSO₄ → ZnSO₄ + Cu", "2Mg + O₂ → 2MgO", "HCl + NaOH → NaCl + H₂O", "CuO + H₂ → Cu + H₂O"],
+    "optH": ["Zn + CuSO₄ → ZnSO₄ + Cu", "2Mg + O₂ → 2MgO", "HCl + NaOH → NaCl + H₂O", "CuO + H₂ → Cu + H₂O"],
+    "ans": [2],
+    "solE": "HCl + NaOH is an acid-base neutralisation without a change in oxidation numbers. The other reactions involve oxidation and reduction.",
+    "solH": "HCl + NaOH अम्ल-क्षार उदासीनीकरण है, जिसमें ऑक्सीकरण संख्याएँ नहीं बदलतीं। अन्य अभिक्रियाओं में ऑक्सीकरण और अपचयन होता है।"
+  },
+  {
+    "id": 39,
+    "eng": "Consider the following statements about thermodynamics:\n1. An exothermic reaction releases heat to its surroundings at constant pressure when the enthalpy change is negative.\n2. An endothermic reaction has a positive enthalpy change under the same convention.\n3. Every exothermic reaction must be spontaneous at all temperatures.",
+    "hin": "ऊष्मागतिकी के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. स्थिर दाब पर ऋणात्मक एन्थैल्पी परिवर्तन वाली ऊष्माक्षेपी अभिक्रिया परिवेश में ऊष्मा छोड़ती है।\n2. इसी परिपाटी में ऊष्माशोषी अभिक्रिया का एन्थैल्पी परिवर्तन धनात्मक होता है।\n3. प्रत्येक ऊष्माक्षेपी अभिक्रिया सभी तापमानों पर स्वतःस्फूर्त होती है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Statements 1 and 2 follow the usual enthalpy convention. Spontaneity depends on Gibbs free energy, not enthalpy alone.",
+    "solH": "कथन 1 और 2 सामान्य एन्थैल्पी परिपाटी के अनुसार सही हैं। स्वतःस्फूर्तता केवल एन्थैल्पी पर नहीं, बल्कि गिब्स मुक्त ऊर्जा पर निर्भर करती है।"
+  },
+  {
+    "id": 40,
+    "eng": "Statement I: A catalyst does not change the equilibrium constant of a reaction at a fixed temperature.\nStatement II: A catalyst accelerates the forward and reverse reactions by providing a lower-activation-energy pathway.",
+    "hin": "कथन I: निश्चित तापमान पर उत्प्रेरक किसी अभिक्रिया के साम्य स्थिरांक को नहीं बदलता।\nकथन II: उत्प्रेरक कम सक्रियण ऊर्जा वाला मार्ग देकर अग्र और उत्क्रम दोनों अभिक्रियाओं की दर बढ़ाता है।",
+    "optE": ["Both statements are correct, and II correctly explains why the equilibrium constant is unchanged", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II साम्य स्थिरांक अपरिवर्तित रहने की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "A catalyst changes the rates of both directions but not the thermodynamic equilibrium constant at a given temperature.",
+    "solH": "उत्प्रेरक दोनों दिशाओं की दर बदलता है, लेकिन दिए गए तापमान पर ऊष्मागतिक साम्य स्थिरांक नहीं बदलता।"
+  },
+  {
+    "id": 41,
+    "eng": "Match the thermodynamic term with its meaning.\nA. Exothermic; B. Endothermic; C. Catalyst; D. Activation energy.\n1. Minimum energy barrier for a reaction pathway; 2. Releases heat; 3. Speeds reaction without net consumption; 4. Absorbs heat.",
+    "hin": "ऊष्मागतिक पद का उसके अर्थ से मिलान कीजिए।\nA. ऊष्माक्षेपी; B. ऊष्माशोषी; C. उत्प्रेरक; D. सक्रियण ऊर्जा।\n1. अभिक्रिया मार्ग की न्यूनतम ऊर्जा बाधा; 2. ऊष्मा छोड़ता है; 3. स्वयं समग्र रूप से खर्च हुए बिना अभिक्रिया तेज करता है; 4. ऊष्मा अवशोषित करता है।",
+    "optE": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Exothermic processes release heat; endothermic processes absorb it. A catalyst speeds reactions, while activation energy is the energy barrier for a pathway.",
+    "solH": "ऊष्माक्षेपी प्रक्रियाएँ ऊष्मा छोड़ती हैं और ऊष्माशोषी प्रक्रियाएँ ऊष्मा ग्रहण करती हैं। उत्प्रेरक अभिक्रिया तेज करता है, जबकि सक्रियण ऊर्जा अभिक्रिया मार्ग की ऊर्जा बाधा है।"
+  },
+  {
+    "id": 42,
+    "eng": "Which of the following is NOT correct about the spontaneity of a process?",
+    "hin": "किसी प्रक्रिया की स्वतःस्फूर्तता के संबंध में कौन-सा कथन सही नहीं है?",
+    "optE": ["Gibbs free-energy change is important in determining spontaneity at constant temperature and pressure", "A negative Gibbs free-energy change indicates a thermodynamically spontaneous forward process under the stated conditions", "A positive enthalpy change alone does not prove that a process is non-spontaneous", "Every process that releases heat is necessarily spontaneous"],
+    "optH": ["निश्चित तापमान और दाब पर स्वतःस्फूर्तता निर्धारित करने में गिब्स मुक्त ऊर्जा परिवर्तन महत्वपूर्ण है", "दी गई परिस्थितियों में ऋणात्मक गिब्स मुक्त ऊर्जा परिवर्तन अग्र प्रक्रिया की ऊष्मागतिक स्वतःस्फूर्तता दर्शाता है", "केवल धनात्मक एन्थैल्पी परिवर्तन यह सिद्ध नहीं करता कि प्रक्रिया अस्वतःस्फूर्त है", "ऊष्मा छोड़ने वाली प्रत्येक प्रक्रिया अनिवार्य रूप से स्वतःस्फूर्त होती है"],
+    "ans": [3],
+    "solE": "Spontaneity depends on Gibbs free energy under constant-temperature, constant-pressure conditions; heat release alone is insufficient.",
+    "solH": "निश्चित तापमान और दाब पर स्वतःस्फूर्तता गिब्स मुक्त ऊर्जा पर निर्भर करती है; केवल ऊष्मा निकलना पर्याप्त नहीं है।"
+  },
+  {
+    "id": 43,
+    "eng": "Consider the following statements about coal:\n1. Anthracite generally has a higher carbon content than lignite.\n2. Destructive distillation of coal can produce coke, coal tar and coal gas.\n3. Coke is essentially pure carbon with absolutely no impurities in all cases.",
+    "hin": "कोयले के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. एन्थ्रासाइट में सामान्यतः लिग्नाइट से अधिक कार्बन होता है।\n2. कोयले के विनाशकारी आसवन से कोक, कोलतार और कोयला गैस प्राप्त हो सकते हैं।\n3. प्रत्येक परिस्थिति में कोक बिल्कुल शुद्ध कार्बन होता है और उसमें कोई अशुद्धि नहीं होती।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Anthracite is higher-rank coal and generally richer in carbon. Coke is carbon-rich but may contain mineral matter and other impurities.",
+    "solH": "एन्थ्रासाइट उच्च श्रेणी का कोयला है और इसमें सामान्यतः अधिक कार्बन होता है। कोक कार्बन-समृद्ध होता है, लेकिन उसमें खनिज पदार्थ और अन्य अशुद्धियाँ हो सकती हैं।"
+  },
+  {
+    "id": 44,
+    "eng": "Statement I: Carbon monoxide is dangerous because it binds strongly to haemoglobin.\nStatement II: This binding reduces the blood's capacity to transport oxygen.",
+    "hin": "कथन I: कार्बन मोनोऑक्साइड खतरनाक है क्योंकि यह हीमोग्लोबिन से दृढ़ता से जुड़ती है।\nकथन II: यह बंधन रक्त की ऑक्सीजन परिवहन क्षमता घटा देता है।",
+    "optE": ["Both statements are correct, and II correctly explains the danger described in I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I में वर्णित खतरे की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Carbon monoxide forms carboxyhaemoglobin and interferes with oxygen transport, causing potentially fatal poisoning.",
+    "solH": "कार्बन मोनोऑक्साइड कार्बोक्सीहीमोग्लोबिन बनाती है और ऑक्सीजन परिवहन में बाधा डालती है, जिससे जानलेवा विषाक्तता हो सकती है।"
+  },
+  {
+    "id": 45,
+    "eng": "Match the fuel or fuel-related substance with its principal description.\nA. Natural gas; B. LPG; C. Coke; D. Coal tar.\n1. Carbon-rich solid fuel and reducing agent; 2. Mixture mainly of propane and butane; 3. Complex mixture of organic compounds from coal processing; 4. Gas mainly containing methane.",
+    "hin": "ईंधन या ईंधन-संबंधी पदार्थ का उसके प्रमुख विवरण से मिलान कीजिए।\nA. प्राकृतिक गैस; B. LPG; C. कोक; D. कोलतार।\n1. कार्बन-समृद्ध ठोस ईंधन और अपचायक; 2. मुख्यतः प्रोपेन और ब्यूटेन का मिश्रण; 3. कोयला प्रसंस्करण से प्राप्त कार्बनिक यौगिकों का जटिल मिश्रण; 4. मुख्यतः मीथेन वाली गैस।",
+    "optE": ["A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-4, B-2, C-1, D-3", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-4, B-2, C-1, D-3", "A-3, B-1, C-2, D-4"],
+    "ans": [2],
+    "solE": "Natural gas mainly contains methane; LPG mainly contains propane and butane; coke is carbon-rich; coal tar is a complex organic mixture.",
+    "solH": "प्राकृतिक गैस में मुख्यतः मीथेन, LPG में प्रोपेन और ब्यूटेन, कोक में अधिक कार्बन तथा कोलतार में कार्बनिक यौगिकों का जटिल मिश्रण होता है।"
+  },
+  {
+    "id": 46,
+    "eng": "Which of the following is NOT a correct statement about combustion and fuels?",
+    "hin": "दहन और ईंधनों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Oxygen generally supports ordinary combustion", "Carbon monoxide can form during incomplete combustion of carbon-containing fuels", "A fuel's calorific value indicates the heat released by complete combustion per unit quantity", "A fuel that produces the most smoke must necessarily have the highest calorific value"],
+    "optH": ["ऑक्सीजन सामान्य दहन में सहायक होती है", "कार्बनयुक्त ईंधन के अपूर्ण दहन में कार्बन मोनोऑक्साइड बन सकती है", "ईंधन का ऊष्मीय मान पूर्ण दहन से प्रति इकाई मात्रा निकलने वाली ऊष्मा बताता है", "सबसे अधिक धुआँ देने वाले ईंधन का ऊष्मीय मान अनिवार्य रूप से सबसे अधिक होता है"],
+    "ans": [3],
+    "solE": "Smoke production and calorific value are different properties. Smoke often indicates incomplete combustion rather than high useful energy output.",
+    "solH": "धुआँ बनने और ऊष्मीय मान में अंतर है। धुआँ अक्सर अपूर्ण दहन का संकेत देता है, न कि अधिक उपयोगी ऊर्जा का।"
+  },
+  {
+    "id": 47,
+    "eng": "Consider the following statements about carbon compounds:\n1. Alkanes are saturated hydrocarbons.\n2. Alkenes contain at least one carbon-carbon double bond.\n3. Alkynes contain at least one carbon-carbon triple bond.",
+    "hin": "कार्बन यौगिकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. ऐल्केन संतृप्त हाइड्रोकार्बन हैं।\n2. ऐल्कीन में कम-से-कम एक कार्बन-कार्बन द्विबंध होता है।\n3. ऐल्काइन में कम-से-कम एक कार्बन-कार्बन त्रिबंध होता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "These are the defining bond characteristics of open-chain alkanes, alkenes and alkynes.",
+    "solH": "ये खुली शृंखला वाले ऐल्केन, ऐल्कीन और ऐल्काइन के बंधों की परिभाषित विशेषताएँ हैं।"
+  },
+  {
+    "id": 48,
+    "eng": "Statement I: Ethene can undergo addition polymerisation to form polyethene.\nStatement II: The carbon-carbon double bond in ethene can open to form new carbon-carbon single bonds linking monomer units.",
+    "hin": "कथन I: एथीन योगात्मक बहुलकीकरण करके पॉलीथीन बना सकता है।\nकथन II: एथीन का कार्बन-कार्बन द्विबंध खुलकर नए कार्बन-कार्बन एकल बंध बना सकता है, जो मोनोमर इकाइयों को जोड़ते हैं।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "In addition polymerisation of ethene, the double bond is converted into single bonds as repeating units form a polymer chain.",
+    "solH": "एथीन के योगात्मक बहुलकीकरण में द्विबंध एकल बंध में बदलता है और दोहराने वाली इकाइयाँ मिलकर बहुलक शृंखला बनाती हैं।"
+  },
+  {
+    "id": 49,
+    "eng": "Match the compound with its functional group or class.\nA. Ethanol; B. Ethanoic acid; C. Ethanal; D. Propanone.\n1. Ketone; 2. Alcohol; 3. Aldehyde; 4. Carboxylic acid.",
+    "hin": "यौगिक का उसके क्रियात्मक समूह या वर्ग से मिलान कीजिए।\nA. एथेनॉल; B. एथेनोइक अम्ल; C. एथेनल; D. प्रोपेनोन।\n1. कीटोन; 2. ऐल्कोहॉल; 3. ऐल्डिहाइड; 4. कार्बोक्सिलिक अम्ल।",
+    "optE": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4"],
+    "optH": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-3, B-1, C-4, D-2", "A-1, B-2, C-3, D-4"],
+    "ans": [1],
+    "solE": "Ethanol is an alcohol, ethanoic acid is a carboxylic acid, ethanal is an aldehyde, and propanone is a ketone.",
+    "solH": "एथेनॉल ऐल्कोहॉल, एथेनोइक अम्ल कार्बोक्सिलिक अम्ल, एथेनल ऐल्डिहाइड और प्रोपेनोन कीटोन है।"
+  },
+  {
+    "id": 50,
+    "eng": "Which of the following is NOT correct about diamond and graphite?",
+    "hin": "हीरे और ग्रेफाइट के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Both are allotropes of carbon", "Diamond has a three-dimensional covalent network", "Graphite has layers and conducts electricity", "Graphite is generally harder than diamond"],
+    "optH": ["दोनों कार्बन के अपररूप हैं", "हीरे में त्रिविमीय सहसंयोजक जाल होता है", "ग्रेफाइट में परतें होती हैं और यह विद्युत का संचालन करता है", "ग्रेफाइट सामान्यतः हीरे से अधिक कठोर होता है"],
+    "ans": [3],
+    "solE": "Diamond is much harder than graphite because of its rigid three-dimensional covalent network.",
+    "solH": "हीरा अपने कठोर त्रिविमीय सहसंयोजक जाल के कारण ग्रेफाइट से बहुत अधिक कठोर होता है।"
+  },
+  {
+    "id": 51,
+    "eng": "Consider the following statements about metallurgy:\n1. Bauxite is an important ore of aluminium.\n2. Haematite is an important ore of iron.\n3. Cryolite is used in aluminium extraction to help lower the operating temperature and improve conductivity of the electrolyte.",
+    "hin": "धातुकर्म के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. बॉक्साइट एल्युमिनियम का महत्वपूर्ण अयस्क है।\n2. हेमेटाइट लोहे का महत्वपूर्ण अयस्क है।\n3. एल्युमिनियम निष्कर्षण में क्रायोलाइट का उपयोग प्रचालन तापमान कम करने और विद्युत अपघट्य की चालकता सुधारने में सहायता करता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "All three statements are correct and describe important ores and the role of cryolite in the Hall-Héroult process.",
+    "solH": "तीनों कथन सही हैं। ये प्रमुख अयस्कों तथा हॉल-हेरॉल्ट प्रक्रिया में क्रायोलाइट की भूमिका का वर्णन करते हैं।"
+  },
+  {
+    "id": 52,
+    "eng": "Statement I: Aluminium is commonly extracted by electrolysis rather than reduction with carbon.\nStatement II: Aluminium is highly reactive and its oxide is very stable.",
+    "hin": "कथन I: एल्युमिनियम का निष्कर्षण सामान्यतः कार्बन द्वारा अपचयन के बजाय विद्युत अपघटन से किया जाता है।\nकथन II: एल्युमिनियम अत्यधिक अभिक्रियाशील है और इसका ऑक्साइड बहुत स्थिर होता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Aluminium oxide is too stable for practical extraction by ordinary carbon reduction; molten-electrolyte electrolysis is used.",
+    "solH": "एल्युमिनियम ऑक्साइड इतना स्थिर है कि साधारण कार्बन अपचयन से इसका व्यावहारिक निष्कर्षण कठिन है; इसलिए पिघले विद्युत अपघट्य का विद्युत अपघटन किया जाता है।"
+  },
+  {
+    "id": 53,
+    "eng": "Match the ore with the metal principally obtained from it.\nA. Bauxite; B. Haematite; C. Zinc blende; D. Cinnabar.\n1. Mercury; 2. Aluminium; 3. Zinc; 4. Iron.",
+    "hin": "अयस्क का उससे मुख्यतः प्राप्त होने वाली धातु से मिलान कीजिए।\nA. बॉक्साइट; B. हेमेटाइट; C. जिंक ब्लेंड; D. सिनाबार।\n1. पारा; 2. एल्युमिनियम; 3. जस्ता; 4. लोहा।",
+    "optE": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-2, C-1, D-3", "A-2, B-4, C-3, D-1", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Bauxite yields aluminium, haematite yields iron, zinc blende is ZnS, and cinnabar is HgS.",
+    "solH": "बॉक्साइट से एल्युमिनियम, हेमेटाइट से लोहा, जिंक ब्लेंड (ZnS) से जस्ता और सिनाबार (HgS) से पारा प्राप्त होता है।"
+  },
+  {
+    "id": 54,
+    "eng": "Which of the following is NOT a correct statement about alloys?",
+    "hin": "मिश्रधातुओं के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Brass is mainly copper and zinc", "Bronze is traditionally copper and tin", "Stainless steel contains chromium", "Every alloy must contain exactly two metallic elements and no non-metal"],
+    "optH": ["पीतल मुख्यतः ताँबा और जस्ता है", "काँसा परंपरागत रूप से ताँबा और टिन है", "स्टेनलेस स्टील में क्रोमियम होता है", "प्रत्येक मिश्रधातु में ठीक दो धात्विक तत्व और कोई अधातु नहीं होना चाहिए"],
+    "ans": [3],
+    "solE": "Alloys may contain more than two elements, and some contain non-metals such as carbon in steel.",
+    "solH": "मिश्रधातुओं में दो से अधिक तत्व हो सकते हैं और कुछ में इस्पात के कार्बन जैसे अधातु भी होते हैं।"
+  },
+  {
+    "id": 55,
+    "eng": "Consider the following statements about corrosion:\n1. Rusting of iron generally requires oxygen and moisture.\n2. Galvanisation protects iron or steel by coating it with zinc.\n3. A zinc coating can provide sacrificial protection if the coating is scratched under suitable conditions.",
+    "hin": "संक्षारण के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. लोहे में जंग लगने के लिए सामान्यतः ऑक्सीजन और नमी चाहिए।\n2. गैल्वनीकरण में लोहे या इस्पात पर जस्ते की परत चढ़ाई जाती है।\n3. उपयुक्त परिस्थितियों में परत पर खरोंच आने पर भी जस्ता बलिदानी सुरक्षा दे सकता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "All statements are correct. Zinc is more reactive than iron and can corrode preferentially, protecting exposed iron in suitable conditions.",
+    "solH": "सभी कथन सही हैं। जस्ता लोहे से अधिक अभिक्रियाशील है और उपयुक्त परिस्थितियों में पहले संक्षारित होकर खुले लोहे की रक्षा कर सकता है।"
+  },
+  {
+    "id": 56,
+    "eng": "Statement I: Stainless steel is more corrosion-resistant than ordinary carbon steel.\nStatement II: Chromium in stainless steel can form a thin, adherent protective oxide film.",
+    "hin": "कथन I: स्टेनलेस स्टील साधारण कार्बन स्टील की तुलना में संक्षारण का बेहतर प्रतिरोध करता है।\nकथन II: स्टेनलेस स्टील में क्रोमियम एक पतली, चिपकी हुई सुरक्षात्मक ऑक्साइड परत बना सकता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "The chromium-rich passive oxide layer limits further corrosion, giving stainless steel its characteristic resistance.",
+    "solH": "क्रोमियम-समृद्ध निष्क्रिय ऑक्साइड परत आगे के संक्षारण को सीमित करती है और स्टेनलेस स्टील को विशिष्ट प्रतिरोध देती है।"
+  },
+  {
+    "id": 57,
+    "eng": "Match the alloy with its usual composition.\nA. Brass; B. Bronze; C. Steel; D. Solder (traditional lead-tin type).\n1. Iron and carbon; 2. Copper and zinc; 3. Lead and tin; 4. Copper and tin.",
+    "hin": "मिश्रधातु का उसकी सामान्य संरचना से मिलान कीजिए।\nA. पीतल; B. काँसा; C. इस्पात; D. सोल्डर (पारंपरिक सीसा-टिन प्रकार)।\n1. लोहा और कार्बन; 2. ताँबा और जस्ता; 3. सीसा और टिन; 4. ताँबा और टिन।",
+    "optE": ["A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3", "A-1, B-3, C-4, D-2", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Brass is copper-zinc, bronze copper-tin, steel iron-carbon, and traditional lead-tin solder contains lead and tin.",
+    "solH": "पीतल ताँबा-जस्ता, काँसा ताँबा-टिन, इस्पात लोहा-कार्बन तथा पारंपरिक सीसा-टिन सोल्डर सीसा और टिन से बना होता है।"
+  },
+  {
+    "id": 58,
+    "eng": "Which of the following is NOT correct about extraction of metals?",
+    "hin": "धातुओं के निष्कर्षण के संबंध में कौन-सा कथन सही नहीं है?",
+    "optE": ["Highly reactive metals are commonly extracted by electrolysis of suitable molten compounds", "Some metal oxides can be reduced using carbon or carbon monoxide", "The extraction method depends partly on the reactivity of the metal", "All metal ores can be reduced economically by heating them with carbon"],
+    "optH": ["अत्यधिक अभिक्रियाशील धातुएँ उपयुक्त पिघले यौगिकों के विद्युत अपघटन से निकाली जाती हैं", "कुछ धातु ऑक्साइडों का अपचयन कार्बन या कार्बन मोनोऑक्साइड से हो सकता है", "निष्कर्षण विधि आंशिक रूप से धातु की अभिक्रियाशीलता पर निर्भर करती है", "सभी धातु अयस्कों का कार्बन के साथ गर्म करके आर्थिक रूप से अपचयन किया जा सकता है"],
+    "ans": [3],
+    "solE": "Very reactive metals such as sodium and aluminium are not extracted by ordinary carbon reduction; methods depend on chemical stability and reactivity.",
+    "solH": "सोडियम और एल्युमिनियम जैसी अत्यधिक अभिक्रियाशील धातुएँ साधारण कार्बन अपचयन से नहीं निकाली जातीं। विधि रासायनिक स्थिरता और अभिक्रियाशीलता पर निर्भर करती है।"
+  },
+  {
+    "id": 59,
+    "eng": "Consider the following statements about halogens:\n1. Their common elemental forms are diatomic molecules.\n2. They are located in Group 17.\n3. Their oxidising ability generally decreases down the group.",
+    "hin": "हैलोजन के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. इनके सामान्य तात्विक रूप द्विपरमाणुक अणु होते हैं।\n2. ये समूह 17 में स्थित हैं।\n3. समूह में नीचे जाने पर इनकी ऑक्सीकारक क्षमता सामान्यतः घटती है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "F₂, Cl₂, Br₂ and I₂ are diatomic elemental forms. Down the group, oxidising ability generally decreases.",
+    "solH": "F₂, Cl₂, Br₂ और I₂ द्विपरमाणुक तात्विक रूप हैं। समूह में नीचे जाने पर ऑक्सीकारक क्षमता सामान्यतः घटती है।"
+  },
+  {
+    "id": 60,
+    "eng": "Statement I: Chlorine can displace bromine from a solution containing bromide ions.\nStatement II: Chlorine is a stronger oxidising agent than bromine under standard conditions.",
+    "hin": "कथन I: क्लोरीन, ब्रोमाइड आयन वाले विलयन से ब्रोमीन को विस्थापित कर सकती है।\nकथन II: मानक परिस्थितियों में क्लोरीन, ब्रोमीन से अधिक प्रबल ऑक्सीकारक है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Chlorine oxidises bromide ions to bromine because chlorine has a greater tendency to be reduced than bromine.",
+    "solH": "क्लोरीन ब्रोमाइड आयनों को ब्रोमीन में ऑक्सीकृत करती है, क्योंकि क्लोरीन की अपचयित होने की प्रवृत्ति ब्रोमीन से अधिक है।"
+  },
+  {
+    "id": 61,
+    "eng": "Match the halogen with its physical state at ordinary room temperature.\nA. Fluorine; B. Chlorine; C. Bromine; D. Iodine.\n1. Solid; 2. Gas; 3. Liquid; 4. Gas.",
+    "hin": "हैलोजन का सामान्य कमरे के तापमान पर उसकी भौतिक अवस्था से मिलान कीजिए।\nA. फ्लोरीन; B. क्लोरीन; C. ब्रोमीन; D. आयोडीन।\n1. ठोस; 2. गैस; 3. द्रव; 4. गैस।",
+    "optE": ["A-1, B-3, C-2, D-4", "A-2, B-4, C-3, D-1", "A-3, B-2, C-1, D-4", "A-4, B-1, C-3, D-2"],
+    "optH": ["A-1, B-3, C-2, D-4", "A-2, B-4, C-3, D-1", "A-3, B-2, C-1, D-4", "A-4, B-1, C-3, D-2"],
+    "ans": [1],
+    "solE": "Fluorine and chlorine are gases, bromine is a liquid, and iodine is a solid under ordinary room conditions.",
+    "solH": "सामान्य कमरे की परिस्थितियों में फ्लोरीन और क्लोरीन गैस, ब्रोमीन द्रव तथा आयोडीन ठोस होता है।"
+  },
+  {
+    "id": 62,
+    "eng": "Which of the following statements about chlorine is NOT correct?",
+    "hin": "क्लोरीन के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["It is a Group 17 element", "It can be used for water disinfection under controlled conditions", "It is a greenish-yellow poisonous gas", "It is chemically inert and does not react with metals"],
+    "optH": ["यह समूह 17 का तत्व है", "नियंत्रित परिस्थितियों में इसका उपयोग जल कीटाणुशोधन के लिए हो सकता है", "यह हरिताभ-पीली विषैली गैस है", "यह रासायनिक रूप से निष्क्रिय है और धातुओं से अभिक्रिया नहीं करती"],
+    "ans": [3],
+    "solE": "Chlorine is reactive and can form chlorides with many metals. It must be handled carefully because it is toxic.",
+    "solH": "क्लोरीन अभिक्रियाशील है और अनेक धातुओं के साथ क्लोराइड बना सकती है। विषैली होने के कारण इसे सावधानी से संभालना चाहिए।"
+  },
+  {
+    "id": 63,
+    "eng": "Consider the following statements about common calcium compounds:\n1. Quicklime reacts with water to form slaked lime.\n2. Gypsum contains two molecules of water of crystallisation per formula unit.\n3. Plaster of Paris contains half a molecule of water of crystallisation per formula unit.",
+    "hin": "सामान्य कैल्शियम यौगिकों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. बिना बुझा चूना जल से अभिक्रिया करके बुझा चूना बनाता है।\n2. जिप्सम के प्रत्येक सूत्रक में क्रिस्टलीकरण के जल के दो अणु होते हैं।\n3. प्लास्टर ऑफ पेरिस के प्रत्येक सूत्रक में क्रिस्टलीकरण के जल का आधा अणु होता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "CaO + H₂O forms Ca(OH)₂; gypsum is CaSO₄·2H₂O; plaster of Paris is CaSO₄·½H₂O.",
+    "solH": "CaO + H₂O से Ca(OH)₂ बनता है; जिप्सम CaSO₄·2H₂O और प्लास्टर ऑफ पेरिस CaSO₄·½H₂O है।"
+  },
+  {
+    "id": 64,
+    "eng": "Statement I: Quicklime must be handled carefully when water is added to it.\nStatement II: The hydration of calcium oxide is strongly exothermic.",
+    "hin": "कथन I: बिना बुझा चूना में जल मिलाते समय सावधानी बरतनी चाहिए।\nकथन II: कैल्शियम ऑक्साइड का जलयोजन प्रबल ऊष्माक्षेपी होता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "CaO reacts vigorously with water, releasing substantial heat and potentially causing splashing or burns.",
+    "solH": "CaO जल से तीव्र अभिक्रिया करता है और काफी ऊष्मा छोड़ता है, जिससे छींटे पड़ने या जलने का खतरा हो सकता है।"
+  },
+  {
+    "id": 65,
+    "eng": "Match the compound with its formula.\nA. Baking soda; B. Washing soda crystals; C. Bleaching powder (school-level representation); D. Slaked lime.\n1. Ca(OH)₂; 2. NaHCO₃; 3. CaOCl₂; 4. Na₂CO₃·10H₂O.",
+    "hin": "यौगिक का उसके सूत्र से मिलान कीजिए।\nA. बेकिंग सोडा; B. धोने के सोडे के क्रिस्टल; C. ब्लीचिंग पाउडर (विद्यालय-स्तरीय निरूपण); D. बुझा चूना।\n1. Ca(OH)₂; 2. NaHCO₃; 3. CaOCl₂; 4. Na₂CO₃·10H₂O।",
+    "optE": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-1, B-2, C-4, D-3", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-3, C-2, D-1", "A-2, B-4, C-3, D-1", "A-1, B-2, C-4, D-3", "A-3, B-1, C-2, D-4"],
+    "ans": [1],
+    "solE": "Baking soda is NaHCO₃; washing soda crystals are Na₂CO₃·10H₂O; bleaching powder is commonly represented as CaOCl₂; slaked lime is Ca(OH)₂.",
+    "solH": "बेकिंग सोडा NaHCO₃, धोने के सोडे के क्रिस्टल Na₂CO₃·10H₂O, ब्लीचिंग पाउडर का प्रचलित निरूपण CaOCl₂ तथा बुझा चूना Ca(OH)₂ है।"
+  },
+  {
+    "id": 66,
+    "eng": "Which of the following is NOT correct about gypsum and plaster of Paris?",
+    "hin": "जिप्सम और प्लास्टर ऑफ पेरिस के संबंध में कौन-सा कथन सही नहीं है?",
+    "optE": ["Gypsum is calcium sulphate dihydrate", "Plaster of Paris is calcium sulphate hemihydrate", "Heating gypsum under controlled conditions can produce plaster of Paris", "Adding water to plaster of Paris normally converts it into quicklime"],
+    "optH": ["जिप्सम कैल्शियम सल्फेट डाइहाइड्रेट है", "प्लास्टर ऑफ पेरिस कैल्शियम सल्फेट हेमीहाइड्रेट है", "नियंत्रित परिस्थितियों में जिप्सम गर्म करने से प्लास्टर ऑफ पेरिस बन सकता है", "प्लास्टर ऑफ पेरिस में जल मिलाने से सामान्यतः बिना बुझा चूना बनता है"],
+    "ans": [3],
+    "solE": "Plaster of Paris rehydrates to form gypsum; it does not turn into quicklime.",
+    "solH": "प्लास्टर ऑफ पेरिस जल ग्रहण करके जिप्सम बनाता है; यह बिना बुझा चूना नहीं बनता।"
+  },
+  {
+    "id": 67,
+    "eng": "Consider the following statements about water treatment:\n1. Chlorination can inactivate many disease-causing microorganisms.\n2. Boiling is an effective method for killing many pathogens in water when done properly.\n3. Boiling reliably removes dissolved calcium and magnesium salts responsible for permanent hardness.",
+    "hin": "जल उपचार के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. क्लोरीनीकरण अनेक रोगजनक सूक्ष्मजीवों को निष्क्रिय कर सकता है।\n2. सही तरीके से उबालना जल में अनेक रोगजनकों को मारने की प्रभावी विधि है।\n3. उबालना स्थायी कठोरता के लिए जिम्मेदार घुले कैल्शियम और मैग्नीशियम लवणों को विश्वसनीय रूप से हटा देता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Chlorination and proper boiling can disinfect water. Boiling does not reliably remove permanent hardness and may concentrate dissolved salts as water evaporates.",
+    "solH": "क्लोरीनीकरण और उचित उबालना जल को कीटाणुरहित कर सकते हैं। उबालना स्थायी कठोरता को विश्वसनीय रूप से नहीं हटाता और वाष्पीकरण से घुले लवण अधिक सांद्र हो सकते हैं।"
+  },
+  {
+    "id": 68,
+    "eng": "Statement I: Sodium benzoate is more useful as a preservative in many acidic foods than in neutral foods.\nStatement II: The antimicrobial effectiveness of benzoate depends on pH, with the undissociated form playing an important role.",
+    "hin": "कथन I: अनेक अम्लीय खाद्य पदार्थों में सोडियम बेंजोएट, उदासीन खाद्य पदार्थों की तुलना में अधिक उपयोगी परिरक्षक है।\nकथन II: बेंजोएट की सूक्ष्मजीवरोधी प्रभावशीलता pH पर निर्भर करती है और इसका अवियोजित रूप महत्वपूर्ण भूमिका निभाता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Benzoate is generally more effective at lower pH because a larger fraction is present as undissociated benzoic acid.",
+    "solH": "कम pH पर बेंजोएट सामान्यतः अधिक प्रभावी होता है, क्योंकि अधिक अंश अवियोजित बेंजोइक अम्ल के रूप में उपस्थित रहता है।"
+  },
+  {
+    "id": 69,
+    "eng": "Which of the following is NOT a correct statement about medicines?",
+    "hin": "औषधियों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["An analgesic is intended to relieve pain", "An antipyretic is intended to reduce fever", "An antacid neutralises or reduces excess stomach acidity", "An antibiotic is the correct treatment for every viral infection"],
+    "optH": ["पीड़ानाशक का उद्देश्य दर्द से राहत देना है", "ज्वरनाशक का उद्देश्य बुखार कम करना है", "अम्लनाशक पेट की अतिरिक्त अम्लता को उदासीन या कम करता है", "प्रत्येक विषाणु संक्रमण के लिए प्रतिजैविक सही उपचार है"],
+    "ans": [3],
+    "solE": "Antibiotics act against susceptible bacteria, not viruses. Treatment depends on the cause of infection.",
+    "solH": "प्रतिजैविक संवेदनशील जीवाणुओं के विरुद्ध काम करते हैं, विषाणुओं के विरुद्ध नहीं। उपचार संक्रमण के कारण पर निर्भर करता है।"
+  },
+  {
+    "id": 70,
+    "eng": "Match the substance with its primary use or category.\nA. Sodium benzoate; B. Aspartame; C. Magnesium hydroxide; D. Iodine-based skin antiseptic.\n1. Antacid; 2. Artificial sweetener; 3. Food preservative; 4. Antiseptic.",
+    "hin": "पदार्थ का उसके प्रमुख उपयोग या वर्ग से मिलान कीजिए।\nA. सोडियम बेंजोएट; B. एस्पार्टेम; C. मैग्नीशियम हाइड्रॉक्साइड; D. आयोडीन-आधारित त्वचा प्रतिसेप्टिक।\n1. अम्लनाशक; 2. कृत्रिम मिठासकारक; 3. खाद्य परिरक्षक; 4. प्रतिसेप्टिक।",
+    "optE": ["A-2, B-1, C-4, D-3", "A-3, B-2, C-1, D-4", "A-4, B-3, C-2, D-1", "A-1, B-4, C-3, D-2"],
+    "optH": ["A-2, B-1, C-4, D-3", "A-3, B-2, C-1, D-4", "A-4, B-3, C-2, D-1", "A-1, B-4, C-3, D-2"],
+    "ans": [1],
+    "solE": "Sodium benzoate preserves certain foods, aspartame provides sweetness, magnesium hydroxide is an antacid, and iodine-based preparations can act as antiseptics.",
+    "solH": "सोडियम बेंजोएट कुछ खाद्य पदार्थों का परिरक्षण करता है, एस्पार्टेम मिठास देता है, मैग्नीशियम हाइड्रॉक्साइड अम्लनाशक है और आयोडीन-आधारित तैयारी प्रतिसेप्टिक हो सकती है।"
+  },
+  {
+    "id": 71,
+    "eng": "Consider the following statements about atomic structure:\n1. Atomic number equals the number of protons in the nucleus.\n2. In a neutral atom, the number of electrons equals the number of protons.\n3. Isotopes of an element have the same number of neutrons.",
+    "hin": "परमाणु संरचना के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. परमाणु संख्या नाभिक में प्रोटॉनों की संख्या के बराबर होती है।\n2. उदासीन परमाणु में इलेक्ट्रॉनों की संख्या प्रोटॉनों की संख्या के बराबर होती है।\n3. किसी तत्व के समस्थानिकों में न्यूट्रॉनों की संख्या समान होती है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Isotopes have the same proton number but different neutron numbers, so statement 3 is false.",
+    "solH": "समस्थानिकों में प्रोटॉनों की संख्या समान, लेकिन न्यूट्रॉनों की संख्या अलग होती है; इसलिए कथन 3 गलत है।"
+  },
+  {
+    "id": 72,
+    "eng": "Statement I: Isotopes of an element generally occupy the same position in the modern periodic table.\nStatement II: The modern periodic table is arranged by atomic number rather than mass number.",
+    "hin": "कथन I: किसी तत्व के समस्थानिक सामान्यतः आधुनिक आवर्त सारणी में एक ही स्थान पर होते हैं।\nकथन II: आधुनिक आवर्त सारणी द्रव्यमान संख्या के बजाय परमाणु संख्या के आधार पर व्यवस्थित है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Isotopes have the same atomic number. Since periodic-table position follows atomic number, they occupy the same position.",
+    "solH": "समस्थानिकों की परमाणु संख्या समान होती है। आवर्त सारणी का स्थान परमाणु संख्या पर आधारित होने के कारण वे एक ही स्थान पर आते हैं।"
+  },
+  {
+    "id": 73,
+    "eng": "Match the particle with its relative charge and location.\nA. Proton; B. Neutron; C. Electron; D. Nucleus.\n1. Negatively charged particle outside the nucleus in the usual atomic model; 2. Positively charged particle; 3. Neutral particle; 4. Region containing protons and neutrons.",
+    "hin": "कण का उसके सापेक्ष आवेश और स्थान से मिलान कीजिए।\nA. प्रोटॉन; B. न्यूट्रॉन; C. इलेक्ट्रॉन; D. नाभिक।\n1. सामान्य परमाणु मॉडल में नाभिक के बाहर ऋणावेशित कण; 2. धनावेशित कण; 3. उदासीन कण; 4. प्रोटॉन और न्यूट्रॉन वाला क्षेत्र।",
+    "optE": ["A-3, B-2, C-4, D-1", "A-1, B-4, C-2, D-3", "A-2, B-3, C-1, D-4", "A-4, B-1, C-3, D-2"],
+    "optH": ["A-3, B-2, C-4, D-1", "A-1, B-4, C-2, D-3", "A-2, B-3, C-1, D-4", "A-4, B-1, C-3, D-2"],
+    "ans": [2],
+    "solE": "Protons are positive, neutrons are neutral, electrons are negative, and the nucleus contains protons and neutrons.",
+    "solH": "प्रोटॉन धनावेशित, न्यूट्रॉन उदासीन, इलेक्ट्रॉन ऋणावेशित होता है और नाभिक में प्रोटॉन तथा न्यूट्रॉन होते हैं।"
+  },
+  {
+    "id": 74,
+    "eng": "Which of the following is NOT correct about ions?",
+    "hin": "आयनों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["A cation is positively charged", "An anion is negatively charged", "A cation can form through electron loss", "An anion forms by losing electrons"],
+    "optH": ["धनायन पर धनावेश होता है", "ऋणायन पर ऋणावेश होता है", "इलेक्ट्रॉन खोने से धनायन बन सकता है", "इलेक्ट्रॉन खोने से ऋणायन बनता है"],
+    "ans": [3],
+    "solE": "Anions form by gaining electrons; losing electrons generally produces cations.",
+    "solH": "इलेक्ट्रॉन प्राप्त करने से ऋणायन बनते हैं; इलेक्ट्रॉन खोने से सामान्यतः धनायन बनते हैं।"
+  },
+  {
+    "id": 75,
+    "eng": "Consider the following statements about chemical bonding:\n1. Ionic bonding commonly involves electrostatic attraction between oppositely charged ions.\n2. Covalent bonding involves sharing electron pairs.\n3. Every ionic compound conducts electricity in the solid state as well as in the molten state.",
+    "hin": "रासायनिक बंधन के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. आयनिक बंधन में विपरीत आवेश वाले आयनों के बीच वैद्युतस्थैतिक आकर्षण होता है।\n2. सहसंयोजक बंधन में इलेक्ट्रॉन युग्म साझा किए जाते हैं।\n3. प्रत्येक आयनिक यौगिक ठोस और पिघली अवस्था दोनों में विद्युत का संचालन करता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Ionic compounds generally conduct when molten or dissolved because ions can move, but not when solid ions are fixed in the lattice.",
+    "solH": "आयनिक यौगिक सामान्यतः पिघली या जलीय अवस्था में विद्युत चलाते हैं क्योंकि आयन गतिशील होते हैं; ठोस अवस्था में आयन जाल में स्थिर रहते हैं।"
+  },
+  {
+    "id": 76,
+    "eng": "Statement I: Solid sodium chloride does not conduct electricity well.\nStatement II: Its ions are held in fixed positions in the crystal lattice.",
+    "hin": "कथन I: ठोस सोडियम क्लोराइड विद्युत का अच्छा संचालन नहीं करता।\nकथन II: इसके आयन क्रिस्टल जाल में निश्चित स्थानों पर बँधे होते हैं।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "In solid NaCl, ions cannot move freely. In molten or aqueous NaCl, mobile ions can carry electric current.",
+    "solH": "ठोस NaCl में आयन स्वतंत्र रूप से नहीं चल सकते। पिघले या जलीय NaCl में गतिशील आयन विद्युत धारा वहन कर सकते हैं।"
+  },
+  {
+    "id": 77,
+    "eng": "Match the substance with the dominant type of bonding in its basic structure.\nA. Sodium chloride; B. Methane; C. Copper metal; D. Diamond.\n1. Metallic; 2. Ionic; 3. Giant covalent network; 4. Covalent molecular.",
+    "hin": "पदार्थ का उसकी मूल संरचना में प्रमुख बंधन प्रकार से मिलान कीजिए।\nA. सोडियम क्लोराइड; B. मीथेन; C. ताँबा धातु; D. हीरा।\n1. धात्विक; 2. आयनिक; 3. विशाल सहसंयोजक जाल; 4. सहसंयोजक आणविक।",
+    "optE": ["A-4, B-2, C-3, D-1", "A-1, B-3, C-4, D-2", "A-2, B-4, C-1, D-3", "A-3, B-1, C-2, D-4"],
+    "optH": ["A-4, B-2, C-3, D-1", "A-1, B-3, C-4, D-2", "A-2, B-4, C-1, D-3", "A-3, B-1, C-2, D-4"],
+    "ans": [2],
+    "solE": "NaCl is ionic, methane is a covalent molecular substance, copper has metallic bonding, and diamond has a giant covalent network.",
+    "solH": "NaCl आयनिक, मीथेन सहसंयोजक आणविक, ताँबा धात्विक बंधन वाला तथा हीरा विशाल सहसंयोजक जाल वाला पदार्थ है।"
+  },
+  {
+    "id": 78,
+    "eng": "Which of the following is NOT a correct statement about chemical formulae?",
+    "hin": "रासायनिक सूत्रों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["H₂O represents two hydrogen atoms for every oxygen atom in a molecule", "CO₂ represents one carbon atom and two oxygen atoms per molecule", "CaCl₂ represents one calcium ion for every two chloride ions in the ionic formula unit", "The formula NaCl means every crystal consists of separate NaCl molecules in the same way as water consists of H₂O molecules"],
+    "optH": ["H₂O के एक अणु में प्रत्येक ऑक्सीजन के लिए दो हाइड्रोजन परमाणु होते हैं", "CO₂ के प्रत्येक अणु में एक कार्बन और दो ऑक्सीजन परमाणु होते हैं", "CaCl₂ के सूत्रक में प्रत्येक कैल्शियम आयन के लिए दो क्लोराइड आयन होते हैं", "NaCl सूत्र का अर्थ है कि प्रत्येक क्रिस्टल अलग-अलग NaCl अणुओं से बना है, ठीक वैसे ही जैसे जल H₂O अणुओं से बना है"],
+    "ans": [3],
+    "solE": "Solid sodium chloride forms an extended ionic lattice. NaCl represents the simplest ion ratio, not discrete molecules in the solid crystal.",
+    "solH": "ठोस सोडियम क्लोराइड विस्तृत आयनिक जाल बनाता है। NaCl न्यूनतम आयन अनुपात दर्शाता है, न कि ठोस क्रिस्टल में अलग-अलग अणु।"
+  },
+  {
+    "id": 79,
+    "eng": "Consider the following statements about gases:\n1. At constant temperature, Boyle's law states that pressure is inversely proportional to volume for a fixed amount of gas under ideal conditions.\n2. At constant pressure, Charles's law relates volume directly to absolute temperature for an ideal gas.\n3. Celsius temperature must be used directly in the proportionality form of Charles's law.",
+    "hin": "गैसों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. स्थिर तापमान पर बॉयल का नियम बताता है कि आदर्श परिस्थितियों में गैस की निश्चित मात्रा के लिए दाब आयतन के व्युत्क्रमानुपाती है।\n2. स्थिर दाब पर चार्ल्स का नियम आदर्श गैस के आयतन को परम तापमान के समानुपाती बताता है।\n3. चार्ल्स के नियम के समानुपाती रूप में सेल्सियस तापमान सीधे उपयोग करना चाहिए।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Boyle's and Charles's laws use absolute temperature where relevant. Charles's law requires kelvin, not direct Celsius values.",
+    "solH": "बॉयल और चार्ल्स के नियमों में जहाँ आवश्यक हो, परम तापमान का उपयोग होता है। चार्ल्स के नियम के लिए केल्विन चाहिए, सीधे सेल्सियस नहीं।"
+  },
+  {
+    "id": 80,
+    "eng": "Statement I: Real gases tend to behave more ideally at low pressure and high temperature.\nStatement II: Under these conditions, molecular volume and intermolecular attractions become less significant relative to the gas volume and kinetic energy.",
+    "hin": "कथन I: वास्तविक गैसें कम दाब और उच्च तापमान पर अधिक आदर्श व्यवहार करती हैं।\nकथन II: इन परिस्थितियों में गैस के कुल आयतन और गतिज ऊर्जा की तुलना में अणुओं का अपना आयतन तथा अंतराअणुक आकर्षण कम महत्वपूर्ण हो जाते हैं।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Low pressure separates molecules, and high temperature reduces the relative influence of attractive forces, improving ideal-gas behaviour.",
+    "solH": "कम दाब पर अणु दूर रहते हैं और उच्च तापमान पर आकर्षण बलों का सापेक्ष प्रभाव घटता है, जिससे आदर्श गैस जैसा व्यवहार बढ़ता है।"
+  },
+  {
+    "id": 81,
+    "eng": "Match the gas law with its relationship for a fixed amount of ideal gas.\nA. Boyle's law; B. Charles's law; C. Gay-Lussac's pressure law; D. Avogadro's law.\n1. V ∝ T at constant pressure; 2. P ∝ T at constant volume; 3. V ∝ n at constant temperature and pressure; 4. P ∝ 1/V at constant temperature.",
+    "hin": "गैस के नियम का निश्चित मात्रा वाली आदर्श गैस के संबंध से मिलान कीजिए।\nA. बॉयल का नियम; B. चार्ल्स का नियम; C. गे-लुसाक का दाब नियम; D. एवोगैड्रो का नियम।\n1. स्थिर दाब पर V ∝ T; 2. स्थिर आयतन पर P ∝ T; 3. स्थिर तापमान और दाब पर V ∝ n; 4. स्थिर तापमान पर P ∝ 1/V।",
+    "optE": ["A-1, B-2, C-3, D-4", "A-2, B-3, C-4, D-1", "A-4, B-1, C-2, D-3", "A-3, B-4, C-1, D-2"],
+    "optH": ["A-1, B-2, C-3, D-4", "A-2, B-3, C-4, D-1", "A-4, B-1, C-2, D-3", "A-3, B-4, C-1, D-2"],
+    "ans": [2],
+    "solE": "Boyle relates pressure inversely to volume; Charles relates volume to temperature; Gay-Lussac relates pressure to temperature; Avogadro relates volume to amount of gas.",
+    "solH": "बॉयल दाब को आयतन के व्युत्क्रमानुपाती, चार्ल्स आयतन को तापमान के समानुपाती, गे-लुसाक दाब को तापमान के समानुपाती और एवोगैड्रो आयतन को गैस की मात्रा के समानुपाती बताता है।"
+  },
+  {
+    "id": 82,
+    "eng": "Which of the following is NOT correct about gas laws?",
+    "hin": "गैस नियमों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Boyle's law assumes constant temperature and fixed gas amount", "Charles's law uses absolute temperature", "The ideal gas equation is PV = nRT", "At constant temperature and fixed gas amount, doubling the volume doubles the pressure of an ideal gas"],
+    "optH": ["बॉयल का नियम स्थिर तापमान और गैस की निश्चित मात्रा मानता है", "चार्ल्स का नियम परम तापमान का उपयोग करता है", "आदर्श गैस समीकरण PV = nRT है", "स्थिर तापमान और गैस की निश्चित मात्रा पर आयतन दोगुना करने से आदर्श गैस का दाब दोगुना हो जाता है"],
+    "ans": [3],
+    "solE": "By Boyle's law, pressure is inversely proportional to volume, so doubling volume halves pressure at constant temperature.",
+    "solH": "बॉयल के नियम के अनुसार दाब आयतन के व्युत्क्रमानुपाती है, इसलिए स्थिर तापमान पर आयतन दोगुना करने से दाब आधा हो जाता है।"
+  },
+  {
+    "id": 83,
+    "eng": "Consider the following statements about the mole concept:\n1. One mole contains Avogadro's number of specified entities.\n2. The molar mass of a substance has the same numerical value as its relative molecular or formula mass when expressed in g/mol.\n3. One mole of every substance has the same mass.",
+    "hin": "मोल संकल्पना के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. एक मोल में एवोगैड्रो संख्या के बराबर निर्दिष्ट कण होते हैं।\n2. किसी पदार्थ के सापेक्ष आणविक या सूत्र द्रव्यमान का संख्यात्मक मान g/mol में उसके मोलर द्रव्यमान के बराबर होता है।\n3. प्रत्येक पदार्थ के एक मोल का द्रव्यमान समान होता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "One mole contains about 6.022 × 10²³ entities. Molar masses differ between substances, so statement 3 is false.",
+    "solH": "एक मोल में लगभग 6.022 × 10²³ कण होते हैं। अलग-अलग पदार्थों के मोलर द्रव्यमान अलग होते हैं, इसलिए कथन 3 गलत है।"
+  },
+  {
+    "id": 84,
+    "eng": "A sample contains 0.5 mol of CO₂. Approximately how many CO₂ molecules does it contain?",
+    "hin": "किसी नमूने में 0.5 mol CO₂ है। उसमें लगभग कितने CO₂ अणु होंगे?",
+    "optE": ["6.022 × 10²³", "3.011 × 10²³", "1.2044 × 10²⁴", "3.011 × 10²²"],
+    "optH": ["6.022 × 10²³", "3.011 × 10²³", "1.2044 × 10²⁴", "3.011 × 10²²"],
+    "ans": [1],
+    "solE": "Number of molecules = moles × Avogadro's constant = 0.5 × 6.022 × 10²³ = 3.011 × 10²³.",
+    "solH": "अणुओं की संख्या = मोल × एवोगैड्रो नियतांक = 0.5 × 6.022 × 10²³ = 3.011 × 10²³।"
+  },
+  {
+    "id": 85,
+    "eng": "Match the quantity with its SI unit.\nA. Pressure; B. Energy; C. Electric charge; D. Amount of substance.\n1. Mole; 2. Joule; 3. Coulomb; 4. Pascal.",
+    "hin": "भौतिक राशि का उसकी SI इकाई से मिलान कीजिए।\nA. दाब; B. ऊर्जा; C. विद्युत आवेश; D. पदार्थ की मात्रा।\n1. मोल; 2. जूल; 3. कूलॉम; 4. पास्कल।",
+    "optE": ["A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4"],
+    "optH": ["A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3", "A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4"],
+    "ans": [0],
+    "solE": "Pressure is measured in pascals, energy in joules, charge in coulombs, and amount of substance in moles.",
+    "solH": "दाब की इकाई पास्कल, ऊर्जा की जूल, आवेश की कूलॉम और पदार्थ की मात्रा की मोल है।"
+  },
+  {
+    "id": 86,
+    "eng": "Which of the following is NOT a correct statement about chemical equilibrium?",
+    "hin": "रासायनिक साम्य के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["At dynamic equilibrium, forward and reverse reaction rates are equal", "Concentrations remain constant at equilibrium under fixed conditions", "A catalyst helps a system reach equilibrium faster", "At equilibrium, the forward and reverse reactions both stop completely"],
+    "optH": ["गतिशील साम्य पर अग्र और उत्क्रम अभिक्रियाओं की दरें समान होती हैं", "निश्चित परिस्थितियों में साम्य पर सांद्रताएँ स्थिर रहती हैं", "उत्प्रेरक प्रणाली को साम्य तक तेजी से पहुँचने में मदद करता है", "साम्य पर अग्र और उत्क्रम दोनों अभिक्रियाएँ पूरी तरह रुक जाती हैं"],
+    "ans": [3],
+    "solE": "Chemical equilibrium is dynamic: both reactions continue at equal rates rather than stopping.",
+    "solH": "रासायनिक साम्य गतिशील होता है: दोनों अभिक्रियाएँ रुकने के बजाय समान दर से चलती रहती हैं।"
+  },
+  {
+    "id": 87,
+    "eng": "Statement I: Increasing pressure can shift the equilibrium of a gaseous reaction toward the side with fewer moles of gas, when the number of gas moles differs.\nStatement II: The system tends to oppose the imposed pressure change according to Le Chatelier's principle.",
+    "hin": "कथन I: यदि दोनों पक्षों में गैसीय मोलों की संख्या अलग हो, तो दाब बढ़ाने से गैसीय अभिक्रिया का साम्य कम गैसीय मोलों वाले पक्ष की ओर खिसक सकता है।\nकथन II: ले-शातेलिए सिद्धांत के अनुसार प्रणाली लगाए गए दाब परिवर्तन का विरोध करने की प्रवृत्ति दिखाती है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Higher pressure favours the side with fewer gaseous particles, provided the gaseous mole counts differ and other conditions are unchanged.",
+    "solH": "यदि गैसीय मोलों की संख्या अलग हो और अन्य परिस्थितियाँ अपरिवर्तित हों, तो अधिक दाब कम गैसीय कणों वाले पक्ष को अनुकूल बनाता है।"
+  },
+  {
+    "id": 88,
+    "eng": "Match the reaction type with its description.\nA. Combination; B. Decomposition; C. Displacement; D. Double displacement.\n1. One element replaces another in a compound; 2. Two compounds exchange ions; 3. Two or more reactants form one main product; 4. One compound breaks into simpler substances.",
+    "hin": "अभिक्रिया के प्रकार का उसके विवरण से मिलान कीजिए।\nA. संयोजन; B. अपघटन; C. विस्थापन; D. द्विविस्थापन।\n1. एक तत्व यौगिक में दूसरे तत्व का स्थान लेता है; 2. दो यौगिक आयनों का आदान-प्रदान करते हैं; 3. दो या अधिक अभिकारकों से एक मुख्य उत्पाद बनता है; 4. एक यौगिक सरल पदार्थों में टूटता है।",
+    "optE": ["A-4, B-3, C-2, D-1", "A-2, B-1, C-4, D-3", "A-3, B-4, C-1, D-2", "A-1, B-2, C-3, D-4"],
+    "optH": ["A-4, B-3, C-2, D-1", "A-2, B-1, C-4, D-3", "A-3, B-4, C-1, D-2", "A-1, B-2, C-3, D-4"],
+    "ans": [2],
+    "solE": "Combination forms one main product; decomposition breaks a compound down; displacement replaces an element; double displacement exchanges ions.",
+    "solH": "संयोजन में एक मुख्य उत्पाद बनता है; अपघटन में यौगिक टूटता है; विस्थापन में तत्व स्थान लेता है; द्विविस्थापन में आयनों का आदान-प्रदान होता है।"
+  },
+  {
+    "id": 89,
+    "eng": "Which of the following is NOT a correct statement about reaction rates?",
+    "hin": "अभिक्रिया की दर के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Increasing temperature often increases reaction rate", "Increasing concentration can increase collision frequency in suitable reactions", "A catalyst can provide an alternative pathway with lower activation energy", "A catalyst always increases the final equilibrium yield of products regardless of equilibrium conditions"],
+    "optH": ["तापमान बढ़ाने से अक्सर अभिक्रिया की दर बढ़ती है", "उपयुक्त अभिक्रियाओं में सांद्रता बढ़ने से टक्करों की आवृत्ति बढ़ सकती है", "उत्प्रेरक कम सक्रियण ऊर्जा वाला वैकल्पिक मार्ग दे सकता है", "परिस्थितियों की परवाह किए बिना उत्प्रेरक हमेशा उत्पादों की अंतिम साम्य उपज बढ़ाता है"],
+    "ans": [3],
+    "solE": "A catalyst speeds attainment of equilibrium but does not change the equilibrium constant or equilibrium composition at a fixed temperature.",
+    "solH": "उत्प्रेरक साम्य तक पहुँचने की गति बढ़ाता है, लेकिन निश्चित तापमान पर साम्य स्थिरांक या साम्य संरचना नहीं बदलता।"
+  },
+  {
+    "id": 90,
+    "eng": "Consider the following statements about air pollution:\n1. Sulphur dioxide can contribute to acid deposition.\n2. Nitrogen oxides can contribute to acid deposition and photochemical smog.\n3. Carbon monoxide is dangerous because it interferes with oxygen transport in blood.",
+    "hin": "वायु प्रदूषण के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. सल्फर डाइऑक्साइड अम्लीय निक्षेपण में योगदान दे सकती है।\n2. नाइट्रोजन ऑक्साइड अम्लीय निक्षेपण और प्रकाश-रासायनिक धूम-कोहरा उत्पन्न करने में योगदान दे सकते हैं।\n3. कार्बन मोनोऑक्साइड रक्त में ऑक्सीजन परिवहन में बाधा डालने के कारण खतरनाक है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [3],
+    "solE": "All three statements are correct and describe important effects of common air pollutants.",
+    "solH": "तीनों कथन सही हैं और सामान्य वायु प्रदूषकों के महत्वपूर्ण प्रभावों का वर्णन करते हैं।"
+  },
+  {
+    "id": 91,
+    "eng": "Statement I: Carbon dioxide is generally not used as the gas that supports ordinary combustion.\nStatement II: Carbon dioxide does not readily support combustion and is used in some fire extinguishers to help exclude oxygen.",
+    "hin": "कथन I: कार्बन डाइऑक्साइड सामान्य दहन को सहारा देने वाली गैस नहीं है।\nकथन II: कार्बन डाइऑक्साइड आसानी से दहन को सहारा नहीं देती और कुछ अग्निशामकों में ऑक्सीजन को दूर रखने में सहायता करती है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "Carbon dioxide is not an ordinary combustion-supporting gas and can help suppress fires by displacing oxygen; suitability depends on the fire type.",
+    "solH": "कार्बन डाइऑक्साइड सामान्य दहन-सहायक गैस नहीं है और ऑक्सीजन को हटाकर आग बुझाने में मदद कर सकती है; उपयुक्तता आग के प्रकार पर निर्भर करती है।"
+  },
+  {
+    "id": 92,
+    "eng": "Match the pollutant with its major concern.\nA. Carbon monoxide; B. Sulphur dioxide; C. Nitrogen oxides; D. Chlorofluorocarbons.\n1. Stratospheric ozone depletion by certain compounds; 2. Interference with oxygen transport; 3. Acid deposition; 4. Photochemical smog and acid deposition.",
+    "hin": "प्रदूषक का उससे संबंधित प्रमुख समस्या से मिलान कीजिए।\nA. कार्बन मोनोऑक्साइड; B. सल्फर डाइऑक्साइड; C. नाइट्रोजन ऑक्साइड; D. क्लोरोफ्लोरोकार्बन।\n1. कुछ यौगिकों द्वारा समतापमंडलीय ओजोन क्षय; 2. ऑक्सीजन परिवहन में बाधा; 3. अम्लीय निक्षेपण; 4. प्रकाश-रासायनिक धूम-कोहरा और अम्लीय निक्षेपण।",
+    "optE": ["A-3, B-2, C-1, D-4", "A-2, B-3, C-4, D-1", "A-1, B-4, C-2, D-3", "A-4, B-1, C-3, D-2"],
+    "optH": ["A-3, B-2, C-1, D-4", "A-2, B-3, C-4, D-1", "A-1, B-4, C-2, D-3", "A-4, B-1, C-3, D-2"],
+    "ans": [1],
+    "solE": "Carbon monoxide impairs oxygen transport; sulphur dioxide contributes to acid deposition; nitrogen oxides contribute to smog and acid deposition; some CFCs deplete ozone.",
+    "solH": "कार्बन मोनोऑक्साइड ऑक्सीजन परिवहन में बाधा डालती है; सल्फर डाइऑक्साइड अम्लीय निक्षेपण, नाइट्रोजन ऑक्साइड धूम-कोहरा और अम्लीय निक्षेपण तथा कुछ CFC ओजोन क्षय में योगदान देते हैं।"
+  },
+  {
+    "id": 93,
+    "eng": "Which of the following is NOT a correct statement about greenhouse gases?",
+    "hin": "ग्रीनहाउस गैसों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Carbon dioxide absorbs infrared radiation", "Methane is a greenhouse gas", "Water vapour contributes to the natural greenhouse effect", "Only gases present in the largest percentage of the atmosphere can be greenhouse gases"],
+    "optH": ["कार्बन डाइऑक्साइड अवरक्त विकिरण को अवशोषित करती है", "मीथेन एक ग्रीनहाउस गैस है", "जलवाष्प प्राकृतिक ग्रीनहाउस प्रभाव में योगदान देती है", "केवल वायुमंडल में सबसे अधिक प्रतिशत वाली गैसें ही ग्रीनहाउस गैस हो सकती हैं"],
+    "ans": [3],
+    "solE": "Greenhouse effectiveness depends on infrared absorption, not simply atmospheric abundance. Trace gases can have significant effects.",
+    "solH": "ग्रीनहाउस प्रभावशीलता अवरक्त अवशोषण पर निर्भर करती है, केवल वायुमंडलीय मात्रा पर नहीं। अल्प मात्रा वाली गैसें भी महत्वपूर्ण प्रभाव डाल सकती हैं।"
+  },
+  {
+    "id": 94,
+    "eng": "Consider the following statements about food preservation:\n1. Preservatives can inhibit microbial growth or other deterioration processes.\n2. Sodium benzoate is useful in certain acidic foods.\n3. A preservative makes a food product safe indefinitely under every storage condition.",
+    "hin": "खाद्य परिरक्षण के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. परिरक्षक सूक्ष्मजीवों की वृद्धि या अन्य खराब होने की प्रक्रियाओं को रोक सकते हैं।\n2. सोडियम बेंजोएट कुछ अम्लीय खाद्य पदार्थों में उपयोगी है।\n3. परिरक्षक प्रत्येक भंडारण परिस्थिति में खाद्य उत्पाद को अनिश्चित काल तक सुरक्षित बना देता है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "1, 2 और 3"],
+    "ans": [1],
+    "solE": "Preservatives extend shelf life under suitable conditions but do not guarantee indefinite safety regardless of storage or contamination.",
+    "solH": "परिरक्षक उपयुक्त परिस्थितियों में शेल्फ लाइफ बढ़ाते हैं, लेकिन भंडारण या संदूषण की परवाह किए बिना अनिश्चितकालीन सुरक्षा की गारंटी नहीं देते।"
+  },
+  {
+    "id": 95,
+    "eng": "Statement I: Aspartame is unsuitable for people with phenylketonuria unless specifically advised otherwise by a qualified clinician.\nStatement II: Aspartame contains a phenylalanine source.",
+    "hin": "कथन I: फेनिलकीटोनूरिया से ग्रस्त लोगों के लिए एस्पार्टेम उपयुक्त नहीं है, जब तक योग्य चिकित्सक विशेष रूप से अन्य सलाह न दे।\nकथन II: एस्पार्टेम से फेनिलएलनिन प्राप्त होता है।",
+    "optE": ["Both statements are correct, and II correctly explains I", "Both statements are correct, but II does not explain I", "I is correct, but II is incorrect", "I is incorrect, but II is correct"],
+    "optH": ["दोनों कथन सही हैं और II, I की सही व्याख्या करता है", "दोनों कथन सही हैं, लेकिन II, I की व्याख्या नहीं करता", "I सही है, लेकिन II गलत है", "I गलत है, लेकिन II सही है"],
+    "ans": [0],
+    "solE": "People with phenylketonuria must restrict phenylalanine. Aspartame carries a phenylalanine warning for this reason.",
+    "solH": "फेनिलकीटोनूरिया से ग्रस्त लोगों को फेनिलएलनिन सीमित करना पड़ता है। इसी कारण एस्पार्टेम पर फेनिलएलनिन संबंधी चेतावनी दी जाती है।"
+  },
+  {
+    "id": 96,
+    "eng": "Match the vitamin or compound with the corresponding description.\nA. Ascorbic acid; B. Acetic acid; C. Citric acid; D. Ethanol.\n1. Alcohol commonly present in alcoholic beverages; 2. Acid found in vinegar; 3. Vitamin C; 4. Acid found in citrus fruits.",
+    "hin": "विटामिन या यौगिक का संबंधित विवरण से मिलान कीजिए।\nA. एस्कॉर्बिक अम्ल; B. एसिटिक अम्ल; C. सिट्रिक अम्ल; D. एथेनॉल।\n1. मादक पेयों में पाया जाने वाला ऐल्कोहॉल; 2. सिरके में पाया जाने वाला अम्ल; 3. विटामिन C; 4. खट्टे फलों में पाया जाने वाला अम्ल।",
+    "optE": ["A-2, B-3, C-1, D-4", "A-4, B-1, C-2, D-3", "A-3, B-2, C-4, D-1", "A-1, B-4, C-3, D-2"],
+    "optH": ["A-2, B-3, C-1, D-4", "A-4, B-1, C-2, D-3", "A-3, B-2, C-4, D-1", "A-1, B-4, C-3, D-2"],
+    "ans": [2],
+    "solE": "Ascorbic acid is vitamin C; acetic acid is found in vinegar; citric acid occurs in citrus fruits; ethanol is an alcohol.",
+    "solH": "एस्कॉर्बिक अम्ल विटामिन C, एसिटिक अम्ल सिरके का अम्ल, सिट्रिक अम्ल खट्टे फलों का अम्ल और एथेनॉल एक ऐल्कोहॉल है।"
+  },
+  {
+    "id": 97,
+    "eng": "Which of the following is NOT correct about soap formation?",
+    "hin": "साबुन बनने की प्रक्रिया के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Saponification involves alkaline hydrolysis of fats or oils", "Sodium or potassium salts of fatty acids can act as soaps", "Glycerol is produced in the saponification of triglycerides", "Saponification is simply the polymerisation of ethene"],
+    "optH": ["साबुनीकरण में वसा या तेल का क्षारीय जल-अपघटन होता है", "वसीय अम्लों के सोडियम या पोटैशियम लवण साबुन का काम कर सकते हैं", "ट्राइग्लिसराइड के साबुनीकरण में ग्लिसरॉल बनता है", "साबुनीकरण केवल एथीन का बहुलकीकरण है"],
+    "ans": [3],
+    "solE": "Saponification is alkaline hydrolysis of fats or oils, producing glycerol and fatty-acid salts; it is unrelated to ethene polymerisation.",
+    "solH": "साबुनीकरण वसा या तेल का क्षारीय जल-अपघटन है, जिससे ग्लिसरॉल और वसीय अम्लों के लवण बनते हैं; इसका एथीन बहुलकीकरण से संबंध नहीं है।"
+  },
+  {
+    "id": 98,
+    "eng": "Consider the following statements about water and solutions:\n1. A saturated solution contains the maximum amount of dissolved solute at specified conditions when equilibrium with undissolved solute is established.\n2. Solubility always increases with temperature for every solute.\n3. The solubility of many gases in water decreases as temperature rises.",
+    "hin": "जल और विलयनों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. संतृप्त विलयन में निर्दिष्ट परिस्थितियों पर घुले विलेय की अधिकतम मात्रा होती है, जब अघुले विलेय के साथ साम्य स्थापित हो जाता है।\n2. प्रत्येक विलेय की विलेयता तापमान बढ़ने पर हमेशा बढ़ती है।\n3. जल में अनेक गैसों की विलेयता तापमान बढ़ने पर घटती है।",
+    "optE": ["1 only", "1 and 2 only", "2 and 3 only", "1 and 3 only"],
+    "optH": ["केवल 1", "केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3"],
+    "ans": [3],
+    "solE": "Statement 1 is correct. Solubility trends depend on the substance; many gases become less soluble in water at higher temperatures.",
+    "solH": "कथन 1 सही है। विलेयता की प्रवृत्ति पदार्थ पर निर्भर करती है; अनेक गैसें उच्च तापमान पर जल में कम घुलती हैं।"
+  },
+  {
+    "id": 99,
+    "eng": "Which of the following is NOT a correct statement about separation techniques?",
+    "hin": "पृथक्करण तकनीकों के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Filtration can separate an insoluble solid from a liquid", "Distillation can separate components using differences in volatility", "Chromatography can separate components based on differential interactions with stationary and mobile phases", "Simple filtration can reliably separate dissolved sodium chloride from water"],
+    "optH": ["निस्यंदन से द्रव में उपस्थित अघुलनशील ठोस को अलग किया जा सकता है", "आसवन वाष्पशीलता के अंतर से घटकों को अलग कर सकता है", "क्रोमैटोग्राफी स्थिर और गतिशील प्रावस्थाओं के साथ अलग-अलग अंतःक्रिया के आधार पर घटकों को अलग कर सकती है", "साधारण निस्यंदन से घुले सोडियम क्लोराइड को जल से विश्वसनीय रूप से अलग किया जा सकता है"],
+    "ans": [3],
+    "solE": "Dissolved sodium chloride passes through ordinary filter paper with water. Evaporation or an appropriate distillation process is needed for separation.",
+    "solH": "घुला हुआ सोडियम क्लोराइड जल के साथ साधारण फिल्टर पेपर से निकल जाता है। इसे अलग करने के लिए वाष्पीकरण या उपयुक्त आसवन विधि चाहिए।"
+  },
+  {
+    "id": 100,
+    "eng": "Consider the following statements about polymers and materials:\n1. Thermoplastics can generally soften on heating and be remoulded.\n2. Thermosetting polymers form cross-linked structures that resist remoulding after curing.\n3. The properties of a polymer depend partly on its molecular structure and chain interactions.\n4. Every polymer is an electrical insulator under all conditions.",
+    "hin": "बहुलकों और पदार्थों के संबंध में निम्नलिखित कथनों पर विचार कीजिए:\n1. तापसुघट्य प्लास्टिक सामान्यतः गर्म करने पर नरम होकर दोबारा ढाले जा सकते हैं।\n2. तापदृढ़ बहुलक जमने के बाद क्रॉस-लिंक संरचना बनाते हैं, जो दोबारा ढालने का प्रतिरोध करती है।\n3. बहुलक के गुण आंशिक रूप से उसकी आणविक संरचना और शृंखलाओं के बीच अंतःक्रिया पर निर्भर करते हैं।\n4. प्रत्येक बहुलक हर परिस्थिति में विद्युतरोधी होता है।",
+    "optE": ["1 and 4 only", "1, 2 and 3 only", "2 and 4 only", "1, 2, 3 and 4"],
+    "optH": ["केवल 1 और 4", "केवल 1, 2 और 3", "केवल 2 और 4", "1, 2, 3 और 4"],
+    "ans": [1],
+    "solE": "Statements 1, 2 and 3 are correct. Conductive polymers exist, so it is incorrect to claim that every polymer is always an electrical insulator.",
+    "solH": "कथन 1, 2 और 3 सही हैं। विद्युत-चालक बहुलक भी होते हैं, इसलिए प्रत्येक बहुलक को हर परिस्थिति में विद्युतरोधी कहना गलत है।"
+  }
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 50 * 60; // 20 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+
+        // Previous Attempts / History (same localStorage approach as Source.html)
+        let isHistoryMode = false;
+        let activeHistoryAttempt = null;
+        const HISTORY_STORAGE_KEY = 'ExamRojgaar_history';
+        const TEST_DURATION_SECONDS = 50 * 60; //mins
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Starting-page compatibility helpers (copied UI only; the existing mock engine remains unchanged).
+        function validateAndStart() {
+            const nameInput = document.getElementById('candidate-name');
+            const declaration = document.getElementById('declaration-check');
+            const name = nameInput ? nameInput.value.trim() : '';
+            if (nameInput && !name) {
+                alert('Please enter your Candidate Name to begin.');
+                nameInput.focus();
+                return;
+            }
+            if (declaration && !declaration.checked) {
+                alert('Please read and accept the declaration before beginning.');
+                return;
+            }
+            startCountdown();
+        }
+
+        // ==================== PREVIOUS ATTEMPTS ====================
+        function getHistory() {
+            try {
+                const data = localStorage.getItem(HISTORY_STORAGE_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveAttemptToStorage() {
+            if (isHistoryMode) return;
+
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+            userState.forEach((st, idx) => {
+                if (st.selectedOption !== null) {
+                    attempted++;
+                    if (st.selectedOption === rawData[idx].ans) correct++;
+                    else wrong++;
+                }
+            });
+
+            const marks = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? Number(((correct / attempted) * 100).toFixed(1)) : 0;
+            const nameEl = document.getElementById('candidate-name');
+
+            const attempt = {
+                id: Date.now(),
+                mockId: 'target-railway-sectional',
+                mockName: (document.getElementById('paper-name-display') || {}).textContent?.trim() || 'Round 1 Challenge Series',
+                subject: (document.getElementById('subject-display') || {}).textContent?.trim() || 'Sectional Mock',
+                candidateName: nameEl ? nameEl.value.trim() : '',
+                date: (document.getElementById('current-date-display') || {}).textContent?.trim() || new Date().toLocaleDateString('en-GB'),
+                marks: Number(marks.toFixed(2)),
+                accuracy: accuracy,
+                correct: correct,
+                wrong: wrong,
+                skipped: rawData.length - attempted,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                answers: JSON.parse(JSON.stringify(userState)),
+                questions: rawData
+            };
+
+            try {
+                const history = getHistory();
+                history.push(attempt);
+                localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
+            } catch (e) {
+                // Keep the test working even if browser storage is unavailable/full.
+            }
+        }
+
+        function openHistoryDashboard() {
+            const history = getHistory();
+            const list = document.getElementById('history-list');
+            if (!list) return;
+
+            if (history.length === 0) {
+                list.innerHTML = `<div class="text-slate-400 text-center py-10 font-medium">No previous attempts found. Start a mock test!</div>`;
+            } else {
+                let html = '';
+                [...history].reverse().forEach((attempt, index) => {
+                    const maxMarks = rawData.length;
+                    const score = Number(attempt.marks || 0).toFixed(2);
+                    const accuracy = Number(attempt.accuracy || 0).toFixed(1);
+                    html += `
+                    <div class="bg-slate-700/50 border border-slate-600 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 hover:bg-slate-700 transition">
+                        <div class="text-center md:text-left">
+                            <div class="text-amber-300 font-bold text-lg mb-1">${escapeHistoryText(attempt.mockName || 'Round 1 Challenge Series')} <span class="text-sm font-normal text-amber-200/50">(Attempt #${history.length - index})</span></div>
+                            <div class="text-slate-300 text-sm"><i class="far fa-user"></i> ${escapeHistoryText(attempt.candidateName || 'Aspirant')} &nbsp; <i class="far fa-calendar-alt"></i> ${escapeHistoryText(attempt.date || '')}</div>
+                        </div>
+                        <div class="flex gap-6 text-center">
+                            <div><div class="text-xs text-slate-400 uppercase">Score</div><div class="text-xl font-bold text-sky-400">${score}/${maxMarks}</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Accuracy</div><div class="text-xl font-bold text-emerald-400">${accuracy}%</div></div>
+                        </div>
+                        <button onclick="loadHistoryAttempt(${Number(attempt.id)})" class="px-5 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition">View Analysis</button>
+                    </div>`;
+                });
+                list.innerHTML = html;
+            }
+            document.getElementById('history-modal').classList.remove('hidden');
+        }
+
+        function escapeHistoryText(value) {
+            return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+        }
+
+        function closeHistoryDashboard() {
+            document.getElementById('history-modal').classList.add('hidden');
+        }
+
+        function loadHistoryAttempt(id) {
+            const attempt = getHistory().find(a => Number(a.id) === Number(id));
+            if (!attempt) return;
+
+            activeHistoryAttempt = attempt;
+            isHistoryMode = true;
+            mockStarted = false;
+            mockSubmitted = true;
+            currentQIndex = 0;
+            timeLeft = Math.max(0, TEST_DURATION_SECONDS - Number(attempt.timeTaken || 0));
+
+            // Support both the current Target history format and the Source-style answer map.
+            if (Array.isArray(attempt.answers)) {
+                userState = attempt.answers.map(st => ({
+                    status: Number(st.status || 0),
+                    selectedOption: st.selectedOption === null || st.selectedOption === undefined ? null : Number(st.selectedOption),
+                    timeSpent: Number(st.timeSpent || 0)
+                }));
+            } else {
+                userState = Array(rawData.length).fill().map(() => ({ status: 0, selectedOption: null, timeSpent: 0 }));
+            }
+
+            while (userState.length < rawData.length) userState.push({ status: 0, selectedOption: null, timeSpent: 0 });
+            if (userState.length > rawData.length) userState = userState.slice(0, rawData.length);
+
+            closeHistoryDashboard();
+            switchScreen('result-screen');
+            generateResultDashboard();
+
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.remove('hidden');
+        }
+
+        function returnFromHistory() {
+            isHistoryMode = false;
+            activeHistoryAttempt = null;
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.add('hidden');
+            switchScreen('home-screen');
+        }
+
+        // ==================== SAVED QUESTIONS ====================
+        const SAVED_QUESTIONS_KEY = 'ExamRojgaar_saved_questions';
+
+        function getSavedQuestions() {
+            try {
+                const data = localStorage.getItem(SAVED_QUESTIONS_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveSavedQuestions(list) {
+            try {
+                localStorage.setItem(SAVED_QUESTIONS_KEY, JSON.stringify(list));
+            } catch (e) {
+                // Keep the mock usable if browser storage is unavailable/full.
+            }
+        }
+
+        function isQuestionSaved(question) {
+            if (!question) return false;
+            return getSavedQuestions().some(q => String(q.id) === String(question.id));
+        }
+
+        function toggleSaveQuestion() {
+            const currentQ = rawData[currentQIndex];
+            if (!currentQ) return;
+
+            const saved = getSavedQuestions();
+            const index = saved.findIndex(q => String(q.id) === String(currentQ.id));
+
+            if (index >= 0) {
+                saved.splice(index, 1);
+            } else {
+                // Store a copy so later test-state changes cannot corrupt saved questions.
+                saved.push(JSON.parse(JSON.stringify(currentQ)));
+            }
+
+            saveSavedQuestions(saved);
+            renderQuestion();
+        }
+
+        function openSavedQuestionsModal() {
+            renderSavedQuestionsList();
+            document.getElementById('saved-questions-modal').classList.remove('hidden');
+        }
+
+        function closeSavedQuestionsModal() {
+            document.getElementById('saved-questions-modal').classList.add('hidden');
+        }
+
+        function clearAllSavedQuestions() {
+            if (getSavedQuestions().length === 0) return;
+            if (confirm('Are you sure you want to clear all saved questions?')) {
+                try { localStorage.removeItem(SAVED_QUESTIONS_KEY); } catch (e) {}
+                renderSavedQuestionsList();
+                renderQuestion();
+            }
+        }
+
+        function removeSavedQuestion(index) {
+            const saved = getSavedQuestions();
+            if (index < 0 || index >= saved.length) return;
+            saved.splice(index, 1);
+            saveSavedQuestions(saved);
+            renderSavedQuestionsList();
+            renderQuestion();
+        }
+
+        function escapeSavedText(value) {
+            return String(value ?? '').replace(/[&<>\"']/g, ch => ({
+                '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;'
+            }[ch]));
+        }
+
+        function renderSavedQuestionsList() {
+            const container = document.getElementById('saved-questions-list');
+            if (!container) return;
+
+            const saved = getSavedQuestions();
+            if (saved.length === 0) {
+                container.innerHTML = `
+                    <div class="text-slate-400 text-center py-12 font-medium">
+                        <i class="far fa-star text-4xl mb-4 block text-slate-500"></i>
+                        No saved questions found.<br>
+                        <span class="text-sm">Click <b>Save Question</b> (â˜…) while attempting the mock to save questions here.</span>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            saved.forEach((q, index) => {
+                const opts = Array.isArray(q.optE) ? q.optE : [];
+                const correct = Number(q.ans);
+                let optionsHtml = '';
+
+                opts.forEach((opt, i) => {
+                    const isCorrect = i === correct;
+                    optionsHtml += `
+                        <div class="p-3 mb-2 rounded border ${isCorrect ? 'bg-emerald-50 border-emerald-300 font-bold text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-700'} text-sm">
+                            ${String.fromCharCode(65 + i)}) ${escapeSavedText(opt)} ${isCorrect ? '<i class=\"fas fa-check ml-2\"></i>' : ''}
+                        </div>`;
+                });
+
+                const solution = escapeSavedText(q.solE || 'No solution provided.');
+                const hindiQuestion = q.hin ? escapeSavedText(q.hin) : '';
+
+                html += `
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative mb-4">
+                        <button onclick="removeSavedQuestion(${index})" class="absolute top-4 right-4 text-slate-400 hover:text-rose-500 transition font-medium text-sm">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <div class="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest pr-20">Saved Question ${index + 1}</div>
+                        <div class="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">${escapeSavedText(q.eng || '')}</div>
+                        ${hindiQuestion ? `<div class="text-slate-600 text-sm mb-4 whitespace-pre-wrap"><b>Hindi:</b> ${hindiQuestion}</div>` : ''}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">${optionsHtml}</div>
+                        <div class="mt-4 border-t border-slate-100 pt-4">
+                            <div class="text-sm text-slate-600 font-medium bg-slate-50 p-3 rounded leading-relaxed whitespace-pre-line border border-slate-100">
+                                <i class="fas fa-lightbulb text-amber-500 mr-2"></i><b>Solution:</b><br>${solution}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+
+            // Update Save Question button from persistent browser storage.
+            const saveBtn = document.getElementById('save-question-btn');
+            const saveIcon = document.getElementById('save-question-icon');
+            const saveLabel = document.getElementById('save-question-label');
+            const saved = isQuestionSaved(q);
+            if (saveBtn && saveIcon && saveLabel) {
+                saveBtn.className = `px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300'}`;
+                saveIcon.className = saved ? 'fas fa-star text-amber-500' : 'far fa-star text-gray-400';
+                saveLabel.innerText = saved ? 'Saved' : 'Save Question';
+            }
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION â†’ open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+                    // Store this completed attempt so it appears under "Previous Attempts".
+                    saveAttemptToStorage();
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            const historyBack = document.getElementById('history-result-back');
+            if (historyBack) historyBack.classList.toggle('hidden', !isHistoryMode);
+
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. REAL LEADERBOARD RANK ENGINE
+            // Ranking is calculated from the attempts stored in this browser.
+            // For a true cross-device/all-student rank, replace getHistory() with a shared
+            // database/API (e.g. Supabase/Firebase). This engine deliberately does NOT use
+            // a fake fixed population such as 5,000 users.
+            const currentCandidateEl = document.getElementById('candidate-name');
+            const currentCandidate = (isHistoryMode && activeHistoryAttempt)
+                ? String(activeHistoryAttempt.candidateName || '').trim()
+                : (currentCandidateEl ? String(currentCandidateEl.value || '').trim() : '');
+
+            const currentAttempt = {
+                id: isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now(),
+                candidateName: currentCandidate || ('Student #' + (isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now())),
+                marks: Number(score.toFixed(2)),
+                accuracy: Number(accuracy),
+                correct: correct,
+                wrong: wrong,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                date: new Date().toISOString()
+            };
+
+            function getLeaderboardEntries() {
+                const history = getHistory();
+                const entries = history.map(a => ({
+                    id: a.id,
+                    candidateName: String(a.candidateName || '').trim(),
+                    marks: Number(a.marks || 0),
+                    accuracy: Number(a.accuracy || 0),
+                    correct: Number(a.correct || 0),
+                    wrong: Number(a.wrong || 0),
+                    timeTaken: Number(a.timeTaken || TEST_DURATION_SECONDS),
+                    date: a.date || ''
+                }));
+
+                // Ensure the attempt being displayed is present even if it has not been saved.
+                if (!entries.some(e => String(e.id) === String(currentAttempt.id))) entries.push(currentAttempt);
+
+                // One leaderboard position per student: if the same named student has multiple
+                // attempts, only their BEST attempt is counted. Blank names are treated as unique.
+                const bestByStudent = new Map();
+                entries.forEach((e, i) => {
+                    const key = e.candidateName
+                        ? 'name:' + e.candidateName.toLowerCase().replace(/\s+/g, ' ')
+                        : 'attempt:' + String(e.id || i);
+                    const old = bestByStudent.get(key);
+                    const better = !old ||
+                        e.marks > old.marks ||
+                        (e.marks === old.marks && e.accuracy > old.accuracy) ||
+                        (e.marks === old.marks && e.accuracy === old.accuracy && e.timeTaken < old.timeTaken);
+                    if (better) bestByStudent.set(key, e);
+                });
+
+                return Array.from(bestByStudent.values()).sort((a,b) => {
+                    if (b.marks !== a.marks) return b.marks - a.marks;
+                    if (b.correct !== a.correct) return b.correct - a.correct;
+                    if (b.accuracy !== a.accuracy) return b.accuracy - a.accuracy;
+                    if (a.timeTaken !== b.timeTaken) return a.timeTaken - b.timeTaken;
+                    return String(a.date).localeCompare(String(b.date));
+                });
+            }
+
+            const leaderboard = getLeaderboardEntries();
+            const targetEntry = (isHistoryMode && activeHistoryAttempt)
+                ? leaderboard.find(e => {
+                    const n1 = String(e.candidateName || '').trim().toLowerCase();
+                    const n2 = String(activeHistoryAttempt.candidateName || '').trim().toLowerCase();
+                    return n1 && n1 === n2;
+                }) || currentAttempt
+                : currentAttempt;
+
+            // Competition rank: students with a higher score occupy earlier positions.
+            // Equal scores receive the same rank (1, 1, 3), which is the standard exam convention.
+            const rank = 1 + leaderboard.filter(e => Number(e.marks) > Number(targetEntry.marks)).length;
+
+            // Percentile = percentage of students scoring below this student's score.
+            const lowerCount = leaderboard.filter(e => Number(e.marks) < Number(targetEntry.marks)).length;
+            const percentile = leaderboard.length <= 1
+                ? 100
+                : Math.max(0, Math.min(100, (lowerCount / (leaderboard.length - 1)) * 100));
+
+            // 3. Update result identity/details from the starting page
+            const paperEl = document.getElementById('paper-name-display');
+            const subjectEl = document.getElementById('subject-display');
+            const startDateEl = document.getElementById('current-date-display');
+            const resultCandidate = isHistoryMode && activeHistoryAttempt
+                ? (activeHistoryAttempt.candidateName || '')
+                : ((document.getElementById('candidate-name') || {}).value || '');
+            document.getElementById('res-paper-name').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.mockName ? activeHistoryAttempt.mockName : (paperEl ? paperEl.textContent.trim() : 'Round 1 Challenge Series');
+            document.getElementById('res-subject').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.subject ? activeHistoryAttempt.subject : (subjectEl ? subjectEl.textContent.trim() : 'Sectional Mock');
+            document.getElementById('res-candidate-name').innerText = resultCandidate.trim() || 'Aspirant';
+            document.getElementById('res-date').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.date ? activeHistoryAttempt.date : (startDateEl ? startDateEl.textContent.trim() : new Date().toLocaleDateString('en-GB'));
+
+            // 4. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            const participantEl = document.getElementById('res-participant-count');
+            if (participantEl) participantEl.innerText = leaderboard.length.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percentile.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const el = document.getElementById('current-date-display');
+            if (el) {
+                const d = new Date();
+                el.textContent = String(d.getDate()).padStart(2, '0') + '/' +
+                    String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
