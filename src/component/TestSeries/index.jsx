@@ -202,7 +202,16 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
   const validateAndStart = () => {
     // if (!candidateName.trim()) { alert("Please enter your Candidate Name to begin."); return; }
     if (!declaration) { alert("Please read and accept the declaration before beginning."); return; }
-    toggleFullscreen()
+
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+
+    if (!isMobile && !document.fullscreenElement) {
+      toggleFullscreen();
+    }
+
     setScreen(SCREENS.COUNTDOWN);
     setCountdown(5);
   };
