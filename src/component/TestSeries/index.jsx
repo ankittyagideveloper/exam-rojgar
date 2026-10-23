@@ -84,7 +84,7 @@ function paletteClass(status, active) {
 }
 
 // ─── main component ───────────────────────────────────────────────────────────
-const TestSeries = ({ testData,isfreeTest=false}) => {
+const TestSeries = ({ testData, isfreeTest = false }) => {
   const { isLoaded, isSignedIn, user } = useUser();
   const { isFullScreen, toggleFullscreen } = useFullscreen();
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -112,7 +112,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
   //TODO: FIX IT FOR FUTURE Batches
   const HISTORY_KEY = `${storageKey}_history`;
-  
+
   const SAVED_KEY = `${storageKey}_saved`;
   const MAX_SCORE = TOTAL * marksCorrect;
   const TEST_SECONDS = duration * 60;
@@ -200,8 +200,9 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
   // ─── start flow ───────────────────────────────────────────────────────────
   const validateAndStart = () => {
-    if (!candidateName.trim()) { alert("Please enter your Candidate Name to begin."); return; }
+    // if (!candidateName.trim()) { alert("Please enter your Candidate Name to begin."); return; }
     if (!declaration) { alert("Please read and accept the declaration before beginning."); return; }
+    toggleFullscreen()
     setScreen(SCREENS.COUNTDOWN);
     setCountdown(5);
   };
@@ -429,7 +430,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
     const attempt = readStorage(HISTORY_KEY).find((a) => String(a.id) === String(attemptId));
     if (!attempt) return;
     loadHistoryAttempt(attempt.id);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ─── saved questions ──────────────────────────────────────────────────────
@@ -597,12 +598,13 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
             </div>
 
             {/* Right panel */}
-            <div className="flex-[1.2] flex flex-col gap-2 min-w-[260px] md:min-w-[280px]">
+            <div className="flex-[1.2] flex flex-col gap-2 min-w-[260px] md:min-w-[280px] ">
               {/* Info card */}
-              <div className="bg-[#f5f7f8] dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col items-center">
-                <div className="w-20 h-24 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center mb-3 text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
-                  {profileImageUrl ?<img src={profileImageUrl} alt='user-profile' />: <CircleUserRound size={42} />}
+              <div className="bg-[#f5f7f8] h-full dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col items-center">
+                <div className="rounded-full w-24 h-24 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center mb-3 text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
+                  {profileImageUrl ? <img src={profileImageUrl} alt='user-profile' /> : <CircleUserRound size={90} />}
                 </div>
+                {user && <h3 className="text-2xl">{user?.fullName}</h3>}
                 <div className="w-full text-[13px] space-y-2">
                   {[
                     ["Paper Name", paperName, "text-[#1e5086] dark:text-[#5aaef0]"],
@@ -617,10 +619,19 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     </div>
                   ))}
                 </div>
+                <div className="mt-3 space-y-2  border-gray-400 dark:border-[#363636]">
+                  <Button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
+                    View Previous Attempts <span className="text-[#1e5086] dark:text-[#5aaef0]">📋</span>
+                  </Button>
+                  <Button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
+                    Saved Questions Section <span className="text-[#1e5086] dark:text-[#5aaef0]">🔖</span>
+                  </Button>
+                </div>
               </div>
 
+
               {/* Candidate details */}
-              <div className="bg-[#f5f7f8] dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col flex-1">
+              {/* <div className="bg-[#f5f7f8] dark:bg-[#1e1e1e] border border-gray-400 dark:border-[#363636] shadow-sm p-4 flex flex-col flex-1">
                 <div className="font-bold text-[#1e5086] dark:text-[#5aaef0] border-b border-gray-400 dark:border-[#363636] pb-2 mb-3">Candidate Details</div>
                 <div className="space-y-3 flex-1">
                   <div>
@@ -647,15 +658,8 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-3 space-y-2 border-t border-gray-400 dark:border-[#363636] pt-3">
-                  <Button onClick={openHistory} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
-                    View Previous Attempts <span className="text-[#1e5086] dark:text-[#5aaef0]">📋</span>
-                  </Button>
-                  <Button onClick={openSaved} className="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] dark:bg-[#2C2C2C] dark:hover:bg-[#363636] border border-gray-400 dark:border-[#363636] py-1.5 px-3 text-[13px] text-gray-800 dark:text-neutral-200 font-bold transition-colors flex justify-between items-center">
-                    Saved Questions Section <span className="text-[#1e5086] dark:text-[#5aaef0]">🔖</span>
-                  </Button>
-                </div>
-              </div>
+
+              </div> */}
             </div>
           </div>
 
@@ -719,7 +723,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
         const saved = isQuestionSaved(q);
 
         return (
-          <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-[#121212] w-full border border-gray-300 dark:border-[#363636] md:w-[96vw] md:h-[88vh] md:mx-auto md:my-auto md:shadow-md">
+          <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-[#121212] w-full border border-gray-300 dark:border-[#363636] md:w-full md:h-[88vh]  md:my-auto md:shadow-md">
             {/* Top bar */}
             <div className="bg-white dark:bg-[#262626] border-b border-gray-300 dark:border-[#363636] shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 z-10">
               <div className="font-bold text-sm md:text-base text-slate-800 dark:text-neutral-100 truncate hidden md:block">
@@ -738,7 +742,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
                   </select>
                   <DarkModeToggle darkMode={darkMode} onToggle={toggleDarkMode} />
                   <button className="hidden md:block border-none bg-none 	pointer text-inherit px-2" onClick={toggleFullscreen}>
-                    {isFullScreen ?  <IconMinimize />:<IconMaximize />}
+                    {isFullScreen ? <IconMinimize /> : <IconMaximize />}
                   </button>
                 </div>
                 <div className={`border px-2 md:px-4 py-1 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold justify-center min-w-[80px] ${timerDanger ? "bg-red-100 dark:bg-red-950/60 border-red-500 text-red-600 dark:text-red-400" : "bg-gray-100 dark:bg-[#2C2C2C] border-gray-300 dark:border-[#363636] text-slate-700 dark:text-neutral-200"}`}>
@@ -1129,7 +1133,7 @@ const TestSeries = ({ testData,isfreeTest=false}) => {
 
       {/* ══ HISTORY MODAL ═════════════════════════════════════════════════ */}
       {showHistory && (
-        <PreviousAttemptModal onCloseModal={() => setShowHistory(false)} previousAttempts={historyList} onLoadHistoryAttempt={(id) => loadHistoryAttempt(id)}/>
+        <PreviousAttemptModal onCloseModal={() => setShowHistory(false)} previousAttempts={historyList} onLoadHistoryAttempt={(id) => loadHistoryAttempt(id)} />
       )}
 
       {/* ══ SAVED QUESTIONS MODAL ════════════════════════════════════════ */}
