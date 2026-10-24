@@ -961,7 +961,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                   {[
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
                     ["Subject", isHistoryMode && historyAttempt ? historyAttempt.subject : subject, "border-indigo-500"],
-                    ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant", "border-emerald-500"],
+                    ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : user.fullName || "Aspirant", "border-emerald-500"],
                     ["Date", isHistoryMode && historyAttempt ? historyAttempt.date : todayStr(), "border-amber-500"],
                   ].map(([label, val, border]) => (
                     <div key={label} className={`border-l-4 ${border} pl-3`}>
