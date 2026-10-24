@@ -985,7 +985,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                   <div className="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">{isHistoryMode && historyAttempt ? historyAttempt.subject : subject}</div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Candidate Name</span>
-                    <span className="text-sm font-bold text-yellow-300">{isHistoryMode && historyAttempt ? historyAttempt.candidateName : candidateName || "Aspirant"}</span>
+                    <span className="text-sm font-bold text-yellow-300">{isHistoryMode && historyAttempt ? historyAttempt.candidateName : user?.fullName || "Aspirant"}</span>
                   </div>
                   <div className="mt-3 pt-3 border-t border-blue-500/50 w-full flex justify-between items-center">
                     <span className="text-sm font-semibold">Paper Name</span>
