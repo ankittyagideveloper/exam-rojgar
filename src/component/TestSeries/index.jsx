@@ -7,7 +7,7 @@ import {
   IconMaximize, IconMinimize
 } from "@tabler/icons-react";
 import { PreviousAttemptModal } from "./PreviousAttemptModal";
-import { CircleUserRound } from "lucide-react";
+import { CircleUserRound, HamburgerIcon, HamIcon, Menu } from "lucide-react";
 import { ThemeContext } from "@/context/ThemeContext";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
 
@@ -75,8 +75,8 @@ function paletteClass(status, active) {
   const base =
     "w-10 h-10 flex items-center justify-center font-semibold text-sm cursor-pointer transition-all relative select-none ";
   const highlight = active ? "ring-2 ring-blue-600 scale-110 shadow-lg " : "";
-  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-gray-200 dark:bg-[#2e2e2e] text-gray-700 dark:text-neutral-200 border border-gray-300 dark:border-[#363636] rounded";
-  if (status === STATUS.NOT_ANSWERED) return base + highlight + "bg-red-500 text-white rounded-br-2xl";
+  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-[white] dark:bg-[#2e2e2e] text-gray-700 dark:text-neutral-200 border border-gray-300 dark:border-[#363636] rounded";
+  if (status === STATUS.NOT_ANSWERED) return base + highlight + "bg-[#c0392b] text-white rounded-br-2xl";
   if (status === STATUS.ANSWERED) return base + highlight + "bg-green-500 text-white rounded-tl-2xl";
   if (status === STATUS.MARKED) return base + highlight + "bg-purple-500 text-white rounded-full";
   if (status === STATUS.ANS_MARKED) return base + highlight + "bg-purple-500 text-white rounded-full";
@@ -751,9 +751,9 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                 </div>
                 <Button
                   onClick={() => setShowSubmitPopup(true)}
-                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors text-xs md:text-base shrink-0"
+                  className="bg-[#1fbad6] hover:bg-[#1ca7c0] text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors text-xs md:text-base shrink-0"
                 >
-                  SUBMIT
+                  Submit Test
                 </Button>
               </div>
             </div>
@@ -777,9 +777,9 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                     <span className="text-xs font-semibold text-gray-600 dark:text-neutral-400 hidden sm:inline">+{marksCorrect}, -{marksWrong}</span>
                     <Button
                       onClick={() => setShowMobilePalette(true)}
-                      className="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-2 py-1 rounded bg-blue-50 text-xs shadow-sm"
+                      className="md:hidden text-white font-bold flex items-center gap-1 border hover:bg-[#1ca7c0] px-2 py-1 rounded bg-[#1fbad6] text-xs shadow-sm"
                     >
-                      ⊞ Palette
+                      <Menu />
                     </Button>
                   </div>
                 </div>
@@ -809,16 +809,16 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                 </div>
 
                 {/* Action bar */}
-                <div className="w-full bg-white dark:bg-[#262626] border-t border-gray-300 dark:border-[#363636] p-2 md:p-3 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-                  <div className="flex gap-2 w-full sm:w-auto">
-                    <Button onClick={markForReview} className="flex-1 sm:flex-none bg-[#1272ba] hover:bg-[#1260ba] text-white font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
-                      Mark Review
+                <div className="w-full bg-[#f5f5f5] dark:bg-[#262626] border-t border-gray-300 dark:border-[#363636] p-2 md:p-3 flex sm:flex-row gap-2 justify-between items-center shrink-0 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                  <div className="flex gap-2 sm:w-auto">
+                    <Button onClick={markForReview} className="flex-1 sm:flex-none bg-[#a9d0f5] hover:bg-[#92c4f2] text-[#333] py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors ">
+                      Mark for Review
                     </Button>
-                    <Button onClick={clearResponse} className="flex-1 sm:flex-none bg-white dark:bg-[#2C2C2C] hover:bg-gray-100 dark:hover:bg-[#363636] text-gray-700 dark:text-neutral-200 border border-gray-400 dark:border-[#363636] font-semibold py-2.5 sm:py-2 px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
+                    <Button onClick={clearResponse} className=" flex-1 sm:flex-none bg-[#a9d0f5] dark:bg-[#2C2C2C] hover:bg-[#92c4f2] dark:hover:bg-[#363636] text-[#333] dark:text-neutral-200 border border-gray-400 dark:border-[#363636]  py-2.5  px-2 md:px-5 rounded text-xs md:text-sm transition-colors">
                       Clear
                     </Button>
                   </div>
-                  <Button onClick={saveAndNext} className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors uppercase">
+                  <Button onClick={saveAndNext} className="sm:w-auto bg-[#1fbad6] hover:bg-[#1ca7c0] text-white text-sm py-2.5 sm:py-2 px-2 md:px-5 rounded   shadow-md transition-colors uppercase">
                     Save &amp; Next
                   </Button>
                 </div>
@@ -832,18 +832,24 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                 />
               )}
               <div
-                className={`fixed inset-y-0 right-0 transform transition-transform duration-300 md:relative md:translate-x-0 w-[85%] max-w-xs md:max-w-none md:w-72 bg-white dark:bg-[#1e1e1e] shadow-xl md:shadow-none md:border-l md:border-gray-300 dark:md:border-[#363636] z-[60] md:z-auto flex flex-col shrink-0 ${showMobilePalette ? "translate-x-0" : "translate-x-full"}`}
+                className={`bg-[#d9edf7] fixed inset-y-0 right-0 transform transition-transform duration-300 md:relative md:translate-x-0 w-[85%] max-w-xs md:max-w-none md:w-72  dark:bg-[#1e1e1e] shadow-xl md:shadow-none md:border-l md:border-gray-300 dark:md:border-[#363636] z-[60] md:z-auto flex flex-col shrink-0 ${showMobilePalette ? "translate-x-0" : "translate-x-full"}`}
               >
-                <div className="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
-                  <span className="text-sm truncate">{candidateName || "Aspirant"}</span>
-                  <Button className="md:hidden text-white text-xl px-1" onClick={() => setShowMobilePalette(false)}>✕</Button>
+                <div className="p-3 bg-[#d9edf7] text-white font-bold flex justify-between items-center shrink-0">
+                  <div className="flex flex-row gap-2 items-center">
+                    <div className="rounded-full w-8 h-8 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center  text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
+                      {profileImageUrl ? <img src={profileImageUrl} alt='user-profile' /> : <CircleUserRound size={90} />}
+                    </div>
+                    <span className="text-sm truncate text-[#333]">{candidateName || "Aspirant"}</span>
+                  </div>
+
+                  <Button className="md:hidden text-white text-xl px-2 bg-[#1fbad6] hover:bg-[#1fbad6]" onClick={() => setShowMobilePalette(false)}>✕</Button>
                 </div>
 
                 {/* Legend */}
-                <div className="p-3 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 dark:border-[#363636] bg-gray-50 dark:bg-[#262626] shrink-0">
+                <div className="p-3 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 dark:border-[#363636] bg-[#d9edf7] dark:bg-[#262626] shrink-0">
                   {[
                     ["bg-green-500 rounded-tl-2xl", `${counts.answered} Answered`],
-                    ["bg-red-500 rounded-br-2xl", `${counts.notAnswered} Not Ans.`],
+                    ["bg-[#c0392b] rounded-br-2xl", `${counts.notAnswered} Not Ans.`],
                     ["bg-[#2e2e2e] border border-[#363636] rounded", `${counts.notVisited} Not Visited`],
                     ["bg-purple-500 rounded-full", `${counts.marked + counts.ansMarked} Marked`],
                   ].map(([cls, label]) => (
