@@ -121,7 +121,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
   const [countdown, setCountdown] = useState(5);
 
   // ── candidate info ──
-  const [candidateName, setCandidateName] = useState("");
+
   const [isMember, setIsMember] = useState("No");
   const [defaultLang, setDefaultLang] = useState("en");
   const [declaration, setDeclaration] = useState(false);
@@ -202,7 +202,6 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
   const validateAndStart = () => {
     // if (!candidateName.trim()) { alert("Please enter your Candidate Name to begin."); return; }
     if (!declaration) { alert("Please read and accept the declaration before beginning."); return; }
-    toggleFullscreen()
     setScreen(SCREENS.COUNTDOWN);
     setCountdown(5);
   };
@@ -373,7 +372,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
       attemptNumber: attemptNum,
       mockName: paperName,
       subject,
-      candidateName: candidateName.trim() || "Aspirant",
+      candidateName: user?.fullName || "Aspirant",
       date: todayStr(),
       marks: Number(r.score),
       accuracy: Number(r.accuracy),
@@ -839,7 +838,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                     <div className="rounded-full w-8 h-8 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center  text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
                       {profileImageUrl ? <img src={profileImageUrl} alt='user-profile' /> : <CircleUserRound size={90} />}
                     </div>
-                    <span className="text-sm truncate text-[#333]">{candidateName || "Aspirant"}</span>
+                    <span className="text-sm truncate text-[#333]">{user.fullName || "Aspirant"}</span>
                   </div>
 
                   <Button className="md:hidden text-white text-xl px-2 bg-[#1fbad6] hover:bg-[#1fbad6]" onClick={() => setShowMobilePalette(false)}>✕</Button>
