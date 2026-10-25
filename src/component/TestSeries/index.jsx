@@ -724,9 +724,16 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
         return (
           <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-[#121212] w-full border border-gray-300 dark:border-[#363636] md:w-full md:h-[88vh]  md:my-auto md:shadow-md">
             {/* Top bar */}
-            <div className="bg-white dark:bg-[#262626] border-b border-gray-300 dark:border-[#363636] shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 z-10">
+            <div className="bg-white dark:bg-[#262626] border-b border-gray-300 dark:border-[#363636] shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-1 gap-2 z-10">
               <div className="font-bold text-sm md:text-base text-slate-800 dark:text-neutral-100 truncate hidden md:block">
-                {title}
+                <Link className="flex items-center gap-2 sm:gap-3 min-w-0" to="/">
+                  <div className="w-9 h-6 shrink-0 bg-gray-100 border border-border rounded-full flex items-center justify-center sm:w-12 sm:h-12">
+                    <img src="/logo.png" alt="examrojgar-logo" className="grid size-8 place-items-center rounded-xl bg-accent font-mono text-sm font-bold text-accent-foreground shadow-glow sm:size-10" />
+                  </div>
+                  <span className="font-display text-sm font-semibold tracking-tight sm:text-lg">
+                    Exam Rojgaar
+                  </span>
+                </Link>
               </div>
               <div className="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
                 <div className="flex items-center gap-1">
