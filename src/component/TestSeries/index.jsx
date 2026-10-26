@@ -73,13 +73,13 @@ function writeStorage(key, value) {
 // ─── palette Button class ────────────────────────────────────────────────────
 function paletteClass(status, active) {
   const base =
-    "w-10 h-10 flex items-center justify-center font-semibold text-sm cursor-pointer transition-all relative select-none ";
+    "w-10 h-10 flex items-center justify-center font-semibold text-sm cursor-pointer relative select-none text-white ";
   const highlight = active ? "ring-2 ring-blue-600 scale-110 shadow-lg " : "";
-  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-[white] dark:bg-[#2e2e2e] text-gray-700 dark:text-neutral-200 border border-gray-300 dark:border-[#363636] rounded";
-  if (status === STATUS.NOT_ANSWERED) return base + highlight + "bg-[#c0392b] text-white rounded-br-2xl";
-  if (status === STATUS.ANSWERED) return base + highlight + "bg-green-500 text-white rounded-tl-2xl";
-  if (status === STATUS.MARKED) return base + highlight + "bg-purple-500 text-white rounded-full";
-  if (status === STATUS.ANS_MARKED) return base + highlight + "bg-purple-500 text-white rounded-full";
+  if (status === STATUS.NOT_VISITED) return base + highlight + "bg-[white] hover:bg-[white] dark:bg-[#2e2e2e] dark:hover:bg-[#2e2e2e] text-gray-700 dark:text-neutral-200 border border-gray-300 dark:border-[#363636] rounded";
+  if (status === STATUS.NOT_ANSWERED) return base + highlight + "bg-[#c0392b] hover:bg-[#c0392b] text-white rounded-br-2xl";
+  if (status === STATUS.ANSWERED) return base + highlight + "bg-green-500 hover:bg-green-500 text-white rounded-tl-2xl";
+  if (status === STATUS.MARKED) return base + highlight + "bg-purple-500 hover:bg-purple-500 text-white rounded-full";
+  if (status === STATUS.ANS_MARKED) return base + highlight + "bg-purple-500 hover:bg-purple-500 text-white rounded-full";
   return base;
 }
 
@@ -845,7 +845,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                     <div className="rounded-full w-8 h-8 border-2 border-gray-400 dark:border-[#363636] bg-white dark:bg-[#2C2C2C] flex items-center justify-center  text-gray-300 dark:text-neutral-500 text-5xl shadow-inner overflow-hidden">
                       {profileImageUrl ? <img src={profileImageUrl} alt='user-profile' /> : <CircleUserRound size={90} />}
                     </div>
-                    <span className="text-sm truncate text-[#333]">{user.fullName || "Aspirant"}</span>
+                    <span className="text-sm truncate text-[#333]">{user?.fullName || "Aspirant"}</span>
                   </div>
 
                   <Button className="md:hidden text-white text-xl px-2 bg-[#1fbad6] hover:bg-[#1fbad6]" onClick={() => setShowMobilePalette(false)}>✕</Button>
@@ -968,7 +968,7 @@ const TestSeries = ({ testData, isfreeTest = false }) => {
                   {[
                     ["Paper Name", isHistoryMode && historyAttempt ? historyAttempt.mockName : paperName, "border-blue-500"],
                     ["Subject", isHistoryMode && historyAttempt ? historyAttempt.subject : subject, "border-indigo-500"],
-                    ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : user.fullName || "Aspirant", "border-emerald-500"],
+                    ["Candidate", isHistoryMode && historyAttempt ? historyAttempt.candidateName : user?.fullName || "Aspirant", "border-emerald-500"],
                     ["Date", isHistoryMode && historyAttempt ? historyAttempt.date : todayStr(), "border-amber-500"],
                   ].map(([label, val, border]) => (
                     <div key={label} className={`border-l-4 ${border} pl-3`}>
