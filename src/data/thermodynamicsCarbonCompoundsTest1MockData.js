@@ -26,9 +26,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पृथक निकाय",
         "रुद्धोष्म निकाय"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "An open system exchanges both matter and energy with its surroundings. Example: water boiling in an open vessel.",
       "solH": "खुला निकाय अपने परिवेश के साथ पदार्थ और ऊर्जा दोनों का आदान-प्रदान करता है। उदाहरण: खुले बर्तन में उबलता पानी।"
     },
@@ -48,9 +46,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पृथक निकाय",
         "इनमें से कोई नहीं"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "A closed system can exchange energy but does not exchange matter with its surroundings. Example: gas sealed inside a piston-cylinder.",
       "solH": "बंद निकाय ऊर्जा का आदान-प्रदान कर सकता है, लेकिन पदार्थ का नहीं। उदाहरण: पिस्टन-सिलेंडर में बंद गैस।"
     },
@@ -70,9 +66,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पृथक निकाय",
         "समदाबी निकाय"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "An isolated system exchanges neither matter nor energy with its surroundings. A perfectly isolated system is an idealization.",
       "solH": "पृथक निकाय अपने परिवेश के साथ न पदार्थ और न ही ऊर्जा का आदान-प्रदान करता है। पूर्णतः पृथक निकाय एक आदर्श अवधारणा है।"
     },
@@ -92,9 +86,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "समआयतनी",
         "समतापीय"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "An isothermal process occurs at constant temperature.",
       "solH": "समतापीय प्रक्रिया में तापमान स्थिर रहता है।"
     },
@@ -114,9 +106,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "समदाबी प्रक्रिया",
         "चक्रीय प्रक्रिया"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "An adiabatic process involves no heat transfer between the system and its surroundings.",
       "solH": "रुद्धोष्म प्रक्रिया में निकाय और उसके परिवेश के बीच ऊष्मा का स्थानांतरण नहीं होता।"
     },
@@ -136,9 +126,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "रुद्धोष्म प्रक्रिया",
         "समआयतनी प्रक्रिया"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "An isobaric process occurs at constant pressure.",
       "solH": "समदाबी प्रक्रिया में दाब स्थिर रहता है।"
     },
@@ -158,9 +146,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "चक्रीय प्रक्रिया",
         "समदाबी प्रक्रिया"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "In a cyclic process, the system returns to its initial thermodynamic state after completing a cycle.",
       "solH": "चक्रीय प्रक्रिया में एक चक्र पूरा करने के बाद निकाय अपनी प्रारंभिक ऊष्मागतिक अवस्था में लौट आता है।"
     },
@@ -180,9 +166,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "तीव्र प्रक्रिया",
         "उत्क्रमणीय प्रक्रिया"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "A reversible process is an idealized process that can be reversed through infinitesimal changes without leaving a net change in the system and surroundings.",
       "solH": "उत्क्रमणीय प्रक्रिया एक आदर्श प्रक्रिया है, जिसे अत्यंत छोटे परिवर्तनों द्वारा उलटा जा सकता है और निकाय तथा परिवेश में कोई शुद्ध परिवर्तन नहीं रहता।"
     },
@@ -202,9 +186,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "घर्षण रहित अत्यंत धीमा संपीड़न",
         "एक आदर्श उत्क्रमणीय समतापीय प्रक्रिया"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Free expansion into a vacuum is irreversible because the gas does not spontaneously return to its original state.",
       "solH": "निर्वात में मुक्त प्रसार अनुत्क्रमणीय है, क्योंकि गैस स्वतः अपनी मूल अवस्था में वापस नहीं लौटती।"
     },
@@ -224,9 +206,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "भौतिक परिवर्तन",
         "दहन"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Melting is a physical change because the substance remains water in a different physical state.",
       "solH": "पिघलना भौतिक परिवर्तन है, क्योंकि पदार्थ की रासायनिक पहचान पानी ही रहती है, केवल अवस्था बदलती है।"
     },
@@ -246,9 +226,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "मोम पिघलना",
         "पानी में चीनी घोलना"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Rusting forms new substances, mainly hydrated iron oxides, so it is a chemical change.",
       "solH": "जंग लगने पर नए पदार्थ, मुख्यतः जलयोजित लौह ऑक्साइड, बनते हैं। इसलिए यह रासायनिक परिवर्तन है।"
     },
@@ -268,9 +246,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "उदासीन प्रक्रिया",
         "ऊष्माक्षेपी अभिक्रिया"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "An exothermic reaction releases heat to its surroundings. Combustion is a common example.",
       "solH": "ऊष्माक्षेपी अभिक्रिया में परिवेश को ऊष्मा निकलती है। दहन इसका सामान्य उदाहरण है।"
     },
@@ -290,9 +266,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कैल्शियम कार्बोनेट का ऊष्मीय अपघटन",
         "प्राकृतिक गैस का जलना"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Thermal decomposition of calcium carbonate requires heat: CaCO₃ → CaO + CO₂.",
       "solH": "कैल्शियम कार्बोनेट का ऊष्मीय अपघटन ऊष्मा की आवश्यकता रखता है: CaCO₃ → CaO + CO₂।"
     },
@@ -312,9 +286,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "इसमें रासायनिक परिवर्तन नहीं हो सकता।",
         "इसके लिए बाहर से लगातार गर्म करना हमेशा आवश्यक होता है।"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "In an exothermic reaction, heat is released and the enthalpy change ΔH is negative.",
       "solH": "ऊष्माक्षेपी अभिक्रिया में ऊष्मा निकलती है और एन्थैल्पी परिवर्तन ΔH ऋणात्मक होता है।"
     },
@@ -334,9 +306,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "भौतिक परिवर्तन हमेशा रासायनिक संरचना बदलता है।",
         "किसी रासायनिक परिवर्तन में ऊर्जा शामिल नहीं होती।"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "A chemical change forms new substances, while a physical change generally changes only the state, shape or appearance.",
       "solH": "रासायनिक परिवर्तन में नए पदार्थ बनते हैं, जबकि भौतिक परिवर्तन में सामान्यतः केवल अवस्था, आकार या रूप बदलता है।"
     },
@@ -356,9 +326,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "केवल एरोमैटिक हाइड्रोकार्बन",
         "संतृप्त हाइड्रोकार्बन"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Saturated hydrocarbons, such as alkanes, contain only single carbon-carbon bonds.",
       "solH": "संतृप्त हाइड्रोकार्बन, जैसे ऐल्केन, में केवल एकल कार्बन-कार्बन बंध होते हैं।"
     },
@@ -378,9 +346,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "त्रिबंध",
         "आयनिक बंध"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Ethene is an alkene and contains one carbon-carbon double bond.",
       "solH": "एथीन एक ऐल्कीन है और इसमें एक कार्बन-कार्बन द्विबंध होता है।"
     },
@@ -400,9 +366,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "एथाइन",
         "मीथेन"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Ethyne (C₂H₂), also called acetylene, contains a carbon-carbon triple bond.",
       "solH": "एथाइन (C₂H₂), जिसे एसीटिलीन भी कहते हैं, में कार्बन-कार्बन त्रिबंध होता है।"
     },
@@ -422,9 +386,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "प्रोपेन",
         "एथाइन"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Benzene (C₆H₆) is the simplest common example of an aromatic hydrocarbon.",
       "solH": "बेंजीन (C₆H₆) एरोमैटिक हाइड्रोकार्बन का सबसे सरल सामान्य उदाहरण है।"
     },
@@ -444,9 +406,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "यह केवल सल्फर की मात्रा मापती है।",
         "यह स्पार्क-इग्निशन इंजन में नॉकिंग के प्रति प्रतिरोध दर्शाती है।"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "A higher octane number indicates greater resistance to knocking in spark-ignition engines.",
       "solH": "अधिक ऑक्टेन संख्या स्पार्क-इग्निशन इंजन में नॉकिंग के प्रति अधिक प्रतिरोध दर्शाती है।"
     },
@@ -466,9 +426,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "ऑक्टेन की मात्रा",
         "केवल क्वथनांक"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Cetane number indicates diesel ignition quality. A higher value generally means a shorter ignition delay.",
       "solH": "सीटेन संख्या डीजल की प्रज्वलन गुणवत्ता दर्शाती है। अधिक मान का अर्थ सामान्यतः कम ignition delay होता है।"
     },
@@ -488,9 +446,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "एन्थ्रासाइट",
         "बिटुमिनस"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Anthracite is the highest-rank coal and generally has the highest carbon content and heating value.",
       "solH": "एन्थ्रासाइट सर्वोच्च श्रेणी का कोयला है और इसमें सामान्यतः कार्बन की मात्रा तथा ऊष्मीय मान सबसे अधिक होता है।"
     },
@@ -510,9 +466,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "लिग्नाइट",
         "पीट"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Peat is an early stage of coal formation, followed broadly by lignite, bituminous coal and anthracite.",
       "solH": "पीट कोयला निर्माण की प्रारंभिक अवस्था है। इसके बाद सामान्यतः लिग्नाइट, बिटुमिनस कोयला और एन्थ्रासाइट आते हैं।"
     },
@@ -532,9 +486,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "मिश्रधातु",
         "फ्लक्स"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "An ore is a mineral or naturally occurring material from which a metal can be extracted economically.",
       "solH": "अयस्क वह खनिज या प्राकृतिक पदार्थ है जिससे धातु का आर्थिक रूप से निष्कर्षण किया जा सकता है।"
     },
@@ -554,9 +506,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "प्रत्येक अयस्क धातुयुक्त खनिज पदार्थ होता है, लेकिन प्रत्येक खनिज आर्थिक रूप से उपयोगी अयस्क नहीं होता।",
         "अयस्कों में कभी अशुद्धियाँ नहीं होतीं।"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "An ore is a mineral-bearing material from which metal extraction is economically feasible; many minerals do not qualify as ores.",
       "solH": "अयस्क वह खनिजयुक्त पदार्थ है जिससे धातु का निष्कर्षण आर्थिक रूप से संभव हो। अनेक खनिज अयस्क की श्रेणी में नहीं आते।"
     },
@@ -576,9 +526,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "केवल धातु और नाइट्रोजन",
         "अयस्क और तैयार मिश्रधातु"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Flux reacts with gangue to form slag, which can be separated from the metal during extraction.",
       "solH": "फ्लक्स, गैंग के साथ अभिक्रिया करके धातुमल बनाता है, जिसे निष्कर्षण के दौरान धातु से अलग किया जा सकता है।"
     },
@@ -598,9 +546,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "बिना गर्म किए",
         "वायु की अनुपस्थिति या सीमित आपूर्ति में"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Calcination involves heating an ore, commonly a carbonate or hydrated ore, in the absence or limited supply of air.",
       "solH": "निस्तापन में अयस्क, सामान्यतः कार्बोनेट या जलयोजित अयस्क, को वायु की अनुपस्थिति या सीमित आपूर्ति में गर्म किया जाता है।"
     },
@@ -620,9 +566,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "ठंडे पानी में",
         "कमरे के तापमान पर निर्वात में"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Roasting heats sulphide ores in excess air or oxygen, often converting sulphides into oxides and releasing sulphur dioxide.",
       "solH": "भर्जन में सल्फाइड अयस्कों को वायु या ऑक्सीजन की अधिकता में गर्म किया जाता है। इससे अक्सर ऑक्साइड बनते हैं और सल्फर डाइऑक्साइड निकलती है।"
     },
@@ -642,9 +586,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "उच्च तापमान पर प्रायः अपचायक की सहायता से धातु का निष्कर्षण",
         "प्रत्येक अयस्क को शुद्ध पानी में घोलना"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Smelting uses high temperatures and commonly a reducing agent to extract metal from its ore.",
       "solH": "प्रगलन में उच्च तापमान तथा सामान्यतः अपचायक का उपयोग करके अयस्क से धातु निकाली जाती है।"
     },
@@ -664,9 +606,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "चाँदी",
         "सोना"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Potassium is highly reactive and occurs near the top of the reactivity series.",
       "solH": "पोटैशियम अत्यधिक अभिक्रियाशील है और अभिक्रियाशीलता श्रेणी के ऊपरी भाग में आता है।"
     },
@@ -686,9 +626,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कैसिटेराइट",
         "हेमेटाइट"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Haematite (Fe₂O₃) is an important ore of iron.",
       "solH": "हेमेटाइट (Fe₂O₃) लोहे का एक महत्वपूर्ण अयस्क है।"
     },
@@ -708,9 +646,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "हेमेटाइट",
         "कैलामाइन"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Cassiterite (SnO₂) is the principal ore of tin.",
       "solH": "कैसिटेराइट (SnO₂) टिन का प्रमुख अयस्क है।"
     },
@@ -730,9 +666,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पारा",
         "टिन"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Galena (PbS) is the principal ore of lead.",
       "solH": "गैलेना (PbS) सीसे का प्रमुख अयस्क है।"
     },
@@ -752,9 +686,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पारा",
         "सीसा"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Cinnabar (HgS) is the principal ore of mercury.",
       "solH": "सिनाबार (HgS) पारे का प्रमुख अयस्क है।"
     },
@@ -774,9 +706,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "सिनाबार",
         "स्फैलेराइट"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Sphalerite (ZnS), also known as zinc blende, is an important ore of zinc.",
       "solH": "स्फैलेराइट (ZnS), जिसे जिंक ब्लेंड भी कहते हैं, जस्ते का महत्वपूर्ण अयस्क है।"
     },
@@ -796,9 +726,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "लोहा और क्रोमियम",
         "सीसा और टिन"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Brass is primarily composed of copper and zinc.",
       "solH": "पीतल मुख्यतः ताँबे और जस्ते से बनी मिश्रधातु है।"
     },
@@ -818,9 +746,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "लोहा और निकेल",
         "केवल एल्युमिनियम और ताँबा"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Bronze is traditionally an alloy of copper and tin, although modern bronzes may contain additional elements.",
       "solH": "काँसा पारंपरिक रूप से ताँबे और टिन की मिश्रधातु है, हालांकि आधुनिक काँसे में अन्य तत्व भी हो सकते हैं।"
     },
@@ -840,9 +766,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "ताँबा, जस्ता और निकेल",
         "केवल सीसा और टिन"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "German silver, also called nickel silver, generally contains copper, zinc and nickel. It contains no actual silver.",
       "solH": "जर्मन सिल्वर, जिसे निकेल सिल्वर भी कहते हैं, सामान्यतः ताँबा, जस्ता और निकेल रखता है। इसमें वास्तविक चाँदी नहीं होती।"
     },
@@ -862,9 +786,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "हर संरचना में केवल ताँबा और टिन",
         "टिन और सीसा"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Traditional soft solder commonly contains tin and lead. Many modern solders are lead-free for safety and regulatory reasons.",
       "solH": "पारंपरिक सॉफ्ट सोल्डर में सामान्यतः टिन और सीसा होता है। सुरक्षा और नियामक कारणों से कई आधुनिक सोल्डर सीसा-मुक्त होते हैं।"
     },
@@ -884,9 +806,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "पारा",
         "कैल्शियम"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Chromium forms a thin protective oxide layer that helps stainless steel resist corrosion.",
       "solH": "क्रोमियम एक पतली सुरक्षात्मक ऑक्साइड परत बनाता है, जिससे स्टेनलेस स्टील में संक्षारण प्रतिरोध बढ़ता है।"
     },
@@ -906,9 +826,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "केवल टिन और सीसा",
         "केवल लोहा और क्रोमियम"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Duralumin is a strong, lightweight aluminium alloy containing copper and commonly magnesium and manganese.",
       "solH": "ड्यूरालुमिन एक मजबूत और हल्की एल्युमिनियम मिश्रधातु है, जिसमें ताँबा तथा सामान्यतः मैग्नीशियम और मैंगनीज होते हैं।"
     },
@@ -928,9 +846,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कम गलनांक",
         "जस्ते का प्रमुख अयस्क होना"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Rose metal is a low-melting alloy, traditionally containing bismuth, lead and tin. Lead-containing formulations are toxic.",
       "solH": "रोज़ मेटल कम गलनांक वाली मिश्रधातु है, जिसमें पारंपरिक रूप से बिस्मथ, सीसा और टिन होते हैं। सीसा युक्त संरचनाएँ विषैली होती हैं।"
     },
@@ -950,9 +866,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "क्रोमियम",
         "केवल एल्युमिनियम"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "An amalgam is an alloy of mercury with one or more other elements or metals.",
       "solH": "अमलगम पारे और एक या अधिक अन्य तत्वों या धातुओं से बनी मिश्रधातु है।"
     },
@@ -972,9 +886,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कार्बन डाइऑक्साइड और केवल शुद्ध ऑक्सीजन",
         "कार्बन मोनोऑक्साइड और नाइट्रोजन"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Producer gas mainly contains carbon monoxide and nitrogen, with composition varying by production conditions. Carbon monoxide is highly toxic.",
       "solH": "प्रोड्यूसर गैस में मुख्यतः कार्बन मोनोऑक्साइड और नाइट्रोजन होती हैं। इसकी संरचना निर्माण की परिस्थितियों के अनुसार बदल सकती है। कार्बन मोनोऑक्साइड अत्यधिक विषैली है।"
     },
@@ -994,9 +906,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कार्बन डाइऑक्साइड और नाइट्रोजन",
         "क्लोरीन और हाइड्रोजन क्लोराइड"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Water gas is mainly carbon monoxide and hydrogen, traditionally produced by passing steam over hot carbon.",
       "solH": "वॉटर गैस मुख्यतः कार्बन मोनोऑक्साइड और हाइड्रोजन का मिश्रण है, जिसे पारंपरिक रूप से गर्म कार्बन पर भाप प्रवाहित करके बनाया जाता है।"
     },
@@ -1016,9 +926,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "कोयला",
         "जिप्सम"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Coal gas is produced when coal is heated strongly in the absence of air; it contains a mixture of combustible gases.",
       "solH": "कोयले को वायु की अनुपस्थिति में तेज गर्म करने पर कोल गैस प्राप्त होती है। इसमें ज्वलनशील गैसों का मिश्रण होता है।"
     },
@@ -1038,9 +946,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "लाल तरल धातु",
         "नीली उत्कृष्ट गैस"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Chlorine is a greenish-yellow, toxic gas used in water disinfection and chemical manufacture.",
       "solH": "क्लोरीन हरी-पीली विषैली गैस है, जिसका उपयोग जल कीटाणुशोधन और रसायनों के निर्माण में होता है।"
     },
@@ -1060,9 +966,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "आयोडीन",
         "ब्रोमीन"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Bromine is a reddish-brown liquid at room temperature and gives off irritating vapours.",
       "solH": "ब्रोमीन कमरे के तापमान पर लाल-भूरा द्रव होता है और इससे उत्तेजक वाष्प निकलती है।"
     },
@@ -1082,9 +986,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "बुझा चूना",
         "सोडियम क्लोराइड"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Plaster of Paris is calcium sulfate hemihydrate, prepared by partially heating gypsum (CaSO₄·2H₂O).",
       "solH": "प्लास्टर ऑफ पेरिस कैल्शियम सल्फेट हेमीहाइड्रेट है, जिसे जिप्सम (CaSO₄·2H₂O) को आंशिक रूप से गर्म करके बनाया जाता है।"
     },
@@ -1104,9 +1006,7 @@ export const thermodynamicsCarbonCompoundsTest1MockData = {
         "बिना बुझा चूना—CaO; भारी जल—D₂O; ट्रिटियम—हाइड्रोजन का रेडियोधर्मी समस्थानिक",
         "प्लास्टर ऑफ पेरिस—CaCO₃; ड्यूटेरियम—तीन न्यूट्रॉन"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Quicklime is CaO, slaked lime is Ca(OH)₂, and heavy water is D₂O. Deuterium has one proton and one neutron; tritium has one proton and two neutrons and is radioactive.",
       "solH": "बिना बुझा चूना CaO, बुझा चूना Ca(OH)₂ और भारी जल D₂O है। ड्यूटेरियम में एक प्रोटॉन और एक न्यूट्रॉन होता है; ट्रिटियम में एक प्रोटॉन और दो न्यूट्रॉन होते हैं तथा यह रेडियोधर्मी है।"
     }
