@@ -502,23 +502,23 @@ const router = createBrowserRouter([
       { path: "soaps-detergents-glass-polymerisation-test-1", element: <SoapsDetergentsGlassPolymerisationTest1MockTestPage /> },
 
       { path: "thermodynamics-carbon-compounds-test-1", element: <ThermodynamicsCarbonCompoundsTest1MockTestPage /> },
-    
+
       { path: "cell-biology-cell-division-classification-organisms-microbiology-test-1", element: <CellBiologyCellDivisionClassificationOrganismsMicrobiologyTest1MockTestPage /> },
-    
+
       { path: "genetics-heredity-organic-evolution-test-1", element: <GeneticsHeredityOrganicEvolutionTest1MockTestPage /> },
-    
+
       { path: "digestive-system-human-nutrition-test-1", element: <DigestiveSystemHumanNutritionTest1MockTestPage /> },
-    
+
       { path: "plant-morphology-reproduction-test-1", element: <PlantMorphologyReproductionTest1MockTestPage /> },
-    
+
       { path: "plant-tissue-physiology-hormones-diseases-test-1", element: <PlantTissuePhysiologyHormonesDiseasesTest1MockTestPage /> },
-    
+
       { path: "animal-tissues-blood-skeletal-system-test-1", element: <AnimalTissuesBloodSkeletalSystemTest1MockTestPage /> },
-    
+
       { path: "circulatory-lymphatic-excretory-respiratory-systems-test-1", element: <CirculatoryLymphaticExcretoryRespiratorySystemsTest1MockTestPage /> },
-    
+
       { path: "nervous-endocrine-systems-test-1", element: <NervousEndocrineSystemsTest1MockTestPage /> },
-    
+
       { path: "vitamins-minerals-human-diseases-test-1", element: <VitaminsMineralsHumanDiseasesTest1MockTestPage /> },
     ],
   },
@@ -545,6 +545,24 @@ const router = createBrowserRouter([
       { path: "soaps-detergents-glass-polymerisation-test-1", element: <SoapsDetergentsGlassPolymerisationTest1MockTestPage /> },
 
       { path: "thermodynamics-carbon-compounds-test-1", element: <ThermodynamicsCarbonCompoundsTest1MockTestPage /> },
+
+      { path: "cell-biology-cell-division-classification-organisms-microbiology-test-1", element: <CellBiologyCellDivisionClassificationOrganismsMicrobiologyTest1MockTestPage /> },
+
+      { path: "genetics-heredity-organic-evolution-test-1", element: <GeneticsHeredityOrganicEvolutionTest1MockTestPage /> },
+
+      { path: "digestive-system-human-nutrition-test-1", element: <DigestiveSystemHumanNutritionTest1MockTestPage /> },
+
+      { path: "plant-morphology-reproduction-test-1", element: <PlantMorphologyReproductionTest1MockTestPage /> },
+
+      { path: "plant-tissue-physiology-hormones-diseases-test-1", element: <PlantTissuePhysiologyHormonesDiseasesTest1MockTestPage /> },
+
+      { path: "animal-tissues-blood-skeletal-system-test-1", element: <AnimalTissuesBloodSkeletalSystemTest1MockTestPage /> },
+
+      { path: "circulatory-lymphatic-excretory-respiratory-systems-test-1", element: <CirculatoryLymphaticExcretoryRespiratorySystemsTest1MockTestPage /> },
+
+      { path: "nervous-endocrine-systems-test-1", element: <NervousEndocrineSystemsTest1MockTestPage /> },
+
+      { path: "vitamins-minerals-human-diseases-test-1", element: <VitaminsMineralsHumanDiseasesTest1MockTestPage /> },
     ],
   },
   {
