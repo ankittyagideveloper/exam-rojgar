@@ -1,0 +1,2074 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXAM ROJGAAR DPP - GS MOCK IN ENGLISH and HINDI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            gold: '#fbbf24',
+                            red: '#ef4444',
+                            green: '#10b981'
+                        },
+                        edu: {
+                            answered: '#22c55e',
+                            notAnswered: '#ef4444',
+                            notVisited: '#e5e7eb',
+                            marked: '#8b5cf6',
+                            answeredMarked: '#8b5cf6',
+                            active: '#3b82f6'
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'flicker': 'flicker 0.15s ease-in-out 20',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px #3b82f6' },
+                            '100%': { boxShadow: '0 0 20px #3b82f6, 0 0 30px #3b82f6' }
+                        },
+                        flicker: {
+                            '0%, 100%': { backgroundColor: 'transparent' },
+                            '50%': { backgroundColor: 'rgba(239, 68, 68, 0.2)' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100%)' },
+                            '100%': { transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overscroll-behavior-y: none;
+            background-color: #f8fafc;
+        }
+        .cinematic-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e1b4b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cinematic-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .palette-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px; cursor: pointer;
+            border-radius: 4px; transition: all 0.2s;
+            position: relative;
+        }
+        .pal-not-visited { background: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .pal-not-answered { background: #ef4444; color: white; border-bottom-right-radius: 15px; }
+        .pal-answered { background: #22c55e; color: white; border-top-left-radius: 15px; }
+        .pal-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked { background: #8b5cf6; color: white; border-radius: 50%; }
+        .pal-ans-marked::after {
+            content: ''; position: absolute; bottom: 2px; right: 2px;
+            width: 8px; height: 8px; background: #22c55e; border-radius: 50%; border: 1px solid white;
+        }
+        .pal-active { border: 2px solid #2563eb; transform: scale(1.1); box-shadow: 0 0 10px rgba(59,130,246,0.5); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        /* Hide elements utility */
+        .hidden { display: none !important; }
+
+        /* Option selection styling */
+        .option-row { cursor: pointer; transition: background 0.2s; border: 1px solid #e5e7eb; }
+        .option-row:hover { background: #f8fafc; }
+        .option-row.selected { background: #eff6ff; border-color: #3b82f6; }
+
+        #danger-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(239, 68, 68, 0.3); pointer-events: none; z-index: 9999;
+            display: none;
+        }
+
+        /* Previous Attempts modal styling from Source.html */
+        .diamond-border {
+            border: 1px solid rgba(255, 243, 199, 0.3);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05), 0 10px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+        }
+        .fade-in { animation: fadeInHistory 0.4s ease-in-out; }
+        @keyframes fadeInHistory { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+        /* Compact real-test viewport: slightly smaller framed exam area on desktop */
+        @media (min-width: 768px) {
+            #mock-screen {
+                width: 96vw !important;
+                height: 88vh !important;
+                margin: auto !important;
+                border: 1px solid #b8c2cc;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+                border-radius: 2px;
+            }
+            #mock-screen > div:first-child {
+                padding-top: 6px !important;
+                padding-bottom: 6px !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto {
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+        }
+        /* Keep the question viewport compact so long questions/options scroll inside the pane */
+        @media (min-width: 768px) {
+            #mock-screen .flex-1.overflow-y-auto {
+                min-height: 0 !important;
+                overflow-y: auto !important;
+            }
+            #mock-screen .flex-1.overflow-y-auto::-webkit-scrollbar {
+                width: 8px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            #mock-screen {
+                width: 100% !important;
+                height: 100% !important;
+                margin: 0 !important;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased h-[100dvh] overflow-hidden flex flex-col">
+
+    <div id="danger-overlay"></div>
+
+    <!-- ==================== HOME SCREEN ==================== -->
+    <div id="home-screen" class="min-h-screen bg-[#e4e9f0] flex flex-col font-sans text-[13px]">
+        <!-- Topmost Banner JAY SHREE RAM -->
+        <div class="bg-black text-center py-1 border-b border-gray-700 shadow-sm">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#e6c27a] via-[#ffeba8] to-[#c5a030] font-bold text-[16px] drop-shadow-md tracking-widest">
+                ðŸš© à¤•à¤°à¥à¤®à¤£à¥à¤¯à¥‡à¤µà¤¾à¤§à¤¿à¤•à¤¾à¤°à¤¸à¥à¤¤à¥‡ à¤®à¤¾ à¤«à¤²à¥‡à¤·à¥ à¤•à¤¦à¤¾à¤šà¤¨à¥¤ ðŸš©
+            </span>
+        </div>
+ 
+        <!-- Railway Header -->
+        <div class="bg-[#1e5086] text-white flex justify-between items-center p-2 md:px-6 shadow-md border-b-[5px] border-[#3a78c4]">
+            <div class="flex items-center gap-3">
+                <div class="w-28 h-28 bg-white rounded-md flex items-center justify-center font-bold text-[#1e5086] border-2 border-[#e6c27a] shadow-inner text-xs text-center leading-tight">
+                    ExamRojgaar<br>Mocks
+                </div>
+                <div class="text-lg md:text-2xl font-bold tracking-wide uppercase">Exam Rojgaar Railway LATEST PATTERN SECTIONAL TIMING MOCKS</div>
+            </div>
+            <div class="hidden md:flex gap-4 items-center">
+                <div class="text-right">
+                    <div class="text-[11px] text-gray-300">System Name:</div>
+                    <div class="font-bold text-sm">C001</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="flex-1 flex flex-col md:flex-row overflow-hidden p-2 gap-2">
+            <!-- Left Instructions Panel -->
+            <div class="flex-[3] bg-white border border-gray-400 shadow-sm flex flex-col overflow-hidden">
+                <div class="bg-[#3a78c4] text-white py-2 px-4 font-bold text-sm border-b border-gray-400">
+                    Instructions
+                </div>
+                <div class="p-5 overflow-y-auto text-[#333] leading-relaxed text-[13px] custom-scrollbar">
+                    <h4 class="text-center font-bold text-[15px] mb-4">Please read the instructions carefully</h4>
+                    
+                    <p class="font-bold mb-2"><u>General Instructions:</u></p>
+                    <ol class="list-decimal pl-5 space-y-3 mb-6">
+                        <li>Total duration of the examination is 20 minutes</b>.</li>
+                        <li>The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself. You will not be required to end or submit your examination.</li>
+                        <li>The Question Palette displayed on the right side of screen will show the status of each question using one of the following symbols:
+                            <ul class="list-none pl-2 mt-3 space-y-3 font-medium">
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#f1f5f9] border border-[#cbd5e1] rounded flex items-center justify-center font-bold shadow-sm text-gray-600">1</div> You have not visited the question yet.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#ef4444] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">3</div> You have not answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#22c55e] text-white rounded flex items-center justify-center font-bold shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);">5</div> You have answered the question.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm">7</div> You have NOT answered the question, but have marked the question for review.</li>
+                                <li class="flex items-center gap-3"><div class="w-8 h-7 bg-[#8b5cf6] text-white rounded-full flex items-center justify-center font-bold shadow-sm relative">9<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-full border border-white"></div></div> The question(s) "Answered and Marked for Review" will be considered for evaluation.</li>
+                            </ul>
+                        </li>
+                        <li>You can click on the ">" arrow which appears to the left of question palette to collapse the question palette thereby maximizing the question window.</li>
+                    </ol>
+ 
+                    <p class="font-bold mb-2"><u>Navigating to a Question:</u></p>
+                    <ol class="list-decimal pl-5 space-y-2 mb-6" start="5">
+                        <li>To answer a question, do the following:
+                            <ul class="list-[lower-alpha] pl-5 mt-1 space-y-1">
+                                <li>Click on the question number in the Question Palette at the right of your screen to go to that numbered question directly. Note that using this option does NOT save your answer to the current question.</li>
+                                <li>Click on <b>Save & Next</b> to save your answer for the current question and then go to the next question.</li>
+                                <li>Click on <b>Mark for Review & Next</b> to save your answer for the current question, mark it for review, and then go to the next question.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+ 
+            <!-- Right Profile & Custom Options Panel -->
+            <div class="flex-[1.2] flex flex-col gap-2 min-w-[280px] overflow-auto">
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex flex-col items-center">
+                    <div class="w-24 h-28 border-2 border-gray-400 bg-white flex items-center justify-center mb-4 shadow-inner overflow-hidden">
+                        <i class="fas fa-user text-5xl text-gray-300"></i>
+                    </div>
+                    <div class="w-full text-[13px] space-y-2">
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Paper Name:</span>
+                            <span class="text-right text-[#1e5086] font-bold truncate ml-2" id="paper-name-display">Biology</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Subject:</span>
+                            <span class="text-right text-gray-800 font-bold truncate ml-2" id="subject-display">Classification of Organisms & Microbiology & Cell Biology & Cell Division </span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Duration:</span>
+                            <span class="text-right text-[#1e5086] font-bold">20 Mins</span>  <!-- Mins -->
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-300 pb-1">
+                            <span class="font-bold text-gray-700">Date:</span>
+                            <span class="text-right text-gray-800 font-bold" id="current-date-display"></span>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="bg-[#f5f7f8] border border-gray-400 shadow-sm p-4 flex-1 flex flex-col">
+                    <div class="font-bold text-[#1e5086] border-b border-gray-400 pb-2 mb-4">Candidate Details</div>
+                    
+                    <div class="space-y-4 flex-1">
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Enter Your Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="candidate-name" class="w-full border border-gray-400 bg-white p-1.5 text-[13px] focus:outline-none focus:border-[#3a78c4] focus:ring-1 focus:ring-[#3a78c4]" placeholder="e.g. Ankit Tyagi">
+                        </div>
+                        
+                        <div>
+                            <label class="text-[13px] font-bold text-gray-800 block mb-1">Are you a ExamRojgaar mock group member?</label>
+                            <div class="flex gap-6 text-[13px] mt-1 bg-white p-2 border border-gray-300">
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="Yes" class="accent-[#1e5086] w-3.5 h-3.5"> Yes</label>
+                                <label class="flex items-center gap-1.5 cursor-pointer font-medium"><input type="radio" name="is_member" value="No" checked class="accent-[#1e5086] w-3.5 h-3.5"> No</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <div class="mt-4 space-y-2 border-t border-gray-400 pt-4">
+                        <button onclick="openHistoryDashboard()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            View Previous Attempts <i class="fas fa-history text-[#1e5086]"></i>
+                        </button>
+                        <button onclick="openSavedQuestionsModal()" class="w-full bg-[#e0e0e0] hover:bg-[#d4d4d4] border border-gray-400 py-1.5 px-3 text-[13px] text-gray-800 font-bold shadow-sm transition-colors text-left flex justify-between items-center">
+                            Saved Questions Section <i class="fas fa-bookmark text-[#1e5086]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Bottom Action Bar -->
+        <div class="bg-[#f8f9fa] border-t border-gray-400 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] p-3 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 z-10">
+            <div class="flex-1 w-full text-[13px]">
+                <div class="mb-2 flex items-center gap-2 bg-white inline-block p-1.5 border border-gray-300 shadow-sm rounded-sm">
+                    <span class="text-red-600 font-bold">Choose your default language:</span>
+                    <select id="default-lang-select" class="ml-2 border border-gray-400 bg-white p-0.5 text-sm focus:outline-none text-gray-800 font-bold" onchange="setGlobalLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <div class="flex items-start gap-2 mt-1">
+                    <input type="checkbox" id="declaration-check" class="mt-1 w-4 h-4 cursor-pointer">
+                    <label for="declaration-check" class="text-gray-800 cursor-pointer font-medium leading-snug">
+                        I have read and understood the instructions. All computer hardware allotted to me are in proper working condition. I agree that in case of not adhering to the instructions, I will be disqualified.
+                    </label>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-center">
+                <button onclick="validateAndStart()" class="bg-[#5cb85c] hover:bg-[#449d44] border border-[#4cae4c] text-white font-bold py-2 px-8 rounded-[2px] text-[15px] shadow-sm whitespace-nowrap transition-colors w-full md:w-auto uppercase tracking-wide">
+                    I am ready to begin
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- SAVED QUESTIONS MODAL -->
+    <div id="saved-questions-modal" class="hidden fixed inset-0 z-[10006] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-5xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-4 relative">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-bookmark mr-2 text-amber-400"></i> Saved Questions Repository</h2>
+                <div class="flex gap-4">
+                    <button onclick="clearAllSavedQuestions()" class="text-sm px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition shadow-md"><i class="fas fa-trash-alt mr-1"></i> Clear All</button>
+                    <button onclick="closeSavedQuestionsModal()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div id="saved-questions-list" class="space-y-6">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+ 
+    <!-- HISTORY DASHBOARD MODAL -->
+    <div id="history-modal" class="hidden fixed inset-0 z-[10005] bg-slate-900/95 backdrop-blur-md overflow-y-auto p-4 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl diamond-border p-6 md:p-10 shadow-2xl mt-10">
+            <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+                <h2 class="text-2xl font-bold text-amber-300"><i class="fas fa-history mr-2"></i> Previous Attempts</h2>
+                <button onclick="closeHistoryDashboard()" class="text-slate-400 hover:text-white text-3xl"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="history-list" class="space-y-4"></div>
+        </div>
+    </div>
+ 
+
+    <!-- ==================== COUNTDOWN SCREEN ==================== -->
+    <div id="countdown-screen" class="hidden cinematic-bg w-full h-full flex flex-col items-center justify-center text-white relative z-50">
+        <h2 class="text-3xl font-head mb-8">Your Mock Begins In...</h2>
+        <div id="countdown-number" class="text-9xl font-bold text-brand-gold drop-shadow-[0_0_20px_rgba(251,191,36,0.8)]">5</div>
+    </div>
+
+    <!-- ==================== MOCK EXAM SCREEN (EDUQUITY STYLE) ==================== -->
+    <div id="mock-screen" class="hidden w-full h-full bg-white flex flex-col text-sm overflow-hidden">
+        
+        <!-- Top Bar (Unified & Responsive for both Mobile and Desktop) -->
+        <div class="bg-white border-b border-gray-300 shadow-sm shrink-0 flex flex-col md:flex-row justify-between items-center px-3 md:px-4 py-2 gap-2 md:gap-0 z-10">
+            <div class="w-full md:w-auto font-bold text-base md:text-lg text-slate-800 font-head text-center md:text-left tracking-wide">
+                <span class="hidden sm:inline">Latest Pattern </span>Railway Sectional Mock
+            </div>
+            <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 md:gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center gap-1 md:gap-2">
+                    <span class="text-xs text-gray-500 font-medium">View In:</span>
+                    <select id="lang-toggle-uni" onchange="toggleLanguage()" class="border border-gray-300 rounded px-1 py-1 text-xs md:text-sm bg-gray-50 outline-none focus:border-blue-500 cursor-pointer">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <!-- Timer -->
+                <div class="bg-gray-100 border border-gray-300 px-2 md:px-4 py-1 md:py-1.5 rounded flex items-center gap-1 md:gap-2 font-mono text-sm md:text-lg font-bold text-slate-700 justify-center min-w-[80px] md:min-w-[120px]">
+                    <i class="fas fa-clock text-blue-500"></i>
+                    <span class="timer-display">20:00</span>
+                </div>
+                <!-- Submit Btn -->
+                <button onclick="requestSubmit()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 md:py-1.5 px-3 md:px-6 rounded shadow transition-colors border border-green-800 text-xs md:text-base shrink-0">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-1 overflow-hidden relative w-full">
+            <!-- Left Area: Question Panel -->
+            <div class="flex-1 flex flex-col h-full bg-white relative overflow-hidden">
+                
+                <!-- Question Header with Palette Toggle for Mobile -->
+                <div class="border-b border-gray-200 p-2 md:p-3 bg-gray-50 flex justify-between items-center shrink-0 shadow-sm z-10">
+                    <div class="font-bold text-blue-800 text-sm md:text-lg flex items-center gap-1 md:gap-2">
+                        <span>Q.</span>
+                        <span id="q-no-display" class="bg-blue-100 px-2 py-0.5 rounded text-blue-900 border border-blue-200">1</span>
+                    </div>
+                    <div class="flex items-center gap-2 md:gap-4">
+                        <button id="save-question-btn" onclick="toggleSaveQuestion()" class="px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300">
+                            <i id="save-question-icon" class="far fa-star text-gray-400"></i> <span id="save-question-label">Save Question</span>
+                        </button>
+                        <span class="text-xs font-semibold text-gray-600 hidden sm:inline">Marks: +1.0, -0.33</span>
+                        <!-- Mobile Palette Button integrated smoothly -->
+                        <button onclick="toggleMobilePalette()" class="md:hidden text-blue-600 font-bold flex items-center gap-1 border border-blue-600 px-3 py-1 rounded bg-blue-50 text-xs shadow-sm">
+                            <i class="fas fa-th"></i> Palette
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question Content (Scrollable) -->
+                <!-- Strictly flex-1 to auto fill remaining space, NO overlapping fixed padding hacks needed -->
+                <div class="flex-1 overflow-y-auto p-4 md:p-6 text-base md:text-lg relative w-full">
+                    <div id="question-text" class="mb-6 font-medium text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                    <div id="options-container" class="space-y-3 max-w-3xl">
+                        <!-- Options generated via JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons Bottom Bar -->
+                <!-- Normal static flow component, naturally stays at bottom, NO fixed positioning needed -->
+                <div class="w-full bg-white border-t border-gray-300 md:bg-gray-50 p-2 md:p-4 flex flex-col sm:flex-row gap-2 justify-between items-center shrink-0 z-20 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+                    <div class="flex gap-2 w-full sm:w-auto">
+                        <button onclick="markForReview()" class="flex-1 sm:flex-none bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors border border-blue-700 truncate">
+                            Mark Review
+                        </button>
+                        <button onclick="clearResponse()" class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-gray-700 border border-gray-400 font-semibold py-2.5 md:py-2 px-2 md:px-6 rounded text-xs md:text-sm transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <button onclick="saveAndNext()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 md:py-2 px-8 rounded text-sm md:text-base shadow-md transition-colors border border-blue-800 uppercase tracking-wider">
+                        Save & Next
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Area: Palette Panel (Fixed overlay on Mobile, Sidebar on Desktop) -->
+            <div id="palette-panel" class="fixed inset-y-0 right-0 transform translate-x-full transition-transform duration-300 md:relative md:translate-x-0 w-[85%] md:w-80 bg-white shadow-[-5px_0_15px_rgba(0,0,0,0.1)] md:shadow-none md:border-l md:border-gray-300 z-[60] md:z-auto flex flex-col shrink-0">
+                <div class="p-3 bg-blue-600 text-white font-bold flex justify-between items-center shrink-0">
+                    <div class="flex items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=Aspirant&background=fff&color=2563eb" class="w-8 h-8 rounded-full border border-white" alt="User">
+                        <span>Aspirant</span>
+                    </div>
+                    <button class="md:hidden text-white" onclick="toggleMobilePalette()"><i class="fas fa-times text-2xl px-2"></i></button>
+                </div>
+                
+                <div class="p-4 grid grid-cols-2 gap-2 text-xs border-b border-gray-200 shrink-0 bg-gray-50">
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-answered w-6 h-6 text-[10px]" id="cnt-ans">0</div> Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-answered w-6 h-6 text-[10px]" id="cnt-notans">0</div> Not Answered</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-not-visited w-6 h-6 text-[10px]" id="cnt-notvis">25</div> Not Visited</div>
+                    <div class="flex items-center gap-2"><div class="palette-btn pal-marked w-6 h-6 text-[10px]" id="cnt-mark">0</div> Marked for Review</div>
+                    <div class="flex items-center gap-2 col-span-2 mt-1"><div class="palette-btn pal-ans-marked w-6 h-6 text-[10px]" id="cnt-ansmark">0</div> Answered & Marked</div>
+                </div>
+
+                <div class="p-4 flex-1 overflow-y-auto bg-blue-50/30">
+                    <div class="font-bold text-gray-700 mb-3 border-b pb-1">Quantitative Aptitude</div>
+                    <div id="question-grid" class="grid grid-cols-5 gap-3">
+                        <!-- Grid buttons generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SUBMISSION CONFIRMATION POPUP ==================== -->
+    <div id="submit-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md overflow-hidden animate-slide-up">
+            <div class="bg-brand-dark p-4 text-white flex items-center gap-3">
+                <i class="fas fa-exclamation-triangle text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-bold font-head">Confirm Submission</h3>
+            </div>
+            <div class="p-6">
+                <p class="text-slate-700 text-lg mb-2">Are you sure you want to submit the test?</p>
+                <p class="text-sm text-brand-red font-semibold mb-6"><i class="fas fa-info-circle"></i> Once submitted, you cannot change your answers.</p>
+                
+                <div class="grid grid-cols-2 gap-4 text-center text-sm mb-6 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <div><span class="block font-bold text-xl text-green-600" id="pop-ans">0</span>Answered</div>
+                    <div><span class="block font-bold text-xl text-slate-500" id="pop-not">25</span>Unanswered</div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button onclick="closeSubmitPopup()" class="px-5 py-2 border border-gray-300 rounded font-semibold text-gray-700 hover:bg-gray-50 transition-colors">Cancel</button>
+                    <button onclick="executeSubmit()" id="final-submit-btn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded font-bold shadow transition-colors flex items-center gap-2">
+                        Yes, Submit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TELEGRAM GATE (MANDATORY) ==================== -->
+    <div id="telegram-gate" class="hidden fixed inset-0 bg-brand-dark z-[110] flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-2xl p-8 text-center shadow-[0_0_40px_rgba(59,130,246,0.3)] animate-slide-up">
+            <div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-4xl shadow-lg shadow-blue-500/50">
+                <i class="fab fa-telegram-plane"></i>
+            </div>
+          <h2 class="text-3xl font-bold font-head text-white mb-2">Final Step to Result</h2>
+            <p class="text-slate-300 mb-8 text-lg">Join our official channel for detailed doubts solving, strategies, and exact exam-level content.</p>
+            
+            <a href="https://t.me/ExamRojgaar" target="_blank" onclick="unlockResult()" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-4 rounded-xl text-xl transition-transform transform hover:scale-105 shadow-xl mb-4">
+                Join ER-UPDATES Telegram
+            </a>
+            
+            <p class="text-xs text-slate-400 mt-4">* Clicking the button above is mandatory to generate your deep analysis report.</p>
+        </div>
+    </div>
+
+    <!-- ==================== RESULT & ANALYSIS DASHBOARD ==================== -->
+    <div id="result-screen" class="hidden w-full h-full bg-slate-50 overflow-y-auto">
+        
+        <!-- Header -->
+        <div class="bg-brand-dark text-white p-6 shadow-md shrink-0 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]"></div>
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold font-head tracking-wide">Performance Dashboard</h1>
+                    <p class="text-brand-accent font-medium mt-1">EXAM ROJGAAR MOCKS</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="history-result-back" onclick="returnFromHistory()" class="hidden px-4 py-2 bg-slate-700 hover:bg-slate-600 border border-slate-500 rounded-lg text-sm font-semibold transition-colors">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Home
+                    </button>
+                    <div class="flex items-center gap-3 bg-slate-800/80 border border-slate-600 px-4 py-2 rounded-lg">
+                        <i class="fab fa-telegram text-[#0088cc] text-xl"></i>
+                        <a href="https://t.me/ExamRojgaar" target="_blank" class="text-sm font-semibold hover:text-white transition-colors">Join ER-UPDATES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto p-4 md:p-6 space-y-6 pb-20">
+            
+            <!-- Psychological Feedback & Main Stats -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Feedback Card -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col justify-center relative overflow-hidden">
+                    <div id="res-feedback-bg" class="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full transform translate-x-10 -translate-y-10"></div>
+                    <!-- Test Details: displayed above Mentor Review -->
+                <div id="result-attempt-details" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-5 mb-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="border-l-4 border-blue-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Paper Name</div>
+                            <div id="res-paper-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-indigo-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Subject</div>
+                            <div id="res-subject" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-emerald-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Candidate Name</div>
+                            <div id="res-candidate-name" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                        <div class="border-l-4 border-amber-500 pl-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wide">Date</div>
+                            <div id="res-date" class="text-sm md:text-base font-bold text-slate-800 mt-1">--</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">Mentor Review</h2>
+                    <div id="res-feedback-msg" class="text-2xl md:text-3xl font-head font-bold text-slate-800 leading-tight mb-4">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p id="res-feedback-sub" class="text-slate-600 font-medium"></p>
+                </div>
+
+                <!-- Rank Card -->
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden flex flex-col justify-center items-center text-center">
+                    <i class="fas fa-trophy absolute top-[-20px] left-[-20px] text-8xl text-white opacity-10 transform -rotate-12"></i>
+                    <div class="text-sm font-semibold text-blue-200 uppercase tracking-widest mb-1">Student Rank</div>
+                    <div class="text-5xl font-black mb-2 drop-shadow-md" id="res-rank">--</div>
+                    <div class="text-blue-100 font-medium">Rank among <span id="res-participant-count">--</span> students</div>
+                    <div class="text-[11px] text-blue-200/80 mt-1">Based on best recorded score per student on this device</div>
+                    <div class="mt-4 pt-4 border-t border-blue-500/50 w-full flex justify-between items-center">
+                        <span class="text-sm font-semibold">Percentile:</span>
+                        <span class="text-xl font-bold text-brand-gold" id="res-percentile">--%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Final Score</div>
+                    <div class="text-3xl font-bold text-slate-800" id="res-score">--/50</div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Attempted</div>
+                    <div class="text-3xl font-bold text-blue-600">  <span id="res-attempted">--</span>/<span id="res-total">--</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Correct / Wrong</div>
+                    <div class="text-2xl font-bold">
+                        <span class="text-green-500" id="res-correct">--</span> <span class="text-slate-300">/</span> <span class="text-red-500" id="res-wrong">--</span>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 text-center">
+                    <div class="text-slate-500 text-sm font-semibold mb-1">Accuracy</div>
+                    <div class="text-3xl font-bold text-brand-gold" id="res-accuracy">--%</div>
+                </div>
+            </div>
+
+            <!-- Smart Insights -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 p-4">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-brain text-purple-600"></i> Smart AI Insights</h3>
+                </div>
+                <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="res-insights">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+
+            <!-- Telegram Promo Box -->
+            <div class="bg-gradient-to-r from-slate-800 to-brand-dark rounded-xl shadow-md p-6 text-center text-white border border-slate-700">
+                <h3 class="text-xl font-bold mb-2">Want to master these questions?</h3>
+                <p class="text-slate-300 mb-4 max-w-2xl mx-auto">Join our discussion group to connect with mentors, admins, and top doubt solvers who will help you with the best possible approaches and solutions.</p>
+                <a href="https://t.me/ExamRojgaar" target="_blank" class="inline-block bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-2 px-8 rounded-lg shadow transition-colors">
+                    <i class="fab fa-telegram mr-2"></i> Join ER-UPDATES Group
+                </a>
+            </div>
+
+            <!-- Detailed Question Analysis (CRITICAL FORMAT REQUIRED) -->
+            <div>
+                <div class="flex justify-between items-center mb-4 mt-8">
+                    <h3 class="text-2xl font-bold text-slate-800 font-head">Detailed Question Analysis</h3>
+                    <div class="flex gap-2">
+                        <button onclick="filterAnalysis('all')" class="an-filter active px-3 py-1 rounded bg-blue-600 text-white text-sm font-semibold">All</button>
+                        <button onclick="filterAnalysis('correct')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Correct</button>
+                        <button onclick="filterAnalysis('wrong')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Wrong</button>
+                        <button onclick="filterAnalysis('skipped')" class="an-filter px-3 py-1 rounded bg-white border border-slate-300 text-slate-600 text-sm font-semibold hover:bg-slate-50">Skipped</button>
+                    </div>
+                </div>
+
+                <div id="analysis-container" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPT ==================== -->
+    <script>
+        // --- DATA PREPARATION (MATHEMATICALLY CORRECTED) ---
+       const totalTime = 20 * 60; // 10 minutes in seconds // mins
+
+const rawData = 
+
+[
+  {
+    "id": 1,
+    "eng": "Which of the following is NOT a characteristic of living organisms?",
+    "hin": "निम्नलिखित में से कौन-सा सजीवों का लक्षण नहीं है?",
+    "optE": ["Growth", "Metabolism", "Reproduction in every individual", "Response to stimuli"],
+    "optH": ["वृद्धि", "उपापचय", "प्रत्येक जीव में प्रजनन", "उद्दीपन के प्रति प्रतिक्रिया"],
+    "ans": 2,
+    "solE": "Reproduction is a characteristic of living organisms at the species level, but every individual need not reproduce. For example, sterile organisms cannot reproduce.",
+    "solH": "प्रजनन सजीवों का जाति स्तर पर एक लक्षण है, लेकिन प्रत्येक जीव का प्रजनन करना आवश्यक नहीं है। उदाहरण के लिए, बंध्य जीव प्रजनन नहीं कर सकते।"
+  },
+  {
+    "id": 2,
+    "eng": "Which of the following statements about the five-kingdom classification is correct? 1. Monera includes prokaryotic organisms. 2. Fungi are autotrophic organisms.",
+    "hin": "पाँच-जगत वर्गीकरण के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. मोनेरा में प्रोकैरियोटिक जीव शामिल हैं। 2. कवक स्वपोषी जीव होते हैं।",
+    "optE": ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1 और न ही 2"],
+    "ans": 0,
+    "solE": "Monera includes prokaryotes such as bacteria. Fungi are heterotrophic and obtain nutrients through absorption.",
+    "solH": "मोनेरा में बैक्टीरिया जैसे प्रोकैरियोट शामिल होते हैं। कवक परपोषी होते हैं और अवशोषण द्वारा पोषण प्राप्त करते हैं।"
+  },
+  {
+    "id": 3,
+    "eng": "Match the following kingdoms with their characteristics: A. Monera; B. Protista; C. Fungi; D. Plantae. 1. Prokaryotic organisms; 2. Mostly unicellular eukaryotes; 3. Chitinous cell wall; 4. Cellulose cell wall.",
+    "hin": "निम्नलिखित जगतों का उनके लक्षणों से मिलान कीजिए: A. मोनेरा; B. प्रोटिस्टा; C. कवक; D. पादप। 1. प्रोकैरियोटिक जीव; 2. अधिकांशतः एककोशिकीय यूकैरियोट; 3. काइटिन की कोशिका भित्ति; 4. सेल्यूलोज की कोशिका भित्ति।",
+    "optE": ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+    "optH": ["A-1, B-2, C-3, D-4", "A-2, B-1, C-4, D-3", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1"],
+    "ans": 0,
+    "solE": "Monera includes prokaryotes, Protista includes mostly unicellular eukaryotes, fungi generally have chitinous cell walls, and plants have cellulose cell walls.",
+    "solH": "मोनेरा में प्रोकैरियोट, प्रोटिस्टा में अधिकांशतः एककोशिकीय यूकैरियोट, कवक में सामान्यतः काइटिन तथा पादपों में सेल्यूलोज की कोशिका भित्ति होती है।"
+  },
+  {
+    "id": 4,
+    "eng": "Which of the following is NOT a feature of viruses?",
+    "hin": "निम्नलिखित में से कौन-सा विषाणुओं का लक्षण नहीं है?",
+    "optE": ["They contain genetic material", "They can reproduce independently outside a host cell", "They are acellular", "They are obligate intracellular parasites"],
+    "optH": ["इनमें आनुवंशिक पदार्थ होता है", "ये पोषक कोशिका के बाहर स्वतंत्र रूप से प्रजनन कर सकते हैं", "ये अकोशिकीय होते हैं", "ये अनिवार्य अंतःकोशिकीय परजीवी होते हैं"],
+    "ans": 1,
+    "solE": "Viruses cannot reproduce independently. They require the machinery of a living host cell for replication.",
+    "solH": "विषाणु स्वतंत्र रूप से प्रजनन नहीं कर सकते। प्रतिकृति बनाने के लिए इन्हें जीवित पोषक कोशिका की मशीनरी की आवश्यकता होती है।"
+  },
+  {
+    "id": 5,
+    "eng": "Which of the following organisms belongs to Kingdom Protista?",
+    "hin": "निम्नलिखित में से कौन-सा जीव प्रोटिस्टा जगत से संबंधित है?",
+    "optE": ["Amoeba", "Rhizopus", "Nostoc", "Mushroom"],
+    "optH": ["अमीबा", "राइजोपस", "नॉस्टॉक", "मशरूम"],
+    "ans": 0,
+    "solE": "Amoeba is a unicellular eukaryotic organism classified under Kingdom Protista. Rhizopus and mushroom are fungi, while Nostoc is a cyanobacterium.",
+    "solH": "अमीबा एक एककोशिकीय यूकैरियोटिक जीव है, जिसे प्रोटिस्टा जगत में रखा जाता है। राइजोपस और मशरूम कवक हैं, जबकि नॉस्टॉक सायनोबैक्टीरिया है।"
+  },
+  {
+    "id": 6,
+    "eng": "Consider the following statements about bacteria: 1. All bacteria are harmful. 2. Some bacteria help in nitrogen fixation.",
+    "hin": "बैक्टीरिया के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. सभी बैक्टीरिया हानिकारक होते हैं। 2. कुछ बैक्टीरिया नाइट्रोजन स्थिरीकरण में सहायता करते हैं।",
+    "optE": ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1 और न ही 2"],
+    "ans": 1,
+    "solE": "Not all bacteria are harmful. Rhizobium lives in the root nodules of leguminous plants and fixes atmospheric nitrogen.",
+    "solH": "सभी बैक्टीरिया हानिकारक नहीं होते। राइजोबियम दलहनी पौधों की जड़ की ग्रंथियों में रहता है और वायुमंडलीय नाइट्रोजन का स्थिरीकरण करता है।"
+  },
+  {
+    "id": 7,
+    "eng": "Which of the following is NOT a characteristic of fungi?",
+    "hin": "निम्नलिखित में से कौन-सा कवक का लक्षण नहीं है?",
+    "optE": ["Chitin in cell wall", "Heterotrophic nutrition", "Presence of chlorophyll in most fungi", "Spore formation in many species"],
+    "optH": ["कोशिका भित्ति में काइटिन", "परपोषी पोषण", "अधिकांश कवकों में क्लोरोफिल की उपस्थिति", "अनेक प्रजातियों में बीजाणु निर्माण"],
+    "ans": 2,
+    "solE": "Fungi generally lack chlorophyll and cannot perform photosynthesis. They obtain food from organic matter.",
+    "solH": "कवकों में सामान्यतः क्लोरोफिल नहीं होता और वे प्रकाश संश्लेषण नहीं कर सकते। वे कार्बनिक पदार्थों से भोजन प्राप्त करते हैं।"
+  },
+  {
+    "id": 8,
+    "eng": "Which of the following is a characteristic of Kingdom Animalia?",
+    "hin": "निम्नलिखित में से कौन-सा जंतु जगत का लक्षण है?",
+    "optE": ["Cellulose cell wall", "Chloroplast in all cells", "Heterotrophic nutrition and absence of cell wall", "Autotrophic nutrition"],
+    "optH": ["सेल्यूलोज की कोशिका भित्ति", "सभी कोशिकाओं में क्लोरोप्लास्ट", "परपोषी पोषण तथा कोशिका भित्ति का अभाव", "स्वपोषी पोषण"],
+    "ans": 2,
+    "solE": "Animals are multicellular eukaryotes that are generally heterotrophic and lack a cell wall.",
+    "solH": "जंतु बहुकोशिकीय यूकैरियोट होते हैं, जो सामान्यतः परपोषी होते हैं और इनमें कोशिका भित्ति नहीं होती।"
+  },
+  {
+    "id": 9,
+    "eng": "Which of the following statements about prokaryotic and eukaryotic cells is correct? 1. Prokaryotic cells lack a membrane-bound nucleus. 2. Eukaryotic cells possess membrane-bound organelles.",
+    "hin": "प्रोकैरियोटिक और यूकैरियोटिक कोशिकाओं के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. प्रोकैरियोटिक कोशिकाओं में झिल्ली से घिरा केंद्रक नहीं होता। 2. यूकैरियोटिक कोशिकाओं में झिल्ली से घिरे कोशिकांग होते हैं।",
+    "optE": ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1 और न ही 2"],
+    "ans": 2,
+    "solE": "Prokaryotes lack a true membrane-bound nucleus and membrane-bound organelles. Eukaryotes possess both.",
+    "solH": "प्रोकैरियोट में वास्तविक झिल्ली से घिरा केंद्रक तथा झिल्ली-बद्ध कोशिकांग नहीं होते। यूकैरियोट में दोनों पाए जाते हैं।"
+  },
+  {
+    "id": 10,
+    "eng": "Which structure is primarily responsible for providing rigidity and protection to plant cells?",
+    "hin": "पादप कोशिकाओं को दृढ़ता और सुरक्षा प्रदान करने के लिए मुख्य रूप से कौन-सी संरचना जिम्मेदार है?",
+    "optE": ["Cell membrane", "Cell wall", "Cytoplasm", "Nucleoplasm"],
+    "optH": ["कोशिका झिल्ली", "कोशिका भित्ति", "कोशिकाद्रव्य", "केंद्रकद्रव्य"],
+    "ans": 1,
+    "solE": "The plant cell wall, mainly composed of cellulose, provides mechanical support, rigidity and protection.",
+    "solH": "पादप कोशिका भित्ति मुख्यतः सेल्यूलोज से बनी होती है और यांत्रिक सहारा, दृढ़ता तथा सुरक्षा प्रदान करती है।"
+  },
+  {
+    "id": 11,
+    "eng": "Consider the following statements about the plasma membrane: 1. It is selectively permeable. 2. It is mainly composed of lipids and proteins.",
+    "hin": "प्लाज्मा झिल्ली के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. यह चयनात्मक पारगम्य होती है। 2. यह मुख्यतः लिपिड और प्रोटीन से बनी होती है।",
+    "optE": ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1 और न ही 2"],
+    "ans": 2,
+    "solE": "The plasma membrane follows the fluid mosaic model and is composed mainly of a phospholipid bilayer with proteins. It regulates the movement of substances.",
+    "solH": "प्लाज्मा झिल्ली फ्लूइड मोजेक मॉडल के अनुसार बनी होती है। इसमें मुख्यतः फॉस्फोलिपिड द्विपरत और प्रोटीन होते हैं। यह पदार्थों के आवागमन को नियंत्रित करती है।"
+  },
+  {
+    "id": 12,
+    "eng": "Which of the following is NOT a function of the cell membrane?",
+    "hin": "निम्नलिखित में से कौन-सा कोशिका झिल्ली का कार्य नहीं है?",
+    "optE": ["Regulating entry and exit of substances", "Cell signalling", "Providing a rigid cellulose framework", "Maintaining the cell boundary"],
+    "optH": ["पदार्थों के प्रवेश और निकास को नियंत्रित करना", "कोशिका संकेतों में भाग लेना", "दृढ़ सेल्यूलोज ढाँचा प्रदान करना", "कोशिका की सीमा बनाए रखना"],
+    "ans": 2,
+    "solE": "A rigid cellulose framework is a function of the plant cell wall, not the plasma membrane.",
+    "solH": "दृढ़ सेल्यूलोज ढाँचा प्रदान करना पादप कोशिका भित्ति का कार्य है, कोशिका झिल्ली का नहीं।"
+  },
+  {
+    "id": 13,
+    "eng": "Match the cell components with their locations or functions: A. Cytoplasm; B. Nucleoplasm; C. Mitochondria; D. Ribosome. 1. Protein synthesis; 2. Internal fluid of nucleus; 3. Site of many metabolic reactions; 4. ATP production through aerobic respiration.",
+    "hin": "कोशिका के घटकों का उनके स्थान या कार्य से मिलान कीजिए: A. कोशिकाद्रव्य; B. केंद्रकद्रव्य; C. माइटोकॉन्ड्रिया; D. राइबोसोम। 1. प्रोटीन संश्लेषण; 2. केंद्रक का आंतरिक तरल; 3. अनेक उपापचयी अभिक्रियाओं का स्थान; 4. वायवीय श्वसन द्वारा ATP निर्माण।",
+    "optE": ["A-3, B-2, C-4, D-1", "A-2, B-3, C-1, D-4", "A-1, B-4, C-2, D-3", "A-4, B-1, C-3, D-2"],
+    "optH": ["A-3, B-2, C-4, D-1", "A-2, B-3, C-1, D-4", "A-1, B-4, C-2, D-3", "A-4, B-1, C-3, D-2"],
+    "ans": 0,
+    "solE": "Cytoplasm is the site of many metabolic reactions. Nucleoplasm fills the nucleus. Mitochondria produce most cellular ATP during aerobic respiration, while ribosomes synthesize proteins.",
+    "solH": "कोशिकाद्रव्य में अनेक उपापचयी अभिक्रियाएँ होती हैं। केंद्रकद्रव्य केंद्रक के भीतर होता है। माइटोकॉन्ड्रिया वायवीय श्वसन में अधिकांश ATP बनाते हैं, जबकि राइबोसोम प्रोटीन बनाते हैं।"
+  },
+  {
+    "id": 14,
+    "eng": "Which organelle is called the powerhouse of the cell?",
+    "hin": "किस कोशिकांग को कोशिका का पावरहाउस कहा जाता है?",
+    "optE": ["Golgi apparatus", "Mitochondrion", "Lysosome", "Ribosome"],
+    "optH": ["गॉल्जी तंत्र", "माइटोकॉन्ड्रिया", "लाइसोसोम", "राइबोसोम"],
+    "ans": 1,
+    "solE": "Mitochondria are called the powerhouse because they generate most of the ATP used by eukaryotic cells during aerobic respiration.",
+    "solH": "माइटोकॉन्ड्रिया को पावरहाउस कहा जाता है क्योंकि ये वायवीय श्वसन के दौरान यूकैरियोटिक कोशिकाओं के लिए अधिकांश ATP बनाते हैं।"
+  },
+  {
+    "id": 15,
+    "eng": "Which of the following statements about mitochondria is correct? 1. They have a double membrane. 2. They contain their own DNA and ribosomes. 3. Their inner membrane forms folds called cristae.",
+    "hin": "माइटोकॉन्ड्रिया के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. इनमें दोहरी झिल्ली होती है। 2. इनमें अपना DNA और राइबोसोम होते हैं। 3. इनकी आंतरिक झिल्ली के मोड़ क्रिस्टी कहलाते हैं।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "Mitochondria possess an outer and inner membrane, their own DNA and ribosomes, and inner membrane folds called cristae.",
+    "solH": "माइटोकॉन्ड्रिया में बाहरी और आंतरिक झिल्ली, अपना DNA तथा राइबोसोम होते हैं। इनकी आंतरिक झिल्ली के मोड़ों को क्रिस्टी कहते हैं।"
+  },
+  {
+    "id": 16,
+    "eng": "Which of the following is NOT a function of the Golgi apparatus?",
+    "hin": "निम्नलिखित में से कौन-सा गॉल्जी तंत्र का कार्य नहीं है?",
+    "optE": ["Modification of proteins", "Packaging of materials", "Formation of secretory vesicles", "Synthesis of ATP during cellular respiration"],
+    "optH": ["प्रोटीन का संशोधन", "पदार्थों की पैकेजिंग", "स्रावी पुटिकाओं का निर्माण", "कोशिकीय श्वसन के दौरान ATP का निर्माण"],
+    "ans": 3,
+    "solE": "ATP production during cellular respiration is primarily associated with mitochondria. Golgi apparatus modifies, sorts and packages proteins and lipids.",
+    "solH": "कोशिकीय श्वसन के दौरान ATP का निर्माण मुख्यतः माइटोकॉन्ड्रिया में होता है। गॉल्जी तंत्र प्रोटीन और लिपिड का संशोधन, छँटाई तथा पैकेजिंग करता है।"
+  },
+  {
+    "id": 17,
+    "eng": "Match the following organelles with their functions: A. Rough ER; B. Smooth ER; C. Golgi apparatus; D. Lysosome. 1. Lipid synthesis; 2. Intracellular digestion; 3. Protein synthesis and processing; 4. Modification and packaging.",
+    "hin": "निम्नलिखित कोशिकांगों का उनके कार्यों से मिलान कीजिए: A. खुरदरी ER; B. चिकनी ER; C. गॉल्जी तंत्र; D. लाइसोसोम। 1. लिपिड संश्लेषण; 2. अंतःकोशिकीय पाचन; 3. प्रोटीन संश्लेषण और प्रसंस्करण; 4. संशोधन और पैकेजिंग।",
+    "optE": ["A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3"],
+    "optH": ["A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4", "A-4, B-2, C-3, D-1", "A-2, B-4, C-1, D-3"],
+    "ans": 0,
+    "solE": "Rough ER has ribosomes and is involved in protein synthesis. Smooth ER synthesizes lipids. Golgi modifies and packages materials. Lysosomes perform intracellular digestion.",
+    "solH": "खुरदरी ER पर राइबोसोम होते हैं और यह प्रोटीन संश्लेषण में भाग लेती है। चिकनी ER लिपिड बनाती है। गॉल्जी संशोधन और पैकेजिंग करता है। लाइसोसोम अंतःकोशिकीय पाचन करते हैं।"
+  },
+  {
+    "id": 18,
+    "eng": "Which of the following statements about ribosomes is correct? 1. They are the sites of protein synthesis. 2. They are found in both prokaryotic and eukaryotic cells.",
+    "hin": "राइबोसोम के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. ये प्रोटीन संश्लेषण के स्थल हैं। 2. ये प्रोकैरियोटिक और यूकैरियोटिक दोनों कोशिकाओं में पाए जाते हैं।",
+    "optE": ["Only 1", "Only 2", "Both 1 and 2", "Neither 1 nor 2"],
+    "optH": ["केवल 1", "केवल 2", "1 और 2 दोनों", "न तो 1 और न ही 2"],
+    "ans": 2,
+    "solE": "Ribosomes are present in both prokaryotes and eukaryotes and are responsible for protein synthesis. Prokaryotic ribosomes are generally 70S, while cytoplasmic eukaryotic ribosomes are generally 80S.",
+    "solH": "राइबोसोम प्रोकैरियोट और यूकैरियोट दोनों में पाए जाते हैं तथा प्रोटीन संश्लेषण करते हैं। प्रोकैरियोटिक राइबोसोम सामान्यतः 70S और यूकैरियोटिक कोशिकाद्रव्य के राइबोसोम 80S होते हैं।"
+  },
+  {
+    "id": 19,
+    "eng": "Which organelle contains hydrolytic enzymes and helps in intracellular digestion?",
+    "hin": "किस कोशिकांग में जल-अपघटनी एंजाइम होते हैं और जो अंतःकोशिकीय पाचन में सहायता करता है?",
+    "optE": ["Lysosome", "Centrosome", "Chloroplast", "Nucleolus"],
+    "optH": ["लाइसोसोम", "सेंट्रोसोम", "क्लोरोप्लास्ट", "केंद्रिका"],
+    "ans": 0,
+    "solE": "Lysosomes contain hydrolytic enzymes that break down waste materials, foreign particles and worn-out cell components.",
+    "solH": "लाइसोसोम में जल-अपघटनी एंजाइम होते हैं, जो अपशिष्ट पदार्थों, बाहरी कणों और पुराने कोशिकीय घटकों को तोड़ते हैं।"
+  },
+  {
+    "id": 20,
+    "eng": "Which of the following is NOT generally true about centrosomes in typical animal cells?",
+    "hin": "सामान्य जंतु कोशिकाओं में सेंट्रोसोम के संबंध में निम्नलिखित में से कौन-सा कथन सामान्यतः सही नहीं है?",
+    "optE": ["They help organize microtubules", "They usually contain a pair of centrioles", "They help in spindle formation", "They are the main site of photosynthesis"],
+    "optH": ["ये सूक्ष्मनलिकाओं को व्यवस्थित करने में सहायता करते हैं", "इनमें सामान्यतः सेंट्रिओल का एक जोड़ा होता है", "ये स्पिंडल निर्माण में सहायता करते हैं", "ये प्रकाश संश्लेषण का मुख्य स्थान हैं"],
+    "ans": 3,
+    "solE": "Centrosomes help organize microtubules and contribute to spindle formation during cell division. Photosynthesis occurs in chloroplasts.",
+    "solH": "सेंट्रोसोम सूक्ष्मनलिकाओं को व्यवस्थित करते हैं और कोशिका विभाजन में स्पिंडल निर्माण में सहायता करते हैं। प्रकाश संश्लेषण क्लोरोप्लास्ट में होता है।"
+  },
+  {
+    "id": 21,
+    "eng": "Which of the following statements about plastids is correct? 1. Chloroplasts contain chlorophyll. 2. Chromoplasts contain coloured pigments. 3. Leucoplasts are generally colourless.",
+    "hin": "प्लास्टिड के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. क्लोरोप्लास्ट में क्लोरोफिल होता है। 2. क्रोमोप्लास्ट में रंगीन वर्णक होते हैं। 3. ल्यूकोप्लास्ट सामान्यतः रंगहीन होते हैं।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "Chloroplasts contain chlorophyll, chromoplasts contain coloured pigments such as carotenoids, and leucoplasts are colourless storage plastids.",
+    "solH": "क्लोरोप्लास्ट में क्लोरोफिल, क्रोमोप्लास्ट में कैरोटिनॉयड जैसे रंगीन वर्णक तथा ल्यूकोप्लास्ट में सामान्यतः रंगहीन भंडारण प्लास्टिड होते हैं।"
+  },
+  {
+    "id": 22,
+    "eng": "Match the plastids with their major functions: A. Chloroplast; B. Chromoplast; C. Amyloplast; D. Elaioplast. 1. Storage of starch; 2. Photosynthesis; 3. Storage of oils; 4. Colouration of flowers and fruits.",
+    "hin": "प्लास्टिड का उनके प्रमुख कार्यों से मिलान कीजिए: A. क्लोरोप्लास्ट; B. क्रोमोप्लास्ट; C. एमाइलोप्लास्ट; D. इलायोप्लास्ट। 1. स्टार्च का भंडारण; 2. प्रकाश संश्लेषण; 3. तेल का भंडारण; 4. फूलों और फलों को रंग प्रदान करना।",
+    "optE": ["A-2, B-4, C-1, D-3", "A-4, B-2, C-3, D-1", "A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2"],
+    "optH": ["A-2, B-4, C-1, D-3", "A-4, B-2, C-3, D-1", "A-1, B-3, C-2, D-4", "A-3, B-1, C-4, D-2"],
+    "ans": 0,
+    "solE": "Chloroplasts perform photosynthesis, chromoplasts provide colour, amyloplasts store starch, and elaioplasts store oils.",
+    "solH": "क्लोरोप्लास्ट प्रकाश संश्लेषण करते हैं, क्रोमोप्लास्ट रंग प्रदान करते हैं, एमाइलोप्लास्ट स्टार्च और इलायोप्लास्ट तेल का भंडारण करते हैं।"
+  },
+  {
+    "id": 23,
+    "eng": "Which of the following is NOT a function of the vacuole in plant cells?",
+    "hin": "निम्नलिखित में से कौन-सा पादप कोशिका में रिक्तिका का कार्य नहीं है?",
+    "optE": ["Storage of cell sap", "Maintenance of turgor pressure", "Storage of certain waste substances", "Synthesis of ribosomal RNA"],
+    "optH": ["कोशिका रस का भंडारण", "स्फीति दाब बनाए रखना", "कुछ अपशिष्ट पदार्थों का भंडारण", "राइबोसोमल RNA का संश्लेषण"],
+    "ans": 3,
+    "solE": "Ribosomal RNA is mainly synthesized in the nucleolus. Vacuoles store cell sap, ions, pigments and waste substances and help maintain turgor pressure.",
+    "solH": "राइबोसोमल RNA का संश्लेषण मुख्यतः केंद्रिका में होता है। रिक्तिका कोशिका रस, आयन, वर्णक और अपशिष्ट पदार्थों का भंडारण करती है तथा स्फीति दाब बनाए रखती है।"
+  },
+  {
+    "id": 24,
+    "eng": "Which structure is known as the control centre of the eukaryotic cell?",
+    "hin": "यूकैरियोटिक कोशिका का नियंत्रण केंद्र किसे कहा जाता है?",
+    "optE": ["Mitochondrion", "Nucleus", "Golgi apparatus", "Vacuole"],
+    "optH": ["माइटोकॉन्ड्रिया", "केंद्रक", "गॉल्जी तंत्र", "रिक्तिका"],
+    "ans": 1,
+    "solE": "The nucleus contains most of the genetic material and regulates gene expression and many cellular activities.",
+    "solH": "केंद्रक में अधिकांश आनुवंशिक पदार्थ होता है और यह जीन अभिव्यक्ति तथा अनेक कोशिकीय गतिविधियों को नियंत्रित करता है।"
+  },
+  {
+    "id": 25,
+    "eng": "Consider the following statements about the nucleus: 1. It is surrounded by a double membrane called the nuclear envelope. 2. Nuclear pores allow exchange of materials. 3. The nucleolus is involved in ribosome formation.",
+    "hin": "केंद्रक के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. यह केंद्रकीय आवरण नामक दोहरी झिल्ली से घिरा होता है। 2. केंद्रकीय छिद्र पदार्थों के आदान-प्रदान की अनुमति देते हैं। 3. केंद्रिका राइबोसोम निर्माण में भाग लेती है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "The nuclear envelope is double-membraned and contains pores. The nucleolus synthesizes rRNA and participates in ribosomal subunit assembly.",
+    "solH": "केंद्रकीय आवरण दोहरी झिल्ली का बना होता है और इसमें छिद्र होते हैं। केंद्रिका rRNA का संश्लेषण करती है तथा राइबोसोम की उपइकाइयों के निर्माण में भाग लेती है।"
+  },
+  {
+    "id": 26,
+    "eng": "Which of the following organelles contains its own DNA? 1. Mitochondria 2. Chloroplasts 3. Golgi apparatus",
+    "hin": "निम्नलिखित में से किन कोशिकांगों में अपना DNA होता है? 1. माइटोकॉन्ड्रिया 2. क्लोरोप्लास्ट 3. गॉल्जी तंत्र",
+    "optE": ["Only 1", "Only 2", "Only 1 and 2", "All 1, 2 and 3"],
+    "optH": ["केवल 1", "केवल 2", "केवल 1 और 2", "1, 2 और 3 सभी"],
+    "ans": 2,
+    "solE": "Mitochondria and chloroplasts contain their own DNA and ribosomes. Golgi apparatus does not contain its own DNA.",
+    "solH": "माइटोकॉन्ड्रिया और क्लोरोप्लास्ट में अपना DNA तथा राइबोसोम होते हैं। गॉल्जी तंत्र में अपना DNA नहीं होता।"
+  },
+  {
+    "id": 27,
+    "eng": "Which of the following statements about chromosomes is correct? 1. Chromosomes are made of DNA and proteins. 2. Genes are located on chromosomes. 3. Chromosomes carry hereditary information.",
+    "hin": "गुणसूत्रों के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. गुणसूत्र DNA और प्रोटीन से बने होते हैं। 2. जीन गुणसूत्रों पर स्थित होते हैं। 3. गुणसूत्र आनुवंशिक सूचनाएँ वहन करते हैं।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "Chromosomes consist of DNA associated with proteins, mainly histones. They carry genes and hereditary information.",
+    "solH": "गुणसूत्र DNA और मुख्यतः हिस्टोन प्रोटीन से बने होते हैं। इनमें जीन स्थित होते हैं और ये आनुवंशिक सूचनाएँ वहन करते हैं।"
+  },
+  {
+    "id": 28,
+    "eng": "Which of the following is NOT a component of a nucleotide?",
+    "hin": "निम्नलिखित में से कौन-सा न्यूक्लियोटाइड का घटक नहीं है?",
+    "optE": ["Nitrogenous base", "Pentose sugar", "Phosphate group", "Amino acid"],
+    "optH": ["नाइट्रोजनी क्षारक", "पेंटोज शर्करा", "फॉस्फेट समूह", "अमीनो अम्ल"],
+    "ans": 3,
+    "solE": "A nucleotide consists of a nitrogenous base, a pentose sugar and a phosphate group. Amino acids are the building blocks of proteins.",
+    "solH": "न्यूक्लियोटाइड में नाइट्रोजनी क्षारक, पेंटोज शर्करा और फॉस्फेट समूह होता है। अमीनो अम्ल प्रोटीन के निर्माण खंड हैं।"
+  },
+  {
+    "id": 29,
+    "eng": "Which of the following statements about DNA and RNA is correct? 1. DNA generally contains deoxyribose sugar. 2. RNA contains uracil instead of thymine. 3. DNA is generally double-stranded, while most cellular RNA is single-stranded.",
+    "hin": "DNA और RNA के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. DNA में सामान्यतः डीऑक्सीराइबोज शर्करा होती है। 2. RNA में थाइमिन के स्थान पर यूरेसिल होता है। 3. DNA सामान्यतः द्विसूत्री होता है, जबकि अधिकांश कोशिकीय RNA एकसूत्री होता है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "DNA generally has deoxyribose and thymine, while RNA has ribose and uracil. DNA is usually double-stranded and most cellular RNA is single-stranded.",
+    "solH": "DNA में सामान्यतः डीऑक्सीराइबोज और थाइमिन होते हैं, जबकि RNA में राइबोज और यूरेसिल होते हैं। DNA सामान्यतः द्विसूत्री तथा अधिकांश कोशिकीय RNA एकसूत्री होता है।"
+  },
+  {
+    "id": 30,
+    "eng": "Match the types of RNA with their functions: A. mRNA; B. tRNA; C. rRNA. 1. Carries amino acids to ribosomes; 2. Forms a major structural and catalytic component of ribosomes; 3. Carries genetic information from DNA to ribosomes.",
+    "hin": "RNA के प्रकारों का उनके कार्यों से मिलान कीजिए: A. mRNA; B. tRNA; C. rRNA। 1. अमीनो अम्लों को राइबोसोम तक पहुँचाता है; 2. राइबोसोम का प्रमुख संरचनात्मक और उत्प्रेरक घटक बनाता है; 3. DNA से राइबोसोम तक आनुवंशिक सूचना पहुँचाता है।",
+    "optE": ["A-3, B-1, C-2", "A-1, B-2, C-3", "A-2, B-3, C-1", "A-3, B-2, C-1"],
+    "optH": ["A-3, B-1, C-2", "A-1, B-2, C-3", "A-2, B-3, C-1", "A-3, B-2, C-1"],
+    "ans": 0,
+    "solE": "mRNA carries the genetic message, tRNA brings amino acids to the ribosome, and rRNA forms the structural and catalytic core of ribosomes.",
+    "solH": "mRNA आनुवंशिक संदेश ले जाता है, tRNA अमीनो अम्लों को राइबोसोम तक लाता है और rRNA राइबोसोम का संरचनात्मक तथा उत्प्रेरक मुख्य घटक बनाता है।"
+  },
+  {
+    "id": 31,
+    "eng": "Which of the following is NOT correct about DNA?",
+    "hin": "DNA के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["It stores hereditary information", "It contains thymine", "It contains ribose sugar", "It is capable of replication"],
+    "optH": ["यह आनुवंशिक सूचना संग्रहीत करता है", "इसमें थाइमिन होता है", "इसमें राइबोज शर्करा होती है", "यह प्रतिकृति बना सकता है"],
+    "ans": 2,
+    "solE": "DNA contains deoxyribose sugar, not ribose. Ribose is the sugar found in RNA.",
+    "solH": "DNA में राइबोज नहीं, बल्कि डीऑक्सीराइबोज शर्करा होती है। राइबोज RNA में पाई जाती है।"
+  },
+  {
+    "id": 32,
+    "eng": "Transcription is the process of:",
+    "hin": "ट्रांसक्रिप्शन (अनुलेखन) की प्रक्रिया क्या है?",
+    "optE": ["Formation of DNA from RNA", "Formation of RNA using DNA as a template", "Formation of protein from RNA", "Formation of DNA from protein"],
+    "optH": ["RNA से DNA का निर्माण", "DNA को साँचे के रूप में उपयोग करके RNA का निर्माण", "RNA से प्रोटीन का निर्माण", "प्रोटीन से DNA का निर्माण"],
+    "ans": 1,
+    "solE": "Transcription is the synthesis of RNA from a DNA template. Translation is the process of protein synthesis using mRNA.",
+    "solH": "ट्रांसक्रिप्शन में DNA साँचे से RNA का निर्माण होता है। mRNA का उपयोग करके प्रोटीन बनना ट्रांसलेशन कहलाता है।"
+  },
+  {
+    "id": 33,
+    "eng": "Consider the following statements: 1. DNA replication produces DNA from DNA. 2. Transcription produces RNA from DNA. 3. Translation produces proteins using mRNA.",
+    "hin": "निम्नलिखित कथनों पर विचार कीजिए: 1. DNA प्रतिकृति में DNA से DNA बनता है। 2. ट्रांसक्रिप्शन में DNA से RNA बनता है। 3. ट्रांसलेशन में mRNA का उपयोग करके प्रोटीन बनता है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "These are three distinct processes: replication copies DNA, transcription makes RNA from DNA, and translation makes proteins based on mRNA.",
+    "solH": "ये तीन अलग-अलग प्रक्रियाएँ हैं: प्रतिकृति में DNA की नकल बनती है, ट्रांसक्रिप्शन में DNA से RNA बनता है और ट्रांसलेशन में mRNA के आधार पर प्रोटीन बनता है।"
+  },
+  {
+    "id": 34,
+    "eng": "Which of the following processes occurs during the S phase of the cell cycle?",
+    "hin": "कोशिका चक्र की S अवस्था में निम्नलिखित में से कौन-सी प्रक्रिया होती है?",
+    "optE": ["DNA replication", "Cytokinesis", "Chromosome separation", "Cell division is completed"],
+    "optH": ["DNA प्रतिकृति", "कोशिकाद्रव्य विभाजन", "गुणसूत्रों का पृथक्करण", "कोशिका विभाजन पूरा होना"],
+    "ans": 0,
+    "solE": "DNA replication occurs during the S (synthesis) phase of interphase, doubling the DNA content before cell division.",
+    "solH": "इंटरफेज की S (संश्लेषण) अवस्था में DNA की प्रतिकृति बनती है, जिससे कोशिका विभाजन से पहले DNA की मात्रा दोगुनी हो जाती है।"
+  },
+  {
+    "id": 35,
+    "eng": "Which of the following is NOT a stage of mitosis?",
+    "hin": "निम्नलिखित में से कौन-सी समसूत्री विभाजन की अवस्था नहीं है?",
+    "optE": ["Prophase", "Metaphase", "Anaphase", "Interphase"],
+    "optH": ["प्रोफेज", "मेटाफेज", "एनाफेज", "इंटरफेज"],
+    "ans": 3,
+    "solE": "The main stages of mitosis are prophase, metaphase, anaphase and telophase. Interphase is the preparatory phase before cell division.",
+    "solH": "समसूत्री विभाजन की मुख्य अवस्थाएँ प्रोफेज, मेटाफेज, एनाफेज और टेलोफेज हैं। इंटरफेज कोशिका विभाजन से पहले की तैयारी अवस्था है।"
+  },
+  {
+    "id": 36,
+    "eng": "Consider the following statements about mitosis: 1. It generally produces two daughter cells. 2. The chromosome number is maintained in the daughter cells. 3. It is important for growth and repair.",
+    "hin": "समसूत्री विभाजन के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. इसमें सामान्यतः दो संतति कोशिकाएँ बनती हैं। 2. संतति कोशिकाओं में गुणसूत्रों की संख्या समान बनी रहती है। 3. यह वृद्धि और मरम्मत के लिए महत्वपूर्ण है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "Mitosis generally produces two genetically similar daughter cells with the same chromosome number as the parent cell. It supports growth, repair and replacement.",
+    "solH": "समसूत्री विभाजन में सामान्यतः दो आनुवंशिक रूप से समान संतति कोशिकाएँ बनती हैं, जिनमें गुणसूत्रों की संख्या जनक कोशिका के समान होती है। यह वृद्धि, मरम्मत और कोशिकाओं के प्रतिस्थापन में सहायक है।"
+  },
+  {
+    "id": 37,
+    "eng": "Which of the following statements about meiosis is correct? 1. It involves two successive nuclear divisions. 2. It generally produces four haploid cells from one diploid cell. 3. Crossing over occurs during prophase I.",
+    "hin": "अर्धसूत्री विभाजन के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. इसमें केंद्रक का दो बार क्रमिक विभाजन होता है। 2. एक द्विगुणित कोशिका से सामान्यतः चार अगुणित कोशिकाएँ बनती हैं। 3. क्रॉसिंग ओवर प्रोफेज-I में होता है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "Meiosis consists of meiosis I and meiosis II. It usually produces four haploid products, and crossing over occurs during pachytene of prophase I.",
+    "solH": "अर्धसूत्री विभाजन में मीओसिस-I और मीओसिस-II होते हैं। इसमें सामान्यतः चार अगुणित कोशिकाएँ बनती हैं और क्रॉसिंग ओवर प्रोफेज-I की पैकीटीन अवस्था में होता है।"
+  },
+  {
+    "id": 38,
+    "eng": "Match the stages of mitosis with the major events: A. Prophase; B. Metaphase; C. Anaphase; D. Telophase. 1. Chromosomes align at the equatorial plate; 2. Sister chromatids separate; 3. Chromosomes condense; 4. Nuclear envelopes re-form.",
+    "hin": "समसूत्री विभाजन की अवस्थाओं का प्रमुख घटनाओं से मिलान कीजिए: A. प्रोफेज; B. मेटाफेज; C. एनाफेज; D. टेलोफेज। 1. गुणसूत्र विषुवतीय प्लेट पर व्यवस्थित होते हैं; 2. सहोदरी क्रोमैटिड अलग होते हैं; 3. गुणसूत्र संघनित होते हैं; 4. केंद्रकीय आवरण पुनः बनते हैं।",
+    "optE": ["A-3, B-1, C-2, D-4", "A-1, B-3, C-4, D-2", "A-2, B-4, C-1, D-3", "A-4, B-2, C-3, D-1"],
+    "optH": ["A-3, B-1, C-2, D-4", "A-1, B-3, C-4, D-2", "A-2, B-4, C-1, D-3", "A-4, B-2, C-3, D-1"],
+    "ans": 0,
+    "solE": "During prophase chromosomes condense, during metaphase they align at the equator, during anaphase sister chromatids separate, and during telophase nuclear envelopes re-form.",
+    "solH": "प्रोफेज में गुणसूत्र संघनित होते हैं, मेटाफेज में विषुवत पर व्यवस्थित होते हैं, एनाफेज में सहोदरी क्रोमैटिड अलग होते हैं और टेलोफेज में केंद्रकीय आवरण पुनः बनते हैं।"
+  },
+  {
+    "id": 39,
+    "eng": "Which of the following is the correct difference between mitosis and meiosis?",
+    "hin": "समसूत्री और अर्धसूत्री विभाजन के बीच सही अंतर कौन-सा है?",
+    "optE": ["Mitosis has two divisions, meiosis has one", "Mitosis generally maintains chromosome number, meiosis reduces it by half", "Crossing over occurs in every mitosis", "Mitosis always produces four daughter cells"],
+    "optH": ["समसूत्री विभाजन में दो विभाजन और अर्धसूत्री में एक विभाजन होता है", "समसूत्री विभाजन में सामान्यतः गुणसूत्र संख्या बनी रहती है, जबकि अर्धसूत्री में आधी हो जाती है", "प्रत्येक समसूत्री विभाजन में क्रॉसिंग ओवर होता है", "समसूत्री विभाजन में हमेशा चार संतति कोशिकाएँ बनती हैं"],
+    "ans": 1,
+    "solE": "Mitosis generally maintains the chromosome number, whereas meiosis reduces the chromosome number by half to form haploid products.",
+    "solH": "समसूत्री विभाजन में सामान्यतः गुणसूत्रों की संख्या बनी रहती है, जबकि अर्धसूत्री विभाजन में यह आधी हो जाती है और अगुणित कोशिकाएँ बनती हैं।"
+  },
+  {
+    "id": 40,
+    "eng": "A human somatic cell contains 46 chromosomes. How many chromosomes will be present in a normal human gamete?",
+    "hin": "मानव की एक कायिक कोशिका में 46 गुणसूत्र होते हैं। सामान्य मानव युग्मक में कितने गुणसूत्र होंगे?",
+    "optE": ["23", "46", "44", "92"],
+    "optH": ["23", "46", "44", "92"],
+    "ans": 0,
+    "solE": "Human somatic cells are diploid (2n = 46), while gametes are haploid (n = 23), formed through meiosis.",
+    "solH": "मानव की कायिक कोशिकाएँ द्विगुणित (2n = 46) होती हैं, जबकि अर्धसूत्री विभाजन से बने युग्मक अगुणित (n = 23) होते हैं।"
+  },
+  {
+    "id": 41,
+    "eng": "Which of the following correctly represents a haploid cell?",
+    "hin": "निम्नलिखित में से कौन-सी कोशिका अगुणित कोशिका का सही उदाहरण है?",
+    "optE": ["Human skin cell", "Human muscle cell", "Human sperm cell", "Human liver cell"],
+    "optH": ["मानव त्वचा कोशिका", "मानव मांसपेशी कोशिका", "मानव शुक्राणु कोशिका", "मानव यकृत कोशिका"],
+    "ans": 2,
+    "solE": "Human sperm cells are haploid and contain 23 chromosomes. Most human somatic cells are diploid and contain 46 chromosomes.",
+    "solH": "मानव शुक्राणु अगुणित होता है और इसमें 23 गुणसूत्र होते हैं। अधिकांश मानव कायिक कोशिकाएँ द्विगुणित होती हैं और उनमें 46 गुणसूत्र होते हैं।"
+  },
+  {
+    "id": 42,
+    "eng": "Which of the following statements about haploid and diploid cells is NOT correct?",
+    "hin": "अगुणित और द्विगुणित कोशिकाओं के संबंध में निम्नलिखित में से कौन-सा कथन सही नहीं है?",
+    "optE": ["Haploid cells contain one set of chromosomes", "Diploid cells contain two sets of chromosomes", "Human gametes are haploid", "Human red blood cells contain 46 chromosomes"],
+    "optH": ["अगुणित कोशिकाओं में गुणसूत्रों का एक सेट होता है", "द्विगुणित कोशिकाओं में गुणसूत्रों के दो सेट होते हैं", "मानव युग्मक अगुणित होते हैं", "मानव लाल रक्त कोशिकाओं में 46 गुणसूत्र होते हैं"],
+    "ans": 3,
+    "solE": "Mature human red blood cells lack a nucleus and therefore do not contain chromosomes. Human gametes have 23 chromosomes.",
+    "solH": "परिपक्व मानव लाल रक्त कोशिकाओं में केंद्रक नहीं होता, इसलिए इनमें गुणसूत्र भी नहीं होते। मानव युग्मकों में 23 गुणसूत्र होते हैं।"
+  },
+  {
+    "id": 43,
+    "eng": "Which of the following is the correct sequence of events in the central dogma of molecular biology?",
+    "hin": "आणविक जीवविज्ञान के केंद्रीय सिद्धांत में घटनाओं का सही क्रम कौन-सा है?",
+    "optE": ["RNA → DNA → Protein", "DNA → RNA → Protein", "Protein → RNA → DNA", "DNA → Protein → RNA"],
+    "optH": ["RNA → DNA → प्रोटीन", "DNA → RNA → प्रोटीन", "प्रोटीन → RNA → DNA", "DNA → प्रोटीन → RNA"],
+    "ans": 1,
+    "solE": "The central dogma describes the usual flow of genetic information from DNA to RNA through transcription and from RNA to protein through translation.",
+    "solH": "केंद्रीय सिद्धांत के अनुसार सामान्यतः आनुवंशिक सूचना DNA से ट्रांसक्रिप्शन द्वारा RNA में और फिर ट्रांसलेशन द्वारा RNA से प्रोटीन में जाती है।"
+  },
+  {
+    "id": 44,
+    "eng": "Which of the following pairs is incorrectly matched?",
+    "hin": "निम्नलिखित में से कौन-सा युग्म गलत सुमेलित है?",
+    "optE": ["Mitochondria — ATP production", "Ribosome — Protein synthesis", "Lysosome — Photosynthesis", "Chloroplast — Photosynthesis"],
+    "optH": ["माइटोकॉन्ड्रिया — ATP निर्माण", "राइबोसोम — प्रोटीन संश्लेषण", "लाइसोसोम — प्रकाश संश्लेषण", "क्लोरोप्लास्ट — प्रकाश संश्लेषण"],
+    "ans": 2,
+    "solE": "Lysosomes perform intracellular digestion. Photosynthesis takes place in chloroplasts.",
+    "solH": "लाइसोसोम अंतःकोशिकीय पाचन करते हैं। प्रकाश संश्लेषण क्लोरोप्लास्ट में होता है।"
+  },
+  {
+    "id": 45,
+    "eng": "Which of the following statements about cell organelles is correct? 1. Rough ER has ribosomes on its surface. 2. Smooth ER is involved in lipid synthesis. 3. Golgi apparatus helps in secretion.",
+    "hin": "कोशिकांगों के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. खुरदरी ER की सतह पर राइबोसोम होते हैं। 2. चिकनी ER लिपिड संश्लेषण में भाग लेती है। 3. गॉल्जी तंत्र स्राव में सहायता करता है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 3,
+    "solE": "All three statements are correct. Rough ER is associated with ribosomes and protein processing, smooth ER synthesizes lipids, and Golgi apparatus modifies and packages substances for secretion.",
+    "solH": "तीनों कथन सही हैं। खुरदरी ER पर राइबोसोम होते हैं और यह प्रोटीन प्रसंस्करण में भाग लेती है। चिकनी ER लिपिड बनाती है तथा गॉल्जी तंत्र स्राव के लिए पदार्थों का संशोधन और पैकेजिंग करता है।"
+  },
+  {
+    "id": 46,
+    "eng": "Which of the following is NOT a feature of the cell wall?",
+    "hin": "निम्नलिखित में से कौन-सा कोशिका भित्ति का लक्षण नहीं है?",
+    "optE": ["It provides structural support", "It is freely permeable to many small substances", "It is selectively permeable like the plasma membrane", "It protects the cell"],
+    "optH": ["यह संरचनात्मक सहारा प्रदान करती है", "यह अनेक छोटे पदार्थों के लिए स्वतंत्र रूप से पारगम्य होती है", "यह प्लाज्मा झिल्ली की तरह चयनात्मक पारगम्य होती है", "यह कोशिका की रक्षा करती है"],
+    "ans": 2,
+    "solE": "The cell wall is generally freely permeable to many small substances, whereas the plasma membrane is selectively permeable.",
+    "solH": "कोशिका भित्ति सामान्यतः अनेक छोटे पदार्थों के लिए स्वतंत्र रूप से पारगम्य होती है, जबकि प्लाज्मा झिल्ली चयनात्मक पारगम्य होती है।"
+  },
+  {
+    "id": 47,
+    "eng": "Which of the following statements about bacterial cells is correct? 1. They generally lack membrane-bound organelles. 2. Their genetic material is located in a nucleoid region. 3. All bacteria have a flagellum.",
+    "hin": "बैक्टीरियल कोशिकाओं के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. इनमें सामान्यतः झिल्ली-बद्ध कोशिकांग नहीं होते। 2. इनका आनुवंशिक पदार्थ न्यूक्लॉयड क्षेत्र में होता है। 3. सभी बैक्टीरिया में कशाभिका होती है।",
+    "optE": ["Only 1 and 2", "Only 2 and 3", "Only 1 and 3", "All 1, 2 and 3"],
+    "optH": ["केवल 1 और 2", "केवल 2 और 3", "केवल 1 और 3", "1, 2 और 3 सभी"],
+    "ans": 0,
+    "solE": "Bacteria generally lack membrane-bound organelles and have DNA in a nucleoid region. Not all bacteria possess flagella.",
+    "solH": "बैक्टीरिया में सामान्यतः झिल्ली-बद्ध कोशिकांग नहीं होते और DNA न्यूक्लॉयड क्षेत्र में पाया जाता है। सभी बैक्टीरिया में कशाभिका नहीं होती।"
+  },
+  {
+    "id": 48,
+    "eng": "Which of the following is the correct match? 1. Amoeba — Protista; 2. Yeast — Fungi; 3. Nostoc — Monera; 4. Spirogyra — Plantae in the five-kingdom classification.",
+    "hin": "निम्नलिखित में से कौन-सा मिलान सही है? 1. अमीबा — प्रोटिस्टा; 2. यीस्ट — कवक; 3. नॉस्टॉक — मोनेरा; 4. स्पाइरोगाइरा — पाँच-जगत वर्गीकरण में पादप जगत।",
+    "optE": ["Only 1 and 2", "Only 1, 2 and 3", "Only 2, 3 and 4", "All 1, 2, 3 and 4"],
+    "optH": ["केवल 1 और 2", "केवल 1, 2 और 3", "केवल 2, 3 और 4", "1, 2, 3 और 4 सभी"],
+    "ans": 1,
+    "solE": "Amoeba belongs to Protista, yeast to Fungi and Nostoc to Monera. Spirogyra is a green alga classified under Protista in Whittaker's five-kingdom system.",
+    "solH": "अमीबा प्रोटिस्टा, यीस्ट कवक और नॉस्टॉक मोनेरा में आता है। व्हिटेकर के पाँच-जगत वर्गीकरण में हरी शैवाल स्पाइरोगाइरा को प्रोटिस्टा में रखा जाता है।"
+  },
+  {
+    "id": 49,
+    "eng": "Which of the following statements about cell division is NOT correct? 1. DNA replication occurs before nuclear division. 2. Cytokinesis divides the cytoplasm. 3. Meiosis helps maintain chromosome number across generations when fertilization occurs. 4. Mitosis always produces genetically different daughter cells.",
+    "hin": "कोशिका विभाजन के संबंध में निम्नलिखित कथनों पर विचार कीजिए: 1. केंद्रक विभाजन से पहले DNA की प्रतिकृति बनती है। 2. साइटोकाइनेसिस कोशिकाद्रव्य का विभाजन करता है। 3. निषेचन होने पर अर्धसूत्री विभाजन पीढ़ियों में गुणसूत्रों की संख्या बनाए रखने में सहायता करता है। 4. समसूत्री विभाजन में हमेशा आनुवंशिक रूप से भिन्न संतति कोशिकाएँ बनती हैं।",
+    "optE": ["Only 1", "Only 2", "Only 3", "Only 4"],
+    "optH": ["केवल 1", "केवल 2", "केवल 3", "केवल 4"],
+    "ans": 3,
+    "solE": "Mitosis generally produces genetically similar daughter cells. Meiosis reduces chromosome number to haploid, and fertilization restores the diploid number.",
+    "solH": "समसूत्री विभाजन में सामान्यतः आनुवंशिक रूप से समान संतति कोशिकाएँ बनती हैं। अर्धसूत्री विभाजन गुणसूत्रों की संख्या आधी करता है और निषेचन द्विगुणित संख्या को पुनः स्थापित करता है।"
+  },
+  {
+    "id": 50,
+    "eng": "Match the following terms with their correct descriptions: A. Haploid; B. Diploid; C. Cytokinesis; D. Crossing over. 1. Exchange of genetic material between non-sister chromatids of homologous chromosomes; 2. One set of chromosomes; 3. Division of cytoplasm; 4. Two sets of chromosomes.",
+    "hin": "निम्नलिखित शब्दों का उनके सही वर्णन से मिलान कीजिए: A. अगुणित; B. द्विगुणित; C. साइटोकाइनेसिस; D. क्रॉसिंग ओवर। 1. समजात गुणसूत्रों की असहोदरी क्रोमैटिडों के बीच आनुवंशिक पदार्थ का आदान-प्रदान; 2. गुणसूत्रों का एक सेट; 3. कोशिकाद्रव्य का विभाजन; 4. गुणसूत्रों के दो सेट।",
+    "optE": ["A-2, B-4, C-3, D-1", "A-4, B-2, C-1, D-3", "A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4"],
+    "optH": ["A-2, B-4, C-3, D-1", "A-4, B-2, C-1, D-3", "A-3, B-1, C-4, D-2", "A-1, B-3, C-2, D-4"],
+    "ans": 0,
+    "solE": "Haploid cells have one chromosome set, diploid cells have two sets, cytokinesis divides the cytoplasm, and crossing over exchanges genetic material between non-sister chromatids of homologous chromosomes during meiosis I.",
+    "solH": "अगुणित कोशिकाओं में गुणसूत्रों का एक सेट और द्विगुणित कोशिकाओं में दो सेट होते हैं। साइटोकाइनेसिस में कोशिकाद्रव्य विभाजित होता है। क्रॉसिंग ओवर अर्धसूत्री विभाजन-I में समजात गुणसूत्रों की असहोदरी क्रोमैटिडों के बीच आनुवंशिक पदार्थ का आदान-प्रदान है।"
+  }
+];;
+
+        // --- STATE VARIABLES ---
+        let currentLang = 'eng';
+        let currentQIndex = 0;
+        let timeLeft = 20 * 60; // 20 mins
+        let timerInterval;
+        let mockStarted = false;
+        let mockSubmitted = false;
+
+        // Previous Attempts / History (same localStorage approach as Source.html)
+        let isHistoryMode = false;
+        let activeHistoryAttempt = null;
+        const HISTORY_STORAGE_KEY = 'ExamRojgaar_history';
+        const TEST_DURATION_SECONDS = 20 * 60; //mins
+        
+        // Status tracking: 0: Not Visited, 1: Not Answered, 2: Answered, 3: Marked, 4: Answered & Marked
+        const TOTAL_QUESTIONS = rawData.length;
+
+		let userState = Array(TOTAL_QUESTIONS).fill().map(() => ({
+			status: 0,
+			selectedOption: null,
+			timeSpent: 0
+		}));
+
+        let qStartTime = 0;
+
+        // --- UI NAVIGATION & PROTECTION ---
+        window.addEventListener('beforeunload', function (e) {
+            if (mockStarted && !mockSubmitted) {
+                e.preventDefault();
+                e.returnValue = 'Do you want to leave the test? Progress might be lost.';
+            }
+        });
+
+        function switchScreen(screenId) {
+            document.querySelectorAll('body > div[id$="-screen"], body > div[id$="-gate"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        // Starting-page compatibility helpers (copied UI only; the existing mock engine remains unchanged).
+        function validateAndStart() {
+            const nameInput = document.getElementById('candidate-name');
+            const declaration = document.getElementById('declaration-check');
+            const name = nameInput ? nameInput.value.trim() : '';
+            if (nameInput && !name) {
+                alert('Please enter your Candidate Name to begin.');
+                nameInput.focus();
+                return;
+            }
+            if (declaration && !declaration.checked) {
+                alert('Please read and accept the declaration before beginning.');
+                return;
+            }
+            startCountdown();
+        }
+
+        // ==================== PREVIOUS ATTEMPTS ====================
+        function getHistory() {
+            try {
+                const data = localStorage.getItem(HISTORY_STORAGE_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveAttemptToStorage() {
+            if (isHistoryMode) return;
+
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+            userState.forEach((st, idx) => {
+                if (st.selectedOption !== null) {
+                    attempted++;
+                    if (st.selectedOption === rawData[idx].ans) correct++;
+                    else wrong++;
+                }
+            });
+
+            const marks = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? Number(((correct / attempted) * 100).toFixed(1)) : 0;
+            const nameEl = document.getElementById('candidate-name');
+
+            const attempt = {
+                id: Date.now(),
+                mockId: 'target-railway-sectional',
+                mockName: (document.getElementById('paper-name-display') || {}).textContent?.trim() || 'Round 1 Challenge Series',
+                subject: (document.getElementById('subject-display') || {}).textContent?.trim() || 'Sectional Mock',
+                candidateName: nameEl ? nameEl.value.trim() : '',
+                date: (document.getElementById('current-date-display') || {}).textContent?.trim() || new Date().toLocaleDateString('en-GB'),
+                marks: Number(marks.toFixed(2)),
+                accuracy: accuracy,
+                correct: correct,
+                wrong: wrong,
+                skipped: rawData.length - attempted,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                answers: JSON.parse(JSON.stringify(userState)),
+                questions: rawData
+            };
+
+            try {
+                const history = getHistory();
+                history.push(attempt);
+                localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(history));
+            } catch (e) {
+                // Keep the test working even if browser storage is unavailable/full.
+            }
+        }
+
+        function openHistoryDashboard() {
+            const history = getHistory();
+            const list = document.getElementById('history-list');
+            if (!list) return;
+
+            if (history.length === 0) {
+                list.innerHTML = `<div class="text-slate-400 text-center py-10 font-medium">No previous attempts found. Start a mock test!</div>`;
+            } else {
+                let html = '';
+                [...history].reverse().forEach((attempt, index) => {
+                    const maxMarks = rawData.length;
+                    const score = Number(attempt.marks || 0).toFixed(2);
+                    const accuracy = Number(attempt.accuracy || 0).toFixed(1);
+                    html += `
+                    <div class="bg-slate-700/50 border border-slate-600 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4 hover:bg-slate-700 transition">
+                        <div class="text-center md:text-left">
+                            <div class="text-amber-300 font-bold text-lg mb-1">${escapeHistoryText(attempt.mockName || 'Round 1 Challenge Series')} <span class="text-sm font-normal text-amber-200/50">(Attempt #${history.length - index})</span></div>
+                            <div class="text-slate-300 text-sm"><i class="far fa-user"></i> ${escapeHistoryText(attempt.candidateName || 'Aspirant')} &nbsp; <i class="far fa-calendar-alt"></i> ${escapeHistoryText(attempt.date || '')}</div>
+                        </div>
+                        <div class="flex gap-6 text-center">
+                            <div><div class="text-xs text-slate-400 uppercase">Score</div><div class="text-xl font-bold text-sky-400">${score}/${maxMarks}</div></div>
+                            <div><div class="text-xs text-slate-400 uppercase">Accuracy</div><div class="text-xl font-bold text-emerald-400">${accuracy}%</div></div>
+                        </div>
+                        <button onclick="loadHistoryAttempt(${Number(attempt.id)})" class="px-5 py-2 bg-slate-800 border border-amber-500/50 text-amber-300 rounded-lg hover:bg-slate-900 transition">View Analysis</button>
+                    </div>`;
+                });
+                list.innerHTML = html;
+            }
+            document.getElementById('history-modal').classList.remove('hidden');
+        }
+
+        function escapeHistoryText(value) {
+            return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch]));
+        }
+
+        function closeHistoryDashboard() {
+            document.getElementById('history-modal').classList.add('hidden');
+        }
+
+        function loadHistoryAttempt(id) {
+            const attempt = getHistory().find(a => Number(a.id) === Number(id));
+            if (!attempt) return;
+
+            activeHistoryAttempt = attempt;
+            isHistoryMode = true;
+            mockStarted = false;
+            mockSubmitted = true;
+            currentQIndex = 0;
+            timeLeft = Math.max(0, TEST_DURATION_SECONDS - Number(attempt.timeTaken || 0));
+
+            // Support both the current Target history format and the Source-style answer map.
+            if (Array.isArray(attempt.answers)) {
+                userState = attempt.answers.map(st => ({
+                    status: Number(st.status || 0),
+                    selectedOption: st.selectedOption === null || st.selectedOption === undefined ? null : Number(st.selectedOption),
+                    timeSpent: Number(st.timeSpent || 0)
+                }));
+            } else {
+                userState = Array(rawData.length).fill().map(() => ({ status: 0, selectedOption: null, timeSpent: 0 }));
+            }
+
+            while (userState.length < rawData.length) userState.push({ status: 0, selectedOption: null, timeSpent: 0 });
+            if (userState.length > rawData.length) userState = userState.slice(0, rawData.length);
+
+            closeHistoryDashboard();
+            switchScreen('result-screen');
+            generateResultDashboard();
+
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.remove('hidden');
+        }
+
+        function returnFromHistory() {
+            isHistoryMode = false;
+            activeHistoryAttempt = null;
+            const backBtn = document.getElementById('history-result-back');
+            if (backBtn) backBtn.classList.add('hidden');
+            switchScreen('home-screen');
+        }
+
+        // ==================== SAVED QUESTIONS ====================
+        const SAVED_QUESTIONS_KEY = 'ExamRojgaar_saved_questions';
+
+        function getSavedQuestions() {
+            try {
+                const data = localStorage.getItem(SAVED_QUESTIONS_KEY);
+                if (!data || data === 'undefined' || data === 'null') return [];
+                const parsed = JSON.parse(data);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveSavedQuestions(list) {
+            try {
+                localStorage.setItem(SAVED_QUESTIONS_KEY, JSON.stringify(list));
+            } catch (e) {
+                // Keep the mock usable if browser storage is unavailable/full.
+            }
+        }
+
+        function isQuestionSaved(question) {
+            if (!question) return false;
+            return getSavedQuestions().some(q => String(q.id) === String(question.id));
+        }
+
+        function toggleSaveQuestion() {
+            const currentQ = rawData[currentQIndex];
+            if (!currentQ) return;
+
+            const saved = getSavedQuestions();
+            const index = saved.findIndex(q => String(q.id) === String(currentQ.id));
+
+            if (index >= 0) {
+                saved.splice(index, 1);
+            } else {
+                // Store a copy so later test-state changes cannot corrupt saved questions.
+                saved.push(JSON.parse(JSON.stringify(currentQ)));
+            }
+
+            saveSavedQuestions(saved);
+            renderQuestion();
+        }
+
+        function openSavedQuestionsModal() {
+            renderSavedQuestionsList();
+            document.getElementById('saved-questions-modal').classList.remove('hidden');
+        }
+
+        function closeSavedQuestionsModal() {
+            document.getElementById('saved-questions-modal').classList.add('hidden');
+        }
+
+        function clearAllSavedQuestions() {
+            if (getSavedQuestions().length === 0) return;
+            if (confirm('Are you sure you want to clear all saved questions?')) {
+                try { localStorage.removeItem(SAVED_QUESTIONS_KEY); } catch (e) {}
+                renderSavedQuestionsList();
+                renderQuestion();
+            }
+        }
+
+        function removeSavedQuestion(index) {
+            const saved = getSavedQuestions();
+            if (index < 0 || index >= saved.length) return;
+            saved.splice(index, 1);
+            saveSavedQuestions(saved);
+            renderSavedQuestionsList();
+            renderQuestion();
+        }
+
+        function escapeSavedText(value) {
+            return String(value ?? '').replace(/[&<>\"']/g, ch => ({
+                '&':'&amp;', '<':'&lt;', '>':'&gt;', '\"':'&quot;', "'":'&#39;'
+            }[ch]));
+        }
+
+        function renderSavedQuestionsList() {
+            const container = document.getElementById('saved-questions-list');
+            if (!container) return;
+
+            const saved = getSavedQuestions();
+            if (saved.length === 0) {
+                container.innerHTML = `
+                    <div class="text-slate-400 text-center py-12 font-medium">
+                        <i class="far fa-star text-4xl mb-4 block text-slate-500"></i>
+                        No saved questions found.<br>
+                        <span class="text-sm">Click <b>Save Question</b> (â˜…) while attempting the mock to save questions here.</span>
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            saved.forEach((q, index) => {
+                const opts = Array.isArray(q.optE) ? q.optE : [];
+                const correct = Number(q.ans);
+                let optionsHtml = '';
+
+                opts.forEach((opt, i) => {
+                    const isCorrect = i === correct;
+                    optionsHtml += `
+                        <div class="p-3 mb-2 rounded border ${isCorrect ? 'bg-emerald-50 border-emerald-300 font-bold text-emerald-800' : 'bg-slate-50 border-slate-200 text-slate-700'} text-sm">
+                            ${String.fromCharCode(65 + i)}) ${escapeSavedText(opt)} ${isCorrect ? '<i class=\"fas fa-check ml-2\"></i>' : ''}
+                        </div>`;
+                });
+
+                const solution = escapeSavedText(q.solE || 'No solution provided.');
+                const hindiQuestion = q.hin ? escapeSavedText(q.hin) : '';
+
+                html += `
+                    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200 relative mb-4">
+                        <button onclick="removeSavedQuestion(${index})" class="absolute top-4 right-4 text-slate-400 hover:text-rose-500 transition font-medium text-sm">
+                            <i class="fas fa-trash"></i> Remove
+                        </button>
+                        <div class="text-xs font-bold text-amber-600 mb-2 uppercase tracking-widest pr-20">Saved Question ${index + 1}</div>
+                        <div class="text-slate-800 font-semibold mb-4 text-[15px] whitespace-pre-wrap pr-8">${escapeSavedText(q.eng || '')}</div>
+                        ${hindiQuestion ? `<div class="text-slate-600 text-sm mb-4 whitespace-pre-wrap"><b>Hindi:</b> ${hindiQuestion}</div>` : ''}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">${optionsHtml}</div>
+                        <div class="mt-4 border-t border-slate-100 pt-4">
+                            <div class="text-sm text-slate-600 font-medium bg-slate-50 p-3 rounded leading-relaxed whitespace-pre-line border border-slate-100">
+                                <i class="fas fa-lightbulb text-amber-500 mr-2"></i><b>Solution:</b><br>${solution}
+                            </div>
+                        </div>
+                    </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function startCountdown() {
+            switchScreen('countdown-screen');
+            let count = 5;
+            const el = document.getElementById('countdown-number');
+            const intv = setInterval(() => {
+                count--;
+                if(count > 0) {
+                    el.innerText = count;
+                } else {
+                    clearInterval(intv);
+                    startMock();
+                }
+            }, 1000);
+        }
+
+        // --- MOCK LOGIC ---
+        function startMock() {
+			mockStarted = true;
+
+			const TOTAL = rawData.length;
+
+			userState = Array(TOTAL).fill().map(() => ({
+				status: 0,
+				selectedOption: null,
+				timeSpent: 0
+			}));
+
+			userState[0].status = 1;
+
+			switchScreen('mock-screen');
+			initPalette();
+			renderQuestion();
+			startTimer();
+			qStartTime = Date.now();
+		}
+
+        function toggleLanguage() {
+            currentLang = document.getElementById('lang-toggle-uni').value;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = rawData[currentQIndex];
+            const state = userState[currentQIndex];
+            
+            document.getElementById('q-no-display').innerText = currentQIndex + 1;
+            
+            const qTextEl = document.getElementById('question-text');
+            qTextEl.innerText = currentLang === 'eng' ? q.eng : q.hin;
+
+            const opts = currentLang === 'eng' ? q.optE : q.optH;
+            let optionsHTML = '';
+            
+            opts.forEach((optText, i) => {
+                const isSelected = state.selectedOption === i;
+                optionsHTML += `
+                    <div onclick="selectOption(${i})" class="option-row p-3 rounded flex items-center gap-3 ${isSelected ? 'selected' : ''}">
+                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-blue-600 bg-blue-600' : 'border-gray-400'}">
+                            ${isSelected ? '<div class="w-2.5 h-2.5 bg-white rounded-full"></div>' : ''}
+                        </div>
+                        <span class="font-medium ${isSelected ? 'text-blue-900' : 'text-slate-700'}">${String.fromCharCode(65 + i)}. ${optText}</span>
+                    </div>
+                `;
+            });
+            document.getElementById('options-container').innerHTML = optionsHTML;
+
+            // Update Save Question button from persistent browser storage.
+            const saveBtn = document.getElementById('save-question-btn');
+            const saveIcon = document.getElementById('save-question-icon');
+            const saveLabel = document.getElementById('save-question-label');
+            const saved = isQuestionSaved(q);
+            if (saveBtn && saveIcon && saveLabel) {
+                saveBtn.className = `px-2.5 py-1.5 text-xs md:text-sm rounded border shadow-sm flex items-center gap-1.5 font-semibold transition ${saved ? 'bg-amber-50 border-amber-300 text-amber-700' : 'bg-white border-gray-300 text-gray-600 hover:bg-amber-50 hover:border-amber-300'}`;
+                saveIcon.className = saved ? 'fas fa-star text-amber-500' : 'far fa-star text-gray-400';
+                saveLabel.innerText = saved ? 'Saved' : 'Save Question';
+            }
+            updatePaletteUI();
+        }
+
+        function selectOption(index) {
+            userState[currentQIndex].selectedOption = index;
+            renderQuestion();
+        }
+
+        function recordTime() {
+            const now = Date.now();
+            userState[currentQIndex].timeSpent += Math.floor((now - qStartTime) / 1000);
+            qStartTime = now;
+        }
+
+        // Action Buttons
+       function saveAndNext() {
+			recordTime();
+
+			const TOTAL = rawData.length;
+
+			if (userState[currentQIndex].selectedOption !== null) {
+				userState[currentQIndex].status = 2; // Answered
+			} else {
+				userState[currentQIndex].status = 1; // Not Answered
+			}
+
+			// If LAST QUESTION â†’ open submit popup
+			if (currentQIndex === TOTAL - 1) {
+				requestSubmit();
+				return;
+			}
+
+			// otherwise move next
+			currentQIndex++;
+			if (userState[currentQIndex].status === 0) {
+				userState[currentQIndex].status = 1;
+			}
+
+			renderQuestion();
+		}
+
+        function markForReview() {
+            recordTime();
+            if (userState[currentQIndex].selectedOption !== null) {
+                userState[currentQIndex].status = 4; // Ans & Marked
+            } else {
+                userState[currentQIndex].status = 3; // Marked
+            }
+            goToNext();
+        }
+
+        function clearResponse() {
+            userState[currentQIndex].selectedOption = null;
+            userState[currentQIndex].status = 1; // Visited but not answered
+            renderQuestion();
+        }
+
+        function goToNext() {
+		    const TOTAL_QUESTIONS = rawData.length;
+
+            if (currentQIndex < TOTAL_QUESTIONS - 1) {
+                currentQIndex++;
+                if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+                renderQuestion();
+            } else {
+                updatePaletteUI(); // Just update UI if on last question
+            }
+        }
+
+        function jumpToQuestion(index) {
+            recordTime();
+            currentQIndex = index;
+            if (userState[currentQIndex].status === 0) userState[currentQIndex].status = 1;
+            renderQuestion();
+            if(window.innerWidth < 768) {
+                document.getElementById('palette-panel').classList.add('translate-x-full');
+            }
+        }
+
+        // --- PALETTE LOGIC ---
+        function initPalette() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+            for(let i=0; i< rawData.length; i++) {
+                grid.innerHTML += `<div id="pal-btn-${i}" onclick="jumpToQuestion(${i})" class="palette-btn pal-not-visited">${i+1}</div>`;
+            }
+        }
+
+        function updatePaletteUI() {
+            let counts = [0, 0, 0, 0, 0];
+            for(let i=0; i< rawData.length; i++) {
+                const status = userState[i].status;
+                counts[status]++;
+                const btn = document.getElementById(`pal-btn-${i}`);
+                btn.className = `palette-btn ${i === currentQIndex ? 'pal-active' : ''}`;
+                if(status === 0) btn.classList.add('pal-not-visited');
+                else if(status === 1) btn.classList.add('pal-not-answered');
+                else if(status === 2) btn.classList.add('pal-answered');
+                else if(status === 3) btn.classList.add('pal-marked');
+                else if(status === 4) btn.classList.add('pal-ans-marked');
+            }
+            
+            document.getElementById('cnt-notvis').innerText = counts[0];
+            document.getElementById('cnt-notans').innerText = counts[1];
+            document.getElementById('cnt-ans').innerText = counts[2];
+            document.getElementById('cnt-mark').innerText = counts[3];
+            document.getElementById('cnt-ansmark').innerText = counts[4];
+        }
+
+        function toggleMobilePalette() {
+            document.getElementById('palette-panel').classList.toggle('translate-x-full');
+        }
+
+        // --- TIMER & PSYCHOLOGY ---
+        function startTimer() {
+            const timerElements = document.querySelectorAll('.timer-display');
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                
+                let min = Math.floor(timeLeft / 60);
+                let sec = timeLeft % 60;
+                let timeStr = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                timerElements.forEach(el => el.innerText = timeStr);
+
+                // Psychology Feature: Last 3 minutes
+                if (timeLeft === 180) {
+                    playBeep();
+                    showDangerFlash();
+                    timerElements.forEach(el => {
+                        el.parentElement.classList.replace('bg-gray-100', 'bg-red-100');
+                        el.parentElement.classList.replace('border-gray-300', 'border-red-500');
+                        el.parentElement.classList.replace('text-slate-700', 'text-red-600');
+                        let icon = el.parentElement.querySelector('i');
+                        if(icon) icon.classList.replace('text-blue-500', 'text-red-600');
+                    });
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmit();
+                }
+            }, 1000);
+        }
+
+        function playBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.value = 800;
+                gain.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch(e) {}
+        }
+
+        function showDangerFlash() {
+            const overlay = document.getElementById('danger-overlay');
+            overlay.style.display = 'block';
+            overlay.style.animation = 'flicker 0.2s 10';
+            setTimeout(() => { overlay.style.display = 'none'; }, 2000);
+        }
+
+        // --- SUBMISSION FLOW ---
+        function requestSubmit() {
+            let answered = userState.filter(s => s.status === 2 || s.status === 4).length;
+            document.getElementById('pop-ans').innerText = answered;
+            document.getElementById('pop-not').innerText = rawData.length - answered;
+            document.getElementById('submit-popup').classList.remove('hidden');
+        }
+
+        function closeSubmitPopup() {
+            document.getElementById('submit-popup').classList.add('hidden');
+        }
+
+        function executeSubmit() {
+            closeSubmitPopup();
+            finalizeTest();
+        }
+
+        function autoSubmit() {
+            alert("Time is over. Your test has been automatically submitted.");
+            finalizeTest();
+        }
+
+        function finalizeTest() {
+					clearInterval(timerInterval);
+					recordTime();
+					mockSubmitted = true;
+
+                    // Store this completed attempt so it appears under "Previous Attempts".
+                    saveAttemptToStorage();
+
+					// Loading state
+					const btn = document.getElementById('final-submit-btn');
+
+					if (btn) {
+						btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+						}
+
+					setTimeout(() => {
+
+						// Hide popup if open
+							document.getElementById('submit-popup').classList.add('hidden');
+
+							// Directly generate result dashboard
+							generateResultDashboard();
+
+						// Open result screen directly
+							switchScreen('result-screen');
+
+						// Optional end audio
+							playEndAudio();
+
+		}, 500);
+}
+
+        // Called from Telegram Gate
+        function unlockResult() {
+            setTimeout(() => {
+                document.getElementById('telegram-gate').classList.add('hidden');
+                generateResultDashboard();
+                switchScreen('result-screen');
+                playEndAudio();
+            }, 500); // Slight delay to let link open
+        }
+
+        function playEndAudio() {
+            try {
+                // Soft visual flash
+                showDangerFlash();
+                // Audio
+                const msg = new SpeechSynthesisUtterance("Time's up. Thank you for attempting this mock test.");
+                msg.pitch = 1.1;
+                msg.rate = 0.9;
+                window.speechSynthesis.speak(msg);
+            } catch(e) {}
+        }
+
+        // --- MATHEMATICAL RANK ENGINE & ANALYSIS ---
+        function generateResultDashboard() {
+            const historyBack = document.getElementById('history-result-back');
+            if (historyBack) historyBack.classList.toggle('hidden', !isHistoryMode);
+
+            // 1. Calculate Score
+            let correct = 0;
+            let wrong = 0;
+            let attempted = 0;
+			const TOTAL = rawData.length;
+			const MAX_SCORE = TOTAL * 1;
+            
+            userState.forEach((state, idx) => {
+                if (state.selectedOption !== null) {
+                    attempted++;
+                    if (state.selectedOption === rawData[idx].ans) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+                }
+            });
+
+            const score = (correct * 1) - (wrong * 0.33);
+            const accuracy = attempted > 0 ? ((correct / attempted) * 100).toFixed(1) : 0;
+
+            // 2. REAL LEADERBOARD RANK ENGINE
+            // Ranking is calculated from the attempts stored in this browser.
+            // For a true cross-device/all-student rank, replace getHistory() with a shared
+            // database/API (e.g. Supabase/Firebase). This engine deliberately does NOT use
+            // a fake fixed population such as 5,000 users.
+            const currentCandidateEl = document.getElementById('candidate-name');
+            const currentCandidate = (isHistoryMode && activeHistoryAttempt)
+                ? String(activeHistoryAttempt.candidateName || '').trim()
+                : (currentCandidateEl ? String(currentCandidateEl.value || '').trim() : '');
+
+            const currentAttempt = {
+                id: isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now(),
+                candidateName: currentCandidate || ('Student #' + (isHistoryMode && activeHistoryAttempt ? activeHistoryAttempt.id : Date.now())),
+                marks: Number(score.toFixed(2)),
+                accuracy: Number(accuracy),
+                correct: correct,
+                wrong: wrong,
+                timeTaken: Math.max(0, TEST_DURATION_SECONDS - timeLeft),
+                date: new Date().toISOString()
+            };
+
+            function getLeaderboardEntries() {
+                const history = getHistory();
+                const entries = history.map(a => ({
+                    id: a.id,
+                    candidateName: String(a.candidateName || '').trim(),
+                    marks: Number(a.marks || 0),
+                    accuracy: Number(a.accuracy || 0),
+                    correct: Number(a.correct || 0),
+                    wrong: Number(a.wrong || 0),
+                    timeTaken: Number(a.timeTaken || TEST_DURATION_SECONDS),
+                    date: a.date || ''
+                }));
+
+                // Ensure the attempt being displayed is present even if it has not been saved.
+                if (!entries.some(e => String(e.id) === String(currentAttempt.id))) entries.push(currentAttempt);
+
+                // One leaderboard position per student: if the same named student has multiple
+                // attempts, only their BEST attempt is counted. Blank names are treated as unique.
+                const bestByStudent = new Map();
+                entries.forEach((e, i) => {
+                    const key = e.candidateName
+                        ? 'name:' + e.candidateName.toLowerCase().replace(/\s+/g, ' ')
+                        : 'attempt:' + String(e.id || i);
+                    const old = bestByStudent.get(key);
+                    const better = !old ||
+                        e.marks > old.marks ||
+                        (e.marks === old.marks && e.accuracy > old.accuracy) ||
+                        (e.marks === old.marks && e.accuracy === old.accuracy && e.timeTaken < old.timeTaken);
+                    if (better) bestByStudent.set(key, e);
+                });
+
+                return Array.from(bestByStudent.values()).sort((a,b) => {
+                    if (b.marks !== a.marks) return b.marks - a.marks;
+                    if (b.correct !== a.correct) return b.correct - a.correct;
+                    if (b.accuracy !== a.accuracy) return b.accuracy - a.accuracy;
+                    if (a.timeTaken !== b.timeTaken) return a.timeTaken - b.timeTaken;
+                    return String(a.date).localeCompare(String(b.date));
+                });
+            }
+
+            const leaderboard = getLeaderboardEntries();
+            const targetEntry = (isHistoryMode && activeHistoryAttempt)
+                ? leaderboard.find(e => {
+                    const n1 = String(e.candidateName || '').trim().toLowerCase();
+                    const n2 = String(activeHistoryAttempt.candidateName || '').trim().toLowerCase();
+                    return n1 && n1 === n2;
+                }) || currentAttempt
+                : currentAttempt;
+
+            // Competition rank: students with a higher score occupy earlier positions.
+            // Equal scores receive the same rank (1, 1, 3), which is the standard exam convention.
+            const rank = 1 + leaderboard.filter(e => Number(e.marks) > Number(targetEntry.marks)).length;
+
+            // Percentile = percentage of students scoring below this student's score.
+            const lowerCount = leaderboard.filter(e => Number(e.marks) < Number(targetEntry.marks)).length;
+            const percentile = leaderboard.length <= 1
+                ? 100
+                : Math.max(0, Math.min(100, (lowerCount / (leaderboard.length - 1)) * 100));
+
+            // 3. Update result identity/details from the starting page
+            const paperEl = document.getElementById('paper-name-display');
+            const subjectEl = document.getElementById('subject-display');
+            const startDateEl = document.getElementById('current-date-display');
+            const resultCandidate = isHistoryMode && activeHistoryAttempt
+                ? (activeHistoryAttempt.candidateName || '')
+                : ((document.getElementById('candidate-name') || {}).value || '');
+            document.getElementById('res-paper-name').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.mockName ? activeHistoryAttempt.mockName : (paperEl ? paperEl.textContent.trim() : 'Round 1 Challenge Series');
+            document.getElementById('res-subject').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.subject ? activeHistoryAttempt.subject : (subjectEl ? subjectEl.textContent.trim() : 'Sectional Mock');
+            document.getElementById('res-candidate-name').innerText = resultCandidate.trim() || 'Aspirant';
+            document.getElementById('res-date').innerText = isHistoryMode && activeHistoryAttempt && activeHistoryAttempt.date ? activeHistoryAttempt.date : (startDateEl ? startDateEl.textContent.trim() : new Date().toLocaleDateString('en-GB'));
+
+            // 4. Update DOM Stats
+			document.getElementById('res-total').innerText = rawData.length;
+            document.getElementById('res-score').innerText = `${score.toFixed(1)} / ${MAX_SCORE}`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correct;
+            document.getElementById('res-wrong').innerText = wrong;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-rank').innerText = rank.toLocaleString();
+            const participantEl = document.getElementById('res-participant-count');
+            if (participantEl) participantEl.innerText = leaderboard.length.toLocaleString();
+            document.getElementById('res-percentile').innerText = `${percentile.toFixed(2)}%`;
+
+            // 4. Psychological Feedback Generator
+            let fbMsg, fbSub, fbColor;
+            if (score >= 40) {
+                fbMsg = "Excellent performance! You are on the path of selection.";
+                fbSub = "Target next mock: Maintain this consistency and aim for 45+.";
+                fbColor = "bg-green-50";
+            } else if (score >= 35) {
+                fbMsg = "Very Good attempt! Selection zone ke paas ho.";
+                fbSub = "Suggest improvement + push for 40+ next time.";
+                fbColor = "bg-blue-50";
+            } else if (score >= 25) {
+                fbMsg = "Decent start but needs solid improvement.";
+                fbSub = "Focus on weak areas and accuracy. Next target: 35+.";
+                fbColor = "bg-yellow-50";
+            } else {
+                fbMsg = "No issue, this is your starting point.";
+                fbSub = "Deeply analyze your mistakes below. Build concepts before speed.";
+                fbColor = "bg-red-50";
+            }
+            
+            document.getElementById('res-feedback-msg').innerText = fbMsg;
+            document.getElementById('res-feedback-sub').innerText = fbSub;
+            document.getElementById('res-feedback-bg').className = `absolute top-0 right-0 w-32 h-32 opacity-20 rounded-bl-full transform translate-x-10 -translate-y-10 ${fbColor}`;
+
+            // 5. Smart Insights
+            let insightsHTML = '';
+            if (wrong > 4 && accuracy > 0) {
+                insightsHTML += `<div class="bg-red-50 p-4 rounded-lg border border-red-100"><div class="font-bold text-red-700 mb-1">Mistake Pattern</div>You are losing heavy marks due to negative scoring. Focus on 100% accuracy rather than blind attempts.</div>`;
+            } else if (attempted < 15) {
+                insightsHTML += `<div class="bg-orange-50 p-4 rounded-lg border border-orange-100"><div class="font-bold text-orange-700 mb-1">Low Attempt Rate</div>Speed is an issue. Skip lengthy questions quickly to scan the whole paper.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-green-50 p-4 rounded-lg border border-green-100"><div class="font-bold text-green-700 mb-1">Good Selection Strategy</div>Your attempt vs accuracy ratio looks stable. Keep hunting for the easiest questions first.</div>`;
+            }
+
+            let maxTime = 0, slowQ = 0;
+            userState.forEach((s, i) => { if(s.timeSpent > maxTime) { maxTime = s.timeSpent; slowQ = i+1; } });
+            if (maxTime > 90) {
+                insightsHTML += `<div class="bg-purple-50 p-4 rounded-lg border border-purple-100"><div class="font-bold text-purple-700 mb-1">Time Trap Detected</div>You wasted too much time (approx ${Math.round(maxTime/60)} mins) on Q${slowQ}. Learn to skip ego-battles.</div>`;
+            } else {
+                insightsHTML += `<div class="bg-blue-50 p-4 rounded-lg border border-blue-100"><div class="font-bold text-blue-700 mb-1">Time Management</div>Time distribution looks decent. Remember the 3-5 sec rule for every question.</div>`;
+            }
+            document.getElementById('res-insights').innerHTML = insightsHTML;
+
+            renderAnalysisList('all');
+        }
+
+        function filterAnalysis(type) {
+            document.querySelectorAll('.an-filter').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+            event.target.classList.add('bg-blue-600', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            renderAnalysisList(type);
+        }
+
+        function renderAnalysisList(filter) {
+            const container = document.getElementById('analysis-container');
+            let html = '';
+
+            rawData.forEach((q, idx) => {
+                const state = userState[idx];
+                const isAttempted = state.selectedOption !== null;
+                const isCorrect = isAttempted && state.selectedOption === q.ans;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (!isAttempted || isCorrect)) return;
+                if (filter === 'skipped' && isAttempted) return;
+
+                let badge = '';
+                if (!isAttempted) badge = '<span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Skipped</span>';
+                else if (isCorrect) badge = '<span class="bg-green-100 text-green-700 border border-green-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-check mr-1"></i> Correct</span>';
+                else badge = '<span class="bg-red-100 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-bold uppercase"><i class="fas fa-times mr-1"></i> Incorrect</span>';
+
+                let optionsHtml = '';
+                q.optE.forEach((optText, i) => {
+                    let optClass = "border-slate-200 bg-white";
+                    let marker = "";
+                    
+                    if (i === q.ans) {
+                        optClass = "border-green-500 bg-green-50 font-bold text-green-900"; 
+                        marker = '<i class="fas fa-check-circle text-green-500 ml-auto"></i>';
+                    } else if (isAttempted && state.selectedOption === i) {
+                        optClass = "border-red-500 bg-red-50 font-bold text-red-900"; 
+                        marker = '<i class="fas fa-times-circle text-red-500 ml-auto"></i>';
+                    }
+
+                    optionsHtml += `
+                        <div class="p-3 border rounded mb-2 flex items-center ${optClass}">
+                            <span class="mr-3 font-semibold">${String.fromCharCode(65 + i)}.</span> 
+                            <span>${optText}</span>
+                            ${marker}
+                        </div>
+                    `;
+                });
+
+                html += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 border-b border-slate-200 p-4 flex justify-between items-center">
+                            <span class="font-bold text-slate-800">Question ${idx + 1}</span>
+                            ${badge}
+                        </div>
+                        <div class="p-5">
+                            <div class="mb-6">
+                                <p class="text-slate-800 font-medium mb-3 whitespace-pre-wrap"><span class="font-bold text-blue-600">EN:</span> ${q.eng}</p>
+                                <p class="text-slate-600 font-medium whitespace-pre-wrap"><span class="font-bold text-blue-600">HI:</span> ${q.hin}</p>
+                            </div>
+                            
+                            <div class="mb-6 max-w-3xl">
+                                ${optionsHtml}
+                            </div>
+                            
+                            <div class="mb-6 p-4 bg-slate-50 rounded border border-slate-200 flex flex-wrap gap-4 text-sm">
+                                <div><span class="text-slate-500 font-semibold">Your Answer:</span> <span class="font-bold ${isCorrect ? 'text-green-600' : (isAttempted ? 'text-red-600' : 'text-slate-500')}">${isAttempted ? String.fromCharCode(65 + state.selectedOption) : 'Not Attempted'}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Correct Answer:</span> <span class="font-bold text-green-600">${String.fromCharCode(65 + q.ans)}</span></div>
+                                <div><span class="text-slate-500 font-semibold">Time Spent:</span> <span class="font-bold text-slate-700">${state.timeSpent} sec</span></div>
+                            </div>
+
+                            <div class="bg-blue-50/50 rounded-lg border border-blue-100 p-5 mt-4">
+                                <h4 class="font-bold text-blue-800 flex items-center gap-2 mb-3">
+                                    <i class="fas fa-book-open"></i> Detailed Solution
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">English Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solE}</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-blue-500 mb-2 uppercase tracking-wider">Hindi Explanation</div>
+                                        <div class="text-slate-700 text-sm whitespace-pre-wrap leading-relaxed">${q.solH}</div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-blue-200/50 text-center">
+                                    <p class="text-xs font-semibold text-slate-500">For advanced approaches and doubt solving, ask in the <a href="https://t.me/ExamRojgaar" target="_blank" class="text-blue-600 underline">ER-UPDATES Telegram Group</a>.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        switchScreen('home-screen');
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const el = document.getElementById('current-date-display');
+            if (el) {
+                const d = new Date();
+                el.textContent = String(d.getDate()).padStart(2, '0') + '/' +
+                    String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

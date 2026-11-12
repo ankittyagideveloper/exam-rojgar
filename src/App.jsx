@@ -25,6 +25,15 @@ import ChemistryFullTest1MockTestPage from "./pages/ChemistryFullTest1MockTestPa
 import MatterMetalsAtomicStructureTest1MockTestPage from "./pages/MatterMetalsAtomicStructureTest1MockTestPage";
 import SoapsDetergentsGlassPolymerisationTest1MockTestPage from "./pages/SoapsDetergentsGlassPolymerisationTest1MockTestPage";
 import ThermodynamicsCarbonCompoundsTest1MockTestPage from "./pages/ThermodynamicsCarbonCompoundsTest1MockTestPage";
+import CellBiologyCellDivisionClassificationOrganismsMicrobiologyTest1MockTestPage from "./pages/CellBiologyCellDivisionClassificationOrganismsMicrobiologyTest1MockTestPage";
+import GeneticsHeredityOrganicEvolutionTest1MockTestPage from "./pages/GeneticsHeredityOrganicEvolutionTest1MockTestPage";
+import DigestiveSystemHumanNutritionTest1MockTestPage from "./pages/DigestiveSystemHumanNutritionTest1MockTestPage";
+import PlantMorphologyReproductionTest1MockTestPage from "./pages/PlantMorphologyReproductionTest1MockTestPage";
+import PlantTissuePhysiologyHormonesDiseasesTest1MockTestPage from "./pages/PlantTissuePhysiologyHormonesDiseasesTest1MockTestPage";
+import AnimalTissuesBloodSkeletalSystemTest1MockTestPage from "./pages/AnimalTissuesBloodSkeletalSystemTest1MockTestPage";
+import CirculatoryLymphaticExcretoryRespiratorySystemsTest1MockTestPage from "./pages/CirculatoryLymphaticExcretoryRespiratorySystemsTest1MockTestPage";
+import NervousEndocrineSystemsTest1MockTestPage from "./pages/NervousEndocrineSystemsTest1MockTestPage";
+import VitaminsMineralsHumanDiseasesTest1MockTestPage from "./pages/VitaminsMineralsHumanDiseasesTest1MockTestPage";
 
 // Lazy-loaded pages and secondary routes to dramatically decrease initial bundle size & JavaScript execution time
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -493,6 +502,24 @@ const router = createBrowserRouter([
       { path: "soaps-detergents-glass-polymerisation-test-1", element: <SoapsDetergentsGlassPolymerisationTest1MockTestPage /> },
 
       { path: "thermodynamics-carbon-compounds-test-1", element: <ThermodynamicsCarbonCompoundsTest1MockTestPage /> },
+    
+      { path: "cell-biology-cell-division-classification-organisms-microbiology-test-1", element: <CellBiologyCellDivisionClassificationOrganismsMicrobiologyTest1MockTestPage /> },
+    
+      { path: "genetics-heredity-organic-evolution-test-1", element: <GeneticsHeredityOrganicEvolutionTest1MockTestPage /> },
+    
+      { path: "digestive-system-human-nutrition-test-1", element: <DigestiveSystemHumanNutritionTest1MockTestPage /> },
+    
+      { path: "plant-morphology-reproduction-test-1", element: <PlantMorphologyReproductionTest1MockTestPage /> },
+    
+      { path: "plant-tissue-physiology-hormones-diseases-test-1", element: <PlantTissuePhysiologyHormonesDiseasesTest1MockTestPage /> },
+    
+      { path: "animal-tissues-blood-skeletal-system-test-1", element: <AnimalTissuesBloodSkeletalSystemTest1MockTestPage /> },
+    
+      { path: "circulatory-lymphatic-excretory-respiratory-systems-test-1", element: <CirculatoryLymphaticExcretoryRespiratorySystemsTest1MockTestPage /> },
+    
+      { path: "nervous-endocrine-systems-test-1", element: <NervousEndocrineSystemsTest1MockTestPage /> },
+    
+      { path: "vitamins-minerals-human-diseases-test-1", element: <VitaminsMineralsHumanDiseasesTest1MockTestPage /> },
     ],
   },
   {
