@@ -128,7 +128,7 @@ const FreeTestsPage = () => {
 
       {/* Category / Subcategory cards */}
       {(isRoot || current?.subcategories) && (
-        <div className="m-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="mx-5 mt-5 mb-28 lg:mb-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {Object.values(
             isRoot ? freeTestsData.categories : current.subcategories ?? {}
           ).map((cat, i) => (
