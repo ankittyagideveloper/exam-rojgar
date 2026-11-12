@@ -26,9 +26,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "सोडियम नाइट्रेट और पोटैशियम नाइट्रेट",
         "कैल्शियम सल्फेट और मैग्नीशियम सल्फेट"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Temporary hardness is mainly caused by dissolved bicarbonates of calcium and magnesium. It can generally be removed by boiling.",
       "solH": "अस्थायी कठोरता मुख्यतः कैल्शियम और मैग्नीशियम के घुले हुए बाइकार्बोनेट के कारण होती है। इसे सामान्यतः उबालकर दूर किया जा सकता है।"
     },
@@ -48,9 +46,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "चीनी मिलाना",
         "जमाना"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Boiling decomposes bicarbonates and causes insoluble precipitates to form, reducing temporary hardness.",
       "solH": "उबालने से बाइकार्बोनेट विघटित होते हैं और अघुलनशील अवक्षेप बनते हैं, जिससे अस्थायी कठोरता कम होती है।"
     },
@@ -70,9 +66,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "सोडियम कार्बोनेट",
         "हाइड्रोक्लोरिक अम्ल"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Washing soda (Na₂CO₃·10H₂O) supplies carbonate ions that precipitate calcium and magnesium ions.",
       "solH": "वाशिंग सोडा (Na₂CO₃·10H₂O) कार्बोनेट आयन देता है, जो कैल्शियम और मैग्नीशियम आयनों को अवक्षेपित कर देते हैं।"
     },
@@ -92,9 +86,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "क्लोरीन लैंप",
         "आयन-विनिमय सॉफ्टनर"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "A sodium-cycle ion-exchange softener replaces hardness-causing calcium and magnesium ions with sodium ions.",
       "solH": "सोडियम-चक्र आयन-विनिमय सॉफ्टनर कठोरता पैदा करने वाले कैल्शियम और मैग्नीशियम आयनों को सोडियम आयनों से बदल देता है।"
     },
@@ -114,9 +106,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "कठोर जल साबुन को सोडियम क्लोराइड में बदल देता है।",
         "साबुन जल से सभी घुले हुए लवण हटा देता है।"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Calcium and magnesium ions react with soap to form insoluble scum, reducing lather formation.",
       "solH": "कैल्शियम और मैग्नीशियम आयन साबुन के साथ अभिक्रिया करके अघुलनशील मैल बनाते हैं, जिससे झाग कम बनता है।"
     },
@@ -136,9 +126,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "आर्गन",
         "हाइड्रोजन"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Argon is a noble gas with a filled outer electron shell and very low chemical reactivity under ordinary conditions.",
       "solH": "आर्गन एक उत्कृष्ट गैस है। इसका बाहरी इलेक्ट्रॉन कोश पूर्ण होता है और सामान्य परिस्थितियों में इसकी रासायनिक अभिक्रियाशीलता बहुत कम होती है।"
     },
@@ -158,9 +146,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "आर्गन",
         "क्रिप्टॉन"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Neon produces a characteristic reddish-orange glow in discharge tubes.",
       "solH": "निऑन गैस डिस्चार्ज ट्यूब में विशिष्ट लाल-नारंगी चमक उत्पन्न करती है।"
     },
@@ -180,9 +166,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "केवल पोटाश काँच",
         "प्रकाशीय काँच"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Optical glass is manufactured with controlled optical properties for lenses, prisms and other optical instruments.",
       "solH": "प्रकाशीय काँच को लेंस, प्रिज्म और अन्य प्रकाशीय उपकरणों के लिए नियंत्रित प्रकाशीय गुणों के साथ बनाया जाता है।"
     },
@@ -202,9 +186,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "केवल लेड काँच",
         "केवल फ्यूज्ड सिलिका"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Potash-lime glass contains potassium compounds and lime; traditional hard glass formulations have been used for laboratory glassware. Modern laboratory glassware often uses borosilicate glass.",
       "solH": "पोटाश-चूना काँच में पोटैशियम यौगिक और चूना होता है। पारंपरिक कठोर काँच का उपयोग प्रयोगशाला के उपकरणों में हुआ है। आधुनिक प्रयोगशालाओं में प्रायः बोरोसिलिकेट काँच उपयोग होता है।"
     },
@@ -224,9 +206,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "सभी धातुएँ पिघलती हैं",
         "जल ऑक्सीजन में बदल जाता है"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Polymerisation joins many monomer units to form a polymer, such as ethene forming polyethene.",
       "solH": "बहुलकीकरण में अनेक मोनोमर इकाइयाँ जुड़कर बहुलक बनाती हैं, जैसे एथीन से पॉलीएथीन बनना।"
     },
@@ -246,9 +226,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "प्लास्टिक की थैलियाँ और पैकेजिंग फिल्में",
         "सीमेंट"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Polyethene is a widely used plastic for bags, films, containers and packaging.",
       "solH": "पॉलीएथीन का उपयोग थैलियों, फिल्मों, कंटेनरों और पैकेजिंग में व्यापक रूप से किया जाता है।"
     },
@@ -268,9 +246,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "मेलामाइन",
         "टेफ्लॉन (PTFE)"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Teflon, or polytetrafluoroethylene (PTFE), has a low-friction surface and excellent chemical resistance.",
       "solH": "टेफ्लॉन या पॉलीटेट्राफ्लुओरोएथिलीन (PTFE) की सतह पर घर्षण कम होता है और इसका रासायनिक प्रतिरोध अच्छा होता है।"
     },
@@ -290,9 +266,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "प्राकृतिक रबर",
         "केवल जैव-अपघटनीय स्टार्च"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Bakelite is a thermosetting polymer that becomes permanently rigid after curing and cannot be remoulded by heating.",
       "solH": "बैकेलाइट एक थर्मोसेटिंग बहुलक है। कठोर होने के बाद इसे गर्म करके दोबारा सामान्य रूप से ढाला नहीं जा सकता।"
     },
@@ -312,9 +286,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "सूती रेशे",
         "काँच की बोतलें"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Melamine-formaldehyde is a hard thermosetting plastic used in tableware, laminates and surface coatings.",
       "solH": "मेलामाइन-फॉर्मेल्डिहाइड कठोर थर्मोसेटिंग प्लास्टिक है, जिसका उपयोग खाने के बर्तनों, लैमिनेट और सतह की परतों में होता है।"
     },
@@ -334,9 +306,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "संश्लेषित पॉलीएमाइड",
         "अक्रिय गैस"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Nylon is a synthetic polyamide used in textiles, ropes, engineering components and many other products.",
       "solH": "नायलॉन एक संश्लेषित पॉलीएमाइड है, जिसका उपयोग कपड़ों, रस्सियों, इंजीनियरिंग पुर्जों और अन्य उत्पादों में होता है।"
     },
@@ -356,9 +326,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "शुद्ध काँच बनाने में",
         "पैकेजिंग, कंटेनर, रेशे और घरेलू सामान"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Polypropylene is a versatile thermoplastic used in packaging, containers, fibres, automotive parts and household goods.",
       "solH": "पॉलीप्रोपिलीन एक बहुउपयोगी थर्मोप्लास्टिक है, जिसका उपयोग पैकेजिंग, कंटेनर, रेशे, वाहन के पुर्जों और घरेलू सामान में होता है।"
     },
@@ -378,9 +346,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "रबर को धातु में बदलना",
         "सभी कार्बन परमाणुओं को हटाना"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Vulcanisation commonly heats rubber with sulphur to create cross-links, improving strength, elasticity and resistance to wear.",
       "solH": "वल्कनीकरण में सामान्यतः रबर को सल्फर के साथ गर्म करके क्रॉस-लिंक बनाए जाते हैं, जिससे मजबूती, प्रत्यास्थता और घिसाव प्रतिरोध बढ़ता है।"
     },
@@ -400,9 +366,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "थर्मोसेटिंग प्लास्टिक दोबारा गर्म करने पर हमेशा पिघलता है।",
         "थर्मोप्लास्टिक हमेशा धातुओं से बनते हैं।"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Thermoplastics soften on heating and can generally be reshaped. Thermosetting plastics form a cross-linked structure and do not remelt normally.",
       "solH": "थर्मोप्लास्टिक गर्म करने पर नरम होकर दोबारा ढाले जा सकते हैं। थर्मोसेटिंग प्लास्टिक में क्रॉस-लिंक संरचना बनती है और वे सामान्यतः दोबारा नहीं पिघलते।"
     },
@@ -422,9 +386,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "लंबी शृंखला वाले वसीय अम्ल",
         "उत्कृष्ट गैसें"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Soaps are commonly sodium or potassium salts of long-chain fatty acids.",
       "solH": "साबुन सामान्यतः लंबी शृंखला वाले वसीय अम्लों के सोडियम या पोटैशियम लवण होते हैं।"
     },
@@ -444,9 +406,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "उनमें हमेशा केवल सोडियम क्लोराइड होता है।",
         "वे सामान्य साबुन की तरह कैल्शियम और मैग्नीशियम आयनों के साथ सामान्यतः अघुलनशील मैल नहीं बनाते।"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Many synthetic detergents remain effective in hard water because they do not form the same insoluble calcium and magnesium salts as soaps.",
       "solH": "कई संश्लेषित डिटर्जेंट कठोर जल में भी प्रभावी रहते हैं, क्योंकि वे साबुन की तरह कैल्शियम और मैग्नीशियम के अघुलनशील लवण नहीं बनाते।"
     },
@@ -466,9 +426,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "कीटाणुनाशक",
         "प्रजनन-रोधी दवाएँ"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Analgesics are medicines used to relieve pain.",
       "solH": "पीड़ानाशक वे दवाएँ हैं जिनका उपयोग दर्द से राहत देने के लिए किया जाता है।"
     },
@@ -488,9 +446,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "पेनिसिलिन",
         "क्लोरीन गैस"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Magnesium hydroxide neutralises excess stomach acid and is used in some antacid products.",
       "solH": "मैग्नीशियम हाइड्रॉक्साइड आमाशय के अतिरिक्त अम्ल को उदासीन करता है और कुछ एंटासिड उत्पादों में उपयोग होता है।"
     },
@@ -510,9 +466,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "कीटाणुनाशक सामान्यतः निर्जीव सतहों पर उपयोग होते हैं, जबकि एंटीसेप्टिक जीवित ऊतकों के लिए बनाए जाते हैं।",
         "एंटीसेप्टिक केवल धातुओं को साफ करने में उपयोग होते हैं।"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Disinfectants are intended mainly for non-living surfaces, while antiseptics are formulated for use on living tissue. Products must be used according to their labels.",
       "solH": "कीटाणुनाशक मुख्यतः निर्जीव सतहों के लिए होते हैं, जबकि एंटीसेप्टिक जीवित ऊतकों पर उपयोग के लिए बनाए जाते हैं। उत्पादों का उपयोग उनके निर्देशों के अनुसार करना चाहिए।"
     },
@@ -532,9 +486,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "जिप्सम",
         "पैरासिटामोल"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Paracetamol is commonly used to reduce fever and relieve pain when taken as directed.",
       "solH": "पैरासिटामोल का उपयोग निर्देशानुसार बुखार कम करने और दर्द से राहत देने के लिए किया जाता है।"
     },
@@ -554,9 +506,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "पीड़ानाशक",
         "ज्वरनाशक"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Contraceptives are used to prevent pregnancy. Hormonal contraceptives are one category; the appropriate method depends on individual circumstances and medical advice.",
       "solH": "गर्भनिरोधकों का उपयोग गर्भधारण रोकने के लिए होता है। हार्मोनल गर्भनिरोधक इसकी एक श्रेणी हैं; उपयुक्त विधि व्यक्ति की परिस्थिति और चिकित्सकीय सलाह पर निर्भर करती है।"
     },
@@ -576,9 +526,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "एस्पार्टेम",
         "स्टार्च"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Aspartame is a low-calorie artificial sweetener used in some foods and beverages.",
       "solH": "एस्पार्टेम कम कैलोरी वाला कृत्रिम मिठास देने वाला पदार्थ है, जिसका उपयोग कुछ खाद्य पदार्थों और पेय में होता है।"
     },
@@ -598,9 +546,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "बिना बुझा चूना",
         "भारी जल"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Sodium benzoate is a common food preservative used in suitable acidic foods and beverages within permitted limits.",
       "solH": "सोडियम बेंजोएट एक सामान्य खाद्य परिरक्षक है, जिसका उपयोग निर्धारित सीमा के भीतर उपयुक्त अम्लीय खाद्य पदार्थों और पेय में किया जाता है।"
     },
@@ -620,9 +566,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "दोनों हानिरहित धातुएँ हैं।",
         "क्लोरीन हरी-पीली गैस और ब्रोमीन कमरे के तापमान पर लाल-भूरा द्रव है।"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Chlorine is a toxic greenish-yellow gas; bromine is a toxic, volatile reddish-brown liquid. Chlorine is used for water disinfection and bromine compounds have several industrial uses.",
       "solH": "क्लोरीन विषैली हरी-पीली गैस है और ब्रोमीन विषैला, वाष्पशील लाल-भूरा द्रव है। क्लोरीन जल कीटाणुशोधन में और ब्रोमीन के यौगिक विभिन्न औद्योगिक कार्यों में उपयोग होते हैं।"
     },
@@ -642,9 +586,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "बिना बुझा चूना—Ca(OH)₂; बुझा चूना—CaO; जिप्सम—CaSO₄; प्लास्टर ऑफ पेरिस—CaCO₃",
         "बिना बुझा चूना—Na₂CO₃; बुझा चूना—CaCl₂; जिप्सम—CaO; प्लास्टर ऑफ पेरिस—H₂O"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Quicklime is CaO, slaked lime is Ca(OH)₂, gypsum is calcium sulfate dihydrate, and plaster of Paris is calcium sulfate hemihydrate.",
       "solH": "बिना बुझा चूना CaO, बुझा चूना Ca(OH)₂, जिप्सम कैल्शियम सल्फेट डाइहाइड्रेट और प्लास्टर ऑफ पेरिस कैल्शियम सल्फेट हेमीहाइड्रेट है।"
     },
@@ -664,9 +606,7 @@ export const soapsDetergentsGlassPolymerisationTest1MockData = {
         "भारी जल का सूत्र H₂O₂ है।",
         "ट्रिटियम एक स्थिर, गैर-रेडियोधर्मी समस्थानिक है।"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Protium has one proton and no neutron; deuterium has one proton and one neutron; tritium has one proton and two neutrons and is radioactive. Heavy water is D₂O.",
       "solH": "प्रोटियम में एक प्रोटॉन और कोई न्यूट्रॉन नहीं होता; ड्यूटेरियम में एक प्रोटॉन और एक न्यूट्रॉन होता है; ट्रिटियम में एक प्रोटॉन और दो न्यूट्रॉन होते हैं तथा यह रेडियोधर्मी है। भारी जल का सूत्र D₂O है।"
     }

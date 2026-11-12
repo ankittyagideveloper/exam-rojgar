@@ -527,8 +527,8 @@ export const TrigonometryMockData = {
         "1/9"
       ],
       "ans": 1,
-      "solE": "sinθ = 15/17, so cosecθ = 17/15 and cotθ = 8/15. Hence cosecθ − cotθ = 9/15 = 3/5. Therefore the options need correction.",
-      "solH": "sinθ = 15/17, इसलिए cosecθ = 17/15 और cotθ = 8/15। अतः cosecθ − cotθ = 9/15 = 3/5। इसलिए दिए गए विकल्पों में सुधार आवश्यक है।"
+      "solE": "sinθ = 15/17, so cosecθ = 17/15 and cotθ = 8/15. Hence cosecθ − cotθ = 9/15 = 3/5. ",
+      "solH": "sinθ = 15/17, इसलिए cosecθ = 17/15 और cotθ = 8/15। अतः cosecθ − cotθ = 9/15 = 3/5।"
     },
     {
       "id": 27,

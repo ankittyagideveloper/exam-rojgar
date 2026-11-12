@@ -383,9 +383,9 @@ export const polygonTest1MockData = {
       "8",
       "6"
     ],
-    ans: 3,
-    solE: "Exterior angle = 180 − 120 = 60°. Number of sides = 360/60 = 6. Number of diagonals = n(n − 3)/2 = 6 × 3/2 = 9. Therefore, the correct answer is 9. The originally provided answer 6 is incorrect.",
-    solH: "बाह्य कोण = 180 − 120 = 60°। भुजाओं की संख्या = 360/60 = 6। विकर्णों की संख्या = n(n − 3)/2 = 6 × 3/2 = 9। अतः सही उत्तर 9 है। मूल प्रश्न में दिया गया उत्तर 6 गलत है।"
+    ans: 0,
+    solE: "Exterior angle = 180 − 120 = 60°. Number of sides = 360/60 = 6. Number of diagonals = n(n − 3)/2 = 6 × 3/2 = 9. Therefore, the correct answer is 9.",
+    solH: "बाह्य कोण = 180 − 120 = 60°। भुजाओं की संख्या = 360/60 = 6। विकर्णों की संख्या = n(n − 3)/2 = 6 × 3/2 = 9। अतः सही उत्तर 9 है।"
   },
 
   {
@@ -467,7 +467,7 @@ export const polygonTest1MockData = {
       "90",
       "135"
     ],
-    ans: 1,
+    ans: 2,
     solE: "Number of sides = 360/24 = 15. Number of diagonals = n(n − 3)/2 = 15 × 12/2 = 90. Therefore, the correct answer is 90.",
     solH: "भुजाओं की संख्या = 360/24 = 15। विकर्णों की संख्या = n(n − 3)/2 = 15 × 12/2 = 90। अतः सही उत्तर 90 है।"
   },
@@ -488,7 +488,7 @@ export const polygonTest1MockData = {
       "4320°",
       "4500°"
     ],
-    ans: 2,
+    ans: 0,
     solE: "Number of sides = 360/15 = 24. Sum of interior angles = (n − 2) × 180 = (24 − 2) × 180 = 22 × 180 = 3960°. Therefore, the correct answer is 3960°. The options should be checked: 3960° is option 0.",
     solH: "भुजाओं की संख्या = 360/15 = 24। आंतरिक कोणों का योग = (n − 2) × 180 = (24 − 2) × 180 = 22 × 180 = 3960°। अतः सही उत्तर 3960° है, जो विकल्प 0 है।"
   },
@@ -509,7 +509,7 @@ export const polygonTest1MockData = {
       "10",
       "12"
     ],
-    ans: 0,
+    ans: 1,
     solE: "Exterior angle = 180° − 150° = 30°. Number of sides = 360/30 = 12. From one vertex, the number of diagonals = n − 3 = 12 − 3 = 9. Therefore, the correct answer is 9, which is option 1.",
     solH: "बाह्य कोण = 180° − 150° = 30°। भुजाओं की संख्या = 360/30 = 12। किसी एक शीर्ष से विकर्णों की संख्या = n − 3 = 12 − 3 = 9। अतः सही उत्तर 9 है, जो विकल्प 1 है।"
   },
@@ -530,7 +530,7 @@ export const polygonTest1MockData = {
       "35",
       "44"
     ],
-    ans: 1,
+    ans: 2,
     solE: "Let the exterior angle be x. Then interior angle = 4x. Since interior + exterior = 180°, 5x = 180°, so x = 36°. Number of sides = 360/36 = 10. Number of diagonals = n(n − 3)/2 = 10 × 7/2 = 35. Therefore, the correct answer is 35, which is option 2.",
     solH: "बाह्य कोण = x मान लें। तब आंतरिक कोण = 4x होगा। आंतरिक कोण + बाह्य कोण = 180°। इसलिए 5x = 180°, अतः x = 36°। भुजाओं की संख्या = 360/36 = 10। विकर्णों की संख्या = n(n − 3)/2 = 10 × 7/2 = 35। अतः सही उत्तर 35 है, जो विकल्प 2 है।"
   }

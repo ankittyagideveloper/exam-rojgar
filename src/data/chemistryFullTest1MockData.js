@@ -26,9 +26,7 @@ export const chemistryFullTest1MockData = {
         "1 और 2 दोनों",
         "न तो 1, न ही 2"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Statement 1 is correct. Bicarbonates cause temporary hardness. Permanent hardness due to chlorides and sulphates generally requires methods such as washing soda treatment or ion exchange.",
       "solH": "कथन 1 सही है। बाइकार्बोनेट अस्थायी कठोरता उत्पन्न करते हैं। क्लोराइड और सल्फेट के कारण होने वाली स्थायी कठोरता के लिए सामान्यतः धोने के सोडे या आयन-विनिमय जैसी विधियाँ आवश्यक होती हैं।"
     },
@@ -48,9 +46,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Hardness ions consume soap by forming insoluble scum, leaving less soap available for cleansing and lather formation.",
       "solH": "कठोरता उत्पन्न करने वाले आयन अघुलनशील मैल बनाकर साबुन का उपयोग कर लेते हैं। इससे सफाई और झाग बनाने के लिए कम साबुन उपलब्ध रहता है।"
     },
@@ -70,9 +66,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-3, C-4, D-2",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Temporary hardness is associated with bicarbonates; permanent hardness with chlorides and sulphates. Ion exchange replaces hardness ions, while scum consists of insoluble soap salts.",
       "solH": "अस्थायी कठोरता बाइकार्बोनेट तथा स्थायी कठोरता क्लोराइड और सल्फेट से संबंधित है। आयन-विनिमय कठोरता आयनों को बदलता है, जबकि मैल साबुन के अघुलनशील लवणों से बनता है।"
     },
@@ -92,9 +86,7 @@ export const chemistryFullTest1MockData = {
         "सभी कृत्रिम अपमार्जक जलीय पारितंत्रों के लिए पूरी तरह हानिरहित हैं",
         "उनकी सफाई क्रिया में चिकनाई और जल के साथ अंतःक्रिया होती है"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Environmental effects depend on the detergent's composition and biodegradability. It is incorrect to claim that every synthetic detergent is completely harmless.",
       "solH": "अपमार्जकों का पर्यावरणीय प्रभाव उनकी संरचना और जैव-अपघटन क्षमता पर निर्भर करता है। प्रत्येक कृत्रिम अपमार्जक को पूरी तरह हानिरहित कहना गलत है।"
     },
@@ -114,9 +106,7 @@ export const chemistryFullTest1MockData = {
         "1 और 2 दोनों",
         "न तो 1, न ही 2"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Statement 1 is correct. Xenon and krypton can form certain compounds under suitable conditions, so statement 2 is false.",
       "solH": "कथन 1 सही है। जेनॉन और क्रिप्टॉन उपयुक्त परिस्थितियों में कुछ यौगिक बना सकते हैं, इसलिए कथन 2 गलत है।"
     },
@@ -136,9 +126,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Argon is used as a relatively inert filling gas in many incandescent bulbs to reduce unwanted reactions involving the filament.",
       "solH": "फिलामेंट से संबंधित अवांछित अभिक्रियाएँ कम करने के लिए अनेक तापदीप्त बल्बों में अपेक्षाकृत निष्क्रिय गैस आर्गन भरी जाती है।"
     },
@@ -158,9 +146,7 @@ export const chemistryFullTest1MockData = {
         "A-2, B-3, C-4, D-1",
         "A-4, B-1, C-3, D-2"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Helium is useful in balloons and cryogenics, neon in signs, argon in protective atmospheres, and xenon in certain high-intensity lamps.",
       "solH": "हीलियम गुब्बारों और निम्नतापीय उपयोगों, नियॉन संकेत प्रकाश, आर्गन सुरक्षात्मक वातावरण तथा जेनॉन कुछ उच्च-तीव्रता वाले लैम्पों में उपयोगी है।"
     },
@@ -180,9 +166,7 @@ export const chemistryFullTest1MockData = {
         "काँच सामान्यतः एक अक्रिस्टलीय ठोस है",
         "साधारण सोडा-लाइम काँच अचानक तापमान परिवर्तन का हमेशा बोरोसिलिकेट काँच से बेहतर प्रतिरोध करता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Borosilicate glass generally has better thermal-shock resistance because of its lower thermal expansion.",
       "solH": "बोरोसिलिकेट काँच का तापीय प्रसार कम होने के कारण यह सामान्यतः तापीय आघात का बेहतर प्रतिरोध करता है।"
     },
@@ -202,9 +186,7 @@ export const chemistryFullTest1MockData = {
         "1 और 2 दोनों",
         "न तो 1, न ही 2"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Statement 1 describes polymer structure. Natural polymers include cellulose, starch, proteins and natural rubber, so statement 2 is false.",
       "solH": "कथन 1 बहुलक की संरचना बताता है। सेल्यूलोज, स्टार्च, प्रोटीन और प्राकृतिक रबर प्राकृतिक बहुलक हैं, इसलिए कथन 2 गलत है।"
     },
@@ -224,9 +206,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Cross-linking gives Bakelite a rigid structure that does not soften for remoulding in the same way as thermoplastics.",
       "solH": "क्रॉस-लिंकिंग बैकेलाइट को कठोर संरचना देती है, जो तापसुघट्य प्लास्टिक की तरह दोबारा ढालने के लिए नरम नहीं होती।"
     },
@@ -246,9 +226,7 @@ export const chemistryFullTest1MockData = {
         "A-4, B-1, C-2, D-3",
         "A-3, B-4, C-1, D-2"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "PTFE is used for non-stick coatings, nylon is a polyamide fibre, Bakelite is thermosetting, and polyethene is a common thermoplastic.",
       "solH": "PTFE नॉन-स्टिक परत, नायलॉन पॉलीएमाइड रेशे, बैकेलाइट तापदृढ़ घटकों तथा पॉलीथीन सामान्य तापसुघट्य उत्पादों में उपयोग होता है।"
     },
@@ -268,9 +246,7 @@ export const chemistryFullTest1MockData = {
         "वल्कनीकरण विरूपण के प्रति प्रतिरोध बढ़ा सकता है",
         "वल्कनीकरण रबर की सभी बहुलक शृंखलाओं को अलग-अलग मोनोमर में घोल देता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Vulcanisation forms cross-links between polymer chains; it does not break all chains into monomers.",
       "solH": "वल्कनीकरण बहुलक शृंखलाओं के बीच क्रॉस-लिंक बनाता है; यह सभी शृंखलाओं को मोनोमर में नहीं तोड़ता।"
     },
@@ -290,9 +266,7 @@ export const chemistryFullTest1MockData = {
         "केवल 1 और 2",
         "1, 2 और 3"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Statements 1 and 2 are correct. Biodegradability varies with detergent chemistry, so statement 3 is false.",
       "solH": "कथन 1 और 2 सही हैं। अपमार्जकों की जैव-अपघटन क्षमता उनकी रासायनिक संरचना पर निर्भर करती है, इसलिए कथन 3 गलत है।"
     },
@@ -312,9 +286,7 @@ export const chemistryFullTest1MockData = {
         "अम्लनाशक — पेट के अतिरिक्त अम्ल का उदासीनीकरण",
         "प्रतिसेप्टिक — रक्तप्रवाह के भीतर सभी रोगजनकों को मारकर प्रत्येक संक्रमण का उपचार"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Antiseptics are used on living tissues to inhibit microorganisms. They are not a universal treatment for bloodstream infections.",
       "solH": "प्रतिसेप्टिक जीवित ऊतकों पर सूक्ष्मजीवों को रोकने के लिए उपयोग होते हैं। वे रक्तप्रवाह के संक्रमणों का सार्वभौमिक उपचार नहीं हैं।"
     },
@@ -334,9 +306,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Paracetamol has antipyretic activity, meaning it can reduce fever; it also has analgesic activity.",
       "solH": "पैरासिटामोल में ज्वरनाशक गुण होता है, अर्थात यह बुखार कम कर सकता है। इसमें पीड़ानाशक गुण भी होता है।"
     },
@@ -356,9 +326,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-1, C-4, D-2",
         "A-1, B-2, C-3, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Magnesium hydroxide neutralises stomach acid; paracetamol reduces pain and fever; sodium benzoate preserves some foods; aspartame sweetens foods.",
       "solH": "मैग्नीशियम हाइड्रॉक्साइड पेट के अम्ल को उदासीन करता है; पैरासिटामोल दर्द और बुखार कम करता है; सोडियम बेंजोएट कुछ खाद्य पदार्थों का परिरक्षण करता है; एस्पार्टेम मिठास देता है।"
     },
@@ -378,9 +346,7 @@ export const chemistryFullTest1MockData = {
         "किसी रसायन की उपयुक्तता उसकी सांद्रता और उपयोग पर निर्भर करती है",
         "प्रत्येक कीटाणुनाशक को किसी भी सांद्रता में घाव पर सुरक्षित रूप से लगाया जा सकता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Some disinfectants can damage living tissue. Use on wounds depends on the specific product, formulation and approved directions.",
       "solH": "कुछ कीटाणुनाशक जीवित ऊतकों को नुकसान पहुँचा सकते हैं। घाव पर उनका उपयोग विशिष्ट उत्पाद, संरचना और अनुमोदित निर्देशों पर निर्भर करता है।"
     },
@@ -400,9 +366,7 @@ export const chemistryFullTest1MockData = {
         "1 और 2 दोनों",
         "न तो 1, न ही 2"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Aspartame is an artificial sweetener. Sweeteners differ in energy content, and complete products may contain other energy-providing ingredients.",
       "solH": "एस्पार्टेम एक कृत्रिम मिठासकारक है। मिठासकारकों की ऊर्जा मात्रा अलग-अलग होती है और तैयार उत्पाद में अन्य ऊर्जा देने वाले घटक भी हो सकते हैं।"
     },
@@ -422,9 +386,7 @@ export const chemistryFullTest1MockData = {
         "क्लोरीन धातु और ब्रोमीन उत्कृष्ट गैस है",
         "दोनों समूह 18 की निष्क्रिय गैसें हैं"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Chlorine and bromine are halogens in Group 17. Chlorine is a gas and bromine is a liquid under ordinary room conditions.",
       "solH": "क्लोरीन और ब्रोमीन समूह 17 के हैलोजन हैं। सामान्य कमरे की परिस्थितियों में क्लोरीन गैस और ब्रोमीन द्रव है।"
     },
@@ -444,9 +406,7 @@ export const chemistryFullTest1MockData = {
         "A-2, B-4, C-1, D-3",
         "A-3, B-1, C-4, D-2"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Quicklime is CaO; slaked lime is Ca(OH)₂; gypsum is calcium sulphate dihydrate; plaster of Paris is calcium sulphate hemihydrate.",
       "solH": "बिना बुझा चूना CaO, बुझा चूना Ca(OH)₂, जिप्सम कैल्शियम सल्फेट डाइहाइड्रेट और प्लास्टर ऑफ पेरिस कैल्शियम सल्फेट हेमीहाइड्रेट है।"
     },
@@ -466,9 +426,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Plaster of Paris rehydrates to form gypsum crystals, which interlock and cause the material to set.",
       "solH": "प्लास्टर ऑफ पेरिस जल ग्रहण करके जिप्सम के क्रिस्टल बनाता है। ये आपस में जुड़कर पदार्थ को कठोर करते हैं।"
     },
@@ -488,9 +446,7 @@ export const chemistryFullTest1MockData = {
         "बिना बुझा चूना जल से अभिक्रिया करके ऊष्मा छोड़ता है",
         "बुझा चूना रासायनिक रूप से कैल्शियम कार्बोनेट के समान है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Slaked lime is calcium hydroxide, whereas calcium carbonate is CaCO₃. They are different compounds.",
       "solH": "बुझा चूना कैल्शियम हाइड्रॉक्साइड है, जबकि कैल्शियम कार्बोनेट का सूत्र CaCO₃ है। ये अलग-अलग यौगिक हैं।"
     },
@@ -510,9 +466,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "The three principal hydrogen isotopes have mass numbers 1, 2 and 3. Their neutron counts are 0, 1 and 2 respectively; tritium is radioactive.",
       "solH": "हाइड्रोजन के तीन प्रमुख समस्थानिकों की द्रव्यमान संख्याएँ 1, 2 और 3 हैं। इनमें क्रमशः 0, 1 और 2 न्यूट्रॉन होते हैं; ट्रिटियम रेडियोधर्मी है।"
     },
@@ -532,9 +486,7 @@ export const chemistryFullTest1MockData = {
         "कुछ परमाणु रिएक्टरों में इसका उपयोग न्यूट्रॉन मंदक के रूप में होता है",
         "यह प्रत्येक दृष्टि से साधारण जल के रासायनिक रूप से समान और इसके सभी भौतिक गुणों वाला बिल्कुल समान पदार्थ है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Heavy water has broadly similar chemistry to ordinary water but differs in several physical properties and reaction rates because deuterium is heavier.",
       "solH": "भारी जल की रसायनिकी साधारण जल से व्यापक रूप से मिलती है, लेकिन ड्यूटेरियम भारी होने के कारण इसके कई भौतिक गुण और अभिक्रिया दर अलग होते हैं।"
     },
@@ -554,9 +506,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-1, C-2",
         "A-2, B-1, C-3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Protium has zero neutrons, deuterium has one, and tritium has two.",
       "solH": "प्रोटियम में शून्य, ड्यूटेरियम में एक और ट्रिटियम में दो न्यूट्रॉन होते हैं।"
     },
@@ -576,9 +526,7 @@ export const chemistryFullTest1MockData = {
         "केवल 1 और 2",
         "1, 2 और 3"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Statements 1 and 2 are correct. Isotopes have the same atomic number and occupy the same position in the modern periodic table.",
       "solH": "कथन 1 और 2 सही हैं। समस्थानिकों की परमाणु संख्या समान होती है और वे आधुनिक आवर्त सारणी में एक ही स्थान पर आते हैं।"
     },
@@ -598,9 +546,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Increasing effective nuclear attraction generally pulls the electron cloud closer across a period.",
       "solH": "एक आवर्त में प्रभावी नाभिकीय आकर्षण बढ़ने से इलेक्ट्रॉन बादल सामान्यतः नाभिक के निकट आता है।"
     },
@@ -620,9 +566,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-2, C-4, D-3",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Sodium is Group 1, calcium Group 2, chlorine Group 17, and argon Group 18.",
       "solH": "सोडियम समूह 1, कैल्शियम समूह 2, क्लोरीन समूह 17 और आर्गन समूह 18 में स्थित है।"
     },
@@ -642,9 +586,7 @@ export const chemistryFullTest1MockData = {
         "आवर्त में उनका संयोजकता कोश विन्यास बदल सकता है",
         "उनके रासायनिक गुण अनिवार्य रूप से समान होते हैं"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Elements in the same period show changing valence configurations and can have very different chemical properties.",
       "solH": "एक ही आवर्त के तत्वों के संयोजकता विन्यास बदलते हैं और उनके रासायनिक गुण काफी अलग हो सकते हैं।"
     },
@@ -664,9 +606,7 @@ export const chemistryFullTest1MockData = {
         "केवल 1 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Strength describes the extent of ionisation, whereas concentration describes the amount of acid per volume. A concentrated weak acid is possible.",
       "solH": "प्रबलता आयनीकरण की मात्रा बताती है, जबकि सांद्रता प्रति आयतन अम्ल की मात्रा बताती है। सांद्र दुर्बल अम्ल भी संभव है।"
     },
@@ -686,9 +626,7 @@ export const chemistryFullTest1MockData = {
         "100 गुनी",
         "1,000 गुनी"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "A difference of two pH units corresponds to a factor of 10², or 100, in hydrogen-ion activity.",
       "solH": "pH में दो इकाई का अंतर हाइड्रोजन आयन सक्रियता में 10², अर्थात 100 गुना, अंतर दर्शाता है।"
     },
@@ -708,9 +646,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Dilution of common strong mineral acids releases heat due largely to hydration processes. Acid should always be added slowly to water, not water to concentrated acid.",
       "solH": "सामान्य प्रबल खनिज अम्लों को तनु करने पर जलयोजन प्रक्रियाओं के कारण ऊष्मा निकलती है। अम्ल को धीरे-धीरे जल में मिलाना चाहिए, सांद्र अम्ल में जल नहीं डालना चाहिए।"
     },
@@ -730,9 +666,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-1, C-4, D-2",
         "A-4, B-3, C-2, D-1"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Blue litmus turns red; methyl orange is red; phenolphthalein is colourless; turmeric remains yellow in acidic solution.",
       "solH": "नीला लिटमस लाल हो जाता है; मिथाइल ऑरेंज लाल रहता है; फिनॉल्फ्थेलीन रंगहीन रहती है; अम्लीय विलयन में हल्दी पीली रहती है।"
     },
@@ -752,9 +686,7 @@ export const chemistryFullTest1MockData = {
         "अम्ल, क्षार और परिस्थितियों की परवाह किए बिना अंतिम विलयन का pH हमेशा ठीक 7 होना चाहिए",
         "शुद्ध आयनिक उदासीनीकरण में प्रायः H⁺ और OH⁻ मिलकर जल बनाते हैं"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "The equivalence-point pH depends on the strengths of the acid and base and on temperature. It is approximately 7 for strong acid-strong base systems at 25°C.",
       "solH": "तुल्यता बिंदु का pH अम्ल और क्षार की प्रबलता तथा तापमान पर निर्भर करता है। 25°C पर प्रबल अम्ल-प्रबल क्षार के लिए यह लगभग 7 होता है।"
     },
@@ -774,9 +706,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Electron loss is oxidation and electron gain is reduction. A redox reaction couples both processes.",
       "solH": "इलेक्ट्रॉन का त्याग ऑक्सीकरण और इलेक्ट्रॉन की प्राप्ति अपचयन है। रेडॉक्स अभिक्रिया में दोनों प्रक्रियाएँ जुड़ी होती हैं।"
     },
@@ -796,9 +726,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Any element in its uncombined elemental form has oxidation number zero, including O₂, H₂ and metallic sodium.",
       "solH": "असंयोजित तात्विक अवस्था में किसी भी तत्व की ऑक्सीकरण संख्या शून्य होती है; इसमें O₂, H₂ और धात्विक सोडियम शामिल हैं।"
     },
@@ -818,9 +746,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-3, C-2, D-4",
         "A-3, B-1, C-4, D-2"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Oxidation involves electron loss, reduction electron gain, neutralisation an acid-base reaction, and precipitation the formation of an insoluble solid.",
       "solH": "ऑक्सीकरण में इलेक्ट्रॉन का त्याग, अपचयन में इलेक्ट्रॉन की प्राप्ति, उदासीनीकरण में अम्ल-क्षार अभिक्रिया और अवक्षेपण में अघुलनशील ठोस बनता है।"
     },
@@ -840,9 +766,7 @@ export const chemistryFullTest1MockData = {
         "HCl + NaOH → NaCl + H₂O",
         "CuO + H₂ → Cu + H₂O"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "HCl + NaOH is an acid-base neutralisation without a change in oxidation numbers. The other reactions involve oxidation and reduction.",
       "solH": "HCl + NaOH अम्ल-क्षार उदासीनीकरण है, जिसमें ऑक्सीकरण संख्याएँ नहीं बदलतीं। अन्य अभिक्रियाओं में ऑक्सीकरण और अपचयन होता है।"
     },
@@ -862,9 +786,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Statements 1 and 2 follow the usual enthalpy convention. Spontaneity depends on Gibbs free energy, not enthalpy alone.",
       "solH": "कथन 1 और 2 सामान्य एन्थैल्पी परिपाटी के अनुसार सही हैं। स्वतःस्फूर्तता केवल एन्थैल्पी पर नहीं, बल्कि गिब्स मुक्त ऊर्जा पर निर्भर करती है।"
     },
@@ -884,9 +806,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "A catalyst changes the rates of both directions but not the thermodynamic equilibrium constant at a given temperature.",
       "solH": "उत्प्रेरक दोनों दिशाओं की दर बदलता है, लेकिन दिए गए तापमान पर ऊष्मागतिक साम्य स्थिरांक नहीं बदलता।"
     },
@@ -906,9 +826,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-3, C-4, D-2",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Exothermic processes release heat; endothermic processes absorb it. A catalyst speeds reactions, while activation energy is the energy barrier for a pathway.",
       "solH": "ऊष्माक्षेपी प्रक्रियाएँ ऊष्मा छोड़ती हैं और ऊष्माशोषी प्रक्रियाएँ ऊष्मा ग्रहण करती हैं। उत्प्रेरक अभिक्रिया तेज करता है, जबकि सक्रियण ऊर्जा अभिक्रिया मार्ग की ऊर्जा बाधा है।"
     },
@@ -928,9 +846,7 @@ export const chemistryFullTest1MockData = {
         "केवल धनात्मक एन्थैल्पी परिवर्तन यह सिद्ध नहीं करता कि प्रक्रिया अस्वतःस्फूर्त है",
         "ऊष्मा छोड़ने वाली प्रत्येक प्रक्रिया अनिवार्य रूप से स्वतःस्फूर्त होती है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Spontaneity depends on Gibbs free energy under constant-temperature, constant-pressure conditions; heat release alone is insufficient.",
       "solH": "निश्चित तापमान और दाब पर स्वतःस्फूर्तता गिब्स मुक्त ऊर्जा पर निर्भर करती है; केवल ऊष्मा निकलना पर्याप्त नहीं है।"
     },
@@ -950,9 +866,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Anthracite is higher-rank coal and generally richer in carbon. Coke is carbon-rich but may contain mineral matter and other impurities.",
       "solH": "एन्थ्रासाइट उच्च श्रेणी का कोयला है और इसमें सामान्यतः अधिक कार्बन होता है। कोक कार्बन-समृद्ध होता है, लेकिन उसमें खनिज पदार्थ और अन्य अशुद्धियाँ हो सकती हैं।"
     },
@@ -972,9 +886,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Carbon monoxide forms carboxyhaemoglobin and interferes with oxygen transport, causing potentially fatal poisoning.",
       "solH": "कार्बन मोनोऑक्साइड कार्बोक्सीहीमोग्लोबिन बनाती है और ऑक्सीजन परिवहन में बाधा डालती है, जिससे जानलेवा विषाक्तता हो सकती है।"
     },
@@ -994,9 +906,7 @@ export const chemistryFullTest1MockData = {
         "A-4, B-2, C-1, D-3",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Natural gas mainly contains methane; LPG mainly contains propane and butane; coke is carbon-rich; coal tar is a complex organic mixture.",
       "solH": "प्राकृतिक गैस में मुख्यतः मीथेन, LPG में प्रोपेन और ब्यूटेन, कोक में अधिक कार्बन तथा कोलतार में कार्बनिक यौगिकों का जटिल मिश्रण होता है।"
     },
@@ -1016,9 +926,7 @@ export const chemistryFullTest1MockData = {
         "ईंधन का ऊष्मीय मान पूर्ण दहन से प्रति इकाई मात्रा निकलने वाली ऊष्मा बताता है",
         "सबसे अधिक धुआँ देने वाले ईंधन का ऊष्मीय मान अनिवार्य रूप से सबसे अधिक होता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Smoke production and calorific value are different properties. Smoke often indicates incomplete combustion rather than high useful energy output.",
       "solH": "धुआँ बनने और ऊष्मीय मान में अंतर है। धुआँ अक्सर अपूर्ण दहन का संकेत देता है, न कि अधिक उपयोगी ऊर्जा का।"
     },
@@ -1038,9 +946,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "These are the defining bond characteristics of open-chain alkanes, alkenes and alkynes.",
       "solH": "ये खुली शृंखला वाले ऐल्केन, ऐल्कीन और ऐल्काइन के बंधों की परिभाषित विशेषताएँ हैं।"
     },
@@ -1060,9 +966,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "In addition polymerisation of ethene, the double bond is converted into single bonds as repeating units form a polymer chain.",
       "solH": "एथीन के योगात्मक बहुलकीकरण में द्विबंध एकल बंध में बदलता है और दोहराने वाली इकाइयाँ मिलकर बहुलक शृंखला बनाती हैं।"
     },
@@ -1082,9 +986,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-1, C-4, D-2",
         "A-1, B-2, C-3, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Ethanol is an alcohol, ethanoic acid is a carboxylic acid, ethanal is an aldehyde, and propanone is a ketone.",
       "solH": "एथेनॉल ऐल्कोहॉल, एथेनोइक अम्ल कार्बोक्सिलिक अम्ल, एथेनल ऐल्डिहाइड और प्रोपेनोन कीटोन है।"
     },
@@ -1104,9 +1006,7 @@ export const chemistryFullTest1MockData = {
         "ग्रेफाइट में परतें होती हैं और यह विद्युत का संचालन करता है",
         "ग्रेफाइट सामान्यतः हीरे से अधिक कठोर होता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Diamond is much harder than graphite because of its rigid three-dimensional covalent network.",
       "solH": "हीरा अपने कठोर त्रिविमीय सहसंयोजक जाल के कारण ग्रेफाइट से बहुत अधिक कठोर होता है।"
     },
@@ -1126,9 +1026,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "All three statements are correct and describe important ores and the role of cryolite in the Hall-Héroult process.",
       "solH": "तीनों कथन सही हैं। ये प्रमुख अयस्कों तथा हॉल-हेरॉल्ट प्रक्रिया में क्रायोलाइट की भूमिका का वर्णन करते हैं।"
     },
@@ -1148,9 +1046,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Aluminium oxide is too stable for practical extraction by ordinary carbon reduction; molten-electrolyte electrolysis is used.",
       "solH": "एल्युमिनियम ऑक्साइड इतना स्थिर है कि साधारण कार्बन अपचयन से इसका व्यावहारिक निष्कर्षण कठिन है; इसलिए पिघले विद्युत अपघट्य का विद्युत अपघटन किया जाता है।"
     },
@@ -1170,9 +1066,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-3, C-4, D-2",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Bauxite yields aluminium, haematite yields iron, zinc blende is ZnS, and cinnabar is HgS.",
       "solH": "बॉक्साइट से एल्युमिनियम, हेमेटाइट से लोहा, जिंक ब्लेंड (ZnS) से जस्ता और सिनाबार (HgS) से पारा प्राप्त होता है।"
     },
@@ -1192,9 +1086,7 @@ export const chemistryFullTest1MockData = {
         "स्टेनलेस स्टील में क्रोमियम होता है",
         "प्रत्येक मिश्रधातु में ठीक दो धात्विक तत्व और कोई अधातु नहीं होना चाहिए"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Alloys may contain more than two elements, and some contain non-metals such as carbon in steel.",
       "solH": "मिश्रधातुओं में दो से अधिक तत्व हो सकते हैं और कुछ में इस्पात के कार्बन जैसे अधातु भी होते हैं।"
     },
@@ -1214,9 +1106,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "All statements are correct. Zinc is more reactive than iron and can corrode preferentially, protecting exposed iron in suitable conditions.",
       "solH": "सभी कथन सही हैं। जस्ता लोहे से अधिक अभिक्रियाशील है और उपयुक्त परिस्थितियों में पहले संक्षारित होकर खुले लोहे की रक्षा कर सकता है।"
     },
@@ -1236,9 +1126,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "The chromium-rich passive oxide layer limits further corrosion, giving stainless steel its characteristic resistance.",
       "solH": "क्रोमियम-समृद्ध निष्क्रिय ऑक्साइड परत आगे के संक्षारण को सीमित करती है और स्टेनलेस स्टील को विशिष्ट प्रतिरोध देती है।"
     },
@@ -1258,9 +1146,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-3, C-4, D-2",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Brass is copper-zinc, bronze copper-tin, steel iron-carbon, and traditional lead-tin solder contains lead and tin.",
       "solH": "पीतल ताँबा-जस्ता, काँसा ताँबा-टिन, इस्पात लोहा-कार्बन तथा पारंपरिक सीसा-टिन सोल्डर सीसा और टिन से बना होता है।"
     },
@@ -1280,9 +1166,7 @@ export const chemistryFullTest1MockData = {
         "निष्कर्षण विधि आंशिक रूप से धातु की अभिक्रियाशीलता पर निर्भर करती है",
         "सभी धातु अयस्कों का कार्बन के साथ गर्म करके आर्थिक रूप से अपचयन किया जा सकता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Very reactive metals such as sodium and aluminium are not extracted by ordinary carbon reduction; methods depend on chemical stability and reactivity.",
       "solH": "सोडियम और एल्युमिनियम जैसी अत्यधिक अभिक्रियाशील धातुएँ साधारण कार्बन अपचयन से नहीं निकाली जातीं। विधि रासायनिक स्थिरता और अभिक्रियाशीलता पर निर्भर करती है।"
     },
@@ -1302,9 +1186,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "F₂, Cl₂, Br₂ and I₂ are diatomic elemental forms. Down the group, oxidising ability generally decreases.",
       "solH": "F₂, Cl₂, Br₂ और I₂ द्विपरमाणुक तात्विक रूप हैं। समूह में नीचे जाने पर ऑक्सीकारक क्षमता सामान्यतः घटती है।"
     },
@@ -1324,9 +1206,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Chlorine oxidises bromide ions to bromine because chlorine has a greater tendency to be reduced than bromine.",
       "solH": "क्लोरीन ब्रोमाइड आयनों को ब्रोमीन में ऑक्सीकृत करती है, क्योंकि क्लोरीन की अपचयित होने की प्रवृत्ति ब्रोमीन से अधिक है।"
     },
@@ -1346,9 +1226,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-2, C-1, D-4",
         "A-4, B-1, C-3, D-2"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Fluorine and chlorine are gases, bromine is a liquid, and iodine is a solid under ordinary room conditions.",
       "solH": "सामान्य कमरे की परिस्थितियों में फ्लोरीन और क्लोरीन गैस, ब्रोमीन द्रव तथा आयोडीन ठोस होता है।"
     },
@@ -1368,9 +1246,7 @@ export const chemistryFullTest1MockData = {
         "यह हरिताभ-पीली विषैली गैस है",
         "यह रासायनिक रूप से निष्क्रिय है और धातुओं से अभिक्रिया नहीं करती"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Chlorine is reactive and can form chlorides with many metals. It must be handled carefully because it is toxic.",
       "solH": "क्लोरीन अभिक्रियाशील है और अनेक धातुओं के साथ क्लोराइड बना सकती है। विषैली होने के कारण इसे सावधानी से संभालना चाहिए।"
     },
@@ -1390,9 +1266,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "CaO + H₂O forms Ca(OH)₂; gypsum is CaSO₄·2H₂O; plaster of Paris is CaSO₄·½H₂O.",
       "solH": "CaO + H₂O से Ca(OH)₂ बनता है; जिप्सम CaSO₄·2H₂O और प्लास्टर ऑफ पेरिस CaSO₄·½H₂O है।"
     },
@@ -1412,9 +1286,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "CaO reacts vigorously with water, releasing substantial heat and potentially causing splashing or burns.",
       "solH": "CaO जल से तीव्र अभिक्रिया करता है और काफी ऊष्मा छोड़ता है, जिससे छींटे पड़ने या जलने का खतरा हो सकता है।"
     },
@@ -1434,9 +1306,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-2, C-4, D-3",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Baking soda is NaHCO₃; washing soda crystals are Na₂CO₃·10H₂O; bleaching powder is commonly represented as CaOCl₂; slaked lime is Ca(OH)₂.",
       "solH": "बेकिंग सोडा NaHCO₃, धोने के सोडे के क्रिस्टल Na₂CO₃·10H₂O, ब्लीचिंग पाउडर का प्रचलित निरूपण CaOCl₂ तथा बुझा चूना Ca(OH)₂ है।"
     },
@@ -1456,9 +1326,7 @@ export const chemistryFullTest1MockData = {
         "नियंत्रित परिस्थितियों में जिप्सम गर्म करने से प्लास्टर ऑफ पेरिस बन सकता है",
         "प्लास्टर ऑफ पेरिस में जल मिलाने से सामान्यतः बिना बुझा चूना बनता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Plaster of Paris rehydrates to form gypsum; it does not turn into quicklime.",
       "solH": "प्लास्टर ऑफ पेरिस जल ग्रहण करके जिप्सम बनाता है; यह बिना बुझा चूना नहीं बनता।"
     },
@@ -1478,9 +1346,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Chlorination and proper boiling can disinfect water. Boiling does not reliably remove permanent hardness and may concentrate dissolved salts as water evaporates.",
       "solH": "क्लोरीनीकरण और उचित उबालना जल को कीटाणुरहित कर सकते हैं। उबालना स्थायी कठोरता को विश्वसनीय रूप से नहीं हटाता और वाष्पीकरण से घुले लवण अधिक सांद्र हो सकते हैं।"
     },
@@ -1500,9 +1366,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Benzoate is generally more effective at lower pH because a larger fraction is present as undissociated benzoic acid.",
       "solH": "कम pH पर बेंजोएट सामान्यतः अधिक प्रभावी होता है, क्योंकि अधिक अंश अवियोजित बेंजोइक अम्ल के रूप में उपस्थित रहता है।"
     },
@@ -1522,9 +1386,7 @@ export const chemistryFullTest1MockData = {
         "अम्लनाशक पेट की अतिरिक्त अम्लता को उदासीन या कम करता है",
         "प्रत्येक विषाणु संक्रमण के लिए प्रतिजैविक सही उपचार है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Antibiotics act against susceptible bacteria, not viruses. Treatment depends on the cause of infection.",
       "solH": "प्रतिजैविक संवेदनशील जीवाणुओं के विरुद्ध काम करते हैं, विषाणुओं के विरुद्ध नहीं। उपचार संक्रमण के कारण पर निर्भर करता है।"
     },
@@ -1544,9 +1406,7 @@ export const chemistryFullTest1MockData = {
         "A-4, B-3, C-2, D-1",
         "A-1, B-4, C-3, D-2"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Sodium benzoate preserves certain foods, aspartame provides sweetness, magnesium hydroxide is an antacid, and iodine-based preparations can act as antiseptics.",
       "solH": "सोडियम बेंजोएट कुछ खाद्य पदार्थों का परिरक्षण करता है, एस्पार्टेम मिठास देता है, मैग्नीशियम हाइड्रॉक्साइड अम्लनाशक है और आयोडीन-आधारित तैयारी प्रतिसेप्टिक हो सकती है।"
     },
@@ -1566,9 +1426,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Isotopes have the same proton number but different neutron numbers, so statement 3 is false.",
       "solH": "समस्थानिकों में प्रोटॉनों की संख्या समान, लेकिन न्यूट्रॉनों की संख्या अलग होती है; इसलिए कथन 3 गलत है।"
     },
@@ -1588,9 +1446,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Isotopes have the same atomic number. Since periodic-table position follows atomic number, they occupy the same position.",
       "solH": "समस्थानिकों की परमाणु संख्या समान होती है। आवर्त सारणी का स्थान परमाणु संख्या पर आधारित होने के कारण वे एक ही स्थान पर आते हैं।"
     },
@@ -1610,9 +1466,7 @@ export const chemistryFullTest1MockData = {
         "A-2, B-3, C-1, D-4",
         "A-4, B-1, C-3, D-2"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Protons are positive, neutrons are neutral, electrons are negative, and the nucleus contains protons and neutrons.",
       "solH": "प्रोटॉन धनावेशित, न्यूट्रॉन उदासीन, इलेक्ट्रॉन ऋणावेशित होता है और नाभिक में प्रोटॉन तथा न्यूट्रॉन होते हैं।"
     },
@@ -1632,9 +1486,7 @@ export const chemistryFullTest1MockData = {
         "इलेक्ट्रॉन खोने से धनायन बन सकता है",
         "इलेक्ट्रॉन खोने से ऋणायन बनता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Anions form by gaining electrons; losing electrons generally produces cations.",
       "solH": "इलेक्ट्रॉन प्राप्त करने से ऋणायन बनते हैं; इलेक्ट्रॉन खोने से सामान्यतः धनायन बनते हैं।"
     },
@@ -1654,9 +1506,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Ionic compounds generally conduct when molten or dissolved because ions can move, but not when solid ions are fixed in the lattice.",
       "solH": "आयनिक यौगिक सामान्यतः पिघली या जलीय अवस्था में विद्युत चलाते हैं क्योंकि आयन गतिशील होते हैं; ठोस अवस्था में आयन जाल में स्थिर रहते हैं।"
     },
@@ -1676,9 +1526,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "In solid NaCl, ions cannot move freely. In molten or aqueous NaCl, mobile ions can carry electric current.",
       "solH": "ठोस NaCl में आयन स्वतंत्र रूप से नहीं चल सकते। पिघले या जलीय NaCl में गतिशील आयन विद्युत धारा वहन कर सकते हैं।"
     },
@@ -1698,9 +1546,7 @@ export const chemistryFullTest1MockData = {
         "A-2, B-4, C-1, D-3",
         "A-3, B-1, C-2, D-4"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "NaCl is ionic, methane is a covalent molecular substance, copper has metallic bonding, and diamond has a giant covalent network.",
       "solH": "NaCl आयनिक, मीथेन सहसंयोजक आणविक, ताँबा धात्विक बंधन वाला तथा हीरा विशाल सहसंयोजक जाल वाला पदार्थ है।"
     },
@@ -1720,9 +1566,7 @@ export const chemistryFullTest1MockData = {
         "CaCl₂ के सूत्रक में प्रत्येक कैल्शियम आयन के लिए दो क्लोराइड आयन होते हैं",
         "NaCl सूत्र का अर्थ है कि प्रत्येक क्रिस्टल अलग-अलग NaCl अणुओं से बना है, ठीक वैसे ही जैसे जल H₂O अणुओं से बना है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Solid sodium chloride forms an extended ionic lattice. NaCl represents the simplest ion ratio, not discrete molecules in the solid crystal.",
       "solH": "ठोस सोडियम क्लोराइड विस्तृत आयनिक जाल बनाता है। NaCl न्यूनतम आयन अनुपात दर्शाता है, न कि ठोस क्रिस्टल में अलग-अलग अणु।"
     },
@@ -1742,9 +1586,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Boyle's and Charles's laws use absolute temperature where relevant. Charles's law requires kelvin, not direct Celsius values.",
       "solH": "बॉयल और चार्ल्स के नियमों में जहाँ आवश्यक हो, परम तापमान का उपयोग होता है। चार्ल्स के नियम के लिए केल्विन चाहिए, सीधे सेल्सियस नहीं।"
     },
@@ -1764,9 +1606,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Low pressure separates molecules, and high temperature reduces the relative influence of attractive forces, improving ideal-gas behaviour.",
       "solH": "कम दाब पर अणु दूर रहते हैं और उच्च तापमान पर आकर्षण बलों का सापेक्ष प्रभाव घटता है, जिससे आदर्श गैस जैसा व्यवहार बढ़ता है।"
     },
@@ -1786,9 +1626,7 @@ export const chemistryFullTest1MockData = {
         "A-4, B-1, C-2, D-3",
         "A-3, B-4, C-1, D-2"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Boyle relates pressure inversely to volume; Charles relates volume to temperature; Gay-Lussac relates pressure to temperature; Avogadro relates volume to amount of gas.",
       "solH": "बॉयल दाब को आयतन के व्युत्क्रमानुपाती, चार्ल्स आयतन को तापमान के समानुपाती, गे-लुसाक दाब को तापमान के समानुपाती और एवोगैड्रो आयतन को गैस की मात्रा के समानुपाती बताता है।"
     },
@@ -1808,9 +1646,7 @@ export const chemistryFullTest1MockData = {
         "आदर्श गैस समीकरण PV = nRT है",
         "स्थिर तापमान और गैस की निश्चित मात्रा पर आयतन दोगुना करने से आदर्श गैस का दाब दोगुना हो जाता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "By Boyle's law, pressure is inversely proportional to volume, so doubling volume halves pressure at constant temperature.",
       "solH": "बॉयल के नियम के अनुसार दाब आयतन के व्युत्क्रमानुपाती है, इसलिए स्थिर तापमान पर आयतन दोगुना करने से दाब आधा हो जाता है।"
     },
@@ -1830,9 +1666,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "One mole contains about 6.022 × 10²³ entities. Molar masses differ between substances, so statement 3 is false.",
       "solH": "एक मोल में लगभग 6.022 × 10²³ कण होते हैं। अलग-अलग पदार्थों के मोलर द्रव्यमान अलग होते हैं, इसलिए कथन 3 गलत है।"
     },
@@ -1852,9 +1686,7 @@ export const chemistryFullTest1MockData = {
         "1.2044 × 10²⁴",
         "3.011 × 10²²"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Number of molecules = moles × Avogadro's constant = 0.5 × 6.022 × 10²³ = 3.011 × 10²³.",
       "solH": "अणुओं की संख्या = मोल × एवोगैड्रो नियतांक = 0.5 × 6.022 × 10²³ = 3.011 × 10²³।"
     },
@@ -1874,9 +1706,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-1, C-4, D-2",
         "A-1, B-3, C-2, D-4"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Pressure is measured in pascals, energy in joules, charge in coulombs, and amount of substance in moles.",
       "solH": "दाब की इकाई पास्कल, ऊर्जा की जूल, आवेश की कूलॉम और पदार्थ की मात्रा की मोल है।"
     },
@@ -1896,9 +1726,7 @@ export const chemistryFullTest1MockData = {
         "उत्प्रेरक प्रणाली को साम्य तक तेजी से पहुँचने में मदद करता है",
         "साम्य पर अग्र और उत्क्रम दोनों अभिक्रियाएँ पूरी तरह रुक जाती हैं"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Chemical equilibrium is dynamic: both reactions continue at equal rates rather than stopping.",
       "solH": "रासायनिक साम्य गतिशील होता है: दोनों अभिक्रियाएँ रुकने के बजाय समान दर से चलती रहती हैं।"
     },
@@ -1918,9 +1746,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Higher pressure favours the side with fewer gaseous particles, provided the gaseous mole counts differ and other conditions are unchanged.",
       "solH": "यदि गैसीय मोलों की संख्या अलग हो और अन्य परिस्थितियाँ अपरिवर्तित हों, तो अधिक दाब कम गैसीय कणों वाले पक्ष को अनुकूल बनाता है।"
     },
@@ -1940,9 +1766,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-4, C-1, D-2",
         "A-1, B-2, C-3, D-4"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Combination forms one main product; decomposition breaks a compound down; displacement replaces an element; double displacement exchanges ions.",
       "solH": "संयोजन में एक मुख्य उत्पाद बनता है; अपघटन में यौगिक टूटता है; विस्थापन में तत्व स्थान लेता है; द्विविस्थापन में आयनों का आदान-प्रदान होता है।"
     },
@@ -1962,9 +1786,7 @@ export const chemistryFullTest1MockData = {
         "उत्प्रेरक कम सक्रियण ऊर्जा वाला वैकल्पिक मार्ग दे सकता है",
         "परिस्थितियों की परवाह किए बिना उत्प्रेरक हमेशा उत्पादों की अंतिम साम्य उपज बढ़ाता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "A catalyst speeds attainment of equilibrium but does not change the equilibrium constant or equilibrium composition at a fixed temperature.",
       "solH": "उत्प्रेरक साम्य तक पहुँचने की गति बढ़ाता है, लेकिन निश्चित तापमान पर साम्य स्थिरांक या साम्य संरचना नहीं बदलता।"
     },
@@ -1984,9 +1806,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "All three statements are correct and describe important effects of common air pollutants.",
       "solH": "तीनों कथन सही हैं और सामान्य वायु प्रदूषकों के महत्वपूर्ण प्रभावों का वर्णन करते हैं।"
     },
@@ -2006,9 +1826,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "Carbon dioxide is not an ordinary combustion-supporting gas and can help suppress fires by displacing oxygen; suitability depends on the fire type.",
       "solH": "कार्बन डाइऑक्साइड सामान्य दहन-सहायक गैस नहीं है और ऑक्सीजन को हटाकर आग बुझाने में मदद कर सकती है; उपयुक्तता आग के प्रकार पर निर्भर करती है।"
     },
@@ -2028,9 +1846,7 @@ export const chemistryFullTest1MockData = {
         "A-1, B-4, C-2, D-3",
         "A-4, B-1, C-3, D-2"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Carbon monoxide impairs oxygen transport; sulphur dioxide contributes to acid deposition; nitrogen oxides contribute to smog and acid deposition; some CFCs deplete ozone.",
       "solH": "कार्बन मोनोऑक्साइड ऑक्सीजन परिवहन में बाधा डालती है; सल्फर डाइऑक्साइड अम्लीय निक्षेपण, नाइट्रोजन ऑक्साइड धूम-कोहरा और अम्लीय निक्षेपण तथा कुछ CFC ओजोन क्षय में योगदान देते हैं।"
     },
@@ -2050,9 +1866,7 @@ export const chemistryFullTest1MockData = {
         "जलवाष्प प्राकृतिक ग्रीनहाउस प्रभाव में योगदान देती है",
         "केवल वायुमंडल में सबसे अधिक प्रतिशत वाली गैसें ही ग्रीनहाउस गैस हो सकती हैं"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Greenhouse effectiveness depends on infrared absorption, not simply atmospheric abundance. Trace gases can have significant effects.",
       "solH": "ग्रीनहाउस प्रभावशीलता अवरक्त अवशोषण पर निर्भर करती है, केवल वायुमंडलीय मात्रा पर नहीं। अल्प मात्रा वाली गैसें भी महत्वपूर्ण प्रभाव डाल सकती हैं।"
     },
@@ -2072,9 +1886,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "1, 2 और 3"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Preservatives extend shelf life under suitable conditions but do not guarantee indefinite safety regardless of storage or contamination.",
       "solH": "परिरक्षक उपयुक्त परिस्थितियों में शेल्फ लाइफ बढ़ाते हैं, लेकिन भंडारण या संदूषण की परवाह किए बिना अनिश्चितकालीन सुरक्षा की गारंटी नहीं देते।"
     },
@@ -2094,9 +1906,7 @@ export const chemistryFullTest1MockData = {
         "I सही है, लेकिन II गलत है",
         "I गलत है, लेकिन II सही है"
       ],
-      "ans": [
-        0
-      ],
+      "ans": 0,
       "solE": "People with phenylketonuria must restrict phenylalanine. Aspartame carries a phenylalanine warning for this reason.",
       "solH": "फेनिलकीटोनूरिया से ग्रस्त लोगों को फेनिलएलनिन सीमित करना पड़ता है। इसी कारण एस्पार्टेम पर फेनिलएलनिन संबंधी चेतावनी दी जाती है।"
     },
@@ -2116,9 +1926,7 @@ export const chemistryFullTest1MockData = {
         "A-3, B-2, C-4, D-1",
         "A-1, B-4, C-3, D-2"
       ],
-      "ans": [
-        2
-      ],
+      "ans": 2,
       "solE": "Ascorbic acid is vitamin C; acetic acid is found in vinegar; citric acid occurs in citrus fruits; ethanol is an alcohol.",
       "solH": "एस्कॉर्बिक अम्ल विटामिन C, एसिटिक अम्ल सिरके का अम्ल, सिट्रिक अम्ल खट्टे फलों का अम्ल और एथेनॉल एक ऐल्कोहॉल है।"
     },
@@ -2138,9 +1946,7 @@ export const chemistryFullTest1MockData = {
         "ट्राइग्लिसराइड के साबुनीकरण में ग्लिसरॉल बनता है",
         "साबुनीकरण केवल एथीन का बहुलकीकरण है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Saponification is alkaline hydrolysis of fats or oils, producing glycerol and fatty-acid salts; it is unrelated to ethene polymerisation.",
       "solH": "साबुनीकरण वसा या तेल का क्षारीय जल-अपघटन है, जिससे ग्लिसरॉल और वसीय अम्लों के लवण बनते हैं; इसका एथीन बहुलकीकरण से संबंध नहीं है।"
     },
@@ -2160,9 +1966,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 3",
         "केवल 1 और 3"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Statement 1 is correct. Solubility trends depend on the substance; many gases become less soluble in water at higher temperatures.",
       "solH": "कथन 1 सही है। विलेयता की प्रवृत्ति पदार्थ पर निर्भर करती है; अनेक गैसें उच्च तापमान पर जल में कम घुलती हैं।"
     },
@@ -2182,9 +1986,7 @@ export const chemistryFullTest1MockData = {
         "क्रोमैटोग्राफी स्थिर और गतिशील प्रावस्थाओं के साथ अलग-अलग अंतःक्रिया के आधार पर घटकों को अलग कर सकती है",
         "साधारण निस्यंदन से घुले सोडियम क्लोराइड को जल से विश्वसनीय रूप से अलग किया जा सकता है"
       ],
-      "ans": [
-        3
-      ],
+      "ans": 3,
       "solE": "Dissolved sodium chloride passes through ordinary filter paper with water. Evaporation or an appropriate distillation process is needed for separation.",
       "solH": "घुला हुआ सोडियम क्लोराइड जल के साथ साधारण फिल्टर पेपर से निकल जाता है। इसे अलग करने के लिए वाष्पीकरण या उपयुक्त आसवन विधि चाहिए।"
     },
@@ -2204,9 +2006,7 @@ export const chemistryFullTest1MockData = {
         "केवल 2 और 4",
         "1, 2, 3 और 4"
       ],
-      "ans": [
-        1
-      ],
+      "ans": 1,
       "solE": "Statements 1, 2 and 3 are correct. Conductive polymers exist, so it is incorrect to claim that every polymer is always an electrical insulator.",
       "solH": "कथन 1, 2 और 3 सही हैं। विद्युत-चालक बहुलक भी होते हैं, इसलिए प्रत्येक बहुलक को हर परिस्थिति में विद्युतरोधी कहना गलत है।"
     }
